@@ -1,0 +1,11 @@
+#app{
+	max-width:6.4rem;
+	margin:0 auto;
+	position:relative;
+	width:100%;
+	font-size:.12rem;
+	background: #efefef;
+}
+/*清除浮动*/
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{*+height:1%;}

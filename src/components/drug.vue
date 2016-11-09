@@ -1,8 +1,8 @@
 <template>
 <div class="white_box">
 
-        <div v-if="loading" class="loading"  v-on:click="loadData">
-            加载中...
+        <div v-if="loading"  v-on:click="loadData">
+            <load></load>
         </div>
         <div id="pullDown"  v-else>
 
@@ -25,13 +25,14 @@
 
 
     import indexMain from './indexMain.vue';
-
+    import loading from './loading.vue';
     import PullToRefresh from './pull-to-refresh.vue'
 
     export default {
         components: {
             "pull-to-refresh":PullToRefresh,
-            "index-main":indexMain
+            "index-main":indexMain,
+            "load":loading,
         },
 
         data () {
@@ -71,7 +72,7 @@
                                 });
                                 _this.loading = false;
 
-                            },2000
+                            },1000
                     )
                     // 响应成功回调
                 }, function(response){
@@ -84,7 +85,7 @@
                     console.log('finshCallback');
                 //this.items=this.items.concat([6,6,6,6,6,6,6,6,6,6,6])
                 finshCallback();//finish refreshing state
-            },300000);
+            },2000);
             },
 
             onPulldown(finshCallback) {
@@ -93,7 +94,7 @@
                     console.log('finshCallback');
                 //this.items=[9,9,9,9,9,9,9,9,9,9,9,9,9,9]
                 finshCallback();//finish refreshing state
-            },300000);
+            },2000);
             }
         },
     }
@@ -204,12 +205,6 @@
         height:2.84rem;
     }
 
-    .loading{
-       text-align: center;
-        font-size:.3rem;
-        margin-top:50%;
-        color:#ccc;
-    }
 
     .page{
 

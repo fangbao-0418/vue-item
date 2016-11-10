@@ -4,7 +4,7 @@
     <!-- content1-->
     <div id="items">
     <div class="item"  v-for="item in items.list">
-        <router-link :to="{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}" >
+        <router-link :to="{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}"  append>
             <div class="item_left">
                 <div class="item_tit">
                     {{item.title}}

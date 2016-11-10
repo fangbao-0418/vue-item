@@ -25,14 +25,10 @@ export default {
 				{ path: 'home', component: Home },
 				{ path: 'video', component: Video },
 				{ path: 'my', component: My },
-
-				{ name : 'investmentShow', path: 'investment/show', component: investmentShow },
-				{ path: '*', redirect: 'home' }
 			],
-
 		},
-
-
+		{ path: '/',  redirect: '/home'},
+		{ name : 'investmentShow', path: '/investment/show', component: investmentShow },
 		{ path: '*', redirect: 'home' }
 
 	]

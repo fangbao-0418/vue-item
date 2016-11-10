@@ -1,19 +1,21 @@
 <template>
-    <div :id="eleId" class="pull-container">
-      <div class="scroller">
-        <div class="pulldown"
-        :class="[pulldownChangeStyle,{'hide':!displaypullDownDiv}]">
-        <div class="pulldown-icon"></div>
-        <div class="pulldown-label">{{pullDownTip}}</div>
-      </div>
-      <slot></slot>
-      <div class="pullup"
-      :class="[pullupChangeStyle,{'hide':!displaypullUpDiv}]">
+
+<div :id="eleId" class="pull-container">
+  <div class="scroller">
+    <div class="pulldown"
+    :class="[pulldownChangeStyle,{'hide':!displaypullDownDiv}]">
+      <div class="pulldown-icon"></div>
+      <div class="pulldown-label">{{pullDownTip}}</div>
+    </div>
+    <slot></slot>
+    <div class="pullup"
+    :class="[pullupChangeStyle,{'hide':!displaypullUpDiv}]">
       <div class="pullup-icon"></div>
       <div class="pullup-label">{{pullUpTip}}</div>
     </div>
   </div>
-  </div>
+</div>
+
 </template>
 
 <script>
@@ -21,8 +23,8 @@
   var Scroll =  require('../js/myScroll.js');
 
   const PULL_DOWN_NORMAL='下拉刷新'
-  const PULL_DOWN_RELEASE='释放加载'
-  const PULL_DOWN_LOADING='加载中，请稍后'
+  const PULL_DOWN_RELEASE='释放立即刷新'
+  const PULL_DOWN_LOADING='正在刷新...'
 
   const PULL_UP_NORMAL='上拉刷新'
   const PULL_UP_RELEASE='释放加载'
@@ -66,7 +68,7 @@ export default {
       pullupChangeStyle:''
     }
   },
-  ready(){
+  mounted(){
     this.$nextTick(function () {
       this.eleId='bajian'+Math.round(Math.random()*1000)
       setTimeout(()=>{
@@ -168,7 +170,6 @@ export default {
     display: none;
   }
   .pull-container {
-
     transform: translateZ(0);
     user-select: none;
     text-size-adjust: none;
@@ -186,7 +187,6 @@ export default {
   }
 
   .pulldown .pulldown-icon,.pullup .pullup-icon {
-    display: inline-block;
     width: .40rem;
     height: .40rem;
     background: url(../image/pull-icon@2x.png) 0 0 no-repeat;
@@ -194,12 +194,15 @@ export default {
     background-size: .40rem .80rem;
     -webkit-transition-property: -webkit-transform;
     -webkit-transition-duration: 250ms;
+    position: relative;
+    top: .05rem;
+    left: .2rem;
   }
 
   .pulldown .pulldown-label, .pullup .pullup-label{
     position:relative;
     top: -.40rem;
-    font-size:.12rem;
+    font-size:.2rem;
   }
   .pulldown .pulldown-icon {
     -webkit-transform: rotate(0deg) translateZ(0);

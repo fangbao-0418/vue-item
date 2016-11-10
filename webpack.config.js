@@ -120,8 +120,13 @@ module.exports = {
         // require时省略的扩展名，如：require('module') 不需要module.js
         extensions: ['', '.js', '.vue'],
         //别名
-        alias: {}
+        alias: {
+            'vue': 'vue/dist/vue.js',
+
+        }
     },
+
+
     plugins: plugins,
     // 开启source-map，webpack有多种source-map，在官网文档可以查到
     //devtool: 'eval-source-map'

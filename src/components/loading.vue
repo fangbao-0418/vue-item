@@ -8,7 +8,7 @@
 <style scoped>
     .spinner {
         margin :0px auto;
-        margin :50% auto;
+        padding:50% 0px;
         width: 150px;
         text-align: center;
     }

@@ -39,7 +39,7 @@
                 loading:true,
             }
         },
-        ready(){
+        mounted(){
 
             this.loadData();
 

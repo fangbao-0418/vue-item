@@ -1,6 +1,7 @@
 
 
 <template>
+    <div>
     <div class="top">
         <div class="wrap">
             <i class="logo"></i>
@@ -12,20 +13,21 @@
         <div id="nav-smartSetup">
             <div id="scroller">
             <ul>
-                <li v-on:click="notify('index-main')" :class="{'cur':isCur[0]}" >推荐</li>
-                <li v-on:click="notify('drug')" :class="{'cur':isCur[1]}">药品 </li>
-                <li v-on:click="notify('zyc')" :class="{'cur':isCur[2]}">中药材</li>
-                <li v-on:click="notify('bjsp')" :class="{'cur':isCur[3]}">保健食品</li>
-                <li  v-on:click="notify('ylqx')" :class="{'cur':isCur[4]}">医疗器械 </li>
-                <li  v-on:click="notify('mrhf')" :class="{'cur':isCur[5]}">美容护肤 </li>
-                <li  v-on:click="notify('jsyp')" :class="{'cur':isCur[6]}">计生用品 </li>
-                <li  v-on:click="notify('zysb')" :class="{'cur':isCur[7]}">制药设备 </li>
-                <li v-on:click="notify('yly')" :class="{'cur':isCur[8]}">原料药 </li>
+                <li v-on:click="selectType('recommend')" :class="{'cur':isCur[0]}" >推荐</li>
+                <li v-on:click="selectType('drug')" :class="{'cur':isCur[1]}">药品 </li>
+                <li v-on:click="selectType('zyc')" :class="{'cur':isCur[2]}">中药材</li>
+                <li v-on:click="selectType('bjsp')" :class="{'cur':isCur[3]}">保健食品</li>
+                <li  v-on:click="selectType('ylqx')" :class="{'cur':isCur[4]}">医疗器械 </li>
+                <li  v-on:click="selectType('mrhf')" :class="{'cur':isCur[5]}">美容护肤 </li>
+                <li  v-on:click="selectType('jsyp')" :class="{'cur':isCur[6]}">计生用品 </li>
+                <li  v-on:click="selectType('zysb')" :class="{'cur':isCur[7]}">制药设备 </li>
+                <li v-on:click="selectType('yly')" :class="{'cur':isCur[8]}">原料药 </li>
             </ul>
             </div>
         </div>
         <i class="line_a"></i>
         <i class="plus_a"></i>
+    </div>
     </div>
 </template>
 
@@ -39,13 +41,13 @@
     export default {
         data () {
             return {
-                type:"index-main",
+                type:"drug",
             }
         },
         computed: {
             isCur:function(){
                 let cur = [],i;
-                let arr = ["index-main","drug","zyc","bjsp","ylqx","mrhf","jsyp","zysb","yly"];
+                let arr = ["recommend","drug","zyc","bjsp","ylqx","mrhf","jsyp","zysb","yly"];
                 for(i in arr){
                     if(arr[i] == this.type){
                         cur[i] = true;
@@ -57,13 +59,13 @@
             }
         },
         methods:{
-            notify(type){
+            selectType(type){
                 this.type = type;
-                this.$dispatch('child-type', type)
+                this.$emit('child-type', type)
             },
 
         },
-        ready(){
+        mounted(){
             $(document).ready(function(){
 
                 var myScroll;

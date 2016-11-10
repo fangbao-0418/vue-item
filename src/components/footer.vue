@@ -3,18 +3,35 @@
 <template>
 
     <div class="footer">
-        <div v-link="{path:'/home', activeClass: 'on'}" class="home on">
-            <i v-link="{path:'/home', activeClass: 'cur'}"></i>
+        <router-link :to="{path:'/home'}" active-class='on' class="home">
+
+                <router-link tag="i"  :to="{path:'/home'}" active-class='cur'>
+
+                </router-link>
+
             <span>首页</span>
-        </div>
-        <div v-link="{path:'/video', activeClass: 'on'}" class="video on">
-            <i v-link="{path:'/video', activeClass: 'cur'}"></i>
+        </router-link>
+
+        <router-link :to="{path:'/video'}" active-class='on' class="video">
+
+                <router-link tag="i"  :to="{path:'/video'}" active-class='cur'>
+
+                </router-link>
+
             <span>视频</span>
-        </div>
-        <div v-link="{path:'/my', activeClass: 'on'}" class="my">
-            <i v-link="{path:'/my', activeClass: 'cur'}" ></i>
+        </router-link>
+
+        <router-link  :to="{path:'/my'}" active-class='on' class="my">
+
+                <router-link tag="i" :to="{path:'/my'}" active-class='cur'>
+
+                </router-link>
+
             <span>我的</span>
-        </div>
+        </router-link>
+
+
+
     </div>
 </template>
 

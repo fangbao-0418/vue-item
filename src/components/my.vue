@@ -1,246 +1,121 @@
-
-<!--conten1-->
 <template>
-    <!-- content1-->
-    <div class="white_box">
-        <div class="content1">
-            <div class="content1-left">
-                <div class="content1-left-t content-title">
-                    <h2><a>坚持十个小习惯变身健康瘦美人</a></h2>
-                </div>
-                <div class="content1-left-b content-info">
-                    <ul>
-                        <li><span class="Drugs">药品</span></li>
-                        <li><span class="click">1365点击</span></li>
-                        <li><span class="time">24小时前</span></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="content1-right">
-                <a><img src="/imgs/shouye_03.gif"/></a>
-            </div>
-            <div class="clear"></div>
-        </div>
-        <!-- content1-->
-        <!-- content2-->
-        <div class="content2">
-            <div class="content-Title content-title">
-                <h2><a>OEM贴牌加工松针油软胶囊</a></h2>
-            </div>
-            <div class="content2-img">
-                <a href="#"><img class="c2-img" src="/imgs/shouye_09.gif"/></a>
-                <a href="#"><img  class="c2-img" src="/imgs/shouye_11.gif"/></a>
-                <a href="#"><img src="/imgs/shouye_09.gif"/></a>
-            </div>
-            <div class="content-info">
-                <ul>
-                    <li><span class="Drugs">药品</span></li>
-                    <li><span class="click">1365点击</span></li>
-                    <li><span class="time">24小时前</span></li>
-                </ul>
-            </div>
-        </div>
-        <!--/content2-->
-        <!-- content3-->
-        <div class="content3">
-            <div class="content-title content-Title">
-                <h2><a>[OEM/ODM加工] 小儿退热贴贴牌加工</a></h2>
-            </div>
-            <div class="content3-img">
-                <a href="#"><img src="/imgs/shouye_16.gif"/></a>
-            </div>
-            <div class="content-info">
-                <ul>
-                    <li><span class="Drugs">药品</span></li>
-                    <li><span class="click">1365点击</span></li>
-                    <li><span class="time">24小时前</span></li>
-                </ul>
-            </div>
-        </div>
-        <div class="content1">
-            <div class="content1-left">
-                <div class="content1-left-t content-title">
-                    <h2><a>坚持十个小习惯变身健康瘦美人</a></h2>
-                </div>
-                <div class="content1-left-b content-info">
-                    <ul>
-                        <li><span class="Drugs">药品</span></li>
-                        <li><span class="click">1365点击</span></li>
-                        <li><span class="time">24小时前</span></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="content1-right">
-                <a><img src="/imgs/shouye_03.gif"/></a>
-            </div>
-            <div class="clear"></div>
-        </div>
-        <!-- content1-->
-        <!-- content2-->
-        <div class="content2">
-            <div class="content-Title content-title">
-                <h2><a>OEM贴牌加工松针油软胶囊</a></h2>
-            </div>
-            <div class="content2-img">
-                <a href="#"><img class="c2-img" src="/imgs/shouye_09.gif"/></a>
-                <a href="#"><img  class="c2-img" src="/imgs/shouye_11.gif"/></a>
-                <a href="#"><img src="/imgs/shouye_09.gif"/></a>
-            </div>
-            <div class="content-info">
-                <ul>
-                    <li><span class="Drugs">药品</span></li>
-                    <li><span class="click">1365点击</span></li>
-                    <li><span class="time">24小时前</span></li>
-                </ul>
-            </div>
-        </div>
-        <!--/content2-->
-        <!-- content3-->
-        <div class="content3">
-            <div class="content-title content-Title">
-                <h2><a>[OEM/ODM加工] 小儿退热贴贴牌加工</a></h2>
-            </div>
-            <div class="content3-img">
-                <a href="#"><img src="/imgs/shouye_16.gif"/></a>
-            </div>
-            <div class="content-info">
-                <ul>
-                    <li><span class="Drugs">药品</span></li>
-                    <li><span class="click">1365点击</span></li>
-                    <li><span class="time">24小时前</span></li>
-                </ul>
-            </div>
-        </div>
-        <!-- content3-->
-        <div style="height:.4rem"></div>
-        <div class="clear"></div>
+    <div id="app">
+        <pull-to-refresh
+                @on-pullup='onPullup'
+                @on-pulldown='onPulldown' class="page">
+            <ul @click="testClick($event)">
+                <li :key="index" v-for="(item, index) in items">
+                    # item {{ index }}
+                </li>
+            </ul>
+        </pull-to-refresh>
+
+        <!--   <b>examples for disable on-pullup && pulldown:</b>
+          <pull-to-refresh
+            :disable-pullup="true"
+            :disable-pulldown="true">
+            <ul>
+              <li :key="index" v-for="(item, index) in items">
+                # item {{ index }}
+              </li>
+            </ul>
+          </pull-to-refresh> -->
     </div>
 </template>
 
-
 <script>
-
-    //http://www.ey99.com/api/mobile/ad.php
+    import PullToRefresh from './pull-to-refresh.vue'
 
     export default {
+        components: { PullToRefresh },
+
         data () {
             return {
-                items:[]
+                items: [2,3,4,5,1,2,3,4,5,2,3,4,5,1,2,3,4,5,2,3,4,5,2,3,4,5]
             }
         },
-        ready(){
-            this.loadData();
-        },
-        methods:{
 
-            loadData:function(){
-                var _this = this;
-                this.$http.jsonp('http://www.ey99.com/api/mobile/ad.php', []).then(function(response){
-                    //console.log(response);
-                    _this.items = response.body;
-                    // 响应成功回调
-                }, function(response){
-                    // 响应成功回调
-                });
+        methods: {
+            onPullup(finshCallback) {
+                console.log('onPullup');
+                setTimeout(()=>{
+                    console.log(this.items);
+                this.items=this.items.concat([6,6,6,6,6,6,6,6,6,6,6])
+                finshCallback();//finish refreshing state
+            },3000);
+            },
+
+            onPulldown(finshCallback) {
+                console.log('onPulldown');
+                setTimeout(()=>{
+                    console.log('finshCallback');
+                this.items=[9,9,9,9,9,9,9,9,9,9,9,9,9,9]
+                finshCallback();//finish refreshing state
+            },3000);
+            },
+            testClick(event){
+                window.alert('click '+event.target.innerHTML)
             }
-        }
+        },
     }
 </script>
 
-
 <style scoped>
-    .clear{
-        clear: both;
-    }
-    .white_box{
-        padding-top:.2rem;
-        width:6.4rem;
-        background-color:#FFFFFF;
-    }
-    .content1{
-        width:5.8rem;
-        margin: 0 auto;
-        padding:.2rem 0;
-        border-bottom:1px solid #e7e7e7;
+    body {
+        font-family: Helvetica, sans-serif;
     }
 
-    .content1-left{
-        width: 4rem;
-
-        float: left;
+    .page{
+        height: 400px;
+        background: #eee;
+        position: relative;
+        /* Prevent native touch events on Windows */
+        -ms-touch-action: none;
+        /* Prevent the callout on tap-hold and text selection */
+        -webkit-touch-callout: none;
+        user-select: none;
+        text-size-adjust: none;
     }
 
-    .content-title h2{
-        font-size: .3rem;
+    #app {
+        height: 100%;
+        max-width: 400px;
+        margin: 0 auto
+    }
+    ul{
+        list-style: none;
+        padding: 0px;
+        margin: 0px
+    }
+    ul>li:nth-child(even){
+        background-color: #fff
     }
 
-
-    .content-info ul{
-        margin-top:.2rem;
-        width:3.6rem ;
-        height:.3rem ;
-        line-height: .3rem;
+    /*scrollbar start*/
+    .iScrollVerticalScrollbar {
+        position: absolute;
+        z-index: 9999;
+        width: 2px;
+        bottom: 2px;
+        top: 2px;
+        right: 2px;
+        overflow: hidden;
     }
 
-    .content-info li {
-        float: left;
+    .iScrollVerticalScrollbar.iScrollBothScrollbars {
+        bottom: 18px;
     }
 
-
-
-    .content1-right{
-        width: 1.8rem;height: 1.2rem;
-        float:right;
-    }
-    .content1-right a img{
-        width:1.8rem;
-        height:1.2rem;
-    }
-    .click,.time{
-        color:#8a8a8a ;
-        font-size:.22rem ;
-
-        margin-right:.26rem;
-        display: inline-block;
+    .iScrollIndicator {
+        position: absolute;
+        background: #999;
+        border-radius: 6px;
+        opacity: .8;
     }
 
-    .content2{
-        width:5.8rem ;
-        padding:.2rem 0px;
-        margin: 0 auto;
-        border-bottom:1px solid #e7e7e7;
+    .iScrollVerticalScrollbar .iScrollIndicator {
+        width: 100%;
+        background: #999;
     }
-
-    .content-Title{
-        padding-bottom: .16rem;
-    }
-
-    .content2-img{
-        width: 5.8rem;height: 1.23rem;
-    }
-
-
-
-    .content2-img img{
-        display: block!important;
-        float: left!important;
-    }
-    .content2-img a img{
-        width:1.89rem;
-        height:1.23rem;
-    }
-    .c2-img{
-        margin-right: .06rem;
-    }
-    /*content3*/
-    .content3{
-        width:5.8rem ;
-        padding:.2rem 0px;
-        margin: 0 auto;
-        border-bottom:1px solid #e7e7e7;
-    }
-    .content3-img a img{
-        width:5.79rem;
-        height:2.84rem;
-    }
+    /*scrollbar end*/
 </style>

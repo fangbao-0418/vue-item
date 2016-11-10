@@ -1,105 +1,145 @@
 <template>
 <div class="white_box">
 
-        <div v-if="loading"  v-on:click="loadData">
-            <load></load>
-        </div>
-        <div id="pullDown"  v-else>
-
-
-            <pull-to-refresh
-                    @on-pullup='onPullup'
-                    @on-pulldown='onPulldown' class="page">
-                <index-main :s="s" :items="items"></index-main>
-            </pull-to-refresh>
-
-        </div>
+    <div v-if="loading"  v-on:click="loadData">
+        <load></load>
     </div>
+
+    <div id="pullDown"  v-else>
+        <pull-to-refresh
+                @on-pullup='onPullup'
+                @on-pulldown='onPulldown' class="page">
+            <inv-list :items="items"></inv-list>
+            <div v-show="noPage" class="noPage">
+                没有了
+            </div>
+        </pull-to-refresh>
+    </div>
+
 
 
     <div class="clear"></div>
 </div>
+
 </template>
 
 <script>
 
 
-    import indexMain from './indexMain.vue';
+    import invementList from './investmentList.vue';
     import loading from './loading.vue';
     import PullToRefresh from './pull-to-refresh.vue'
 
     export default {
         components: {
             "pull-to-refresh":PullToRefresh,
-            "index-main":indexMain,
+            "inv-list":invementList,
             "load":loading,
         },
 
         data () {
             return {
-                items: [],
+                items: null,
                 loading:true,
+                page:0,
+                pageTotal:0,
+                catid:4,
+                noPage:false,
             }
         },
-        ready(){
+        mounted(){
 
-            this.loadData();
-
-            $(document).ready(function(){
-
-                //
                 $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
-                console.log($(".page").height());
-            });
+
+            this.loadData(false);
 
         },
         methods: {
-            loadData:function(){
-
+            loadData:function(finshCallback){
+                this.page += 1;
                 var _this = this;
-                this.$http.jsonp('http://www.ey99.com/api/mobile/ad.php', []).then(function(response){
+                var url = "http://www.ey99.com/api/mobile/investment.php?";
+                url += "catid=" + this.catid + "&page=" + this.page;
+
+                //url 为接口地址
+                console.log(url);
+                this.$http.jsonp(url, []).then(function(response){
+                    console.log(response.body);
+
+                    _this.pageTotal = Math.ceil( response.body.count / 10 );
+
+                    console.log(_this.page);
 
 
-                    _this.items = response.body;
+                    if(finshCallback){
+                        finshCallback();
+                    }
+
+                    if(_this.page > _this.pageTotal){
+                        _this.noPage = true;
+
+                        setTimeout(()=>{
+                                    _this.noPage = false;
+                                },1000);
+                        return;
+                    }
+
+                    console.log(_this.pageTotal);
+                    if(_this.items === null){
+                        _this.items =  response.body;
+                    }else{
+                        for(var i=0; i< response.body.list.length; i++){
+
+                            _this.items.list.push( response.body.list[i] );
+
+                        }
+                    }
 
 
+                    //invementList.$emit('at');
+                    if(response.body.count > 0){
+                        setTimeout(
+                                function(){
 
-                    setTimeout(
-                            function(){
+                                    $(document).ready(function() {
+                                        $(".page").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
+                                    });
 
-                                $(document).ready(function() {
-                                    $(".page").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
-                                });
-                                _this.loading = false;
+                                    _this.loading = false;
 
-                            },1000
-                    )
+                                },500
+                        )
+
+
+                    }
+
                     // 响应成功回调
                 }, function(response){
                     // 响应成功回调
                 });
             },
             onPullup(finshCallback) {
-                console.log('onPullup');
-                setTimeout(()=>{
-                    console.log('finshCallback');
-                //this.items=this.items.concat([6,6,6,6,6,6,6,6,6,6,6])
-                finshCallback();//finish refreshing state
-            },2000);
+                this.loadData(finshCallback);
             },
 
             onPulldown(finshCallback) {
-                console.log('onPulldown');
-                setTimeout(()=>{
-                    console.log('finshCallback');
-                //this.items=[9,9,9,9,9,9,9,9,9,9,9,9,9,9]
-                finshCallback();//finish refreshing state
-            },2000);
+                //finshCallback  调整位置
+                this.noPage = false;
+                this.page = 0;
+                this.loadData(finshCallback);
             }
         },
     }
 </script>
-
+<style scoped>
+    .noPage{
+        font-size: .2rem;
+        text-align: center;
+        height: .50rem;
+        line-height: .50rem;
+        color: #888;
+    }
+</style>
 <style>
     .clear{
         clear: both;
@@ -107,7 +147,7 @@
     .white_box{
         width:6.4rem;
         background-color:#FFFFFF;
-
+        height: auto;
         overflow: hidden;
     }
     .ad_content{

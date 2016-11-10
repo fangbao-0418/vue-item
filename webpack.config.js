@@ -121,8 +121,8 @@ module.exports = {
         extensions: ['', '.js', '.vue'],
         //别名
         alias: {
-            'vue': 'vue/dist/vue.js',
-
+           //解决vue 2.0 template or render function not defined.
+           'vue': 'vue/dist/vue.js',
         }
     },
 

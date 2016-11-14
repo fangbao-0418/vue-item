@@ -1,63 +1,86 @@
 <template>
-    <div id="app">
-        <pull-to-refresh
-                @on-pullup='onPullup'
-                @on-pulldown='onPulldown' class="page">
-            <ul @click="testClick($event)">
-                <li :key="index" v-for="(item, index) in items">
-                    # item {{ index }}
-                </li>
-            </ul>
-        </pull-to-refresh>
+	<div>
+		    <!-- header -->
+	    <div class="header">
+	       <a><img src="../imgs/header.jpg"/></a>
+	       <div class="header-logo">
+	         <a><img src="../imgs/tx.jpg"/></a>
+	       </div>
+	       <div class="header-title">
+	         <a href="#"  target="">当代药物市场</a>
+	       </div>
+	    </div>
+	    <!--/header -->
+	    <!-- content -->
+	    <div class="content">
+	    <!-- nav -->
+	      <div class="nav-ifo">
+			<div class="nav">
+			  <div class="left nav-box">
+			     <div class="nav-tu left-nav-tu">
+                   <a href="#"><img src="../imgs/nav1.gif"/></a>
+			     </div>
+			     <div class="nav-ti left-nav-tu">
+			     	<a href="#">收藏</a>
+			     </div>
+			  </div>
+			  <div class="mide nav-box">
+			     <div class=nav-tu>
+			       <a href="#"><img src="../imgs/nav2.gif"/></a></div>
+			     <div class="nav-ti">
+                    <a href="#">夜间</a>
+			     </div>
+			  </div>
+			  <div class="right nav-box">
+			     <div class=nav-tu>
+                      <a href="#"><img src="../imgs/nav3.gif"/></a>
+			     </div>
+			     <div class="nav-ti">
+                     <a href="#">设置</a>
+			     </div>
+			  </div>
+			</div>
+	      </div>		
+	     <!-- /nav -->
+	     <!-- detal-->
+	     <div class="detal">
+            <div class="jf detal-box">
+                <a href="">我的积分</a>
+                <div class="jt">
+                   <a href="#"><img src="../imgs/jt.gif"/></a>
+                </div>
+            </div>
+	        <div class="vip detal-box">
+                <a href="">升级VIP</a>
+	        </div>
+	        <div class="zh detal-box">
+                <a href=""><span class="zh">退出账户</span></a>
+	        </div>
+	     </div>
+	     <!-- /detal -->
+        </div>
 
-        <!--   <b>examples for disable on-pullup && pulldown:</b>
-          <pull-to-refresh
-            :disable-pullup="true"
-            :disable-pulldown="true">
-            <ul>
-              <li :key="index" v-for="(item, index) in items">
-                # item {{ index }}
-              </li>
-            </ul>
-          </pull-to-refresh> -->
-    </div>
+
+	    <my-footer></my-footer>
+的
+	</div>
+
+    
+
+
+  
+    
+
+    
 </template>
-
 <script>
-    import PullToRefresh from './pull-to-refresh.vue'
+	import footer from './footer.vue';
+	export default {
+		components:{
+			'my-footer':footer
+		}
+	}
 
-    export default {
-        components: { PullToRefresh },
-
-        data () {
-            return {
-                items: [2,3,4,5,1,2,3,4,5,2,3,4,5,1,2,3,4,5,2,3,4,5,2,3,4,5]
-            }
-        },
-
-        methods: {
-            onPullup(finshCallback) {
-                console.log('onPullup');
-                setTimeout(()=>{
-                    console.log(this.items);
-                this.items=this.items.concat([6,6,6,6,6,6,6,6,6,6,6])
-                finshCallback();//finish refreshing state
-            },3000);
-            },
-
-            onPulldown(finshCallback) {
-                console.log('onPulldown');
-                setTimeout(()=>{
-                    console.log('finshCallback');
-                this.items=[9,9,9,9,9,9,9,9,9,9,9,9,9,9]
-                finshCallback();//finish refreshing state
-            },3000);
-            },
-            testClick(event){
-                window.alert('click '+event.target.innerHTML)
-            }
-        },
-    }
 </script>
 
 <style scoped>
@@ -65,57 +88,152 @@
         font-family: Helvetica, sans-serif;
     }
 
-    .page{
-        height: 400px;
-        background: #eee;
-        position: relative;
-        /* Prevent native touch events on Windows */
-        -ms-touch-action: none;
-        /* Prevent the callout on tap-hold and text selection */
-        -webkit-touch-callout: none;
-        user-select: none;
-        text-size-adjust: none;
-    }
+ /*header*/
 
-    #app {
-        height: 100%;
-        max-width: 400px;
-        margin: 0 auto
-    }
-    ul{
-        list-style: none;
-        padding: 0px;
-        margin: 0px
-    }
-    ul>li:nth-child(even){
-        background-color: #fff
-    }
+.header{
+	width:6.4rem;
+	height:3.28rem;
+	background:red;
+	position:relative;
+}
 
-    /*scrollbar start*/
-    .iScrollVerticalScrollbar {
-        position: absolute;
-        z-index: 9999;
-        width: 2px;
-        bottom: 2px;
-        top: 2px;
-        right: 2px;
-        overflow: hidden;
-    }
+.header img{
+	width: 6.4rem;
+}
 
-    .iScrollVerticalScrollbar.iScrollBothScrollbars {
-        bottom: 18px;
-    }
+.header-logo{
+	position: absolute;
+	top:.6rem;
+	left:2.4rem;
+	border-radius:50% 50%;
+	width: 1.45rem;
+	height:1.45rem;
+	background:#fff;
+}
 
-    .iScrollIndicator {
-        position: absolute;
-        background: #999;
-        border-radius: 6px;
-        opacity: .8;
-    }
+.header-logo img{
+	border-radius:50% 50%;
+    margin-left:.05rem;
+    margin-top:.05rem ;
+    width: 1.35rem;
+    height: 1.35rem;	
+}
+   
+.header-title{
+   position: absolute;
+   bottom: .72rem;
+   left:2.4rem;
+   font-size: .25rem;
+  
+}   
 
-    .iScrollVerticalScrollbar .iScrollIndicator {
-        width: 100%;
-        background: #999;
-    }
-    /*scrollbar end*/
+.header-title a{
+  color: #fff;
+} 
+
+
+
+/*content*/
+
+.content{
+	width: 6.4rem;
+	height: 8rem;
+    margin: 0 auto;
+	background:#fff;
+}
+/*nav*/
+
+.nav-ifo{
+	width: 6.4rem;
+	height:1.25rem ;
+	background:#fff;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.nav{
+	width:5.8rem; 
+	height:1.25rem;
+	margin: 0 auto;
+	padding: 0 0.3rem;
+}
+
+.nav-box{
+	width:1.8rem;
+	height: 1.24rem;
+	float: left;
+	position: relative;
+}
+
+
+.mide{
+	width:2.1rem ;
+	height:1.24rem;
+	border-left: 1px solid #e8e8e8;
+	border-right: 1px solid #e8e8e8;
+}
+
+
+.nav-box img{
+	width:.46rem;
+	height:.43rem;
+}
+
+
+.left,.mide,.right{
+	position: relative;
+}
+
+.nav-tu{
+	position: absolute;
+	left:40%;
+	top: .19rem;
+}
+
+
+.nav-ti{
+	position: absolute;
+	bottom: .17rem;
+	left: 40%;
+}
+
+
+.left-nav-tu{
+	position: absolute;
+	left:28%!important;
+}
+
+.nav-ti a{
+	font-size: 0.22rem;
+
+}
+
+/*detal*/
+.detal{
+	width:5.8rem ;
+	height: 2.58rem;
+	padding-top:.3rem;
+	margin: 0 auto;
+}
+
+
+.detal-box{
+	width:5.8rem; 
+	height: .85rem;
+	border-bottom: 1px solid #e8e8e8;
+	line-height: .85rem;
+}
+
+.detal-box a{
+	font-size:.3rem; 
+    float:left;
+}
+
+
+.zh{
+	color: #ed1b23;
+}
+
+.jt{
+	float: right;
+}
 </style>

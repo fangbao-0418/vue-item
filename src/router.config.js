@@ -23,11 +23,12 @@ export default {
 		{	path:"/",component:Common,
 			children: [
 				{ path: 'home', component: Home },
-				{ path: 'video', component: Video },
-				{ path: 'my', component: My },
+			
 			],
 		},
 		{ path: '/',  redirect: '/home'},
+		{ path: '/video', component: Video },
+		{ path: '/my', component: My },
 		{ name : 'investmentShow', path: '/investment/show', component: investmentShow },
 		{ path: '*', redirect: 'home' }
 

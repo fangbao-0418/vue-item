@@ -11,8 +11,8 @@ require("./js/function.js");
 require("./js/reset.js");					  //全局加载重置js
 require('./css/reset.css');					  //全局加载重置css
 require('./css/common.css');					  //全局css样式
-
-Vue.use(VueRouter)
+//Vue.use('./server.js');
+Vue.use(VueRouter);
 Vue.use(VueResource);   //加载Resource
 
 Vue.use(VueLazyload, {

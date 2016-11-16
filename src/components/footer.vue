@@ -81,12 +81,7 @@
         display: inline-block;
         background-size: .40rem .40rem;
     }
-    .footer .home span{
-        display: inline-block;
-        width: 1rem;
-        font-size: .22rem;
-        color: #4c4c4c;
-    }
+
 
     .footer .video{
         margin-left:1.2rem;
@@ -114,12 +109,7 @@
         background-position: center;
         background-size: .38rem .38rem;
     }
-    .footer .video span{
-        display: inline-block;
-        width: 1rem;
-        font-size: .22rem;
-        color: #4c4c4c;
-    }
+
 
     .footer .my{
         margin-left: 1.2rem;
@@ -138,21 +128,21 @@
         background-size: .40rem .40rem;
     }
     .footer .my .cur{
-
         background: url("../image/my_icon_on.png");
         width:.40rem;
         height: .40rem;
         display: inline-block;
         background-size: .40rem .40rem;
     }
-     .footer .my span{
-         display: inline-block;
+
+     .footer span{
+         display: block;
          width: 1rem;
          font-size: .22rem;
          color: #4c4c4c;
      }
     .footer .on span{
-        display: inline-block;
+        display: block;
         width: 1rem;
         font-size: .22rem;
         color: #ed1b23;

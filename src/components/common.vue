@@ -1,12 +1,13 @@
 
 
 <template>
-    <div>
-        <div style="padding-top:1.44rem;padding-bottom:.80rem;">
+
+        <div style="height:100%">
             <router-view></router-view>
+            <my-footer></my-footer>
         </div>
-        <my-footer></my-footer>
-    </div>
+
+
 
 </template>
 

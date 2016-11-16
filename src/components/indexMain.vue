@@ -1,13 +1,9 @@
 
-<!--conten1-->
 <template>
-    <!-- content1-->
+
     <div>
         <div class="ad_content"  v-for="item in items.list">
-            <!--代码区域 start -->
-            {{{ item.code }}}
-            <!--代码区域 end -->
-
+            <div v-html="item.code"></div>
             <div class="content-info">
                 <ul>
                     <li><span class="Drugs">药品</span></li>
@@ -28,16 +24,14 @@
     //http://www.ey99.com/api/mobile/ad.php
 
     export default {
-        props: ['items','scroll_height'],
+        props: ['items'],
         data () {
             return {
-                h:"",
+
             }
         },
         mounted(){
-            //ios 加高
-            // $(".scroller").height( $(".scroller")[0].clientHeight + 50);
-            $(".scroller").height( $(".scroller")[0].clientHeight);
+
         },
         methods:{
 

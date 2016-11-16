@@ -1,21 +1,24 @@
 <template>
+
     <div class="white_box">
 
-        <div v-if="loading"  v-on:click="loadData">
-            <load></load>
-        </div>
+
+         <load  v-if="loading"></load>
+
         <div id="pullDown"  v-else>
             <pull-to-refresh
                     @on-pullup='onPullup'
                     @on-pulldown='onPulldown' class="page">
-                <index-main :s="s" :items="items"></index-main>
+                <index-main  :items="items"></index-main>
+                <div v-show="noPage" class="noPage">
+                    没有了
+                </div>
             </pull-to-refresh>
 
         </div>
-    </div>
 
 
-    <div class="clear"></div>
+        <div class="clear"></div>
     </div>
 </template>
 
@@ -37,72 +40,124 @@
             return {
                 items: [],
                 loading:true,
+                page:0,
+                pageTotal:0,
+                noPage:false,
             }
         },
         mounted(){
 
-            this.loadData();
-
-            $(document).ready(function(){
-
-
-                $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
-
+            var _this = this;
+            $(document).ready(function() {
+               $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
             });
-
+            this.loadData(false);
         },
         methods: {
-            loadData:function(){
-
+            loadData:function(finshCallback){
+                this.page += 1;
                 var _this = this;
-                this.$http.jsonp('http://www.ey99.com/api/mobile/ad.php', []).then(function(response){
+                var url = "http://www.ey99.com/api/mobile/ad.php";
+                //url += "page=" + this.page;
+                var param = {"params":{"page":this.page,"a":"ad"}};
+
+                this.$http.jsonp(url, param).then(function(response){
 
 
-                    _this.items = response.body;
-                    setTimeout(
-                            function(){
+                    _this.pageTotal = Math.ceil( response.body.count / 10 );
 
-                                $(document).ready(function() {
-                                    $(".page").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
-                                });
-                                _this.loading = false;
 
-                            },1000
-                    )
-                    // 响应成功回调
+
+
+                    //如果超过总页数 返回没有了
+                    if(_this.page > _this.pageTotal){
+
+                        if(finshCallback){
+                            finshCallback();
+                            _this.noPage = true;
+                        }
+                        setTimeout(()=>{
+                            _this.noPage = false;
+                    },2000);
+
+                        return;
+                    }
+
+
+
+                    if(finshCallback){
+                        finshCallback();
+                    }
+
+
+                    if(_this.page === 1){
+                        _this.items =  response.body;
+                    }else{
+                        for(var i=0; i< response.body.list.length; i++){
+
+                            _this.items.list.push( response.body.list[i] );
+
+                        }
+                    }
+
+
+                    if(response.body.count > 0){
+                        setTimeout(
+                                function(){
+
+                                    $(document).ready(function() {
+                                        $(".page").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
+                                    });
+
+                                   _this.loading = false;
+
+                                },500
+                        )
+
+
+                    }
+
+
                 }, function(response){
                     // 响应成功回调
                 });
             },
             onPullup(finshCallback) {
-                console.log('onPullup');
-                setTimeout(()=>{
-                    console.log('finshCallback');
-                //this.items=this.items.concat([6,6,6,6,6,6,6,6,6,6,6])
-                finshCallback();//finish refreshing state
-            },2000);
+                //console.log("pullup");
+                this.noPage = false;
+                this.loadData(finshCallback);
             },
 
             onPulldown(finshCallback) {
-                console.log('onPulldown');
-                setTimeout(()=>{
-                    console.log('finshCallback');
-                //this.items=[9,9,9,9,9,9,9,9,9,9,9,9,9,9]
-                finshCallback();//finish refreshing state
-            },2000);
+                //finshCallback  调整位置
+                //console.log("pulldown");
+                this.noPage = false;
+                this.page = 0;
+                this.loadData(finshCallback);
             }
         },
     }
 </script>
-
+<style scoped>
+    .noPage{
+        font-size: .2rem;
+        text-align: center;
+        height: .50rem;
+        line-height: .50rem;
+        color: #888;
+    }
+</style>
 <style>
     .clear{
         clear: both;
     }
+    #pullDown{
+        background: #FFFFFF;
+    }
     .white_box{
         width:6.4rem;
-        background-color:#FFFFFF;
-
+        background-color:transparent;
+        flex: 1;
         overflow: hidden;
     }
     .ad_content{

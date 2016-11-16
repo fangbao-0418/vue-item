@@ -1,9 +1,6 @@
 <template>
 <div class="white_box">
-
-    <div v-if="loading"  v-on:click="loadData">
-        <load></load>
-    </div>
+    <load  v-if="loading"  ></load>
 
     <div id="pullDown"  v-else>
         <pull-to-refresh
@@ -15,8 +12,6 @@
             </div>
         </pull-to-refresh>
     </div>
-
-
 
     <div class="clear"></div>
 </div>
@@ -36,14 +31,14 @@
             "inv-list":invementList,
             "load":loading,
         },
-
+        props:["catid"],
         data () {
             return {
                 items: null,
                 loading:true,
                 page:0,
                 pageTotal:0,
-                catid:4,
+
                 noPage:false,
             }
         },
@@ -60,32 +55,31 @@
                 var _this = this;
                 var url = "http://www.ey99.com/api/mobile/investment.php?";
                 url += "catid=" + this.catid + "&page=" + this.page;
-
-                //url 为接口地址
                 console.log(url);
+                //url 为接口地址
+
                 this.$http.jsonp(url, []).then(function(response){
-                    console.log(response.body);
+
 
                     _this.pageTotal = Math.ceil( response.body.count / 10 );
 
-                    console.log(_this.page);
 
 
                     if(finshCallback){
                         finshCallback();
                     }
 
+                    //如果超过总页数 返回没有了
                     if(_this.page > _this.pageTotal){
                         _this.noPage = true;
-
                         setTimeout(()=>{
                                     _this.noPage = false;
                                 },1000);
                         return;
                     }
 
-                    console.log(_this.pageTotal);
-                    if(_this.items === null){
+
+                    if(_this.page === 1){
                         _this.items =  response.body;
                     }else{
                         for(var i=0; i< response.body.list.length; i++){
@@ -96,7 +90,6 @@
                     }
 
 
-                    //invementList.$emit('at');
                     if(response.body.count > 0){
                         setTimeout(
                                 function(){

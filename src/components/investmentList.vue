@@ -7,9 +7,9 @@
         <router-link :to="{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}"  append>
             <div class="item_left">
                 <div class="item_tit">
-                    {{item.title}}
+                    {{item.title | dSubstr(20) }}
                 </div>
-                <span class="item_cat">{{item.catname}}</span>
+
                 <span class="item_hit">{{item.hits}}点击</span>
                 <span class="item_date">{{item.editdate}}</span>
             </div>
@@ -38,6 +38,11 @@
         },
         methods:{
 
+        },
+        filters:{
+            dSubstr(title,length){
+                return title.substr(0,length);
+            }
         },
         events: {
 

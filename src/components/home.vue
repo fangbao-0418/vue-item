@@ -1,10 +1,10 @@
 
 
 <template>
-    <div>
+    <div class="content">
         <my-header ></my-header>
 
-        <component :is="currentView" keep-alive>
+        <component :is="currentView" :catid="catid" keep-alive>
             <!-- 组件在 vm.currentview 变化时改变 -->
         </component>
     </div>
@@ -14,29 +14,40 @@
     import myHeader from './header.vue';
     import indexMain from './indexMain.vue';
     import drug from './drug.vue';
+
     import recommend from './recommend.vue';
+
+
+
     export default {
         data () {
             return {
                 msg: "首页",
-                currentView:'drug',
+                currentView:'recommend',
+                catid:4
             }
         },
-        events: {
-            'child-type': function (type) {
-                // 事件回调内的 `this` 自动绑定到注册它的实例上
-                //this.type = type;
-                this.currentView = type;
-            }
+        mounted(){
+
         },
+        //["recommend","drug","zyc","bjsp","ylqx","mrhf","jsyp","zysb","yly"];
         components: {
             'my-header':myHeader,
             'index-main':indexMain,
             'recommend':recommend,
             'drug':drug,
+            'zyc':drug,
+            'bjsp':drug,
+            'ylqx':drug,
+            'mrhf':drug,
+            'jsyp':drug,
+            'zysb':drug,
+            'yly':drug
         }
     }
 </script>
 <style scoped>
-
+    .content{
+        height:100%;
+    }
 </style>

@@ -1,13 +1,12 @@
 <template>
 	<div>
-		    <!-- header -->
+		<!-- header -->
 	    <div class="header">
-	       <a><img src="../imgs/header.jpg"/></a>
 	       <div class="header-logo">
 	         <a><img src="../imgs/tx.jpg"/></a>
 	       </div>
 	       <div class="header-title">
-	         <a href="#"  target="">当代药物市场</a>
+	        当代药物市场
 	       </div>
 	    </div>
 	    <!--/header -->
@@ -62,7 +61,7 @@
 
 
 	    <my-footer></my-footer>
-的
+
 	</div>
 
     
@@ -84,16 +83,11 @@
 </script>
 
 <style scoped>
-    body {
-        font-family: Helvetica, sans-serif;
-    }
-
- /*header*/
 
 .header{
+	background: url("../imgs/header.jpg");
 	width:6.4rem;
 	height:3.28rem;
-	background:red;
 	position:relative;
 }
 
@@ -127,7 +121,7 @@
   
 }   
 
-.header-title a{
+.header-title {
   color: #fff;
 } 
 
@@ -137,7 +131,7 @@
 
 .content{
 	width: 6.4rem;
-	height: 8rem;
+
     margin: 0 auto;
 	background:#fff;
 }

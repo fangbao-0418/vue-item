@@ -1,12 +1,9 @@
-/**
- * Created by Darren on 16/09/11.
- *
- * Des: 路由模块
- *
- */
+
 import Common from './components/common.vue';
 
-import Home from './components/home.vue';
+//import Home from './components/home.vue';
+const Home = resolve => require(['./components/home.vue'],resolve);
+
 import Video from './components/video.vue';
 import My from './components/my.vue';
 import Drug from './components/drug.vue';

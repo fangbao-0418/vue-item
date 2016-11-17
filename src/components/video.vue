@@ -54,11 +54,12 @@
              </ul>
          </div>
      </div><!-- /content3-->
+     <my-footer></my-footer>
  </div>
 </template>
 
 <script>
-
+    import footer from './footer.vue';
     export default {
         data () {
             return {
@@ -66,7 +67,7 @@
             }
         },
         components: {
-
+            'my-footer':footer
         }
     }
 </script>

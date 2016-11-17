@@ -1,16 +1,43 @@
 <template>
-    <div class="spinner">
-        <div class="bounce1"></div>
-        <div class="bounce2"></div>
-        <div class="bounce3"></div>
+    <!--<div class="spinner">-->
+        <!--<div class="bounce1"></div>-->
+        <!--<div class="bounce2"></div>-->
+        <!--<div class="bounce3"></div>-->
+    <!--</div>-->
+    <div class="box">
+        <i></i>
     </div>
 </template>
+<script>
+    export default {
+       
+    }
+</script>
 <style scoped>
-    .spinner {
-        margin :0px auto;
-        padding:50% 0px;
-        width: 150px;
+    .box{
+        width:6.4rem;
         text-align: center;
+        display: -webkit-flex; /* Safari */
+        display: flex;
+        background-color:transparent;
+        height:100%;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .box i{
+       display: inline-block;
+        align-self: center;
+        background: url("../assets/bg-load.gif") no-repeat;
+        background-size: 1.2rem 1.2rem;
+        width:1.2rem;
+        height:1.2rem;
+        display: inline-block;
+        background-color:transparent;
+    }
+    .spinner {
+        width: 6.4rem;
+        text-align: center;
+
     }
 
     .spinner > div {

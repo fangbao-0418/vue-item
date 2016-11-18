@@ -13,18 +13,26 @@
 <script>
     import myHeader from './header.vue';
     import indexMain from './indexMain.vue';
-    import drug from './drug.vue';
+    import investment from './investment.vue';
 
     import recommend from './recommend.vue';
-
+    import health from './health.vue';
 
 
     export default {
         data () {
             return {
                 msg: "首页",
-                currentView:'recommend',
-                catid:4
+            }
+        },
+        computed:{
+            catid(){
+                var catid = this.$route.query.id ? this.$route.query.id : 4;
+                return catid;
+            },
+            currentView(){
+                var type = this.$route.query.type ? this.$route.query.type : 'recommend';
+                return type;
             }
         },
         mounted(){
@@ -35,14 +43,15 @@
             'my-header':myHeader,
             'index-main':indexMain,
             'recommend':recommend,
-            'drug':drug,
-            'zyc':drug,
-            'bjsp':drug,
-            'ylqx':drug,
-            'mrhf':drug,
-            'jsyp':drug,
-            'zysb':drug,
-            'yly':drug
+            'drug':investment,
+            'zyc':investment,
+            'bjsp':investment,
+            'ylqx':investment,
+            'mrhf':investment,
+            'jsyp':investment,
+            'zysb':investment,
+            'yly':investment,
+            'health':health,
         }
     }
 </script>

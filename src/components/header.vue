@@ -13,7 +13,6 @@
             <div id="nav-smartSetup">
                 <div id="scroller">
                     <ul>
-                        <li v-on:click="shared"  >分享</li>
                         <li v-on:click="selectType('recommend')" :class="{'cur':isCur[0]}" >推荐</li>
                         <li v-on:click="selectType('drug',4)" :class="{'cur':isCur[1]}">药品 </li>
                         <li v-on:click="selectType('zyc',11)" :class="{'cur':isCur[2]}">中药材</li>
@@ -23,13 +22,14 @@
                         <li  v-on:click="selectType('jsyp',18)" :class="{'cur':isCur[6]}">计生用品 </li>
                         <li  v-on:click="selectType('zysb',15)" :class="{'cur':isCur[7]}">制药设备 </li>
                         <li v-on:click="selectType('yly',7)" :class="{'cur':isCur[8]}">原料药 </li>
+                        <li v-on:click="selectType('health')" :class="{'cur':isCur[9]}">健康 </li>
                     </ul>
                 </div>
             </div>
             <i class="line_a"></i>
             <i class="plus_a"></i>
         </div>
-        <shared-modal :show.sync="isOpen"></shared-modal>
+
     </div>
 </template>
 
@@ -38,21 +38,24 @@
 
     //滑动导航
     var IScroll = require("../js/iscroll.js");
-    import shared from './shared.vue';
+
     export default {
         data () {
             return {
-                type:"recommend",
-                isOpen:false,
+
             }
         },
         components:{
-            'shared-modal':shared,
+
         },
         computed: {
+            type(){
+                var type = this.$route.query.type ? this.$route.query.type : "recommend";
+                return type;
+            },
             isCur:function(){
                 let cur = [],i;
-                let arr = ["recommend","drug","zyc","bjsp","ylqx","mrhf","jsyp","zysb","yly"];
+                let arr = ["recommend","drug","zyc","bjsp","ylqx","mrhf","jsyp","zysb","yly","health"];
                 for(i in arr){
                     if(arr[i] == this.type){
                         cur[i] = true;
@@ -68,10 +71,13 @@
                 this.type = type;
                 if(type == 'recommend'){
                     this.$parent.currentView = 'recommend' ;
+                }else if(type == 'health'){
+                    this.$parent.currentView = 'health' ;
                 }else{
                     this.$parent.currentView = type ;
                     this.$parent.catid = catid;
                 }
+                this.$router.push({"path":"/home",query: {"type":type,"id":catid}})
             },
             shared(){
                 this.isOpen = true;
@@ -83,19 +89,40 @@
 
                 var myScroll;
                 //iscroll click设为true 不然无法点击
-                function loaded() {
-                    myScroll = new IScroll('#nav-smartSetup', {scrollX: true, scrollY: false, mouseWheel: true ,click: true});
+                function loaded(startX) {
+                    myScroll = new IScroll('#nav-smartSetup', {startX:startX,scrollX: true, scrollY: false, mouseWheel: true ,click: true});
                 }
                 var w = 0;
-
+                var currPosition = 0;
                 $("#scroller ul li").map(function(){
                     w += $(this)[0].clientWidth;
                 })
+
+                for(var i=0; i<$("#scroller ul li").length; i++){
+
+                    if($("#scroller ul li").eq(i)[0].className == "cur"){
+                        break;
+                    }
+                    currPosition += $("#scroller ul li").eq(i).width() ;
+                }
+
+
+
                 $("#scroller").width(w);
+                //初始化位置
+                loaded(-currPosition);
 
-                loaded();
-
+                //$("#scroller").css({"transition-duration": "1s",transform: "translate(-"+ 20 +"px, 0px) translateZ(0px)"});
             })
+
+        },
+        beforeUpdate(){
+            console.log("before");
+
+        },
+        updated(){
+
+
 
         }
 

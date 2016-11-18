@@ -6,7 +6,7 @@ const Home = resolve => require(['./components/home.vue'],resolve);
 
 import Video from './components/video.vue';
 import My from './components/my.vue';
-import Drug from './components/drug.vue';
+import investment from './components/investment.vue';
 import investmentShow from './components/investmentShow.vue';
 // 定义路由规则
 // 每条路由规则应该映射到一个组件。这里的“组件”可以是一个使用 Vue.extend
@@ -26,6 +26,7 @@ export default {
 		{ path: '/',  redirect: '/home'},
 		{ path: '/video', component: Video },
 		{ path: '/my', component: My },
+		{ path: '/investment', component: investment},
 		{ name : 'investmentShow', path: '/investment/show', component: investmentShow },
 		{ path: '*', redirect: 'home' }
 

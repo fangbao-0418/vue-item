@@ -39,6 +39,7 @@
             },
             goBack(){
                 if(this.path){
+                    console.log(this.path);
                     this.$router.push(this.path);
                 }else{
                     this.$router.go(-1);

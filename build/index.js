@@ -155,7 +155,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
-	 * Vue.js v2.0.5
+	 * Vue.js v2.0.8
 	 * (c) 2014-2016 Evan You
 	 * Released under the MIT License.
 	 */
@@ -1268,9 +1268,11 @@
 	    },
 	    set: function reactiveSetter (newVal) {
 	      var value = getter ? getter.call(obj) : val;
-	      if (newVal === value) {
+	      /* eslint-disable no-self-compare */
+	      if (newVal === value || (newVal !== newVal && value !== value)) {
 	        return
 	      }
+	      /* eslint-enable no-self-compare */
 	      if ("development" !== 'production' && customSetter) {
 	        customSetter();
 	      }
@@ -1344,7 +1346,7 @@
 	 * we cannot intercept array element access like property getters.
 	 */
 	function dependArray (value) {
-	  for (var e = void 0, i = 0, l = value.length; i < l; i++) {
+	  for (var e = (void 0), i = 0, l = value.length; i < l; i++) {
 	    e = value[i];
 	    e && e.__ob__ && e.__ob__.dep.depend();
 	    if (Array.isArray(e)) {
@@ -1364,6 +1366,8 @@
 	  initWatch(vm);
 	}
 
+	var isReservedProp = makeMap('key,ref,slot');
+
 	function initProps (vm) {
 	  var props = vm.$options.props;
 	  if (props) {
@@ -1376,6 +1380,12 @@
 	      var key = keys[i];
 	      /* istanbul ignore else */
 	      {
+	        if (isReservedProp(key)) {
+	          warn(
+	            ("\"" + key + "\" is a reserved attribute and cannot be used as component prop."),
+	            vm
+	          );
+	        }
 	        defineReactive$$1(vm, key, validateProp(key, props, propsData, vm), function () {
 	          if (vm.$parent && !observerState.isSettingProps) {
 	            warn(
@@ -1477,14 +1487,10 @@
 	  if (methods) {
 	    for (var key in methods) {
 	      vm[key] = methods[key] == null ? noop : bind$1(methods[key], vm);
-	      {
-	        methods[key] == null && warn(
+	      if ("development" !== 'production' && methods[key] == null) {
+	        warn(
 	          "method \"" + key + "\" has an undefined value in the component definition. " +
 	          "Did you reference the function correctly?",
-	          vm
-	        );
-	        hasOwn(Vue$2.prototype, key) && warn(
-	          ("Avoid overriding Vue's internal method \"" + key + "\"."),
 	          vm
 	        );
 	      }
@@ -1758,7 +1764,9 @@
 	        }
 	      } else if (c instanceof VNode) {
 	        if (c.text && last && last.text) {
-	          last.text += c.text;
+	          if (!last.isCloned) {
+	            last.text += c.text;
+	          }
 	        } else {
 	          // inherit parent namespace
 	          if (ns) {
@@ -1837,7 +1845,7 @@
 	      vm.$options.render = emptyVNode;
 	      {
 	        /* istanbul ignore if */
-	        if (vm.$options.template) {
+	        if (vm.$options.template && vm.$options.template.charAt(0) !== '#') {
 	          warn(
 	            'You are using the runtime-only build of Vue where the template ' +
 	            'option is not available. Either pre-compile the templates into ' +
@@ -2012,8 +2020,9 @@
 	    return
 	  }
 
+	  var baseCtor = context.$options._base;
 	  if (isObject(Ctor)) {
-	    Ctor = Vue$2.extend(Ctor);
+	    Ctor = baseCtor.extend(Ctor);
 	  }
 
 	  if (typeof Ctor !== 'function') {
@@ -2023,16 +2032,12 @@
 	    return
 	  }
 
-	  // resolve constructor options in case global mixins are applied after
-	  // component constructor creation
-	  resolveConstructorOptions(Ctor);
-
 	  // async component
 	  if (!Ctor.cid) {
 	    if (Ctor.resolved) {
 	      Ctor = Ctor.resolved;
 	    } else {
-	      Ctor = resolveAsyncComponent(Ctor, function () {
+	      Ctor = resolveAsyncComponent(Ctor, baseCtor, function () {
 	        // it's ok to queue this on every render because
 	        // $forceUpdate is buffered by the scheduler.
 	        context.$forceUpdate();
@@ -2044,6 +2049,10 @@
 	      }
 	    }
 	  }
+
+	  // resolve constructor options in case global mixins are applied after
+	  // component constructor creation
+	  resolveConstructorOptions(Ctor);
 
 	  data = data || {};
 
@@ -2143,6 +2152,10 @@
 	  if (!vnode.child || vnode.child._isDestroyed) {
 	    var child = vnode.child = createComponentInstanceForVnode(vnode, activeInstance);
 	    child.$mount(hydrating ? vnode.elm : undefined, hydrating);
+	  } else if (vnode.data.keepAlive) {
+	    // kept-alive components, treat as a patch
+	    var mountedNode = vnode; // work around flow
+	    prepatch(mountedNode, mountedNode);
 	  }
 	}
 
@@ -2184,6 +2197,7 @@
 
 	function resolveAsyncComponent (
 	  factory,
+	  baseCtor,
 	  cb
 	) {
 	  if (factory.requested) {
@@ -2196,7 +2210,7 @@
 
 	    var resolve = function (res) {
 	      if (isObject(res)) {
-	        res = Vue$2.extend(res);
+	        res = baseCtor.extend(res);
 	      }
 	      // cache resolved
 	      factory.resolved = res;
@@ -2553,6 +2567,7 @@
 	  // apply v-bind object
 	  Vue.prototype._b = function bindProps (
 	    data,
+	    tag,
 	    value,
 	    asProp
 	  ) {
@@ -2570,7 +2585,7 @@
 	          if (key === 'class' || key === 'style') {
 	            data[key] = value[key];
 	          } else {
-	            var hash = asProp || config.mustUseProp(key)
+	            var hash = asProp || config.mustUseProp(tag, key)
 	              ? data.domProps || (data.domProps = {})
 	              : data.attrs || (data.attrs = {});
 	            hash[key] = value[key];
@@ -2774,19 +2789,19 @@
 	  return options
 	}
 
-	function Vue$2 (options) {
+	function Vue$3 (options) {
 	  if ("development" !== 'production' &&
-	    !(this instanceof Vue$2)) {
+	    !(this instanceof Vue$3)) {
 	    warn('Vue is a constructor and should be called with the `new` keyword');
 	  }
 	  this._init(options);
 	}
 
-	initMixin(Vue$2);
-	stateMixin(Vue$2);
-	eventsMixin(Vue$2);
-	lifecycleMixin(Vue$2);
-	renderMixin(Vue$2);
+	initMixin(Vue$3);
+	stateMixin(Vue$3);
+	eventsMixin(Vue$3);
+	lifecycleMixin(Vue$3);
+	renderMixin(Vue$3);
 
 	var warn = noop;
 	var formatComponentName;
@@ -2851,13 +2866,16 @@
 	 * Helper that recursively merges two data objects together.
 	 */
 	function mergeData (to, from) {
+	  if (!from) { return to }
 	  var key, toVal, fromVal;
-	  for (key in from) {
+	  var keys = Object.keys(from);
+	  for (var i = 0; i < keys.length; i++) {
+	    key = keys[i];
 	    toVal = to[key];
 	    fromVal = from[key];
 	    if (!hasOwn(to, key)) {
 	      set(to, key, fromVal);
-	    } else if (isObject(toVal) && isObject(fromVal)) {
+	    } else if (isPlainObject(toVal) && isPlainObject(fromVal)) {
 	      mergeData(toVal, fromVal);
 	    }
 	  }
@@ -3089,7 +3107,7 @@
 	  if (child.mixins) {
 	    for (var i = 0, l = child.mixins.length; i < l; i++) {
 	      var mixin = child.mixins[i];
-	      if (mixin.prototype instanceof Vue$2) {
+	      if (mixin.prototype instanceof Vue$3) {
 	        mixin = mixin.options;
 	      }
 	      parent = mergeOptions(parent, mixin, vm);
@@ -3383,7 +3401,7 @@
 
 	function initMixin$1 (Vue) {
 	  Vue.mixin = function (mixin) {
-	    Vue.options = mergeOptions(Vue.options, mixin);
+	    this.options = mergeOptions(this.options, mixin);
 	  };
 	}
 
@@ -3404,9 +3422,10 @@
 	  Vue.extend = function (extendOptions) {
 	    extendOptions = extendOptions || {};
 	    var Super = this;
-	    var isFirstExtend = Super.cid === 0;
-	    if (isFirstExtend && extendOptions._Ctor) {
-	      return extendOptions._Ctor
+	    var SuperId = Super.cid;
+	    var cachedCtors = extendOptions._Ctor || (extendOptions._Ctor = {});
+	    if (cachedCtors[SuperId]) {
+	      return cachedCtors[SuperId]
 	    }
 	    var name = extendOptions.name || Super.options.name;
 	    {
@@ -3428,8 +3447,10 @@
 	      extendOptions
 	    );
 	    Sub['super'] = Super;
-	    // allow further extension
+	    // allow further extension/mixin/plugin usage
 	    Sub.extend = Super.extend;
+	    Sub.mixin = Super.mixin;
+	    Sub.use = Super.use;
 	    // create asset registers, so extended classes
 	    // can have their private assets too.
 	    config._assetTypes.forEach(function (type) {
@@ -3445,9 +3466,7 @@
 	    Sub.superOptions = Super.options;
 	    Sub.extendOptions = extendOptions;
 	    // cache constructor
-	    if (isFirstExtend) {
-	      extendOptions._Ctor = Sub;
-	    }
+	    cachedCtors[SuperId] = Sub;
 	    return Sub
 	  };
 	}
@@ -3477,7 +3496,7 @@
 	        }
 	        if (type === 'component' && isPlainObject(definition)) {
 	          definition.name = definition.name || id;
-	          definition = Vue.extend(definition);
+	          definition = this.options._base.extend(definition);
 	        }
 	        if (type === 'directive' && typeof definition === 'function') {
 	          definition = { bind: definition, update: definition };
@@ -3552,6 +3571,10 @@
 	    Vue.options[type + 's'] = Object.create(null);
 	  });
 
+	  // this is used to identify the "base" constructor to extend all plain-object
+	  // components with in Weex's multi-instance scenarios.
+	  Vue.options._base = Vue;
+
 	  extend(Vue.options.components, builtInComponents);
 
 	  initUse(Vue);
@@ -3560,18 +3583,25 @@
 	  initAssetRegisters(Vue);
 	}
 
-	initGlobalAPI(Vue$2);
+	initGlobalAPI(Vue$3);
 
-	Object.defineProperty(Vue$2.prototype, '$isServer', {
+	Object.defineProperty(Vue$3.prototype, '$isServer', {
 	  get: function () { return config._isServer; }
 	});
 
-	Vue$2.version = '2.0.5';
+	Vue$3.version = '2.0.8';
 
 	/*  */
 
 	// attributes that should be using props for binding
-	var mustUseProp = makeMap('value,selected,checked,muted');
+	var mustUseProp = function (tag, attr) {
+	  return (
+	    (attr === 'value' && (tag === 'input' || tag === 'textarea' || tag === 'option')) ||
+	    (attr === 'selected' && tag === 'option') ||
+	    (attr === 'checked' && tag === 'input') ||
+	    (attr === 'muted' && tag === 'video')
+	  )
+	};
 
 	var isEnumeratedAttr = makeMap('contenteditable,draggable,spellcheck');
 
@@ -3693,7 +3723,7 @@
 	var namespaceMap = {
 	  svg: 'http://www.w3.org/2000/svg',
 	  math: 'http://www.w3.org/1998/Math/MathML',
-	  xhtml: 'http://www.w3.org/1999/xhtm'
+	  xhtml: 'http://www.w3.org/1999/xhtml'
 	};
 
 	var isHTMLTag = makeMap(
@@ -3915,7 +3945,7 @@
 	    }
 	  } else {
 	    if (vnode.data.refInFor) {
-	      if (Array.isArray(refs[key])) {
+	      if (Array.isArray(refs[key]) && refs[key].indexOf(ref) < 0) {
 	        refs[key].push(ref);
 	      } else {
 	        refs[key] = [ref];
@@ -4371,7 +4401,7 @@
 	    if (vnode.tag) {
 	      return (
 	        vnode.tag.indexOf('vue-component') === 0 ||
-	        vnode.tag === nodeOps.tagName(node).toLowerCase()
+	        vnode.tag.toLowerCase() === nodeOps.tagName(node).toLowerCase()
 	      )
 	    } else {
 	      return _toString(vnode.text) === node.data
@@ -4705,13 +4735,14 @@
 	    }
 	  }
 	  for (key in props) {
+	    cur = props[key];
 	    // ignore children if the node has textContent or innerHTML,
 	    // as these will throw away existing DOM nodes and cause removal errors
 	    // on subsequent patches (#3360)
-	    if ((key === 'textContent' || key === 'innerHTML') && vnode.children) {
-	      vnode.children.length = 0;
+	    if (key === 'textContent' || key === 'innerHTML') {
+	      if (vnode.children) { vnode.children.length = 0; }
+	      if (cur === oldProps[key]) { continue }
 	    }
-	    cur = props[key];
 	    if (key === 'value') {
 	      // store value as _value as well since
 	      // non-string values will be stringified
@@ -4731,6 +4762,75 @@
 	  create: updateDOMProps,
 	  update: updateDOMProps
 	};
+
+	/*  */
+
+	var parseStyleText = cached(function (cssText) {
+	  var res = {};
+	  var hasBackground = cssText.indexOf('background') >= 0;
+	  // maybe with background-image: url(http://xxx) or base64 img
+	  var listDelimiter = hasBackground ? /;(?![^(]*\))/g : ';';
+	  var propertyDelimiter = hasBackground ? /:(.+)/ : ':';
+	  cssText.split(listDelimiter).forEach(function (item) {
+	    if (item) {
+	      var tmp = item.split(propertyDelimiter);
+	      tmp.length > 1 && (res[tmp[0].trim()] = tmp[1].trim());
+	    }
+	  });
+	  return res
+	});
+
+	// merge static and dynamic style data on the same vnode
+	function normalizeStyleData (data) {
+	  var style = normalizeStyleBinding(data.style);
+	  // static style is pre-processed into an object during compilation
+	  // and is always a fresh object, so it's safe to merge into it
+	  return data.staticStyle
+	    ? extend(data.staticStyle, style)
+	    : style
+	}
+
+	// normalize possible array / string values into Object
+	function normalizeStyleBinding (bindingStyle) {
+	  if (Array.isArray(bindingStyle)) {
+	    return toObject(bindingStyle)
+	  }
+	  if (typeof bindingStyle === 'string') {
+	    return parseStyleText(bindingStyle)
+	  }
+	  return bindingStyle
+	}
+
+	/**
+	 * parent component style should be after child's
+	 * so that parent component's style could override it
+	 */
+	function getStyle (vnode, checkChild) {
+	  var res = {};
+	  var styleData;
+
+	  if (checkChild) {
+	    var childNode = vnode;
+	    while (childNode.child) {
+	      childNode = childNode.child._vnode;
+	      if (childNode.data && (styleData = normalizeStyleData(childNode.data))) {
+	        extend(res, styleData);
+	      }
+	    }
+	  }
+
+	  if ((styleData = normalizeStyleData(vnode.data))) {
+	    extend(res, styleData);
+	  }
+
+	  var parentNode = vnode;
+	  while ((parentNode = parentNode.parent)) {
+	    if (parentNode.data && (styleData = normalizeStyleData(parentNode.data))) {
+	      extend(res, styleData);
+	    }
+	  }
+	  return res
+	}
 
 	/*  */
 
@@ -4763,40 +4863,35 @@
 	});
 
 	function updateStyle (oldVnode, vnode) {
-	  if ((!oldVnode.data || !oldVnode.data.style) && !vnode.data.style) {
+	  var data = vnode.data;
+	  var oldData = oldVnode.data;
+
+	  if (!data.staticStyle && !data.style &&
+	      !oldData.staticStyle && !oldData.style) {
 	    return
 	  }
+
 	  var cur, name;
 	  var el = vnode.elm;
-	  var oldStyle = oldVnode.data.style || {};
-	  var style = vnode.data.style || {};
+	  var oldStaticStyle = oldVnode.data.staticStyle;
+	  var oldStyleBinding = oldVnode.data.style || {};
 
-	  // handle string
-	  if (typeof style === 'string') {
-	    el.style.cssText = style;
-	    return
-	  }
+	  // if static style exists, stylebinding already merged into it when doing normalizeStyleData
+	  var oldStyle = oldStaticStyle || oldStyleBinding;
 
-	  var needClone = style.__ob__;
+	  var style = normalizeStyleBinding(vnode.data.style) || {};
 
-	  // handle array syntax
-	  if (Array.isArray(style)) {
-	    style = vnode.data.style = toObject(style);
-	  }
+	  vnode.data.style = style.__ob__ ? extend({}, style) : style;
 
-	  // clone the style for future updates,
-	  // in case the user mutates the style object in-place.
-	  if (needClone) {
-	    style = vnode.data.style = extend({}, style);
-	  }
+	  var newStyle = getStyle(vnode, true);
 
 	  for (name in oldStyle) {
-	    if (style[name] == null) {
+	    if (newStyle[name] == null) {
 	      setProp(el, name, '');
 	    }
 	  }
-	  for (name in style) {
-	    cur = style[name];
+	  for (name in newStyle) {
+	    cur = newStyle[name];
 	    if (cur !== oldStyle[name]) {
 	      // ie9 setting to null has no effect, must use empty string
 	      setProp(el, name, cur == null ? '' : cur);
@@ -5702,7 +5797,7 @@
 
 	  updated: function updated () {
 	    var children = this.prevChildren;
-	    var moveClass = this.moveClass || (this.name + '-move');
+	    var moveClass = this.moveClass || ((this.name || 'v') + '-move');
 	    if (!children.length || !this.hasMove(children[0].elm, moveClass)) {
 	      return
 	    }
@@ -5786,20 +5881,20 @@
 	/*  */
 
 	// install platform specific utils
-	Vue$2.config.isUnknownElement = isUnknownElement;
-	Vue$2.config.isReservedTag = isReservedTag;
-	Vue$2.config.getTagNamespace = getTagNamespace;
-	Vue$2.config.mustUseProp = mustUseProp;
+	Vue$3.config.isUnknownElement = isUnknownElement;
+	Vue$3.config.isReservedTag = isReservedTag;
+	Vue$3.config.getTagNamespace = getTagNamespace;
+	Vue$3.config.mustUseProp = mustUseProp;
 
 	// install platform runtime directives & components
-	extend(Vue$2.options.directives, platformDirectives);
-	extend(Vue$2.options.components, platformComponents);
+	extend(Vue$3.options.directives, platformDirectives);
+	extend(Vue$3.options.components, platformComponents);
 
 	// install platform patch function
-	Vue$2.prototype.__patch__ = config._isServer ? noop : patch$1;
+	Vue$3.prototype.__patch__ = config._isServer ? noop : patch$1;
 
 	// wrap mount
-	Vue$2.prototype.$mount = function (
+	Vue$3.prototype.$mount = function (
 	  el,
 	  hydrating
 	) {
@@ -5812,7 +5907,7 @@
 	setTimeout(function () {
 	  if (config.devtools) {
 	    if (devtools) {
-	      devtools.emit('init', Vue$2);
+	      devtools.emit('init', Vue$3);
 	    } else if (
 	      "development" !== 'production' &&
 	      inBrowser && /Chrome\/\d+/.test(window.navigator.userAgent)
@@ -5840,9 +5935,10 @@
 
 	/*  */
 
-	var decoder = document.createElement('div');
+	var decoder;
 
 	function decode (html) {
+	  decoder = decoder || document.createElement('div');
 	  decoder.innerHTML = html;
 	  return decoder.textContent
 	}
@@ -5985,7 +6081,7 @@
 	        }
 	      }
 
-	      var text = void 0, rest$1 = void 0, next = void 0;
+	      var text = (void 0), rest$1 = (void 0), next = (void 0);
 	      if (textEnd > 0) {
 	        rest$1 = html.slice(textEnd);
 	        while (
@@ -6375,6 +6471,95 @@
 	  return val
 	}
 
+	var len;
+	var str;
+	var chr;
+	var index$1;
+	var expressionPos;
+	var expressionEndPos;
+
+	/**
+	 * parse directive model to do the array update transform. a[idx] = val => $$a.splice($$idx, 1, val)
+	 *
+	 * for loop possible cases:
+	 *
+	 * - test
+	 * - test[idx]
+	 * - test[test1[idx]]
+	 * - test["a"][idx]
+	 * - xxx.test[a[a].test1[idx]]
+	 * - test.xxx.a["asa"][test1[idx]]
+	 *
+	 */
+
+	function parseModel (val) {
+	  str = val;
+	  len = str.length;
+	  index$1 = expressionPos = expressionEndPos = 0;
+
+	  if (val.indexOf('[') < 0 || val.lastIndexOf(']') < len - 1) {
+	    return {
+	      exp: val,
+	      idx: null
+	    }
+	  }
+
+	  while (!eof()) {
+	    chr = next();
+	    /* istanbul ignore if */
+	    if (isStringStart(chr)) {
+	      parseString(chr);
+	    } else if (chr === 0x5B) {
+	      parseBracket(chr);
+	    }
+	  }
+
+	  return {
+	    exp: val.substring(0, expressionPos),
+	    idx: val.substring(expressionPos + 1, expressionEndPos)
+	  }
+	}
+
+	function next () {
+	  return str.charCodeAt(++index$1)
+	}
+
+	function eof () {
+	  return index$1 >= len
+	}
+
+	function isStringStart (chr) {
+	  return chr === 0x22 || chr === 0x27
+	}
+
+	function parseBracket (chr) {
+	  var inBracket = 1;
+	  expressionPos = index$1;
+	  while (!eof()) {
+	    chr = next();
+	    if (isStringStart(chr)) {
+	      parseString(chr);
+	      continue
+	    }
+	    if (chr === 0x5B) { inBracket++; }
+	    if (chr === 0x5D) { inBracket--; }
+	    if (inBracket === 0) {
+	      expressionEndPos = index$1;
+	      break
+	    }
+	  }
+	}
+
+	function parseString (chr) {
+	  var stringQuote = chr;
+	  while (!eof()) {
+	    chr = next();
+	    if (chr === stringQuote) {
+	      break
+	    }
+	  }
+	}
+
 	/*  */
 
 	var dirRE = /^v-|^@|^:/;
@@ -6573,6 +6758,13 @@
 	        }
 	        return
 	      }
+	      // IE textarea placeholder bug
+	      /* istanbul ignore if */
+	      if (options.isIE &&
+	          currentParent.tag === 'textarea' &&
+	          currentParent.attrsMap.placeholder === text) {
+	        return
+	      }
 	      text = inPre || text.trim()
 	        ? decodeHTMLCached(text)
 	        // only preserve whitespace if its not right after a starting tag
@@ -6734,7 +6926,7 @@
 	          name = camelize(name);
 	          if (name === 'innerHtml') { name = 'innerHTML'; }
 	        }
-	        if (isProp || platformMustUseProp(name)) {
+	        if (isProp || platformMustUseProp(el.tag, name)) {
 	          addProp(el, name, value);
 	        } else {
 	          addAttr(el, name, value);
@@ -6890,6 +7082,16 @@
 	function markStatic (node) {
 	  node.static = isStatic(node);
 	  if (node.type === 1) {
+	    // do not make component slot content static. this avoids
+	    // 1. components not able to mutate slot nodes
+	    // 2. static slot content fails for hot-reloading
+	    if (
+	      !isPlatformReservedTag(node.tag) &&
+	      node.tag !== 'slot' &&
+	      node.attrsMap['inline-template'] == null
+	    ) {
+	      return
+	    }
 	    for (var i = 0, l = node.children.length; i < l; i++) {
 	      var child = node.children[i];
 	      markStatic(child);
@@ -6905,13 +7107,26 @@
 	    if (node.static || node.once) {
 	      node.staticInFor = isInFor;
 	    }
-	    if (node.static) {
+	    // For a node to qualify as a static root, it should have children that
+	    // are not just static text. Otherwise the cost of hoisting out will
+	    // outweigh the benefits and it's better off to just always render it fresh.
+	    if (node.static && node.children.length && !(
+	      node.children.length === 1 &&
+	      node.children[0].type === 3
+	    )) {
 	      node.staticRoot = true;
 	      return
+	    } else {
+	      node.staticRoot = false;
 	    }
 	    if (node.children) {
 	      for (var i = 0, l = node.children.length; i < l; i++) {
-	        markStaticRoots(node.children[i], isInFor || !!node.for);
+	        var child = node.children[i];
+	        isInFor = isInFor || !!node.for;
+	        markStaticRoots(child, isInFor);
+	        if (child.type === 1 && child.elseBlock) {
+	          markStaticRoots(child.elseBlock, isInFor);
+	        }
 	      }
 	    }
 	  }
@@ -7032,7 +7247,7 @@
 
 	function bind$2 (el, dir) {
 	  el.wrapData = function (code) {
-	    return ("_b(" + code + "," + (dir.value) + (dir.modifiers && dir.modifiers.prop ? ',true' : '') + ")")
+	    return ("_b(" + code + ",'" + (el.tag) + "'," + (dir.value) + (dir.modifiers && dir.modifiers.prop ? ',true' : '') + ")")
 	  };
 	}
 
@@ -7117,7 +7332,9 @@
 	// v-once
 	function genOnce (el) {
 	  el.onceProcessed = true;
-	  if (el.staticInFor) {
+	  if (el.if && !el.ifProcessed) {
+	    return genIf(el)
+	  } else if (el.staticInFor) {
 	    var key = '';
 	    var parent = el.parent;
 	    while (parent) {
@@ -7139,10 +7356,11 @@
 	  }
 	}
 
+	// v-if with v-once shuold generate code like (a)?_m(0):_m(1)
 	function genIf (el) {
 	  var exp = el.if;
 	  el.ifProcessed = true; // avoid recursion
-	  return ("(" + exp + ")?" + (genElement(el)) + ":" + (genElse(el)))
+	  return ("(" + exp + ")?" + (el.once ? genOnce(el) : genElement(el)) + ":" + (genElse(el)))
 	}
 
 	function genElse (el) {
@@ -7434,7 +7652,25 @@
 
 	/*  */
 
-	function transformNode$1 (el) {
+	function transformNode$1 (el, options) {
+	  var warn = options.warn || baseWarn;
+	  var staticStyle = getAndRemoveAttr(el, 'style');
+	  if (staticStyle) {
+	    /* istanbul ignore if */
+	    {
+	      var expression = parseText(staticStyle, options.delimiters);
+	      if (expression) {
+	        warn(
+	          "style=\"" + staticStyle + "\": " +
+	          'Interpolation inside attributes has been removed. ' +
+	          'Use v-bind or the colon shorthand instead. For example, ' +
+	          'instead of <div style="{{ val }}">, use <div :style="val">.'
+	        );
+	      }
+	    }
+	    el.staticStyle = JSON.stringify(parseStyleText(staticStyle));
+	  }
+
 	  var styleBinding = getBindingAttr(el, 'style', false /* getStatic */);
 	  if (styleBinding) {
 	    el.styleBinding = styleBinding;
@@ -7442,12 +7678,18 @@
 	}
 
 	function genData$2 (el) {
-	  return el.styleBinding
-	    ? ("style:(" + (el.styleBinding) + "),")
-	    : ''
+	  var data = '';
+	  if (el.staticStyle) {
+	    data += "staticStyle:" + (el.staticStyle) + ",";
+	  }
+	  if (el.styleBinding) {
+	    data += "style:(" + (el.styleBinding) + "),";
+	  }
+	  return data
 	}
 
 	var style$1 = {
+	  staticKeys: ['staticStyle'],
 	  transformNode: transformNode$1,
 	  genData: genData$2
 	};
@@ -7456,97 +7698,6 @@
 	  klass$1,
 	  style$1
 	];
-
-	/*  */
-
-	var len;
-	var str;
-	var chr;
-	var index$1;
-	var expressionPos;
-	var expressionEndPos;
-
-	/**
-	 * parse directive model to do the array update transform. a[idx] = val => $$a.splice($$idx, 1, val)
-	 *
-	 * for loop possible cases:
-	 *
-	 * - test
-	 * - test[idx]
-	 * - test[test1[idx]]
-	 * - test["a"][idx]
-	 * - xxx.test[a[a].test1[idx]]
-	 * - test.xxx.a["asa"][test1[idx]]
-	 *
-	 */
-
-	function parseModel (val) {
-	  str = val;
-	  len = str.length;
-	  index$1 = expressionPos = expressionEndPos = 0;
-
-	  if (val.indexOf('[') < 0) {
-	    return {
-	      exp: val,
-	      idx: null
-	    }
-	  }
-
-	  while (!eof()) {
-	    chr = next();
-	    /* istanbul ignore if */
-	    if (isStringStart(chr)) {
-	      parseString(chr);
-	    } else if (chr === 0x5B) {
-	      parseBracket(chr);
-	    }
-	  }
-
-	  return {
-	    exp: val.substring(0, expressionPos),
-	    idx: val.substring(expressionPos + 1, expressionEndPos)
-	  }
-	}
-
-	function next () {
-	  return str.charCodeAt(++index$1)
-	}
-
-	function eof () {
-	  return index$1 >= len
-	}
-
-	function isStringStart (chr) {
-	  return chr === 0x22 || chr === 0x27
-	}
-
-	function parseBracket (chr) {
-	  var inBracket = 1;
-	  expressionPos = index$1;
-	  while (!eof()) {
-	    chr = next();
-	    if (isStringStart(chr)) {
-	      parseString(chr);
-	      continue
-	    }
-	    if (chr === 0x5B) { inBracket++; }
-	    if (chr === 0x5D) { inBracket--; }
-	    if (inBracket === 0) {
-	      expressionEndPos = index$1;
-	      break
-	    }
-	  }
-	}
-
-	function parseString (chr) {
-	  var stringQuote = chr;
-	  while (!eof()) {
-	    chr = next();
-	    if (chr === stringQuote) {
-	      break
-	    }
-	  }
-	}
 
 	/*  */
 
@@ -7673,7 +7824,7 @@
 
 	  var valueExpression = isNative
 	    ? ("$event.target.value" + (trim ? '.trim()' : ''))
-	    : "$event";
+	    : trim ? "(typeof $event === 'string' ? $event.trim() : $event)" : "$event";
 	  valueExpression = number || type === 'number'
 	    ? ("_n(" + valueExpression + ")")
 	    : valueExpression;
@@ -7854,8 +8005,8 @@
 	  return el && el.innerHTML
 	});
 
-	var mount = Vue$2.prototype.$mount;
-	Vue$2.prototype.$mount = function (
+	var mount = Vue$3.prototype.$mount;
+	Vue$3.prototype.$mount = function (
 	  el,
 	  hydrating
 	) {
@@ -7877,6 +8028,13 @@
 	      if (typeof template === 'string') {
 	        if (template.charAt(0) === '#') {
 	          template = idToTemplate(template);
+	          /* istanbul ignore if */
+	          if ("development" !== 'production' && !template) {
+	            warn(
+	              ("Template element not found or is empty: " + (options.template)),
+	              this
+	            );
+	          }
 	        }
 	      } else if (template.nodeType) {
 	        template = template.innerHTML;
@@ -7918,9 +8076,9 @@
 	  }
 	}
 
-	Vue$2.compile = compileToFunctions;
+	Vue$3.compile = compileToFunctions;
 
-	return Vue$2;
+	return Vue$3;
 
 	})));
 
@@ -7930,7 +8088,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
-	 * vue-router v2.0.1
+	 * vue-router v2.0.3
 	 * (c) 2016 Evan You
 	 * @license MIT
 	 */
@@ -7986,6 +8144,9 @@
 	    if (!inactive) {
 	      var hooks = data.hook || (data.hook = {})
 	      hooks.init = function (vnode) {
+	        matched.instances[name] = vnode.child
+	      }
+	      hooks.prepatch = function (oldVnode, vnode) {
 	        matched.instances[name] = vnode.child
 	      }
 	      hooks.destroy = function (vnode) {
@@ -8114,7 +8275,7 @@
 	}
 
 	function parseQuery (query) {
-	  var res = Object.create(null)
+	  var res = {}
 
 	  query = query.trim().replace(/^(\?|#|&)/, '')
 
@@ -8256,7 +8417,7 @@
 
 	function isIncludedRoute (current, target) {
 	  return (
-	    current.path.indexOf(target.path) === 0 &&
+	    current.path.indexOf(target.path.replace(/\/$/, '')) === 0 &&
 	    (!target.hash || current.hash === target.hash) &&
 	    queryIncludes(current.query, target.query)
 	  )
@@ -8329,10 +8490,10 @@
 	    var router = this.$router
 	    var current = this.$route
 	    var to = normalizeLocation(this.to, current, this.append)
-	    var resolved = router.match(to)
+	    var resolved = router.match(to, current)
 	    var fullPath = resolved.redirectedFrom || resolved.fullPath
 	    var base = router.history.base
-	    var href = base ? cleanPath(base + fullPath) : fullPath
+	    var href = createHref(base, fullPath, router.mode)
 	    var classes = {}
 	    var activeClass = this.activeClass || router.options.linkActiveClass || 'router-link-active'
 	    var compareTarget = to.path ? createRoute(null, to) : resolved
@@ -8351,6 +8512,11 @@
 	        // don't redirect on right click
 	        /* istanbul ignore if */
 	        if (e.button !== 0) { return }
+	        // don't redirect if `target="_blank"`
+	        /* istanbul ignore if */
+	        var target = e.target.getAttribute('target')
+	        if (/\b_blank\b/i.test(target)) { return }
+
 	        e.preventDefault()
 	        if (this$1.replace) {
 	          router.replace(to)
@@ -8371,9 +8537,12 @@
 	      // find the first <a> child and apply listener and href
 	      var a = findAnchor(this.$slots.default)
 	      if (a) {
-	        var aData = a.data || (a.data = {})
+	        // in case the <a> is a static node
+	        a.isStatic = false
+	        var extend = _Vue.util.extend
+	        var aData = a.data = extend({}, a.data)
 	        aData.on = on
-	        var aAttrs = aData.attrs || (aData.attrs = {})
+	        var aAttrs = a.data.attrs = extend({}, a.data.attrs)
 	        aAttrs.href = href
 	      } else {
 	        // doesn't have <a> child, apply listener to self
@@ -8400,9 +8569,18 @@
 	  }
 	}
 
+	function createHref (base, fullPath, mode) {
+	  var path = mode === 'hash' ? '/#' + fullPath : fullPath
+	  return base ? cleanPath(base + path) : path
+	}
+
+	var _Vue
+
 	function install (Vue) {
 	  if (install.installed) { return }
 	  install.installed = true
+
+	  _Vue = Vue
 
 	  Object.defineProperty(Vue.prototype, '$router', {
 	    get: function get () { return this.$root._router }
@@ -8424,6 +8602,10 @@
 
 	  Vue.component('router-view', View)
 	  Vue.component('router-link', Link)
+
+	  var strats = Vue.config.optionMergeStrategies
+	  // use the same hook merging strategy for route hooks
+	  strats.beforeRouteEnter = strats.beforeRouteLeave = strats.created
 	}
 
 	var __moduleExports = Array.isArray || function (arr) {
@@ -8462,14 +8644,16 @@
 	/**
 	 * Parse a string for the raw tokens.
 	 *
-	 * @param  {string} str
+	 * @param  {string}  str
+	 * @param  {Object=} options
 	 * @return {!Array}
 	 */
-	function parse (str) {
+	function parse (str, options) {
 	  var tokens = []
 	  var key = 0
 	  var index = 0
 	  var path = ''
+	  var defaultDelimiter = options && options.delimiter || '/'
 	  var res
 
 	  while ((res = PATH_REGEXP.exec(str)) != null) {
@@ -8502,8 +8686,8 @@
 	    var partial = prefix != null && next != null && next !== prefix
 	    var repeat = modifier === '+' || modifier === '*'
 	    var optional = modifier === '?' || modifier === '*'
-	    var delimiter = res[2] || '/'
-	    var pattern = capture || group || (asterisk ? '.*' : '[^' + delimiter + ']+?')
+	    var delimiter = res[2] || defaultDelimiter
+	    var pattern = capture || group
 
 	    tokens.push({
 	      name: name || key++,
@@ -8513,7 +8697,7 @@
 	      repeat: repeat,
 	      partial: partial,
 	      asterisk: !!asterisk,
-	      pattern: escapeGroup(pattern)
+	      pattern: pattern ? escapeGroup(pattern) : (asterisk ? '.*' : '[^' + escapeString(delimiter) + ']+?')
 	    })
 	  }
 
@@ -8534,10 +8718,11 @@
 	 * Compile a string to a template function for the path.
 	 *
 	 * @param  {string}             str
+	 * @param  {Object=}            options
 	 * @return {!function(Object=, Object=)}
 	 */
-	function compile (str) {
-	  return tokensToFunction(parse(str))
+	function compile (str, options) {
+	  return tokensToFunction(parse(str, options))
 	}
 
 	/**
@@ -8748,34 +8933,28 @@
 	 * @return {!RegExp}
 	 */
 	function stringToRegexp (path, keys, options) {
-	  var tokens = parse(path)
-	  var re = tokensToRegExp(tokens, options)
-
-	  // Attach keys back to the regexp.
-	  for (var i = 0; i < tokens.length; i++) {
-	    if (typeof tokens[i] !== 'string') {
-	      keys.push(tokens[i])
-	    }
-	  }
-
-	  return attachKeys(re, keys)
+	  return tokensToRegExp(parse(path, options), keys, options)
 	}
 
 	/**
 	 * Expose a function for taking tokens and returning a RegExp.
 	 *
-	 * @param  {!Array}  tokens
-	 * @param  {Object=} options
+	 * @param  {!Array}          tokens
+	 * @param  {(Array|Object)=} keys
+	 * @param  {Object=}         options
 	 * @return {!RegExp}
 	 */
-	function tokensToRegExp (tokens, options) {
+	function tokensToRegExp (tokens, keys, options) {
+	  if (!isarray(keys)) {
+	    options = /** @type {!Object} */ (keys || options)
+	    keys = []
+	  }
+
 	  options = options || {}
 
 	  var strict = options.strict
 	  var end = options.end !== false
 	  var route = ''
-	  var lastToken = tokens[tokens.length - 1]
-	  var endsWithSlash = typeof lastToken === 'string' && /\/$/.test(lastToken)
 
 	  // Iterate over the tokens and create our regexp string.
 	  for (var i = 0; i < tokens.length; i++) {
@@ -8786,6 +8965,8 @@
 	    } else {
 	      var prefix = escapeString(token.prefix)
 	      var capture = '(?:' + token.pattern + ')'
+
+	      keys.push(token)
 
 	      if (token.repeat) {
 	        capture += '(?:' + prefix + capture + ')*'
@@ -8805,12 +8986,15 @@
 	    }
 	  }
 
+	  var delimiter = escapeString(options.delimiter || '/')
+	  var endsWithDelimiter = route.slice(-delimiter.length) === delimiter
+
 	  // In non-strict mode we allow a slash at the end of match. If the path to
 	  // match already ends with a slash, we remove it for consistency. The slash
 	  // is valid at the end of a path match, not in the middle. This is important
 	  // in non-ending mode, where "/test/" shouldn't match "/test//route".
 	  if (!strict) {
-	    route = (endsWithSlash ? route.slice(0, -2) : route) + '(?:\\/(?=$))?'
+	    route = (endsWithDelimiter ? route.slice(0, -delimiter.length) : route) + '(?:' + delimiter + '(?=$))?'
 	  }
 
 	  if (end) {
@@ -8818,10 +9002,10 @@
 	  } else {
 	    // In non-ending mode, we need the capturing groups to match as much as
 	    // possible by using a positive lookahead to the end or next path segment.
-	    route += strict && endsWithSlash ? '' : '(?=\\/|$)'
+	    route += strict && endsWithDelimiter ? '' : '(?=' + delimiter + '|$)'
 	  }
 
-	  return new RegExp('^' + route, flags(options))
+	  return attachKeys(new RegExp('^' + route, flags(options)), keys)
 	}
 
 	/**
@@ -8837,14 +9021,12 @@
 	 * @return {!RegExp}
 	 */
 	function pathToRegexp (path, keys, options) {
-	  keys = keys || []
-
 	  if (!isarray(keys)) {
-	    options = /** @type {!Object} */ (keys)
+	    options = /** @type {!Object} */ (keys || options)
 	    keys = []
-	  } else if (!options) {
-	    options = {}
 	  }
+
+	  options = options || {}
 
 	  if (path instanceof RegExp) {
 	    return regexpToRegexp(path, /** @type {!Array} */ (keys))
@@ -8911,7 +9093,7 @@
 	    })
 	  }
 
-	  if (route.alias) {
+	  if (route.alias !== undefined) {
 	    if (Array.isArray(route.alias)) {
 	      route.alias.forEach(function (alias) {
 	        addRouteRecord(pathMap, nameMap, { path: alias }, parent, record.path)
@@ -8922,7 +9104,13 @@
 	  }
 
 	  pathMap[record.path] = record
-	  if (name) { nameMap[name] = record }
+	  if (name) {
+	    if (!nameMap[name]) {
+	      nameMap[name] = record
+	    } else {
+	      warn(false, ("Duplicate named routes definition: { name: \"" + name + "\", path: \"" + (record.path) + "\" }"))
+	    }
+	  }
 	}
 
 	function normalizePath (path, parent) {
@@ -8935,6 +9123,8 @@
 	/*  */
 
 	var regexpCache = Object.create(null)
+
+	var regexpParamsCache = Object.create(null)
 
 	var regexpCompileCache = Object.create(null)
 
@@ -8953,6 +9143,20 @@
 
 	    if (name) {
 	      var record = nameMap[name]
+	      var paramNames = getParams(record.path)
+
+	      if (typeof location.params !== 'object') {
+	        location.params = {}
+	      }
+
+	      if (currentRoute && typeof currentRoute.params === 'object') {
+	        for (var key in currentRoute.params) {
+	          if (!(key in location.params) && paramNames.indexOf(key) > -1) {
+	            location.params[key] = currentRoute.params[key]
+	          }
+	        }
+	      }
+
 	      if (record) {
 	        location.path = fillParams(record.path, location.params, ("named route \"" + name + "\""))
 	        return _createRoute(record, location, redirectedFrom)
@@ -9062,13 +9266,10 @@
 	  return match
 	}
 
-	function matchRoute (
-	  path,
-	  params,
-	  pathname
-	) {
-	  var keys, regexp
+	function getRouteRegex (path) {
 	  var hit = regexpCache[path]
+	  var keys, regexp
+
 	  if (hit) {
 	    keys = hit.keys
 	    regexp = hit.regexp
@@ -9077,6 +9278,18 @@
 	    regexp = index(path, keys)
 	    regexpCache[path] = { keys: keys, regexp: regexp }
 	  }
+
+	  return { keys: keys, regexp: regexp }
+	}
+
+	function matchRoute (
+	  path,
+	  params,
+	  pathname
+	) {
+	  var ref = getRouteRegex(path);
+	  var regexp = ref.regexp;
+	  var keys = ref.keys;
 	  var m = pathname.match(regexp)
 
 	  if (!m) {
@@ -9108,6 +9321,11 @@
 	    assert(false, ("missing param for " + routeMsg + ": " + (e.message)))
 	    return ''
 	  }
+	}
+
+	function getParams (path) {
+	  return regexpParamsCache[path] ||
+	    (regexpParamsCache[path] = getRouteRegex(path).keys.map(function (key) { return key.name; }))
 	}
 
 	function resolveRecordPath (path, record) {
@@ -9208,7 +9426,7 @@
 	    hook(route, current, function (to) {
 	      if (to === false) {
 	        // next(false) -> abort navigation, ensure current URL
-	        this$1.ensureURL()
+	        this$1.ensureURL(true)
 	      } else if (typeof to === 'string' || typeof to === 'object') {
 	        // next('/') or next({ path: '/' }) -> redirect
 	        this$1.push(to)
@@ -9282,15 +9500,35 @@
 	  }
 	}
 
+	function extractGuard (
+	  def,
+	  key
+	) {
+	  if (typeof def !== 'function') {
+	    // extend now so that global mixins are applied.
+	    def = _Vue.extend(def)
+	  }
+	  return def.options[key]
+	}
+
 	function extractLeaveGuards (matched) {
-	  return flatMapComponents(matched, function (def, instance) {
-	    var guard = def && def.beforeRouteLeave
+	  return flatten(flatMapComponents(matched, function (def, instance) {
+	    var guard = extractGuard(def, 'beforeRouteLeave')
 	    if (guard) {
-	      return function routeLeaveGuard () {
-	        return guard.apply(instance, arguments)
-	      }
+	      return Array.isArray(guard)
+	        ? guard.map(function (guard) { return wrapLeaveGuard(guard, instance); })
+	        : wrapLeaveGuard(guard, instance)
 	    }
-	  }).reverse()
+	  }).reverse())
+	}
+
+	function wrapLeaveGuard (
+	  guard,
+	  instance
+	) {
+	  return function routeLeaveGuard () {
+	    return guard.apply(instance, arguments)
+	  }
 	}
 
 	function extractEnterGuards (
@@ -9298,29 +9536,46 @@
 	  cbs,
 	  isValid
 	) {
-	  return flatMapComponents(matched, function (def, _, match, key) {
-	    var guard = def && def.beforeRouteEnter
+	  return flatten(flatMapComponents(matched, function (def, _, match, key) {
+	    var guard = extractGuard(def, 'beforeRouteEnter')
 	    if (guard) {
-	      return function routeEnterGuard (to, from, next) {
-	        return guard(to, from, function (cb) {
-	          next(cb)
-	          if (typeof cb === 'function') {
-	            cbs.push(function () {
-	              // #750
-	              // if a router-view is wrapped with an out-in transition,
-	              // the instance may not have been registered at this time.
-	              // we will need to poll for registration until current route
-	              // is no longer valid.
-	              poll(cb, match.instances, key, isValid)
-	            })
-	          }
-	        })
-	      }
+	      return Array.isArray(guard)
+	        ? guard.map(function (guard) { return wrapEnterGuard(guard, cbs, match, key, isValid); })
+	        : wrapEnterGuard(guard, cbs, match, key, isValid)
 	    }
-	  })
+	  }))
 	}
 
-	function poll (cb, instances, key, isValid) {
+	function wrapEnterGuard (
+	  guard,
+	  cbs,
+	  match,
+	  key,
+	  isValid
+	) {
+	  return function routeEnterGuard (to, from, next) {
+	    return guard(to, from, function (cb) {
+	      next(cb)
+	      if (typeof cb === 'function') {
+	        cbs.push(function () {
+	          // #750
+	          // if a router-view is wrapped with an out-in transition,
+	          // the instance may not have been registered at this time.
+	          // we will need to poll for registration until current route
+	          // is no longer valid.
+	          poll(cb, match.instances, key, isValid)
+	        })
+	      }
+	    })
+	  }
+	}
+
+	function poll (
+	  cb, // somehow flow cannot infer this is a function
+	  instances,
+	  key,
+	  isValid
+	) {
 	  if (instances[key]) {
 	    cb(instances[key])
 	  } else if (isValid()) {
@@ -9362,7 +9617,7 @@
 	  matched,
 	  fn
 	) {
-	  return Array.prototype.concat.apply([], matched.map(function (m) {
+	  return flatten(matched.map(function (m) {
 	    return Object.keys(m.components).map(function (key) { return fn(
 	      m.components[key],
 	      m.instances[key],
@@ -9371,19 +9626,25 @@
 	  }))
 	}
 
+	function flatten (arr) {
+	  return Array.prototype.concat.apply([], arr)
+	}
+
 	/*  */
+
+	var positionStore = Object.create(null)
 
 	function saveScrollPosition (key) {
 	  if (!key) { return }
-	  window.sessionStorage.setItem(key, JSON.stringify({
+	  positionStore[key] = {
 	    x: window.pageXOffset,
 	    y: window.pageYOffset
-	  }))
+	  }
 	}
 
 	function getScrollPosition (key) {
 	  if (!key) { return }
-	  return JSON.parse(window.sessionStorage.getItem(key))
+	  return positionStore[key]
 	}
 
 	function getElementPosition (el) {
@@ -9421,8 +9682,6 @@
 	    var this$1 = this;
 
 	    History.call(this, router, base)
-
-	    this.transitionTo(getLocation(this.base))
 
 	    var expectScroll = router.options.scrollBehavior
 	    window.addEventListener('popstate', function (e) {
@@ -9470,9 +9729,10 @@
 	    })
 	  };
 
-	  HTML5History.prototype.ensureURL = function ensureURL () {
+	  HTML5History.prototype.ensureURL = function ensureURL (push) {
 	    if (getLocation(this.base) !== this.current.fullPath) {
-	      replaceState(cleanPath(this.base + this.current.fullPath))
+	      var current = cleanPath(this.base + this.current.fullPath)
+	      push ? pushState(current) : replaceState(current)
 	    }
 	  };
 
@@ -9550,8 +9810,6 @@
 
 	var HashHistory = (function (History) {
 	  function HashHistory (router, base, fallback) {
-	    var this$1 = this;
-
 	    History.call(this, router, base)
 
 	    // check history fallback deeplinking
@@ -9560,11 +9818,6 @@
 	    }
 
 	    ensureSlash()
-	    this.transitionTo(getHash(), function () {
-	      window.addEventListener('hashchange', function () {
-	        this$1.onHashChange()
-	      })
-	    })
 	  }
 
 	  if ( History ) HashHistory.__proto__ = History;
@@ -9606,9 +9859,10 @@
 	    window.history.go(n)
 	  };
 
-	  HashHistory.prototype.ensureURL = function ensureURL () {
-	    if (getHash() !== this.current.fullPath) {
-	      replaceHash(this.current.fullPath)
+	  HashHistory.prototype.ensureURL = function ensureURL (push) {
+	    var current = this.current.fullPath
+	    if (getHash() !== current) {
+	      push ? pushHash(current) : replaceHash(current)
 	    }
 	  };
 
@@ -9715,6 +9969,20 @@
 	    mode = 'abstract'
 	  }
 	  this.mode = mode
+
+	  switch (mode) {
+	    case 'history':
+	      this.history = new HTML5History(this, options.base)
+	      break
+	    case 'hash':
+	      this.history = new HashHistory(this, options.base, this.fallback)
+	      break
+	    case 'abstract':
+	      this.history = new AbstractHistory(this)
+	      break
+	    default:
+	      assert(false, ("invalid mode: " + mode))
+	  }
 	};
 
 	var prototypeAccessors = { currentRoute: {} };
@@ -9734,25 +10002,19 @@
 
 	  this.app = app
 
-	  var ref = this;
-	    var mode = ref.mode;
-	    var options = ref.options;
-	    var fallback = ref.fallback;
-	  switch (mode) {
-	    case 'history':
-	      this.history = new HTML5History(this, options.base)
-	      break
-	    case 'hash':
-	      this.history = new HashHistory(this, options.base, fallback)
-	      break
-	    case 'abstract':
-	      this.history = new AbstractHistory(this)
-	      break
-	    default:
-	      assert(false, ("invalid mode: " + mode))
+	  var history = this.history
+
+	  if (history instanceof HTML5History) {
+	    history.transitionTo(getLocation(history.base))
+	  } else if (history instanceof HashHistory) {
+	    history.transitionTo(getHash(), function () {
+	      window.addEventListener('hashchange', function () {
+	        history.onHashChange()
+	      })
+	    })
 	  }
 
-	  this.history.listen(function (route) {
+	  history.listen(function (route) {
 	    this$1.app._route = route
 	  })
 	};
@@ -11381,7 +11643,7 @@
 		//mode: 'history',
 		base: __dirname,
 		routes: [{ path: "/", component: _common2.default,
-			children: [{ path: 'home', component: Home }]
+			children: [{ name: "home", path: 'home', component: Home }]
 		}, { path: '/', redirect: '/home' }, { path: '/video', component: _video2.default }, { path: '/my', component: _my2.default }, { path: '/investment', component: _investment2.default }, { name: 'investmentShow', path: '/investment/show', component: _investmentShow2.default }, { name: 'healthDetail', path: '/health/show', component: _healthDetail2.default }, { path: '*', redirect: 'home' }]
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, "/"))
@@ -11414,7 +11676,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-693e3ad0/common.vue"
+	  var id = "_v-923430f2/common.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11781,7 +12043,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-4d19d370/footer.vue"
+	  var id = "_v-760fc992/footer.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11964,13 +12226,13 @@
 /* 21 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n\n<div class=\"footer\" _v-4d19d370=\"\">\n    <router-link :to=\"{path:'/home'}\" active-class=\"on\" class=\"home\" _v-4d19d370=\"\">\n\n            <router-link tag=\"i\" :to=\"{path:'/home'}\" active-class=\"cur\" _v-4d19d370=\"\">\n\n            </router-link>\n\n        <span _v-4d19d370=\"\">首页</span>\n    </router-link>\n\n    <router-link :to=\"{path:'/video'}\" active-class=\"on\" class=\"video\" _v-4d19d370=\"\">\n\n            <router-link tag=\"i\" :to=\"{path:'/video'}\" active-class=\"cur\" _v-4d19d370=\"\">\n\n            </router-link>\n\n        <span _v-4d19d370=\"\">视频</span>\n    </router-link>\n\n    <router-link :to=\"{path:'/my'}\" active-class=\"on\" class=\"my\" _v-4d19d370=\"\">\n\n            <router-link tag=\"i\" :to=\"{path:'/my'}\" active-class=\"cur\" _v-4d19d370=\"\">\n\n            </router-link>\n\n        <span _v-4d19d370=\"\">我的</span>\n    </router-link>\n\n\n\n</div>\n";
+	module.exports = "\n\n\n\n<div class=\"footer\" _v-760fc992=\"\">\n    <router-link :to=\"{path:'/home'}\" active-class=\"on\" class=\"home\" _v-760fc992=\"\">\n\n            <router-link tag=\"i\" :to=\"{path:'/home'}\" active-class=\"cur\" _v-760fc992=\"\">\n\n            </router-link>\n\n        <span _v-760fc992=\"\">首页</span>\n    </router-link>\n\n    <router-link :to=\"{path:'/video'}\" active-class=\"on\" class=\"video\" _v-760fc992=\"\">\n\n            <router-link tag=\"i\" :to=\"{path:'/video'}\" active-class=\"cur\" _v-760fc992=\"\">\n\n            </router-link>\n\n        <span _v-760fc992=\"\">视频</span>\n    </router-link>\n\n    <router-link :to=\"{path:'/my'}\" active-class=\"on\" class=\"my\" _v-760fc992=\"\">\n\n            <router-link tag=\"i\" :to=\"{path:'/my'}\" active-class=\"cur\" _v-760fc992=\"\">\n\n            </router-link>\n\n        <span _v-760fc992=\"\">我的</span>\n    </router-link>\n\n\n\n</div>\n";
 
 /***/ },
 /* 22 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n\n<div style=\"height:100%\" _v-693e3ad0=\"\">\n    <router-view _v-693e3ad0=\"\"></router-view>\n    <my-footer _v-693e3ad0=\"\"></my-footer>\n</div>\n\n\n\n";
+	module.exports = "\n\n\n\n<div style=\"height:100%\" _v-923430f2=\"\">\n    <router-view _v-923430f2=\"\"></router-view>\n    <my-footer _v-923430f2=\"\"></my-footer>\n</div>\n\n\n\n";
 
 /***/ },
 /* 23 */
@@ -12000,7 +12262,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-32a2d75e/video.vue"
+	  var id = "_v-5301f88f/video.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12226,7 +12488,7 @@
 /* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n\n\n<div class=\"white-box\" _v-32a2d75e=\"\">\n    <!-- content1-->\n    <div class=\"one\" _v-32a2d75e=\"\">\n        <div class=\"one-left\" _v-32a2d75e=\"\">\n            <div class=\"title one-title\" _v-32a2d75e=\"\">\n                <h2 _v-32a2d75e=\"\"><a _v-32a2d75e=\"\">坚持十个小习惯变身健康瘦美人</a></h2>\n            </div>\n            <div class=\"one-info info\" _v-32a2d75e=\"\">\n                <ul _v-32a2d75e=\"\">\n                    <li _v-32a2d75e=\"\"><a href=\"#\" target=\"_blank\" _v-32a2d75e=\"\"><span class=\"Druge\" _v-32a2d75e=\"\">药品</span></a></li>\n                    <li _v-32a2d75e=\"\"><a href=\"#\" target=\"_blank\" _v-32a2d75e=\"\"><span class=\"click\" _v-32a2d75e=\"\">1365点击</span></a></li>\n                    <li _v-32a2d75e=\"\"><a href=\"#\" target=\"_blank\" _v-32a2d75e=\"\"><span class=\"time\" _v-32a2d75e=\"\">24小时前</span></a></li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"one-right\" _v-32a2d75e=\"\">\n            <a href=\"#\" target=\"\" _v-32a2d75e=\"\"><img src=\"" + __webpack_require__(28) + "\" _v-32a2d75e=\"\"></a>\n        </div>\n    </div><!-- /content1-->\n    <!-- content2-->\n    <div class=\"two\" _v-32a2d75e=\"\">\n        <div class=\"title two-title\" _v-32a2d75e=\"\">\n            <h2 _v-32a2d75e=\"\"><a _v-32a2d75e=\"\">OEM贴牌加工松针油软胶囊</a></h2>\n        </div>\n        <div class=\"two-img img2\" _v-32a2d75e=\"\">\n            <a href=\"#\" _v-32a2d75e=\"\"><img src=\"" + __webpack_require__(29) + "\" _v-32a2d75e=\"\"></a>\n            <a href=\"#\" _v-32a2d75e=\"\"><img class=\"two-img2\" src=\"" + __webpack_require__(29) + "\" _v-32a2d75e=\"\"></a>\n            <a href=\"#\" _v-32a2d75e=\"\"><img src=\"" + __webpack_require__(29) + "\" _v-32a2d75e=\"\"></a>\n        </div>\n        <div class=\"info\" _v-32a2d75e=\"\">\n            <ul _v-32a2d75e=\"\">\n                <li _v-32a2d75e=\"\"><a href=\"#\" target=\"_blank\" _v-32a2d75e=\"\"><span class=\"Druge\" _v-32a2d75e=\"\">药品</span></a></li>\n                <li _v-32a2d75e=\"\"><a href=\"#\" target=\"_blank\" _v-32a2d75e=\"\"><span class=\"click\" _v-32a2d75e=\"\">1365点击</span></a></li>\n                <li _v-32a2d75e=\"\"><a href=\"#\" target=\"_blank\" _v-32a2d75e=\"\"><span class=\"time\" _v-32a2d75e=\"\">24小时前</span></a></li>\n            </ul>\n        </div>\n    </div><!-- /content2-->\n    <!-- content3-->\n    <div class=\"three\" _v-32a2d75e=\"\">\n        <div class=\"title two-title\" _v-32a2d75e=\"\">\n            <h2 _v-32a2d75e=\"\"><a _v-32a2d75e=\"\">OEM贴牌加工松针油软胶囊</a></h2>\n        </div>\n        <div class=\"three-img img2\" _v-32a2d75e=\"\">\n            <a href=\"#\" _v-32a2d75e=\"\"><img src=\"" + __webpack_require__(30) + "\" _v-32a2d75e=\"\"></a>\n        </div>\n        <div class=\"info\" _v-32a2d75e=\"\">\n            <ul _v-32a2d75e=\"\">\n                <li _v-32a2d75e=\"\"><a href=\"#\" target=\"_blank\" _v-32a2d75e=\"\"><span class=\"Druge\" _v-32a2d75e=\"\">药品</span></a></li>\n                <li _v-32a2d75e=\"\"><a href=\"#\" target=\"_blank\" _v-32a2d75e=\"\"><span class=\"click\" _v-32a2d75e=\"\">1365点击</span></a></li>\n                <li _v-32a2d75e=\"\"><a href=\"#\" target=\"_blank\" _v-32a2d75e=\"\"><span class=\"time\" _v-32a2d75e=\"\">24小时前</span></a></li>\n            </ul>\n        </div>\n    </div><!-- /content3-->\n    <my-footer _v-32a2d75e=\"\"></my-footer>\n</div>\n";
+	module.exports = "\n\n\n<div class=\"white-box\" _v-5301f88f=\"\">\n    <!-- content1-->\n    <div class=\"one\" _v-5301f88f=\"\">\n        <div class=\"one-left\" _v-5301f88f=\"\">\n            <div class=\"title one-title\" _v-5301f88f=\"\">\n                <h2 _v-5301f88f=\"\"><a _v-5301f88f=\"\">坚持十个小习惯变身健康瘦美人</a></h2>\n            </div>\n            <div class=\"one-info info\" _v-5301f88f=\"\">\n                <ul _v-5301f88f=\"\">\n                    <li _v-5301f88f=\"\"><a href=\"#\" target=\"_blank\" _v-5301f88f=\"\"><span class=\"Druge\" _v-5301f88f=\"\">药品</span></a></li>\n                    <li _v-5301f88f=\"\"><a href=\"#\" target=\"_blank\" _v-5301f88f=\"\"><span class=\"click\" _v-5301f88f=\"\">1365点击</span></a></li>\n                    <li _v-5301f88f=\"\"><a href=\"#\" target=\"_blank\" _v-5301f88f=\"\"><span class=\"time\" _v-5301f88f=\"\">24小时前</span></a></li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"one-right\" _v-5301f88f=\"\">\n            <a href=\"#\" target=\"\" _v-5301f88f=\"\"><img src=\"" + __webpack_require__(28) + "\" _v-5301f88f=\"\"></a>\n        </div>\n    </div><!-- /content1-->\n    <!-- content2-->\n    <div class=\"two\" _v-5301f88f=\"\">\n        <div class=\"title two-title\" _v-5301f88f=\"\">\n            <h2 _v-5301f88f=\"\"><a _v-5301f88f=\"\">OEM贴牌加工松针油软胶囊</a></h2>\n        </div>\n        <div class=\"two-img img2\" _v-5301f88f=\"\">\n            <a href=\"#\" _v-5301f88f=\"\"><img src=\"" + __webpack_require__(29) + "\" _v-5301f88f=\"\"></a>\n            <a href=\"#\" _v-5301f88f=\"\"><img class=\"two-img2\" src=\"" + __webpack_require__(29) + "\" _v-5301f88f=\"\"></a>\n            <a href=\"#\" _v-5301f88f=\"\"><img src=\"" + __webpack_require__(29) + "\" _v-5301f88f=\"\"></a>\n        </div>\n        <div class=\"info\" _v-5301f88f=\"\">\n            <ul _v-5301f88f=\"\">\n                <li _v-5301f88f=\"\"><a href=\"#\" target=\"_blank\" _v-5301f88f=\"\"><span class=\"Druge\" _v-5301f88f=\"\">药品</span></a></li>\n                <li _v-5301f88f=\"\"><a href=\"#\" target=\"_blank\" _v-5301f88f=\"\"><span class=\"click\" _v-5301f88f=\"\">1365点击</span></a></li>\n                <li _v-5301f88f=\"\"><a href=\"#\" target=\"_blank\" _v-5301f88f=\"\"><span class=\"time\" _v-5301f88f=\"\">24小时前</span></a></li>\n            </ul>\n        </div>\n    </div><!-- /content2-->\n    <!-- content3-->\n    <div class=\"three\" _v-5301f88f=\"\">\n        <div class=\"title two-title\" _v-5301f88f=\"\">\n            <h2 _v-5301f88f=\"\"><a _v-5301f88f=\"\">OEM贴牌加工松针油软胶囊</a></h2>\n        </div>\n        <div class=\"three-img img2\" _v-5301f88f=\"\">\n            <a href=\"#\" _v-5301f88f=\"\"><img src=\"" + __webpack_require__(30) + "\" _v-5301f88f=\"\"></a>\n        </div>\n        <div class=\"info\" _v-5301f88f=\"\">\n            <ul _v-5301f88f=\"\">\n                <li _v-5301f88f=\"\"><a href=\"#\" target=\"_blank\" _v-5301f88f=\"\"><span class=\"Druge\" _v-5301f88f=\"\">药品</span></a></li>\n                <li _v-5301f88f=\"\"><a href=\"#\" target=\"_blank\" _v-5301f88f=\"\"><span class=\"click\" _v-5301f88f=\"\">1365点击</span></a></li>\n                <li _v-5301f88f=\"\"><a href=\"#\" target=\"_blank\" _v-5301f88f=\"\"><span class=\"time\" _v-5301f88f=\"\">24小时前</span></a></li>\n            </ul>\n        </div>\n    </div><!-- /content3-->\n    <my-footer _v-5301f88f=\"\"></my-footer>\n</div>\n";
 
 /***/ },
 /* 28 */
@@ -12274,7 +12536,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0d39df4e/my.vue"
+	  var id = "_v-07543670/my.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12543,7 +12805,7 @@
 /* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n\t<div _v-0d39df4e=\"\">\n\t\t<!-- header -->\n\t    <div class=\"header\" _v-0d39df4e=\"\">\n\t       <div class=\"header-logo\" _v-0d39df4e=\"\">\n\t         <a _v-0d39df4e=\"\"><img src=\"" + __webpack_require__(37) + "\" _v-0d39df4e=\"\"></a>\n\t       </div>\n\t       <div class=\"header-title\" _v-0d39df4e=\"\">\n\t        当代药物市场\n\t       </div>\n\t    </div>\n\t    <!--/header -->\n\t    <!-- content -->\n\t    <div class=\"content\" _v-0d39df4e=\"\">\n\t    <!-- nav -->\n\t      <div class=\"nav-ifo\" _v-0d39df4e=\"\">\n\t\t\t<div class=\"nav\" _v-0d39df4e=\"\">\n\t\t\t  <div class=\"left nav-box\" _v-0d39df4e=\"\">\n\t\t\t     <div class=\"nav-tu left-nav-tu\" _v-0d39df4e=\"\">\n                   <a href=\"#\" _v-0d39df4e=\"\"><img src=\"" + __webpack_require__(38) + "\" _v-0d39df4e=\"\"></a>\n\t\t\t     </div>\n\t\t\t     <div class=\"nav-ti left-nav-tu\" _v-0d39df4e=\"\">\n\t\t\t     \t<a href=\"#\" _v-0d39df4e=\"\">收藏</a>\n\t\t\t     </div>\n\t\t\t  </div>\n\t\t\t  <div class=\"mide nav-box\" _v-0d39df4e=\"\">\n\t\t\t     <div class=\"nav-tu\" _v-0d39df4e=\"\">\n\t\t\t       <a href=\"#\" _v-0d39df4e=\"\"><img src=\"" + __webpack_require__(39) + "\" _v-0d39df4e=\"\"></a></div>\n\t\t\t     <div class=\"nav-ti\" _v-0d39df4e=\"\">\n                    <a href=\"#\" _v-0d39df4e=\"\">夜间</a>\n\t\t\t     </div>\n\t\t\t  </div>\n\t\t\t  <div class=\"right nav-box\" _v-0d39df4e=\"\">\n\t\t\t     <div class=\"nav-tu\" _v-0d39df4e=\"\">\n                      <a href=\"#\" _v-0d39df4e=\"\"><img src=\"" + __webpack_require__(40) + "\" _v-0d39df4e=\"\"></a>\n\t\t\t     </div>\n\t\t\t     <div class=\"nav-ti\" _v-0d39df4e=\"\">\n                     <a href=\"#\" _v-0d39df4e=\"\">设置</a>\n\t\t\t     </div>\n\t\t\t  </div>\n\t\t\t</div>\n\t      </div>\t\t\n\t     <!-- /nav -->\n\t     <!-- detal-->\n\t     <div class=\"detal\" _v-0d39df4e=\"\">\n            <div class=\"jf detal-box\" _v-0d39df4e=\"\">\n                <a href=\"\" _v-0d39df4e=\"\">我的积分</a>\n                <div class=\"jt\" _v-0d39df4e=\"\">\n                   <a href=\"#\" _v-0d39df4e=\"\"><img src=\"" + __webpack_require__(41) + "\" _v-0d39df4e=\"\"></a>\n                </div>\n            </div>\n\t        <div class=\"vip detal-box\" _v-0d39df4e=\"\">\n                <a href=\"\" _v-0d39df4e=\"\">升级VIP</a>\n\t        </div>\n\t        <div class=\"zh detal-box\" _v-0d39df4e=\"\">\n                <a href=\"\" _v-0d39df4e=\"\"><span class=\"zh\" _v-0d39df4e=\"\">退出账户</span></a>\n\t        </div>\n\t     </div>\n\t     <!-- /detal -->\n        </div>\n\n\n\t    <my-footer _v-0d39df4e=\"\"></my-footer>\n\n\t</div>\n\n    \n\n\n  \n    \n\n    \n";
+	module.exports = "\n\t<div _v-07543670=\"\">\n\t\t<!-- header -->\n\t    <div class=\"header\" _v-07543670=\"\">\n\t       <div class=\"header-logo\" _v-07543670=\"\">\n\t         <a _v-07543670=\"\"><img src=\"" + __webpack_require__(37) + "\" _v-07543670=\"\"></a>\n\t       </div>\n\t       <div class=\"header-title\" _v-07543670=\"\">\n\t        当代药物市场\n\t       </div>\n\t    </div>\n\t    <!--/header -->\n\t    <!-- content -->\n\t    <div class=\"content\" _v-07543670=\"\">\n\t    <!-- nav -->\n\t      <div class=\"nav-ifo\" _v-07543670=\"\">\n\t\t\t<div class=\"nav\" _v-07543670=\"\">\n\t\t\t  <div class=\"left nav-box\" _v-07543670=\"\">\n\t\t\t     <div class=\"nav-tu left-nav-tu\" _v-07543670=\"\">\n                   <a href=\"#\" _v-07543670=\"\"><img src=\"" + __webpack_require__(38) + "\" _v-07543670=\"\"></a>\n\t\t\t     </div>\n\t\t\t     <div class=\"nav-ti left-nav-tu\" _v-07543670=\"\">\n\t\t\t     \t<a href=\"#\" _v-07543670=\"\">收藏</a>\n\t\t\t     </div>\n\t\t\t  </div>\n\t\t\t  <div class=\"mide nav-box\" _v-07543670=\"\">\n\t\t\t     <div class=\"nav-tu\" _v-07543670=\"\">\n\t\t\t       <a href=\"#\" _v-07543670=\"\"><img src=\"" + __webpack_require__(39) + "\" _v-07543670=\"\"></a></div>\n\t\t\t     <div class=\"nav-ti\" _v-07543670=\"\">\n                    <a href=\"#\" _v-07543670=\"\">夜间</a>\n\t\t\t     </div>\n\t\t\t  </div>\n\t\t\t  <div class=\"right nav-box\" _v-07543670=\"\">\n\t\t\t     <div class=\"nav-tu\" _v-07543670=\"\">\n                      <a href=\"#\" _v-07543670=\"\"><img src=\"" + __webpack_require__(40) + "\" _v-07543670=\"\"></a>\n\t\t\t     </div>\n\t\t\t     <div class=\"nav-ti\" _v-07543670=\"\">\n                     <a href=\"#\" _v-07543670=\"\">设置</a>\n\t\t\t     </div>\n\t\t\t  </div>\n\t\t\t</div>\n\t      </div>\t\t\n\t     <!-- /nav -->\n\t     <!-- detal-->\n\t     <div class=\"detal\" _v-07543670=\"\">\n            <div class=\"jf detal-box\" _v-07543670=\"\">\n                <a href=\"\" _v-07543670=\"\">我的积分</a>\n                <div class=\"jt\" _v-07543670=\"\">\n                   <a href=\"#\" _v-07543670=\"\"><img src=\"" + __webpack_require__(41) + "\" _v-07543670=\"\"></a>\n                </div>\n            </div>\n\t        <div class=\"vip detal-box\" _v-07543670=\"\">\n                <a href=\"\" _v-07543670=\"\">升级VIP</a>\n\t        </div>\n\t        <div class=\"zh detal-box\" _v-07543670=\"\">\n                <a href=\"\" _v-07543670=\"\"><span class=\"zh\" _v-07543670=\"\">退出账户</span></a>\n\t        </div>\n\t     </div>\n\t     <!-- /detal -->\n        </div>\n\n\n\t    <my-footer _v-07543670=\"\"></my-footer>\n\n\t</div>\n\n    \n\n\n  \n    \n\n    \n";
 
 /***/ },
 /* 37 */
@@ -12604,7 +12866,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-47c13600/investment.vue"
+	  var id = "_v-7aab4b22/investment.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -23185,7 +23447,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-83d0f284/investmentList.vue"
+	  var id = "_v-5b87a6a6/investmentList.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -23310,7 +23572,7 @@
 /* 53 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n<!-- content1-->\n<div id=\"items\" _v-83d0f284=\"\">\n<div class=\"item\" v-for=\"item in items.list\" _v-83d0f284=\"\">\n    <router-link :to=\"{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}\" append=\"\" _v-83d0f284=\"\">\n        <div class=\"item_left\" _v-83d0f284=\"\">\n            <div class=\"item_tit\" _v-83d0f284=\"\">\n                {{item.title | dSubstr(20) }}\n            </div>\n\n            <span class=\"item_hit\" _v-83d0f284=\"\">{{item.hits}}点击</span>\n            <span class=\"item_date\" _v-83d0f284=\"\">{{item.editdate}}</span>\n        </div>\n        <img v-lazy=\"item.sptp[0]\" class=\"item_img\" _v-83d0f284=\"\">\n        <div class=\"clear\" _v-83d0f284=\"\"></div>\n    </router-link>\n</div>\n</div>\n\n";
+	module.exports = "\n\n\n<!-- content1-->\n<div id=\"items\" _v-5b87a6a6=\"\">\n<div class=\"item\" v-for=\"item in items.list\" _v-5b87a6a6=\"\">\n    <router-link :to=\"{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}\" append=\"\" _v-5b87a6a6=\"\">\n        <div class=\"item_left\" _v-5b87a6a6=\"\">\n            <div class=\"item_tit\" _v-5b87a6a6=\"\">\n                {{item.title | dSubstr(20) }}\n            </div>\n\n            <span class=\"item_hit\" _v-5b87a6a6=\"\">{{item.hits}}点击</span>\n            <span class=\"item_date\" _v-5b87a6a6=\"\">{{item.editdate}}</span>\n        </div>\n        <img v-lazy=\"item.sptp[0]\" class=\"item_img\" _v-5b87a6a6=\"\">\n        <div class=\"clear\" _v-5b87a6a6=\"\"></div>\n    </router-link>\n</div>\n</div>\n\n";
 
 /***/ },
 /* 54 */
@@ -23340,7 +23602,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-084314df/loading.vue"
+	  var id = "_v-e542a460/loading.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -23448,7 +23710,7 @@
 /* 59 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<!--<div class=\"spinner\">-->\n    <!--<div class=\"bounce1\"></div>-->\n    <!--<div class=\"bounce2\"></div>-->\n    <!--<div class=\"bounce3\"></div>-->\n<!--</div>-->\n<div class=\"box\" _v-084314df=\"\">\n    <i _v-084314df=\"\"></i>\n</div>\n";
+	module.exports = "\n<!--<div class=\"spinner\">-->\n    <!--<div class=\"bounce1\"></div>-->\n    <!--<div class=\"bounce2\"></div>-->\n    <!--<div class=\"bounce3\"></div>-->\n<!--</div>-->\n<div class=\"box\" _v-e542a460=\"\">\n    <i _v-e542a460=\"\"></i>\n</div>\n";
 
 /***/ },
 /* 60 */
@@ -23478,7 +23740,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7aebf034/pull-to-refresh.vue"
+	  var id = "_v-2947efb6/pull-to-refresh.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -27104,13 +27366,13 @@
 /* 135 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n<div :id=\"eleId\" class=\"pull-container\" _v-7aebf034=\"\">\n  <div class=\"scroller\" _v-7aebf034=\"\">\n    <div class=\"pulldown\" :class=\"[pulldownChangeStyle,{'hide':!displaypullDownDiv}]\" _v-7aebf034=\"\">\n      <div class=\"pulldown-icon\" _v-7aebf034=\"\"></div>\n      <div class=\"pulldown-label\" _v-7aebf034=\"\">{{pullDownTip}}</div>\n    </div>\n    <slot _v-7aebf034=\"\"></slot>\n    <div class=\"pullup\" :class=\"[pullupChangeStyle,{'hide':!displaypullUpDiv}]\" _v-7aebf034=\"\">\n      <div class=\"pullup-icon\" _v-7aebf034=\"\"></div>\n      <div class=\"pullup-label\" _v-7aebf034=\"\">{{pullUpTip}}</div>\n    </div>\n  </div>\n</div>\n\n";
+	module.exports = "\n\n<div :id=\"eleId\" class=\"pull-container\" _v-2947efb6=\"\">\n  <div class=\"scroller\" _v-2947efb6=\"\">\n    <div class=\"pulldown\" :class=\"[pulldownChangeStyle,{'hide':!displaypullDownDiv}]\" _v-2947efb6=\"\">\n      <div class=\"pulldown-icon\" _v-2947efb6=\"\"></div>\n      <div class=\"pulldown-label\" _v-2947efb6=\"\">{{pullDownTip}}</div>\n    </div>\n    <slot _v-2947efb6=\"\"></slot>\n    <div class=\"pullup\" :class=\"[pullupChangeStyle,{'hide':!displaypullUpDiv}]\" _v-2947efb6=\"\">\n      <div class=\"pullup-icon\" _v-2947efb6=\"\"></div>\n      <div class=\"pullup-label\" _v-2947efb6=\"\">{{pullUpTip}}</div>\n    </div>\n  </div>\n</div>\n\n";
 
 /***/ },
 /* 136 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"white_box\" _v-47c13600=\"\">\n    <load v-if=\"loading\" _v-47c13600=\"\"></load>\n\n    <div id=\"pullDown\" v-else=\"\" _v-47c13600=\"\">\n        <pull-to-refresh @on-pullup=\"onPullup\" @on-pulldown=\"onPulldown\" class=\"page\" _v-47c13600=\"\">\n            <inv-list :items=\"items\" _v-47c13600=\"\"></inv-list>\n            <div v-show=\"noPage\" class=\"noPage\" _v-47c13600=\"\">\n                没有了\n            </div>\n        </pull-to-refresh>\n    </div>\n\n    <div class=\"clear\" _v-47c13600=\"\"></div>\n</div>\n\n";
+	module.exports = "\n<div class=\"white_box\" _v-7aab4b22=\"\">\n    <load v-if=\"loading\" _v-7aab4b22=\"\"></load>\n\n    <div id=\"pullDown\" v-else=\"\" _v-7aab4b22=\"\">\n        <pull-to-refresh @on-pullup=\"onPullup\" @on-pulldown=\"onPulldown\" class=\"page\" _v-7aab4b22=\"\">\n            <inv-list :items=\"items\" _v-7aab4b22=\"\"></inv-list>\n            <div v-show=\"noPage\" class=\"noPage\" _v-7aab4b22=\"\">\n                没有了\n            </div>\n        </pull-to-refresh>\n    </div>\n\n    <div class=\"clear\" _v-7aab4b22=\"\"></div>\n</div>\n\n";
 
 /***/ },
 /* 137 */
@@ -27140,7 +27402,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-59b0699d/investmentShow.vue"
+	  var id = "_v-6dd50f8c/investmentShow.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -27527,7 +27789,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-73ff79de/navigate.vue"
+	  var id = "_v-db5201e6/navigate.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -27581,6 +27843,7 @@
 	        collect: function collect() {},
 	        goBack: function goBack() {
 	            if (this.path) {
+	                console.log(this.path);
 	                this.$router.push(this.path);
 	            } else {
 	                this.$router.go(-1);
@@ -27687,7 +27950,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-1a6c9812/shared.vue"
+	  var id = "_v-05f19d01/shared.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -27780,16 +28043,15 @@
 	        console.log(this);
 
 	        $(document).ready(function () {
-	            //              var oHead = document.getElementsByTagName('HEAD').item(0); 
-	            // var oScript= document.createElement("script"); 
-	            // oScript.type = "text/javascript"; 
-	            // oScript.src="http://v3.jiathis.com/code/jia.js"; 
-	            // oHead.appendChild(oScript); 
+	            var oHead = document.getElementsByTagName('HEAD').item(0);
+	            var oScript = document.createElement("script");
+	            oScript.type = "text/javascript";
+	            oScript.src = "http://v3.jiathis.com/code/jia.js";
+	            oHead.appendChild(oScript);
 
 	            //                     VueScript2.load('http://v3.jiathis.com/code/jia.js').then(function () {
 	            //   $('#msg').text('Hello from VueScript2!')
 	            // })
-
 	        });
 	    },
 	    data: function data() {
@@ -27902,7 +28164,7 @@
 /* 150 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n\n\n\n\n<transition name=\"slide-fade\" _v-1a6c9812=\"\">\n\n\n        <div v-show=\"show\" class=\"shared-modal\" @click.stop.prevent=\"shutdown\" _v-1a6c9812=\"\">\n\n\n\n        <div class=\"h5share_panel\" @click.stop.prevent=\"\" _v-1a6c9812=\"\">\n            <div class=\"item wxzone\" _v-1a6c9812=\"\">\n                <a class=\"jiathis_button_douban\" _v-1a6c9812=\"\">\n                    <i class=\"iconfont\" _v-1a6c9812=\"\">㑀</i>\n                    <span _v-1a6c9812=\"\">豆瓣</span>\n                </a>\n            </div>\n            <div class=\"item qzone\" _v-1a6c9812=\"\">\n                <a class=\"jiathis_button_qzone\" _v-1a6c9812=\"\">\n                    <i class=\"iconfont \" _v-1a6c9812=\"\"></i>\n                    <span _v-1a6c9812=\"\">QQ空间</span>\n                </a>\n            </div>\n            <!--<div class=\"item qq\">-->\n                <!--<a class=\"jiathis_button_cqq\" >-->\n                    <!--<i class=\"iconfont \">&#xe607;</i>-->\n                    <!--<span>QQ好友</span>-->\n                <!--</a>-->\n            <!--</div>-->\n            <div class=\"item wb\" _v-1a6c9812=\"\">\n                <a class=\"jiathis_button_tsina\" _v-1a6c9812=\"\">\n                    <i class=\"iconfont\" _v-1a6c9812=\"\">㐶</i>\n                    <span _v-1a6c9812=\"\">新浪</span>\n                </a>\n            </div>\n        </div>\n        <div class=\"share_shutdown\" @click.stop.prevent=\"shutdown\" _v-1a6c9812=\"\"><span _v-1a6c9812=\"\">取消</span></div>\n    </div>\n\n\n</transition>\n\n\n\n";
+	module.exports = "\n\n\n\n\n\n\n<transition name=\"slide-fade\" _v-05f19d01=\"\">\n\n\n        <div v-show=\"show\" class=\"shared-modal\" @click.stop.prevent=\"shutdown\" _v-05f19d01=\"\">\n\n\n\n        <div class=\"h5share_panel\" @click.stop.prevent=\"\" _v-05f19d01=\"\">\n            <div class=\"item wxzone\" _v-05f19d01=\"\">\n                <a class=\"jiathis_button_douban\" _v-05f19d01=\"\">\n                    <i class=\"iconfont\" _v-05f19d01=\"\">㑀</i>\n                    <span _v-05f19d01=\"\">豆瓣</span>\n                </a>\n            </div>\n            <div class=\"item qzone\" _v-05f19d01=\"\">\n                <a class=\"jiathis_button_qzone\" _v-05f19d01=\"\">\n                    <i class=\"iconfont \" _v-05f19d01=\"\"></i>\n                    <span _v-05f19d01=\"\">QQ空间</span>\n                </a>\n            </div>\n            <!--<div class=\"item qq\">-->\n                <!--<a class=\"jiathis_button_cqq\" >-->\n                    <!--<i class=\"iconfont \">&#xe607;</i>-->\n                    <!--<span>QQ好友</span>-->\n                <!--</a>-->\n            <!--</div>-->\n            <div class=\"item wb\" _v-05f19d01=\"\">\n                <a class=\"jiathis_button_tsina\" _v-05f19d01=\"\">\n                    <i class=\"iconfont\" _v-05f19d01=\"\">㐶</i>\n                    <span _v-05f19d01=\"\">新浪</span>\n                </a>\n            </div>\n        </div>\n        <div class=\"share_shutdown\" @click.stop.prevent=\"shutdown\" _v-05f19d01=\"\"><span _v-05f19d01=\"\">取消</span></div>\n    </div>\n\n\n</transition>\n\n\n\n";
 
 /***/ },
 /* 151 */
@@ -27928,7 +28190,7 @@
 /* 156 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div style=\"height:100%\" _v-59b0699d=\"\">\n\n\t<!-- nav -->\n    <app-nav :path=\"topath\" _v-59b0699d=\"\"></app-nav>\n\n    <load v-if=\"loading\" _v-59b0699d=\"\"></load>\n    <!-- content -->\n    <div v-else=\"\" _v-59b0699d=\"\">\n        <div class=\"content-box\" _v-59b0699d=\"\">\n            <!-- content-one -->\n            <div class=\"content\" _v-59b0699d=\"\">\n                <div class=\"article_title\" _v-59b0699d=\"\">\n                    <h1 _v-59b0699d=\"\">{{item.title}}</h1>\n                </div>\n                <div class=\"article_info\" _v-59b0699d=\"\">\n                    <i _v-59b0699d=\"\">{{item.spmc}}</i>\n                    <span _v-59b0699d=\"\">{{item.editdate}}</span>\n                </div>\n                <div class=\"product_banner\" _v-59b0699d=\"\">\n\n                    <swipe class=\"my-swipe\" :speed=\"0\" :auto=\"0\" :show-indicators=\"false\" _v-59b0699d=\"\">\n\n                        <swipe-item v-for=\"pic in item.sptp\" class=\"slide1\" _v-59b0699d=\"\"> <img :src=\"pic\" _v-59b0699d=\"\"></swipe-item>\n\n                    </swipe>\n                </div>\n\n                <div class=\"article_area\" _v-59b0699d=\"\">\n                    <p v-if=\"item.cpqy\" _v-59b0699d=\"\">出品企业:&nbsp;{{item.cpqy}}</p>\n                    <p v-if=\"item.sccj\" _v-59b0699d=\"\">生产企业:&nbsp;{{item.sccj}}</p>\n                    <p v-if=\"item.company\" _v-59b0699d=\"\">招商企业:&nbsp;{{item.company}}</p>\n                    <p _v-59b0699d=\"\">发布日期:&nbsp;{{item.adddate}}</p>\n                    <p _v-59b0699d=\"\">更新日期:&nbsp;{{item.editdate}}</p>\n                    <p _v-59b0699d=\"\">点击数:&nbsp;{{item.hits}}</p>\n                </div>\n                <div class=\"article_area\" _v-59b0699d=\"\">\n                    <h3 _v-59b0699d=\"\"><b _v-59b0699d=\"\">商品基本信息:</b></h3>\n                    <p v-if=\"item.spmc\" _v-59b0699d=\"\">商品名称:&nbsp;{{item.spmc}}</p>\n                    <p v-if=\"item.sptym\" _v-59b0699d=\"\">通用名称:&nbsp;{{item.sptym}}</p>\n                    <p v-if=\"item.pzwh\" _v-59b0699d=\"\">批准文号:&nbsp;{{item.pzwh}}</p>\n                    <p _v-59b0699d=\"\">分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类:&nbsp;{{item.catname}}</p>\n                    <p v-if=\"item.zybhpz\" _v-59b0699d=\"\">中药保护品种:&nbsp;{{item.zybhpz}}</p>  \n                    <p v-if=\"item.mztx\" _v-59b0699d=\"\">民族特性:&nbsp;{{item.mztx}}</p>  \n                    <p v-if=\"item.syjb\" _v-59b0699d=\"\">适用疾病:&nbsp;{{item.syjb}}</p>                     \n                    <p v-if=\"item.syks\" _v-59b0699d=\"\">适用科室:&nbsp;{{item.syks}}</p>\n                     <p v-if=\"item.cfysx\" _v-59b0699d=\"\">处方药属性:&nbsp;{{item.cfysx}}</p>\n                    <p v-if=\"item.spjx\" _v-59b0699d=\"\">商品剂型:&nbsp;{{item.spjx}}</p>\n                    <p v-if=\"item.spgg\" _v-59b0699d=\"\">商品规格:&nbsp;{{item.spgg}}</p>\n                    <p v-if=\"item.jysx\" _v-59b0699d=\"\">基药属性:&nbsp;{{item.jysx}}</p>\n                    <p v-if=\"item.ybsx\" _v-59b0699d=\"\">医保属性:&nbsp;{{item.ybsx}}</p>\n                    <p v-if=\"item.zbqy\" _v-59b0699d=\"\">中标区域:&nbsp;{{item.zbqy}}</p>\n                    <p v-if=\"item.shqd\" _v-59b0699d=\"\">适合渠道:&nbsp;{{item.shqd}}</p>\n                    <p v-if=\"item.cpmd\" _v-59b0699d=\"\">产品卖点:&nbsp;{{item.cpmd}}</p>\n                </div>\n                <div class=\"article_area\" _v-59b0699d=\"\">\n                    <h3 _v-59b0699d=\"\"><b _v-59b0699d=\"\">商品详情信息:</b></h3>\n                    <p v-if=\"item.zyyl\" _v-59b0699d=\"\">主要原料:&nbsp;{{item.zyyl}}</p>\n                    <p v-if=\"item.cs\" _v-59b0699d=\"\">功效成分:&nbsp;{{item.cs}}</p>\n                    <p v-if=\"item.xz\" _v-59b0699d=\"\">性状:&nbsp;{{item.xz}}</p>\n                    <p v-if=\"item.bjgn\" _v-59b0699d=\"\">保健功能:&nbsp;{{item.bjgn}}</p>\n                    <p v-if=\"item.yfyl\" _v-59b0699d=\"\">用法用量:&nbsp;{{item.yfyl}}</p>\n                    <p v-if=\"item.syrq\" _v-59b0699d=\"\">适宜人群:&nbsp;{{item.syrq}}</p>\n                    <p v-if=\"item.syz\" _v-59b0699d=\"\">适应症:&nbsp;{{item.syz}}</p>\n                    <p v-if=\"item.syff\" _v-59b0699d=\"\">食用方法:&nbsp;{{item.syff}}</p>\n                    <p v-if=\"item.zysx\" _v-59b0699d=\"\">注意事项:&nbsp;{{item.zysx}}</p>\n                    <p v-if=\"item.bz\" _v-59b0699d=\"\">包&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;装:&nbsp;{{item.bz}}</p>\n                    <p v-if=\"item.zxbz\" _v-59b0699d=\"\">执行标准:&nbsp;{{item.zxbz}}</p>\n                    <p v-if=\"item.scxkz\" _v-59b0699d=\"\">生产许可证:&nbsp;{{item.scxkz}}</p>\n                    <p v-if=\"item.wsxkzh\" _v-59b0699d=\"\">卫生许可证号:&nbsp;{{item.wsxkzh}}</p>\n                    <p v-if=\"item.cpry\" _v-59b0699d=\"\">产品荣誉:&nbsp;{{item.cpry}}</p>\n                    <p v-if=\"item.bcsm\" _v-59b0699d=\"\">补充说明:&nbsp;{{item.bcsm}}</p>\n                  \n                </div>\n                <div class=\"article_area\" _v-59b0699d=\"\">\n                    <h3 _v-59b0699d=\"\"><b _v-59b0699d=\"\">招商要求:</b></h3>\n                    <p _v-59b0699d=\"\">招商区域:&nbsp;{{item.zsqy ? item.zsqy : \"全国\"}}</p>\n                    <p _v-59b0699d=\"\">招商要求:&nbsp;{{item.zsyq ? item.zsyq : \"暂无要求\"}}</p>\n                    <p _v-59b0699d=\"\">可提供支持:&nbsp;{{item.ktgzc ? item.ktgzc : \"暂无支持\"}}</p>\n                </div>\n                <div class=\"article_area no_border\" _v-59b0699d=\"\">\n                    <h3 _v-59b0699d=\"\"><b _v-59b0699d=\"\">联系信息:</b></h3>\n                    <p v-if=\"item.company\" _v-59b0699d=\"\">企业名称:&nbsp;{{item.company}}</p>\n                    <p v-if=\"item.address\" _v-59b0699d=\"\">联系地址:&nbsp;{{item.address}}</p>\n                    <p v-if=\"item.postcode\" _v-59b0699d=\"\">邮政编码:&nbsp;{{item.postcode}}</p>\n                    <p v-if=\"item.truename\" _v-59b0699d=\"\">联&nbsp;&nbsp;系&nbsp;&nbsp;人:&nbsp;{{item.truename}}</p>\n                    <p v-if=\"item.telephone\" _v-59b0699d=\"\">电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话:&nbsp;{{item.telephone}}</p>\n                    <p v-if=\"item.mobile\" _v-59b0699d=\"\">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机:&nbsp;{{item.mobile}}</p>\n                    <p v-if=\"item.fax\" _v-59b0699d=\"\">传&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;真:&nbsp;{{item.fax}}</p>\n                    <p v-if=\"item.email\" _v-59b0699d=\"\">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:&nbsp;{{item.email}}</p>\n                    <p v-if=\"item.qq\" _v-59b0699d=\"\">Q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q:&nbsp;{{item.qq}}</p>\n                </div>\n\n            </div>\n\n        </div><!--content-box-->\n\n        <!-- footer -->\n        <div class=\"footer\" _v-59b0699d=\"\">\n            <div class=\"footer-box\" _v-59b0699d=\"\">\n                <div class=\"footer-t\" _v-59b0699d=\"\">\n                    <div class=\"foot-t-box\" _v-59b0699d=\"\">\n                        <i class=\"iconfont favour\" _v-59b0699d=\"\"></i>\n                        <span _v-59b0699d=\"\">16</span>\n                        <i class=\"report\" _v-59b0699d=\"\"><b _v-59b0699d=\"\">举报</b></i>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n\n\n";
+	module.exports = "\n<div style=\"height:100%\" _v-6dd50f8c=\"\">\n\n\t<!-- nav -->\n    <app-nav :path=\"topath\" _v-6dd50f8c=\"\"></app-nav>\n\n    <load v-if=\"loading\" _v-6dd50f8c=\"\"></load>\n    <!-- content -->\n    <div v-else=\"\" _v-6dd50f8c=\"\">\n        <div class=\"content-box\" _v-6dd50f8c=\"\">\n            <!-- content-one -->\n            <div class=\"content\" _v-6dd50f8c=\"\">\n                <div class=\"article_title\" _v-6dd50f8c=\"\">\n                    <h1 _v-6dd50f8c=\"\">{{item.title}}</h1>\n                </div>\n                <div class=\"article_info\" _v-6dd50f8c=\"\">\n                    <i _v-6dd50f8c=\"\">{{item.spmc}}</i>\n                    <span _v-6dd50f8c=\"\">{{item.editdate}}</span>\n                </div>\n                <div class=\"product_banner\" _v-6dd50f8c=\"\">\n\n                    <swipe class=\"my-swipe\" :speed=\"0\" :auto=\"0\" :show-indicators=\"false\" _v-6dd50f8c=\"\">\n\n                        <swipe-item v-for=\"pic in item.sptp\" class=\"slide1\" _v-6dd50f8c=\"\"> <img :src=\"pic\" _v-6dd50f8c=\"\"></swipe-item>\n\n                    </swipe>\n                </div>\n\n                <div class=\"article_area\" _v-6dd50f8c=\"\">\n                    <p v-if=\"item.cpqy\" _v-6dd50f8c=\"\">出品企业:&nbsp;{{item.cpqy}}</p>\n                    <p v-if=\"item.sccj\" _v-6dd50f8c=\"\">生产企业:&nbsp;{{item.sccj}}</p>\n                    <p v-if=\"item.company\" _v-6dd50f8c=\"\">招商企业:&nbsp;{{item.company}}</p>\n                    <p _v-6dd50f8c=\"\">发布日期:&nbsp;{{item.adddate}}</p>\n                    <p _v-6dd50f8c=\"\">更新日期:&nbsp;{{item.editdate}}</p>\n                    <p _v-6dd50f8c=\"\">点击数:&nbsp;{{item.hits}}</p>\n                </div>\n                <div class=\"article_area\" _v-6dd50f8c=\"\">\n                    <h3 _v-6dd50f8c=\"\"><b _v-6dd50f8c=\"\">商品基本信息:</b></h3>\n                    <p v-if=\"item.spmc\" _v-6dd50f8c=\"\">商品名称:&nbsp;{{item.spmc}}</p>\n                    <p v-if=\"item.sptym\" _v-6dd50f8c=\"\">通用名称:&nbsp;{{item.sptym}}</p>\n                    <p v-if=\"item.pzwh\" _v-6dd50f8c=\"\">批准文号:&nbsp;{{item.pzwh}}</p>\n                    <p _v-6dd50f8c=\"\">分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类:&nbsp;{{item.catname}}</p>\n                    <p v-if=\"item.zybhpz\" _v-6dd50f8c=\"\">中药保护品种:&nbsp;{{item.zybhpz}}</p>  \n                    <p v-if=\"item.mztx\" _v-6dd50f8c=\"\">民族特性:&nbsp;{{item.mztx}}</p>  \n                    <p v-if=\"item.syjb\" _v-6dd50f8c=\"\">适用疾病:&nbsp;{{item.syjb}}</p>                     \n                    <p v-if=\"item.syks\" _v-6dd50f8c=\"\">适用科室:&nbsp;{{item.syks}}</p>\n                     <p v-if=\"item.cfysx\" _v-6dd50f8c=\"\">处方药属性:&nbsp;{{item.cfysx}}</p>\n                    <p v-if=\"item.spjx\" _v-6dd50f8c=\"\">商品剂型:&nbsp;{{item.spjx}}</p>\n                    <p v-if=\"item.spgg\" _v-6dd50f8c=\"\">商品规格:&nbsp;{{item.spgg}}</p>\n                    <p v-if=\"item.jysx\" _v-6dd50f8c=\"\">基药属性:&nbsp;{{item.jysx}}</p>\n                    <p v-if=\"item.ybsx\" _v-6dd50f8c=\"\">医保属性:&nbsp;{{item.ybsx}}</p>\n                    <p v-if=\"item.zbqy\" _v-6dd50f8c=\"\">中标区域:&nbsp;{{item.zbqy}}</p>\n                    <p v-if=\"item.shqd\" _v-6dd50f8c=\"\">适合渠道:&nbsp;{{item.shqd}}</p>\n                    <p v-if=\"item.cpmd\" _v-6dd50f8c=\"\">产品卖点:&nbsp;{{item.cpmd}}</p>\n                </div>\n                <div class=\"article_area\" _v-6dd50f8c=\"\">\n                    <h3 _v-6dd50f8c=\"\"><b _v-6dd50f8c=\"\">商品详情信息:</b></h3>\n                    <p v-if=\"item.zyyl\" _v-6dd50f8c=\"\">主要原料:&nbsp;{{item.zyyl}}</p>\n                    <p v-if=\"item.cs\" _v-6dd50f8c=\"\">功效成分:&nbsp;{{item.cs}}</p>\n                    <p v-if=\"item.xz\" _v-6dd50f8c=\"\">性状:&nbsp;{{item.xz}}</p>\n                    <p v-if=\"item.bjgn\" _v-6dd50f8c=\"\">保健功能:&nbsp;{{item.bjgn}}</p>\n                    <p v-if=\"item.yfyl\" _v-6dd50f8c=\"\">用法用量:&nbsp;{{item.yfyl}}</p>\n                    <p v-if=\"item.syrq\" _v-6dd50f8c=\"\">适宜人群:&nbsp;{{item.syrq}}</p>\n                    <p v-if=\"item.syz\" _v-6dd50f8c=\"\">适应症:&nbsp;{{item.syz}}</p>\n                    <p v-if=\"item.syff\" _v-6dd50f8c=\"\">食用方法:&nbsp;{{item.syff}}</p>\n                    <p v-if=\"item.zysx\" _v-6dd50f8c=\"\">注意事项:&nbsp;{{item.zysx}}</p>\n                    <p v-if=\"item.bz\" _v-6dd50f8c=\"\">包&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;装:&nbsp;{{item.bz}}</p>\n                    <p v-if=\"item.zxbz\" _v-6dd50f8c=\"\">执行标准:&nbsp;{{item.zxbz}}</p>\n                    <p v-if=\"item.scxkz\" _v-6dd50f8c=\"\">生产许可证:&nbsp;{{item.scxkz}}</p>\n                    <p v-if=\"item.wsxkzh\" _v-6dd50f8c=\"\">卫生许可证号:&nbsp;{{item.wsxkzh}}</p>\n                    <p v-if=\"item.cpry\" _v-6dd50f8c=\"\">产品荣誉:&nbsp;{{item.cpry}}</p>\n                    <p v-if=\"item.bcsm\" _v-6dd50f8c=\"\">补充说明:&nbsp;{{item.bcsm}}</p>\n                  \n                </div>\n                <div class=\"article_area\" _v-6dd50f8c=\"\">\n                    <h3 _v-6dd50f8c=\"\"><b _v-6dd50f8c=\"\">招商要求:</b></h3>\n                    <p _v-6dd50f8c=\"\">招商区域:&nbsp;{{item.zsqy ? item.zsqy : \"全国\"}}</p>\n                    <p _v-6dd50f8c=\"\">招商要求:&nbsp;{{item.zsyq ? item.zsyq : \"暂无要求\"}}</p>\n                    <p _v-6dd50f8c=\"\">可提供支持:&nbsp;{{item.ktgzc ? item.ktgzc : \"暂无支持\"}}</p>\n                </div>\n                <div class=\"article_area no_border\" _v-6dd50f8c=\"\">\n                    <h3 _v-6dd50f8c=\"\"><b _v-6dd50f8c=\"\">联系信息:</b></h3>\n                    <p v-if=\"item.company\" _v-6dd50f8c=\"\">企业名称:&nbsp;{{item.company}}</p>\n                    <p v-if=\"item.address\" _v-6dd50f8c=\"\">联系地址:&nbsp;{{item.address}}</p>\n                    <p v-if=\"item.postcode\" _v-6dd50f8c=\"\">邮政编码:&nbsp;{{item.postcode}}</p>\n                    <p v-if=\"item.truename\" _v-6dd50f8c=\"\">联&nbsp;&nbsp;系&nbsp;&nbsp;人:&nbsp;{{item.truename}}</p>\n                    <p v-if=\"item.telephone\" _v-6dd50f8c=\"\">电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话:&nbsp;{{item.telephone}}</p>\n                    <p v-if=\"item.mobile\" _v-6dd50f8c=\"\">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机:&nbsp;{{item.mobile}}</p>\n                    <p v-if=\"item.fax\" _v-6dd50f8c=\"\">传&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;真:&nbsp;{{item.fax}}</p>\n                    <p v-if=\"item.email\" _v-6dd50f8c=\"\">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:&nbsp;{{item.email}}</p>\n                    <p v-if=\"item.qq\" _v-6dd50f8c=\"\">Q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q:&nbsp;{{item.qq}}</p>\n                </div>\n\n            </div>\n\n        </div><!--content-box-->\n\n        <!-- footer -->\n        <div class=\"footer\" _v-6dd50f8c=\"\">\n            <div class=\"footer-box\" _v-6dd50f8c=\"\">\n                <div class=\"footer-t\" _v-6dd50f8c=\"\">\n                    <div class=\"foot-t-box\" _v-6dd50f8c=\"\">\n                        <i class=\"iconfont favour\" _v-6dd50f8c=\"\"></i>\n                        <span _v-6dd50f8c=\"\">16</span>\n                        <i class=\"report\" _v-6dd50f8c=\"\"><b _v-6dd50f8c=\"\">举报</b></i>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n\n\n";
 
 /***/ },
 /* 157 */
@@ -27959,7 +28221,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-195d05ba/healthDetail.vue"
+	  var id = "_v-edff492e/healthDetail.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -28208,7 +28470,7 @@
 /* 163 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div style=\"height:100%\" _v-195d05ba=\"\">\n\n\t<!-- nav -->\n    <app-nav :path=\"path\" _v-195d05ba=\"\"></app-nav>\n\n    <load v-if=\"loading\" _v-195d05ba=\"\"></load>\n    <!-- content -->\n    <div v-else=\"\" _v-195d05ba=\"\">\n        <div class=\"content-box\" _v-195d05ba=\"\">\n            <!-- content-one -->\n            <div class=\"content\" _v-195d05ba=\"\">\n                <div class=\"article_title\" _v-195d05ba=\"\">\n                    <h1 _v-195d05ba=\"\">{{item.title}}</h1>\n                </div>\n                <div class=\"article_info\" _v-195d05ba=\"\">\n                    <i _v-195d05ba=\"\">{{item.copyfrom ?item.copyfrom : \"当代医药市场网\"}}</i>\n                    <span _v-195d05ba=\"\">{{item.editdate}}</span>\n                </div>\n                 \n\n                <div class=\"article_area no_border\" _v-195d05ba=\"\">\n                 \t<div class=\"article_body\" v-html=\"item.content\" _v-195d05ba=\"\">\n                 \t</div>\n                </div>\n\n            </div>\n\n        </div><!--content-box-->\n\n        <!-- footer -->\n        <div class=\"footer\" _v-195d05ba=\"\">\n            <div class=\"footer-box\" _v-195d05ba=\"\">\n                <div class=\"footer-t\" _v-195d05ba=\"\">\n                    <div class=\"foot-t-box\" _v-195d05ba=\"\">\n                        <i class=\"iconfont favour\" _v-195d05ba=\"\"></i>\n                        <span _v-195d05ba=\"\">16</span>\n                        <i class=\"report\" _v-195d05ba=\"\"><b _v-195d05ba=\"\">举报</b></i>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n\n\n";
+	module.exports = "\n<div style=\"height:100%\" _v-edff492e=\"\">\n\n\t<!-- nav -->\n    <app-nav :path=\"path\" _v-edff492e=\"\"></app-nav>\n\n    <load v-if=\"loading\" _v-edff492e=\"\"></load>\n    <!-- content -->\n    <div v-else=\"\" _v-edff492e=\"\">\n        <div class=\"content-box\" _v-edff492e=\"\">\n            <!-- content-one -->\n            <div class=\"content\" _v-edff492e=\"\">\n                <div class=\"article_title\" _v-edff492e=\"\">\n                    <h1 _v-edff492e=\"\">{{item.title}}</h1>\n                </div>\n                <div class=\"article_info\" _v-edff492e=\"\">\n                    <i _v-edff492e=\"\">{{item.copyfrom ?item.copyfrom : \"当代医药市场网\"}}</i>\n                    <span _v-edff492e=\"\">{{item.editdate}}</span>\n                </div>\n                 \n\n                <div class=\"article_area no_border\" _v-edff492e=\"\">\n                 \t<div class=\"article_body\" v-html=\"item.content\" _v-edff492e=\"\">\n                 \t</div>\n                </div>\n\n            </div>\n\n        </div><!--content-box-->\n\n        <!-- footer -->\n        <div class=\"footer\" _v-edff492e=\"\">\n            <div class=\"footer-box\" _v-edff492e=\"\">\n                <div class=\"footer-t\" _v-edff492e=\"\">\n                    <div class=\"foot-t-box\" _v-edff492e=\"\">\n                        <i class=\"iconfont favour\" _v-edff492e=\"\"></i>\n                        <span _v-edff492e=\"\">16</span>\n                        <i class=\"report\" _v-edff492e=\"\"><b _v-edff492e=\"\">举报</b></i>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n\n\n";
 
 /***/ },
 /* 164 */,
@@ -28250,7 +28512,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
-	 * Vue-Lazyload.js v0.9.0
+	 * Vue-Lazyload.js v0.9.2
 	 * (c) 2016 Awe <hilongjw@gmail.com>
 	 * Released under the MIT License.
 	 */
@@ -28276,7 +28538,39 @@
 	    var Options = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
 
 	    var isVueNext = Vue.version.split('.')[0] === '2';
-	    var DEFAULT_URL = 'data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXs7Oxc9QatAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg==';
+	    var DEFAULT_URL = 'data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=';
+	    var ListenEvents = ['scroll', 'wheel', 'mousewheel', 'resize', 'animationend', 'transitionend'];
+
+	    var $Lazyload = {
+	        listeners: {
+	            loading: [],
+	            loaded: [],
+	            error: []
+	        },
+	        $on: function $on(event, func) {
+	            this.listeners[event].push(func);
+	        },
+	        $once: function $once(event, func) {
+	            var vm = this;
+	            function on() {
+	                vm.$off(event, on);
+	                func.apply(vm, arguments);
+	            }
+	            this.$on(event, on);
+	        },
+	        $off: function $off(event, func) {
+	            if (!func) {
+	                this.listeners[event] = [];
+	                return;
+	            }
+	            this.listeners[event].$remove(func);
+	        },
+	        $emit: function $emit(event, context) {
+	            this.listeners[event].forEach(function (func) {
+	                func(context);
+	            });
+	        }
+	    };
 
 	    var Init = {
 	        preLoad: Options.preLoad || 1.3,
@@ -28330,25 +28624,19 @@
 
 	    var onListen = function onListen(el, start) {
 	        if (start) {
-	            _.on(el, 'scroll', lazyLoadHandler);
-	            _.on(el, 'wheel', lazyLoadHandler);
-	            _.on(el, 'mousewheel', lazyLoadHandler);
-	            _.on(el, 'resize', lazyLoadHandler);
-	            _.on(el, 'animationend', lazyLoadHandler);
-	            _.on(el, 'transitionend', lazyLoadHandler);
+	            ListenEvents.forEach(function (evt) {
+	                _.on(el, evt, lazyLoadHandler);
+	            });
 	        } else {
 	            Init.hasbind = false;
-	            _.off(el, 'scroll', lazyLoadHandler);
-	            _.off(el, 'wheel', lazyLoadHandler);
-	            _.off(el, 'mousewheel', lazyLoadHandler);
-	            _.off(el, 'resize', lazyLoadHandler);
-	            _.off(el, 'animationend', lazyLoadHandler);
-	            _.off(el, 'transitionend', lazyLoadHandler);
+	            ListenEvents.forEach(function (evt) {
+	                _.off(el, evt, lazyLoadHandler);
+	            });
 	        }
 	    };
 
 	    var checkCanShow = function checkCanShow(listener) {
-	        if (imageCache.indexOf(listener.src) > -1) return setElRender(listener.el, listener.bindType, listener.src, 'loaded');
+	        if (imageCache.indexOf(listener.src) !== -1) return setElRender(listener.el, listener.bindType, listener.src, 'loaded');
 	        var rect = listener.el.getBoundingClientRect();
 
 	        if (rect.top < window.innerHeight * Init.preLoad && rect.bottom > 0 && rect.left < window.innerWidth * Init.preLoad && rect.right > 0) {
@@ -28356,26 +28644,31 @@
 	        }
 	    };
 
-	    var setElRender = function setElRender(el, bindType, src, state) {
+	    var setElRender = function setElRender(el, bindType, src, state, context) {
 	        if (!bindType) {
 	            el.setAttribute('src', src);
 	        } else {
 	            el.setAttribute('style', bindType + ': url(' + src + ')');
 	        }
 	        el.setAttribute('lazy', state);
+	        if (context) {
+	            $Lazyload.$emit(state, context);
+	        }
 	    };
 
 	    var render = function render(item) {
 	        if (item.attempt >= Init.attempt) return false;
-
 	        item.attempt++;
 
+	        if (imageCache.indexOf(item.src) !== -1) return setElRender(item.el, item.bindType, item.src, 'loaded');
+	        imageCache.push(item.src);
+
 	        loadImageAsync(item, function (image) {
-	            setElRender(item.el, item.bindType, item.src, 'loaded');
-	            imageCache.push(item.src);
+	            setElRender(item.el, item.bindType, item.src, 'loaded', item);
 	            Listeners.$remove(item);
 	        }, function (error) {
-	            setElRender(item.el, item.bindType, item.error, 'error');
+	            imageCache.$remove(item.src);
+	            setElRender(item.el, item.bindType, item.error, 'error', item);
 	        });
 	    };
 
@@ -28434,27 +28727,32 @@
 	        var imageLoading = Init.loading;
 	        var imageError = Init.error;
 
-	        if (typeof binding.value !== 'string' && binding.value) {
+	        if (binding.value && typeof binding.value !== 'string') {
 	            imageSrc = binding.value.src;
 	            imageLoading = binding.value.loading || Init.loading;
 	            imageError = binding.value.error || Init.error;
 	        }
 
-	        setElRender(el, binding.arg, imageLoading, 'loading');
+	        if (imageCache.indexOf(imageSrc) > -1) return setElRender(el, binding.arg, imageSrc, 'loaded');
 
 	        Vue.nextTick(function () {
 	            if (binding.modifiers) {
 	                parentEl = window.document.getElementById(Object.keys(binding.modifiers)[0]);
 	            }
 
-	            Listeners.push({
+	            var listener = {
 	                bindType: binding.arg,
 	                attempt: 0,
 	                parentEl: parentEl,
 	                el: el,
 	                error: imageError,
 	                src: imageSrc
-	            });
+	            };
+
+	            Listeners.push(listener);
+
+	            setElRender(el, binding.arg, imageLoading, 'loading', listener);
+
 	            lazyLoadHandler();
 
 	            if (Listeners.length > 0 && !Init.hasbind) {
@@ -28467,6 +28765,8 @@
 	            }
 	        });
 	    };
+
+	    Vue.prototype.$Lazyload = $Lazyload;
 
 	    if (isVueNext) {
 	        Vue.directive('lazy', {

@@ -20,7 +20,7 @@ export default {
 	routes: [
 		{	path:"/",component:Common,
 			children: [
-				{ path: 'home', component: Home },
+				{  name:"home", path: 'home', component: Home },
 			
 			],
 		},

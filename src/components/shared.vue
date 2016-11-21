@@ -47,7 +47,7 @@
 
 
     </template>
-
+ 
     <script>
 
 
@@ -64,7 +64,9 @@
             create(){
 
             },
-            mounted(){                
+            mounted(){     
+
+                console.log(this);           
 
                 $(document).ready(function(){
                      var oHead = document.getElementsByTagName('HEAD').item(0); 
@@ -72,6 +74,10 @@
         oScript.type = "text/javascript"; 
         oScript.src="http://v3.jiathis.com/code/jia.js"; 
         oHead.appendChild(oScript); 
+
+//                     VueScript2.load('http://v3.jiathis.com/code/jia.js').then(function () {
+//   $('#msg').text('Hello from VueScript2!')
+// })
 
                 })
             },
@@ -88,6 +94,7 @@
             }
         }
     </script>
+
     <style lang="sass" scoped>
         .slide-fade-enter-active {
             transition: all .3s ease;

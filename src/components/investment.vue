@@ -53,14 +53,18 @@
             loadData:function(finshCallback){
                 this.page += 1;
                 var _this = this;
-                var url = "http://www.ey99.com/api/mobile/investment.php?";
-                url += "catid=" + this.catid + "&page=" + this.page;
-                console.log(url);
+                var url = "http://www.ey99.com/api/mobile/investment.php";
+                //url += "catid=" + this.catid + "&page=" + this.page;
+                //console.log(url);
                 //url 为接口地址
+                var option = {params:{page:this.page,catid:this.catid}};
 
-                this.$http.jsonp(url, []).then(function(response){
+             
+                this.$http.jsonp(url, option).then(function(response){
 
+                    console.log(response);
 
+                    
                     _this.pageTotal = Math.ceil( response.body.count / 10 );
 
 
@@ -109,6 +113,7 @@
                     // 响应成功回调
                 }, function(response){
                     // 响应成功回调
+                    console.log("error");
                 });
             },
             onPullup(finshCallback) {

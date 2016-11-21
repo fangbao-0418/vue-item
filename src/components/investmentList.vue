@@ -66,6 +66,7 @@
         float:left;
     }
     .item_tit{
+        padding-right:.2rem;
         padding-top:.1rem;
         font-size: .3rem;
         height:.8rem;

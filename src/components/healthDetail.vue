@@ -2,7 +2,7 @@
     <div style="height:100%">
 
     	<!-- nav -->
-        <app-nav></app-nav>
+        <app-nav :path="path"></app-nav>
 
         <load v-if="loading"></load>
         <!-- content -->
@@ -61,6 +61,7 @@
                 id:null,
                 item:null,
                 loading:true,
+                path:{name:"home",query:{type:"health"}}
             }
         },
         created(){
@@ -97,8 +98,10 @@
 
 <style lang="sass" >
 .article_body {
-	p{
-			font-size:.3rem;
+	line-height:.48rem;
+	font-size:.32rem;
+	*{
+		font-size:.32rem;
 	}
 	img{
 		width:5.8rem;
@@ -119,7 +122,7 @@
 }
 .article_title h1{
     padding-top:.46rem;
-    font-size:.35rem;
+    font-size:.4rem;
     padding-bottom:.14rem;
     color:#000;
 }

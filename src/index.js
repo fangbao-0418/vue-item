@@ -15,6 +15,12 @@ require('./css/common.css');					  //全局css样式
 Vue.use(VueRouter);
 Vue.use(VueResource);   //加载Resource
 
+//VueScript2——简单、熟悉的异步加载脚本
+var script2 = require('vue-script2');
+Vue.use(script2);
+
+
+
 Vue.use(VueLazyload, {
     error:require("./assets/err.jpg"),
     loading: require("./assets/loading.gif"),

@@ -16,13 +16,13 @@
               <h2 class="cardTitle">今日推荐</h2>
               <ul>
                 <li v-for="item in items.list">
-                    <router-link  v-if="item.thumb" href="">
+                    <router-link  v-if="item.thumb" :to="{name:'healthDetail',query:{id:item.itemid}}" >
 
                         <div class="descBox">
-                            <div class="title">{{item.title | dsubstr(10)}}</div>
+                            <div class="title">{{item.title | dsubstr(20)}}</div>
                             <div class="footnote">
-                                <span class="source">{{item.copyfrom}}</span>
-                                <span class="hits">{{item.hits}}</span>
+                                <span class="source">{{item.copyfrom ? item.copyfrom : "当代医药市场网"}}</span>
+                                <span class="hits"><i class="iconfont">&#xf0048;</i>{{item.hits}}</span>
                             </div>
                         </div>
                         <span class="img" >
@@ -31,7 +31,9 @@
                     </router-link >
                     <router-link  v-else :to="{name:'healthDetail',query:{id:item.itemid}}" >
                         <h2 class="title">{{item.title | dsubstr(16)}}</h2>
-                        <span class="hits">{{item.hits}}</span>
+                        <span class="hits">
+                            <i class="iconfont">&#xf0048;</i>{{item.hits}}
+                        </span>
                     </router-link >
                 </li>
               </ul>
@@ -52,7 +54,7 @@
                 'noPage':false,
                 'carousel':[{"pic":"http://www.ey99.com/file/upload/201609/30/225028701.jpg","title":"习大大访问你家","url":""},{"pic":"http://www.ey99.com/file/upload/201609/30/225103531.jpg","title":"习大大访问我家","url":""},{"pic":"http://www.ey99.com/file/upload/201609/08/085935452830.jpg","title":"习大大访问她家","url":""}],
                 'page':0,
-                'totalPage':0,
+               
             }
         },
         components:{
@@ -89,11 +91,10 @@
                             
                             if(finshCallback){
                                  finshCallback()
-                            }
-                           
+                            }                   
                         
                         }
-                        if(_this.page > 1 && _this.page <= res.body.count){
+                        if(_this.page > 1 && _this.page <= Math.ceil(res.body.count/20)){
 
 
                                 for(var i=0;i<res.body.list.length;i++){
@@ -157,17 +158,26 @@
                 border-bottom:dashed #ccc 1px;
                 .descBox{
                     width:69%;
-                    min-height:.7rem;
+                    min-height:1rem;
+                    float:left;
                     .title{
+                        min-height:1rem;
                         font-size:.3rem;
+                    }
+                    .source{
+                        font-size:.24rem;
+                        color:#8f8f8f;
+                        line-height: .4rem;                       
                     }
                     .hits{
                         float:right;
                         font-size:.18rem;
                     }
                 }
-                .img{
+                img{
+                    float:right;
                     width:25%;
+                    height:1.2rem;
                 }
                 a{
                     display: inline-block;
@@ -187,6 +197,10 @@
                     line-height: .4rem;
                     float:right;
                     text-align: right;
+                    color:#8f8f8f;
+                    i{
+                        font-size:.24rem;
+                    }
                 }
             }
 

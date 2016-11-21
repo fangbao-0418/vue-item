@@ -5,7 +5,9 @@
         <div class="top">
             <div class="wrap">
                 <i class="logo"></i>
-                <div class="search_bg"  ></div>
+                <div class="search_bg"  >
+                    <i>当代医药市场网</i>
+                </div>
             </div>
 
         </div>
@@ -128,7 +130,7 @@
 
     }
 </script>
-<style scoped>
+<style lang="sass" scoped>
     .box{
         height:1.44rem;
     }
@@ -159,6 +161,13 @@
         float:right;
         margin-top:.16rem;
         background-size: 2.61rem .5rem;
+        i{
+            font-size:.24rem;
+            color:#8f8f8f;
+            margin-left:.5rem;
+            padding-top:.13rem;
+            display:inline-block;
+        }
     }
 
 

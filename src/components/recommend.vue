@@ -50,7 +50,8 @@
             var _this = this;
           
            $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
-     
+              
+
             this.loadData(false);
         },
         methods: {
@@ -136,6 +137,20 @@
                 this.loadData(finshCallback);
             }
         },
+    }
+
+
+    //响应窗体改变
+    $(document).ready(function(){
+              window.onresize = function(){
+                resetHeight();
+            }  
+        })
+        
+
+    function resetHeight(){
+         $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
+                     $(".page").height($(".white_box").height())
     }
 </script>
 <style scoped>

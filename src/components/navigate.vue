@@ -17,6 +17,11 @@
 <script>
     import share from './shared.vue';
     export default {
+        props:{
+            path:{
+                default:null
+            }
+        },
         data(){
             return {
                 isOpen:false,
@@ -33,7 +38,11 @@
 
             },
             goBack(){
-                this.$router.go(-1);
+                if(this.path){
+                    this.$router.push(this.path);
+                }else{
+                    this.$router.go(-1);
+                }                
             }
         }
     }

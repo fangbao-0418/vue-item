@@ -1,17 +1,17 @@
 webpackJsonp([1],{
 
-/***/ 157:
+/***/ 164:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(158)
-	__vue_script__ = __webpack_require__(160)
+	__webpack_require__(165)
+	__vue_script__ = __webpack_require__(167)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\home.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(191)
+	__vue_template__ = __webpack_require__(198)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -37,13 +37,13 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 158:
+/***/ 165:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(159);
+	var content = __webpack_require__(166);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -64,7 +64,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 159:
+/***/ 166:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -79,7 +79,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 160:
+/***/ 167:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -88,11 +88,11 @@ webpackJsonp([1],{
 	    value: true
 	});
 
-	var _header = __webpack_require__(161);
+	var _header = __webpack_require__(168);
 
 	var _header2 = _interopRequireDefault(_header);
 
-	var _indexMain = __webpack_require__(171);
+	var _indexMain = __webpack_require__(178);
 
 	var _indexMain2 = _interopRequireDefault(_indexMain);
 
@@ -100,11 +100,11 @@ webpackJsonp([1],{
 
 	var _investment2 = _interopRequireDefault(_investment);
 
-	var _recommend = __webpack_require__(176);
+	var _recommend = __webpack_require__(183);
 
 	var _recommend2 = _interopRequireDefault(_recommend);
 
-	var _health = __webpack_require__(183);
+	var _health = __webpack_require__(190);
 
 	var _health2 = _interopRequireDefault(_health);
 
@@ -167,18 +167,18 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 161:
+/***/ 168:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(162)
-	__vue_script__ = __webpack_require__(168)
+	__webpack_require__(169)
+	__vue_script__ = __webpack_require__(175)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\header.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(170)
+	__vue_template__ = __webpack_require__(177)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -204,13 +204,13 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 162:
+/***/ 169:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(163);
+	var content = __webpack_require__(170);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -219,8 +219,8 @@ webpackJsonp([1],{
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-0ab50b8c&scoped=true!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./header.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-0ab50b8c&scoped=true!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./header.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-0ab50b8c&scoped=true!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./header.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-0ab50b8c&scoped=true!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./header.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -231,7 +231,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 163:
+/***/ 170:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -239,42 +239,42 @@ webpackJsonp([1],{
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.box[_v-0ab50b8c]{\n    height:1.44rem;\n}\n.wrap[_v-0ab50b8c]{\n    width:5.8rem;\n    margin:0px .3rem;\n}\n.top[_v-0ab50b8c]{\n    position: fixed;\n    top:0px;\n    width:6.4rem;\n    height:.84rem;\n    background: #ed1b23;\n    z-index: 999999;\n}\n.logo[_v-0ab50b8c]{\n    width:3rem;\n    height:0.4rem;\n    display: inline-block;\n    background: url(" + __webpack_require__(164) + ") no-repeat;\n    background-size: 3rem .4rem;\n    margin-top:.22rem;\n}\n.search_bg[_v-0ab50b8c]{\n    background: url(" + __webpack_require__(165) + ");\n    width:2.61rem;\n    height:.5rem;\n    float:right;\n    margin-top:.16rem;\n    background-size: 2.61rem .5rem;\n}\n\n\n.nav[_v-0ab50b8c]{\n    width:5.8rem;\n    height:.6rem;\n    padding:0px .3rem;\n    position:fixed;\n    top:.84rem;\n    background-color:#f5f5f3;\n    z-index: 999999;\n}\n#nav-smartSetup[_v-0ab50b8c]{\n    position: absolute;\n    z-index: 1;\n    margin-left:-.3rem;\n    padding-left:.1rem;\n    height: .6rem;\n    width: 5.4rem;\n    overflow: hidden;\n}\n\n#nav-smartSetup ul li[_v-0ab50b8c]{\n    float:left;\n    line-height: .64rem;\n    font-size: .3rem;\n    padding: 0px .2rem;\n    height:.6rem;\n}\n#nav-smartSetup ul .cur[_v-0ab50b8c]{\n    font-size:.32rem;\n    color:#ed1b23;\n    float:left;\n    line-height: .64rem;\n    padding: 0px .2rem;\n\n}\n#scroller[_v-0ab50b8c] {\n    position: absolute;\n    z-index: 1;\n    -webkit-tap-highlight-color: rgba(0,0,0,0);\n\n    height: 100%;\n\n    -webkit-transform: translateZ(0);\n    transform: translateZ(0);\n    -webkit-touch-callout: none;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n    -webkit-text-size-adjust: none;\n    -ms-text-size-adjust: none;\n    -o-text-size-adjust: none;\n    text-size-adjust: none;\n}\n#scroller ul[_v-0ab50b8c] {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n    width: 110%;\n    line-height: 4rem;\n    height: .6rem;\n    text-align: center;\n}\n\n\n.line_a[_v-0ab50b8c]{\n\n    background: url(" + __webpack_require__(166) + ");\n    display: inline-block;\n    width:.14rem;\n    height:.6rem;\n    background-size: .14rem .6rem;\n\n    position: absolute;\n    top:0px;\n    right:.67rem;\n    z-index: 999;\n}\n.plus_a[_v-0ab50b8c]{\n    position: absolute;\n    right:.3rem;\n    background: url(" + __webpack_require__(167) + ");\n    display: inline-block;\n    width:.37rem;\n    height:.36rem;\n    float:right;\n    margin-top:.10rem;\n    cursor: pointer;\n    background-size: .37rem .36rem;\n    z-index: 999;\n}\n\n\n", ""]);
+	exports.push([module.id, ".box[_v-0ab50b8c] {\n  height: 1.44rem; }\n\n.wrap[_v-0ab50b8c] {\n  width: 5.8rem;\n  margin: 0px .3rem; }\n\n.top[_v-0ab50b8c] {\n  position: fixed;\n  top: 0px;\n  width: 6.4rem;\n  height: .84rem;\n  background: #ed1b23;\n  z-index: 999999; }\n\n.logo[_v-0ab50b8c] {\n  width: 3rem;\n  height: 0.4rem;\n  display: inline-block;\n  background: url(" + __webpack_require__(171) + ") no-repeat;\n  background-size: 3rem .4rem;\n  margin-top: .22rem; }\n\n.search_bg[_v-0ab50b8c] {\n  background: url(" + __webpack_require__(172) + ");\n  width: 2.61rem;\n  height: .5rem;\n  float: right;\n  margin-top: .16rem;\n  background-size: 2.61rem .5rem; }\n  .search_bg i[_v-0ab50b8c] {\n    font-size: .24rem;\n    color: #8f8f8f;\n    margin-left: .5rem;\n    padding-top: .13rem;\n    display: inline-block; }\n\n.nav[_v-0ab50b8c] {\n  width: 5.8rem;\n  height: .6rem;\n  padding: 0px .3rem;\n  position: fixed;\n  top: .84rem;\n  background-color: #f5f5f3;\n  z-index: 999999; }\n\n#nav-smartSetup[_v-0ab50b8c] {\n  position: absolute;\n  z-index: 1;\n  margin-left: -.3rem;\n  padding-left: .1rem;\n  height: .6rem;\n  width: 5.4rem;\n  overflow: hidden; }\n\n#nav-smartSetup ul li[_v-0ab50b8c] {\n  float: left;\n  line-height: .64rem;\n  font-size: .3rem;\n  padding: 0px .2rem;\n  height: .6rem; }\n\n#nav-smartSetup ul .cur[_v-0ab50b8c] {\n  font-size: .32rem;\n  color: #ed1b23;\n  float: left;\n  line-height: .64rem;\n  padding: 0px .2rem; }\n\n#scroller[_v-0ab50b8c] {\n  position: absolute;\n  z-index: 1;\n  -webkit-tap-highlight-color: transparent;\n  height: 100%;\n  -webkit-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -webkit-text-size-adjust: none;\n  -ms-text-size-adjust: none;\n  -o-text-size-adjust: none;\n  text-size-adjust: none; }\n\n#scroller ul[_v-0ab50b8c] {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  width: 110%;\n  line-height: 4rem;\n  height: .6rem;\n  text-align: center; }\n\n.line_a[_v-0ab50b8c] {\n  background: url(" + __webpack_require__(173) + ");\n  display: inline-block;\n  width: .14rem;\n  height: .6rem;\n  background-size: .14rem .6rem;\n  position: absolute;\n  top: 0px;\n  right: .67rem;\n  z-index: 999; }\n\n.plus_a[_v-0ab50b8c] {\n  position: absolute;\n  right: .3rem;\n  background: url(" + __webpack_require__(174) + ");\n  display: inline-block;\n  width: .37rem;\n  height: .36rem;\n  float: right;\n  margin-top: .10rem;\n  cursor: pointer;\n  background-size: .37rem .36rem;\n  z-index: 999; }\n", ""]);
 
 	// exports
 
 
 /***/ },
 
-/***/ 164:
+/***/ 171:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "images/logo.png";
 
 /***/ },
 
-/***/ 165:
+/***/ 172:
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,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"
 
 /***/ },
 
-/***/ 166:
+/***/ 173:
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAA+CAYAAAAbMip8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAHOSURBVHja7FZJcoQwDLSM5v+PzUwuGJSDsa2l7UnIdaiiWNvdai1Ar9eXpBtbTje3D3AFPM/zFpDP80xEBB5Rgrcb43Eck0eSRNoOGI/jSNKfVIrIJEnEKsgVOF4YTAisGEsp7mZbud6jSaC5lMrYds8ohlq01NJNsMwarKDXed73YkDWyXEEUosBxZfFscoAItCIOUFW3vfd5VEuZxsTrqDLVXEOinE5yk2JS9mBlJHLVk01p+PaFAARubwNjVquSDdHu4oLPpjTgETVCP9CZaJVyQlMtE6LVqBipFCPusCrB7CtJMToVWj23BpZV0ksalmNDjE7iitMuZGO5NoKF/h0PMry+3V1R85xJg/38NjsQG27trydo4XytuWes7EAgSFlr3PO2wXCE3xacsybAaxA+nneNu6MVR4p2Tj2zqhXRmMi3qPKOGQS2CefOWZWL8zyNjGngSxrmqaDSDH6/hsmaTcpStX2+7zCGB+Ph2Gz1ZOmjl8xUgC/SxEzP4BUe0SSGRcAhc7wMTMzu8JGxkSt3GrVr7ruFiMVmeELgTDjuz8rfc2jH9f2B1fbBJhvuEO4zZy//gSyn3K//l9Fc/XzM/9PID+f37eAPwMAHrQ6uZXTPo0AAAAASUVORK5CYII="
 
 /***/ },
 
-/***/ 167:
+/***/ 174:
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAkCAYAAAAOwvOmAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABeSURBVHja7NUxCsAwCAXQpHQLvf9Bg3N6gtCSOqTw/qzwUMEa0UfZLEfZMFBQrV0mBQUFBQUF9SFn1nNd6Yvo71CzwifQSp+bgoKCgoKCSkRlPmPr+z3qBgAA//8DALiWEChukzCJAAAAAElFTkSuQmCC"
 
 /***/ },
 
-/***/ 168:
+/***/ 175:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {"use strict";
@@ -289,7 +289,9 @@ webpackJsonp([1],{
 	//         <div class="top">
 	//             <div class="wrap">
 	//                 <i class="logo"></i>
-	//                 <div class="search_bg"  ></div>
+	//                 <div class="search_bg"  >
+	//                     <i>当代医药市场网</i>
+	//                 </div>
 	//             </div>
 	//
 	//         </div>
@@ -321,7 +323,7 @@ webpackJsonp([1],{
 
 
 	//滑动导航
-	var IScroll = __webpack_require__(169);
+	var IScroll = __webpack_require__(176);
 
 	exports.default = {
 	    data: function data() {
@@ -402,7 +404,7 @@ webpackJsonp([1],{
 	    updated: function updated() {}
 	};
 	// </script>
-	// <style scoped>
+	// <style lang="sass" scoped>
 	//     .box{
 	//         height:1.44rem;
 	//     }
@@ -433,6 +435,13 @@ webpackJsonp([1],{
 	//         float:right;
 	//         margin-top:.16rem;
 	//         background-size: 2.61rem .5rem;
+	//         i{
+	//             font-size:.24rem;
+	//             color:#8f8f8f;
+	//             margin-left:.5rem;
+	//             padding-top:.13rem;
+	//             display:inline-block;
+	//         }
 	//     }
 	//
 	//
@@ -538,7 +547,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 169:
+/***/ 176:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -2652,25 +2661,25 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 170:
+/***/ 177:
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n<div class=\"box\" _v-0ab50b8c=\"\">\n    <div class=\"top\" _v-0ab50b8c=\"\">\n        <div class=\"wrap\" _v-0ab50b8c=\"\">\n            <i class=\"logo\" _v-0ab50b8c=\"\"></i>\n            <div class=\"search_bg\" _v-0ab50b8c=\"\"></div>\n        </div>\n\n    </div>\n    <div class=\"nav\" _v-0ab50b8c=\"\">\n        <div id=\"nav-smartSetup\" _v-0ab50b8c=\"\">\n            <div id=\"scroller\" _v-0ab50b8c=\"\">\n                <ul _v-0ab50b8c=\"\">\n                    <li v-on:click=\"selectType('recommend')\" :class=\"{'cur':isCur[0]}\" _v-0ab50b8c=\"\">推荐</li>\n                    <li v-on:click=\"selectType('drug',4)\" :class=\"{'cur':isCur[1]}\" _v-0ab50b8c=\"\">药品 </li>\n                    <li v-on:click=\"selectType('zyc',11)\" :class=\"{'cur':isCur[2]}\" _v-0ab50b8c=\"\">中药材</li>\n                    <li v-on:click=\"selectType('bjsp',5)\" :class=\"{'cur':isCur[3]}\" _v-0ab50b8c=\"\">保健食品</li>\n                    <li v-on:click=\"selectType('ylqx',13)\" :class=\"{'cur':isCur[4]}\" _v-0ab50b8c=\"\">医疗器械 </li>\n                    <li v-on:click=\"selectType('mrhf',20)\" :class=\"{'cur':isCur[5]}\" _v-0ab50b8c=\"\">美容护肤 </li>\n                    <li v-on:click=\"selectType('jsyp',18)\" :class=\"{'cur':isCur[6]}\" _v-0ab50b8c=\"\">计生用品 </li>\n                    <li v-on:click=\"selectType('zysb',15)\" :class=\"{'cur':isCur[7]}\" _v-0ab50b8c=\"\">制药设备 </li>\n                    <li v-on:click=\"selectType('yly',7)\" :class=\"{'cur':isCur[8]}\" _v-0ab50b8c=\"\">原料药 </li>\n                    <li v-on:click=\"selectType('health')\" :class=\"{'cur':isCur[9]}\" _v-0ab50b8c=\"\">健康 </li>\n                </ul>\n            </div>\n        </div>\n        <i class=\"line_a\" _v-0ab50b8c=\"\"></i>\n        <i class=\"plus_a\" _v-0ab50b8c=\"\"></i>\n    </div>\n\n</div>\n";
+	module.exports = "\n\n\n<div class=\"box\" _v-0ab50b8c=\"\">\n    <div class=\"top\" _v-0ab50b8c=\"\">\n        <div class=\"wrap\" _v-0ab50b8c=\"\">\n            <i class=\"logo\" _v-0ab50b8c=\"\"></i>\n            <div class=\"search_bg\" _v-0ab50b8c=\"\">\n                <i _v-0ab50b8c=\"\">当代医药市场网</i>\n            </div>\n        </div>\n\n    </div>\n    <div class=\"nav\" _v-0ab50b8c=\"\">\n        <div id=\"nav-smartSetup\" _v-0ab50b8c=\"\">\n            <div id=\"scroller\" _v-0ab50b8c=\"\">\n                <ul _v-0ab50b8c=\"\">\n                    <li v-on:click=\"selectType('recommend')\" :class=\"{'cur':isCur[0]}\" _v-0ab50b8c=\"\">推荐</li>\n                    <li v-on:click=\"selectType('drug',4)\" :class=\"{'cur':isCur[1]}\" _v-0ab50b8c=\"\">药品 </li>\n                    <li v-on:click=\"selectType('zyc',11)\" :class=\"{'cur':isCur[2]}\" _v-0ab50b8c=\"\">中药材</li>\n                    <li v-on:click=\"selectType('bjsp',5)\" :class=\"{'cur':isCur[3]}\" _v-0ab50b8c=\"\">保健食品</li>\n                    <li v-on:click=\"selectType('ylqx',13)\" :class=\"{'cur':isCur[4]}\" _v-0ab50b8c=\"\">医疗器械 </li>\n                    <li v-on:click=\"selectType('mrhf',20)\" :class=\"{'cur':isCur[5]}\" _v-0ab50b8c=\"\">美容护肤 </li>\n                    <li v-on:click=\"selectType('jsyp',18)\" :class=\"{'cur':isCur[6]}\" _v-0ab50b8c=\"\">计生用品 </li>\n                    <li v-on:click=\"selectType('zysb',15)\" :class=\"{'cur':isCur[7]}\" _v-0ab50b8c=\"\">制药设备 </li>\n                    <li v-on:click=\"selectType('yly',7)\" :class=\"{'cur':isCur[8]}\" _v-0ab50b8c=\"\">原料药 </li>\n                    <li v-on:click=\"selectType('health')\" :class=\"{'cur':isCur[9]}\" _v-0ab50b8c=\"\">健康 </li>\n                </ul>\n            </div>\n        </div>\n        <i class=\"line_a\" _v-0ab50b8c=\"\"></i>\n        <i class=\"plus_a\" _v-0ab50b8c=\"\"></i>\n    </div>\n\n</div>\n";
 
 /***/ },
 
-/***/ 171:
+/***/ 178:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(172)
-	__vue_script__ = __webpack_require__(174)
+	__webpack_require__(179)
+	__vue_script__ = __webpack_require__(181)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\indexMain.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(175)
+	__vue_template__ = __webpack_require__(182)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -2696,13 +2705,13 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 172:
+/***/ 179:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(173);
+	var content = __webpack_require__(180);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -2723,7 +2732,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 173:
+/***/ 180:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -2738,7 +2747,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 174:
+/***/ 181:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2789,26 +2798,26 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 175:
+/***/ 182:
 /***/ function(module, exports) {
 
 	module.exports = "\n\n\n<div>\n    <div class=\"ad_content\"  v-for=\"item in items.list\">\n        <div v-html=\"item.code\"></div>\n        <div class=\"content-info\">\n            <ul>\n                <li><span class=\"Drugs\">药品</span></li>\n                <li><span class=\"click\">1365点击</span></li>\n                <li><span class=\"time\">24小时前</span></li>\n            </ul>\n        </div>\n\n        <div class=\"clear\"></div>\n    </div>\n</div>\n\n";
 
 /***/ },
 
-/***/ 176:
+/***/ 183:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(177)
-	__webpack_require__(179)
-	__vue_script__ = __webpack_require__(181)
+	__webpack_require__(184)
+	__webpack_require__(186)
+	__vue_script__ = __webpack_require__(188)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\recommend.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(182)
+	__vue_template__ = __webpack_require__(189)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -2834,13 +2843,13 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 177:
+/***/ 184:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(178);
+	var content = __webpack_require__(185);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -2861,7 +2870,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 178:
+/***/ 185:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -2869,20 +2878,20 @@ webpackJsonp([1],{
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.noPage[_v-3b3e24c2]{\n    font-size: .2rem;\n    text-align: center;\n    height: .50rem;\n    line-height: .50rem;\n    color: #888;\n}\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.noPage[_v-3b3e24c2]{\n    font-size: .2rem;\n    text-align: center;\n    height: .50rem;\n    line-height: .50rem;\n    color: #888;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
 
-/***/ 179:
+/***/ 186:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(180);
+	var content = __webpack_require__(187);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -2903,7 +2912,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 180:
+/***/ 187:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -2911,14 +2920,14 @@ webpackJsonp([1],{
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.clear{\n    clear: both;\n}\n#pullDown{\n    background: #FFFFFF;\n}\n.white_box{\n    width:6.4rem;\n    background-color:transparent;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n    overflow: hidden;\n}\n.ad_content{\n    width:5.8rem;\n    margin: 0 auto;\n    padding:.10rem 0;\n    position: relative;\n    margin-bottom: .1rem;\n}\n.ad_code_one{\n    width:100%;\n    height: 1.2rem;\n    padding:.16rem 0px;\n    border-bottom:1px solid #e7e7e7;\n}\n.ad_code_two{\n    width:100%;\n    padding-bottom:.7rem;\n    border-bottom:1px solid #e7e7e7;\n}\n.ad_code_three{\n    width:100%;\n    padding-bottom:.6rem;\n    border-bottom:1px solid #e7e7e7;\n}\n.content1-left{\n    width: 4rem;\n\n    float: left;\n}\n\n.content-title h2{\n    padding-right:.2rem;\n    font-size: .3rem;\n}\n\n.content-info{\n    position: absolute;\n    bottom:.3rem;\n}\n.content-info ul{\n    width:100% ;\n    height:.3rem ;\n    line-height: .3rem;\n}\n\n.content-info li {\n    float: left;\n}\n\n\n\n.content1-right{\n    width: 1.8rem;height: 1.2rem;\n    float:right;\n}\n.content1-right a img{\n    width:1.8rem;\n    height:1.2rem;\n}\n.click,.time{\n    color:#8a8a8a ;\n    font-size:.22rem ;\n\n    margin-right:.26rem;\n    display: inline-block;\n}\n\n\n\n.content-Title{\n    padding-bottom: .16rem;\n}\n\n.content2-img{\n    width: 5.8rem;height: 1.23rem;\n}\n\n\n\n.content2-img img{\n    display: block!important;\n    float: left!important;\n}\n.content2-img a img{\n    width:1.89rem;\n    height:1.23rem;\n}\n.c2-img{\n    margin-right: .06rem;\n}\n\n.content3-img a img{\n    width:5.79rem;\n    height:2.84rem;\n}\n\n\n.page{\n\n    overflow: hidden;\n    position: relative;\n    /* Prevent native touch events on Windows */\n    -ms-touch-action: none;\n    /* Prevent the callout on tap-hold and text selection */\n    -webkit-touch-callout: none;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    -webkit-text-size-adjust: none;\n        -ms-text-size-adjust: none;\n            text-size-adjust: none;\n}\n\n#app {\n    height: 100%;\n    max-width: 400px;\n    margin: 0 auto\n}\nul{\n    list-style: none;\n    padding: 0px;\n    margin: 0px\n}\n\n\n/*scrollbar start*/\n.iScrollVerticalScrollbar {\n    position: absolute;\n    z-index: 9999;\n    width: 2px;\n    bottom: 2px;\n    top: 2px;\n    right: 2px;\n    overflow: hidden;\n}\n\n.iScrollVerticalScrollbar.iScrollBothScrollbars {\n    bottom: 18px;\n}\n\n.iScrollIndicator {\n    position: absolute;\n    background: #999;\n    border-radius: 6px;\n    opacity: .8;\n}\n\n.iScrollVerticalScrollbar .iScrollIndicator {\n    width: 100%;\n    background: #999;\n}\n/*scrollbar end*/\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.clear{\n    clear: both;\n}\n#pullDown{\n    background: #FFFFFF;\n}\n.white_box{\n    width:6.4rem;\n    background-color:transparent;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n    overflow: hidden;\n}\n.ad_content{\n    width:5.8rem;\n    margin: 0 auto;\n    padding:.10rem 0;\n    position: relative;\n    margin-bottom: .1rem;\n}\n.ad_code_one{\n    width:100%;\n    height: 1.2rem;\n    padding:.16rem 0px;\n    border-bottom:1px solid #e7e7e7;\n}\n.ad_code_two{\n    width:100%;\n    padding-bottom:.7rem;\n    border-bottom:1px solid #e7e7e7;\n}\n.ad_code_three{\n    width:100%;\n    padding-bottom:.6rem;\n    border-bottom:1px solid #e7e7e7;\n}\n.content1-left{\n    width: 4rem;\n\n    float: left;\n}\n\n.content-title h2{\n    padding-right:.2rem;\n    font-size: .3rem;\n}\n\n.content-info{\n    position: absolute;\n    bottom:.3rem;\n}\n.content-info ul{\n    width:100% ;\n    height:.3rem ;\n    line-height: .3rem;\n}\n\n.content-info li {\n    float: left;\n}\n\n\n\n.content1-right{\n    width: 1.8rem;height: 1.2rem;\n    float:right;\n}\n.content1-right a img{\n    width:1.8rem;\n    height:1.2rem;\n}\n.click,.time{\n    color:#8a8a8a ;\n    font-size:.22rem ;\n\n    margin-right:.26rem;\n    display: inline-block;\n}\n\n\n\n.content-Title{\n    padding-bottom: .16rem;\n}\n\n.content2-img{\n    width: 5.8rem;height: 1.23rem;\n}\n\n\n\n.content2-img img{\n    display: block!important;\n    float: left!important;\n}\n.content2-img a img{\n    width:1.89rem;\n    height:1.23rem;\n}\n.c2-img{\n    margin-right: .06rem;\n}\n\n.content3-img a img{\n    width:5.79rem;\n    height:2.84rem;\n}\n\n\n.page{\n\n    overflow: hidden;\n    position: relative;\n    /* Prevent native touch events on Windows */\n    -ms-touch-action: none;\n    /* Prevent the callout on tap-hold and text selection */\n    -webkit-touch-callout: none;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    -webkit-text-size-adjust: none;\n        -ms-text-size-adjust: none;\n            text-size-adjust: none;\n}\n\n\n\n/*scrollbar start*/\n.iScrollVerticalScrollbar {\n    position: absolute;\n    z-index: 9999;\n    width: 2px;\n    bottom: 2px;\n    top: 2px;\n    right: 2px;\n    overflow: hidden;\n}\n\n.iScrollVerticalScrollbar.iScrollBothScrollbars {\n    bottom: 18px;\n}\n\n.iScrollIndicator {\n    position: absolute;\n    background: #999;\n    border-radius: 6px;\n    opacity: .8;\n}\n\n.iScrollVerticalScrollbar .iScrollIndicator {\n    width: 100%;\n    background: #999;\n}\n/*scrollbar end*/\n", ""]);
 
 	// exports
 
 
 /***/ },
 
-/***/ 181:
+/***/ 188:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
@@ -2927,7 +2936,7 @@ webpackJsonp([1],{
 	    value: true
 	});
 
-	var _indexMain = __webpack_require__(171);
+	var _indexMain = __webpack_require__(178);
 
 	var _indexMain2 = _interopRequireDefault(_indexMain);
 
@@ -2960,9 +2969,9 @@ webpackJsonp([1],{
 	    mounted: function mounted() {
 
 	        var _this = this;
-	        $(document).ready(function () {
-	            $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
-	        });
+
+	        $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
+
 	        this.loadData(false);
 	    },
 
@@ -3033,6 +3042,45 @@ webpackJsonp([1],{
 	        }
 	    }
 	};
+
+	//响应窗体改变
+	// <template>
+	//
+	//     <div class="white_box">
+	//
+	//
+	//          <load  v-if="loading"></load>
+	//
+	//         <div id="pullDown"  v-else>
+	//             <pull-to-refresh
+	//                     @on-pullup='onPullup'
+	//                     @on-pulldown='onPulldown' class="page">
+	//                 <index-main  :items="items"></index-main>
+	//                 <div v-show="noPage" class="noPage">
+	//                     没有了
+	//                 </div>
+	//             </pull-to-refresh>
+	//
+	//         </div>
+	//
+	//
+	//         <div class="clear"></div>
+	//     </div>
+	// </template>
+	//
+	// <script>
+
+
+	$(document).ready(function () {
+	    window.onresize = function () {
+	        resetHeight();
+	    };
+	});
+
+	function resetHeight() {
+	    $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
+	    $(".page").height($(".white_box").height());
+	}
 	// </script>
 	// <style scoped>
 	//     .noPage{
@@ -3164,16 +3212,6 @@ webpackJsonp([1],{
 	//         text-size-adjust: none;
 	//     }
 	//
-	//     #app {
-	//         height: 100%;
-	//         max-width: 400px;
-	//         margin: 0 auto
-	//     }
-	//     ul{
-	//         list-style: none;
-	//         padding: 0px;
-	//         margin: 0px
-	//     }
 	//
 	//
 	//     /*scrollbar start*/
@@ -3204,54 +3242,29 @@ webpackJsonp([1],{
 	//     }
 	//     /*scrollbar end*/
 	// </style>
-	// <template>
-	//
-	//     <div class="white_box">
-	//
-	//
-	//          <load  v-if="loading"></load>
-	//
-	//         <div id="pullDown"  v-else>
-	//             <pull-to-refresh
-	//                     @on-pullup='onPullup'
-	//                     @on-pulldown='onPulldown' class="page">
-	//                 <index-main  :items="items"></index-main>
-	//                 <div v-show="noPage" class="noPage">
-	//                     没有了
-	//                 </div>
-	//             </pull-to-refresh>
-	//
-	//         </div>
-	//
-	//
-	//         <div class="clear"></div>
-	//     </div>
-	// </template>
-	//
-	// <script>
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(48)))
 
 /***/ },
 
-/***/ 182:
+/***/ 189:
 /***/ function(module, exports) {
 
 	module.exports = "\n\n<div class=\"white_box\" _v-3b3e24c2=\"\">\n\n\n     <load v-if=\"loading\" _v-3b3e24c2=\"\"></load>\n\n    <div id=\"pullDown\" v-else=\"\" _v-3b3e24c2=\"\">\n        <pull-to-refresh @on-pullup=\"onPullup\" @on-pulldown=\"onPulldown\" class=\"page\" _v-3b3e24c2=\"\">\n            <index-main :items=\"items\" _v-3b3e24c2=\"\"></index-main>\n            <div v-show=\"noPage\" class=\"noPage\" _v-3b3e24c2=\"\">\n                没有了\n            </div>\n        </pull-to-refresh>\n\n    </div>\n\n\n    <div class=\"clear\" _v-3b3e24c2=\"\"></div>\n</div>\n";
 
 /***/ },
 
-/***/ 183:
+/***/ 190:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(184)
-	__vue_script__ = __webpack_require__(186)
+	__webpack_require__(191)
+	__vue_script__ = __webpack_require__(193)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\health.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(190)
+	__vue_template__ = __webpack_require__(197)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -3277,13 +3290,13 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 184:
+/***/ 191:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(185);
+	var content = __webpack_require__(192);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -3304,7 +3317,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 185:
+/***/ 192:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -3312,14 +3325,14 @@ webpackJsonp([1],{
 
 
 	// module
-	exports.push([module.id, ".my-swipe[_v-8a39caee] {\n  width: 6.4rem;\n  height: 2.8rem;\n  position: relative; }\n  .my-swipe img[_v-8a39caee] {\n    width: 6.4rem;\n    height: 2.8rem; }\n  .my-swipe span[_v-8a39caee] {\n    font-size: .28rem;\n    line-height: .52rem;\n    padding-left: .2rem;\n    color: #FFF;\n    width: 6.2rem;\n    height: .5rem;\n    background: rgba(0, 0, 0, 0.5);\n    position: absolute;\n    bottom: 0; }\n\n.card .cardTitle[_v-8a39caee] {\n  color: #333;\n  padding-left: .2rem;\n  height: .85rem;\n  line-height: .85rem;\n  font-weight: 700;\n  font-size: .36rem; }\n\n.card ul[_v-8a39caee] {\n  width: 6rem;\n  padding: 0px .2rem; }\n  .card ul li[_v-8a39caee] {\n    width: 100%;\n    margin-bottom: .2rem;\n    border-bottom: dashed #ccc 1px; }\n    .card ul li .descBox[_v-8a39caee] {\n      width: 69%;\n      min-height: .7rem; }\n      .card ul li .descBox .title[_v-8a39caee] {\n        font-size: .3rem; }\n      .card ul li .descBox .hits[_v-8a39caee] {\n        float: right;\n        font-size: .18rem; }\n    .card ul li .img[_v-8a39caee] {\n      width: 25%; }\n    .card ul li a[_v-8a39caee] {\n      display: inline-block;\n      width: 100%; }\n    .card ul li h2[_v-8a39caee] {\n      padding-bottom: .2rem;\n      display: inline-block;\n      font-size: .3rem;\n      width: 90%;\n      float: left; }\n    .card ul li .hits[_v-8a39caee] {\n      font-size: .2rem;\n      width: 10%;\n      line-height: .4rem;\n      float: right;\n      text-align: right; }\n", ""]);
+	exports.push([module.id, ".my-swipe[_v-8a39caee] {\n  width: 6.4rem;\n  height: 2.8rem;\n  position: relative; }\n  .my-swipe img[_v-8a39caee] {\n    width: 6.4rem;\n    height: 2.8rem; }\n  .my-swipe span[_v-8a39caee] {\n    font-size: .28rem;\n    line-height: .52rem;\n    padding-left: .2rem;\n    color: #FFF;\n    width: 6.2rem;\n    height: .5rem;\n    background: rgba(0, 0, 0, 0.5);\n    position: absolute;\n    bottom: 0; }\n\n.card .cardTitle[_v-8a39caee] {\n  color: #333;\n  padding-left: .2rem;\n  height: .85rem;\n  line-height: .85rem;\n  font-weight: 700;\n  font-size: .36rem; }\n\n.card ul[_v-8a39caee] {\n  width: 6rem;\n  padding: 0px .2rem; }\n  .card ul li[_v-8a39caee] {\n    width: 100%;\n    margin-bottom: .2rem;\n    border-bottom: dashed #ccc 1px; }\n    .card ul li .descBox[_v-8a39caee] {\n      width: 69%;\n      min-height: 1rem;\n      float: left; }\n      .card ul li .descBox .title[_v-8a39caee] {\n        min-height: 1rem;\n        font-size: .3rem; }\n      .card ul li .descBox .source[_v-8a39caee] {\n        font-size: .24rem;\n        color: #8f8f8f;\n        line-height: .4rem; }\n      .card ul li .descBox .hits[_v-8a39caee] {\n        float: right;\n        font-size: .18rem; }\n    .card ul li img[_v-8a39caee] {\n      float: right;\n      width: 25%;\n      height: 1.2rem; }\n    .card ul li a[_v-8a39caee] {\n      display: inline-block;\n      width: 100%; }\n    .card ul li h2[_v-8a39caee] {\n      padding-bottom: .2rem;\n      display: inline-block;\n      font-size: .3rem;\n      width: 90%;\n      float: left; }\n    .card ul li .hits[_v-8a39caee] {\n      font-size: .2rem;\n      width: 10%;\n      line-height: .4rem;\n      float: right;\n      text-align: right;\n      color: #8f8f8f; }\n      .card ul li .hits i[_v-8a39caee] {\n        font-size: .24rem; }\n", ""]);
 
 	// exports
 
 
 /***/ },
 
-/***/ 186:
+/***/ 193:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3330,7 +3343,7 @@ webpackJsonp([1],{
 
 	var _vueSwipe = __webpack_require__(152);
 
-	var _homeShell = __webpack_require__(187);
+	var _homeShell = __webpack_require__(194);
 
 	var _homeShell2 = _interopRequireDefault(_homeShell);
 
@@ -3354,23 +3367,25 @@ webpackJsonp([1],{
 	//               <h2 class="cardTitle">今日推荐</h2>
 	//               <ul>
 	//                 <li v-for="item in items.list">
-	//                     <a v-if="item.thumb" href="">
+	//                     <router-link  v-if="item.thumb" :to="{name:'healthDetail',query:{id:item.itemid}}" >
 	//
 	//                         <div class="descBox">
-	//                             <div class="title">{{item.title | dsubstr(10)}}</div>
+	//                             <div class="title">{{item.title | dsubstr(20)}}</div>
 	//                             <div class="footnote">
-	//                                 <span class="source">{{item.copyfrom}}</span>
-	//                                 <span class="hits">{{item.hits}}</span>
+	//                                 <span class="source">{{item.copyfrom ? item.copyfrom : "当代医药市场网"}}</span>
+	//                                 <span class="hits"><i class="iconfont">&#xf0048;</i>{{item.hits}}</span>
 	//                             </div>
 	//                         </div>
 	//                         <span class="img" >
 	//                             <img :src="item.thumb" />
 	//                         </span>
-	//                     </a>
-	//                     <a v-else >
+	//                     </router-link >
+	//                     <router-link  v-else :to="{name:'healthDetail',query:{id:item.itemid}}" >
 	//                         <h2 class="title">{{item.title | dsubstr(16)}}</h2>
-	//                         <span class="hits">{{item.hits}}</span>
-	//                     </a>
+	//                         <span class="hits">
+	//                             <i class="iconfont">&#xf0048;</i>{{item.hits}}
+	//                         </span>
+	//                     </router-link >
 	//                 </li>
 	//               </ul>
 	//           </div>
@@ -3386,8 +3401,8 @@ webpackJsonp([1],{
 	            loading: true,
 	            'noPage': false,
 	            'carousel': [{ "pic": "http://www.ey99.com/file/upload/201609/30/225028701.jpg", "title": "习大大访问你家", "url": "" }, { "pic": "http://www.ey99.com/file/upload/201609/30/225103531.jpg", "title": "习大大访问我家", "url": "" }, { "pic": "http://www.ey99.com/file/upload/201609/08/085935452830.jpg", "title": "习大大访问她家", "url": "" }],
-	            'page': 0,
-	            'totalPage': 0
+	            'page': 0
+
 	        };
 	    },
 
@@ -3397,7 +3412,7 @@ webpackJsonp([1],{
 	        'home-shell': _homeShell2.default
 	    },
 	    mounted: function mounted() {
-	        this.loadData();
+	        this.loadData(false);
 	    },
 
 	    filters: {
@@ -3422,16 +3437,21 @@ webpackJsonp([1],{
 	                if (_this.page == 1) {
 	                    _this.items = res.body;
 	                    _this.loading = false;
-	                    finshCallback();
+
+	                    if (finshCallback) {
+	                        finshCallback();
+	                    }
 	                }
-	                if (_this.page > 1 && _this.page <= res.body.count) {
+	                if (_this.page > 1 && _this.page <= Math.ceil(res.body.count / 20)) {
 
 	                    for (var i = 0; i < res.body.list.length; i++) {
 	                        _this.items.list.push(res.body.list[i]);
 	                    }
 
 	                    _this.loading = false;
-	                    finshCallback();
+	                    if (finshCallback) {
+	                        finshCallback();
+	                    }
 	                }
 	            }, function (err) {});
 	        }
@@ -3478,17 +3498,26 @@ webpackJsonp([1],{
 	//                 border-bottom:dashed #ccc 1px;
 	//                 .descBox{
 	//                     width:69%;
-	//                     min-height:.7rem;
+	//                     min-height:1rem;
+	//                     float:left;
 	//                     .title{
+	//                         min-height:1rem;
 	//                         font-size:.3rem;
+	//                     }
+	//                     .source{
+	//                         font-size:.24rem;
+	//                         color:#8f8f8f;
+	//                         line-height: .4rem;                       
 	//                     }
 	//                     .hits{
 	//                         float:right;
 	//                         font-size:.18rem;
 	//                     }
 	//                 }
-	//                 .img{
+	//                 img{
+	//                     float:right;
 	//                     width:25%;
+	//                     height:1.2rem;
 	//                 }
 	//                 a{
 	//                     display: inline-block;
@@ -3508,6 +3537,10 @@ webpackJsonp([1],{
 	//                     line-height: .4rem;
 	//                     float:right;
 	//                     text-align: right;
+	//                     color:#8f8f8f;
+	//                     i{
+	//                         font-size:.24rem;
+	//                     }
 	//                 }
 	//             }
 	//
@@ -3517,17 +3550,17 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 187:
+/***/ 194:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_script__ = __webpack_require__(188)
+	__vue_script__ = __webpack_require__(195)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\homeShell.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(189)
+	__vue_template__ = __webpack_require__(196)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -3553,7 +3586,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 188:
+/***/ 195:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
@@ -3598,6 +3631,7 @@ webpackJsonp([1],{
 	    },
 	    updated: function updated() {
 	        $(document).ready(function () {
+	            //获取数据后  固定page高度 即滑动区域 
 	            $(".page").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
 	        });
 	    },
@@ -3614,6 +3648,7 @@ webpackJsonp([1],{
 	            //this.loadData(finshCallback);
 	        },
 	        onPulldown: function onPulldown(finshCallback) {
+	            ///finshCallback 回归位置 页面扩充后 拉取高度 不执行的话 高度不拉伸
 	            this.$parent.loadData(finshCallback, true);
 
 	            //finshCallback  调整位置
@@ -3624,6 +3659,9 @@ webpackJsonp([1],{
 	    }
 	};
 	// </script>
+
+
+	//上拉下拉组件 pull-to-refresh 必须给该组件 定高度 class="page" 可改变className
 	// <template>
 	//     <div class="white_box">
 	//         <load  v-if="loading"  ></load>
@@ -3650,21 +3688,21 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 189:
+/***/ 196:
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"white_box\">\n    <load  v-if=\"loading\"  ></load>\n\n    <div id=\"pullDown\"  v-else>\n        <pull-to-refresh\n                @on-pullup='onPullup'\n                @on-pulldown='onPulldown' class=\"page\">\n\n            <slot name=\"content\"></slot>\n\n            <div v-show=\"noPage\" class=\"noPage\">\n                没有了\n            </div>\n        </pull-to-refresh>\n    </div>\n\n    <div class=\"clear\"></div>\n</div>\n\n";
 
 /***/ },
 
-/***/ 190:
+/***/ 197:
 /***/ function(module, exports) {
 
-	module.exports = "\n<home-shell :loading=\"loading\" _v-8a39caee=\"\">\n    <div slot=\"content\" v-if=\"!loading\" _v-8a39caee=\"\">\n        <swipe class=\"my-swipe\" :speed=\"1000\" :show-indicators=\"false\" _v-8a39caee=\"\">\n\n            <swipe-item v-for=\"item in carousel\" _v-8a39caee=\"\">\n                <a :src=\"item.url\" _v-8a39caee=\"\">\n                    <img :src=\"item.pic\" _v-8a39caee=\"\">\n                    <span _v-8a39caee=\"\">{{item.title}}</span>\n                </a>\n            </swipe-item>\n\n        </swipe>\n\n        <div class=\"card\" _v-8a39caee=\"\">\n            <h2 class=\"cardTitle\" _v-8a39caee=\"\">今日推荐</h2>\n            <ul _v-8a39caee=\"\">\n              <li v-for=\"item in items.list\" _v-8a39caee=\"\">\n                  <a v-if=\"item.thumb\" href=\"\" _v-8a39caee=\"\">\n\n                      <div class=\"descBox\" _v-8a39caee=\"\">\n                          <div class=\"title\" _v-8a39caee=\"\">{{item.title | dsubstr(10)}}</div>\n                          <div class=\"footnote\" _v-8a39caee=\"\">\n                              <span class=\"source\" _v-8a39caee=\"\">{{item.copyfrom}}</span>\n                              <span class=\"hits\" _v-8a39caee=\"\">{{item.hits}}</span>\n                          </div>\n                      </div>\n                      <span class=\"img\" _v-8a39caee=\"\">\n                          <img :src=\"item.thumb\" _v-8a39caee=\"\">\n                      </span>\n                  </a>\n                  <a v-else=\"\" _v-8a39caee=\"\">\n                      <h2 class=\"title\" _v-8a39caee=\"\">{{item.title | dsubstr(16)}}</h2>\n                      <span class=\"hits\" _v-8a39caee=\"\">{{item.hits}}</span>\n                  </a>\n              </li>\n            </ul>\n        </div>\n\n    </div>\n</home-shell>\n";
+	module.exports = "\n<home-shell :loading=\"loading\" _v-8a39caee=\"\">\n    <div slot=\"content\" v-if=\"!loading\" _v-8a39caee=\"\">\n        <swipe class=\"my-swipe\" :speed=\"1000\" :show-indicators=\"false\" _v-8a39caee=\"\">\n\n            <swipe-item v-for=\"item in carousel\" _v-8a39caee=\"\">\n                <a :src=\"item.url\" _v-8a39caee=\"\">\n                    <img :src=\"item.pic\" _v-8a39caee=\"\">\n                    <span _v-8a39caee=\"\">{{item.title}}</span>\n                </a>\n            </swipe-item>\n\n        </swipe>\n\n        <div class=\"card\" _v-8a39caee=\"\">\n            <h2 class=\"cardTitle\" _v-8a39caee=\"\">今日推荐</h2>\n            <ul _v-8a39caee=\"\">\n              <li v-for=\"item in items.list\" _v-8a39caee=\"\">\n                  <router-link v-if=\"item.thumb\" :to=\"{name:'healthDetail',query:{id:item.itemid}}\" _v-8a39caee=\"\">\n\n                      <div class=\"descBox\" _v-8a39caee=\"\">\n                          <div class=\"title\" _v-8a39caee=\"\">{{item.title | dsubstr(20)}}</div>\n                          <div class=\"footnote\" _v-8a39caee=\"\">\n                              <span class=\"source\" _v-8a39caee=\"\">{{item.copyfrom ? item.copyfrom : \"当代医药市场网\"}}</span>\n                              <span class=\"hits\" _v-8a39caee=\"\"><i class=\"iconfont\" _v-8a39caee=\"\">󰁈</i>{{item.hits}}</span>\n                          </div>\n                      </div>\n                      <span class=\"img\" _v-8a39caee=\"\">\n                          <img :src=\"item.thumb\" _v-8a39caee=\"\">\n                      </span>\n                  </router-link>\n                  <router-link v-else=\"\" :to=\"{name:'healthDetail',query:{id:item.itemid}}\" _v-8a39caee=\"\">\n                      <h2 class=\"title\" _v-8a39caee=\"\">{{item.title | dsubstr(16)}}</h2>\n                      <span class=\"hits\" _v-8a39caee=\"\">\n                          <i class=\"iconfont\" _v-8a39caee=\"\">󰁈</i>{{item.hits}}\n                      </span>\n                  </router-link>\n              </li>\n            </ul>\n        </div>\n\n    </div>\n</home-shell>\n";
 
 /***/ },
 
-/***/ 191:
+/***/ 198:
 /***/ function(module, exports) {
 
 	module.exports = "\n\n\n<div class=\"content\" _v-7eedf4cc=\"\">\n    <my-header _v-7eedf4cc=\"\"></my-header>\n\n    <component :is=\"currentView\" :catid=\"catid\" keep-alive=\"\" _v-7eedf4cc=\"\">\n        <!-- 组件在 vm.currentview 变化时改变 -->\n    </component>\n</div>\n";

@@ -8,6 +8,7 @@ import Video from './components/video.vue';
 import My from './components/my.vue';
 import investment from './components/investment.vue';
 import investmentShow from './components/investmentShow.vue';
+import healthDetail from './components/healthDetail.vue';
 // 定义路由规则
 // 每条路由规则应该映射到一个组件。这里的“组件”可以是一个使用 Vue.extend
 // 创建的组件构造函数，也可以是一个组件选项对象。
@@ -28,6 +29,7 @@ export default {
 		{ path: '/my', component: My },
 		{ path: '/investment', component: investment},
 		{ name : 'investmentShow', path: '/investment/show', component: investmentShow },
+		{ name : 'healthDetail', path: '/health/show', component: healthDetail },
 		{ path: '*', redirect: 'home' }
 
 	]

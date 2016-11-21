@@ -16,7 +16,7 @@
               <h2 class="cardTitle">今日推荐</h2>
               <ul>
                 <li v-for="item in items.list">
-                    <a v-if="item.thumb" href="">
+                    <router-link  v-if="item.thumb" href="">
 
                         <div class="descBox">
                             <div class="title">{{item.title | dsubstr(10)}}</div>
@@ -28,11 +28,11 @@
                         <span class="img" >
                             <img :src="item.thumb" />
                         </span>
-                    </a>
-                    <a v-else >
+                    </router-link >
+                    <router-link  v-else :to="{name:'healthDetail',query:{id:item.itemid}}" >
                         <h2 class="title">{{item.title | dsubstr(16)}}</h2>
                         <span class="hits">{{item.hits}}</span>
-                    </a>
+                    </router-link >
                 </li>
               </ul>
           </div>
@@ -61,7 +61,7 @@
             'home-shell':homeShell,
         },
         mounted(){
-            this.loadData();
+            this.loadData(false);
         },
         filters:{
             dsubstr(title,length){
@@ -86,7 +86,12 @@
                         if(_this.page == 1){
                             _this.items = res.body;
                             _this.loading = false;
-                            finshCallback()
+                            
+                            if(finshCallback){
+                                 finshCallback()
+                            }
+                           
+                        
                         }
                         if(_this.page > 1 && _this.page <= res.body.count){
 
@@ -96,7 +101,9 @@
                                 }
 
                             _this.loading = false;
-                            finshCallback()
+                             if(finshCallback){
+                                 finshCallback()
+                            }
                         }
 
 

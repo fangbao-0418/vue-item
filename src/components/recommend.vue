@@ -48,9 +48,9 @@
         mounted(){
 
             var _this = this;
-            $(document).ready(function() {
-               $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
-            });
+          
+           $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
+     
             this.loadData(false);
         },
         methods: {
@@ -268,17 +268,7 @@
         text-size-adjust: none;
     }
 
-    #app {
-        height: 100%;
-        max-width: 400px;
-        margin: 0 auto
-    }
-    ul{
-        list-style: none;
-        padding: 0px;
-        margin: 0px
-    }
-
+    
 
     /*scrollbar start*/
     .iScrollVerticalScrollbar {

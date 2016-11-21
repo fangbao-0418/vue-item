@@ -22,6 +22,9 @@
 <script>
     import { Swipe, SwipeItem } from 'vue-swipe';
     import load from './loading.vue';
+
+
+    //上拉下拉组件 pull-to-refresh 必须给该组件 定高度 class="page" 可改变className
     import PullToRefresh from './pull-to-refresh.vue'
 
     export default {
@@ -47,6 +50,7 @@
         },
         updated(){
             $(document).ready(function() {
+                //获取数据后  固定page高度 即滑动区域 
                 $(".page").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
             });
         },
@@ -64,6 +68,7 @@
             },
 
             onPulldown(finshCallback) {
+                ///finshCallback 回归位置 页面扩充后 拉取高度 不执行的话 高度不拉伸
                 this.$parent.loadData(finshCallback,true);
 
                 //finshCallback  调整位置

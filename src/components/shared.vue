@@ -66,7 +66,7 @@
             },
             mounted(){     
 
-                console.log(this);           
+               
 
                 $(document).ready(function(){
                      var oHead = document.getElementsByTagName('HEAD').item(0); 

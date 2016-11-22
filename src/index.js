@@ -6,6 +6,9 @@ import routerConfig from './router.config';            //路由配置文件
 // for Vue 2.0
 import VueLazyload from 'vue-lazyload';
 
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-default/index.css';
+import locale from 'element-ui/lib/locale/lang/en';
 
 require("./js/function.js");
 require("./js/reset.js");					  //全局加载重置js
@@ -14,10 +17,9 @@ require('./css/common.css');					  //全局css样式
 //Vue.use('./server.js');
 Vue.use(VueRouter);
 Vue.use(VueResource);   //加载Resource
-
-//VueScript2——简单、熟悉的异步加载脚本
-var script2 = require('vue-script2');
-Vue.use(script2);
+Vue.use(ElementUI,{locale});
+ 
+ 
 
 
 

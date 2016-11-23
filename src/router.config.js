@@ -10,7 +10,8 @@ import investment from './components/investment.vue';
 import investmentShow from './components/investmentShow.vue';
 import healthDetail from './components/healthDetail.vue';
 import login from './components/login.vue';
-
+import register from './components/register.vue';
+import search from './components/search.vue';
 
 // 定义路由规则
 // 每条路由规则应该映射到一个组件。这里的“组件”可以是一个使用 Vue.extend
@@ -32,6 +33,8 @@ export default {
 		{ path: '/video', component: Video },
 		{ path: '/my', component: My },
 		{ path : '/login' , component: login},
+		{ path : '/register' , component: register},
+		{ path : '/search' , component : search},
 		{ path: '/investment', component: investment},
 		{ name : 'investmentShow', path: '/investment/show', component: investmentShow },
 		{ name : 'healthDetail', path: '/health/show', component: healthDetail },

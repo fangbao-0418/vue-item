@@ -1,7 +1,7 @@
 <template>
-	<div>
+	<div class="my-main">
 		<!-- header -->
-	    <div class="header">
+	    <div class="header" >
 	       <div class="header-logo">
 	         <a><img src="../imgs/tx.jpg"/></a>
 	       </div>
@@ -31,8 +31,10 @@
 			     </div>
 			  </div>
 			  <div class="right nav-box">
-			     <div class=nav-tu>
-                      <a href="#"><img src="../imgs/nav3.gif"/></a>
+			     <div class="nav-tu">
+                      <a href="#">
+                      	<img src="../imgs/nav3.gif"/>
+                      </a>
 			     </div>
 			     <div class="nav-ti">
                      <a href="#">设置</a>
@@ -83,11 +85,14 @@
 </script>
 
 <style scoped>
-
+.my-main{
+	padding-bottom:1rem;
+}
 .header{
 	background: url("../imgs/header.jpg");
 	width:6.4rem;
 	height:3.28rem;
+	background-size: 6.4rem 3.28rem;
 	position:relative;
 }
 
@@ -140,19 +145,18 @@
 .nav-ifo{
 	width: 6.4rem;
 	height:1.25rem ;
-	background:#fff;
+	background:#fff;	
 	border-bottom: 1px solid #e8e8e8;
 }
 
 .nav{
 	width:5.8rem; 
-	height:1.25rem;
-	margin: 0 auto;
-	padding: 0 0.3rem;
+	height:1.25rem;	 
+	padding: 0 .3rem;
 }
 
 .nav-box{
-	width:1.8rem;
+	width:1.9rem;
 	height: 1.24rem;
 	float: left;
 	position: relative;
@@ -160,8 +164,9 @@
 
 
 .mide{
-	width:2.1rem ;
+	width:2rem ;
 	height:1.24rem;
+	box-sizing:border-box;
 	border-left: 1px solid #e8e8e8;
 	border-right: 1px solid #e8e8e8;
 }

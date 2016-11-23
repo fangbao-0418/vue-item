@@ -5,7 +5,7 @@
         <div class="top">
             <div class="wrap">
                 <i class="logo"></i>
-                <div class="search_bg"  >
+                <div class="search_bg" @click="gosearch">
                     <i>当代医药市场网</i>
                 </div>
             </div>
@@ -83,6 +83,9 @@
             },
             shared(){
                 this.isOpen = true;
+            },
+            gosearch(){
+                this.$router.push({path:"/search"});
             }
         },
         mounted(){

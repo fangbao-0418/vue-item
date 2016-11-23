@@ -60,9 +60,9 @@
                 var option = {params:{page:this.page,catid:this.catid}};
 
              
-                this.$http.jsonp(url, option).then(function(response){
+                this.$http.get(url, option).then(function(response){
 
-                    console.log(response);
+                    response.body = JSON.parse(response.body);
 
                     
                     _this.pageTotal = Math.ceil( response.body.count / 10 );

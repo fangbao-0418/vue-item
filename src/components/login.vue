@@ -1,46 +1,100 @@
 <template>
 	<div class="pt-perspective">
-		<div class="warp-header">
-		  	<div class="goback" >            	
-        	</div>
-			登录
+		<my-nav title="登录">
+			<router-link :to="{path:'/register'}" class="nav-right" slot="right">注册</router-link>
+		</my-nav>
+		
+
+		<div class="login-main">
+				<ul>
+					<li>
+	 <i class="iconfont">&#x3437;</i>
+				 <el-input class="from-input"
+	  placeholder="手机/当代账号"
+	  v-model="user">
+	  
+					</li>
+					<li>
+	</el-input>		
+				 <i class="iconfont">&#xe678;</i>
+				 <el-input class="from-input"
+	  placeholder="登录密码"
+	  v-model="pwd">
+					</li>
+				<li>
+					<el-button type="primary">登录</el-button>
+				</li>	
+			</ul>	
+
+ 
+
+
+
 		</div>
+
+		 
+
 	</div>
 </template>
 <script>
+import blackNav from './blackNav.vue';
+ 
+export default {
+  data() {
+    return {
+      user: '',
+      pwd:'',
+    }
+  },
+  components:{
+  	'my-nav':blackNav,
+  }
+}
 </script>
+<style lang="sass" >
+.nav-right{	
+		position:absolute;
+		right:5%;
+		color: #0aa6de;
+		font-size:.3rem;
+	}
+.login-main{
+	margin:0px 5%;
+	ul{
+		li{
+			.el-input{
+				
+				.el-input__inner{
+					height:.8rem;
+					padding-left:.6rem;
+					font-size:.3rem;
+				}						
+			}
+			position:relative;
+			padding-bottom:.4rem;
+			i{
+				position:absolute;
+				top:.14rem;
+				left:.1rem;
+				z-index: 1;
+				font-size:.5rem;
+				color:#333;
+			}
+			.el-button{
+				width:100%;
+				height:.8rem;
+				font-size:.3rem;
+			}
+		}
+	}
+}
+</style>
 <style lang="sass" scoped>
 	.pt-perspective{
 		width:100%;
-		.warp-header{
-			position:relative;
-			height:.8rem;
-			width:100%;
-			line-height:.8rem;
-			background:#272733;
-			font-size:.4rem;
-			color: #fff;
-			text-align: center;
-			.goback{
-				display: inline-block;
-			    position: absolute;
-			    width: .2rem;
-			    height: .2rem;
-			    content: "";
-			    border-top: #fff 1px solid;
-			    border-right: #fff 1px solid;
-			    -webkit-transform: rotate(-135deg);
-			    -moz-transform: rotate(-135deg);
-			    -ms-transform: rotate(-135deg);
-			    -o-transform: rotate(-135deg);
-			    transform: rotate(-135deg);
-			    bottom: .3rem;
-			    left: 5%;
-			    margin-left: -4px;
-				i{
-
-				}
-			}
+		
+		.login-main{
+			margin-top:.4rem;
 		}
 	}
 </style>

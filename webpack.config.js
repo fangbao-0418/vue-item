@@ -7,12 +7,27 @@ var vue = require("vue-loader");//webpack的loader插件
 
 //webpck插件
 var plugins = [
+
+    //  new webpack.DefinePlugin({
+    //   'process.env': {
+    //     NODE_ENV: '"production"'
+    //   }
+    // }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     // warnings: false,
+    //     // drop_debugger: true,
+    //     // drop_console: true
+    //   }
+    // }),
+
     //提公用js到common.js文件中
-/*    new webpack.optimize.CommonsChunkPlugin('common.js'),
-
-
+    //new webpack.optimize.CommonsChunkPlugin('common.js'),
+    
+  
+/*  
     //new webpack.NoErrorsPlugin(),
- */
+*/
     //将样式统一发布到style.css中
     new ExtractTextPlugin("build.css"),
     //new openBrowserWebpackPlugin({ url: 'http://192.168.1.15:8088' }),
@@ -28,7 +43,10 @@ var plugins = [
         jQuery: "jquery",
         "window.jQuery": "jquery"
     }),
-    //new webpack.optimize.CommonsChunkPlugin('vendor', 'zfvendor.js'),
+
+    
+
+    //new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
     // 使用 ProvidePlugin 加载使用率高的依赖库
 /*    new webpack.ProvidePlugin({
         $: 'webpack-zepto'
@@ -41,7 +59,7 @@ var buildPath = "/build/";
 
 // 模块导入
 module.exports = {
-    debug: true,
+    debug: false,
     entry: entry,
     output: {
         path: __dirname + buildPath,

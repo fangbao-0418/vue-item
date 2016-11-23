@@ -82,9 +82,9 @@
                 this.page += 1;
 
                 var option = {params:{catid:331,page:this.page}};
-                this.$http.jsonp(url,option).then(
+                this.$http.get(url,option).then(
                         (res)=>{
-
+                        res.body = JSON.parse(res.body);
                         if(_this.page == 1){
                             _this.items = res.body;
                             _this.loading = false;

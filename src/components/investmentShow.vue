@@ -207,8 +207,9 @@
                 var id = this.id;
                 var option = {"params":{"type":"detail","id":id}}
                 var url = "http://www.ey99.com/api/mobile/investment.php";
-                this.$http.jsonp(url,option).then(
+                this.$http.get(url,option).then(
                         (res)=>{
+                        res.data = JSON.parse(res.data);
                         if(res.data.title){
                         _this.item = res.data;
                         _this.loading = false;

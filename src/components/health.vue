@@ -15,9 +15,30 @@
           <div class="card">
               <h2 class="cardTitle">今日推荐</h2>
               <ul>
+                <li>
+                    <div class="bigbox">
+                        <div class="title">
+                          南宁查获特大珍惜动物走私案 缴获17吨玳瑁109只
+                        </div>
+                       <img src="/images/zs3.gif"/>
+                       <span >光明网头条号</span>
+                       <span >89条评论</span>
+                       <span >1小时前</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="midbox">
+                        <div class=title>城管为防小贩占道经营 在人行道种419棵树<div>
+                        <span><img  src="/images/shouye_09.gif"/></span>
+                        <span><img  class="imgmid" src="/imgs/shouye_11.gif"/></span>
+                        <span><img  src="/images/shouye_09.gif"/></span>
+                        <i>光明网头条号</i>
+                        <i >89条评论</i>
+                        <i>1小时前</i>
+                    </div>  
+                </li>
                 <li v-for="item in items.list">
                     <router-link  v-if="item.thumb" :to="{name:'healthDetail',query:{id:item.itemid}}" >
-
                         <div class="descBox">
                             <div class="title">{{item.title | dsubstr(20)}}</div>
                             <div class="footnote">
@@ -26,7 +47,7 @@
                             </div>
                         </div>
                         <span class="img" >
-                            <img :src="item.thumb" />
+                            <img :src="item.thumb" class="img-small"/>
                         </span>
                     </router-link >
                     <router-link  v-else :to="{name:'healthDetail',query:{id:item.itemid}}" >
@@ -156,6 +177,44 @@
                 width: 100%;
                 margin-bottom:.2rem;
                 border-bottom:dashed #ccc 1px;
+                .bigbox{
+                    width: 6rem;
+                     span{
+                       color: #8f8f8f;
+                       display: inline-block;
+                       padding: .1rem .05rem .1rem 0;
+                       font-size: .24rem; 
+                    }
+                    img{
+                        width: 6rem;
+                        height: 3rem;
+                    }
+                }
+                .midbox{
+                    width: 6rem;
+                    img{
+                        width: 1.94rem;
+                        height: 1.23rem;
+                        padding-top: .2rem; 
+                    }
+                    span{
+                         display:inline-block;
+                         float: left;
+                    }
+                    .imgmid{
+                         padding: 0.2rem .088rem 0 .088rem;
+                    }
+                    i{
+                       color: #8f8f8f;
+                       display: inline-block;
+                       padding: .1rem .05rem .1rem 0;
+                       font-size: .24rem; 
+                    }
+                }
+                .title{
+                    min-height: 1rem;
+                    font-size: .3rem;
+                }
                 .descBox{
                     width:69%;
                     min-height:1rem;
@@ -174,7 +233,7 @@
                         font-size:.18rem;
                     }
                 }
-                img{
+                .img-small{
                     float:right;
                     width:25%;
                     height:1.2rem;

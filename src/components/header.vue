@@ -97,32 +97,41 @@
                 function loaded(startX) {
                     myScroll = new IScroll('#nav-smartSetup', {startX:startX,scrollX: true, scrollY: false, mouseWheel: true ,click: true});
                 }
-                var w = 0;
-                var currPosition = 0;
-                $("#scroller ul li").map(function(){
-                    w += $(this)[0].clientWidth;
-                })
+              
+                 
 
-                for(var i=0; i<$("#scroller ul li").length; i++){
+                function resetwidth(){
+                    var w = 0;
+                    var currPosition = 0;
+                    $("#scroller ul li").map(function(){
+                        w += $(this)[0].clientWidth;
+                    })
 
-                    if($("#scroller ul li").eq(i)[0].className == "cur"){
+                    for(var i=0; i<$("#scroller ul li").length; i++){
+
+                        if($("#scroller ul li").eq(i)[0].className == "cur"){
                         break;
                     }
                     currPosition += $("#scroller ul li").eq(i).width() ;
+                    }
+                    $("#scroller").width(w);
+                     //初始化位置
+                      loaded(-currPosition);
                 }
-
-
-
-                $("#scroller").width(w);
-                //初始化位置
-                loaded(-currPosition);
+                resetwidth();
+                window.onresize = function(){
+                    resetwidth();
+                }  
+               
+               
+              
 
                 //$("#scroller").css({"transition-duration": "1s",transform: "translate(-"+ 20 +"px, 0px) translateZ(0px)"});
             })
 
         },
         beforeUpdate(){
-            console.log("before");
+          
 
         },
         updated(){

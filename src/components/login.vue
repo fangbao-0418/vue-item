@@ -1,6 +1,6 @@
 <template>
 	<div class="pt-perspective">
-		<my-nav title="登录">
+		<my-nav :goback="true" title="登录">
 			<router-link :to="{path:'/register'}" class="nav-right" slot="right">注册</router-link>
 		</my-nav>
 		

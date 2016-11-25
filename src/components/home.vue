@@ -2,11 +2,12 @@
 
 <template>
     <div class="content">
-        <my-header ></my-header>
-
+    <my-header ></my-header>
+    <keep-alive>
         <component :is="currentView" :catid="catid" keep-alive>
             <!-- 组件在 vm.currentview 变化时改变 -->
         </component>
+    </keep-alive>
     </div>
 </template>
 

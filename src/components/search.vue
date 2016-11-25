@@ -1,61 +1,33 @@
 <template>
-	<div class="search-main">
-		<div class="search-nav">
-			<i @click="goback" class="iconfont goback">&#xf000c;</i>
-			<div class="search-area">
-				<div class="option-area" @click="selecttype">
-					{{type}}
-					<i :class="['iconfont','option-icon',{'rotate':rotate}]">&#x3438;</i>
-				</div>
-				
-
-				<input class="search-text" placeholder="喜剧总动员">
-			</div>
-			<i @click="gosearch" class="iconfont search-icon">&#xe606;</i>
-		</div>
-		<div v-show="optionstatus" class="option-content">
-			<i class="iconfont option-bar">&#x3438;</i>
-			<ul>
-				<li @click="checktype('招商')">招商</li>
-				<li @click="checktype('资讯')">资讯</li>
-				<li @click="checktype('视频')" class="no-border">视频</li>
-			</ul>
-		</div>
-		<div class="history-area">
-			<div class="history-head">
-				<span class="title">搜索历史</span>
-				<span class="clean"><i class="iconfont">&#xe6b8;</i>清空</span>
-			</div>
-
-		</div>
-
+	<div>
+		<component :is="currentView"></component>
 	</div>
 </template>
 <script>
+	import searchPage from './searchPage.vue';
+	import searchList from './searchList.vue';
 	export default {
 		data(){
 			return {
 				optionstatus:false,
 				rotate:false,
-				type:"招商"
+				type:"招商",
 			}
 		},
-		methods:{
-			goback(){
-				this.$router.go(-1);
-			},
-			selecttype(){
-				this.rotate = !this.rotate;
-				this.optionstatus = !this.optionstatus;
-			},
-			checktype(type){
-				this.type = type;
-				this.selecttype();
-			},
-			gosearch(){
-				this.$router.push({path:'/home'});
+		computed:{
+			currentView(){
+				console.log(this.$route);
+				return this.$route.query.q &&  this.$route.query.type ? "searchList" : "searchPage";
 			}
-		}
+		},
+		components:{
+			searchPage,
+			searchList
+		},	
+		mounted(){
+			console.log(this.currentView);
+		}	
+		
 	}
 </script>
 <style lang="sass" scoped>

@@ -6,11 +6,12 @@
 	background: #efefef;
 }
 .app-shade{
-	position: absolute;
+	position: fixed;
 	z-index:9999999999;
 	top:0;
 	pointer-events: none; 
 	left:0;	
+	bottom:0;
 }
 /*清除浮动*/
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}

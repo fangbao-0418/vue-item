@@ -62,8 +62,6 @@
              
                 this.$http.get(url, option).then(function(response){
 
-                    response.body = JSON.parse(response.body);
-
                     
                     _this.pageTotal = Math.ceil( response.body.count / 10 );
 

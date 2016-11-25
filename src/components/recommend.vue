@@ -63,7 +63,6 @@
                 var param = {"params":{"page":this.page,"a":"ad"}};
 
                 this.$http.get(url, param).then(function(response){
-                    response.body = JSON.parse(response.body);
 
                     _this.pageTotal = Math.ceil( response.body.count / 10 );
 

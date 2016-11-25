@@ -76,7 +76,6 @@
                 var url = "http://www.ey99.com/api/mobile/article.php";
                 this.$http.get(url,option).then(
                         (res)=>{
-                        res.data = JSON.parse(res.body);
                         if(res.data.title){
                         _this.item = res.data;
                         _this.loading = false;

@@ -22,7 +22,7 @@
 	  v-model="pwd">
 					</li>
 				<li>
-					<el-button type="primary">登录</el-button>
+					<el-button type="primary" @click="login">登录</el-button>
 				</li>	
 			</ul>	
 
@@ -42,12 +42,27 @@ import blackNav from './blackNav.vue';
 export default {
   data() {
     return {
-      user: '',
-      pwd:'',
+      user: 'ffcffc',
+      pwd:'fb41827',
     }
   },
   components:{
   	'my-nav':blackNav,
+  },
+  methods:{
+  	login(){
+  		this.checklogin();
+  	},
+  	checklogin(){
+
+  		var url = "http://www.ey99.com/api/mobile/auth.php";
+
+  		var option = {params:{moduleid:2,job:"checklogin",user:this.user,password:this.pwd}}
+
+  		this.$http.get(url,option).then((res)=>{
+  			
+  		})
+  	}
   }
 }
 </script>

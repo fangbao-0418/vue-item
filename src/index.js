@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import Vue from 'vue';
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource';
 import routerConfig from './router.config';            //路由配置文件
@@ -19,8 +19,8 @@ require('./css/common.scss');					  //全局css样式
 Vue.use(VueRouter);
 Vue.use(VueResource);   //加载Resource
 Vue.use(ElementUI);
- 
- 
+
+
 
 
 
@@ -37,5 +37,4 @@ const router = new VueRouter(routerConfig)
 // Route components will be rendered inside <router-view>.
 new Vue({
     router
-
 }).$mount('#app')

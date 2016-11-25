@@ -1,17 +1,17 @@
 webpackJsonp([1],{
 
-/***/ 193:
+/***/ 206:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(194)
-	__vue_script__ = __webpack_require__(196)
+	__webpack_require__(207)
+	__vue_script__ = __webpack_require__(209)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\home.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(222)
+	__vue_template__ = __webpack_require__(235)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -37,13 +37,13 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 194:
+/***/ 207:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(195);
+	var content = __webpack_require__(208);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -64,7 +64,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 195:
+/***/ 208:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -79,7 +79,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 196:
+/***/ 209:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -88,11 +88,11 @@ webpackJsonp([1],{
 	    value: true
 	});
 
-	var _header = __webpack_require__(197);
+	var _header = __webpack_require__(210);
 
 	var _header2 = _interopRequireDefault(_header);
 
-	var _indexMain = __webpack_require__(202);
+	var _indexMain = __webpack_require__(215);
 
 	var _indexMain2 = _interopRequireDefault(_indexMain);
 
@@ -100,11 +100,11 @@ webpackJsonp([1],{
 
 	var _investment2 = _interopRequireDefault(_investment);
 
-	var _recommend = __webpack_require__(207);
+	var _recommend = __webpack_require__(220);
 
 	var _recommend2 = _interopRequireDefault(_recommend);
 
-	var _health = __webpack_require__(214);
+	var _health = __webpack_require__(227);
 
 	var _health2 = _interopRequireDefault(_health);
 
@@ -167,18 +167,18 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 197:
+/***/ 210:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(198)
-	__vue_script__ = __webpack_require__(200)
+	__webpack_require__(211)
+	__vue_script__ = __webpack_require__(213)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\header.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(201)
+	__vue_template__ = __webpack_require__(214)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -204,13 +204,13 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 198:
+/***/ 211:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(199);
+	var content = __webpack_require__(212);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -231,7 +231,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 199:
+/***/ 212:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -246,7 +246,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 200:
+/***/ 213:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {"use strict";
@@ -261,7 +261,7 @@ webpackJsonp([1],{
 	//         <div class="top">
 	//             <div class="wrap">
 	//                 <i class="logo"></i>
-	//                 <div class="search_bg"  >
+	//                 <div class="search_bg" @click="gosearch">
 	//                     <i>当代医药市场网</i>
 	//                 </div>
 	//             </div>
@@ -338,6 +338,9 @@ webpackJsonp([1],{
 	        },
 	        shared: function shared() {
 	            this.isOpen = true;
+	        },
+	        gosearch: function gosearch() {
+	            this.$router.push({ path: "/search" });
 	        }
 	    },
 	    mounted: function mounted() {
@@ -519,25 +522,25 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 201:
+/***/ 214:
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n<div class=\"box\" _v-0ab50b8c=\"\">\n    <div class=\"top\" _v-0ab50b8c=\"\">\n        <div class=\"wrap\" _v-0ab50b8c=\"\">\n            <i class=\"logo\" _v-0ab50b8c=\"\"></i>\n            <div class=\"search_bg\" _v-0ab50b8c=\"\">\n                <i _v-0ab50b8c=\"\">当代医药市场网</i>\n            </div>\n        </div>\n\n    </div>\n    <div class=\"nav\" _v-0ab50b8c=\"\">\n        <div id=\"nav-smartSetup\" _v-0ab50b8c=\"\">\n            <div id=\"scroller\" _v-0ab50b8c=\"\">\n                <ul _v-0ab50b8c=\"\">\n                    <li v-on:click=\"selectType('recommend')\" :class=\"{'cur':isCur[0]}\" _v-0ab50b8c=\"\">推荐</li>\n                    <li v-on:click=\"selectType('drug',4)\" :class=\"{'cur':isCur[1]}\" _v-0ab50b8c=\"\">药品 </li>\n                    <li v-on:click=\"selectType('zyc',11)\" :class=\"{'cur':isCur[2]}\" _v-0ab50b8c=\"\">中药材</li>\n                    <li v-on:click=\"selectType('bjsp',5)\" :class=\"{'cur':isCur[3]}\" _v-0ab50b8c=\"\">保健食品</li>\n                    <li v-on:click=\"selectType('ylqx',13)\" :class=\"{'cur':isCur[4]}\" _v-0ab50b8c=\"\">医疗器械 </li>\n                    <li v-on:click=\"selectType('mrhf',20)\" :class=\"{'cur':isCur[5]}\" _v-0ab50b8c=\"\">美容护肤 </li>\n                    <li v-on:click=\"selectType('jsyp',18)\" :class=\"{'cur':isCur[6]}\" _v-0ab50b8c=\"\">计生用品 </li>\n                    <li v-on:click=\"selectType('zysb',15)\" :class=\"{'cur':isCur[7]}\" _v-0ab50b8c=\"\">制药设备 </li>\n                    <li v-on:click=\"selectType('yly',7)\" :class=\"{'cur':isCur[8]}\" _v-0ab50b8c=\"\">原料药 </li>\n                    <li v-on:click=\"selectType('health')\" :class=\"{'cur':isCur[9]}\" _v-0ab50b8c=\"\">健康 </li>\n                </ul>\n            </div>\n        </div>\n        <i class=\"line_a\" _v-0ab50b8c=\"\"></i>\n        <i class=\"plus_a\" _v-0ab50b8c=\"\"></i>\n    </div>\n\n</div>\n";
+	module.exports = "\n\n\n<div class=\"box\" _v-0ab50b8c=\"\">\n    <div class=\"top\" _v-0ab50b8c=\"\">\n        <div class=\"wrap\" _v-0ab50b8c=\"\">\n            <i class=\"logo\" _v-0ab50b8c=\"\"></i>\n            <div class=\"search_bg\" @click=\"gosearch\" _v-0ab50b8c=\"\">\n                <i _v-0ab50b8c=\"\">当代医药市场网</i>\n            </div>\n        </div>\n\n    </div>\n    <div class=\"nav\" _v-0ab50b8c=\"\">\n        <div id=\"nav-smartSetup\" _v-0ab50b8c=\"\">\n            <div id=\"scroller\" _v-0ab50b8c=\"\">\n                <ul _v-0ab50b8c=\"\">\n                    <li v-on:click=\"selectType('recommend')\" :class=\"{'cur':isCur[0]}\" _v-0ab50b8c=\"\">推荐</li>\n                    <li v-on:click=\"selectType('drug',4)\" :class=\"{'cur':isCur[1]}\" _v-0ab50b8c=\"\">药品 </li>\n                    <li v-on:click=\"selectType('zyc',11)\" :class=\"{'cur':isCur[2]}\" _v-0ab50b8c=\"\">中药材</li>\n                    <li v-on:click=\"selectType('bjsp',5)\" :class=\"{'cur':isCur[3]}\" _v-0ab50b8c=\"\">保健食品</li>\n                    <li v-on:click=\"selectType('ylqx',13)\" :class=\"{'cur':isCur[4]}\" _v-0ab50b8c=\"\">医疗器械 </li>\n                    <li v-on:click=\"selectType('mrhf',20)\" :class=\"{'cur':isCur[5]}\" _v-0ab50b8c=\"\">美容护肤 </li>\n                    <li v-on:click=\"selectType('jsyp',18)\" :class=\"{'cur':isCur[6]}\" _v-0ab50b8c=\"\">计生用品 </li>\n                    <li v-on:click=\"selectType('zysb',15)\" :class=\"{'cur':isCur[7]}\" _v-0ab50b8c=\"\">制药设备 </li>\n                    <li v-on:click=\"selectType('yly',7)\" :class=\"{'cur':isCur[8]}\" _v-0ab50b8c=\"\">原料药 </li>\n                    <li v-on:click=\"selectType('health')\" :class=\"{'cur':isCur[9]}\" _v-0ab50b8c=\"\">健康 </li>\n                </ul>\n            </div>\n        </div>\n        <i class=\"line_a\" _v-0ab50b8c=\"\"></i>\n        <i class=\"plus_a\" _v-0ab50b8c=\"\"></i>\n    </div>\n\n</div>\n";
 
 /***/ },
 
-/***/ 202:
+/***/ 215:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(203)
-	__vue_script__ = __webpack_require__(205)
+	__webpack_require__(216)
+	__vue_script__ = __webpack_require__(218)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\indexMain.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(206)
+	__vue_template__ = __webpack_require__(219)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -563,13 +566,13 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 203:
+/***/ 216:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(204);
+	var content = __webpack_require__(217);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -590,7 +593,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 204:
+/***/ 217:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -605,7 +608,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 205:
+/***/ 218:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -656,26 +659,26 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 206:
+/***/ 219:
 /***/ function(module, exports) {
 
 	module.exports = "\n\n\n<div>\n    <div class=\"ad_content\"  v-for=\"item in items.list\">\n        <div v-html=\"item.code\"></div>\n        <div class=\"content-info\">\n            <ul>\n                <li><span class=\"Drugs\">药品</span></li>\n                <li><span class=\"click\">1365点击</span></li>\n                <li><span class=\"time\">24小时前</span></li>\n            </ul>\n        </div>\n\n        <div class=\"clear\"></div>\n    </div>\n</div>\n\n";
 
 /***/ },
 
-/***/ 207:
+/***/ 220:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(208)
-	__webpack_require__(210)
-	__vue_script__ = __webpack_require__(212)
+	__webpack_require__(221)
+	__webpack_require__(223)
+	__vue_script__ = __webpack_require__(225)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\recommend.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(213)
+	__vue_template__ = __webpack_require__(226)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -701,13 +704,13 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 208:
+/***/ 221:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(209);
+	var content = __webpack_require__(222);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -728,7 +731,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 209:
+/***/ 222:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -743,13 +746,13 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 210:
+/***/ 223:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(211);
+	var content = __webpack_require__(224);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -770,7 +773,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 211:
+/***/ 224:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -785,7 +788,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 212:
+/***/ 225:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
@@ -794,7 +797,7 @@ webpackJsonp([1],{
 	    value: true
 	});
 
-	var _indexMain = __webpack_require__(202);
+	var _indexMain = __webpack_require__(215);
 
 	var _indexMain2 = _interopRequireDefault(_indexMain);
 
@@ -841,7 +844,8 @@ webpackJsonp([1],{
 	            //url += "page=" + this.page;
 	            var param = { "params": { "page": this.page, "a": "ad" } };
 
-	            this.$http.jsonp(url, param).then(function (response) {
+	            this.$http.get(url, param).then(function (response) {
+	                response.body = JSON.parse(response.body);
 
 	                _this.pageTotal = Math.ceil(response.body.count / 10);
 
@@ -1104,25 +1108,25 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 213:
+/***/ 226:
 /***/ function(module, exports) {
 
 	module.exports = "\n\n<div class=\"white_box\" _v-3b3e24c2=\"\">\n\n\n     <load v-if=\"loading\" _v-3b3e24c2=\"\"></load>\n\n    <div id=\"pullDown\" v-else=\"\" _v-3b3e24c2=\"\">\n        <pull-to-refresh @on-pullup=\"onPullup\" @on-pulldown=\"onPulldown\" class=\"page\" _v-3b3e24c2=\"\">\n            <index-main :items=\"items\" _v-3b3e24c2=\"\"></index-main>\n            <div v-show=\"noPage\" class=\"noPage\" _v-3b3e24c2=\"\">\n                没有了\n            </div>\n        </pull-to-refresh>\n\n    </div>\n\n\n    <div class=\"clear\" _v-3b3e24c2=\"\"></div>\n</div>\n";
 
 /***/ },
 
-/***/ 214:
+/***/ 227:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(215)
-	__vue_script__ = __webpack_require__(217)
+	__webpack_require__(228)
+	__vue_script__ = __webpack_require__(230)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\health.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(221)
+	__vue_template__ = __webpack_require__(234)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -1148,13 +1152,13 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 215:
+/***/ 228:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(216);
+	var content = __webpack_require__(229);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -1175,7 +1179,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 216:
+/***/ 229:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -1190,7 +1194,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 217:
+/***/ 230:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1201,7 +1205,7 @@ webpackJsonp([1],{
 
 	var _vueSwipe = __webpack_require__(171);
 
-	var _homeShell = __webpack_require__(218);
+	var _homeShell = __webpack_require__(231);
 
 	var _homeShell2 = _interopRequireDefault(_homeShell);
 
@@ -1290,8 +1294,8 @@ webpackJsonp([1],{
 	            this.page += 1;
 
 	            var option = { params: { catid: 331, page: this.page } };
-	            this.$http.jsonp(url, option).then(function (res) {
-
+	            this.$http.get(url, option).then(function (res) {
+	                res.body = JSON.parse(res.body);
 	                if (_this.page == 1) {
 	                    _this.items = res.body;
 	                    _this.loading = false;
@@ -1408,17 +1412,17 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 218:
+/***/ 231:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_script__ = __webpack_require__(219)
+	__vue_script__ = __webpack_require__(232)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\homeShell.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(220)
+	__vue_template__ = __webpack_require__(233)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -1444,7 +1448,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 219:
+/***/ 232:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
@@ -1546,21 +1550,21 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 220:
+/***/ 233:
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"white_box\">\n    <load  v-if=\"loading\"  ></load>\n\n    <div id=\"pullDown\"  v-else>\n        <pull-to-refresh\n                @on-pullup='onPullup'\n                @on-pulldown='onPulldown' class=\"page\">\n\n            <slot name=\"content\"></slot>\n\n            <div v-show=\"noPage\" class=\"noPage\">\n                没有了\n            </div>\n        </pull-to-refresh>\n    </div>\n\n    <div class=\"clear\"></div>\n</div>\n\n";
 
 /***/ },
 
-/***/ 221:
+/***/ 234:
 /***/ function(module, exports) {
 
 	module.exports = "\n<home-shell :loading=\"loading\" _v-8a39caee=\"\">\n    <div slot=\"content\" v-if=\"!loading\" _v-8a39caee=\"\">\n        <swipe class=\"my-swipe\" :speed=\"1000\" :show-indicators=\"false\" _v-8a39caee=\"\">\n\n            <swipe-item v-for=\"item in carousel\" _v-8a39caee=\"\">\n                <a :src=\"item.url\" _v-8a39caee=\"\">\n                    <img :src=\"item.pic\" _v-8a39caee=\"\">\n                    <span _v-8a39caee=\"\">{{item.title}}</span>\n                </a>\n            </swipe-item>\n\n        </swipe>\n\n        <div class=\"card\" _v-8a39caee=\"\">\n            <h2 class=\"cardTitle\" _v-8a39caee=\"\">今日推荐</h2>\n            <ul _v-8a39caee=\"\">\n              <li v-for=\"item in items.list\" _v-8a39caee=\"\">\n                  <router-link v-if=\"item.thumb\" :to=\"{name:'healthDetail',query:{id:item.itemid}}\" _v-8a39caee=\"\">\n\n                      <div class=\"descBox\" _v-8a39caee=\"\">\n                          <div class=\"title\" _v-8a39caee=\"\">{{item.title | dsubstr(20)}}</div>\n                          <div class=\"footnote\" _v-8a39caee=\"\">\n                              <span class=\"source\" _v-8a39caee=\"\">{{item.copyfrom ? item.copyfrom : \"当代医药市场网\"}}</span>\n                              <span class=\"hits\" _v-8a39caee=\"\"><i class=\"iconfont\" _v-8a39caee=\"\">󰁈</i>{{item.hits}}</span>\n                          </div>\n                      </div>\n                      <span class=\"img\" _v-8a39caee=\"\">\n                          <img :src=\"item.thumb\" _v-8a39caee=\"\">\n                      </span>\n                  </router-link>\n                  <router-link v-else=\"\" :to=\"{name:'healthDetail',query:{id:item.itemid}}\" _v-8a39caee=\"\">\n                      <h2 class=\"title\" _v-8a39caee=\"\">{{item.title | dsubstr(16)}}</h2>\n                      <span class=\"hits\" _v-8a39caee=\"\">\n                          <i class=\"iconfont\" _v-8a39caee=\"\">󰁈</i>{{item.hits}}\n                      </span>\n                  </router-link>\n              </li>\n            </ul>\n        </div>\n\n    </div>\n</home-shell>\n";
 
 /***/ },
 
-/***/ 222:
+/***/ 235:
 /***/ function(module, exports) {
 
 	module.exports = "\n\n\n<div class=\"content\" _v-7eedf4cc=\"\">\n    <my-header _v-7eedf4cc=\"\"></my-header>\n\n    <component :is=\"currentView\" :catid=\"catid\" keep-alive=\"\" _v-7eedf4cc=\"\">\n        <!-- 组件在 vm.currentview 变化时改变 -->\n    </component>\n</div>\n";

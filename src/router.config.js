@@ -13,6 +13,22 @@ import login from './components/login.vue';
 import register from './components/register.vue';
 import search from './components/search.vue';
 
+
+
+ 
+import auth from './auth.js';
+function requireAuth (to, from, next) {  
+  if (!auth.loggedIn()) {
+    next({
+      path: '/login',
+      query: { redirect: to.fullPath }
+    })
+  } else {
+    next()
+  }
+}
+ 
+
 // 定义路由规则
 // 每条路由规则应该映射到一个组件。这里的“组件”可以是一个使用 Vue.extend
 // 创建的组件构造函数，也可以是一个组件选项对象。
@@ -31,7 +47,7 @@ export default {
 
 		{ path: '/',  redirect: '/home'},
 		{ path: '/video', component: Video },
-		{ path: '/my', component: My },
+		{ path: '/my', component: My , beforeEnter: requireAuth },
 		{ path : '/login' , component: login},
 		{ path : '/register' , component: register},
 		{ path : '/search' , component : search},

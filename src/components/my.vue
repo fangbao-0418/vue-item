@@ -17,27 +17,26 @@
 			<div class="nav">
 			  <div class="left nav-box">
 			     <div class="nav-tu left-nav-tu">
-                   <a href="#"><img src="../imgs/nav1.gif"/></a>
+                   <img src="../imgs/nav1.gif"/>
 			     </div>
 			     <div class="nav-ti left-nav-tu">
-			     	<a href="#">收藏</a>
+			     	<span>收藏</span>
 			     </div>
 			  </div>
-			  <div class="mide nav-box">
+			  <div class="mide nav-box" @click="setlight">
 			     <div class=nav-tu>
-			       <a href="#"><img src="../imgs/nav2.gif"/></a></div>
+			       <img src="../imgs/nav2.gif"/>
+			   	 </div>
 			     <div class="nav-ti">
-                    <a href="#">夜间</a>
+                    <span>夜间</span>
 			     </div>
 			  </div>
 			  <div class="right nav-box">
 			     <div class="nav-tu">
-                      <a href="#">
                       	<img src="../imgs/nav3.gif"/>
-                      </a>
 			     </div>
 			     <div class="nav-ti">
-                     <a href="#">设置</a>
+                     <span>设置</span>
 			     </div>
 			  </div>
 			</div>
@@ -46,16 +45,16 @@
 	     <!-- detal-->
 	     <div class="detal">
             <div class="jf detal-box">
-                <a href="">我的积分</a>
+                <span>我的积分</span>
                 <div class="jt">
-                   <a href="#"><img src="../imgs/jt.gif"/></a>
+                   <i class="iconfont">&#xe604;</i>
                 </div>
             </div>
 	        <div class="vip detal-box">
-                <a href="">升级VIP</a>
+                <span>升级VIP</span>
 	        </div>
-	        <div class="zh detal-box">
-                <a href=""><span class="zh">退出账户</span></a>
+	        <div class="zh detal-box"  @click="loginout">
+                <span class="zh">退出账户</span>
 	        </div>
 	     </div>
 	     <!-- /detal -->
@@ -79,12 +78,28 @@
 	export default {
 		components:{
 			'my-footer':footer
+		},
+		methods:{
+			loginout(){
+				localStorage.removeItem('token');
+				this.$router.push({path:'/login'})
+			},
+			setlight(){
+				if(localStorage.currentlight){
+					localStorage.removeItem("currentlight");
+					$('.app-shade').css({"width":'6.4rem',"height":'100%',"background-color":"rgba(0,0,0,0)"});	
+				}else{
+					localStorage.currentlight = "black";
+						$('.app-shade').css({"width":'6.4rem',"height":'100%',"background-color":"rgba(0,0,0,0.5)"});	
+				}				
+			}
 		}
 	}
 
 </script>
 
-<style scoped>
+<style lang="sass" scoped>
+@import "../css/common.scss";					  //全局css样式
 .my-main{
 	padding-bottom:1rem;
 }
@@ -201,7 +216,7 @@
 	left:28%!important;
 }
 
-.nav-ti a{
+.nav-ti span{
 	font-size: 0.22rem;
 
 }
@@ -222,7 +237,7 @@
 	line-height: .85rem;
 }
 
-.detal-box a{
+.detal-box span{
 	font-size:.3rem; 
     float:left;
 }
@@ -232,7 +247,11 @@
 	color: #ed1b23;
 }
 
-.jt{
-	float: right;
+.jt{	
+	i{
+		float: right;
+		font-size:.4rem;
+		@include  rotate(180deg);
+	}
 }
 </style>

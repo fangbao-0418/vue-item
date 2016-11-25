@@ -345,10 +345,17 @@
         },
         methods: {
             play () {
+
                 if (this.ctrl.playing) {
+
                     this.$refs.video.pause();
                     this.ctrl.playing = false;
                 } else {
+                    for(let i = 0; i < this.$parent.$children.length; i++){
+                       
+                        this.$parent.$children[i].$refs.video.pause();
+
+                    }
                     this.$refs.video.play();
                     this.ctrl.playing = true;
                 }
@@ -547,7 +554,7 @@
             //当媒介被用户或程序暂停时运行的脚本。
             video.onpause = function () {
                 vm.$refs.load.style.display = "block";               
-            }
+            };
             video.onended = function () {
                 // console.log("onended : 播放完毕");
                 vm.$refs.load.style.display = "block";

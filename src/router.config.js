@@ -17,15 +17,15 @@ import search from './components/search.vue';
 
  
 import auth from './auth.js';
-function requireAuth (to, from, next) {  
-  if (!auth.loggedIn()) {
-    next({
-      path: '/login',
-      query: { redirect: to.fullPath }
-    })
-  } else {
-    next()
-  }
+function requireAuth (to, from, next) {  	
+	auth.loggedIn().then((data)=>{
+ 		next({
+		      path: '/login'		      
+    	})
+	},(reason, data)=>{
+  		 next()
+	});
+ 
 }
  
 
@@ -47,7 +47,7 @@ export default {
 
 		{ path: '/',  redirect: '/home'},
 		{ path: '/video', component: Video },
-		{ path: '/my', component: My , beforeEnter: requireAuth },
+		{ name: 'my', path: '/my', component: My , beforeEnter: requireAuth },
 		{ path : '/login' , component: login},
 		{ path : '/register' , component: register},
 		{ path : '/search' , component : search},

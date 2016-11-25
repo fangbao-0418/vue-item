@@ -11,10 +11,11 @@ import 'element-ui/lib/theme-default/index.css';
 
 
 require("./js/function.js");
+require("./js/global.js");
 require("./js/reset.js");					  //全局加载重置js
 require('./css/reset.css');					  //全局加载重置css
 require('./css/common.css');
-require('./css/common.scss');					  //全局css样式
+
 //Vue.use('./server.js');
 Vue.use(VueRouter);
 Vue.use(VueResource);   //加载Resource

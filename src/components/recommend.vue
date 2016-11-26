@@ -52,6 +52,8 @@
            $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
               
 
+            
+
             this.loadData(false);
         },
         methods: {
@@ -138,6 +140,10 @@
         },
     }
 
+  
+
+ 
+  
 
   
 </script>

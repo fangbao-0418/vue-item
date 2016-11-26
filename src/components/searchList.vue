@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<blackNav theme="white" :path="path" :title="q"></blackNav>	
+		<my-nav theme="white" :title="q"></my-nav>	
 	</div>
 </template>
 <script>
@@ -18,7 +18,7 @@
 			}
 		},
 		components:{
-			blackNav
+			'my-nav':blackNav
 		},
 		methods:{
 			dSubstr(title,length){

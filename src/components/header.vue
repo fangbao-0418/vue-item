@@ -35,7 +35,7 @@
     </div>
 </template>
 
-<script>
+<script scoped>
 
 
     //滑动导航
@@ -86,23 +86,16 @@
             },
             gosearch(){
                 this.$router.push({path:"/search"});
-            }
-        },
-        mounted(){
-
-            $(document).ready(function(){
-
-                var myScroll;
-                //iscroll click设为true 不然无法点击
-                function loaded(startX) {
+            },
+            loaded(startX) {
+                  var myScroll;
                     myScroll = new IScroll('#nav-smartSetup', {startX:startX,scrollX: true, scrollY: false, mouseWheel: true ,click: true});
-                }
-              
-                 
+            },
 
-                function resetwidth(){
-                    var w = 0;
-                    var currPosition = 0;
+            resetwidth(){
+                var w = 0;
+                var currPosition = 0;
+                if($("#scroller ul li")[0]){
                     $("#scroller ul li").map(function(){
                         w += $(this)[0].clientWidth;
                     })
@@ -116,11 +109,23 @@
                     }
                     $("#scroller").width(w);
                      //初始化位置
-                      loaded(-currPosition);
+                    this.loaded(-currPosition);
                 }
-                resetwidth();
+              
+            }
+        },
+        mounted(){
+            var _this = this;
+            $(document).ready(function(){
+
+              
+                //iscroll click设为true 不然无法点击
+              
+                 
+
+                _this.resetwidth();
                 window.onresize = function(){
-                    resetwidth();
+                    _this.resetwidth();
                 }  
                
                
@@ -131,14 +136,10 @@
 
         },
         beforeUpdate(){
-          
-
         },
         updated(){
+        },
 
-
-
-        }
 
     }
 </script>

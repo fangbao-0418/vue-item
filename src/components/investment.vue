@@ -42,12 +42,11 @@
                 noPage:false,
             }
         },
+        created(){
+             this.loadData(false);
+         },
         mounted(){
-
-                $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
-
-            this.loadData(false);
-
+            $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
         },
         methods: {
             loadData:function(finshCallback){
@@ -93,19 +92,11 @@
 
 
                     if(response.body.count > 0){
-                        setTimeout(
-                                function(){
+                        $(document).ready(function() {
+                            $(".page").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
+                        });
 
-                                    $(document).ready(function() {
-                                        $(".page").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
-                                    });
-
-                                    _this.loading = false;
-
-                                },500
-                        )
-
-
+                        _this.loading = false;
                     }
 
                     // 响应成功回调

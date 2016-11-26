@@ -38,8 +38,8 @@ import blackNav from './blackNav.vue';
 export default {
   data() {
     return {
-      user: 'ffcffc',
-      pwd:'fb41827',
+      user: '',
+      pwd:'',
       passwdtype:'password',
       status:false
     }

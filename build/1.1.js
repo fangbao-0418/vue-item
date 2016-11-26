@@ -1,17 +1,17 @@
 webpackJsonp([1],{
 
-/***/ 221:
+/***/ 229:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(222)
-	__vue_script__ = __webpack_require__(224)
+	__webpack_require__(230)
+	__vue_script__ = __webpack_require__(232)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\home.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(250)
+	__vue_template__ = __webpack_require__(258)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -37,13 +37,13 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 222:
+/***/ 230:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(223);
+	var content = __webpack_require__(231);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -64,7 +64,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 223:
+/***/ 231:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -72,14 +72,14 @@ webpackJsonp([1],{
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.content[_v-df052d0a]{\n    height:100%;\n}\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.content[_v-df052d0a]{\n    height:100%;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
 
-/***/ 224:
+/***/ 232:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -88,11 +88,11 @@ webpackJsonp([1],{
 	    value: true
 	});
 
-	var _header = __webpack_require__(225);
+	var _header = __webpack_require__(233);
 
 	var _header2 = _interopRequireDefault(_header);
 
-	var _indexMain = __webpack_require__(230);
+	var _indexMain = __webpack_require__(238);
 
 	var _indexMain2 = _interopRequireDefault(_indexMain);
 
@@ -100,11 +100,11 @@ webpackJsonp([1],{
 
 	var _investment2 = _interopRequireDefault(_investment);
 
-	var _recommend = __webpack_require__(235);
+	var _recommend = __webpack_require__(243);
 
 	var _recommend2 = _interopRequireDefault(_recommend);
 
-	var _health = __webpack_require__(242);
+	var _health = __webpack_require__(250);
 
 	var _health2 = _interopRequireDefault(_health);
 
@@ -155,11 +155,12 @@ webpackJsonp([1],{
 	//
 	// <template>
 	//     <div class="content">
-	//         <my-header ></my-header>
+	//     <my-header ></my-header>
 	//
 	//         <component :is="currentView" :catid="catid" keep-alive>
 	//             <!-- 组件在 vm.currentview 变化时改变 -->
 	//         </component>
+	//
 	//     </div>
 	// </template>
 	//
@@ -167,18 +168,18 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 225:
+/***/ 233:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(226)
-	__vue_script__ = __webpack_require__(228)
+	__webpack_require__(234)
+	__vue_script__ = __webpack_require__(236)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\header.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(229)
+	__vue_template__ = __webpack_require__(237)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -204,13 +205,13 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 226:
+/***/ 234:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(227);
+	var content = __webpack_require__(235);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -231,7 +232,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 227:
+/***/ 235:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -246,7 +247,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 228:
+/***/ 236:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {"use strict";
@@ -291,7 +292,7 @@ webpackJsonp([1],{
 	//     </div>
 	// </template>
 	//
-	// <script>
+	// <script scoped>
 
 
 	//滑动导航
@@ -341,41 +342,48 @@ webpackJsonp([1],{
 	        },
 	        gosearch: function gosearch() {
 	            this.$router.push({ path: "/search" });
+	        },
+	        loaded: function loaded(startX) {
+	            var myScroll;
+	            myScroll = new IScroll('#nav-smartSetup', { startX: startX, scrollX: true, scrollY: false, mouseWheel: true, click: true });
+	        },
+	        resetwidth: function resetwidth() {
+	            var w = 0;
+	            var currPosition = 0;
+	            if ($("#scroller ul li")[0]) {
+	                $("#scroller ul li").map(function () {
+	                    w += $(this)[0].clientWidth;
+	                });
+
+	                for (var i = 0; i < $("#scroller ul li").length; i++) {
+
+	                    if ($("#scroller ul li").eq(i)[0].className == "cur") {
+	                        break;
+	                    }
+	                    currPosition += $("#scroller ul li").eq(i).width();
+	                }
+	                $("#scroller").width(w);
+	                //初始化位置
+	                this.loaded(-currPosition);
+	            }
 	        }
 	    },
 	    mounted: function mounted() {
-
+	        var _this = this;
 	        $(document).ready(function () {
 
-	            var myScroll;
 	            //iscroll click设为true 不然无法点击
-	            function loaded(startX) {
-	                myScroll = new IScroll('#nav-smartSetup', { startX: startX, scrollX: true, scrollY: false, mouseWheel: true, click: true });
-	            }
-	            var w = 0;
-	            var currPosition = 0;
-	            $("#scroller ul li").map(function () {
-	                w += $(this)[0].clientWidth;
-	            });
 
-	            for (var i = 0; i < $("#scroller ul li").length; i++) {
 
-	                if ($("#scroller ul li").eq(i)[0].className == "cur") {
-	                    break;
-	                }
-	                currPosition += $("#scroller ul li").eq(i).width();
-	            }
-
-	            $("#scroller").width(w);
-	            //初始化位置
-	            loaded(-currPosition);
+	            _this.resetwidth();
+	            window.onresize = function () {
+	                _this.resetwidth();
+	            };
 
 	            //$("#scroller").css({"transition-duration": "1s",transform: "translate(-"+ 20 +"px, 0px) translateZ(0px)"});
 	        });
 	    },
-	    beforeUpdate: function beforeUpdate() {
-	        console.log("before");
-	    },
+	    beforeUpdate: function beforeUpdate() {},
 	    updated: function updated() {}
 	};
 	// </script>
@@ -522,25 +530,25 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 229:
+/***/ 237:
 /***/ function(module, exports) {
 
 	module.exports = "\n\n\n<div class=\"box\" _v-33ab01ae=\"\">\n    <div class=\"top\" _v-33ab01ae=\"\">\n        <div class=\"wrap\" _v-33ab01ae=\"\">\n            <i class=\"logo\" _v-33ab01ae=\"\"></i>\n            <div class=\"search_bg\" @click=\"gosearch\" _v-33ab01ae=\"\">\n                <i _v-33ab01ae=\"\">当代医药市场网</i>\n            </div>\n        </div>\n\n    </div>\n    <div class=\"nav\" _v-33ab01ae=\"\">\n        <div id=\"nav-smartSetup\" _v-33ab01ae=\"\">\n            <div id=\"scroller\" _v-33ab01ae=\"\">\n                <ul _v-33ab01ae=\"\">\n                    <li v-on:click=\"selectType('recommend')\" :class=\"{'cur':isCur[0]}\" _v-33ab01ae=\"\">推荐</li>\n                    <li v-on:click=\"selectType('drug',4)\" :class=\"{'cur':isCur[1]}\" _v-33ab01ae=\"\">药品 </li>\n                    <li v-on:click=\"selectType('zyc',11)\" :class=\"{'cur':isCur[2]}\" _v-33ab01ae=\"\">中药材</li>\n                    <li v-on:click=\"selectType('bjsp',5)\" :class=\"{'cur':isCur[3]}\" _v-33ab01ae=\"\">保健食品</li>\n                    <li v-on:click=\"selectType('ylqx',13)\" :class=\"{'cur':isCur[4]}\" _v-33ab01ae=\"\">医疗器械 </li>\n                    <li v-on:click=\"selectType('mrhf',20)\" :class=\"{'cur':isCur[5]}\" _v-33ab01ae=\"\">美容护肤 </li>\n                    <li v-on:click=\"selectType('jsyp',18)\" :class=\"{'cur':isCur[6]}\" _v-33ab01ae=\"\">计生用品 </li>\n                    <li v-on:click=\"selectType('zysb',15)\" :class=\"{'cur':isCur[7]}\" _v-33ab01ae=\"\">制药设备 </li>\n                    <li v-on:click=\"selectType('yly',7)\" :class=\"{'cur':isCur[8]}\" _v-33ab01ae=\"\">原料药 </li>\n                    <li v-on:click=\"selectType('health')\" :class=\"{'cur':isCur[9]}\" _v-33ab01ae=\"\">健康 </li>\n                </ul>\n            </div>\n        </div>\n        <i class=\"line_a\" _v-33ab01ae=\"\"></i>\n        <i class=\"plus_a\" _v-33ab01ae=\"\"></i>\n    </div>\n\n</div>\n";
 
 /***/ },
 
-/***/ 230:
+/***/ 238:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(231)
-	__vue_script__ = __webpack_require__(233)
+	__webpack_require__(239)
+	__vue_script__ = __webpack_require__(241)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\indexMain.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(234)
+	__vue_template__ = __webpack_require__(242)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -566,13 +574,13 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 231:
+/***/ 239:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(232);
+	var content = __webpack_require__(240);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -593,7 +601,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 232:
+/***/ 240:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -608,7 +616,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 233:
+/***/ 241:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -659,26 +667,26 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 234:
+/***/ 242:
 /***/ function(module, exports) {
 
 	module.exports = "\n\n\n<div>\n    <div class=\"ad_content\"  v-for=\"item in items.list\">\n        <div v-html=\"item.code\"></div>\n        <div class=\"content-info\">\n            <ul>\n                <li><span class=\"Drugs\">药品</span></li>\n                <li><span class=\"click\">1365点击</span></li>\n                <li><span class=\"time\">24小时前</span></li>\n            </ul>\n        </div>\n\n        <div class=\"clear\"></div>\n    </div>\n</div>\n\n";
 
 /***/ },
 
-/***/ 235:
+/***/ 243:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(236)
-	__webpack_require__(238)
-	__vue_script__ = __webpack_require__(240)
+	__webpack_require__(244)
+	__webpack_require__(246)
+	__vue_script__ = __webpack_require__(248)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\recommend.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(241)
+	__vue_template__ = __webpack_require__(249)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -704,13 +712,13 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 236:
+/***/ 244:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(237);
+	var content = __webpack_require__(245);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -731,7 +739,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 237:
+/***/ 245:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -739,20 +747,20 @@ webpackJsonp([1],{
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.noPage[_v-e20be360]{\n    font-size: .2rem;\n    text-align: center;\n    height: .50rem;\n    line-height: .50rem;\n    color: #888;\n}\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.noPage[_v-e20be360]{\n    font-size: .2rem;\n    text-align: center;\n    height: .50rem;\n    line-height: .50rem;\n    color: #888;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
 
-/***/ 238:
+/***/ 246:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(239);
+	var content = __webpack_require__(247);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -773,7 +781,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 239:
+/***/ 247:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -781,14 +789,14 @@ webpackJsonp([1],{
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.clear{\n    clear: both;\n}\n#pullDown{\n    background: #FFFFFF;\n}\n.white_box{\n    width:6.4rem;\n    background-color:transparent;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n    overflow: hidden;\n}\n.ad_content{\n    width:5.8rem;\n    margin: 0 auto;\n    padding:.10rem 0;\n    position: relative;\n    margin-bottom: .1rem;\n}\n.ad_code_one{\n    width:100%;\n    height: 1.2rem;\n    padding:.16rem 0px;\n    border-bottom:1px solid #e7e7e7;\n}\n.ad_code_two{\n    width:100%;\n    padding-bottom:.7rem;\n    border-bottom:1px solid #e7e7e7;\n}\n.ad_code_three{\n    width:100%;\n    padding-bottom:.6rem;\n    border-bottom:1px solid #e7e7e7;\n}\n.content1-left{\n    width: 4rem;\n\n    float: left;\n}\n\n.content-title h2{\n    padding-right:.2rem;\n    font-size: .3rem;\n}\n\n.content-info{\n    position: absolute;\n    bottom:.3rem;\n}\n.content-info ul{\n    width:100% ;\n    height:.3rem ;\n    line-height: .3rem;\n}\n\n.content-info li {\n    float: left;\n}\n\n\n\n.content1-right{\n    width: 1.8rem;height: 1.2rem;\n    float:right;\n}\n.content1-right a img{\n    width:1.8rem;\n    height:1.2rem;\n}\n.click,.time{\n    color:#8a8a8a ;\n    font-size:.22rem ;\n\n    margin-right:.26rem;\n    display: inline-block;\n}\n\n\n\n.content-Title{\n    padding-bottom: .16rem;\n}\n\n.content2-img{\n    width: 5.8rem;height: 1.23rem;\n}\n\n\n\n.content2-img img{\n    display: block!important;\n    float: left!important;\n}\n.content2-img a img{\n    width:1.89rem;\n    height:1.23rem;\n}\n.c2-img{\n    margin-right: .06rem;\n}\n\n.content3-img a img{\n    width:5.79rem;\n    height:2.84rem;\n}\n\n\n.page{\n\n    overflow: hidden;\n    position: relative;\n    /* Prevent native touch events on Windows */\n    -ms-touch-action: none;\n    /* Prevent the callout on tap-hold and text selection */\n    -webkit-touch-callout: none;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    -webkit-text-size-adjust: none;\n        -ms-text-size-adjust: none;\n            text-size-adjust: none;\n}\n\n\n\n/*scrollbar start*/\n.iScrollVerticalScrollbar {\n    position: absolute;\n    z-index: 9999;\n    width: 2px;\n    bottom: 2px;\n    top: 2px;\n    right: 2px;\n    overflow: hidden;\n}\n\n.iScrollVerticalScrollbar.iScrollBothScrollbars {\n    bottom: 18px;\n}\n\n.iScrollIndicator {\n    position: absolute;\n    background: #999;\n    border-radius: 6px;\n    opacity: .8;\n}\n\n.iScrollVerticalScrollbar .iScrollIndicator {\n    width: 100%;\n    background: #999;\n}\n/*scrollbar end*/\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.clear{\n    clear: both;\n}\n#pullDown{\n    background: #FFFFFF;\n}\n.white_box{\n    width:6.4rem;\n    background-color:transparent;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n    overflow: hidden;\n}\n.ad_content{\n    width:5.8rem;\n    margin: 0 auto;\n    padding:.10rem 0;\n    position: relative;\n    margin-bottom: .1rem;\n}\n.ad_code_one{\n    width:100%;\n    height: 1.2rem;\n    padding:.16rem 0px;\n    border-bottom:1px solid #e7e7e7;\n}\n.ad_code_two{\n    width:100%;\n    padding-bottom:.7rem;\n    border-bottom:1px solid #e7e7e7;\n}\n.ad_code_three{\n    width:100%;\n    padding-bottom:.6rem;\n    border-bottom:1px solid #e7e7e7;\n}\n.content1-left{\n    width: 4rem;\n\n    float: left;\n}\n\n.content-title h2{\n    padding-right:.2rem;\n    font-size: .3rem;\n}\n\n.content-info{\n    position: absolute;\n    bottom:.3rem;\n}\n.content-info ul{\n    width:100% ;\n    height:.3rem ;\n    line-height: .3rem;\n}\n\n.content-info li {\n    float: left;\n}\n\n\n\n.content1-right{\n    width: 1.8rem;height: 1.2rem;\n    float:right;\n}\n.content1-right a img{\n    width:1.8rem;\n    height:1.2rem;\n}\n.click,.time{\n    color:#8a8a8a ;\n    font-size:.22rem ;\n\n    margin-right:.26rem;\n    display: inline-block;\n}\n\n\n\n.content-Title{\n    padding-bottom: .16rem;\n}\n\n.content2-img{\n    width: 5.8rem;height: 1.23rem;\n}\n\n\n\n.content2-img img{\n    display: block!important;\n    float: left!important;\n}\n.content2-img a img{\n    width:1.89rem;\n    height:1.23rem;\n}\n.c2-img{\n    margin-right: .06rem;\n}\n\n.content3-img a img{\n    width:5.79rem;\n    height:2.84rem;\n}\n\n\n.page{\n\n    overflow: hidden;\n    position: relative;\n    /* Prevent native touch events on Windows */\n    -ms-touch-action: none;\n    /* Prevent the callout on tap-hold and text selection */\n    -webkit-touch-callout: none;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    -webkit-text-size-adjust: none;\n        -ms-text-size-adjust: none;\n            text-size-adjust: none;\n}\n\n\n\n/*scrollbar start*/\n.iScrollVerticalScrollbar {\n    position: absolute;\n    z-index: 9999;\n    width: 2px;\n    bottom: 2px;\n    top: 2px;\n    right: 2px;\n    overflow: hidden;\n}\n\n.iScrollVerticalScrollbar.iScrollBothScrollbars {\n    bottom: 18px;\n}\n\n.iScrollIndicator {\n    position: absolute;\n    background: #999;\n    border-radius: 6px;\n    opacity: .8;\n}\n\n.iScrollVerticalScrollbar .iScrollIndicator {\n    width: 100%;\n    background: #999;\n}\n/*scrollbar end*/\n", ""]);
 
 	// exports
 
 
 /***/ },
 
-/***/ 240:
+/***/ 248:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
@@ -797,7 +805,7 @@ webpackJsonp([1],{
 	    value: true
 	});
 
-	var _indexMain = __webpack_require__(230);
+	var _indexMain = __webpack_require__(238);
 
 	var _indexMain2 = _interopRequireDefault(_indexMain);
 
@@ -904,44 +912,6 @@ webpackJsonp([1],{
 	    }
 	};
 
-	//响应窗体改变
-	// <template>
-	//
-	//     <div class="white_box">
-	//
-	//
-	//          <load  v-if="loading"></load>
-	//
-	//         <div id="pullDown"  v-else>
-	//             <pull-to-refresh
-	//                     @on-pullup='onPullup'
-	//                     @on-pulldown='onPulldown' class="page">
-	//                 <index-main  :items="items"></index-main>
-	//                 <div v-show="noPage" class="noPage">
-	//                     没有了
-	//                 </div>
-	//             </pull-to-refresh>
-	//
-	//         </div>
-	//
-	//
-	//         <div class="clear"></div>
-	//     </div>
-	// </template>
-	//
-	// <script>
-
-
-	$(document).ready(function () {
-	    window.onresize = function () {
-	        resetHeight();
-	    };
-	});
-
-	function resetHeight() {
-	    $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
-	    $(".page").height($(".white_box").height());
-	}
 	// </script>
 	// <style scoped>
 	//     .noPage{
@@ -1103,29 +1073,54 @@ webpackJsonp([1],{
 	//     }
 	//     /*scrollbar end*/
 	// </style>
+	// <template>
+	//
+	//     <div class="white_box">
+	//
+	//
+	//          <load  v-if="loading"></load>
+	//
+	//         <div id="pullDown"  v-else>
+	//             <pull-to-refresh
+	//                     @on-pullup='onPullup'
+	//                     @on-pulldown='onPulldown' class="page">
+	//                 <index-main  :items="items"></index-main>
+	//                 <div v-show="noPage" class="noPage">
+	//                     没有了
+	//                 </div>
+	//             </pull-to-refresh>
+	//
+	//         </div>
+	//
+	//
+	//         <div class="clear"></div>
+	//     </div>
+	// </template>
+	//
+	// <script>
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(115)))
 
 /***/ },
 
-/***/ 241:
+/***/ 249:
 /***/ function(module, exports) {
 
 	module.exports = "\n\n<div class=\"white_box\" _v-e20be360=\"\">\n\n\n     <load v-if=\"loading\" _v-e20be360=\"\"></load>\n\n    <div id=\"pullDown\" v-else=\"\" _v-e20be360=\"\">\n        <pull-to-refresh @on-pullup=\"onPullup\" @on-pulldown=\"onPulldown\" class=\"page\" _v-e20be360=\"\">\n            <index-main :items=\"items\" _v-e20be360=\"\"></index-main>\n            <div v-show=\"noPage\" class=\"noPage\" _v-e20be360=\"\">\n                没有了\n            </div>\n        </pull-to-refresh>\n\n    </div>\n\n\n    <div class=\"clear\" _v-e20be360=\"\"></div>\n</div>\n";
 
 /***/ },
 
-/***/ 242:
+/***/ 250:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(243)
-	__vue_script__ = __webpack_require__(245)
+	__webpack_require__(251)
+	__vue_script__ = __webpack_require__(253)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\health.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(249)
+	__vue_template__ = __webpack_require__(257)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -1151,13 +1146,13 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 243:
+/***/ 251:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(244);
+	var content = __webpack_require__(252);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -1178,7 +1173,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 244:
+/***/ 252:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -1193,7 +1188,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 245:
+/***/ 253:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1204,7 +1199,7 @@ webpackJsonp([1],{
 
 	var _vueSwipe = __webpack_require__(170);
 
-	var _homeShell = __webpack_require__(246);
+	var _homeShell = __webpack_require__(254);
 
 	var _homeShell2 = _interopRequireDefault(_homeShell);
 
@@ -1488,17 +1483,17 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 246:
+/***/ 254:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_script__ = __webpack_require__(247)
+	__vue_script__ = __webpack_require__(255)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\homeShell.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(248)
+	__vue_template__ = __webpack_require__(256)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -1524,7 +1519,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 247:
+/***/ 255:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
@@ -1626,24 +1621,24 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 248:
+/***/ 256:
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"white_box\">\n    <load  v-if=\"loading\"  ></load>\n\n    <div id=\"pullDown\"  v-else>\n        <pull-to-refresh\n                @on-pullup='onPullup'\n                @on-pulldown='onPulldown' class=\"page\">\n\n            <slot name=\"content\"></slot>\n\n            <div v-show=\"noPage\" class=\"noPage\">\n                没有了\n            </div>\n        </pull-to-refresh>\n    </div>\n\n    <div class=\"clear\"></div>\n</div>\n\n";
 
 /***/ },
 
-/***/ 249:
+/***/ 257:
 /***/ function(module, exports) {
 
 	module.exports = "\n<home-shell :loading=\"loading\" _v-b32fc110=\"\">\n    <div slot=\"content\" v-if=\"!loading\" _v-b32fc110=\"\">\n        <swipe class=\"my-swipe\" :speed=\"1000\" :show-indicators=\"false\" _v-b32fc110=\"\">\n\n            <swipe-item v-for=\"item in carousel\" _v-b32fc110=\"\">\n                <a :src=\"item.url\" _v-b32fc110=\"\">\n                    <img :src=\"item.pic\" _v-b32fc110=\"\">\n                    <span _v-b32fc110=\"\">{{item.title}}</span>\n                </a>\n            </swipe-item>\n\n        </swipe>\n\n        <div class=\"card\" _v-b32fc110=\"\">\n            <h2 class=\"cardTitle\" _v-b32fc110=\"\">今日推荐</h2>\n            <ul _v-b32fc110=\"\">                \n              <li v-for=\"item in items.list\" _v-b32fc110=\"\">\n                  <template v-if=\"item.thumb\">\n                  <router-link :to=\"{name:'healthDetail',query:{id:item.itemid}}\" _v-b32fc110=\"\">\n                      <template v-if=\"item.level == 8\">                            \n                          <div class=\"midbox\" _v-b32fc110=\"\">\n                              <div class=\"title\" _v-b32fc110=\"\">{{item.title}}<div _v-b32fc110=\"\">\n                              <span _v-b32fc110=\"\"><img :src=\"item.thumb\" _v-b32fc110=\"\"></span>\n                              <span _v-b32fc110=\"\"><img class=\"imgmid\" :src=\"item.thumb1\" _v-b32fc110=\"\"></span>\n                              <span _v-b32fc110=\"\"><img :src=\"item.thumb2\" _v-b32fc110=\"\"></span>\n                              <i class=\"source\" _v-b32fc110=\"\">{{item.copyfrom}}</i>\n                              <i class=\"hits\" _v-b32fc110=\"\"><i class=\"iconfont\" _v-b32fc110=\"\">󰁈</i>{{item.hits}}</i>\n                           </div>                           \n                      </div></div></template>  \n                      <template v-if=\"item.level == 9\">                            \n                           <div class=\"bigbox\" _v-b32fc110=\"\">\n                              <div class=\"title\" _v-b32fc110=\"\">\n                                {{item.title}}\n                              </div>\n                             <img :src=\"item.thumb\" _v-b32fc110=\"\">\n                             <span _v-b32fc110=\"\">{{item.copyfrom}}</span>\n                             <span class=\"hits\" _v-b32fc110=\"\"><i class=\"iconfont\" _v-b32fc110=\"\">󰁈</i>{{item.hits}}</span>\n                          </div>                  \n                      </template> \n                     <template v-if=\"item.level != 8 &amp;&amp; item.level != 9\">  \n                          <div class=\"descBox\" _v-b32fc110=\"\">\n                              <div class=\"title\" _v-b32fc110=\"\">{{item.title | dsubstr(20)}}</div>\n                              <div class=\"footnote\" _v-b32fc110=\"\">\n                                  <span class=\"source\" _v-b32fc110=\"\">{{item.copyfrom ? item.copyfrom : \"当代医药市场网\"}}</span>\n                                  <span class=\"hits\" _v-b32fc110=\"\"><i class=\"iconfont\" _v-b32fc110=\"\">󰁈</i>{{item.hits}}</span>\n                              </div>\n                          </div>\n                          <span class=\"img\" _v-b32fc110=\"\">\n                              <img :src=\"item.thumb\" class=\"img-small\" _v-b32fc110=\"\">\n                          </span>\n                      </template>  \n                  </router-link>\n                  </template>\n                  <template v-else=\"\">\n                      <router-link :to=\"{name:'healthDetail',query:{id:item.itemid}}\" _v-b32fc110=\"\">\n                          <h2 class=\"title\" _v-b32fc110=\"\">{{item.title | dsubstr(16)}}</h2>\n                          <span class=\"hits\" _v-b32fc110=\"\">\n                              <i class=\"iconfont\" _v-b32fc110=\"\">󰁈</i>{{item.hits}}\n                          </span>\n                      </router-link>\n                  </template>\n              </li>\n            </ul>\n        </div>\n\n    </div>\n</home-shell>\n";
 
 /***/ },
 
-/***/ 250:
+/***/ 258:
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n<div class=\"content\" _v-df052d0a=\"\">\n    <my-header _v-df052d0a=\"\"></my-header>\n\n    <component :is=\"currentView\" :catid=\"catid\" keep-alive=\"\" _v-df052d0a=\"\">\n        <!-- 组件在 vm.currentview 变化时改变 -->\n    </component>\n</div>\n";
+	module.exports = "\n\n\n<div class=\"content\" _v-df052d0a=\"\">\n<my-header _v-df052d0a=\"\"></my-header>\n\n    <component :is=\"currentView\" :catid=\"catid\" keep-alive=\"\" _v-df052d0a=\"\">\n        <!-- 组件在 vm.currentview 变化时改变 -->\n    </component>\n\n</div>\n";
 
 /***/ }
 

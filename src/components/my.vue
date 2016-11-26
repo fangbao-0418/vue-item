@@ -90,7 +90,7 @@
 					$('.app-shade').css({"width":'6.4rem',"height":'100%',"background-color":"rgba(0,0,0,0)"});	
 				}else{
 					localStorage.currentlight = "black";
-						$('.app-shade').css({"width":'6.4rem',"height":'100%',"background-color":"rgba(0,0,0,0.5)"});	
+					$('.app-shade').css({"width":'6.4rem',"height":'100%',"background-color":"rgba(0,0,0,0.5)"});	
 				}				
 			}
 		}

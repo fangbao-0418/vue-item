@@ -24,9 +24,13 @@
 		<div class="history-area">
 			<div class="history-head">
 				<span class="title">搜索历史</span>
-				<span class="clean"><i class="iconfont">&#xe6b8;</i>清空</span>
+				<span class="clean" @click="clearSearchItems"><i class="iconfont">&#xe6b8;</i>清空</span>
 			</div>
-
+			<div class="history-list">
+				<ul>
+					<li v-for="item in searchItems">{{item.query.q}}</li>
+				</ul>
+			</div>
 		</div>
 
 	</div>
@@ -38,8 +42,20 @@
 				optionstatus:false,
 				rotate:false,
 				type:"招商",
-				q:null
+				q:null,	
+				searchItems:[]			
 			}
+		},
+		computed:{
+			 
+		},
+		mounted(){
+			if(localStorage.searchItems){
+				this.searchItems = JSON.parse(localStorage.searchItems);
+			}
+		},
+		ceated(){
+			
 		},
 		methods:{
 			goback(){
@@ -53,10 +69,25 @@
 				this.type = type;
 				this.selecttype();
 			},
-			gosearch(){
+			gosearch(){	
+				this.setSearchItems();
 				this.$parent.currentView = "searchList";
-				
 				this.$router.push({path:'/search',query:{type:this.type,q:this.q}});
+			},
+			clearSearchItems(){
+				this.searchItems = [];
+				
+				localStorage.removeItem('searchItems');
+			},
+			setSearchItems(){
+			 
+				
+				if(this.searchItems.length >=7 ){
+					this.searchItems.splice(7,this.searchItems.length);
+				}	
+				this.searchItems.unshift({path:'/search',query:{type:this.type,q:this.q}});
+				localStorage.searchItems =  JSON.stringify(this.searchItems);
+				 
 			}
 		}
 	}
@@ -133,11 +164,8 @@
 	.option-content{
 		color:#fff;
 		position:absolute;
-		
-		
 		width:2rem;
 		left:2%;
-		
 		.option-bar{
 			position:absolute;
 			top:-.27rem;
@@ -185,6 +213,17 @@
 				display: inline-block;
 				padding-right:.04rem;
 				font-size:.24rem;
+			}
+		}
+		.history-list{
+			padding-top:.1rem;
+			ul{
+				li{
+					width:50%;
+					float:left;
+					line-height:.6rem;
+					font-size:.28rem;
+				}
 			}
 		}
 	}

@@ -20,7 +20,7 @@
 
 </template>
 <script>
-    import { Swipe, SwipeItem } from 'vue-swipe';
+  
     import load from './loading.vue';
 
 
@@ -42,8 +42,7 @@
             }
         },
         components:{
-            'swipe':Swipe,
-            'swipe-item':SwipeItem,
+          
             'load':load,
             'pull-to-refresh':PullToRefresh,
 
@@ -51,7 +50,16 @@
         updated(){
             $(document).ready(function() {
                 //获取数据后  固定page高度 即滑动区域 
-                $(".page").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
+                //$(".page").height(400);
+
+                if($(".warp-header")[0]){
+                    $(".page").height($("#app")[0].clientHeight - $(".warp-header")[0].clientHeight );
+
+                }
+                if($(".top")[0] && $(".nav")[0] && $(".footer")[0]) {
+                    $(".page").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
+                }
+              
             });
         },
         mounted(){

@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<my-nav theme="white" :title="q"></my-nav>	
-		<home-shell :loading="loading" :height="height">
+		<home-shell :loading="loading" >
 			 <div slot="content" v-if="!loading">
 			 	<component :items="items.list" :is="currentView"></component>
 			 </div>
@@ -20,7 +20,8 @@
 				loading:true,
 				height:0,
 				'page':0,
-				'currentView':searchArticleItem
+				'currentView':searchArticleItem,
+				'items':null
 			}
 		},
 		computed:{
@@ -58,7 +59,6 @@
                 this.$http.get(url,option).then(
                         (res)=>{
 
-                            console.log(res);
 
                         if(_this.page == 1){
                             _this.items = res.body;
@@ -75,7 +75,7 @@
                                 for(var i=0;i<res.body.list.length;i++){
                                     _this.items.list.push(res.body.list[i]);
                                 }
-
+						console.log(_this.items.list);
                             _this.loading = false;
                              if(finshCallback){
                                  finshCallback()

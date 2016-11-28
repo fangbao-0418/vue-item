@@ -63,7 +63,16 @@
             });
         },
         mounted(){
-            $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
+            
+
+             if($(".warp-header")[0]){
+                    $(".white_box").height($("#app")[0].clientHeight - $(".warp-header")[0].clientHeight );
+
+                }
+                if($(".top")[0] && $(".nav")[0] && $(".footer")[0]) {
+                    $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
+                }
+            
 
             console.log(this);
         },

@@ -60,15 +60,16 @@
             loadData:function(finshCallback){
                 this.page += 1;
                 var _this = this;
-                var url = "http://www.ey99.com/api/mobile/ad.php";
+                var url = "http://www.ey99.com/api/mobile/recommend.php";
                 //url += "page=" + this.page;
-                var param = {"params":{"page":this.page,"a":"ad"}};
+                var option = {params:{page:this.page}};
 
-                this.$http.get(url, param).then(function(response){
-
+                this.$http.get(url,option).then(function(response){
+ 
                     _this.pageTotal = Math.ceil( response.body.count / 10 );
 
 
+                    _this.loading = false;
 
 
                     //如果超过总页数 返回没有了
@@ -104,17 +105,16 @@
 
 
                     if(response.body.count > 0){
-                        setTimeout(
-                                function(){
+                        
+                        
 
-                                    $(document).ready(function() {
-                                        $(".page").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
-                                    });
+                            $(document).ready(function() {
+                                $(".page").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
+                            });
 
-                                   _this.loading = false;
-
-                                },500
-                        )
+                       
+                             
+                       
 
 
                     }
@@ -122,6 +122,7 @@
 
                 }, function(response){
                     // 响应成功回调
+                    
                 });
             },
             onPullup(finshCallback) {

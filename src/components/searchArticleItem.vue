@@ -56,7 +56,12 @@
       props:['items'],
       mounted(){
         console.log(this.items);
-      }
+      },
+      filters:{
+          dsubstr(title,length){
+              return title.substr(0,length);
+          }
+      },
   }
 </script>
 <style lang="sass" scoped>

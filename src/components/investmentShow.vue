@@ -96,19 +96,10 @@
             </div><!--content-box-->
 
             <!-- footer -->
-            <div class="footer">
-                <div class="footer-box">
-                    <div class="footer-t">
-                        <div class="foot-t-box">
-                            <i class="iconfont favour">&#xe602;</i>
-                            <span>16</span>
-                            <i class="report"><b>举报</b></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <detail-footer moduleid="22" :itemid="item.itemid"></detail-footer>
 
         </div>
+       
     </div>
 
 
@@ -117,6 +108,9 @@
 <script>
     import nav from './navigate.vue';
     import load from './loading.vue';
+  
+  
+    import detailFooter from './detailFooter.vue';
     require('vue-swipe/dist/vue-swipe.css');
 
     // in ES6 modules
@@ -208,8 +202,7 @@
                 var option = {"params":{"type":"detail","id":id}}
                 var url = "http://www.ey99.com/api/mobile/investment.php";
                 this.$http.get(url,option).then(
-                        (res)=>{
-                      
+                        (res)=>{                      
                         if(res.data.title){
                         _this.item = res.data;
                         _this.loading = false;
@@ -220,13 +213,15 @@
 
                 }
                 );
-            }
+            },
+
         },
         components:{
             'app-nav':nav,
             'load':load,
             'swipe':Swipe,
-            'swipe-item':SwipeItem
+            'swipe-item':SwipeItem,           
+            'detail-footer':detailFooter
         }
     }
 </script>
@@ -285,46 +280,6 @@
 
 
 
-/*footer*/
-.footer{
-	width: 6.4rem;
-  background: #fff;
-}
-
-
-.footer-t{
-  width: 5.8rem;
-	padding-bottom: .2rem;
-	border-bottom:1px solid #e9e9e9;
-  margin: 0 auto;
-}
-
-.foot-t-box{
-  width: 5.8rem;
-	padding: .12rem 0;
-}
-
-
-.foot-t-box i{
-  display: inline-block;
-}
-.foot-t-box span{
-    font-size:.2rem;
-    display: inline-block;
-    padding: .1rem 0;
-}
-.favour{
-  float: left;
-  font-size: .36rem;
-  line-height: .35rem;
-  padding-right: .1rem;
-}
-
-.report{
-  float: right;
-  font-size: .25rem;
-  line-height: .38rem;
-}
 
 
 </style>

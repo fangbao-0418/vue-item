@@ -33,6 +33,10 @@
                 type:Boolean,
                 required:true,
                 default:true,
+            },
+            type:{
+                type:Number,
+                default:0,
             }
         },
         data(){
@@ -73,20 +77,19 @@
                     $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
                 }
             
-
-            console.log(this);
+ 
         },
         methods:{
 
             onPullup(finshCallback) {
-                this.$parent.loadData(finshCallback);
+                this.$parent.loadData(finshCallback,false,this.type);
 
                 //this.loadData(finshCallback);
             },
 
             onPulldown(finshCallback) {
                 ///finshCallback 回归位置 页面扩充后 拉取高度 不执行的话 高度不拉伸
-                this.$parent.loadData(finshCallback,true);
+                this.$parent.loadData(finshCallback,true,this.type);
 
                 //finshCallback  调整位置
 //                this.noPage = false;

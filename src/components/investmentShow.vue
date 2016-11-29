@@ -191,9 +191,12 @@
                 topid:null,                
             }
         },
-        mounted(){
+        created(){          
             this.id = this.$route.query.id;
             this.loadData();
+        },
+        mounted(){
+        
         },
         methods:{
             loadData(){
@@ -204,9 +207,11 @@
                 this.$http.get(url,option).then(
                         (res)=>{                      
                         if(res.data.title){
+                        res.data.hits = parseInt( res.data.hits ) + 1;
                         _this.item = res.data;
                         _this.loading = false;
                         _this.topid = res.data.topid;
+                        _this.hits(res.data.itemid);
                     }
                 },
                         (err)=>{
@@ -214,7 +219,11 @@
                 }
                 );
             },
-
+            hits(itemid){
+                var url = "http://www.ey99.com/api/mobile/hits.php";
+                var option = { params : {moduleid:22 ,itemid} };
+                this.$http.get(url,option)
+            }
         },
         components:{
             'app-nav':nav,

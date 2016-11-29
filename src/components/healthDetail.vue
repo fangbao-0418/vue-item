@@ -28,18 +28,10 @@
 
             </div><!--content-box-->
 
+             
             <!-- footer -->
-            <div class="footer">
-                <div class="footer-box">
-                    <div class="footer-t">
-                        <div class="foot-t-box">
-                            <i class="iconfont favour">&#xe602;</i>
-                            <span>16</span>
-                            <i class="report"><b>举报</b></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <detail-footer moduleid="22" :itemid="item.itemid"></detail-footer>
+
 
         </div>
     </div>
@@ -51,7 +43,7 @@
     import nav from './navigate.vue';
     import load from './loading.vue';
     require('vue-swipe/dist/vue-swipe.css');
-
+    import detailFooter from './detailFooter.vue';
     // in ES6 modules
     import { Swipe, SwipeItem } from 'vue-swipe';
 
@@ -76,22 +68,29 @@
                 var url = "http://www.ey99.com/api/mobile/article.php";
                 this.$http.get(url,option).then(
                         (res)=>{
-                        if(res.data.title){
-                        _this.item = res.data;
-                        _this.loading = false;
-                    }
+                        if(res.data.title){                           
+                            _this.item = res.data;
+                            _this.loading = false;
+                            _this.hits(_this.item.itemid);
+                        }
                 },
                         (err)=>{
 
                 }
                 );
+            },
+            hits(itemid){
+                var url = "http://www.ey99.com/api/mobile/hits.php";
+                var option = { params : {moduleid:21 ,itemid} };
+                this.$http.get(url,option)
             }
         },
         components:{
             'app-nav':nav,
             'load':load,
             'swipe':Swipe,
-            'swipe-item':SwipeItem
+            'swipe-item':SwipeItem,
+            'detail-footer':detailFooter,
         }
     }
 </script>

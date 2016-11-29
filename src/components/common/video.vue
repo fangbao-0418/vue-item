@@ -267,12 +267,12 @@
     <div id="vue-video" ref="box">
         <div class="v-mask" ref="mask" @click="play" @dblclick="screen" @mousemove="tool">
             <video preload="auto" ref="video">
-                <source v-for="data in source" :src="data.src" :type="data.type">
+                <source :src="source.src" :type="source.type">
             </video>
             <div class="v-load" ref="load">
 
   <div class="imgarea">
-                <img src="../../imgs/shouye_03.gif"/>
+                <img :src="source.thumb"/>
                 <i></i>
             </div>
             </div>
@@ -528,7 +528,7 @@
             };
             video.onwaiting = function () {
                 //console.log("onwaiting : 播放过程中开始缓冲");
-                vm.$refs.load.style.display = "block";
+                //vm.$refs.load.style.display = "block";
                 vm.$refs.waiting.style.display = "block";
 
                 //vm.$refs.waiting.style.display = "block";
@@ -558,7 +558,7 @@
             video.onended = function () {
                 // console.log("onended : 播放完毕");
                 vm.$refs.load.style.display = "block";
-                vm.$refs.waiting.style.display = "block";
+                //vm.$refs.waiting.style.display = "block";
                 vm.datas.playing = 0;
                 vm.ctrl.playing = false;
             };

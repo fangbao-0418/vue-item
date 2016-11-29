@@ -65,7 +65,9 @@
                 var option = {params:{page:this.page}};
 
                 this.$http.get(url,option).then(function(response){
- 
+                    
+                    console.log(response);
+
                     _this.pageTotal = Math.ceil( response.body.count / 10 );
 
 
@@ -224,7 +226,7 @@
         width: 1.8rem;height: 1.2rem;
         float:right;
     }
-    .content1-right a img{
+    .content1-right  img{
         width:1.8rem;
         height:1.2rem;
     }
@@ -260,7 +262,7 @@
         margin-right: .06rem;
     }
 
-    .content3-img a img{
+    .content3-img img{
         width:5.79rem;
         height:2.84rem;
     }

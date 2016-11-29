@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<my-nav theme="white" :title="q"></my-nav>	
-		<home-shell :loading="loading" >
+		<home-shell :loading="loading" :type="type">
 			 <div slot="content" v-if="!loading">
 			 	<component :items="items.list" :is="currentView"></component>
 			 </div>
@@ -12,16 +12,17 @@
 	import blackNav from './blackNav';
 	import homeShell from './homeShell';
 	import searchArticleItem from './searchArticleItem';
-	export default {
-		
+	import searchInvestItem from './searchInvestItem';
+	export default {		
 		data(){
 			return {
 				path:{path:"/search"},
 				loading:true,
 				height:0,
 				'page':0,
-				'currentView':searchArticleItem,
-				'items':null
+				'currentView':searchInvestItem,
+				'items':null,
+				type:0,
 			}
 		},
 		computed:{
@@ -30,10 +31,16 @@
 			}
 		},
 		created(){
-			if(this.$route.query.q == "资讯"){
-				this.loadData(false);
+			if(this.$route.query.type == "资讯"){
+				this.currentView = searchArticleItem;
+				this.loadData(false,false,0);
+			}else if(this.$route.query.type == "视频"){
+				this.loadData(false,false,1);
+				this.currentView = searchArticleItem;
 			}else{
-				this.loadData(false);
+				this.loadData(false,false,1);
+				this.type = 1;
+				this.currentView = searchInvestItem;
 			}
 			
 		},
@@ -45,21 +52,28 @@
 			dSubstr(title,length){
     			return title.substr(0,length);
 			},
-			  loadData(finshCallback,refresh){
+			  loadData(finshCallback,refresh,type=0){
 
                 if(refresh){
                     this.page = 0;
                 }
 
                 var _this = this;
-                var url = "http://www.ey99.com/api/mobile/article.php";
+                
+                if(type == 0){
+                	var url = "http://www.ey99.com/api/mobile/article.php";
+                }
+                if(type == 1){
+                	var url = "http://www.ey99.com/api/mobile/investment.php";
+                }
+               
+                
                 this.page += 1;
 
-                var option = {params:{catid:331,page:this.page}};
+                var option = {params:{page:this.page,kw:this.$route.query.q}};
                 this.$http.get(url,option).then(
                         (res)=>{
-
-
+                        	console.log(res);
                         if(_this.page == 1){
                             _this.items = res.body;
                             _this.loading = false;

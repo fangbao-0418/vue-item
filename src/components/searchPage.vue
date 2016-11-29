@@ -28,7 +28,7 @@
 			</div>
 			<div class="history-list">
 				<ul>
-					<li v-for="item in searchItems"><router-link :to="item">{{item.query.q}}</router-link></li>
+					<li v-for="item in searchItems" :to="item">{{item.query.q}}</li>
 				</ul>
 			</div>
 		</div>

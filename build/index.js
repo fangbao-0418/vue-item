@@ -113,26 +113,26 @@
 
 	var _router2 = _interopRequireDefault(_router);
 
-	var _vueLazyload = __webpack_require__(281);
+	var _vueLazyload = __webpack_require__(276);
 
 	var _vueLazyload2 = _interopRequireDefault(_vueLazyload);
 
-	var _elementUi = __webpack_require__(282);
+	var _elementUi = __webpack_require__(277);
 
 	var _elementUi2 = _interopRequireDefault(_elementUi);
 
-	__webpack_require__(338);
+	__webpack_require__(333);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(344); //路由配置文件
+	__webpack_require__(339); //路由配置文件
 
 	// for Vue 2.0
 
-	__webpack_require__(347);
-	__webpack_require__(348); //全局加载重置js
-	__webpack_require__(349); //全局加载重置css
-	__webpack_require__(351);
+	__webpack_require__(342);
+	__webpack_require__(343); //全局加载重置js
+	__webpack_require__(344); //全局加载重置css
+	__webpack_require__(346);
 
 	//Vue.use('./server.js');
 	_vue2.default.use(_vueRouter2.default);
@@ -140,8 +140,8 @@
 	_vue2.default.use(_elementUi2.default);
 
 	_vue2.default.use(_vueLazyload2.default, {
-	    error: __webpack_require__(357),
-	    loading: __webpack_require__(358),
+	    error: __webpack_require__(352),
+	    loading: __webpack_require__(353),
 	    try: 3 // default 1
 	});
 
@@ -11381,7 +11381,7 @@
 
 	var _search2 = _interopRequireDefault(_search);
 
-	var _auth = __webpack_require__(237);
+	var _auth = __webpack_require__(229);
 
 	var _auth2 = _interopRequireDefault(_auth);
 
@@ -11389,7 +11389,7 @@
 
 	//import Home from './components/home.vue';
 	var Home = function Home(resolve) {
-		return __webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(254)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this));
+		return __webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(246)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this));
 	};
 
 	function requireAuth(to, from, next) {
@@ -11444,7 +11444,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-693e3ad0/common.vue"
+	  var id = "_v-4d238546/common.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11811,7 +11811,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-4d19d370/footer.vue"
+	  var id = "_v-5b35b8f6/footer.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -11994,13 +11994,13 @@
 /* 21 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n\n<div class=\"footer\" _v-4d19d370=\"\">\n    <router-link :to=\"{path:'/home'}\" active-class=\"on\" class=\"home\" _v-4d19d370=\"\">\n\n            <router-link tag=\"i\" :to=\"{path:'/home'}\" active-class=\"cur\" _v-4d19d370=\"\">\n\n            </router-link>\n\n        <span _v-4d19d370=\"\">首页</span>\n    </router-link>\n\n    <router-link :to=\"{path:'/video'}\" active-class=\"on\" class=\"video\" _v-4d19d370=\"\">\n\n            <router-link tag=\"i\" :to=\"{path:'/video'}\" active-class=\"cur\" _v-4d19d370=\"\">\n\n            </router-link>\n\n        <span _v-4d19d370=\"\">视频</span>\n    </router-link>\n\n    <router-link :to=\"{path:'/my'}\" active-class=\"on\" class=\"my\" _v-4d19d370=\"\">\n\n            <router-link tag=\"i\" :to=\"{path:'/my'}\" active-class=\"cur\" _v-4d19d370=\"\">\n\n            </router-link>\n\n        <span _v-4d19d370=\"\">我的</span>\n    </router-link>\n\n\n\n</div>\n";
+	module.exports = "\n\n\n\n<div class=\"footer\" _v-5b35b8f6=\"\">\n    <router-link :to=\"{path:'/home'}\" active-class=\"on\" class=\"home\" _v-5b35b8f6=\"\">\n\n            <router-link tag=\"i\" :to=\"{path:'/home'}\" active-class=\"cur\" _v-5b35b8f6=\"\">\n\n            </router-link>\n\n        <span _v-5b35b8f6=\"\">首页</span>\n    </router-link>\n\n    <router-link :to=\"{path:'/video'}\" active-class=\"on\" class=\"video\" _v-5b35b8f6=\"\">\n\n            <router-link tag=\"i\" :to=\"{path:'/video'}\" active-class=\"cur\" _v-5b35b8f6=\"\">\n\n            </router-link>\n\n        <span _v-5b35b8f6=\"\">视频</span>\n    </router-link>\n\n    <router-link :to=\"{path:'/my'}\" active-class=\"on\" class=\"my\" _v-5b35b8f6=\"\">\n\n            <router-link tag=\"i\" :to=\"{path:'/my'}\" active-class=\"cur\" _v-5b35b8f6=\"\">\n\n            </router-link>\n\n        <span _v-5b35b8f6=\"\">我的</span>\n    </router-link>\n\n\n\n</div>\n";
 
 /***/ },
 /* 22 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n\n<div style=\"height:100%\" _v-693e3ad0=\"\">\n    <router-view _v-693e3ad0=\"\"></router-view>\n    <my-footer _v-693e3ad0=\"\"></my-footer>\n</div>\n\n\n\n";
+	module.exports = "\n\n\n\n<div style=\"height:100%\" _v-4d238546=\"\">\n    <router-view _v-4d238546=\"\"></router-view>\n    <my-footer _v-4d238546=\"\"></my-footer>\n</div>\n\n\n\n";
 
 /***/ },
 /* 23 */
@@ -12030,7 +12030,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-32a2d75e/video.vue"
+	  var id = "_v-15ca26f0/video.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12189,7 +12189,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-66be9a1c/videoList.vue"
+	  var id = "_v-80a05ea4/videoList.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -12366,7 +12366,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-1ea62e92/video.vue"
+	  var id = "_v-3eea50e5/video.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -14285,7 +14285,7 @@
 /* 104 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  <div id=\"vue-video\" ref=\"box\" _v-1ea62e92=\"\">\n      <div class=\"v-mask\" ref=\"mask\" @click=\"play\" @dblclick=\"screen\" @mousemove=\"tool\" _v-1ea62e92=\"\">\n          <video preload=\"auto\" ref=\"video\" _v-1ea62e92=\"\">\n              <source v-for=\"data in source\" :src=\"data.src\" :type=\"data.type\" _v-1ea62e92=\"\">\n          </video>\n          <div class=\"v-load\" ref=\"load\" _v-1ea62e92=\"\">\n\n<div class=\"imgarea\" _v-1ea62e92=\"\">\n              <img src=\"" + __webpack_require__(105) + "\" _v-1ea62e92=\"\">\n              <i _v-1ea62e92=\"\"></i>\n          </div>\n          </div>\n          <div class=\"v-waiting\" ref=\"waiting\" _v-1ea62e92=\"\"></div>\n      </div>\n      <transition name=\"fade\" _v-1ea62e92=\"\">\n          <div v-show=\"ctrl.show\" :class=\"[ 'v-tool', ctrl.isFull ? 'v-tool-full' : '' ]\" _v-1ea62e92=\"\">\n              <button :class=\"[ ctrl.playing ? 'v-btn-playing' : 'v-btn-paused' ]\" @click=\"play\" _v-1ea62e92=\"\"></button>\n              <div class=\"v-progress-bar\" _v-1ea62e92=\"\">\n                  <div class=\"v-range\" @click=\"jump\" _v-1ea62e92=\"\">\n                      <span class=\"v-loading\" :style=\"{ width : datas.loading + '%' }\" _v-1ea62e92=\"\"></span>\n                      <span class=\"v-current\" :style=\"{ width : datas.playing + '%' }\" _v-1ea62e92=\"\">\n                      <em class=\"v-dot\" _v-1ea62e92=\"\"></em>\n                  </span>\n                  </div>\n              </div>\n              <div class=\"v-tool-time\" _v-1ea62e92=\"\">\n                  <span _v-1ea62e92=\"\">{{ time.cur }}</span>/<span _v-1ea62e92=\"\">{{ time.all }}</span>\n              </div>\n              <button :class=\"[ 'v-btn-voice', ctrl.isMuted ? 'v-btn-silent' : 'v-btn-volume' ]\" @click=\"muted\" _v-1ea62e92=\"\"></button>\n              <div class=\"v-voice-bar\" _v-1ea62e92=\"\">\n                  <div class=\"v-range\" @click=\"volume\" _v-1ea62e92=\"\">\n                  <span class=\"v-current\" :style=\"{ height : voice + '%' }\" _v-1ea62e92=\"\">\n                      <em class=\"v-dot\" _v-1ea62e92=\"\"></em>\n                  </span>\n                  </div>\n              </div>\n              <button class=\"v-screen\" @click=\"screen\" _v-1ea62e92=\"\"></button>\n          </div>\n      </transition>\n  </div>\n";
+	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  <div id=\"vue-video\" ref=\"box\" _v-3eea50e5=\"\">\n      <div class=\"v-mask\" ref=\"mask\" @click=\"play\" @dblclick=\"screen\" @mousemove=\"tool\" _v-3eea50e5=\"\">\n          <video preload=\"auto\" ref=\"video\" _v-3eea50e5=\"\">\n              <source v-for=\"data in source\" :src=\"data.src\" :type=\"data.type\" _v-3eea50e5=\"\">\n          </video>\n          <div class=\"v-load\" ref=\"load\" _v-3eea50e5=\"\">\n\n<div class=\"imgarea\" _v-3eea50e5=\"\">\n              <img src=\"" + __webpack_require__(105) + "\" _v-3eea50e5=\"\">\n              <i _v-3eea50e5=\"\"></i>\n          </div>\n          </div>\n          <div class=\"v-waiting\" ref=\"waiting\" _v-3eea50e5=\"\"></div>\n      </div>\n      <transition name=\"fade\" _v-3eea50e5=\"\">\n          <div v-show=\"ctrl.show\" :class=\"[ 'v-tool', ctrl.isFull ? 'v-tool-full' : '' ]\" _v-3eea50e5=\"\">\n              <button :class=\"[ ctrl.playing ? 'v-btn-playing' : 'v-btn-paused' ]\" @click=\"play\" _v-3eea50e5=\"\"></button>\n              <div class=\"v-progress-bar\" _v-3eea50e5=\"\">\n                  <div class=\"v-range\" @click=\"jump\" _v-3eea50e5=\"\">\n                      <span class=\"v-loading\" :style=\"{ width : datas.loading + '%' }\" _v-3eea50e5=\"\"></span>\n                      <span class=\"v-current\" :style=\"{ width : datas.playing + '%' }\" _v-3eea50e5=\"\">\n                      <em class=\"v-dot\" _v-3eea50e5=\"\"></em>\n                  </span>\n                  </div>\n              </div>\n              <div class=\"v-tool-time\" _v-3eea50e5=\"\">\n                  <span _v-3eea50e5=\"\">{{ time.cur }}</span>/<span _v-3eea50e5=\"\">{{ time.all }}</span>\n              </div>\n              <button :class=\"[ 'v-btn-voice', ctrl.isMuted ? 'v-btn-silent' : 'v-btn-volume' ]\" @click=\"muted\" _v-3eea50e5=\"\"></button>\n              <div class=\"v-voice-bar\" _v-3eea50e5=\"\">\n                  <div class=\"v-range\" @click=\"volume\" _v-3eea50e5=\"\">\n                  <span class=\"v-current\" :style=\"{ height : voice + '%' }\" _v-3eea50e5=\"\">\n                      <em class=\"v-dot\" _v-3eea50e5=\"\"></em>\n                  </span>\n                  </div>\n              </div>\n              <button class=\"v-screen\" @click=\"screen\" _v-3eea50e5=\"\"></button>\n          </div>\n      </transition>\n  </div>\n";
 
 /***/ },
 /* 105 */
@@ -14297,7 +14297,7 @@
 /* 106 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"videoList\" _v-66be9a1c=\"\">\n\n\n\t<div class=\"videoItem\" _v-66be9a1c=\"\">\n\t\t<div class=\"videoarea\" _v-66be9a1c=\"\">\n\t\t\t<vplayer :source=\"source\" ref=\"vplayer\" _v-66be9a1c=\"\"></vplayer>\t\t\t\t\n\t\t</div>\n\t\t<span class=\"title\" _v-66be9a1c=\"\">小男孩无意间偷拿了超市巧克力。。。</span>\n\t\t<div class=\"note\" _v-66be9a1c=\"\">\n\t\t\t<span class=\"author\" _v-66be9a1c=\"\">当代医药市场网</span>\n\t\t\t<span class=\"hits\" _v-66be9a1c=\"\"> <i class=\"iconfont\" _v-66be9a1c=\"\">󰁈</i> 188</span>\n\t\t</div>\t\t\n\t</div>\n\n\t<div class=\"videoItem\" _v-66be9a1c=\"\">\n\t\t<div class=\"videoarea\" _v-66be9a1c=\"\">\n\t\t\t<vplayer :source=\"source\" ref=\"vplayer\" _v-66be9a1c=\"\"></vplayer>\t\t\t\t\n\t\t</div>\n\t\t<span class=\"title\" _v-66be9a1c=\"\">小男孩无意间偷拿了超市巧克力。。。</span>\n\t\t<div class=\"note\" _v-66be9a1c=\"\">\n\t\t\t<span class=\"author\" _v-66be9a1c=\"\">当代医药市场网</span>\n\t\t\t<span class=\"hits\" _v-66be9a1c=\"\"> <i class=\"iconfont\" _v-66be9a1c=\"\">󰁈</i> 188</span>\n\t\t</div>\t\t\n\t</div>\n\n\t<div class=\"videoItem\" _v-66be9a1c=\"\">\n\t\t<div class=\"videoarea\" _v-66be9a1c=\"\">\n\t\t\t<vplayer :source=\"source\" ref=\"vplayer\" _v-66be9a1c=\"\"></vplayer>\t\t\t\t\n\t\t</div>\n\t\t<span class=\"title\" _v-66be9a1c=\"\">小男孩无意间偷拿了超市巧克力。。。</span>\n\t\t<div class=\"note\" _v-66be9a1c=\"\">\n\t\t\t<span class=\"author\" _v-66be9a1c=\"\">当代医药市场网</span>\n\t\t\t<span class=\"hits\" _v-66be9a1c=\"\"> <i class=\"iconfont\" _v-66be9a1c=\"\">󰁈</i> 188</span>\n\t\t</div>\t\t\n\t</div>\n\n\t<div class=\"videoItem\" _v-66be9a1c=\"\">\n\t\t<div class=\"videoarea\" _v-66be9a1c=\"\">\n\t\t\t<vplayer :source=\"source\" ref=\"vplayer\" _v-66be9a1c=\"\"></vplayer>\t\t\t\t\n\t\t</div>\n\t\t<span class=\"title\" _v-66be9a1c=\"\">小男孩无意间偷拿了超市巧克力。。。</span>\n\t\t<div class=\"note\" _v-66be9a1c=\"\">\n\t\t\t<span class=\"author\" _v-66be9a1c=\"\">当代医药市场网</span>\n\t\t\t<span class=\"hits\" _v-66be9a1c=\"\"> <i class=\"iconfont\" _v-66be9a1c=\"\">󰁈</i> 188</span>\n\t\t</div>\t\t\n\t</div> \n\t \n</div>\n";
+	module.exports = "\n<div class=\"videoList\" _v-80a05ea4=\"\">\n\n\n\t<div class=\"videoItem\" _v-80a05ea4=\"\">\n\t\t<div class=\"videoarea\" _v-80a05ea4=\"\">\n\t\t\t<vplayer :source=\"source\" ref=\"vplayer\" _v-80a05ea4=\"\"></vplayer>\t\t\t\t\n\t\t</div>\n\t\t<span class=\"title\" _v-80a05ea4=\"\">小男孩无意间偷拿了超市巧克力。。。</span>\n\t\t<div class=\"note\" _v-80a05ea4=\"\">\n\t\t\t<span class=\"author\" _v-80a05ea4=\"\">当代医药市场网</span>\n\t\t\t<span class=\"hits\" _v-80a05ea4=\"\"> <i class=\"iconfont\" _v-80a05ea4=\"\">󰁈</i> 188</span>\n\t\t</div>\t\t\n\t</div>\n\n\t<div class=\"videoItem\" _v-80a05ea4=\"\">\n\t\t<div class=\"videoarea\" _v-80a05ea4=\"\">\n\t\t\t<vplayer :source=\"source\" ref=\"vplayer\" _v-80a05ea4=\"\"></vplayer>\t\t\t\t\n\t\t</div>\n\t\t<span class=\"title\" _v-80a05ea4=\"\">小男孩无意间偷拿了超市巧克力。。。</span>\n\t\t<div class=\"note\" _v-80a05ea4=\"\">\n\t\t\t<span class=\"author\" _v-80a05ea4=\"\">当代医药市场网</span>\n\t\t\t<span class=\"hits\" _v-80a05ea4=\"\"> <i class=\"iconfont\" _v-80a05ea4=\"\">󰁈</i> 188</span>\n\t\t</div>\t\t\n\t</div>\n\n\t<div class=\"videoItem\" _v-80a05ea4=\"\">\n\t\t<div class=\"videoarea\" _v-80a05ea4=\"\">\n\t\t\t<vplayer :source=\"source\" ref=\"vplayer\" _v-80a05ea4=\"\"></vplayer>\t\t\t\t\n\t\t</div>\n\t\t<span class=\"title\" _v-80a05ea4=\"\">小男孩无意间偷拿了超市巧克力。。。</span>\n\t\t<div class=\"note\" _v-80a05ea4=\"\">\n\t\t\t<span class=\"author\" _v-80a05ea4=\"\">当代医药市场网</span>\n\t\t\t<span class=\"hits\" _v-80a05ea4=\"\"> <i class=\"iconfont\" _v-80a05ea4=\"\">󰁈</i> 188</span>\n\t\t</div>\t\t\n\t</div>\n\n\t<div class=\"videoItem\" _v-80a05ea4=\"\">\n\t\t<div class=\"videoarea\" _v-80a05ea4=\"\">\n\t\t\t<vplayer :source=\"source\" ref=\"vplayer\" _v-80a05ea4=\"\"></vplayer>\t\t\t\t\n\t\t</div>\n\t\t<span class=\"title\" _v-80a05ea4=\"\">小男孩无意间偷拿了超市巧克力。。。</span>\n\t\t<div class=\"note\" _v-80a05ea4=\"\">\n\t\t\t<span class=\"author\" _v-80a05ea4=\"\">当代医药市场网</span>\n\t\t\t<span class=\"hits\" _v-80a05ea4=\"\"> <i class=\"iconfont\" _v-80a05ea4=\"\">󰁈</i> 188</span>\n\t\t</div>\t\t\n\t</div> \n\t \n</div>\n";
 
 /***/ },
 /* 107 */
@@ -14327,7 +14327,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-50925b0b/videoHeader.vue"
+	  var id = "_v-3210351d/videoHeader.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -26973,13 +26973,13 @@
 /* 117 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n<div class=\"box\" _v-50925b0b=\"\">\n    <div class=\"top\" _v-50925b0b=\"\">\n        <div class=\"wrap\" _v-50925b0b=\"\">\n            <i class=\"logo\" _v-50925b0b=\"\"></i>\n            <div class=\"search_bg\" _v-50925b0b=\"\">\n                <i _v-50925b0b=\"\">当代医药市场网</i>\n            </div>\n        </div>\n\n    </div>\n    <div class=\"nav\" _v-50925b0b=\"\">\n        <div id=\"nav-smartSetup\" _v-50925b0b=\"\">\n            <div id=\"scroller\" _v-50925b0b=\"\">\n                <ul _v-50925b0b=\"\">\n                    <li :class=\"{'cur':isCur[0]}\" _v-50925b0b=\"\">推荐</li>\n                    <li _v-50925b0b=\"\">全部</li>\n                     <li _v-50925b0b=\"\">展会</li>\n                </ul>\n            </div>\n        </div>\n      \n    </div>\n\n</div>\n";
+	module.exports = "\n\n\n<div class=\"box\" _v-3210351d=\"\">\n    <div class=\"top\" _v-3210351d=\"\">\n        <div class=\"wrap\" _v-3210351d=\"\">\n            <i class=\"logo\" _v-3210351d=\"\"></i>\n            <div class=\"search_bg\" _v-3210351d=\"\">\n                <i _v-3210351d=\"\">当代医药市场网</i>\n            </div>\n        </div>\n\n    </div>\n    <div class=\"nav\" _v-3210351d=\"\">\n        <div id=\"nav-smartSetup\" _v-3210351d=\"\">\n            <div id=\"scroller\" _v-3210351d=\"\">\n                <ul _v-3210351d=\"\">\n                    <li :class=\"{'cur':isCur[0]}\" _v-3210351d=\"\">推荐</li>\n                    <li _v-3210351d=\"\">全部</li>\n                     <li _v-3210351d=\"\">展会</li>\n                </ul>\n            </div>\n        </div>\n      \n    </div>\n\n</div>\n";
 
 /***/ },
 /* 118 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n<div class=\"white-box\" _v-32a2d75e=\"\">\n   <my-header _v-32a2d75e=\"\"></my-header>\n   \n         <video-list _v-32a2d75e=\"\"></video-list>\n       \n   <my-footer _v-32a2d75e=\"\"></my-footer>   \n</div>\n";
+	module.exports = "\n\n\n<div class=\"white-box\" _v-15ca26f0=\"\">\n   <my-header _v-15ca26f0=\"\"></my-header>\n   \n         <video-list _v-15ca26f0=\"\"></video-list>\n       \n   <my-footer _v-15ca26f0=\"\"></my-footer>   \n</div>\n";
 
 /***/ },
 /* 119 */
@@ -27009,7 +27009,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-0d39df4e/my.vue"
+	  var id = "_v-1d4e3a07/my.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -27303,7 +27303,7 @@
 /* 124 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n\t<div class=\"my-main\" _v-0d39df4e=\"\">\n\t\t<!-- header -->\n\t    <div class=\"header\" _v-0d39df4e=\"\">\n\t       <div class=\"header-logo\" _v-0d39df4e=\"\">\n\t         <a _v-0d39df4e=\"\"><img src=\"" + __webpack_require__(125) + "\" _v-0d39df4e=\"\"></a>\n\t       </div>\n\t       <div class=\"header-title\" _v-0d39df4e=\"\">\n\t        当代药物市场\n\t       </div>\n\t    </div>\n\t    <!--/header -->\n\t    <!-- content -->\n\t    <div class=\"content\" _v-0d39df4e=\"\">\n\t    <!-- nav -->\n\t      <div class=\"nav-ifo\" _v-0d39df4e=\"\">\n\t\t\t<div class=\"nav\" _v-0d39df4e=\"\">\n\t\t\t  <div class=\"left nav-box\" _v-0d39df4e=\"\">\n\t\t\t     <div class=\"nav-tu left-nav-tu\" _v-0d39df4e=\"\">\n                   <img src=\"" + __webpack_require__(126) + "\" _v-0d39df4e=\"\">\n\t\t\t     </div>\n\t\t\t     <div class=\"nav-ti left-nav-tu\" _v-0d39df4e=\"\">\n\t\t\t     \t<span _v-0d39df4e=\"\">收藏</span>\n\t\t\t     </div>\n\t\t\t  </div>\n\t\t\t  <div class=\"mide nav-box\" @click=\"setlight\" _v-0d39df4e=\"\">\n\t\t\t     <div class=\"nav-tu\" _v-0d39df4e=\"\">\n\t\t\t       <img src=\"" + __webpack_require__(127) + "\" _v-0d39df4e=\"\">\n\t\t\t   \t </div>\n\t\t\t     <div class=\"nav-ti\" _v-0d39df4e=\"\">\n                    <span _v-0d39df4e=\"\">夜间</span>\n\t\t\t     </div>\n\t\t\t  </div>\n\t\t\t  <div class=\"right nav-box\" _v-0d39df4e=\"\">\n\t\t\t     <div class=\"nav-tu\" _v-0d39df4e=\"\">\n                      \t<img src=\"" + __webpack_require__(128) + "\" _v-0d39df4e=\"\">\n\t\t\t     </div>\n\t\t\t     <div class=\"nav-ti\" _v-0d39df4e=\"\">\n                     <span _v-0d39df4e=\"\">设置</span>\n\t\t\t     </div>\n\t\t\t  </div>\n\t\t\t</div>\n\t      </div>\t\t\n\t     <!-- /nav -->\n\t     <!-- detal-->\n\t     <div class=\"detal\" _v-0d39df4e=\"\">\n            <div class=\"jf detal-box\" _v-0d39df4e=\"\">\n                <span _v-0d39df4e=\"\">我的积分</span>\n                <div class=\"jt\" _v-0d39df4e=\"\">\n                   <i class=\"iconfont\" _v-0d39df4e=\"\"></i>\n                </div>\n            </div>\n\t        <div class=\"vip detal-box\" _v-0d39df4e=\"\">\n                <span _v-0d39df4e=\"\">升级VIP</span>\n\t        </div>\n\t        <div class=\"zh detal-box\" @click=\"loginout\" _v-0d39df4e=\"\">\n                <span class=\"zh\" _v-0d39df4e=\"\">退出账户</span>\n\t        </div>\n\t     </div>\n\t     <!-- /detal -->\n        </div>\n\n\n\t    <my-footer _v-0d39df4e=\"\"></my-footer>\n\n\t</div>\n\n    \n\n\n  \n    \n\n    \n";
+	module.exports = "\n\t<div class=\"my-main\" _v-1d4e3a07=\"\">\n\t\t<!-- header -->\n\t    <div class=\"header\" _v-1d4e3a07=\"\">\n\t       <div class=\"header-logo\" _v-1d4e3a07=\"\">\n\t         <a _v-1d4e3a07=\"\"><img src=\"" + __webpack_require__(125) + "\" _v-1d4e3a07=\"\"></a>\n\t       </div>\n\t       <div class=\"header-title\" _v-1d4e3a07=\"\">\n\t        当代药物市场\n\t       </div>\n\t    </div>\n\t    <!--/header -->\n\t    <!-- content -->\n\t    <div class=\"content\" _v-1d4e3a07=\"\">\n\t    <!-- nav -->\n\t      <div class=\"nav-ifo\" _v-1d4e3a07=\"\">\n\t\t\t<div class=\"nav\" _v-1d4e3a07=\"\">\n\t\t\t  <div class=\"left nav-box\" _v-1d4e3a07=\"\">\n\t\t\t     <div class=\"nav-tu left-nav-tu\" _v-1d4e3a07=\"\">\n                   <img src=\"" + __webpack_require__(126) + "\" _v-1d4e3a07=\"\">\n\t\t\t     </div>\n\t\t\t     <div class=\"nav-ti left-nav-tu\" _v-1d4e3a07=\"\">\n\t\t\t     \t<span _v-1d4e3a07=\"\">收藏</span>\n\t\t\t     </div>\n\t\t\t  </div>\n\t\t\t  <div class=\"mide nav-box\" @click=\"setlight\" _v-1d4e3a07=\"\">\n\t\t\t     <div class=\"nav-tu\" _v-1d4e3a07=\"\">\n\t\t\t       <img src=\"" + __webpack_require__(127) + "\" _v-1d4e3a07=\"\">\n\t\t\t   \t </div>\n\t\t\t     <div class=\"nav-ti\" _v-1d4e3a07=\"\">\n                    <span _v-1d4e3a07=\"\">夜间</span>\n\t\t\t     </div>\n\t\t\t  </div>\n\t\t\t  <div class=\"right nav-box\" _v-1d4e3a07=\"\">\n\t\t\t     <div class=\"nav-tu\" _v-1d4e3a07=\"\">\n                      \t<img src=\"" + __webpack_require__(128) + "\" _v-1d4e3a07=\"\">\n\t\t\t     </div>\n\t\t\t     <div class=\"nav-ti\" _v-1d4e3a07=\"\">\n                     <span _v-1d4e3a07=\"\">设置</span>\n\t\t\t     </div>\n\t\t\t  </div>\n\t\t\t</div>\n\t      </div>\t\t\n\t     <!-- /nav -->\n\t     <!-- detal-->\n\t     <div class=\"detal\" _v-1d4e3a07=\"\">\n            <div class=\"jf detal-box\" _v-1d4e3a07=\"\">\n                <span _v-1d4e3a07=\"\">我的积分</span>\n                <div class=\"jt\" _v-1d4e3a07=\"\">\n                   <i class=\"iconfont\" _v-1d4e3a07=\"\"></i>\n                </div>\n            </div>\n\t        <div class=\"vip detal-box\" _v-1d4e3a07=\"\">\n                <span _v-1d4e3a07=\"\">升级VIP</span>\n\t        </div>\n\t        <div class=\"zh detal-box\" @click=\"loginout\" _v-1d4e3a07=\"\">\n                <span class=\"zh\" _v-1d4e3a07=\"\">退出账户</span>\n\t        </div>\n\t     </div>\n\t     <!-- /detal -->\n        </div>\n\n\n\t    <my-footer _v-1d4e3a07=\"\"></my-footer>\n\n\t</div>\n\n    \n\n\n  \n    \n\n    \n";
 
 /***/ },
 /* 125 */
@@ -27358,7 +27358,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-47c13600/investment.vue"
+	  var id = "_v-bd55fea4/investment.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -27708,7 +27708,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-83d0f284/investmentList.vue"
+	  var id = "_v-729b9b6c/investmentList.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -27833,7 +27833,7 @@
 /* 139 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n<!-- content1-->\n<div id=\"items\" _v-83d0f284=\"\">\n<div class=\"item\" v-for=\"item in items.list\" _v-83d0f284=\"\">\n    <router-link :to=\"{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}\" append=\"\" _v-83d0f284=\"\">\n        <div class=\"item_left\" _v-83d0f284=\"\">\n            <div class=\"item_tit\" _v-83d0f284=\"\">\n                {{item.title | dSubstr(20) }}\n            </div>\n\n            <span class=\"item_hit\" _v-83d0f284=\"\">{{item.hits}}点击</span>\n            <span class=\"item_date\" _v-83d0f284=\"\">{{item.editdate}}</span>\n        </div>\n        <img v-lazy=\"item.sptp[0]\" class=\"item_img\" _v-83d0f284=\"\">\n        <div class=\"clear\" _v-83d0f284=\"\"></div>\n    </router-link>\n</div>\n</div>\n\n";
+	module.exports = "\n\n\n<!-- content1-->\n<div id=\"items\" _v-729b9b6c=\"\">\n<div class=\"item\" v-for=\"item in items.list\" _v-729b9b6c=\"\">\n    <router-link :to=\"{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}\" append=\"\" _v-729b9b6c=\"\">\n        <div class=\"item_left\" _v-729b9b6c=\"\">\n            <div class=\"item_tit\" _v-729b9b6c=\"\">\n                {{item.title | dSubstr(20) }}\n            </div>\n\n            <span class=\"item_hit\" _v-729b9b6c=\"\">{{item.hits}}点击</span>\n            <span class=\"item_date\" _v-729b9b6c=\"\">{{item.editdate}}</span>\n        </div>\n        <img v-lazy=\"item.sptp[0]\" class=\"item_img\" _v-729b9b6c=\"\">\n        <div class=\"clear\" _v-729b9b6c=\"\"></div>\n    </router-link>\n</div>\n</div>\n\n";
 
 /***/ },
 /* 140 */
@@ -27863,7 +27863,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-084314df/loading.vue"
+	  var id = "_v-8256701e/loading.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -27971,7 +27971,7 @@
 /* 145 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<!--<div class=\"spinner\">-->\n    <!--<div class=\"bounce1\"></div>-->\n    <!--<div class=\"bounce2\"></div>-->\n    <!--<div class=\"bounce3\"></div>-->\n<!--</div>-->\n<div class=\"box\" _v-084314df=\"\">\n    <i _v-084314df=\"\"></i>\n</div>\n";
+	module.exports = "\n<!--<div class=\"spinner\">-->\n    <!--<div class=\"bounce1\"></div>-->\n    <!--<div class=\"bounce2\"></div>-->\n    <!--<div class=\"bounce3\"></div>-->\n<!--</div>-->\n<div class=\"box\" _v-8256701e=\"\">\n    <i _v-8256701e=\"\"></i>\n</div>\n";
 
 /***/ },
 /* 146 */
@@ -28001,7 +28001,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7aebf034/pull-to-refresh.vue"
+	  var id = "_v-56ea7146/pull-to-refresh.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -30344,13 +30344,13 @@
 /* 153 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n<div :id=\"eleId\" class=\"pull-container\" _v-7aebf034=\"\">\n  <div class=\"scroller\" _v-7aebf034=\"\">\n    <div class=\"pulldown\" :class=\"[pulldownChangeStyle,{'hide':!displaypullDownDiv}]\" _v-7aebf034=\"\">\n      <div class=\"pulldown-icon\" _v-7aebf034=\"\"></div>\n      <div class=\"pulldown-label\" _v-7aebf034=\"\">{{pullDownTip}}</div>\n    </div>\n    <slot _v-7aebf034=\"\"></slot>\n    <div class=\"pullup\" :class=\"[pullupChangeStyle,{'hide':!displaypullUpDiv}]\" _v-7aebf034=\"\">\n      <div class=\"pullup-icon\" _v-7aebf034=\"\"></div>\n      <div class=\"pullup-label\" _v-7aebf034=\"\">{{pullUpTip}}</div>\n    </div>\n  </div>\n</div>\n\n";
+	module.exports = "\n\n<div :id=\"eleId\" class=\"pull-container\" _v-56ea7146=\"\">\n  <div class=\"scroller\" _v-56ea7146=\"\">\n    <div class=\"pulldown\" :class=\"[pulldownChangeStyle,{'hide':!displaypullDownDiv}]\" _v-56ea7146=\"\">\n      <div class=\"pulldown-icon\" _v-56ea7146=\"\"></div>\n      <div class=\"pulldown-label\" _v-56ea7146=\"\">{{pullDownTip}}</div>\n    </div>\n    <slot _v-56ea7146=\"\"></slot>\n    <div class=\"pullup\" :class=\"[pullupChangeStyle,{'hide':!displaypullUpDiv}]\" _v-56ea7146=\"\">\n      <div class=\"pullup-icon\" _v-56ea7146=\"\"></div>\n      <div class=\"pullup-label\" _v-56ea7146=\"\">{{pullUpTip}}</div>\n    </div>\n  </div>\n</div>\n\n";
 
 /***/ },
 /* 154 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"white_box\" _v-47c13600=\"\">\n    <load v-if=\"loading\" _v-47c13600=\"\"></load>\n\n    <div id=\"pullDown\" v-else=\"\" _v-47c13600=\"\">\n        <pull-to-refresh @on-pullup=\"onPullup\" @on-pulldown=\"onPulldown\" class=\"page\" _v-47c13600=\"\">\n            <inv-list :items=\"items\" _v-47c13600=\"\"></inv-list>\n            <div v-show=\"noPage\" class=\"noPage\" _v-47c13600=\"\">\n                没有了\n            </div>\n        </pull-to-refresh>\n    </div>\n\n    <div class=\"clear\" _v-47c13600=\"\"></div>\n</div>\n\n";
+	module.exports = "\n<div class=\"white_box\" _v-bd55fea4=\"\">\n    <load v-if=\"loading\" _v-bd55fea4=\"\"></load>\n\n    <div id=\"pullDown\" v-else=\"\" _v-bd55fea4=\"\">\n        <pull-to-refresh @on-pullup=\"onPullup\" @on-pulldown=\"onPulldown\" class=\"page\" _v-bd55fea4=\"\">\n            <inv-list :items=\"items\" _v-bd55fea4=\"\"></inv-list>\n            <div v-show=\"noPage\" class=\"noPage\" _v-bd55fea4=\"\">\n                没有了\n            </div>\n        </pull-to-refresh>\n    </div>\n\n    <div class=\"clear\" _v-bd55fea4=\"\"></div>\n</div>\n\n";
 
 /***/ },
 /* 155 */
@@ -30380,7 +30380,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-59b0699d/investmentShow.vue"
+	  var id = "_v-0e347e4b/investmentShow.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -30723,7 +30723,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-73ff79de/navigate.vue"
+	  var id = "_v-e0b7ade8/navigate.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -30884,7 +30884,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-1a6c9812/shared.vue"
+	  var id = "_v-c7a18a80/shared.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -31096,7 +31096,7 @@
 /* 168 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n\n\n\n\n<transition name=\"slide-fade\" _v-1a6c9812=\"\">\n\n\n        <div v-show=\"show\" class=\"shared-modal\" @click.stop.prevent=\"shutdown\" _v-1a6c9812=\"\">\n\n\n\n        <div class=\"h5share_panel\" @click.stop.prevent=\"\" _v-1a6c9812=\"\">\n            <div class=\"item wxzone\" _v-1a6c9812=\"\">\n                <a class=\"jiathis_button_douban\" _v-1a6c9812=\"\">\n                    <i class=\"iconfont\" _v-1a6c9812=\"\">㑀</i>\n                    <span _v-1a6c9812=\"\">豆瓣</span>\n                </a>\n            </div>\n            <div class=\"item qzone\" _v-1a6c9812=\"\">\n                <a class=\"jiathis_button_qzone\" _v-1a6c9812=\"\">\n                    <i class=\"iconfont \" _v-1a6c9812=\"\"></i>\n                    <span _v-1a6c9812=\"\">QQ空间</span>\n                </a>\n            </div>\n            <!--<div class=\"item qq\">-->\n                <!--<a class=\"jiathis_button_cqq\" >-->\n                    <!--<i class=\"iconfont \">&#xe607;</i>-->\n                    <!--<span>QQ好友</span>-->\n                <!--</a>-->\n            <!--</div>-->\n            <div class=\"item wb\" _v-1a6c9812=\"\">\n                <a class=\"jiathis_button_tsina\" _v-1a6c9812=\"\">\n                    <i class=\"iconfont\" _v-1a6c9812=\"\">㐶</i>\n                    <span _v-1a6c9812=\"\">新浪</span>\n                </a>\n            </div>\n        </div>\n        <div class=\"share_shutdown\" @click.stop.prevent=\"shutdown\" _v-1a6c9812=\"\"><span _v-1a6c9812=\"\">取消</span></div>\n    </div>\n\n\n</transition>\n\n\n\n";
+	module.exports = "\n\n\n\n\n\n\n<transition name=\"slide-fade\" _v-c7a18a80=\"\">\n\n\n        <div v-show=\"show\" class=\"shared-modal\" @click.stop.prevent=\"shutdown\" _v-c7a18a80=\"\">\n\n\n\n        <div class=\"h5share_panel\" @click.stop.prevent=\"\" _v-c7a18a80=\"\">\n            <div class=\"item wxzone\" _v-c7a18a80=\"\">\n                <a class=\"jiathis_button_douban\" _v-c7a18a80=\"\">\n                    <i class=\"iconfont\" _v-c7a18a80=\"\">㑀</i>\n                    <span _v-c7a18a80=\"\">豆瓣</span>\n                </a>\n            </div>\n            <div class=\"item qzone\" _v-c7a18a80=\"\">\n                <a class=\"jiathis_button_qzone\" _v-c7a18a80=\"\">\n                    <i class=\"iconfont \" _v-c7a18a80=\"\"></i>\n                    <span _v-c7a18a80=\"\">QQ空间</span>\n                </a>\n            </div>\n            <!--<div class=\"item qq\">-->\n                <!--<a class=\"jiathis_button_cqq\" >-->\n                    <!--<i class=\"iconfont \">&#xe607;</i>-->\n                    <!--<span>QQ好友</span>-->\n                <!--</a>-->\n            <!--</div>-->\n            <div class=\"item wb\" _v-c7a18a80=\"\">\n                <a class=\"jiathis_button_tsina\" _v-c7a18a80=\"\">\n                    <i class=\"iconfont\" _v-c7a18a80=\"\">㐶</i>\n                    <span _v-c7a18a80=\"\">新浪</span>\n                </a>\n            </div>\n        </div>\n        <div class=\"share_shutdown\" @click.stop.prevent=\"shutdown\" _v-c7a18a80=\"\"><span _v-c7a18a80=\"\">取消</span></div>\n    </div>\n\n\n</transition>\n\n\n\n";
 
 /***/ },
 /* 169 */
@@ -31132,7 +31132,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-af68548e/detailFooter.vue"
+	  var id = "_v-12ed8432/detailFooter.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -31256,7 +31256,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-b0a8c004/favour.vue"
+	  var id = "_v-296e42ac/favour.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -31372,7 +31372,7 @@
 /* 178 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"favour-main\" _v-b0a8c004=\"\">\n <i @click=\"favour\" :class=\"['iconfont','favour',{'red':isfavour}]\" _v-b0a8c004=\"\"></i>\n <span _v-b0a8c004=\"\">{{favournum}}</span>\n</div>\n";
+	module.exports = "\n<div class=\"favour-main\" _v-296e42ac=\"\">\n <i @click=\"favour\" :class=\"['iconfont','favour',{'red':isfavour}]\" _v-296e42ac=\"\"></i>\n <span _v-296e42ac=\"\">{{favournum}}</span>\n</div>\n";
 
 /***/ },
 /* 179 */
@@ -31402,7 +31402,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-10357d3e/report.vue"
+	  var id = "_v-79a7e40f/report.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -31421,7 +31421,7 @@
 /* 182 */
 /***/ function(module, exports) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -31430,11 +31430,18 @@
 	// 	<div v-show="isshow" class="report-bg" @click="cancel">
 	// 		<div class="report-main" @click.stop="">
 	// 			<div class="report-head">
-	// 				<span class="cancel">取消</span>
-	// 				<span class="send">发表</span>
+	// 				<span class="send">举报内容问题</span>
 	// 			</div>
 	// 			<div class="content">
-	// 				<textarea autofocus="autofocus"></textarea>
+	// 					<ul>
+	// 						<li v-for="(item,index) in items" v-on:click="checked(index)" :class="{'gray':gray}">
+	// 							 <span ><em v-if="item.checked" >已举报  </em>{{item.title}}</span>
+	// 						     <i  v-if="item.checked" class="iconfont">&#xe670;</i>
+	// 						</li>
+	// 					</ul>
+	// 				    <div class="report">
+	// 						<el-button type="primary">提交</el-button>
+	// 					</div>
 	// 			</div>
 	// 		</div>
 	// 	</div>
@@ -31443,17 +31450,53 @@
 	exports.default = {
 		props: ['isshow'],
 		data: function data() {
-			return {};
+			return {
+				items: [{
+					"title": "广告",
+					"checked": false
+
+				}, {
+					"title": "重复、旧闻",
+					"checked": false
+				}, {
+					"title": "格式问题",
+					"checked": false
+				}, {
+					"title": "低俗",
+					"checked": false
+				}, {
+					"title": "标题夸张",
+					"checked": false
+				}, {
+					"title": "已举报与事实不符",
+					"checked": false
+				}, {
+					"title": "疑似抄袭",
+					"checked": false
+				}, {
+					"title": "其他问题",
+					"checked": false
+				}]
+			};
 		},
 		mounted: function mounted() {},
 
 		methods: {
+			checked: function checked(index) {
+				this.items[index].checked = !this.items[index].checked;
+				console.log(this.gray);
+				this.gray = !this.gyay;
+			},
 			cancel: function cancel() {
 				this.$parent.isshow = false;
 			}
 		}
 	};
 	// </script>
+	//
+	//
+	//
+	//
 	// <style lang="sass" scoped>
 	// 	.report-bg{
 	// 		width: 6.4rem;
@@ -31471,17 +31514,12 @@
 	// 			line-height: .6rem;
 	// 			width:90%;
 	// 			height:.6rem;
+	// 			text-align: center;
 	// 			background-color: #F7F7F7;
 	// 			padding:0 5%;
-	// 			span{
-	// 				font-size:.26rem;
-	// 			}
-	// 			.cancel{
-	// 				color:#000;
-	// 			}
 	// 			.send{
 	// 				color:#6699FF;
-	// 				float:right;
+	// 				font-size: .28rem;
 	// 			}
 	// 		}
 	// 		.content{
@@ -31494,6 +31532,25 @@
 	// 				border:none;
 	// 				min-height: 2rem;
 	// 			}
+	// 			li{
+	// 				padding:.15rem 0;
+	// 				border-bottom: 1px solid #e8e8e8;
+	// 			}
+	// 			.gray{
+	// 				color:gray;
+	// 			}
+	// 			span{
+	// 				font-size: .24rem;
+	// 			}
+	// 			i{
+	// 				color:#6699FF;
+	// 				float: right;
+	// 			}
+	// 			.report{
+	// 				text-align: center;
+	// 				padding: .3rem 0;
+	// 			}
+	//
 	// 		}
 	// 	}
 	// </style>
@@ -31502,13 +31559,13 @@
 /* 183 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div v-show=\"isshow\" class=\"report-bg\" @click=\"cancel\" _v-10357d3e=\"\">\n\t<div class=\"report-main\" @click.stop=\"\" _v-10357d3e=\"\">\n\t\t<div class=\"report-head\" _v-10357d3e=\"\">\n\t\t\t<span class=\"cancel\" _v-10357d3e=\"\">取消</span>\n\t\t\t<span class=\"send\" _v-10357d3e=\"\">发表</span>\n\t\t</div>\n\t\t<div class=\"content\" _v-10357d3e=\"\">\n\t\t\t<textarea autofocus=\"autofocus\" _v-10357d3e=\"\"></textarea>\n\t\t</div>\n\t</div>\n</div>\n";
+	module.exports = "\n<div v-show=\"isshow\" class=\"report-bg\" @click=\"cancel\" _v-79a7e40f=\"\">\n\t<div class=\"report-main\" @click.stop=\"\" _v-79a7e40f=\"\">\n\t\t<div class=\"report-head\" _v-79a7e40f=\"\">\n\t\t\t<span class=\"send\" _v-79a7e40f=\"\">举报内容问题</span>\n\t\t</div>\n\t\t<div class=\"content\" _v-79a7e40f=\"\">\n\t\t\t\t<ul _v-79a7e40f=\"\">\n\t\t\t\t\t<li v-for=\"(item,index) in items\" v-on:click=\"checked(index)\" :class=\"{'gray':gray}\" _v-79a7e40f=\"\">\n\t\t\t\t\t\t <span _v-79a7e40f=\"\"><em v-if=\"item.checked\" _v-79a7e40f=\"\">已举报  </em>{{item.title}}</span>\n\t\t\t\t\t     <i v-if=\"item.checked\" class=\"iconfont\" _v-79a7e40f=\"\"></i>\n\t\t\t\t\t</li>\n\t\t\t\t</ul>\n\t\t\t    <div class=\"report\" _v-79a7e40f=\"\">\n\t\t\t\t\t<el-button type=\"primary\" _v-79a7e40f=\"\">提交</el-button>\n\t\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n";
 
 /***/ },
 /* 184 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\t <div class=\"footer\" _v-af68548e=\"\">\n        <div class=\"footer-box\" _v-af68548e=\"\">\n            <div class=\"footer-t\" _v-af68548e=\"\">\n                <div class=\"foot-t-box\" _v-af68548e=\"\">\n                    <favour :moduleid=\"moduleid\" :itemid=\"itemid\" _v-af68548e=\"\"></favour>\n                    <i @click=\"report\" class=\"report\" _v-af68548e=\"\"><b _v-af68548e=\"\">举报</b></i>\n                </div>\n            </div>\n        </div>\n        <report :isshow=\"isshow\" _v-af68548e=\"\"></report>\n    </div>\n";
+	module.exports = "\n\t <div class=\"footer\" _v-12ed8432=\"\">\n        <div class=\"footer-box\" _v-12ed8432=\"\">\n            <div class=\"footer-t\" _v-12ed8432=\"\">\n                <div class=\"foot-t-box\" _v-12ed8432=\"\">\n                    <favour :moduleid=\"moduleid\" :itemid=\"itemid\" _v-12ed8432=\"\"></favour>\n                    <i @click=\"report\" class=\"report\" _v-12ed8432=\"\"><b _v-12ed8432=\"\">举报</b></i>\n                </div>\n            </div>\n        </div>\n        <report :isshow=\"isshow\" _v-12ed8432=\"\"></report>\n    </div>\n";
 
 /***/ },
 /* 185 */
@@ -31528,7 +31585,7 @@
 /* 189 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div style=\"height:100%\" _v-59b0699d=\"\">\n\n\t<!-- nav -->\n    <app-nav :path=\"topath\" _v-59b0699d=\"\"></app-nav>\n\n    <load v-if=\"loading\" _v-59b0699d=\"\"></load>\n    <!-- content -->\n    <div v-else=\"\" _v-59b0699d=\"\">\n        <div class=\"content-box\" _v-59b0699d=\"\">\n            <!-- content-one -->\n            <div class=\"content\" _v-59b0699d=\"\">\n                <div class=\"article_title\" _v-59b0699d=\"\">\n                    <h1 _v-59b0699d=\"\">{{item.title}}</h1>\n                </div>\n                <div class=\"article_info\" _v-59b0699d=\"\">\n                    <i _v-59b0699d=\"\">{{item.spmc}}</i>\n                    <span _v-59b0699d=\"\">{{item.editdate}}</span>\n                </div>\n                <div class=\"product_banner\" _v-59b0699d=\"\">\n\n                    <swipe class=\"my-swipe\" :speed=\"0\" :auto=\"0\" :show-indicators=\"false\" _v-59b0699d=\"\">\n\n                        <swipe-item v-for=\"pic in item.sptp\" class=\"slide1\" _v-59b0699d=\"\"> <img :src=\"pic\" _v-59b0699d=\"\"></swipe-item>\n\n                    </swipe>\n                </div>\n\n                <div class=\"article_area\" _v-59b0699d=\"\">\n                    <p v-if=\"item.cpqy\" _v-59b0699d=\"\">出品企业:&nbsp;{{item.cpqy}}</p>\n                    <p v-if=\"item.sccj\" _v-59b0699d=\"\">生产企业:&nbsp;{{item.sccj}}</p>\n                    <p v-if=\"item.company\" _v-59b0699d=\"\">招商企业:&nbsp;{{item.company}}</p>\n                    <p _v-59b0699d=\"\">发布日期:&nbsp;{{item.adddate}}</p>\n                    <p _v-59b0699d=\"\">更新日期:&nbsp;{{item.editdate}}</p>\n                    <p _v-59b0699d=\"\">点击数:&nbsp;{{item.hits}}</p>\n                </div>\n                <div class=\"article_area\" _v-59b0699d=\"\">\n                    <h3 _v-59b0699d=\"\"><b _v-59b0699d=\"\">商品基本信息:</b></h3>\n                    <p v-if=\"item.spmc\" _v-59b0699d=\"\">商品名称:&nbsp;{{item.spmc}}</p>\n                    <p v-if=\"item.sptym\" _v-59b0699d=\"\">通用名称:&nbsp;{{item.sptym}}</p>\n                    <p v-if=\"item.pzwh\" _v-59b0699d=\"\">批准文号:&nbsp;{{item.pzwh}}</p>\n                    <p _v-59b0699d=\"\">分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类:&nbsp;{{item.catname}}</p>\n                    <p v-if=\"item.zybhpz\" _v-59b0699d=\"\">中药保护品种:&nbsp;{{item.zybhpz}}</p>  \n                    <p v-if=\"item.mztx\" _v-59b0699d=\"\">民族特性:&nbsp;{{item.mztx}}</p>  \n                    <p v-if=\"item.syjb\" _v-59b0699d=\"\">适用疾病:&nbsp;{{item.syjb}}</p>                     \n                    <p v-if=\"item.syks\" _v-59b0699d=\"\">适用科室:&nbsp;{{item.syks}}</p>\n                     <p v-if=\"item.cfysx\" _v-59b0699d=\"\">处方药属性:&nbsp;{{item.cfysx}}</p>\n                    <p v-if=\"item.spjx\" _v-59b0699d=\"\">商品剂型:&nbsp;{{item.spjx}}</p>\n                    <p v-if=\"item.spgg\" _v-59b0699d=\"\">商品规格:&nbsp;{{item.spgg}}</p>\n                    <p v-if=\"item.jysx\" _v-59b0699d=\"\">基药属性:&nbsp;{{item.jysx}}</p>\n                    <p v-if=\"item.ybsx\" _v-59b0699d=\"\">医保属性:&nbsp;{{item.ybsx}}</p>\n                    <p v-if=\"item.zbqy\" _v-59b0699d=\"\">中标区域:&nbsp;{{item.zbqy}}</p>\n                    <p v-if=\"item.shqd\" _v-59b0699d=\"\">适合渠道:&nbsp;{{item.shqd}}</p>\n                    <p v-if=\"item.cpmd\" _v-59b0699d=\"\">产品卖点:&nbsp;{{item.cpmd}}</p>\n                </div>\n                <div class=\"article_area\" _v-59b0699d=\"\">\n                    <h3 _v-59b0699d=\"\"><b _v-59b0699d=\"\">商品详情信息:</b></h3>\n                    <p v-if=\"item.zyyl\" _v-59b0699d=\"\">主要原料:&nbsp;{{item.zyyl}}</p>\n                    <p v-if=\"item.cs\" _v-59b0699d=\"\">功效成分:&nbsp;{{item.cs}}</p>\n                    <p v-if=\"item.xz\" _v-59b0699d=\"\">性状:&nbsp;{{item.xz}}</p>\n                    <p v-if=\"item.bjgn\" _v-59b0699d=\"\">保健功能:&nbsp;{{item.bjgn}}</p>\n                    <p v-if=\"item.yfyl\" _v-59b0699d=\"\">用法用量:&nbsp;{{item.yfyl}}</p>\n                    <p v-if=\"item.syrq\" _v-59b0699d=\"\">适宜人群:&nbsp;{{item.syrq}}</p>\n                    <p v-if=\"item.syz\" _v-59b0699d=\"\">适应症:&nbsp;{{item.syz}}</p>\n                    <p v-if=\"item.syff\" _v-59b0699d=\"\">食用方法:&nbsp;{{item.syff}}</p>\n                    <p v-if=\"item.zysx\" _v-59b0699d=\"\">注意事项:&nbsp;{{item.zysx}}</p>\n                    <p v-if=\"item.bz\" _v-59b0699d=\"\">包&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;装:&nbsp;{{item.bz}}</p>\n                    <p v-if=\"item.zxbz\" _v-59b0699d=\"\">执行标准:&nbsp;{{item.zxbz}}</p>\n                    <p v-if=\"item.scxkz\" _v-59b0699d=\"\">生产许可证:&nbsp;{{item.scxkz}}</p>\n                    <p v-if=\"item.wsxkzh\" _v-59b0699d=\"\">卫生许可证号:&nbsp;{{item.wsxkzh}}</p>\n                    <p v-if=\"item.cpry\" _v-59b0699d=\"\">产品荣誉:&nbsp;{{item.cpry}}</p>\n                    <p v-if=\"item.bcsm\" _v-59b0699d=\"\">补充说明:&nbsp;{{item.bcsm}}</p>\n                  \n                </div>\n                <div class=\"article_area\" _v-59b0699d=\"\">\n                    <h3 _v-59b0699d=\"\"><b _v-59b0699d=\"\">招商要求:</b></h3>\n                    <p _v-59b0699d=\"\">招商区域:&nbsp;{{item.zsqy ? item.zsqy : \"全国\"}}</p>\n                    <p _v-59b0699d=\"\">招商要求:&nbsp;{{item.zsyq ? item.zsyq : \"暂无要求\"}}</p>\n                    <p _v-59b0699d=\"\">可提供支持:&nbsp;{{item.ktgzc ? item.ktgzc : \"暂无支持\"}}</p>\n                </div>\n                <div class=\"article_area no_border\" _v-59b0699d=\"\">\n                    <h3 _v-59b0699d=\"\"><b _v-59b0699d=\"\">联系信息:</b></h3>\n                    <p v-if=\"item.company\" _v-59b0699d=\"\">企业名称:&nbsp;{{item.company}}</p>\n                    <p v-if=\"item.address\" _v-59b0699d=\"\">联系地址:&nbsp;{{item.address}}</p>\n                    <p v-if=\"item.postcode\" _v-59b0699d=\"\">邮政编码:&nbsp;{{item.postcode}}</p>\n                    <p v-if=\"item.truename\" _v-59b0699d=\"\">联&nbsp;&nbsp;系&nbsp;&nbsp;人:&nbsp;{{item.truename}}</p>\n                    <p v-if=\"item.telephone\" _v-59b0699d=\"\">电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话:&nbsp;{{item.telephone}}</p>\n                    <p v-if=\"item.mobile\" _v-59b0699d=\"\">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机:&nbsp;{{item.mobile}}</p>\n                    <p v-if=\"item.fax\" _v-59b0699d=\"\">传&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;真:&nbsp;{{item.fax}}</p>\n                    <p v-if=\"item.email\" _v-59b0699d=\"\">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:&nbsp;{{item.email}}</p>\n                    <p v-if=\"item.qq\" _v-59b0699d=\"\">Q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q:&nbsp;{{item.qq}}</p>\n                </div>\n\n            </div>\n\n        </div><!--content-box-->\n\n        <!-- footer -->\n        <detail-footer moduleid=\"22\" :itemid=\"item.itemid\" _v-59b0699d=\"\"></detail-footer>\n\n    </div>\n   \n</div>\n\n\n";
+	module.exports = "\n<div style=\"height:100%\" _v-0e347e4b=\"\">\n\n\t<!-- nav -->\n    <app-nav :path=\"topath\" _v-0e347e4b=\"\"></app-nav>\n\n    <load v-if=\"loading\" _v-0e347e4b=\"\"></load>\n    <!-- content -->\n    <div v-else=\"\" _v-0e347e4b=\"\">\n        <div class=\"content-box\" _v-0e347e4b=\"\">\n            <!-- content-one -->\n            <div class=\"content\" _v-0e347e4b=\"\">\n                <div class=\"article_title\" _v-0e347e4b=\"\">\n                    <h1 _v-0e347e4b=\"\">{{item.title}}</h1>\n                </div>\n                <div class=\"article_info\" _v-0e347e4b=\"\">\n                    <i _v-0e347e4b=\"\">{{item.spmc}}</i>\n                    <span _v-0e347e4b=\"\">{{item.editdate}}</span>\n                </div>\n                <div class=\"product_banner\" _v-0e347e4b=\"\">\n\n                    <swipe class=\"my-swipe\" :speed=\"0\" :auto=\"0\" :show-indicators=\"false\" _v-0e347e4b=\"\">\n\n                        <swipe-item v-for=\"pic in item.sptp\" class=\"slide1\" _v-0e347e4b=\"\"> <img :src=\"pic\" _v-0e347e4b=\"\"></swipe-item>\n\n                    </swipe>\n                </div>\n\n                <div class=\"article_area\" _v-0e347e4b=\"\">\n                    <p v-if=\"item.cpqy\" _v-0e347e4b=\"\">出品企业:&nbsp;{{item.cpqy}}</p>\n                    <p v-if=\"item.sccj\" _v-0e347e4b=\"\">生产企业:&nbsp;{{item.sccj}}</p>\n                    <p v-if=\"item.company\" _v-0e347e4b=\"\">招商企业:&nbsp;{{item.company}}</p>\n                    <p _v-0e347e4b=\"\">发布日期:&nbsp;{{item.adddate}}</p>\n                    <p _v-0e347e4b=\"\">更新日期:&nbsp;{{item.editdate}}</p>\n                    <p _v-0e347e4b=\"\">点击数:&nbsp;{{item.hits}}</p>\n                </div>\n                <div class=\"article_area\" _v-0e347e4b=\"\">\n                    <h3 _v-0e347e4b=\"\"><b _v-0e347e4b=\"\">商品基本信息:</b></h3>\n                    <p v-if=\"item.spmc\" _v-0e347e4b=\"\">商品名称:&nbsp;{{item.spmc}}</p>\n                    <p v-if=\"item.sptym\" _v-0e347e4b=\"\">通用名称:&nbsp;{{item.sptym}}</p>\n                    <p v-if=\"item.pzwh\" _v-0e347e4b=\"\">批准文号:&nbsp;{{item.pzwh}}</p>\n                    <p _v-0e347e4b=\"\">分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类:&nbsp;{{item.catname}}</p>\n                    <p v-if=\"item.zybhpz\" _v-0e347e4b=\"\">中药保护品种:&nbsp;{{item.zybhpz}}</p>  \n                    <p v-if=\"item.mztx\" _v-0e347e4b=\"\">民族特性:&nbsp;{{item.mztx}}</p>  \n                    <p v-if=\"item.syjb\" _v-0e347e4b=\"\">适用疾病:&nbsp;{{item.syjb}}</p>                     \n                    <p v-if=\"item.syks\" _v-0e347e4b=\"\">适用科室:&nbsp;{{item.syks}}</p>\n                     <p v-if=\"item.cfysx\" _v-0e347e4b=\"\">处方药属性:&nbsp;{{item.cfysx}}</p>\n                    <p v-if=\"item.spjx\" _v-0e347e4b=\"\">商品剂型:&nbsp;{{item.spjx}}</p>\n                    <p v-if=\"item.spgg\" _v-0e347e4b=\"\">商品规格:&nbsp;{{item.spgg}}</p>\n                    <p v-if=\"item.jysx\" _v-0e347e4b=\"\">基药属性:&nbsp;{{item.jysx}}</p>\n                    <p v-if=\"item.ybsx\" _v-0e347e4b=\"\">医保属性:&nbsp;{{item.ybsx}}</p>\n                    <p v-if=\"item.zbqy\" _v-0e347e4b=\"\">中标区域:&nbsp;{{item.zbqy}}</p>\n                    <p v-if=\"item.shqd\" _v-0e347e4b=\"\">适合渠道:&nbsp;{{item.shqd}}</p>\n                    <p v-if=\"item.cpmd\" _v-0e347e4b=\"\">产品卖点:&nbsp;{{item.cpmd}}</p>\n                </div>\n                <div class=\"article_area\" _v-0e347e4b=\"\">\n                    <h3 _v-0e347e4b=\"\"><b _v-0e347e4b=\"\">商品详情信息:</b></h3>\n                    <p v-if=\"item.zyyl\" _v-0e347e4b=\"\">主要原料:&nbsp;{{item.zyyl}}</p>\n                    <p v-if=\"item.cs\" _v-0e347e4b=\"\">功效成分:&nbsp;{{item.cs}}</p>\n                    <p v-if=\"item.xz\" _v-0e347e4b=\"\">性状:&nbsp;{{item.xz}}</p>\n                    <p v-if=\"item.bjgn\" _v-0e347e4b=\"\">保健功能:&nbsp;{{item.bjgn}}</p>\n                    <p v-if=\"item.yfyl\" _v-0e347e4b=\"\">用法用量:&nbsp;{{item.yfyl}}</p>\n                    <p v-if=\"item.syrq\" _v-0e347e4b=\"\">适宜人群:&nbsp;{{item.syrq}}</p>\n                    <p v-if=\"item.syz\" _v-0e347e4b=\"\">适应症:&nbsp;{{item.syz}}</p>\n                    <p v-if=\"item.syff\" _v-0e347e4b=\"\">食用方法:&nbsp;{{item.syff}}</p>\n                    <p v-if=\"item.zysx\" _v-0e347e4b=\"\">注意事项:&nbsp;{{item.zysx}}</p>\n                    <p v-if=\"item.bz\" _v-0e347e4b=\"\">包&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;装:&nbsp;{{item.bz}}</p>\n                    <p v-if=\"item.zxbz\" _v-0e347e4b=\"\">执行标准:&nbsp;{{item.zxbz}}</p>\n                    <p v-if=\"item.scxkz\" _v-0e347e4b=\"\">生产许可证:&nbsp;{{item.scxkz}}</p>\n                    <p v-if=\"item.wsxkzh\" _v-0e347e4b=\"\">卫生许可证号:&nbsp;{{item.wsxkzh}}</p>\n                    <p v-if=\"item.cpry\" _v-0e347e4b=\"\">产品荣誉:&nbsp;{{item.cpry}}</p>\n                    <p v-if=\"item.bcsm\" _v-0e347e4b=\"\">补充说明:&nbsp;{{item.bcsm}}</p>\n                  \n                </div>\n                <div class=\"article_area\" _v-0e347e4b=\"\">\n                    <h3 _v-0e347e4b=\"\"><b _v-0e347e4b=\"\">招商要求:</b></h3>\n                    <p _v-0e347e4b=\"\">招商区域:&nbsp;{{item.zsqy ? item.zsqy : \"全国\"}}</p>\n                    <p _v-0e347e4b=\"\">招商要求:&nbsp;{{item.zsyq ? item.zsyq : \"暂无要求\"}}</p>\n                    <p _v-0e347e4b=\"\">可提供支持:&nbsp;{{item.ktgzc ? item.ktgzc : \"暂无支持\"}}</p>\n                </div>\n                <div class=\"article_area no_border\" _v-0e347e4b=\"\">\n                    <h3 _v-0e347e4b=\"\"><b _v-0e347e4b=\"\">联系信息:</b></h3>\n                    <p v-if=\"item.company\" _v-0e347e4b=\"\">企业名称:&nbsp;{{item.company}}</p>\n                    <p v-if=\"item.address\" _v-0e347e4b=\"\">联系地址:&nbsp;{{item.address}}</p>\n                    <p v-if=\"item.postcode\" _v-0e347e4b=\"\">邮政编码:&nbsp;{{item.postcode}}</p>\n                    <p v-if=\"item.truename\" _v-0e347e4b=\"\">联&nbsp;&nbsp;系&nbsp;&nbsp;人:&nbsp;{{item.truename}}</p>\n                    <p v-if=\"item.telephone\" _v-0e347e4b=\"\">电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话:&nbsp;{{item.telephone}}</p>\n                    <p v-if=\"item.mobile\" _v-0e347e4b=\"\">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机:&nbsp;{{item.mobile}}</p>\n                    <p v-if=\"item.fax\" _v-0e347e4b=\"\">传&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;真:&nbsp;{{item.fax}}</p>\n                    <p v-if=\"item.email\" _v-0e347e4b=\"\">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:&nbsp;{{item.email}}</p>\n                    <p v-if=\"item.qq\" _v-0e347e4b=\"\">Q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q:&nbsp;{{item.qq}}</p>\n                </div>\n\n            </div>\n\n        </div><!--content-box-->\n\n        <!-- footer -->\n        <detail-footer moduleid=\"22\" :itemid=\"item.itemid\" _v-0e347e4b=\"\"></detail-footer>\n\n    </div>\n   \n</div>\n\n\n";
 
 /***/ },
 /* 190 */
@@ -31559,7 +31616,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-195d05ba/healthDetail.vue"
+	  var id = "_v-679a6de8/healthDetail.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -31808,7 +31865,7 @@
 /* 196 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div style=\"height:100%\" _v-195d05ba=\"\">\n\n\t<!-- nav -->\n    <app-nav :path=\"path\" _v-195d05ba=\"\"></app-nav>\n\n    <load v-if=\"loading\" _v-195d05ba=\"\"></load>\n    <!-- content -->\n    <div v-else=\"\" _v-195d05ba=\"\">\n        <div class=\"content-box\" _v-195d05ba=\"\">\n            <!-- content-one -->\n            <div class=\"content\" _v-195d05ba=\"\">\n                <div class=\"article_title\" _v-195d05ba=\"\">\n                    <h1 _v-195d05ba=\"\">{{item.title}}</h1>\n                </div>\n                <div class=\"article_info\" _v-195d05ba=\"\">\n                    <i _v-195d05ba=\"\">{{item.copyfrom ?item.copyfrom : \"当代医药市场网\"}}</i>\n                    <span _v-195d05ba=\"\">{{item.editdate}}</span>\n                </div>\n                 \n\n                <div class=\"article_area no_border\" _v-195d05ba=\"\">\n                 \t<div class=\"article_body\" v-html=\"item.content\" _v-195d05ba=\"\">\n                 \t</div>\n                </div>\n\n            </div>\n\n        </div><!--content-box-->\n\n        <!-- footer -->\n        <div class=\"footer\" _v-195d05ba=\"\">\n            <div class=\"footer-box\" _v-195d05ba=\"\">\n                <div class=\"footer-t\" _v-195d05ba=\"\">\n                    <div class=\"foot-t-box\" _v-195d05ba=\"\">\n                        <i class=\"iconfont favour\" _v-195d05ba=\"\"></i>\n                        <span _v-195d05ba=\"\">16</span>\n                        <i class=\"report\" _v-195d05ba=\"\"><b _v-195d05ba=\"\">举报</b></i>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n\n\n";
+	module.exports = "\n<div style=\"height:100%\" _v-679a6de8=\"\">\n\n\t<!-- nav -->\n    <app-nav :path=\"path\" _v-679a6de8=\"\"></app-nav>\n\n    <load v-if=\"loading\" _v-679a6de8=\"\"></load>\n    <!-- content -->\n    <div v-else=\"\" _v-679a6de8=\"\">\n        <div class=\"content-box\" _v-679a6de8=\"\">\n            <!-- content-one -->\n            <div class=\"content\" _v-679a6de8=\"\">\n                <div class=\"article_title\" _v-679a6de8=\"\">\n                    <h1 _v-679a6de8=\"\">{{item.title}}</h1>\n                </div>\n                <div class=\"article_info\" _v-679a6de8=\"\">\n                    <i _v-679a6de8=\"\">{{item.copyfrom ?item.copyfrom : \"当代医药市场网\"}}</i>\n                    <span _v-679a6de8=\"\">{{item.editdate}}</span>\n                </div>\n                 \n\n                <div class=\"article_area no_border\" _v-679a6de8=\"\">\n                 \t<div class=\"article_body\" v-html=\"item.content\" _v-679a6de8=\"\">\n                 \t</div>\n                </div>\n\n            </div>\n\n        </div><!--content-box-->\n\n        <!-- footer -->\n        <div class=\"footer\" _v-679a6de8=\"\">\n            <div class=\"footer-box\" _v-679a6de8=\"\">\n                <div class=\"footer-t\" _v-679a6de8=\"\">\n                    <div class=\"foot-t-box\" _v-679a6de8=\"\">\n                        <i class=\"iconfont favour\" _v-679a6de8=\"\"></i>\n                        <span _v-679a6de8=\"\">16</span>\n                        <i class=\"report\" _v-679a6de8=\"\"><b _v-679a6de8=\"\">举报</b></i>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n\n\n";
 
 /***/ },
 /* 197 */
@@ -31839,7 +31896,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7cb58b4c/login.vue"
+	  var id = "_v-5fdcdade/login.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -32050,7 +32107,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-e65f60de/blackNav.vue"
+	  var id = "_v-af160282/blackNav.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -32168,13 +32225,13 @@
 /* 207 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div :class=\"['warp-header',theme]\" _v-e65f60de=\"\">\n\n  \t<div v-show=\"goback\" @click=\"back\" class=\"goback\" _v-e65f60de=\"\"></div>\n\t\n\t{{title}}\n\t<slot name=\"right\" _v-e65f60de=\"\"></slot>\n</div>\t\t\n";
+	module.exports = "\n<div :class=\"['warp-header',theme]\" _v-af160282=\"\">\n\n  \t<div v-show=\"goback\" @click=\"back\" class=\"goback\" _v-af160282=\"\"></div>\n\t\n\t{{title}}\n\t<slot name=\"right\" _v-af160282=\"\"></slot>\n</div>\t\t\n";
 
 /***/ },
 /* 208 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"pt-perspective\" _v-7cb58b4c=\"\">\n\t<my-nav :goback=\"true\" title=\"登录\" _v-7cb58b4c=\"\">\n\t\t<router-link :to=\"{path:'/register'}\" class=\"nav-right\" slot=\"right\" _v-7cb58b4c=\"\">注册</router-link>\n\t</my-nav>\n\t\n\n\t<div class=\"login-main\" _v-7cb58b4c=\"\">\n\t\t\t<ul _v-7cb58b4c=\"\">\n\t\t\t\t<li _v-7cb58b4c=\"\">\n <i class=\"iconfont\" _v-7cb58b4c=\"\">㐷</i>\n\t\t\t <el-input class=\"from-input\" placeholder=\"手机/当代账号\" v-model=\"user\" _v-7cb58b4c=\"\"></el-input>\n\t\t\t\t</li>\n\t\t\t\t<li _v-7cb58b4c=\"\">\n\t\n\t\t\t <i class=\"iconfont\" _v-7cb58b4c=\"\"></i>\n\t\t\t <el-input class=\"from-input pwd\" :type=\"passwdtype\" placeholder=\"登录密码\" v-model=\"pwd\" _v-7cb58b4c=\"\"></el-input>\t\n  \t\t\t<el-switch v-model=\"status\" on-text=\"\" off-text=\"\" @change=\"passwdstatus\" _v-7cb58b4c=\"\"></el-switch>\n\t\t\t\t</li>\n\t\t\t<li _v-7cb58b4c=\"\">\n\t\t\t\t<el-button type=\"primary\" @click=\"login\" _v-7cb58b4c=\"\">登录</el-button>\n\t\t\t</li>\t\n\t\t</ul>\t\n\n\n\n\n\n\t</div>\n\n\t \n\n</div>\n";
+	module.exports = "\n<div class=\"pt-perspective\" _v-5fdcdade=\"\">\n\t<my-nav :goback=\"true\" title=\"登录\" _v-5fdcdade=\"\">\n\t\t<router-link :to=\"{path:'/register'}\" class=\"nav-right\" slot=\"right\" _v-5fdcdade=\"\">注册</router-link>\n\t</my-nav>\n\t\n\n\t<div class=\"login-main\" _v-5fdcdade=\"\">\n\t\t\t<ul _v-5fdcdade=\"\">\n\t\t\t\t<li _v-5fdcdade=\"\">\n <i class=\"iconfont\" _v-5fdcdade=\"\">㐷</i>\n\t\t\t <el-input class=\"from-input\" placeholder=\"手机/当代账号\" v-model=\"user\" _v-5fdcdade=\"\"></el-input>\n\t\t\t\t</li>\n\t\t\t\t<li _v-5fdcdade=\"\">\n\t\n\t\t\t <i class=\"iconfont\" _v-5fdcdade=\"\"></i>\n\t\t\t <el-input class=\"from-input pwd\" :type=\"passwdtype\" placeholder=\"登录密码\" v-model=\"pwd\" _v-5fdcdade=\"\"></el-input>\t\n  \t\t\t<el-switch v-model=\"status\" on-text=\"\" off-text=\"\" @change=\"passwdstatus\" _v-5fdcdade=\"\"></el-switch>\n\t\t\t\t</li>\n\t\t\t<li _v-5fdcdade=\"\">\n\t\t\t\t<el-button type=\"primary\" @click=\"login\" _v-5fdcdade=\"\">登录</el-button>\n\t\t\t</li>\t\n\t\t</ul>\t\n\n\n\n\n\n\t</div>\n\n\t \n\n</div>\n";
 
 /***/ },
 /* 209 */
@@ -32204,7 +32261,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-48ce3a10/register.vue"
+	  var id = "_v-6472e93e/register.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -32342,7 +32399,7 @@
 /* 213 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"pt-perspective\" _v-48ce3a10=\"\">\n\t<my-nav title=\"注册\" _v-48ce3a10=\"\">\n\t\t<router-link :to=\"{path:'/login'}\" class=\"nav-right\" slot=\"right\" _v-48ce3a10=\"\">登录</router-link>\n\t</my-nav>\n\t<div class=\"reg-main\" _v-48ce3a10=\"\">\n\t\t<ul _v-48ce3a10=\"\">\n\t\t\t<li _v-48ce3a10=\"\">\n\t\t\t\t<span _v-48ce3a10=\"\">手机号码</span>\n\t\t\t\t<input palceholder=\"手机号码\" _v-48ce3a10=\"\">\n\t\t\t</li>\n\t\t\t<li _v-48ce3a10=\"\">\n\t\t\t\t<span _v-48ce3a10=\"\">验证码</span>\n\t\t\t\t<input class=\"validate\" maxlength=\"6\" _v-48ce3a10=\"\">\n\t\t\t\t<el-button type=\"primary\" :disabled=\"true\" _v-48ce3a10=\"\">获取验证码</el-button>\n\t\t\t</li>\n\t\t\t<li _v-48ce3a10=\"\">\n\t\t\t\t<span _v-48ce3a10=\"\">密码</span>\n\t\t\t\t<input palceholder=\"6-16位字母、数字和符号\" _v-48ce3a10=\"\">\n\t\t\t</li>\n\t\t</ul>\n\n\t\t<el-button @click.native=\"open\" type=\"primary\" _v-48ce3a10=\"\">注册</el-button>\n\t</div>\n</div>\n";
+	module.exports = "\n<div class=\"pt-perspective\" _v-6472e93e=\"\">\n\t<my-nav title=\"注册\" _v-6472e93e=\"\">\n\t\t<router-link :to=\"{path:'/login'}\" class=\"nav-right\" slot=\"right\" _v-6472e93e=\"\">登录</router-link>\n\t</my-nav>\n\t<div class=\"reg-main\" _v-6472e93e=\"\">\n\t\t<ul _v-6472e93e=\"\">\n\t\t\t<li _v-6472e93e=\"\">\n\t\t\t\t<span _v-6472e93e=\"\">手机号码</span>\n\t\t\t\t<input palceholder=\"手机号码\" _v-6472e93e=\"\">\n\t\t\t</li>\n\t\t\t<li _v-6472e93e=\"\">\n\t\t\t\t<span _v-6472e93e=\"\">验证码</span>\n\t\t\t\t<input class=\"validate\" maxlength=\"6\" _v-6472e93e=\"\">\n\t\t\t\t<el-button type=\"primary\" :disabled=\"true\" _v-6472e93e=\"\">获取验证码</el-button>\n\t\t\t</li>\n\t\t\t<li _v-6472e93e=\"\">\n\t\t\t\t<span _v-6472e93e=\"\">密码</span>\n\t\t\t\t<input palceholder=\"6-16位字母、数字和符号\" _v-6472e93e=\"\">\n\t\t\t</li>\n\t\t</ul>\n\n\t\t<el-button @click.native=\"open\" type=\"primary\" _v-6472e93e=\"\">注册</el-button>\n\t</div>\n</div>\n";
 
 /***/ },
 /* 214 */
@@ -32356,7 +32413,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\search.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(236)
+	__vue_template__ = __webpack_require__(228)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -32372,7 +32429,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-5a6df7d5/search.vue"
+	  var id = "_v-479ecafa/search.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -32595,7 +32652,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-5d8bf884/searchPage.vue"
+	  var id = "_v-22c19432/searchPage.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -32656,7 +32713,7 @@
 	// 			</div>
 	// 			<div class="history-list">
 	// 				<ul>
-	// 					<li v-for="item in searchItems"><router-link :to="item">{{item.query.q}}</router-link></li>
+	// 					<li v-for="item in searchItems" :to="item">{{item.query.q}}</li>
 	// 				</ul>
 	// 			</div>
 	// 		</div>
@@ -32874,7 +32931,7 @@
 /* 224 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"search-main\" _v-5d8bf884=\"\">\n\t<div class=\"search-nav\" _v-5d8bf884=\"\">\n\t\t<i @click=\"goback\" class=\"iconfont goback\" _v-5d8bf884=\"\">󰀌</i>\n\t\t<div class=\"search-area\" _v-5d8bf884=\"\">\n\t\t\t<div class=\"option-area\" @click=\"selecttype\" _v-5d8bf884=\"\">\n\t\t\t\t{{type}}\n\t\t\t\t<i :class=\"['iconfont','option-icon',{'rotate':rotate}]\" _v-5d8bf884=\"\">㐸</i>\n\t\t\t</div>\n\t\t\t\n\n\t\t\t<input v-model=\"q\" class=\"search-text\" placeholder=\"药品\" _v-5d8bf884=\"\">\n\t\t</div>\n\t\t<i @click=\"gosearch\" class=\"iconfont search-icon\" _v-5d8bf884=\"\"></i>\n\t</div>\n\t<div v-show=\"optionstatus\" class=\"option-content\" _v-5d8bf884=\"\">\n\t\t<i class=\"iconfont option-bar\" _v-5d8bf884=\"\">㐸</i>\n\t\t<ul _v-5d8bf884=\"\">\n\t\t\t<li @click=\"checktype('招商')\" _v-5d8bf884=\"\">招商</li>\n\t\t\t<li @click=\"checktype('资讯')\" _v-5d8bf884=\"\">资讯</li>\n\t\t\t<li @click=\"checktype('视频')\" class=\"no-border\" _v-5d8bf884=\"\">视频</li>\n\t\t</ul>\n\t</div>\n\t<div class=\"history-area\" _v-5d8bf884=\"\">\n\t\t<div class=\"history-head\" _v-5d8bf884=\"\">\n\t\t\t<span class=\"title\" _v-5d8bf884=\"\">搜索历史</span>\n\t\t\t<span class=\"clean\" @click=\"clearSearchItems\" _v-5d8bf884=\"\"><i class=\"iconfont\" _v-5d8bf884=\"\"></i>清空</span>\n\t\t</div>\n\t\t<div class=\"history-list\" _v-5d8bf884=\"\">\n\t\t\t<ul _v-5d8bf884=\"\">\n\t\t\t\t<li v-for=\"item in searchItems\" _v-5d8bf884=\"\"><router-link :to=\"item\" _v-5d8bf884=\"\">{{item.query.q}}</router-link></li>\n\t\t\t</ul>\n\t\t</div>\n\t</div>\n\n</div>\n";
+	module.exports = "\n<div class=\"search-main\" _v-22c19432=\"\">\n\t<div class=\"search-nav\" _v-22c19432=\"\">\n\t\t<i @click=\"goback\" class=\"iconfont goback\" _v-22c19432=\"\">󰀌</i>\n\t\t<div class=\"search-area\" _v-22c19432=\"\">\n\t\t\t<div class=\"option-area\" @click=\"selecttype\" _v-22c19432=\"\">\n\t\t\t\t{{type}}\n\t\t\t\t<i :class=\"['iconfont','option-icon',{'rotate':rotate}]\" _v-22c19432=\"\">㐸</i>\n\t\t\t</div>\n\t\t\t\n\n\t\t\t<input v-model=\"q\" class=\"search-text\" placeholder=\"药品\" _v-22c19432=\"\">\n\t\t</div>\n\t\t<i @click=\"gosearch\" class=\"iconfont search-icon\" _v-22c19432=\"\"></i>\n\t</div>\n\t<div v-show=\"optionstatus\" class=\"option-content\" _v-22c19432=\"\">\n\t\t<i class=\"iconfont option-bar\" _v-22c19432=\"\">㐸</i>\n\t\t<ul _v-22c19432=\"\">\n\t\t\t<li @click=\"checktype('招商')\" _v-22c19432=\"\">招商</li>\n\t\t\t<li @click=\"checktype('资讯')\" _v-22c19432=\"\">资讯</li>\n\t\t\t<li @click=\"checktype('视频')\" class=\"no-border\" _v-22c19432=\"\">视频</li>\n\t\t</ul>\n\t</div>\n\t<div class=\"history-area\" _v-22c19432=\"\">\n\t\t<div class=\"history-head\" _v-22c19432=\"\">\n\t\t\t<span class=\"title\" _v-22c19432=\"\">搜索历史</span>\n\t\t\t<span class=\"clean\" @click=\"clearSearchItems\" _v-22c19432=\"\"><i class=\"iconfont\" _v-22c19432=\"\"></i>清空</span>\n\t\t</div>\n\t\t<div class=\"history-list\" _v-22c19432=\"\">\n\t\t\t<ul _v-22c19432=\"\">\n\t\t\t\t<li v-for=\"item in searchItems\" :to=\"item\" _v-22c19432=\"\">{{item.query.q}}</li>\n\t\t\t</ul>\n\t\t</div>\n\t</div>\n\n</div>\n";
 
 /***/ },
 /* 225 */
@@ -32887,7 +32944,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src\\components\\searchList.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(235)
+	__vue_template__ = __webpack_require__(227)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -32903,7 +32960,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7a86a713/searchList.vue"
+	  var id = "_v-3fbc42c1/searchList.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -32915,7 +32972,7 @@
 /* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -32925,25 +32982,12 @@
 
 	var _blackNav2 = _interopRequireDefault(_blackNav);
 
-	var _homeShell = __webpack_require__(227);
-
-	var _homeShell2 = _interopRequireDefault(_homeShell);
-
-	var _searchArticleItem = __webpack_require__(230);
-
-	var _searchArticleItem2 = _interopRequireDefault(_searchArticleItem);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = {
 		data: function data() {
 			return {
-				path: { path: "/search" },
-				loading: true,
-				height: 0,
-				'page': 0,
-				'currentView': _searchArticleItem2.default,
-				'items': null
+				path: { path: "/search" }
 			};
 		},
 
@@ -32952,55 +32996,12 @@
 				return this.$route.query.q.length > 10 ? this.dSubstr(this.$route.query.q, 10) + "···" : this.$route.query.q;
 			}
 		},
-		created: function created() {
-			if (this.$route.query.q == "资讯") {
-				this.loadData(false);
-			} else {
-				this.loadData(false);
-			}
-		},
-
 		components: {
-			'my-nav': _blackNav2.default,
-			'home-shell': _homeShell2.default
+			'my-nav': _blackNav2.default
 		},
 		methods: {
 			dSubstr: function dSubstr(title, length) {
 				return title.substr(0, length);
-			},
-			loadData: function loadData(finshCallback, refresh) {
-
-				if (refresh) {
-					this.page = 0;
-				}
-
-				var _this = this;
-				var url = "http://www.ey99.com/api/mobile/article.php";
-				this.page += 1;
-
-				var option = { params: { catid: 331, page: this.page } };
-				this.$http.get(url, option).then(function (res) {
-
-					if (_this.page == 1) {
-						_this.items = res.body;
-						_this.loading = false;
-
-						if (finshCallback) {
-							finshCallback();
-						}
-					}
-					if (_this.page > 1 && _this.page <= Math.ceil(res.body.count / 20)) {
-
-						for (var i = 0; i < res.body.list.length; i++) {
-							_this.items.list.push(res.body.list[i]);
-						}
-						console.log(_this.items.list);
-						_this.loading = false;
-						if (finshCallback) {
-							finshCallback();
-						}
-					}
-				}, function (err) {});
 			}
 		}
 	};
@@ -33008,428 +33009,24 @@
 	// <template>
 	// 	<div>
 	// 		<my-nav theme="white" :title="q"></my-nav>	
-	// 		<home-shell :loading="loading" >
-	// 			 <div slot="content" v-if="!loading">
-	// 			 	<component :items="items.list" :is="currentView"></component>
-	// 			 </div>
-	// 		</home-shell>
 	// 	</div>
 	// </template>
 	// <script>
 
 /***/ },
 /* 227 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	var __vue_script__, __vue_template__
-	var __vue_styles__ = {}
-	__vue_script__ = __webpack_require__(228)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src\\components\\homeShell.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(229)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
-	if (__vue_template__) {
-	__vue_options__.template = __vue_template__
-	}
-	if (!__vue_options__.computed) __vue_options__.computed = {}
-	Object.keys(__vue_styles__).forEach(function (key) {
-	var module = __vue_styles__[key]
-	__vue_options__.computed[key] = function () { return module }
-	})
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  var id = "_v-0af196f4/homeShell.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
+	module.exports = "\n<div>\n\t<my-nav theme=\"white\" :title=\"q\"></my-nav>\t\n</div>\n";
 
 /***/ },
 /* 228 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	/* WEBPACK VAR INJECTION */(function($) {'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _loading = __webpack_require__(140);
-
-	var _loading2 = _interopRequireDefault(_loading);
-
-	var _pullToRefresh = __webpack_require__(146);
-
-	var _pullToRefresh2 = _interopRequireDefault(_pullToRefresh);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	// <template>
-	//     <div class="white_box">
-	//         <load  v-if="loading"  ></load>
-	//
-	//         <div id="pullDown"  v-else>
-	//             <pull-to-refresh
-	//                     @on-pullup='onPullup'
-	//                     @on-pulldown='onPulldown' class="page">
-	//
-	//                 <slot name="content"></slot>
-	//
-	//                 <div v-show="noPage" class="noPage">
-	//                     没有了
-	//                 </div>
-	//             </pull-to-refresh>
-	//         </div>
-	//
-	//         <div class="clear"></div>
-	//     </div>
-	//
-	// </template>
-	// <script>
-
-	exports.default = {
-	    props: {
-	        loading: {
-	            type: Boolean,
-	            required: true,
-	            default: true
-	        }
-	    },
-	    data: function data() {
-	        return {
-	            items: null,
-	            'noPage': false
-	        };
-	    },
-
-	    components: {
-
-	        'load': _loading2.default,
-	        'pull-to-refresh': _pullToRefresh2.default
-
-	    },
-	    updated: function updated() {
-	        $(document).ready(function () {
-	            //获取数据后  固定page高度 即滑动区域 
-	            //$(".page").height(400);
-
-	            if ($(".warp-header")[0]) {
-	                $(".page").height($("#app")[0].clientHeight - $(".warp-header")[0].clientHeight);
-	            }
-	            if ($(".top")[0] && $(".nav")[0] && $(".footer")[0]) {
-	                $(".page").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
-	            }
-	        });
-	    },
-	    mounted: function mounted() {
-
-	        if ($(".warp-header")[0]) {
-	            $(".white_box").height($("#app")[0].clientHeight - $(".warp-header")[0].clientHeight);
-	        }
-	        if ($(".top")[0] && $(".nav")[0] && $(".footer")[0]) {
-	            $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
-	        }
-
-	        console.log(this);
-	    },
-
-	    methods: {
-	        onPullup: function onPullup(finshCallback) {
-	            this.$parent.loadData(finshCallback);
-
-	            //this.loadData(finshCallback);
-	        },
-	        onPulldown: function onPulldown(finshCallback) {
-	            ///finshCallback 回归位置 页面扩充后 拉取高度 不执行的话 高度不拉伸
-	            this.$parent.loadData(finshCallback, true);
-
-	            //finshCallback  调整位置
-	            //                this.noPage = false;
-	            //                this.page = 0;
-	            //                this.loadData(finshCallback);
-	        }
-	    }
-	};
-	// </script>
-
-
-	//上拉下拉组件 pull-to-refresh 必须给该组件 定高度 class="page" 可改变className
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(115)))
+	module.exports = "\n<div _v-479ecafa=\"\">\n\t<component :is=\"currentView\" _v-479ecafa=\"\"></component>\n</div>\n";
 
 /***/ },
 /* 229 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<div class=\"white_box\">\n    <load  v-if=\"loading\"  ></load>\n\n    <div id=\"pullDown\"  v-else>\n        <pull-to-refresh\n                @on-pullup='onPullup'\n                @on-pulldown='onPulldown' class=\"page\">\n\n            <slot name=\"content\"></slot>\n\n            <div v-show=\"noPage\" class=\"noPage\">\n                没有了\n            </div>\n        </pull-to-refresh>\n    </div>\n\n    <div class=\"clear\"></div>\n</div>\n\n";
-
-/***/ },
-/* 230 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	var __vue_styles__ = {}
-	__webpack_require__(231)
-	__vue_script__ = __webpack_require__(233)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src\\components\\searchArticleItem.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(234)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
-	if (__vue_template__) {
-	__vue_options__.template = __vue_template__
-	}
-	if (!__vue_options__.computed) __vue_options__.computed = {}
-	Object.keys(__vue_styles__).forEach(function (key) {
-	var module = __vue_styles__[key]
-	__vue_options__.computed[key] = function () { return module }
-	})
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  var id = "_v-5d4b01c4/searchArticleItem.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ },
-/* 231 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 232 */,
-/* 233 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	// <template>
-	//    <div class="searItems">
-	//         <ul>                
-	//           <li v-for="item in items">
-	//               <template v-if="item.thumb" >
-	//               <router-link  :to="{name:'healthDetail',query:{id:item.itemid}}" >
-	//                   <template v-if="item.level == 8">                            
-	//                       <div class="midbox">
-	//                           <div class=title>{{item.title}}<div>
-	//                           <span><img :src="item.thumb"/></span>
-	//                           <span><img class="imgmid" :src="item.thumb1"/></span>
-	//                           <span><img :src="item.thumb2"/></span>
-	//                           <i class="source">{{item.copyfrom}}</i>
-	//                           <i class="hits"><i class="iconfont">&#xf0048;</i>{{item.hits}}</i>
-	//                        </div>                           
-	//                   </template>  
-	//                   <template v-if="item.level == 9">                            
-	//                        <div class="bigbox">
-	//                           <div class="title">
-	//                             {{item.title}}
-	//                           </div>
-	//                          <img :src="item.thumb"/>
-	//                          <span>{{item.copyfrom}}</span>
-	//                          <span class="hits"><i class="iconfont">&#xf0048;</i>{{item.hits}}</span>
-	//                       </div>                  
-	//                   </template> 
-	//                  <template  v-if="item.level != 8 && item.level != 9">  
-	//                       <div class="descBox">
-	//                           <div class="title">{{item.title | dsubstr(20)}}</div>
-	//                           <div class="footnote">
-	//                               <span class="source">{{item.copyfrom ? item.copyfrom : "当代医药市场网"}}</span>
-	//                               <span class="hits"><i class="iconfont">&#xf0048;</i>{{item.hits}}</span>
-	//                           </div>
-	//                       </div>
-	//                       <span class="img" >
-	//                           <img :src="item.thumb" class="img-small"/>
-	//                       </span>
-	//                   </template>  
-	//               </router-link >
-	//               </template>
-	//               <template  v-else >
-	//                   <router-link :to="{name:'healthDetail',query:{id:item.itemid}}" >
-	//                       <h2 class="title">{{item.title | dsubstr(16)}}</h2>
-	//                       <span class="hits">
-	//                           <i class="iconfont">&#xf0048;</i>{{item.hits}}
-	//                       </span>
-	//                   </router-link >
-	//               </template>
-	//           </li>
-	//         </ul>
-	//     </div>
-	//
-	// </template>
-	// <script>
-	exports.default = {
-	    props: ['items'],
-	    mounted: function mounted() {
-	        console.log(this.items);
-	    },
-
-	    filters: {
-	        dsubstr: function dsubstr(title, length) {
-	            return title.substr(0, length);
-	        }
-	    }
-	};
-	// </script>
-	// <style lang="sass" scoped>
-	//   .searItems{
-	//         .cardTitle{
-	//             color: #333;
-	//             padding-left: .2rem;
-	//             height: .85rem;
-	//             line-height: .85rem;
-	//             font-weight: 700;
-	//             font-size: .36rem;
-	//         }
-	//         ul{
-	//             width:6rem;
-	//             padding:0px .2rem;
-	//             li{
-	//                 width: 100%;
-	//                 margin-bottom:.2rem;
-	//                 border-bottom:dashed #ccc 1px;
-	//                 .bigbox{
-	//                     width: 6rem;
-	//                      span{
-	//                        color: #8f8f8f;
-	//                        display: inline-block;
-	//                        padding: .1rem .05rem .1rem 0;
-	//                        font-size: .24rem; 
-	//                     }
-	//                     img{
-	//                         width: 6rem;
-	//                         height: 3rem;
-	//                     }
-	//                     .hits{
-	//                          font-size: .18rem;
-	//                         i{
-	//                             font-size: .24rem;
-	//                         }
-	//                     }
-	//                 }
-	//                 .midbox{
-	//                     width: 6rem;
-	//                     img{
-	//                         width: 1.94rem;
-	//                         height: 1.23rem;
-	//                         padding-top: .2rem; 
-	//                     }
-	//                     span{
-	//                          display:inline-block;
-	//                          float: left;
-	//                     }
-	//                     .imgmid{
-	//                          padding: 0.2rem .088rem 0 .088rem;
-	//                     }
-	//                     .source{
-	//                        color: #8f8f8f;
-	//                        display: inline-block;
-	//                        padding: .1rem .05rem .1rem 0;
-	//                        font-size: .24rem; 
-	//                     }
-	//                     .hits{
-	//                        color: #8f8f8f;
-	//                        display: inline-block;
-	//                        padding: .1rem .05rem .1rem 0;
-	//                        font-size: .18rem; 
-	//                     }
-	//                 }
-	//                 .title{
-	//
-	//                     font-size: .3rem;
-	//                 }
-	//                 .descBox{
-	//                     width:69%;
-	//                     min-height:1rem;
-	//                     float:left;
-	//                     .title{
-	//                         min-height:1rem;
-	//                         font-size:.3rem;
-	//                     }
-	//                     .source{
-	//                         font-size:.24rem;
-	//                         color:#8f8f8f;
-	//                         line-height: .4rem;                       
-	//                     }
-	//                     .hits{
-	//                         float:right;
-	//                         font-size:.18rem;
-	//                     }
-	//                 }
-	//                 .img-small{
-	//                     float:right;
-	//                     width:25%;
-	//                     height:1.2rem;
-	//                 }
-	//                 a{
-	//                     display: inline-block;
-	//                     width: 100%;
-	//                 }
-	//                 h2{
-	//                     padding-bottom:.2rem;
-	//                     display: inline-block;
-	//                     font-size:.3rem;
-	//                     width:90%;
-	//                     float:left;
-	//
-	//                 }
-	//                 .hits{
-	//                     font-size:.2rem;
-	//                     width:10%;
-	//
-	//                     float:right;
-	//                     text-align: right;
-	//                     color:#8f8f8f;
-	//                     i{
-	//                         font-size:.24rem;
-	//                     }
-	//                 }
-	//             }
-	//
-	//         }
-	//     }
-	// </style>
-	//
-	// </style>
-
-/***/ },
-/* 234 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<div class=\"searItems\" _v-5d4b01c4=\"\">\n     <ul _v-5d4b01c4=\"\">                \n       <li v-for=\"item in items\" _v-5d4b01c4=\"\">\n           <template v-if=\"item.thumb\">\n           <router-link :to=\"{name:'healthDetail',query:{id:item.itemid}}\" _v-5d4b01c4=\"\">\n               <template v-if=\"item.level == 8\">                            \n                   <div class=\"midbox\" _v-5d4b01c4=\"\">\n                       <div class=\"title\" _v-5d4b01c4=\"\">{{item.title}}<div _v-5d4b01c4=\"\">\n                       <span _v-5d4b01c4=\"\"><img :src=\"item.thumb\" _v-5d4b01c4=\"\"></span>\n                       <span _v-5d4b01c4=\"\"><img class=\"imgmid\" :src=\"item.thumb1\" _v-5d4b01c4=\"\"></span>\n                       <span _v-5d4b01c4=\"\"><img :src=\"item.thumb2\" _v-5d4b01c4=\"\"></span>\n                       <i class=\"source\" _v-5d4b01c4=\"\">{{item.copyfrom}}</i>\n                       <i class=\"hits\" _v-5d4b01c4=\"\"><i class=\"iconfont\" _v-5d4b01c4=\"\">󰁈</i>{{item.hits}}</i>\n                    </div>                           \n               </div></div></template>  \n               <template v-if=\"item.level == 9\">                            \n                    <div class=\"bigbox\" _v-5d4b01c4=\"\">\n                       <div class=\"title\" _v-5d4b01c4=\"\">\n                         {{item.title}}\n                       </div>\n                      <img :src=\"item.thumb\" _v-5d4b01c4=\"\">\n                      <span _v-5d4b01c4=\"\">{{item.copyfrom}}</span>\n                      <span class=\"hits\" _v-5d4b01c4=\"\"><i class=\"iconfont\" _v-5d4b01c4=\"\">󰁈</i>{{item.hits}}</span>\n                   </div>                  \n               </template> \n              <template v-if=\"item.level != 8 &amp;&amp; item.level != 9\">  \n                   <div class=\"descBox\" _v-5d4b01c4=\"\">\n                       <div class=\"title\" _v-5d4b01c4=\"\">{{item.title | dsubstr(20)}}</div>\n                       <div class=\"footnote\" _v-5d4b01c4=\"\">\n                           <span class=\"source\" _v-5d4b01c4=\"\">{{item.copyfrom ? item.copyfrom : \"当代医药市场网\"}}</span>\n                           <span class=\"hits\" _v-5d4b01c4=\"\"><i class=\"iconfont\" _v-5d4b01c4=\"\">󰁈</i>{{item.hits}}</span>\n                       </div>\n                   </div>\n                   <span class=\"img\" _v-5d4b01c4=\"\">\n                       <img :src=\"item.thumb\" class=\"img-small\" _v-5d4b01c4=\"\">\n                   </span>\n               </template>  \n           </router-link>\n           </template>\n           <template v-else=\"\">\n               <router-link :to=\"{name:'healthDetail',query:{id:item.itemid}}\" _v-5d4b01c4=\"\">\n                   <h2 class=\"title\" _v-5d4b01c4=\"\">{{item.title | dsubstr(16)}}</h2>\n                   <span class=\"hits\" _v-5d4b01c4=\"\">\n                       <i class=\"iconfont\" _v-5d4b01c4=\"\">󰁈</i>{{item.hits}}\n                   </span>\n               </router-link>\n           </template>\n       </li>\n     </ul>\n </div>\n\n";
-
-/***/ },
-/* 235 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<div>\n\t<my-nav theme=\"white\" :title=\"q\"></my-nav>\t\n\t<home-shell :loading=\"loading\" >\n\t\t <div slot=\"content\" v-if=\"!loading\">\n\t\t \t<component :items=\"items.list\" :is=\"currentView\"></component>\n\t\t </div>\n\t</home-shell>\n</div>\n";
-
-/***/ },
-/* 236 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<div _v-5a6df7d5=\"\">\n\t<component :is=\"currentView\" _v-5a6df7d5=\"\"></component>\n</div>\n";
-
-/***/ },
-/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -33438,7 +33035,7 @@
 	    value: true
 	});
 
-	var _promise = __webpack_require__(238);
+	var _promise = __webpack_require__(230);
 
 	var _promise2 = _interopRequireDefault(_promise);
 
@@ -33472,38 +33069,38 @@
 	};
 
 /***/ },
-/* 238 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(239), __esModule: true };
+	module.exports = { "default": __webpack_require__(231), __esModule: true };
 
 /***/ },
-/* 239 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(101);
 	__webpack_require__(39);
 	__webpack_require__(83);
-	__webpack_require__(240);
+	__webpack_require__(232);
 	module.exports = __webpack_require__(47).Promise;
 
 /***/ },
-/* 240 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var LIBRARY            = __webpack_require__(44)
 	  , global             = __webpack_require__(46)
 	  , ctx                = __webpack_require__(48)
-	  , classof            = __webpack_require__(241)
+	  , classof            = __webpack_require__(233)
 	  , $export            = __webpack_require__(45)
 	  , isObject           = __webpack_require__(53)
 	  , aFunction          = __webpack_require__(49)
-	  , anInstance         = __webpack_require__(242)
-	  , forOf              = __webpack_require__(243)
-	  , speciesConstructor = __webpack_require__(247)
-	  , task               = __webpack_require__(248).set
-	  , microtask          = __webpack_require__(250)()
+	  , anInstance         = __webpack_require__(234)
+	  , forOf              = __webpack_require__(235)
+	  , speciesConstructor = __webpack_require__(239)
+	  , task               = __webpack_require__(240).set
+	  , microtask          = __webpack_require__(242)()
 	  , PROMISE            = 'Promise'
 	  , TypeError          = global.TypeError
 	  , process            = global.process
@@ -33695,7 +33292,7 @@
 	    this._h = 0;              // <- rejection state, 0 - default, 1 - handled, 2 - unhandled
 	    this._n = false;          // <- notify
 	  };
-	  Internal.prototype = __webpack_require__(251)($Promise.prototype, {
+	  Internal.prototype = __webpack_require__(243)($Promise.prototype, {
 	    // 25.4.5.3 Promise.prototype.then(onFulfilled, onRejected)
 	    then: function then(onFulfilled, onRejected){
 	      var reaction    = newPromiseCapability(speciesConstructor(this, $Promise));
@@ -33722,7 +33319,7 @@
 
 	$export($export.G + $export.W + $export.F * !USE_NATIVE, {Promise: $Promise});
 	__webpack_require__(79)($Promise, PROMISE);
-	__webpack_require__(252)(PROMISE);
+	__webpack_require__(244)(PROMISE);
 	Wrapper = __webpack_require__(47)[PROMISE];
 
 	// statics
@@ -33746,7 +33343,7 @@
 	    return capability.promise;
 	  }
 	});
-	$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(253)(function(iter){
+	$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(245)(function(iter){
 	  $Promise.all(iter)['catch'](empty);
 	})), PROMISE, {
 	  // 25.4.4.1 Promise.all(iterable)
@@ -33792,7 +33389,7 @@
 	});
 
 /***/ },
-/* 241 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// getting tag from 19.1.3.6 Object.prototype.toString()
@@ -33820,7 +33417,7 @@
 	};
 
 /***/ },
-/* 242 */
+/* 234 */
 /***/ function(module, exports) {
 
 	module.exports = function(it, Constructor, name, forbiddenField){
@@ -33830,15 +33427,15 @@
 	};
 
 /***/ },
-/* 243 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var ctx         = __webpack_require__(48)
-	  , call        = __webpack_require__(244)
-	  , isArrayIter = __webpack_require__(245)
+	  , call        = __webpack_require__(236)
+	  , isArrayIter = __webpack_require__(237)
 	  , anObject    = __webpack_require__(52)
 	  , toLength    = __webpack_require__(72)
-	  , getIterFn   = __webpack_require__(246)
+	  , getIterFn   = __webpack_require__(238)
 	  , BREAK       = {}
 	  , RETURN      = {};
 	var exports = module.exports = function(iterable, entries, fn, that, ITERATOR){
@@ -33860,7 +33457,7 @@
 	exports.RETURN = RETURN;
 
 /***/ },
-/* 244 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// call something on iterator step with safe closing on error
@@ -33877,7 +33474,7 @@
 	};
 
 /***/ },
-/* 245 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// check on default Array iterator
@@ -33890,10 +33487,10 @@
 	};
 
 /***/ },
-/* 246 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var classof   = __webpack_require__(241)
+	var classof   = __webpack_require__(233)
 	  , ITERATOR  = __webpack_require__(80)('iterator')
 	  , Iterators = __webpack_require__(62);
 	module.exports = __webpack_require__(47).getIteratorMethod = function(it){
@@ -33903,7 +33500,7 @@
 	};
 
 /***/ },
-/* 247 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.3.20 SpeciesConstructor(O, defaultConstructor)
@@ -33916,11 +33513,11 @@
 	};
 
 /***/ },
-/* 248 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var ctx                = __webpack_require__(48)
-	  , invoke             = __webpack_require__(249)
+	  , invoke             = __webpack_require__(241)
 	  , html               = __webpack_require__(78)
 	  , cel                = __webpack_require__(57)
 	  , global             = __webpack_require__(46)
@@ -33996,7 +33593,7 @@
 	};
 
 /***/ },
-/* 249 */
+/* 241 */
 /***/ function(module, exports) {
 
 	// fast apply, http://jsperf.lnkit.com/fast-apply/5
@@ -34017,11 +33614,11 @@
 	};
 
 /***/ },
-/* 250 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var global    = __webpack_require__(46)
-	  , macrotask = __webpack_require__(248).set
+	  , macrotask = __webpack_require__(240).set
 	  , Observer  = global.MutationObserver || global.WebKitMutationObserver
 	  , process   = global.process
 	  , Promise   = global.Promise
@@ -34090,7 +33687,7 @@
 	};
 
 /***/ },
-/* 251 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var hide = __webpack_require__(50);
@@ -34102,7 +33699,7 @@
 	};
 
 /***/ },
-/* 252 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34121,7 +33718,7 @@
 	};
 
 /***/ },
-/* 253 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var ITERATOR     = __webpack_require__(80)('iterator')
@@ -34147,6 +33744,14 @@
 	};
 
 /***/ },
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
 /* 254 */,
 /* 255 */,
 /* 256 */,
@@ -34169,16 +33774,11 @@
 /* 273 */,
 /* 274 */,
 /* 275 */,
-/* 276 */,
-/* 277 */,
-/* 278 */,
-/* 279 */,
-/* 280 */,
-/* 281 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
-	 * Vue-Lazyload.js v0.9.0
+	 * Vue-Lazyload.js v0.9.1
 	 * (c) 2016 Awe <hilongjw@gmail.com>
 	 * Released under the MIT License.
 	 */
@@ -34205,6 +33805,7 @@
 
 	    var isVueNext = Vue.version.split('.')[0] === '2';
 	    var DEFAULT_URL = 'data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXs7Oxc9QatAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg==';
+	    var ListenEvents = ['scroll', 'wheel', 'mousewheel', 'resize', 'animationend', 'transitionend'];
 
 	    var Init = {
 	        preLoad: Options.preLoad || 1.3,
@@ -34258,20 +33859,14 @@
 
 	    var onListen = function onListen(el, start) {
 	        if (start) {
-	            _.on(el, 'scroll', lazyLoadHandler);
-	            _.on(el, 'wheel', lazyLoadHandler);
-	            _.on(el, 'mousewheel', lazyLoadHandler);
-	            _.on(el, 'resize', lazyLoadHandler);
-	            _.on(el, 'animationend', lazyLoadHandler);
-	            _.on(el, 'transitionend', lazyLoadHandler);
+	            ListenEvents.forEach(function (evt) {
+	                _.on(el, evt, lazyLoadHandler);
+	            });
 	        } else {
 	            Init.hasbind = false;
-	            _.off(el, 'scroll', lazyLoadHandler);
-	            _.off(el, 'wheel', lazyLoadHandler);
-	            _.off(el, 'mousewheel', lazyLoadHandler);
-	            _.off(el, 'resize', lazyLoadHandler);
-	            _.off(el, 'animationend', lazyLoadHandler);
-	            _.off(el, 'transitionend', lazyLoadHandler);
+	            ListenEvents.forEach(function (evt) {
+	                _.off(el, evt, lazyLoadHandler);
+	            });
 	        }
 	    };
 
@@ -34368,6 +33963,8 @@
 	            imageError = binding.value.error || Init.error;
 	        }
 
+	        if (imageCache.indexOf(imageSrc) > -1) return setElRender(el, binding.arg, imageSrc, 'loaded');
+
 	        setElRender(el, binding.arg, imageLoading, 'loading');
 
 	        Vue.nextTick(function () {
@@ -34427,7 +34024,7 @@
 	})));
 
 /***/ },
-/* 282 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports =
@@ -35541,25 +35138,25 @@
 	/* 7 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(283);
+		module.exports = __webpack_require__(278);
 
 	/***/ },
 	/* 8 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(301);
+		module.exports = __webpack_require__(296);
 
 	/***/ },
 	/* 9 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(302);
+		module.exports = __webpack_require__(297);
 
 	/***/ },
 	/* 10 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(292);
+		module.exports = __webpack_require__(287);
 
 	/***/ },
 	/* 11 */
@@ -35753,7 +35350,7 @@
 	/* 14 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(290);
+		module.exports = __webpack_require__(285);
 
 	/***/ },
 	/* 15 */
@@ -36021,13 +35618,13 @@
 	/* 19 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(284);
+		module.exports = __webpack_require__(279);
 
 	/***/ },
 	/* 20 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(286);
+		module.exports = __webpack_require__(281);
 
 	/***/ },
 	/* 21 */
@@ -36312,7 +35909,7 @@
 	/* 25 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(285);
+		module.exports = __webpack_require__(280);
 
 	/***/ },
 	/* 26 */
@@ -36415,7 +36012,7 @@
 	/* 29 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(288);
+		module.exports = __webpack_require__(283);
 
 	/***/ },
 	/* 30 */
@@ -37883,7 +37480,7 @@
 	/* 60 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(287);
+		module.exports = __webpack_require__(282);
 
 	/***/ },
 	/* 61 */
@@ -39661,7 +39258,7 @@
 	/* 89 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(291);
+		module.exports = __webpack_require__(286);
 
 	/***/ },
 	/* 90 */
@@ -39781,25 +39378,25 @@
 	/* 93 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(297);
+		module.exports = __webpack_require__(292);
 
 	/***/ },
 	/* 94 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(298);
+		module.exports = __webpack_require__(293);
 
 	/***/ },
 	/* 95 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(296);
+		module.exports = __webpack_require__(291);
 
 	/***/ },
 	/* 96 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(300);
+		module.exports = __webpack_require__(295);
 
 	/***/ },
 	/* 97 */
@@ -40925,7 +40522,7 @@
 	/* 117 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(299);
+		module.exports = __webpack_require__(294);
 
 	/***/ },
 	/* 118 */
@@ -42298,7 +41895,7 @@
 	/* 124 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(304);
+		module.exports = __webpack_require__(299);
 
 	/***/ },
 	/* 125 */
@@ -42595,7 +42192,7 @@
 	/* 128 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(305);
+		module.exports = __webpack_require__(300);
 
 	/***/ },
 	/* 129 */
@@ -43243,7 +42840,7 @@
 	/* 133 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(306);
+		module.exports = __webpack_require__(301);
 
 	/***/ },
 	/* 134 */
@@ -44014,7 +43611,7 @@
 	/* 139 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(307);
+		module.exports = __webpack_require__(302);
 
 	/***/ },
 	/* 140 */
@@ -48536,7 +48133,7 @@
 	/* 185 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(308);
+		module.exports = __webpack_require__(303);
 
 	/***/ },
 	/* 186 */
@@ -49243,7 +48840,7 @@
 	/* 202 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(309);
+		module.exports = __webpack_require__(304);
 
 	/***/ },
 	/* 203 */
@@ -51588,19 +51185,19 @@
 	/* 237 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(334);
+		module.exports = __webpack_require__(329);
 
 	/***/ },
 	/* 238 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(335);
+		module.exports = __webpack_require__(330);
 
 	/***/ },
 	/* 239 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(336);
+		module.exports = __webpack_require__(331);
 
 	/***/ },
 	/* 240 */
@@ -52705,7 +52302,7 @@
 	/* 262 */
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(337);
+		module.exports = __webpack_require__(332);
 
 	/***/ },
 	/* 263 */
@@ -55109,7 +54706,7 @@
 	/******/ ]);
 
 /***/ },
-/* 283 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports =
@@ -55168,49 +54765,49 @@
 	/***/ 8:
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(284);
+		module.exports = __webpack_require__(279);
 
 	/***/ },
 
 	/***/ 9:
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(286);
+		module.exports = __webpack_require__(281);
 
 	/***/ },
 
 	/***/ 38:
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(285);
+		module.exports = __webpack_require__(280);
 
 	/***/ },
 
 	/***/ 53:
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(288);
+		module.exports = __webpack_require__(283);
 
 	/***/ },
 
 	/***/ 57:
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(291);
+		module.exports = __webpack_require__(286);
 
 	/***/ },
 
 	/***/ 66:
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(296);
+		module.exports = __webpack_require__(291);
 
 	/***/ },
 
 	/***/ 152:
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(292);
+		module.exports = __webpack_require__(287);
 
 	/***/ },
 
@@ -55980,21 +55577,21 @@
 	/***/ 210:
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(297);
+		module.exports = __webpack_require__(292);
 
 	/***/ },
 
 	/***/ 211:
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(298);
+		module.exports = __webpack_require__(293);
 
 	/***/ },
 
 	/***/ 212:
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(300);
+		module.exports = __webpack_require__(295);
 
 	/***/ },
 
@@ -56183,7 +55780,7 @@
 	/******/ });
 
 /***/ },
-/* 284 */
+/* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports =
@@ -56242,7 +55839,7 @@
 	/***/ 38:
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(285);
+		module.exports = __webpack_require__(280);
 
 	/***/ },
 
@@ -56655,7 +56252,7 @@
 	/******/ });
 
 /***/ },
-/* 285 */
+/* 280 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -56696,14 +56293,14 @@
 	};
 
 /***/ },
-/* 286 */
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	exports.__esModule = true;
 
-	var _event = __webpack_require__(287);
+	var _event = __webpack_require__(282);
 
 	var nodeList = [];
 	var ctx = '@@clickoutsideContext';
@@ -56757,7 +56354,7 @@
 	};
 
 /***/ },
-/* 287 */
+/* 282 */
 /***/ function(module, exports) {
 
 	var bindEvent = (function() {
@@ -56809,18 +56406,18 @@
 	};
 
 /***/ },
-/* 288 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	exports.__esModule = true;
 
-	var _popper = __webpack_require__(289);
+	var _popper = __webpack_require__(284);
 
 	var _popper2 = _interopRequireDefault(_popper);
 
-	var _vuePopup = __webpack_require__(290);
+	var _vuePopup = __webpack_require__(285);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -56971,7 +56568,7 @@
 	};
 
 /***/ },
-/* 289 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -58226,20 +57823,20 @@
 	});
 
 /***/ },
-/* 290 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
 	!function(e,t){ true?module.exports=t(__webpack_require__(1)):"function"==typeof define&&define.amd?define("VuePopup",["vue"],t):"object"==typeof exports?exports.VuePopup=t(require("vue")):e.VuePopup=t(e.vue)}(this,function(e){return function(e){function t(n){if(o[n])return o[n].exports;var i=o[n]={i:n,l:!1,exports:{}};return e[n].call(i.exports,i,i.exports,t),i.l=!0,i.exports}var o={};return t.m=e,t.c=o,t.i=function(e){return e},t.d=function(e,t,o){Object.defineProperty(e,t,{configurable:!1,enumerable:!0,get:o})},t.n=function(e){var o=e&&e.__esModule?function(){return e["default"]}:function(){return e};return t.d(o,"a",o),o},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="/lib/",t(t.s=6)}([function(e,t,o){"use strict";function n(e){return e&&e.__esModule?e:{"default":e}}t.__esModule=!0,t.PopupManager=void 0;var i=o(5),l=n(i),s=o(3),d=o(2),a=n(d);o(4);var r=1,u=[],c=function(e){if(u.indexOf(e)===-1){var t=function(e){var t=e.__vue__;if(!t){var o=e.previousSibling;o.__vue__&&(t=o.__vue__)}return t};l["default"].transition(e,{afterEnter:function(e){var o=t(e);o&&o.doAfterOpen&&o.doAfterOpen()},afterLeave:function(e){var o=t(e);o&&o.doAfterClose&&o.doAfterClose()}})}},f=void 0,p=function(){if(void 0!==f)return f;var e=document.createElement("div");e.style.visibility="hidden",e.style.width="100px",e.style.position="absolute",e.style.top="-9999px",document.body.appendChild(e);var t=e.offsetWidth;e.style.overflow="scroll";var o=document.createElement("div");o.style.width="100%",e.appendChild(o);var n=o.offsetWidth;return e.parentNode.removeChild(e),t-n},h=function m(e){return 3===e.nodeType&&(e=e.nextElementSibling||e.nextSibling,m(e)),e};t["default"]={props:{value:{type:Boolean,"default":!1},transition:{type:String,"default":""},openDelay:{},closeDelay:{},zIndex:{},modal:{type:Boolean,"default":!1},modalFade:{type:Boolean,"default":!0},modalClass:{},lockScroll:{type:Boolean,"default":!0},closeOnPressEscape:{type:Boolean,"default":!1},closeOnClickModal:{type:Boolean,"default":!1}},created:function(){this.transition&&c(this.transition)},beforeMount:function(){this._popupId="popup-"+r++,a["default"].register(this._popupId,this)},beforeDestroy:function(){a["default"].deregister(this._popupId),a["default"].closeModal(this._popupId),this.modal&&null!==this.bodyOverflow&&"hidden"!==this.bodyOverflow&&(document.body.style.overflow=this.bodyOverflow,document.body.style.paddingRight=this.bodyPaddingRight),this.bodyOverflow=null,this.bodyPaddingRight=null},data:function(){return{opened:!1,bodyOverflow:null,bodyPaddingRight:null,rendered:!1}},watch:{value:function(e){var t=this;if(e){if(this._opening)return;this.rendered?this.open():(this.rendered=!0,l["default"].nextTick(function(){t.open()}))}else this.close()}},methods:{open:function(e){var t=this;this.rendered||(this.rendered=!0,this.$emit("input",!0));var o=(0,s.merge)({},this,e);this._closeTimer&&(clearTimeout(this._closeTimer),this._closeTimer=null),clearTimeout(this._openTimer);var n=Number(o.openDelay);n>0?this._openTimer=setTimeout(function(){t._openTimer=null,t.doOpen(o)},n):this.doOpen(o)},doOpen:function(e){if((!this.willOpen||this.willOpen())&&!this.opened){this._opening=!0,this.visible=!0,this.$emit("input",!0);var t=h(this.$el),o=e.modal,n=e.zIndex;if(n&&(a["default"].zIndex=n),o&&(this._closing&&(a["default"].closeModal(this._popupId),this._closing=!1),a["default"].openModal(this._popupId,a["default"].nextZIndex(),t,e.modalClass,e.modalFade),e.lockScroll)){this.bodyOverflow||(this.bodyPaddingRight=document.body.style.paddingRight,this.bodyOverflow=document.body.style.overflow),f=p();var i=document.documentElement.clientHeight<document.body.scrollHeight;f>0&&i&&(document.body.style.paddingRight=f+"px"),document.body.style.overflow="hidden"}"static"===getComputedStyle(t).position&&(t.style.position="absolute"),o?t.style.zIndex=a["default"].nextZIndex():n&&(t.style.zIndex=n),this.opened=!0,this.onOpen&&this.onOpen(),this.transition||this.doAfterOpen()}},doAfterOpen:function(){this._opening=!1},close:function(){var e=this;if(!this.willClose||this.willClose()){null!==this._openTimer&&(clearTimeout(this._openTimer),this._openTimer=null),clearTimeout(this._closeTimer);var t=Number(this.closeDelay);t>0?this._closeTimer=setTimeout(function(){e._closeTimer=null,e.doClose()},t):this.doClose()}},doClose:function(){var e=this;this.visible=!1,this.$emit("input",!1),this._closing=!0,this.onClose&&this.onClose(),this.lockScroll&&setTimeout(function(){e.modal&&"hidden"!==e.bodyOverflow&&(document.body.style.overflow=e.bodyOverflow,document.body.style.paddingRight=e.bodyPaddingRight),e.bodyOverflow=null,e.bodyPaddingRight=null},200),this.opened=!1,this.transition||this.doAfterClose()},doAfterClose:function(){a["default"].closeModal(this._popupId),this._closing=!1}}},t.PopupManager=a["default"]},function(e,t){var o=function(e){return(e||"").replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g,"")},n=function(e,t){if(!e||!t)return!1;if(t.indexOf(" ")!=-1)throw new Error("className should not contain space.");return e.classList?e.classList.contains(t):(" "+e.className+" ").indexOf(" "+t+" ")>-1},i=function(e,t){if(e){for(var o=e.className,i=(t||"").split(" "),l=0,s=i.length;l<s;l++){var d=i[l];d&&(e.classList?e.classList.add(d):n(e,d)||(o+=" "+d))}e.classList||(e.className=o)}},l=function(e,t){if(e&&t){for(var i=t.split(" "),l=" "+e.className+" ",s=0,d=i.length;s<d;s++){var a=i[s];a&&(e.classList?e.classList.remove(a):n(e,a)&&(l=l.replace(" "+a+" "," ")))}e.classList||(e.className=o(l))}};e.exports={hasClass:n,addClass:i,removeClass:l}},function(e,t,o){"use strict";t.__esModule=!0;var n=o(1),i=!1,l=function(){var e=d.modalDom;return e?i=!0:(i=!1,e=document.createElement("div"),d.modalDom=e,e.addEventListener("touchmove",function(e){e.preventDefault(),e.stopPropagation()}),e.addEventListener("click",function(){d.doOnModalClick&&d.doOnModalClick()})),e},s={},d={zIndex:2e3,modalFade:!0,getInstance:function(e){return s[e]},register:function(e,t){e&&t&&(s[e]=t)},deregister:function(e){e&&(s[e]=null,delete s[e])},nextZIndex:function(){return d.zIndex++},modalStack:[],doOnModalClick:function(){var e=d.modalStack[d.modalStack.length-1];if(e){var t=d.getInstance(e.id);t&&t.closeOnClickModal&&t.close()}},openModal:function(e,t,o,s,d){if(e&&void 0!==t){this.modalFade=d;for(var a=this.modalStack,r=0,u=a.length;r<u;r++){var c=a[r];if(c.id===e)return}var f=l();if((0,n.addClass)(f,"v-modal"),this.modalFade&&!i&&(0,n.addClass)(f,"v-modal-enter"),s){var p=s.trim().split(/\s+/);p.forEach(function(e){return(0,n.addClass)(f,e)})}setTimeout(function(){(0,n.removeClass)(f,"v-modal-enter")},200),o&&o.parentNode&&11!==o.parentNode.nodeType?o.parentNode.appendChild(f):document.body.appendChild(f),t&&(f.style.zIndex=t),f.style.display="",this.modalStack.push({id:e,zIndex:t,modalClass:s})}},closeModal:function(e){var t=this.modalStack,o=l();if(t.length>0){var i=t[t.length-1];if(i.id===e){if(i.modalClass){var s=i.modalClass.trim().split(/\s+/);s.forEach(function(e){return(0,n.removeClass)(o,e)})}t.pop(),t.length>0&&(o.style.zIndex=t[t.length-1].zIndex)}else for(var a=t.length-1;a>=0;a--)if(t[a].id===e){t.splice(a,1);break}}0===t.length&&(this.modalFade&&(0,n.addClass)(o,"v-modal-leave"),setTimeout(function(){0===t.length&&(o.parentNode&&o.parentNode.removeChild(o),o.style.display="none",d.modalDom=void 0),(0,n.removeClass)(o,"v-modal-leave")},200))}};window.addEventListener("keydown",function(e){if(27===e.keyCode&&d.modalStack.length>0){var t=d.modalStack[d.modalStack.length-1];if(!t)return;var o=d.getInstance(t.id);o.closeOnPressEscape&&o.close()}}),t["default"]=d},function(e,t){"use strict";function o(e){for(var t=1,o=arguments.length;t<o;t++){var n=arguments[t];for(var i in n)if(n.hasOwnProperty(i)){var l=n[i];void 0!==l&&(e[i]=l)}}return e}t.__esModule=!0,t.merge=o},function(e,t){},function(t,o){t.exports=e},function(e,t,o){e.exports=o(0)}])});
 
 /***/ },
-/* 291 */
+/* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	exports.__esModule = true;
 
-	var _locale = __webpack_require__(292);
+	var _locale = __webpack_require__(287);
 
 	exports.default = {
 	  methods: {
@@ -58254,7 +57851,7 @@
 	};
 
 /***/ },
-/* 292 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -58262,7 +57859,7 @@
 	exports.__esModule = true;
 	exports.use = exports.t = undefined;
 
-	var _zhCN = __webpack_require__(293);
+	var _zhCN = __webpack_require__(288);
 
 	var _zhCN2 = _interopRequireDefault(_zhCN);
 
@@ -58270,11 +57867,11 @@
 
 	var _vue2 = _interopRequireDefault(_vue);
 
-	var _deepmerge = __webpack_require__(294);
+	var _deepmerge = __webpack_require__(289);
 
 	var _deepmerge2 = _interopRequireDefault(_deepmerge);
 
-	var _format = __webpack_require__(295);
+	var _format = __webpack_require__(290);
 
 	var _format2 = _interopRequireDefault(_format);
 
@@ -58312,7 +57909,7 @@
 	exports.default = { use: use, t: t };
 
 /***/ },
-/* 293 */
+/* 288 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -58406,7 +58003,7 @@
 	};
 
 /***/ },
-/* 294 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (root, factory) {
@@ -58496,7 +58093,7 @@
 
 
 /***/ },
-/* 295 */
+/* 290 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -58557,7 +58154,7 @@
 	var RE_NARGS = /(%|)\{([0-9a-zA-Z_]+)\}/g;
 
 /***/ },
-/* 296 */
+/* 291 */
 /***/ function(module, exports) {
 
 	var trim = function (string) {
@@ -58625,7 +58222,7 @@
 	};
 
 /***/ },
-/* 297 */
+/* 292 */
 /***/ function(module, exports) {
 
 	module.exports =
@@ -58796,12 +58393,12 @@
 	/******/ });
 
 /***/ },
-/* 298 */
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* eslint-disable no-undefined */
 
-	var throttle = __webpack_require__(299);
+	var throttle = __webpack_require__(294);
 
 	/**
 	 * Debounce execution of a function. Debouncing, unlike throttling,
@@ -58823,7 +58420,7 @@
 
 
 /***/ },
-/* 299 */
+/* 294 */
 /***/ function(module, exports) {
 
 	/* eslint-disable no-undefined,no-param-reassign,no-shadow */
@@ -58920,7 +58517,7 @@
 
 
 /***/ },
-/* 300 */
+/* 295 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -59090,7 +58687,7 @@
 	};
 
 /***/ },
-/* 301 */
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports =
@@ -59149,7 +58746,7 @@
 	/***/ 38:
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(285);
+		module.exports = __webpack_require__(280);
 
 	/***/ },
 
@@ -59375,7 +58972,7 @@
 	/******/ });
 
 /***/ },
-/* 302 */
+/* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -59440,10 +59037,10 @@
 	    }
 	  }
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(303)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(298)))
 
 /***/ },
-/* 303 */
+/* 298 */
 /***/ function(module, exports) {
 
 	// shim for using process in browser
@@ -59629,7 +59226,7 @@
 
 
 /***/ },
-/* 304 */
+/* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports =
@@ -59869,7 +59466,7 @@
 	/***/ 38:
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(285);
+		module.exports = __webpack_require__(280);
 
 	/***/ },
 
@@ -59983,7 +59580,7 @@
 	/******/ });
 
 /***/ },
-/* 305 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports =
@@ -60042,7 +59639,7 @@
 	/***/ 38:
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(285);
+		module.exports = __webpack_require__(280);
 
 	/***/ },
 
@@ -60146,7 +59743,7 @@
 	/******/ });
 
 /***/ },
-/* 306 */
+/* 301 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -60172,7 +59769,7 @@
 	;
 
 /***/ },
-/* 307 */
+/* 302 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -60497,7 +60094,7 @@
 	})(undefined);
 
 /***/ },
-/* 308 */
+/* 303 */
 /***/ function(module, exports) {
 
 	module.exports =
@@ -60698,7 +60295,7 @@
 	/******/ });
 
 /***/ },
-/* 309 */
+/* 304 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -60711,15 +60308,15 @@
 
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
-	var _util = __webpack_require__(310);
+	var _util = __webpack_require__(305);
 
-	var _validator = __webpack_require__(311);
+	var _validator = __webpack_require__(306);
 
 	var _validator2 = _interopRequireDefault(_validator);
 
-	var _messages2 = __webpack_require__(333);
+	var _messages2 = __webpack_require__(328);
 
-	var _rule = __webpack_require__(313);
+	var _rule = __webpack_require__(308);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -60971,7 +60568,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 310 */
+/* 305 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -61181,35 +60778,35 @@
 	  }
 	  return target;
 	}
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(303)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(298)))
 
 /***/ },
-/* 311 */
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	module.exports = {
-	  string: __webpack_require__(312),
-	  method: __webpack_require__(320),
-	  number: __webpack_require__(321),
-	  "boolean": __webpack_require__(322),
-	  regexp: __webpack_require__(323),
-	  integer: __webpack_require__(324),
-	  "float": __webpack_require__(325),
-	  array: __webpack_require__(326),
-	  object: __webpack_require__(327),
-	  "enum": __webpack_require__(328),
-	  pattern: __webpack_require__(329),
-	  email: __webpack_require__(330),
-	  url: __webpack_require__(330),
-	  date: __webpack_require__(331),
-	  hex: __webpack_require__(330),
-	  required: __webpack_require__(332)
+	  string: __webpack_require__(307),
+	  method: __webpack_require__(315),
+	  number: __webpack_require__(316),
+	  "boolean": __webpack_require__(317),
+	  regexp: __webpack_require__(318),
+	  integer: __webpack_require__(319),
+	  "float": __webpack_require__(320),
+	  array: __webpack_require__(321),
+	  object: __webpack_require__(322),
+	  "enum": __webpack_require__(323),
+	  pattern: __webpack_require__(324),
+	  email: __webpack_require__(325),
+	  url: __webpack_require__(325),
+	  date: __webpack_require__(326),
+	  hex: __webpack_require__(325),
+	  required: __webpack_require__(327)
 	};
 
 /***/ },
-/* 312 */
+/* 307 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61218,11 +60815,11 @@
 	  value: true
 	});
 
-	var _rule = __webpack_require__(313);
+	var _rule = __webpack_require__(308);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
-	var _util = __webpack_require__(310);
+	var _util = __webpack_require__(305);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -61260,7 +60857,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 313 */
+/* 308 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61269,17 +60866,17 @@
 	  value: true
 	});
 	exports["default"] = {
-	  required: __webpack_require__(314),
-	  whitespace: __webpack_require__(315),
-	  type: __webpack_require__(316),
-	  range: __webpack_require__(317),
-	  "enum": __webpack_require__(318),
-	  pattern: __webpack_require__(319)
+	  required: __webpack_require__(309),
+	  whitespace: __webpack_require__(310),
+	  type: __webpack_require__(311),
+	  range: __webpack_require__(312),
+	  "enum": __webpack_require__(313),
+	  pattern: __webpack_require__(314)
 	};
 	module.exports = exports['default'];
 
 /***/ },
-/* 314 */
+/* 309 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61288,7 +60885,7 @@
 	  value: true
 	});
 
-	var _util = __webpack_require__(310);
+	var _util = __webpack_require__(305);
 
 	var util = _interopRequireWildcard(_util);
 
@@ -61315,7 +60912,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 315 */
+/* 310 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61324,7 +60921,7 @@
 	  value: true
 	});
 
-	var _util = __webpack_require__(310);
+	var _util = __webpack_require__(305);
 
 	var util = _interopRequireWildcard(_util);
 
@@ -61351,7 +60948,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 316 */
+/* 311 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61362,11 +60959,11 @@
 
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
-	var _util = __webpack_require__(310);
+	var _util = __webpack_require__(305);
 
 	var util = _interopRequireWildcard(_util);
 
-	var _required = __webpack_require__(314);
+	var _required = __webpack_require__(309);
 
 	var _required2 = _interopRequireDefault(_required);
 
@@ -61460,7 +61057,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 317 */
+/* 312 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61469,7 +61066,7 @@
 	  value: true
 	});
 
-	var _util = __webpack_require__(310);
+	var _util = __webpack_require__(305);
 
 	var util = _interopRequireWildcard(_util);
 
@@ -61528,7 +61125,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 318 */
+/* 313 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61537,7 +61134,7 @@
 	  value: true
 	});
 
-	var _util = __webpack_require__(310);
+	var _util = __webpack_require__(305);
 
 	var util = _interopRequireWildcard(_util);
 
@@ -61567,7 +61164,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 319 */
+/* 314 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61576,7 +61173,7 @@
 	  value: true
 	});
 
-	var _util = __webpack_require__(310);
+	var _util = __webpack_require__(305);
 
 	var util = _interopRequireWildcard(_util);
 
@@ -61605,7 +61202,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 320 */
+/* 315 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61614,11 +61211,11 @@
 	  value: true
 	});
 
-	var _rule = __webpack_require__(313);
+	var _rule = __webpack_require__(308);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
-	var _util = __webpack_require__(310);
+	var _util = __webpack_require__(305);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -61651,7 +61248,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 321 */
+/* 316 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61660,11 +61257,11 @@
 	  value: true
 	});
 
-	var _rule = __webpack_require__(313);
+	var _rule = __webpack_require__(308);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
-	var _util = __webpack_require__(310);
+	var _util = __webpack_require__(305);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -61698,7 +61295,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 322 */
+/* 317 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61707,9 +61304,9 @@
 	  value: true
 	});
 
-	var _util = __webpack_require__(310);
+	var _util = __webpack_require__(305);
 
-	var _rule = __webpack_require__(313);
+	var _rule = __webpack_require__(308);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
@@ -61744,7 +61341,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 323 */
+/* 318 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61753,11 +61350,11 @@
 	  value: true
 	});
 
-	var _rule = __webpack_require__(313);
+	var _rule = __webpack_require__(308);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
-	var _util = __webpack_require__(310);
+	var _util = __webpack_require__(305);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -61790,7 +61387,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 324 */
+/* 319 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61799,11 +61396,11 @@
 	  value: true
 	});
 
-	var _rule = __webpack_require__(313);
+	var _rule = __webpack_require__(308);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
-	var _util = __webpack_require__(310);
+	var _util = __webpack_require__(305);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -61837,7 +61434,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 325 */
+/* 320 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61846,11 +61443,11 @@
 	  value: true
 	});
 
-	var _rule = __webpack_require__(313);
+	var _rule = __webpack_require__(308);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
-	var _util = __webpack_require__(310);
+	var _util = __webpack_require__(305);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -61884,7 +61481,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 326 */
+/* 321 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61893,11 +61490,11 @@
 	  value: true
 	});
 
-	var _rule = __webpack_require__(313);
+	var _rule = __webpack_require__(308);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
-	var _util = __webpack_require__(310);
+	var _util = __webpack_require__(305);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -61931,7 +61528,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 327 */
+/* 322 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61940,11 +61537,11 @@
 	  value: true
 	});
 
-	var _rule = __webpack_require__(313);
+	var _rule = __webpack_require__(308);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
-	var _util = __webpack_require__(310);
+	var _util = __webpack_require__(305);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -61977,7 +61574,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 328 */
+/* 323 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -61986,11 +61583,11 @@
 	  value: true
 	});
 
-	var _rule = __webpack_require__(313);
+	var _rule = __webpack_require__(308);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
-	var _util = __webpack_require__(310);
+	var _util = __webpack_require__(305);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -62025,7 +61622,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 329 */
+/* 324 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -62034,11 +61631,11 @@
 	  value: true
 	});
 
-	var _rule = __webpack_require__(313);
+	var _rule = __webpack_require__(308);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
-	var _util = __webpack_require__(310);
+	var _util = __webpack_require__(305);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -62074,7 +61671,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 330 */
+/* 325 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -62083,11 +61680,11 @@
 	  value: true
 	});
 
-	var _rule = __webpack_require__(313);
+	var _rule = __webpack_require__(308);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
-	var _util = __webpack_require__(310);
+	var _util = __webpack_require__(305);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -62111,7 +61708,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 331 */
+/* 326 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -62120,11 +61717,11 @@
 	  value: true
 	});
 
-	var _rule = __webpack_require__(313);
+	var _rule = __webpack_require__(308);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
-	var _util = __webpack_require__(310);
+	var _util = __webpack_require__(305);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -62152,7 +61749,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 332 */
+/* 327 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -62163,7 +61760,7 @@
 
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
-	var _rule = __webpack_require__(313);
+	var _rule = __webpack_require__(308);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
@@ -62180,7 +61777,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 333 */
+/* 328 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -62247,7 +61844,7 @@
 	var messages = exports.messages = newMessages();
 
 /***/ },
-/* 334 */
+/* 329 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports =
@@ -62306,7 +61903,7 @@
 	/***/ 8:
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(284);
+		module.exports = __webpack_require__(279);
 
 	/***/ },
 
@@ -62593,7 +62190,7 @@
 	/***/ 115:
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(287);
+		module.exports = __webpack_require__(282);
 
 	/***/ },
 
@@ -62678,7 +62275,7 @@
 	/******/ });
 
 /***/ },
-/* 335 */
+/* 330 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports =
@@ -62737,7 +62334,7 @@
 	/***/ 53:
 	/***/ function(module, exports) {
 
-		module.exports = __webpack_require__(288);
+		module.exports = __webpack_require__(283);
 
 	/***/ },
 
@@ -62921,7 +62518,7 @@
 	/******/ });
 
 /***/ },
-/* 336 */
+/* 331 */
 /***/ function(module, exports) {
 
 	var SPECIAL_CHARS_REGEXP = /([\:\-\_]+(.))/g;
@@ -62997,7 +62594,7 @@
 	};
 
 /***/ },
-/* 337 */
+/* 332 */
 /***/ function(module, exports) {
 
 	module.exports =
@@ -63308,18 +62905,18 @@
 	/******/ });
 
 /***/ },
-/* 338 */
+/* 333 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 339 */,
-/* 340 */,
-/* 341 */,
-/* 342 */,
-/* 343 */,
-/* 344 */
+/* 334 */,
+/* 335 */,
+/* 336 */,
+/* 337 */,
+/* 338 */,
+/* 339 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -63370,19 +62967,19 @@
 	    }
 	};
 
-	__webpack_require__(345);
+	__webpack_require__(340);
 
 	//require('../css/ios.common.scss');
 
 /***/ },
-/* 345 */
+/* 340 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 346 */,
-/* 347 */
+/* 341 */,
+/* 342 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {"use strict";
@@ -63394,9 +62991,6 @@
 		if ($(".white_box")[0] && $("#app")[0] && $(".nav")[0] && $(".footer")[0] && $(".page")[0]) {
 			$(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
 			$(".page").height($(".white_box").height());
-		}
-		if ($(".warp-header")[0]) {
-			$(".white_box").height($("#app")[0].clientHeight - $(".warp-header")[0].clientHeight);
 		}
 	}
 
@@ -63412,7 +63006,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(115)))
 
 /***/ },
-/* 348 */
+/* 343 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -63440,31 +63034,31 @@
 	})(document, window);
 
 /***/ },
-/* 349 */
+/* 344 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
+/* 345 */,
+/* 346 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 347 */,
+/* 348 */,
+/* 349 */,
 /* 350 */,
-/* 351 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 352 */,
-/* 353 */,
-/* 354 */,
-/* 355 */,
-/* 356 */,
-/* 357 */
+/* 351 */,
+/* 352 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wgARCACCAJMDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAMEAQb/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAffgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAITNbnQAAAAAAADFj2RmNto2uwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/EAB4QAAMAAAcBAAAAAAAAAAAAAAECAwAEERITQHAx/9oACAEBAAEFAvDXcqeVgfo6FTpQWSzzUKnQvA2wmU4pzTYnhv8A/8QAFhEBAQEAAAAAAAAAAAAAAAAAEVAB/9oACAEDAQE/AZmrO//EABgRAAIDAAAAAAAAAAAAAAAAAAFQAhIx/9oACAECAQE/AVlpDF3/xAAiEAABAwMDBQAAAAAAAAAAAAABAAIREiExQGFwQVFxgcH/2gAIAQEABj8C4NAAF90AWZ7FW0LTsfips4+FAjrjQiH0+kQx8POXwqSZ34O//8QAHxABAAEEAwADAAAAAAAAAAAAAREAITFhQEFwUbHR/9oACAEBAAE/IfDUIILeGI1ukOrouLicRqhAVI4Tg66+6lxekNJlIHRltwSRYCOUzH5XUucmPgvamOTlWETLPh3/2gAMAwEAAgADAAAAEPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPvPPPPPPPPMvPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP/8QAGREAAgMBAAAAAAAAAAAAAAAAAVARITAx/9oACAEDAQE/EEU5CdOLv//EABoRAQACAwEAAAAAAAAAAAAAAAERUDAxQeH/2gAIAQIBAT8Qood4lAAjvld//8QAIBABAQABBAIDAQAAAAAAAAAAARExACFBUUBwYXGBsf/aAAgBAQABPxD0a71QWIIcLSJDUGN1Ubtw36HR5BVFE8FjEFdTGgHwUdGXFJ3v18aAxlQArInSz88Gf3wPJTJMNLlzCh1fo3r/ACF4ERvEwrM+jv/Z"
 
 /***/ },
-/* 358 */
+/* 353 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/gif;base64,R0lGODlhIAAgALMAAP///7Ozs/v7+9bW1uHh4fLy8rq6uoGBgTQ0NAEBARsbG8TExJeXl/39/VRUVAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFBQAAACwAAAAAIAAgAAAE5xDISSlLrOrNp0pKNRCdFhxVolJLEJQUoSgOpSYT4RowNSsvyW1icA16k8MMMRkCBjskBTFDAZyuAEkqCfxIQ2hgQRFvAQEEIjNxVDW6XNE4YagRjuBCwe60smQUDnd4Rz1ZAQZnFAGDd0hihh12CEE9kjAEVlycXIg7BAsMB6SlnJ87paqbSKiKoqusnbMdmDC2tXQlkUhziYtyWTxIfy6BE8WJt5YEvpJivxNaGmLHT0VnOgGYf0dZXS7APdpB309RnHOG5gDqXGLDaC457D1zZ/V/nmOM82XiHQjYKhKP1oZmADdEAAAh+QQFBQAAACwAAAAAGAAXAAAEchDISasKNeuJFKoHs4mUYlJIkmjIV54Soypsa0wmLSnqoTEtBw52mG0AjhYpBxioEqRNy8V0qFzNw+GGwlJki4lBqx1IBgjMkRIghwjrzcDti2/Gh7D9qN774wQGAYOEfwCChIV/gYmDho+QkZKTR3p7EQAh+QQFBQAAACwBAAAAHQAOAAAEchDISWdANesNHHJZwE2DUSEo5SjKKB2HOKGYFLD1CB/DnEoIlkti2PlyuKGEATMBaAACSyGbEDYD4zN1YIEmh0SCQQgYehNmTNNaKsQJXmBuuEYPi9ECAU/UFnNzeUp9VBQEBoFOLmFxWHNoQw6RWEocEQAh+QQFBQAAACwHAAAAGQARAAAEaRDICdZZNOvNDsvfBhBDdpwZgohBgE3nQaki0AYEjEqOGmqDlkEnAzBUjhrA0CoBYhLVSkm4SaAAWkahCFAWTU0A4RxzFWJnzXFWJJWb9pTihRu5dvghl+/7NQmBggo/fYKHCX8AiAmEEQAh+QQFBQAAACwOAAAAEgAYAAAEZXCwAaq9ODAMDOUAI17McYDhWA3mCYpb1RooXBktmsbt944BU6zCQCBQiwPB4jAihiCK86irTB20qvWp7Xq/FYV4TNWNz4oqWoEIgL0HX/eQSLi69boCikTkE2VVDAp5d1p0CW4RACH5BAUFAAAALA4AAAASAB4AAASAkBgCqr3YBIMXvkEIMsxXhcFFpiZqBaTXisBClibgAnd+ijYGq2I4HAamwXBgNHJ8BEbzgPNNjz7LwpnFDLvgLGJMdnw/5DRCrHaE3xbKm6FQwOt1xDnpwCvcJgcJMgEIeCYOCQlrF4YmBIoJVV2CCXZvCooHbwGRcAiKcmFUJhEAIfkEBQUAAAAsDwABABEAHwAABHsQyAkGoRivELInnOFlBjeM1BCiFBdcbMUtKQdTN0CUJru5NJQrYMh5VIFTTKJcOj2HqJQRhEqvqGuU+uw6AwgEwxkOO55lxIihoDjKY8pBoThPxmpAYi+hKzoeewkTdHkZghMIdCOIhIuHfBMOjxiNLR4KCW1ODAlxSxEAIfkEBQUAAAAsCAAOABgAEgAABGwQyEkrCDgbYvvMoOF5ILaNaIoGKroch9hacD3MFMHUBzMHiBtgwJMBFolDB4GoGGBCACKRcAAUWAmzOWJQExysQsJgWj0KqvKalTiYPhp1LBFTtp10Is6mT5gdVFx1bRN8FTsVCAqDOB9+KhEAIfkEBQUAAAAsAgASAB0ADgAABHgQyEmrBePS4bQdQZBdR5IcHmWEgUFQgWKaKbWwwSIhc4LonsXhBSCsQoOSScGQDJiWwOHQnAxWBIYJNXEoFCiEWDI9jCzESey7GwMM5doEwW4jJoypQQ743u1WcTV0CgFzbhJ5XClfHYd/EwZnHoYVDgiOfHKQNREAIfkEBQUAAAAsAAAPABkAEQAABGeQqUQruDjrW3vaYCZ5X2ie6EkcKaooTAsi7ytnTq046BBsNcTvItz4AotMwKZBIC6H6CVAJaCcT0CUBTgaTg5nTCu9GKiDEMPJg5YBBOpwlnVzLwtqyKnZagZWahoMB2M3GgsHSRsRACH5BAUFAAAALAEACAARABgAAARcMKR0gL34npkUyyCAcAmyhBijkGi2UW02VHFt33iu7yiDIDaD4/erEYGDlu/nuBAOJ9Dvc2EcDgFAYIuaXS3bbOh6MIC5IAP5Eh5fk2exC4tpgwZyiyFgvhEMBBEAIfkEBQUAAAAsAAACAA4AHQAABHMQyAnYoViSlFDGXBJ808Ep5KRwV8qEg+pRCOeoioKMwJK0Ekcu54h9AoghKgXIMZgAApQZcCCu2Ax2O6NUud2pmJcyHA4L0uDM/ljYDCnGfGakJQE5YH0wUBYBAUYfBIFkHwaBgxkDgX5lgXpHAXcpBIsRADs="

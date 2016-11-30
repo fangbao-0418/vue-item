@@ -15,14 +15,14 @@
 	    <!-- nav -->
 	      <div class="nav-ifo">
 			<div class="nav">
-			  <div class="left nav-box">
+			  <router-link  class="left nav-box"  :to="{name:'collect'}" tag="div">
 			     <div class="nav-tu left-nav-tu">
                    <img src="../imgs/nav1.gif"/>
 			     </div>
 			     <div class="nav-ti left-nav-tu">
 			     	<span>收藏</span>
 			     </div>
-			  </div>
+			  </router-link >
 			  <div class="mide nav-box" @click="setlight">
 			     <div class=nav-tu>
 			       <img src="../imgs/nav2.gif"/>
@@ -31,26 +31,26 @@
                     <span>夜间</span>
 			     </div>
 			  </div>
-			  <div class="right nav-box">
+			  <router-link class="right nav-box"  :to="{name:'mySetting'}" tag="div">
 			     <div class="nav-tu">
                       	<img src="../imgs/nav3.gif"/>
 			     </div>
-			     <div class="nav-ti">
+			     <div class="nav-ti" >
                      <span>设置</span>
 			     </div>
-			  </div>
+			  </router-link>
 			</div>
 	      </div>		
 	     <!-- /nav -->
 	     <!-- detal-->
 	     <div class="detal">
-            <div class="jf detal-box">
-                <span>我的积分</span>
+            <router-link class="jf detal-box" :to="{name:'integral'}" tag="div">
+                <span>我的成长值</span>
                 <div class="jt">
                    <i class="iconfont">&#xe604;</i>
                 </div>
-            </div>
-	        <div class="vip detal-box">
+            </router-link>
+	        <div class="vip detal-box" @click="error">
                 <span>升级VIP</span>
 	        </div>
 	        <div class="zh detal-box"  @click="loginout">
@@ -75,6 +75,7 @@
 </template>
 <script>
 	import footer from './footer.vue';
+	import { Toast } from 'mint-ui';
 	export default {
 		components:{
 			'my-footer':footer
@@ -92,6 +93,13 @@
 					localStorage.currentlight = "black";
 					$('.app-shade').css({"width":'6.4rem',"height":'100%',"background-color":"rgba(0,0,0,0.5)"});	
 				}				
+			},
+			error(){
+				Toast({
+				  message: 'sorry,该功能暂未开放',
+				  position: 'bottom',
+				  duration: 5000
+				});
 			}
 		}
 	}

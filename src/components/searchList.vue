@@ -1,11 +1,12 @@
 <template>
 	<div>
 		<my-nav theme="white" :title="q"></my-nav>	
-		<home-shell :loading="loading" :type="type">
+		<home-shell v-if="!noData" :loading="loading" :type="type">
 			 <div slot="content" v-if="!loading">
 			 	<component :items="items.list" :is="currentView"></component>
 			 </div>
 		</home-shell>
+		<no-data v-else></no-data>
 	</div>
 </template>
 <script>
@@ -13,6 +14,7 @@
 	import homeShell from './homeShell';
 	import searchArticleItem from './searchArticleItem';
 	import searchInvestItem from './searchInvestItem';
+	import noData from './noData';
 	export default {		
 		data(){
 			return {
@@ -23,6 +25,7 @@
 				'currentView':searchInvestItem,
 				'items':null,
 				type:0,
+				'noData':false,
 			}
 		},
 		computed:{
@@ -47,6 +50,7 @@
 		components:{
 			'my-nav':blackNav,
 			'home-shell':homeShell,
+			'no-data':noData,
 		},
 		methods:{
 			dSubstr(title,length){
@@ -73,7 +77,11 @@
                 var option = {params:{page:this.page,kw:this.$route.query.q}};
                 this.$http.get(url,option).then(
                         (res)=>{
-                        	console.log(res);
+                       	
+                       	if(res.body.count == 0){
+                       		this.noData = true;
+                       	}
+
                         if(_this.page == 1){
                             _this.items = res.body;
                             _this.loading = false;
@@ -85,11 +93,10 @@
                         }
                         if(_this.page > 1 && _this.page <= Math.ceil(res.body.count/20)){
 
-
-                                for(var i=0;i<res.body.list.length;i++){
-                                    _this.items.list.push(res.body.list[i]);
-                                }
-						console.log(_this.items.list);
+                            for(var i=0;i<res.body.list.length;i++){
+                                _this.items.list.push(res.body.list[i]);
+                            }
+						 
                             _this.loading = false;
                              if(finshCallback){
                                  finshCallback()

@@ -8,7 +8,7 @@
                 </div>
             </div>
         </div>
-        <report :isshow="isshow"></report>
+        <report :moduleid="moduleid" :itemid="itemid" :isshow="isshow"></report>
     </div>
 </template>
 <script>

@@ -4,7 +4,7 @@
     <div class="content">
     <my-header ></my-header>
  
-        <component :is="currentView" :catid="catid" keep-alive>
+        <component :is="currentView" :catid="catid">
             <!-- 组件在 vm.currentview 变化时改变 -->
         </component>
   

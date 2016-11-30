@@ -16,13 +16,15 @@ require("./js/reset.js");					  //全局加载重置js
 require('./css/reset.css');					  //全局加载重置css
 require('./css/common.css');
 
+import MintUI from 'mint-ui';
+import 'mint-ui/lib/style.css';
+
 //Vue.use('./server.js');
 Vue.use(VueRouter);
 Vue.use(VueResource);   //加载Resource
 Vue.use(ElementUI);
 
-
-
+Vue.use(MintUI)
 
 
 Vue.use(VueLazyload, {

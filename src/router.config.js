@@ -12,8 +12,10 @@ import healthDetail from './components/healthDetail.vue';
 import login from './components/login.vue';
 import register from './components/register.vue';
 import search from './components/search.vue';
+import mySetting from './components/mySetting';
 
-
+import collect from './components/collect';//收藏
+import integral from './components/integral';//积分成长值
 
  
 import auth from './auth.js';
@@ -48,6 +50,9 @@ export default {
 		{ path: '/',  redirect: '/home'},
 		{ path: '/video', component: Video },
 		{ name: 'my', path: '/my', component: My , beforeEnter: requireAuth },
+		{ name: 'mySetting', path: '/mySetting', component: mySetting, beforeEnter: requireAuth},
+		{ name: 'collect', path: '/collect', component: collect, beforeEnter: requireAuth},
+		{ name: 'integral', path: '/integral', component: integral, beforeEnter: requireAuth},
 		{ path : '/login' , component: login},
 		{ path : '/register' , component: register},
 		{ path : '/search' , component : search},

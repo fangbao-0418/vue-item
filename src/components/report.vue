@@ -11,16 +11,20 @@
 						     <i  v-if="item.checked" class="iconfont">&#xe670;</i>
 						</li>
 					</ul>
-				    <div class="report">
-						<el-button type="primary">提交</el-button>
+				    <div class="report" @click="submit">
+						<el-button type="primary" :disabled="disabled">提交</el-button>
 					</div>
 			</div>
 		</div>
 	</div>
 </template>
 <script>
+
+	import { Toast } from 'mint-ui';
+	
+
 	export default {
-		props:['isshow'],
+		props:['isshow','moduleid','itemid'],
 		data(){
 			return {
 				items:[
@@ -41,7 +45,7 @@
 						"title":"标题夸张",
 						"checked":false
 					},{
-						"title":"已举报与事实不符",
+						"title":"与事实不符",
 						"checked":false
 					},{
 						"title":"疑似抄袭",
@@ -54,6 +58,17 @@
 			};
 
 		},
+		computed:{
+			disabled(){
+				let disabled = true;
+				for(var i = 0; i < this.items.length; i ++){
+					if(this.items[i].checked){
+						return false;
+					}
+				}
+				return disabled;
+			}
+		},
 		mounted(){
 			 
 			
@@ -65,6 +80,30 @@
 			cancel(){
 				this.$parent.isshow = false;
 			},
+			submit(){
+				var str = "";
+				for(var i = 0; i < this.items.length; i++){
+					if(this.items[i].checked){
+						if(str){
+								str += "," + this.items[i].title;
+						}else{
+								str = this.items[i].title;
+						}	
+
+					}
+				}
+				
+				if(str){
+					this.sendContent(str);
+				}
+			},
+			sendContent(str){				 
+				var url = "http://www.ey99.com/api/mobile/report.php";
+				var option = {params:{moduleid:this.moduleid,itemid:this.itemid,content:str},emulateJSON:true};
+				this.$http.post(url,[],option)
+				this.$parent.isshow = false;
+				Toast('举报成功');
+			}
 		}
 	}
 </script>
@@ -108,8 +147,8 @@
 				min-height: 2rem;
 			}
 			li{
-				padding:.15rem 0;
-				border-bottom: 1px solid #e8e8e8;
+				padding:.2rem 0;
+				border-bottom: 1px solid #efefef;
 			}
 			.gray{
 				color:gray;

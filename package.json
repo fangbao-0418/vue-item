@@ -7,10 +7,10 @@
     "start": "webpack-dev-server --port 8088 --inline --hot --compress"
   },
   "dependencies": {
-    "element-ui": "^1.0.0",
-    "iview": "^0.9.8",
+    "element-ui": "^1.0.0",  
+    "mint-ui": "^2.0.4",
     "scss": "^0.2.4",
-    "vue": "^2.0.0",
+    "vue": "^2.0.5",
     "vue-bulma-slider": "^1.0.0",
     "vue-lazyload": "^0.9.0",
     "vue-router": "^2.0.0",

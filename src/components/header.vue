@@ -19,10 +19,10 @@
                         <li v-on:click="selectType('drug',4)" :class="{'cur':isCur[1]}">药品 </li>
                         <li v-on:click="selectType('zyc',11)" :class="{'cur':isCur[2]}">中药材</li>
                         <li v-on:click="selectType('bjsp',5)" :class="{'cur':isCur[3]}">保健食品</li>
-                        <li  v-on:click="selectType('ylqx',13)" :class="{'cur':isCur[4]}">医疗器械 </li>
-                        <li  v-on:click="selectType('mrhf',20)" :class="{'cur':isCur[5]}">美容护肤 </li>
-                        <li  v-on:click="selectType('jsyp',18)" :class="{'cur':isCur[6]}">计生用品 </li>
-                        <li  v-on:click="selectType('zysb',15)" :class="{'cur':isCur[7]}">制药设备 </li>
+                        <li v-on:click="selectType('ylqx',13)" :class="{'cur':isCur[4]}">医疗器械 </li>
+                        <li v-on:click="selectType('mrhf',20)" :class="{'cur':isCur[5]}">美容护肤 </li>
+                        <li v-on:click="selectType('jsyp',18)" :class="{'cur':isCur[6]}">计生用品 </li>
+                        <li v-on:click="selectType('zysb',15)" :class="{'cur':isCur[7]}">制药设备 </li>
                         <li v-on:click="selectType('yly',7)" :class="{'cur':isCur[8]}">原料药 </li>
                         <li v-on:click="selectType('health')" :class="{'cur':isCur[9]}">健康 </li>
                     </ul>

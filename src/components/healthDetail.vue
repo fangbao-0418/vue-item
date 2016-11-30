@@ -30,7 +30,7 @@
 
              
             <!-- footer -->
-            <detail-footer moduleid="22" :itemid="item.itemid"></detail-footer>
+            <detail-footer moduleid="21" :itemid="item.itemid"></detail-footer>
 
 
         </div>

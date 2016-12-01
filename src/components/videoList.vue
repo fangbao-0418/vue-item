@@ -2,19 +2,49 @@
 	<div class="videoList">
  
 
-
-		<div v-for="item in items" class="videoItem">
+		<div class="videoItem">
 			<div class="videoarea">
-				<vplayer :source="item.source" ref="vplayer"></vplayer>				
+				<vplayer :source="source" ref="vplayer"></vplayer>				
 			</div>
-			<span class="title">{{item.title}}</span>
-			<!-- <div class="note">
+			<span class="title">小男孩无意间偷拿了超市巧克力。。。</span>
+			<div class="note">
 				<span class="author">当代医药市场网</span>
 				<span class="hits"> <i class="iconfont">&#xf0048;</i> 188</span>
-			</div>		 -->
+			</div>		
 		</div>
 
-		 
+		<div class="videoItem">
+			<div class="videoarea">
+				<vplayer :source="source" ref="vplayer"></vplayer>				
+			</div>
+			<span class="title">小男孩无意间偷拿了超市巧克力。。。</span>
+			<div class="note">
+				<span class="author">当代医药市场网</span>
+				<span class="hits"> <i class="iconfont">&#xf0048;</i> 188</span>
+			</div>		
+		</div>
+
+		<div class="videoItem">
+			<div class="videoarea">
+				<vplayer :source="source" ref="vplayer"></vplayer>				
+			</div>
+			<span class="title">小男孩无意间偷拿了超市巧克力。。。</span>
+			<div class="note">
+				<span class="author">当代医药市场网</span>
+				<span class="hits"> <i class="iconfont">&#xf0048;</i> 188</span>
+			</div>		
+		</div>
+
+		<div class="videoItem">
+			<div class="videoarea">
+				<vplayer :source="source" ref="vplayer"></vplayer>				
+			</div>
+			<span class="title">小男孩无意间偷拿了超市巧克力。。。</span>
+			<div class="note">
+				<span class="author">当代医药市场网</span>
+				<span class="hits"> <i class="iconfont">&#xf0048;</i> 188</span>
+			</div>		
+		</div> 
 		 
 	</div>
 </template>
@@ -23,16 +53,14 @@
 	export default {
 		data () {
 		  return {
-     	 		items:[
-     	 			{
-     	 				source : 
-		                    {
-		                        src : 'http://www.runoob.com/try/demo_source/movie.mp4',
-		                      	thumb: 'http://www.ey99.com/file/upload/201611/29/095833211.gif'
-		                    },
-		                title:"习大大访问你"
-     	 			}					
-     	 		]
+     	 
+ source : [
+                    {
+                        src : 'http://www.runoob.com/try/demo_source/movie.mp4',
+                        type : 'video/mp4'
+                    }
+                ]
+
 			 
 
 		  	}
@@ -58,9 +86,8 @@
 	.videoItem{
 		margin-top:.2rem;
 		width:5.8rem;
-		padding:.2rem .3rem;
+		padding:0px .3rem;
 		border-bottom:.2rem #efefef solid;
-		background: #FFF;
 		.videoarea{
 			position:relative;
 			width:5.8rem;

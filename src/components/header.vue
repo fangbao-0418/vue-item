@@ -28,8 +28,8 @@
                     </ul>
                 </div>
             </div>
-           <!--  <i class="line_a"></i>
-            <i class="plus_a"></i> -->
+            <i class="line_a"></i>
+            <i class="plus_a"></i>
         </div>
 
     </div>
@@ -199,7 +199,7 @@
         margin-left:-.3rem;
         padding-left:.1rem;
         height: .6rem;
-        width: 6rem;
+        width: 5.4rem;
         overflow: hidden;
     }
 

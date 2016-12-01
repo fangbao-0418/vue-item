@@ -113,6 +113,7 @@
 
 	var _router2 = _interopRequireDefault(_router);
 
+<<<<<<< HEAD
 	var _vueLazyload = __webpack_require__(330);
 
 	var _vueLazyload2 = _interopRequireDefault(_vueLazyload);
@@ -139,6 +140,28 @@
 	__webpack_require__(397); //全局加载重置js
 	__webpack_require__(398); //全局加载重置css
 	__webpack_require__(400);
+=======
+	var _vueLazyload = __webpack_require__(276);
+
+	var _vueLazyload2 = _interopRequireDefault(_vueLazyload);
+
+	var _elementUi = __webpack_require__(277);
+
+	var _elementUi2 = _interopRequireDefault(_elementUi);
+
+	__webpack_require__(333);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	__webpack_require__(339); //路由配置文件
+
+	// for Vue 2.0
+
+	__webpack_require__(342);
+	__webpack_require__(343); //全局加载重置js
+	__webpack_require__(344); //全局加载重置css
+	__webpack_require__(346);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	//Vue.use('./server.js');
 	_vue2.default.use(_vueRouter2.default);
@@ -148,8 +171,13 @@
 	_vue2.default.use(_mintUi2.default);
 
 	_vue2.default.use(_vueLazyload2.default, {
+<<<<<<< HEAD
 	    error: __webpack_require__(406),
 	    loading: __webpack_require__(407),
+=======
+	    error: __webpack_require__(352),
+	    loading: __webpack_require__(353),
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	    try: 3 // default 1
 	});
 
@@ -11389,6 +11417,7 @@
 
 	var _search2 = _interopRequireDefault(_search);
 
+<<<<<<< HEAD
 	var _mySetting = __webpack_require__(269);
 
 	var _mySetting2 = _interopRequireDefault(_mySetting);
@@ -11402,6 +11431,9 @@
 	var _integral2 = _interopRequireDefault(_integral);
 
 	var _auth = __webpack_require__(286);
+=======
+	var _auth = __webpack_require__(229);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	var _auth2 = _interopRequireDefault(_auth);
 
@@ -11409,10 +11441,15 @@
 
 	//import Home from './components/home.vue';
 	var Home = function Home(resolve) {
+<<<<<<< HEAD
 		return __webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(303)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this));
 	}; //收藏
 	//积分成长值
 
+=======
+		return __webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(246)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this));
+	};
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	function requireAuth(to, from, next) {
 		_auth2.default.loggedIn().then(function (data) {
@@ -14234,13 +14271,21 @@
 /* 104 */
 /***/ function(module, exports) {
 
+<<<<<<< HEAD
 	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  <div id=\"vue-video\" ref=\"box\" _v-3eea50e5=\"\">\n      <div class=\"v-mask\" ref=\"mask\" @click=\"play\" @dblclick=\"screen\" @mousemove=\"tool\" _v-3eea50e5=\"\">\n          <video preload=\"auto\" ref=\"video\" _v-3eea50e5=\"\">\n              <source :src=\"source.src\" :type=\"source.type\" _v-3eea50e5=\"\">\n          </video>\n          <div class=\"v-load\" ref=\"load\" _v-3eea50e5=\"\">\n\n<div class=\"imgarea\" _v-3eea50e5=\"\">\n              <img :src=\"source.thumb\" _v-3eea50e5=\"\">\n              <i _v-3eea50e5=\"\"></i>\n          </div>\n          </div>\n          <div class=\"v-waiting\" ref=\"waiting\" _v-3eea50e5=\"\"></div>\n      </div>\n      <transition name=\"fade\" _v-3eea50e5=\"\">\n          <div v-show=\"ctrl.show\" :class=\"[ 'v-tool', ctrl.isFull ? 'v-tool-full' : '' ]\" _v-3eea50e5=\"\">\n              <button :class=\"[ ctrl.playing ? 'v-btn-playing' : 'v-btn-paused' ]\" @click=\"play\" _v-3eea50e5=\"\"></button>\n              <div class=\"v-progress-bar\" _v-3eea50e5=\"\">\n                  <div class=\"v-range\" @click=\"jump\" _v-3eea50e5=\"\">\n                      <span class=\"v-loading\" :style=\"{ width : datas.loading + '%' }\" _v-3eea50e5=\"\"></span>\n                      <span class=\"v-current\" :style=\"{ width : datas.playing + '%' }\" _v-3eea50e5=\"\">\n                      <em class=\"v-dot\" _v-3eea50e5=\"\"></em>\n                  </span>\n                  </div>\n              </div>\n              <div class=\"v-tool-time\" _v-3eea50e5=\"\">\n                  <span _v-3eea50e5=\"\">{{ time.cur }}</span>/<span _v-3eea50e5=\"\">{{ time.all }}</span>\n              </div>\n              <button :class=\"[ 'v-btn-voice', ctrl.isMuted ? 'v-btn-silent' : 'v-btn-volume' ]\" @click=\"muted\" _v-3eea50e5=\"\"></button>\n              <div class=\"v-voice-bar\" _v-3eea50e5=\"\">\n                  <div class=\"v-range\" @click=\"volume\" _v-3eea50e5=\"\">\n                  <span class=\"v-current\" :style=\"{ height : voice + '%' }\" _v-3eea50e5=\"\">\n                      <em class=\"v-dot\" _v-3eea50e5=\"\"></em>\n                  </span>\n                  </div>\n              </div>\n              <button class=\"v-screen\" @click=\"screen\" _v-3eea50e5=\"\"></button>\n          </div>\n      </transition>\n  </div>\n";
+=======
+	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  <div id=\"vue-video\" ref=\"box\" _v-3eea50e5=\"\">\n      <div class=\"v-mask\" ref=\"mask\" @click=\"play\" @dblclick=\"screen\" @mousemove=\"tool\" _v-3eea50e5=\"\">\n          <video preload=\"auto\" ref=\"video\" _v-3eea50e5=\"\">\n              <source v-for=\"data in source\" :src=\"data.src\" :type=\"data.type\" _v-3eea50e5=\"\">\n          </video>\n          <div class=\"v-load\" ref=\"load\" _v-3eea50e5=\"\">\n\n<div class=\"imgarea\" _v-3eea50e5=\"\">\n              <img src=\"" + __webpack_require__(105) + "\" _v-3eea50e5=\"\">\n              <i _v-3eea50e5=\"\"></i>\n          </div>\n          </div>\n          <div class=\"v-waiting\" ref=\"waiting\" _v-3eea50e5=\"\"></div>\n      </div>\n      <transition name=\"fade\" _v-3eea50e5=\"\">\n          <div v-show=\"ctrl.show\" :class=\"[ 'v-tool', ctrl.isFull ? 'v-tool-full' : '' ]\" _v-3eea50e5=\"\">\n              <button :class=\"[ ctrl.playing ? 'v-btn-playing' : 'v-btn-paused' ]\" @click=\"play\" _v-3eea50e5=\"\"></button>\n              <div class=\"v-progress-bar\" _v-3eea50e5=\"\">\n                  <div class=\"v-range\" @click=\"jump\" _v-3eea50e5=\"\">\n                      <span class=\"v-loading\" :style=\"{ width : datas.loading + '%' }\" _v-3eea50e5=\"\"></span>\n                      <span class=\"v-current\" :style=\"{ width : datas.playing + '%' }\" _v-3eea50e5=\"\">\n                      <em class=\"v-dot\" _v-3eea50e5=\"\"></em>\n                  </span>\n                  </div>\n              </div>\n              <div class=\"v-tool-time\" _v-3eea50e5=\"\">\n                  <span _v-3eea50e5=\"\">{{ time.cur }}</span>/<span _v-3eea50e5=\"\">{{ time.all }}</span>\n              </div>\n              <button :class=\"[ 'v-btn-voice', ctrl.isMuted ? 'v-btn-silent' : 'v-btn-volume' ]\" @click=\"muted\" _v-3eea50e5=\"\"></button>\n              <div class=\"v-voice-bar\" _v-3eea50e5=\"\">\n                  <div class=\"v-range\" @click=\"volume\" _v-3eea50e5=\"\">\n                  <span class=\"v-current\" :style=\"{ height : voice + '%' }\" _v-3eea50e5=\"\">\n                      <em class=\"v-dot\" _v-3eea50e5=\"\"></em>\n                  </span>\n                  </div>\n              </div>\n              <button class=\"v-screen\" @click=\"screen\" _v-3eea50e5=\"\"></button>\n          </div>\n      </transition>\n  </div>\n";
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 /***/ },
 /* 105 */
 /***/ function(module, exports) {
 
+<<<<<<< HEAD
 	module.exports = "\n<div class=\"videoList\" _v-80a05ea4=\"\">\n\n\n\n\t<div v-for=\"item in items\" class=\"videoItem\" _v-80a05ea4=\"\">\n\t\t<div class=\"videoarea\" _v-80a05ea4=\"\">\n\t\t\t<vplayer :source=\"item.source\" ref=\"vplayer\" _v-80a05ea4=\"\"></vplayer>\t\t\t\t\n\t\t</div>\n\t\t<span class=\"title\" _v-80a05ea4=\"\">{{item.title}}</span>\n\t\t<!-- <div class=\"note\">\n\t\t\t<span class=\"author\">当代医药市场网</span>\n\t\t\t<span class=\"hits\"> <i class=\"iconfont\">&#xf0048;</i> 188</span>\n\t\t</div>\t\t -->\n\t</div>\n\n\t \n\t \n</div>\n";
+=======
+	module.exports = "\n<div class=\"videoList\" _v-80a05ea4=\"\">\n\n\n\t<div class=\"videoItem\" _v-80a05ea4=\"\">\n\t\t<div class=\"videoarea\" _v-80a05ea4=\"\">\n\t\t\t<vplayer :source=\"source\" ref=\"vplayer\" _v-80a05ea4=\"\"></vplayer>\t\t\t\t\n\t\t</div>\n\t\t<span class=\"title\" _v-80a05ea4=\"\">小男孩无意间偷拿了超市巧克力。。。</span>\n\t\t<div class=\"note\" _v-80a05ea4=\"\">\n\t\t\t<span class=\"author\" _v-80a05ea4=\"\">当代医药市场网</span>\n\t\t\t<span class=\"hits\" _v-80a05ea4=\"\"> <i class=\"iconfont\" _v-80a05ea4=\"\">󰁈</i> 188</span>\n\t\t</div>\t\t\n\t</div>\n\n\t<div class=\"videoItem\" _v-80a05ea4=\"\">\n\t\t<div class=\"videoarea\" _v-80a05ea4=\"\">\n\t\t\t<vplayer :source=\"source\" ref=\"vplayer\" _v-80a05ea4=\"\"></vplayer>\t\t\t\t\n\t\t</div>\n\t\t<span class=\"title\" _v-80a05ea4=\"\">小男孩无意间偷拿了超市巧克力。。。</span>\n\t\t<div class=\"note\" _v-80a05ea4=\"\">\n\t\t\t<span class=\"author\" _v-80a05ea4=\"\">当代医药市场网</span>\n\t\t\t<span class=\"hits\" _v-80a05ea4=\"\"> <i class=\"iconfont\" _v-80a05ea4=\"\">󰁈</i> 188</span>\n\t\t</div>\t\t\n\t</div>\n\n\t<div class=\"videoItem\" _v-80a05ea4=\"\">\n\t\t<div class=\"videoarea\" _v-80a05ea4=\"\">\n\t\t\t<vplayer :source=\"source\" ref=\"vplayer\" _v-80a05ea4=\"\"></vplayer>\t\t\t\t\n\t\t</div>\n\t\t<span class=\"title\" _v-80a05ea4=\"\">小男孩无意间偷拿了超市巧克力。。。</span>\n\t\t<div class=\"note\" _v-80a05ea4=\"\">\n\t\t\t<span class=\"author\" _v-80a05ea4=\"\">当代医药市场网</span>\n\t\t\t<span class=\"hits\" _v-80a05ea4=\"\"> <i class=\"iconfont\" _v-80a05ea4=\"\">󰁈</i> 188</span>\n\t\t</div>\t\t\n\t</div>\n\n\t<div class=\"videoItem\" _v-80a05ea4=\"\">\n\t\t<div class=\"videoarea\" _v-80a05ea4=\"\">\n\t\t\t<vplayer :source=\"source\" ref=\"vplayer\" _v-80a05ea4=\"\"></vplayer>\t\t\t\t\n\t\t</div>\n\t\t<span class=\"title\" _v-80a05ea4=\"\">小男孩无意间偷拿了超市巧克力。。。</span>\n\t\t<div class=\"note\" _v-80a05ea4=\"\">\n\t\t\t<span class=\"author\" _v-80a05ea4=\"\">当代医药市场网</span>\n\t\t\t<span class=\"hits\" _v-80a05ea4=\"\"> <i class=\"iconfont\" _v-80a05ea4=\"\">󰁈</i> 188</span>\n\t\t</div>\t\t\n\t</div> \n\t \n</div>\n";
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 /***/ },
 /* 106 */
@@ -26906,6 +26951,7 @@
 /* 116 */
 /***/ function(module, exports) {
 
+<<<<<<< HEAD
 	module.exports = "\n\n\n<div class=\"box\" _v-3210351d=\"\">\n    <div class=\"top\" _v-3210351d=\"\">\n        <div class=\"wrap\" _v-3210351d=\"\">\n            <i class=\"logo\" _v-3210351d=\"\"></i>\n            <div class=\"search_bg\" _v-3210351d=\"\">\n                <i _v-3210351d=\"\">当代医药市场网</i>\n            </div>\n        </div>\n\n    </div>\n    \n\n</div>\n";
 
 /***/ },
@@ -26942,11 +26988,15 @@
 	    hotAPI.update(id, module.exports, __vue_template__)
 	  }
 	})()}
+=======
+	module.exports = "\n\n\n<div class=\"box\" _v-3210351d=\"\">\n    <div class=\"top\" _v-3210351d=\"\">\n        <div class=\"wrap\" _v-3210351d=\"\">\n            <i class=\"logo\" _v-3210351d=\"\"></i>\n            <div class=\"search_bg\" _v-3210351d=\"\">\n                <i _v-3210351d=\"\">当代医药市场网</i>\n            </div>\n        </div>\n\n    </div>\n    <div class=\"nav\" _v-3210351d=\"\">\n        <div id=\"nav-smartSetup\" _v-3210351d=\"\">\n            <div id=\"scroller\" _v-3210351d=\"\">\n                <ul _v-3210351d=\"\">\n                    <li :class=\"{'cur':isCur[0]}\" _v-3210351d=\"\">推荐</li>\n                    <li _v-3210351d=\"\">全部</li>\n                     <li _v-3210351d=\"\">展会</li>\n                </ul>\n            </div>\n        </div>\n      \n    </div>\n\n</div>\n";
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 /***/ },
 /* 118 */
 /***/ function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -27056,6 +27106,9 @@
 
 	//上拉下拉组件 pull-to-refresh 必须给该组件 定高度 class="page" 可改变className
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(114)))
+=======
+	module.exports = "\n\n\n<div class=\"white-box\" _v-15ca26f0=\"\">\n   <my-header _v-15ca26f0=\"\"></my-header>\n   \n         <video-list _v-15ca26f0=\"\"></video-list>\n       \n   <my-footer _v-15ca26f0=\"\"></my-footer>   \n</div>\n";
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 /***/ },
 /* 119 */
@@ -27085,7 +27138,11 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
+<<<<<<< HEAD
 	  var id = "_v-8256701e/loading.vue"
+=======
+	  var id = "_v-1d4e3a07/my.vue"
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -27191,6 +27248,33 @@
 
 /***/ },
 /* 124 */
+<<<<<<< HEAD
+=======
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "\n\t<div class=\"my-main\" _v-1d4e3a07=\"\">\n\t\t<!-- header -->\n\t    <div class=\"header\" _v-1d4e3a07=\"\">\n\t       <div class=\"header-logo\" _v-1d4e3a07=\"\">\n\t         <a _v-1d4e3a07=\"\"><img src=\"" + __webpack_require__(125) + "\" _v-1d4e3a07=\"\"></a>\n\t       </div>\n\t       <div class=\"header-title\" _v-1d4e3a07=\"\">\n\t        当代药物市场\n\t       </div>\n\t    </div>\n\t    <!--/header -->\n\t    <!-- content -->\n\t    <div class=\"content\" _v-1d4e3a07=\"\">\n\t    <!-- nav -->\n\t      <div class=\"nav-ifo\" _v-1d4e3a07=\"\">\n\t\t\t<div class=\"nav\" _v-1d4e3a07=\"\">\n\t\t\t  <div class=\"left nav-box\" _v-1d4e3a07=\"\">\n\t\t\t     <div class=\"nav-tu left-nav-tu\" _v-1d4e3a07=\"\">\n                   <img src=\"" + __webpack_require__(126) + "\" _v-1d4e3a07=\"\">\n\t\t\t     </div>\n\t\t\t     <div class=\"nav-ti left-nav-tu\" _v-1d4e3a07=\"\">\n\t\t\t     \t<span _v-1d4e3a07=\"\">收藏</span>\n\t\t\t     </div>\n\t\t\t  </div>\n\t\t\t  <div class=\"mide nav-box\" @click=\"setlight\" _v-1d4e3a07=\"\">\n\t\t\t     <div class=\"nav-tu\" _v-1d4e3a07=\"\">\n\t\t\t       <img src=\"" + __webpack_require__(127) + "\" _v-1d4e3a07=\"\">\n\t\t\t   \t </div>\n\t\t\t     <div class=\"nav-ti\" _v-1d4e3a07=\"\">\n                    <span _v-1d4e3a07=\"\">夜间</span>\n\t\t\t     </div>\n\t\t\t  </div>\n\t\t\t  <div class=\"right nav-box\" _v-1d4e3a07=\"\">\n\t\t\t     <div class=\"nav-tu\" _v-1d4e3a07=\"\">\n                      \t<img src=\"" + __webpack_require__(128) + "\" _v-1d4e3a07=\"\">\n\t\t\t     </div>\n\t\t\t     <div class=\"nav-ti\" _v-1d4e3a07=\"\">\n                     <span _v-1d4e3a07=\"\">设置</span>\n\t\t\t     </div>\n\t\t\t  </div>\n\t\t\t</div>\n\t      </div>\t\t\n\t     <!-- /nav -->\n\t     <!-- detal-->\n\t     <div class=\"detal\" _v-1d4e3a07=\"\">\n            <div class=\"jf detal-box\" _v-1d4e3a07=\"\">\n                <span _v-1d4e3a07=\"\">我的积分</span>\n                <div class=\"jt\" _v-1d4e3a07=\"\">\n                   <i class=\"iconfont\" _v-1d4e3a07=\"\"></i>\n                </div>\n            </div>\n\t        <div class=\"vip detal-box\" _v-1d4e3a07=\"\">\n                <span _v-1d4e3a07=\"\">升级VIP</span>\n\t        </div>\n\t        <div class=\"zh detal-box\" @click=\"loginout\" _v-1d4e3a07=\"\">\n                <span class=\"zh\" _v-1d4e3a07=\"\">退出账户</span>\n\t        </div>\n\t     </div>\n\t     <!-- /detal -->\n        </div>\n\n\n\t    <my-footer _v-1d4e3a07=\"\"></my-footer>\n\n\t</div>\n\n    \n\n\n  \n    \n\n    \n";
+
+/***/ },
+/* 125 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "images/tx.jpg";
+
+/***/ },
+/* 126 */
+/***/ function(module, exports) {
+
+	module.exports = "data:image/gif;base64,R0lGODlhLgArAPcAAP+bDP/nxf+dEv/89/+sNf/+/P/Vmf/+/f+iHP+WAf///v/9+f+iHv+aCv/iuP++YP/Kfv/t1P+aCf/9+/+XAv/05P+fFv+rMv+eE/+cD/+XA/+8Xf/Ca/+yRP/Iev/bqP/37P/rzv/26v/68//Mgv+yRf+gGf+dEP+jIP++Yv+tN//79v/y4P+kI//qzf/Dbv/pyv/Xnv/z4//z4v+8XP+lJP/rz//Dbf/s0v/Kf//u1v+pLv/y3/+bC//68v+ZCP/9+v/8+P/lwf+fFf+hG/+yQ/+5Vf/iuf+cDv+zRv+xQf+uOv/47v+mKP/CbP/oxv/drP+9X/+eFP+6WP+rM//s0P/15v/Qjv/qzP+fF//z4f+zR/+ZB//cqv/ht//58f/lv//kvf/v2P/oyP+qMP/qy/+jH/+uO/+7W//Piv/Cav+wP/+oK/+nKf+7Wf/YoP/drf/Yof+2Tf+5Vv/MhP/Zov/cq//QjP/Oif+/ZP/nxP/fsv/Nhf/htv+gGP/Tk//lwP/05f/Pi/+bDf+YBf/47f+6V//Xn/+rNP+YBP/t0//esP/pyf/Jff/u1f/Eb//ox//er//15//Ulv/Ief/Zo/+mJv/Vmv/AZv/mw//69P/Skv/Xnf+1S/+tOf+3Uf+0SP+nKv+wQP+pLf/Fcv/JfP+9Xv/Hd//w2v/BaP/apP/gs//apv/Lgf/HeP+0Sv/v1/+wPv/VmP+lJf/Gdf/Oh//Mg/+YBv/htf/Nhv+dEf+sNv/36/+tOP+7Wv/AZ/+WAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjAgNjEuMTM0Nzc3LCAyMDEwLzAyLzEyLTE3OjMyOjAwICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOkJGODg0NjJEQ0U3RkU2MTFCNjkwRkZBMkUzRjU0MDg0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjlCQjg1OURBQTdEOTExRTZBODRCQzlDNEE2QkIxM0NDIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjlCQjg1OUQ5QTdEOTExRTZBODRCQzlDNEE2QkIxM0NDIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzUgV2luZG93cyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkQ0NUQ4MkVFNThBMkU2MTFBQjUyRUJFNUU5MDIzMjNDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkJGODg0NjJEQ0U3RkU2MTFCNjkwRkZBMkUzRjU0MDg0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAC4AKwAACP8AgwkcSLBgwTFbBAjo5cCgw4cQIRrgAqxixRwRM2okqKUHMA2n+DQARiHCxpMQU1QkIZBTxQ0oYxIskwiYpQECC+wAdguWTJlFKnYhyKrig58oP1RMUhDIBWBccCDVWEEKMCQsDIJZOjVjrYoQHpaoCKjrwxVNgDH48tBBxTxmHQqq+AZiARXATLCNK5BJJgHACBSIuKgirRkLZIIIsccAHVMEslSU8CTjASUVATR59ehOHAc6fDgMwYHKkAQWUwPjsLEMEtUWCSHwlGLVQFk/YGMgMyfHBxc4N7I4sklNhxYjYU8Z8QQ1MBQlXsTAIkIB3xU8wPxJJcqMRVcqNZD/EM03oyZcCAKPZVAeJQRgO2gAayCkvcYFa4AhClPRAhb7EE1gREW/BONERX6EAKBBExhSEQI8BKNAFBWZUMWCAyngRkVSwDBQEHJURIQYGBpYEQaQFDRAJxURAMSCjVQkQAAOrXBDRR3IYJ8tFABTgw0RcVDRKBWU50FFZpAYkQIbVHSBCGYdcEVFDOiw0Qi7VGSAWSAAAAwAeqBUSUVwmBVEDcCcERMJFTES1xnAzDIBSg98qaNZaACTgSQoBYVCcF1RAkwCUm1UABvAqMDXJRXRuBETQwDzCV99VOTFSSzkdkNGAwSSkQ2oDbWRIxoAgwdEBzigAga58AJRBV5uorlRABVB4dACk5CRmgmYoHJrC8B4cNIRFXlYUCRUWMTAEhad4AGUBTFLw0mqzKcFQS5sYZEEL1gRTB1tWIRADAVNAUwHJx0CzCCFCAQCBF5WZMSFA42QhmQVgeJoME3GcpIXFbUSwRUoWKREGA9ZQYpHJEUxRgBEAIPGSTNkANsFH2gUgS8SwGbrSUKEoksGAhBgx2AnKfKABSecYEEpBzgUEAA7"
+
+/***/ },
+/* 127 */
+/***/ function(module, exports) {
+
+	module.exports = "data:image/gif;base64,R0lGODlhKwArAPcAAFWR41mU5EiJ4fD1/Han6Pz9/keI4VyW5P7+/2Ka5d7q+kSH4Ojw+3+s6vT4/ezz/Ozy/EqK4c7f98ba9nyr6U2M4leT46nH8ZG47T+D38/g91GO4lCO4kSG4PH2/TyB35y/70uL4fn7/tLi+JS67Xen6cXZ9bzU9LnS8/f6/kaI4PP3/eLs+v3+/+rx/FOQ48ze9+Hs+tfl+Ged5sLY9XWm6N3p+TF63fL3/UyM4tDh95K57WWb5oSw64Ov61qV5LLN8kyL4ZW77q3K8azJ8bvT9LrT9OTt+mid5l+Y5fj6/vX5/XKk6Mrd9nGj6Gme5pm97oax61GP4k+N4sfb9qDC77rS9Hqp6Xio6ViT40CE4N/q+u70/Iu07KnI8cTZ9dzp+b/W9F6X5I217DZ93m+i553A7/v8/myg50WH4LfR82qf5mac5jl/3rjR873U9KLD8EGE4LDM8mGZ5eDr+qfG8Ham6LPO8s3f93Sl6Pb5/sPY9f39/9vo+fr8/tPi+O/1/KXF8NPj+IGu6l2X5JO57bXP88jc9pi87pe87kmK4W6h512W5JC37Zi97vD2/bXQ84+37IOv6qjH8bHM8uvy/Njm+a3K8tTj+L7V9Iy17EOF4Mve9m2h526i59Hh98nc9tbk+FaS46bG8E6N4uTu+zh/3pq+7qrI8T6C35C47ebv+2CY5VuV5I627J/B78DW9T2C332r6oWw69nm+Zu+7mSb5Yqz7Dd+3kKF4GOa5XCj59Xk+LbQ82ug56DB7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjAgNjEuMTM0Nzc3LCAyMDEwLzAyLzEyLTE3OjMyOjAwICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOkJGODg0NjJEQ0U3RkU2MTFCNjkwRkZBMkUzRjU0MDg0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjlCQjg1OUUyQTdEOTExRTZBODRCQzlDNEE2QkIxM0NDIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjlCQjg1OUUxQTdEOTExRTZBODRCQzlDNEE2QkIxM0NDIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzUgV2luZG93cyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkQ0NUQ4MkVFNThBMkU2MTFBQjUyRUJFNUU5MDIzMjNDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkJGODg0NjJEQ0U3RkU2MTFCNjkwRkZBMkUzRjU0MDg0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAACsAKwAACP8AgQkcSLCgAw1C7MzJAgBAgDkzdogoSLGiRWAF1PAAgOYXjREKjgz4EiHEJD8XU1Y0AiCCkC0UUWzq4UClzYEMPHWosqRirVhFbgoN1aEEBIsgOvQRevOTAFQX5XxQwNTmIRVELv75QKWqSlgfYFxc0eGS15Qs2rhJiSFA1T0pERzokbJABBNMR5BZavGCgRQpeSVpwfTJAiYWl2QwopLEKaE4vCxQEAfICookxKhEwEODSgiRnHSacQJYLySLnJAY6CGD2JQQQrhQeSbRDUwFJdyoMhAIB8IpBeWYaBMDBwYDj4QAQRANBpt73Ap9UWegGUIEcQiQYDOTZqEBYAD/guSBBiuCIwzgsBnmQMozY6YAS6GCSZAKFXZV4DOQiHubeGxQgEWgtLKGJcCsYgEFTRQwwRU/cDFQI3bcxIAiD1AUQw0CBELRBBb5EMVNfPxAC0EO7GCAD0cRtMIsHFjUgCtCNQDEQCZU8IQMFA2RAwEZVjTILUK9gRgwDQhgxYcBZEFDSl1QIJQDAsQAjBdgFFRJGSFcANxFcOjClCRrUFRAIBFo4sFNEwRBnE2tDUFQGAAc0ARTDKSRpVAs6QGMDEiQIsdZB1THFBdKOJIGCTWdBUUCVaEgBRulnDUQHR8ccZMOCUihxgMEcGKpQDVImdIAshgAghLAiEBEAARQ2HVTETsMpAAuNqSExRWzETRADwsMosGAFQFiSAI32EJQA2yMqkMeC0xBwCtWUGECJaogocILPpBx50ADpHLHqMA8cEIXvvxggQVJEACCDsCUQABFb5jCArkEIVDQBXEMUNEYHPiLL0VftIHHRYgEkevAA/nlWUpQVMkwMBhoMcJNcGSwFrkQ8LABTELdkYsTC3tVRA4U9FQVA1ho0YAgQumBQhILyDnqHzW88IQZErDwCErAIKCECzKcEAUjAAgRJL4pSFBIAhuIMkMeJZQBtQUljEKHvioFBAA7"
+
+/***/ },
+/* 128 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	module.exports = "\n<!--<div class=\"spinner\">-->\n    <!--<div class=\"bounce1\"></div>-->\n    <!--<div class=\"bounce2\"></div>-->\n    <!--<div class=\"bounce3\"></div>-->\n<!--</div>-->\n<div class=\"box\" _v-8256701e=\"\">\n    <i _v-8256701e=\"\"></i>\n</div>\n";
@@ -27223,7 +27307,11 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
+<<<<<<< HEAD
 	  var id = "_v-56ea7146/pull-to-refresh.vue"
+=======
+	  var id = "_v-bd55fea4/investment.vue"
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -27490,9 +27578,535 @@
 /* 130 */
 /***/ function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 	'use strict';
+=======
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__webpack_require__(136)
+	__vue_script__ = __webpack_require__(138)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\components\\investmentList.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(139)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-729b9b6c/investmentList.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 136 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	var IScroll = __webpack_require__(131);
+
+	var _index_key_ = {};
+
+	var scrollObj = {};
+
+	var extend = function extend(oldObj, newObj) {
+	  for (var key in newObj) {
+	    oldObj[key] = newObj[key];
+	  }
+	  return oldObj;
+	};
+
+	var Scroll = function Scroll(selector, opts) {
+	  var $scroll;
+	  var options = {
+	    probeType: 2, //probeType：1对性能没有影响。在滚动事件被触发时，滚动轴是不是忙着做它的东西。probeType：2总执行滚动，除了势头，反弹过程中的事件。这类似于原生的onscroll事件。probeType：3发出的滚动事件与到的像素精度。注意，滚动被迫requestAnimationFrame（即：useTransition：假）。  
+	    scrollbars: 'custom', //有滚动条  
+	    mouseWheel: true, //允许滑轮滚动  
+	    fadeScrollbars: true, //滚动时显示滚动条，默认影藏，并且是淡出淡入效果  
+	    bounce: true, //边界反弹 
+	    listenX: false,
+	    interactiveScrollbars: true, //滚动条可以拖动  
+	    shrinkScrollbars: 'scale', // 当滚动边界之外的滚动条是由少量的收缩。'clip' or 'scale'.  
+	    click: true, // 允许点击事件  
+	    momentum: true, // 允许有惯性滑动  
+	    preventDefaultException: { tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT|IMG)$/ }
+	  };
+	  options = extend(options, opts || {});
+
+	  IScroll.utils.isBadAndroid = false; //处理页面抖动
+	  $scroll = new IScroll(selector, options);
+
+	  $scroll.refresh();
+	  return $scroll;
+	};
+
+	if (typeof module != 'undefined' && module.exports) {
+	  module.exports = Scroll;
+	} else {
+	  window.scroll = Scroll;
+	}
+
+<<<<<<< HEAD
+	//document.addEventListener('touchmove', function (e) { e.preventDefault(); }, true);
+
+/***/ },
+/* 131 */
+=======
+	module.exports = "\n\n\n<!-- content1-->\n<div id=\"items\" _v-729b9b6c=\"\">\n<div class=\"item\" v-for=\"item in items.list\" _v-729b9b6c=\"\">\n    <router-link :to=\"{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}\" append=\"\" _v-729b9b6c=\"\">\n        <div class=\"item_left\" _v-729b9b6c=\"\">\n            <div class=\"item_tit\" _v-729b9b6c=\"\">\n                {{item.title | dSubstr(20) }}\n            </div>\n\n            <span class=\"item_hit\" _v-729b9b6c=\"\">{{item.hits}}点击</span>\n            <span class=\"item_date\" _v-729b9b6c=\"\">{{item.editdate}}</span>\n        </div>\n        <img v-lazy=\"item.sptp[0]\" class=\"item_img\" _v-729b9b6c=\"\">\n        <div class=\"clear\" _v-729b9b6c=\"\"></div>\n    </router-link>\n</div>\n</div>\n\n";
+
+/***/ },
+/* 140 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__webpack_require__(141)
+	__vue_script__ = __webpack_require__(144)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\components\\loading.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(145)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-8256701e/loading.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 141 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 142 */,
+/* 143 */,
+/* 144 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	   value: true
+	});
+	// <template>
+	//     <!--<div class="spinner">-->
+	//         <!--<div class="bounce1"></div>-->
+	//         <!--<div class="bounce2"></div>-->
+	//         <!--<div class="bounce3"></div>-->
+	//     <!--</div>-->
+	//     <div class="box">
+	//         <i></i>
+	//     </div>
+	// </template>
+	// <script>
+	exports.default = {};
+	// </script>
+	// <style scoped>
+	//     .box{
+	//         width:6.4rem;
+	//         text-align: center;
+	//         display: -webkit-flex; /* Safari */
+	//         display: flex;
+	//         background-color:transparent;
+	//         height:100%;
+	//         flex-direction: column;
+	//         justify-content: center;
+	//     }
+	//     .box i{
+	//        display: inline-block;
+	//         align-self: center;
+	//         background: url("../assets/bg-load.gif") no-repeat;
+	//         background-size: 1.2rem 1.2rem;
+	//         width:1.2rem;
+	//         height:1.2rem;
+	//         display: inline-block;
+	//         background-color:transparent;
+	//     }
+	//     .spinner {
+	//         width: 6.4rem;
+	//         text-align: center;
+	//
+	//     }
+	//
+	//     .spinner > div {
+	//         width: .20rem;
+	//         height: .20rem;
+	//         background-color: #ed1b23;
+	//         border-radius: 100%;
+	//         display: inline-block;
+	//         -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+	//         animation: bouncedelay 1.4s infinite ease-in-out;
+	//         /* Prevent first frame from flickering when animation starts */
+	//         -webkit-animation-fill-mode: both;
+	//         animation-fill-mode: both;
+	//     }
+	//
+	//     .spinner .bounce1 {
+	//         -webkit-animation-delay: -0.32s;
+	//         animation-delay: -0.32s;
+	//     }
+	//
+	//     .spinner .bounce2 {
+	//         -webkit-animation-delay: -0.16s;
+	//         animation-delay: -0.16s;
+	//     }
+	//
+	//     @-webkit-keyframes bouncedelay {
+	//         0%, 80%, 100% { -webkit-transform: scale(0.0) }
+	//         40% { -webkit-transform: scale(1.0) }
+	//     }
+	//
+	//     @keyframes bouncedelay {
+	//         0%, 80%, 100% {
+	//             transform: scale(0.0);
+	//             -webkit-transform: scale(0.0);
+	//         } 40% {
+	//               transform: scale(1.0);
+	//               -webkit-transform: scale(1.0);
+	//           }
+	//     }
+	// </style>
+
+/***/ },
+/* 145 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<!--<div class=\"spinner\">-->\n    <!--<div class=\"bounce1\"></div>-->\n    <!--<div class=\"bounce2\"></div>-->\n    <!--<div class=\"bounce3\"></div>-->\n<!--</div>-->\n<div class=\"box\" _v-8256701e=\"\">\n    <i _v-8256701e=\"\"></i>\n</div>\n";
+
+/***/ },
+/* 146 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__webpack_require__(147)
+	__vue_script__ = __webpack_require__(150)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\components\\pull-to-refresh.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(153)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-56ea7146/pull-to-refresh.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 147 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 148 */,
+/* 149 */,
+/* 150 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	// <template>
+	//
+	// <div :id="eleId" class="pull-container">
+	//   <div class="scroller">
+	//     <div class="pulldown"
+	//     :class="[pulldownChangeStyle,{'hide':!displaypullDownDiv}]">
+	//       <div class="pulldown-icon"></div>
+	//       <div class="pulldown-label">{{pullDownTip}}</div>
+	//     </div>
+	//     <slot></slot>
+	//     <div class="pullup"
+	//     :class="[pullupChangeStyle,{'hide':!displaypullUpDiv}]">
+	//       <div class="pullup-icon"></div>
+	//       <div class="pullup-label">{{pullUpTip}}</div>
+	//     </div>
+	//   </div>
+	// </div>
+	//
+	// </template>
+	//
+	// <script>
+
+	var Scroll = __webpack_require__(151);
+
+	var PULL_DOWN_NORMAL = '下拉刷新';
+	var PULL_DOWN_RELEASE = '释放立即刷新';
+	var PULL_DOWN_LOADING = '正在刷新...';
+
+	var PULL_UP_NORMAL = '上拉刷新';
+	var PULL_UP_RELEASE = '释放加载';
+	var PULL_UP_LOADING = '加载中，请稍后';
+
+	// 加载状态-1默认，0显示提示下拉信息，1显示释放刷新信息，2执行加载数据，只有当为-1时才能再次加载
+	var STATE_DEFAULT = -1;
+	var STATE_PULL_NORMAL = 0;
+	var STATE_PULL_RELEASE = 1;
+	var STATE_PULL_LOADING = 2;
+
+	var STYLE_RELEASE = 'release';
+	var STYLE_REFRESH = 'refresh';
+
+	//不写到vue data中，优化内存
+	var timeoutHandler = 0,
+	    timeout = 8000,
+	    pullDownHeight = 50,
+	    //pull down element height
+	pullUpHeight = 50;
+
+	exports.default = {
+	  props: {
+	    disablePulldown: {
+	      type: Boolean,
+	      default: false
+	    },
+	    disablePullup: {
+	      type: Boolean,
+	      default: false
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      displaypullDownDiv: false,
+	      displaypullUpDiv: false,
+	      pullUpTip: PULL_UP_NORMAL,
+	      pullDownTip: PULL_DOWN_NORMAL,
+	      refreshStep: STATE_DEFAULT,
+	      eleId: 'bajianscroll',
+	      pulldownChangeStyle: '',
+	      pullupChangeStyle: ''
+	    };
+	  },
+	  mounted: function mounted() {
+	    this.$nextTick(function () {
+	      var _this = this;
+
+	      this.eleId = 'bajian' + Math.round(Math.random() * 1000);
+	      setTimeout(function () {
+	        _this.registerDrag();
+	      }, 50);
+	    });
+	  },
+
+	  methods: {
+	    registerDrag: function registerDrag() {
+	      console.log(222);
+	      this.myscroll = new Scroll('#' + this.eleId);
+	      this.myscroll.on('scroll', this._onTouchMove);
+	      this.myscroll.on('scrollEnd', this._onTouchEnd);
+	    },
+	    _onTouchMove: function _onTouchMove() {
+	      if (this.refreshStep == STATE_PULL_LOADING) return;
+
+	      if (!this.disablePulldown && this.myscroll.y > 5 && this.myscroll.y < pullDownHeight / 2) {
+	        this.displaypullDownDiv = true;
+	        this.displaypullUpDiv = false;
+	        this.pulldownChangeStyle = '';
+	        this.pullDownTip = PULL_DOWN_NORMAL;
+	        this.refreshStep = STATE_PULL_NORMAL;
+	      } else if (!this.disablePulldown && this.myscroll.y >= pullDownHeight) {
+	        this.pulldownChangeStyle = STYLE_RELEASE;
+	        this.pullDownTip = PULL_DOWN_RELEASE;
+	        this.refreshStep = STATE_PULL_RELEASE;
+	      } else if (!this.disablePullup && this.myscroll.y < -5 && -this.myscroll.y >= pullUpHeight - this.myscroll.maxScrollY) {
+	        this.pullupChangeStyle = STYLE_RELEASE;
+	        this.pullUpTip = PULL_UP_RELEASE;
+	        this.refreshStep = STATE_PULL_RELEASE;
+	      } else if (!this.disablePullup && this.myscroll.y < -5 && this.myscroll.y < this.myscroll.maxScrollY && this.myscroll.y > -pullUpHeight / 2 + this.myscroll.maxScrollY) {
+	        this.displaypullUpDiv = true;
+	        this.displaypullDownDiv = false;
+	        this.pullupChangeStyle = '';
+	        this.pullUpTip = PULL_UP_NORMAL;
+	        this.refreshStep = STATE_PULL_NORMAL;
+	      }
+	    },
+	    reset: function reset() {
+	      var _this2 = this;
+
+	      if (this.refreshStep != STATE_DEFAULT) {
+	        this.refreshStep = STATE_DEFAULT;
+	        if (!this.disablePulldown) {
+	          this.displaypullDownDiv = false;
+	          this.pulldownChangeStyle = '';
+	        }
+	        if (!this.disablePullup) {
+	          this.displaypullUpDiv = false;
+	          this.pullupChangeStyle = '';
+	        }
+	        setTimeout(function () {
+	          _this2.myscroll.refresh();
+	        }, 0);
+	        clearTimeout(timeoutHandler);
+	      }
+	    },
+	    _onTouchEnd: function _onTouchEnd() {
+	      var _this3 = this;
+
+	      if (this.refreshStep == STATE_PULL_RELEASE) {
+	        if (!this.disablePullup && this.pullupChangeStyle == STYLE_RELEASE) {
+	          this.myscroll.maxScrollY < -10 && this.myscroll.scrollTo(0, this.myscroll.maxScrollY - pullUpHeight);
+	          this.pullupChangeStyle = STYLE_REFRESH;
+	          this.pullUpTip = PULL_UP_LOADING;
+	          this.refreshStep = STATE_PULL_LOADING;
+	          this.$emit('on-pullup', this.reset);
+	        } else if (!this.disablePulldown && this.pulldownChangeStyle == STYLE_RELEASE) {
+	          this.pulldownChangeStyle = STYLE_REFRESH;
+	          this.pullDownTip = PULL_DOWN_LOADING;
+	          this.refreshStep = STATE_PULL_LOADING;
+	          this.$emit('on-pulldown', this.reset);
+	        }
+
+	        timeoutHandler = window.setTimeout(function () {
+	          if (_this3.refreshStep == STATE_PULL_LOADING) _this3.reset();
+	        }, timeout);
+	      } else if (this.refreshStep != STATE_PULL_LOADING) {
+	        this.reset();
+	      }
+	    }
+	  }
+	};
+	// </script>
+	//
+	// <style scoped>
+	//   .scroller{
+	//     min-height: 101%;/*修正内容高度不够无法scroll*/
+	//     -webkit-tap-highlight-color:rgba(0,0,0,0);
+	//   }
+	//   .pulldown,.pullup{
+	//     transition: all 0.2s linear;
+	//   }
+	//   .hide{
+	//     display: none;
+	//   }
+	//   .pull-container {
+	//     transform: translateZ(0);
+	//     user-select: none;
+	//     text-size-adjust: none;
+	//   }
+	//
+	//   /*refresh start*/
+	//   .pulldown,.pullup {
+	//     height: .50rem;
+	//     line-height: .50rem;
+	//     padding: .05rem .15rem;
+	//     font-weight: bold;
+	//     font-size: .14rem;
+	//     color: #888;
+	//     text-align: center;
+	//   }
+	//
+	//   .pulldown .pulldown-icon,.pullup .pullup-icon {
+	//     width: .40rem;
+	//     height: .40rem;
+	//     background: url(../image/pull-icon@2x.png) 0 0 no-repeat;
+	//     -webkit-background-size: .40rem .80rem;
+	//     background-size: .40rem .80rem;
+	//     -webkit-transition-property: -webkit-transform;
+	//     -webkit-transition-duration: 250ms;
+	//     position: relative;
+	//     top: .05rem;
+	//     left: .2rem;
+	//   }
+	//
+	//   .pulldown .pulldown-label, .pullup .pullup-label{
+	//     position:relative;
+	//     top: -.40rem;
+	//     font-size:.2rem;
+	//   }
+	//   .pulldown .pulldown-icon {
+	//     -webkit-transform: rotate(0deg) translateZ(0);
+	//   }
+	//   .pullup .pullup-icon {
+	//     -webkit-transform: rotate(-180deg) translateZ(0);
+	//   }
+	//
+	//   .pulldown.release .pulldown-icon {
+	//     -webkit-transform: rotate(-180deg) translateZ(0);
+	//   }
+	//
+	//   .pullup.release .pullup-icon {
+	//     -webkit-transform: rotate(0deg) translateZ(0);
+	//   }
+	//
+	//   .pulldown.refresh .pulldown-icon,.pullup.refresh .pullup-icon {
+	//     background-position: 0 100%;
+	//     -webkit-transition-duration: 0ms;
+	//     -webkit-animation: spinner 3s infinite linear;
+	//     animation: spinner 3s infinite linear;
+	//   }
+	//   /*通用转动动画*/
+	//   @-webkit-keyframes spinner {
+	//     0% { -webkit-transform: rotate(0deg); }
+	//     50% { -webkit-transform: rotate(180deg); }
+	//     100% { -webkit-transform: rotate(360deg); }
+	//   }
+	//   /*refresh end*/
+	//
+	// </style>
+
+/***/ },
+/* 151 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var IScroll = __webpack_require__(152);
 
 	var _index_key_ = {};
 
@@ -27538,7 +28152,8 @@
 	//document.addEventListener('touchmove', function (e) { e.preventDefault(); }, true);
 
 /***/ },
-/* 131 */
+/* 152 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -45333,14 +45948,22 @@
 /* 211 */
 /***/ function(module, exports) {
 
+<<<<<<< HEAD
 	// removed by extract-text-webpack-plugin
+=======
+	module.exports = "\n\n<div :id=\"eleId\" class=\"pull-container\" _v-56ea7146=\"\">\n  <div class=\"scroller\" _v-56ea7146=\"\">\n    <div class=\"pulldown\" :class=\"[pulldownChangeStyle,{'hide':!displaypullDownDiv}]\" _v-56ea7146=\"\">\n      <div class=\"pulldown-icon\" _v-56ea7146=\"\"></div>\n      <div class=\"pulldown-label\" _v-56ea7146=\"\">{{pullDownTip}}</div>\n    </div>\n    <slot _v-56ea7146=\"\"></slot>\n    <div class=\"pullup\" :class=\"[pullupChangeStyle,{'hide':!displaypullUpDiv}]\" _v-56ea7146=\"\">\n      <div class=\"pullup-icon\" _v-56ea7146=\"\"></div>\n      <div class=\"pullup-label\" _v-56ea7146=\"\">{{pullUpTip}}</div>\n    </div>\n  </div>\n</div>\n\n";
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 /***/ },
 /* 212 */,
 /* 213 */
 /***/ function(module, exports) {
 
+<<<<<<< HEAD
 	module.exports = "\n<div style=\"height:100%\" _v-0e347e4b=\"\">\n\n\t<!-- nav -->\n    <app-nav :path=\"topath\" _v-0e347e4b=\"\"></app-nav>\n\n    <load v-if=\"loading\" _v-0e347e4b=\"\"></load>\n    <!-- content -->\n    <div v-else=\"\" _v-0e347e4b=\"\">\n        <div class=\"content-box\" _v-0e347e4b=\"\">\n            <!-- content-one -->\n            <div class=\"content\" _v-0e347e4b=\"\">\n                <div class=\"article_title\" _v-0e347e4b=\"\">\n                    <h1 _v-0e347e4b=\"\">{{item.title}}</h1>\n                </div>\n                <div class=\"article_info\" _v-0e347e4b=\"\">\n                    <i _v-0e347e4b=\"\">{{item.spmc}}</i>\n                    <span _v-0e347e4b=\"\">{{item.editdate}}</span>\n                </div>\n                <div class=\"product_banner\" _v-0e347e4b=\"\">\n\n                    <swipe class=\"my-swipe\" :speed=\"0\" :auto=\"0\" :show-indicators=\"false\" _v-0e347e4b=\"\">\n\n                        <swipe-item v-for=\"pic in item.sptp\" class=\"slide1\" _v-0e347e4b=\"\"> <img :src=\"pic\" _v-0e347e4b=\"\"></swipe-item>\n\n                    </swipe>\n                </div>\n\n                <div class=\"article_area\" _v-0e347e4b=\"\">\n                    <p v-if=\"item.cpqy\" _v-0e347e4b=\"\">出品企业:&nbsp;{{item.cpqy}}</p>\n                    <p v-if=\"item.sccj\" _v-0e347e4b=\"\">生产企业:&nbsp;{{item.sccj}}</p>\n                    <p v-if=\"item.company\" _v-0e347e4b=\"\">招商企业:&nbsp;{{item.company}}</p>\n                    <p _v-0e347e4b=\"\">发布日期:&nbsp;{{item.adddate}}</p>\n                    <p _v-0e347e4b=\"\">更新日期:&nbsp;{{item.editdate}}</p>\n                    <p _v-0e347e4b=\"\">点击数:&nbsp;{{item.hits}}</p>\n                </div>\n                <div class=\"article_area\" _v-0e347e4b=\"\">\n                    <h3 _v-0e347e4b=\"\"><b _v-0e347e4b=\"\">商品基本信息:</b></h3>\n                    <p v-if=\"item.spmc\" _v-0e347e4b=\"\">商品名称:&nbsp;{{item.spmc}}</p>\n                    <p v-if=\"item.sptym\" _v-0e347e4b=\"\">通用名称:&nbsp;{{item.sptym}}</p>\n                    <p v-if=\"item.pzwh\" _v-0e347e4b=\"\">批准文号:&nbsp;{{item.pzwh}}</p>\n                    <p _v-0e347e4b=\"\">分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类:&nbsp;{{item.catname}}</p>\n                    <p v-if=\"item.zybhpz\" _v-0e347e4b=\"\">中药保护品种:&nbsp;{{item.zybhpz}}</p>  \n                    <p v-if=\"item.mztx\" _v-0e347e4b=\"\">民族特性:&nbsp;{{item.mztx}}</p>  \n                    <p v-if=\"item.syjb\" _v-0e347e4b=\"\">适用疾病:&nbsp;{{item.syjb}}</p>                     \n                    <p v-if=\"item.syks\" _v-0e347e4b=\"\">适用科室:&nbsp;{{item.syks}}</p>\n                     <p v-if=\"item.cfysx\" _v-0e347e4b=\"\">处方药属性:&nbsp;{{item.cfysx}}</p>\n                    <p v-if=\"item.spjx\" _v-0e347e4b=\"\">商品剂型:&nbsp;{{item.spjx}}</p>\n                    <p v-if=\"item.spgg\" _v-0e347e4b=\"\">商品规格:&nbsp;{{item.spgg}}</p>\n                    <p v-if=\"item.jysx\" _v-0e347e4b=\"\">基药属性:&nbsp;{{item.jysx}}</p>\n                    <p v-if=\"item.ybsx\" _v-0e347e4b=\"\">医保属性:&nbsp;{{item.ybsx}}</p>\n                    <p v-if=\"item.zbqy\" _v-0e347e4b=\"\">中标区域:&nbsp;{{item.zbqy}}</p>\n                    <p v-if=\"item.shqd\" _v-0e347e4b=\"\">适合渠道:&nbsp;{{item.shqd}}</p>\n                    <p v-if=\"item.cpmd\" _v-0e347e4b=\"\">产品卖点:&nbsp;{{item.cpmd}}</p>\n                </div>\n                <div class=\"article_area\" _v-0e347e4b=\"\">\n                    <h3 _v-0e347e4b=\"\"><b _v-0e347e4b=\"\">商品详情信息:</b></h3>\n                    <p v-if=\"item.zyyl\" _v-0e347e4b=\"\">主要原料:&nbsp;{{item.zyyl}}</p>\n                    <p v-if=\"item.cs\" _v-0e347e4b=\"\">功效成分:&nbsp;{{item.cs}}</p>\n                    <p v-if=\"item.xz\" _v-0e347e4b=\"\">性状:&nbsp;{{item.xz}}</p>\n                    <p v-if=\"item.bjgn\" _v-0e347e4b=\"\">保健功能:&nbsp;{{item.bjgn}}</p>\n                    <p v-if=\"item.yfyl\" _v-0e347e4b=\"\">用法用量:&nbsp;{{item.yfyl}}</p>\n                    <p v-if=\"item.syrq\" _v-0e347e4b=\"\">适宜人群:&nbsp;{{item.syrq}}</p>\n                    <p v-if=\"item.syz\" _v-0e347e4b=\"\">适应症:&nbsp;{{item.syz}}</p>\n                    <p v-if=\"item.syff\" _v-0e347e4b=\"\">食用方法:&nbsp;{{item.syff}}</p>\n                    <p v-if=\"item.zysx\" _v-0e347e4b=\"\">注意事项:&nbsp;{{item.zysx}}</p>\n                    <p v-if=\"item.bz\" _v-0e347e4b=\"\">包&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;装:&nbsp;{{item.bz}}</p>\n                    <p v-if=\"item.zxbz\" _v-0e347e4b=\"\">执行标准:&nbsp;{{item.zxbz}}</p>\n                    <p v-if=\"item.scxkz\" _v-0e347e4b=\"\">生产许可证:&nbsp;{{item.scxkz}}</p>\n                    <p v-if=\"item.wsxkzh\" _v-0e347e4b=\"\">卫生许可证号:&nbsp;{{item.wsxkzh}}</p>\n                    <p v-if=\"item.cpry\" _v-0e347e4b=\"\">产品荣誉:&nbsp;{{item.cpry}}</p>\n                    <p v-if=\"item.bcsm\" _v-0e347e4b=\"\">补充说明:&nbsp;{{item.bcsm}}</p>\n                  \n                </div>\n                <div class=\"article_area\" _v-0e347e4b=\"\">\n                    <h3 _v-0e347e4b=\"\"><b _v-0e347e4b=\"\">招商要求:</b></h3>\n                    <p _v-0e347e4b=\"\">招商区域:&nbsp;{{item.zsqy ? item.zsqy : \"全国\"}}</p>\n                    <p _v-0e347e4b=\"\">招商要求:&nbsp;{{item.zsyq ? item.zsyq : \"暂无要求\"}}</p>\n                    <p _v-0e347e4b=\"\">可提供支持:&nbsp;{{item.ktgzc ? item.ktgzc : \"暂无支持\"}}</p>\n                </div>\n                <div class=\"article_area no_border\" _v-0e347e4b=\"\">\n                    <h3 _v-0e347e4b=\"\"><b _v-0e347e4b=\"\">联系信息:</b></h3>\n                    <p v-if=\"item.company\" _v-0e347e4b=\"\">企业名称:&nbsp;{{item.company}}</p>\n                    <p v-if=\"item.address\" _v-0e347e4b=\"\">联系地址:&nbsp;{{item.address}}</p>\n                    <p v-if=\"item.postcode\" _v-0e347e4b=\"\">邮政编码:&nbsp;{{item.postcode}}</p>\n                    <p v-if=\"item.truename\" _v-0e347e4b=\"\">联&nbsp;&nbsp;系&nbsp;&nbsp;人:&nbsp;{{item.truename}}</p>\n                    <p v-if=\"item.telephone\" _v-0e347e4b=\"\">电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话:&nbsp;{{item.telephone}}</p>\n                    <p v-if=\"item.mobile\" _v-0e347e4b=\"\">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机:&nbsp;{{item.mobile}}</p>\n                    <p v-if=\"item.fax\" _v-0e347e4b=\"\">传&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;真:&nbsp;{{item.fax}}</p>\n                    <p v-if=\"item.email\" _v-0e347e4b=\"\">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:&nbsp;{{item.email}}</p>\n                    <p v-if=\"item.qq\" _v-0e347e4b=\"\">Q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q:&nbsp;{{item.qq}}</p>\n                </div>\n\n            </div>\n\n        </div><!--content-box-->\n\n        <!-- footer -->\n        <detail-footer moduleid=\"22\" :itemid=\"item.itemid\" _v-0e347e4b=\"\"></detail-footer>\n\n    </div>\n   \n</div>\n\n\n";
+=======
+	module.exports = "\n<div class=\"white_box\" _v-bd55fea4=\"\">\n    <load v-if=\"loading\" _v-bd55fea4=\"\"></load>\n\n    <div id=\"pullDown\" v-else=\"\" _v-bd55fea4=\"\">\n        <pull-to-refresh @on-pullup=\"onPullup\" @on-pulldown=\"onPulldown\" class=\"page\" _v-bd55fea4=\"\">\n            <inv-list :items=\"items\" _v-bd55fea4=\"\"></inv-list>\n            <div v-show=\"noPage\" class=\"noPage\" _v-bd55fea4=\"\">\n                没有了\n            </div>\n        </pull-to-refresh>\n    </div>\n\n    <div class=\"clear\" _v-bd55fea4=\"\"></div>\n</div>\n\n";
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 /***/ },
 /* 214 */
@@ -45371,7 +45994,11 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
+<<<<<<< HEAD
 	  var id = "_v-679a6de8/healthDetail.vue"
+=======
+	  var id = "_v-0e347e4b/investmentShow.vue"
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -45574,6 +46201,7 @@
 	//
 	//
 	//
+<<<<<<< HEAD
 	// /*footer*/
 	// .footer{
 	// 	width: 6.4rem;
@@ -45617,6 +46245,415 @@
 	//
 	//
 	// </style>
+=======
+	//
+	//
+	//
+	// </style>
+
+/***/ },
+/* 159 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__webpack_require__(160)
+	__vue_script__ = __webpack_require__(163)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\components\\navigate.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(169)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-e0b7ade8/navigate.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 160 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 161 */,
+/* 162 */,
+/* 163 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _shared = __webpack_require__(164);
+
+	var _shared2 = _interopRequireDefault(_shared);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = {
+	    props: {
+	        path: {
+	            default: null
+	        }
+	    },
+	    data: function data() {
+	        return {
+	            isOpen: false
+	        };
+	    },
+
+	    components: {
+	        'app-share': _shared2.default
+	    },
+	    methods: {
+	        shared: function shared() {
+	            this.isOpen = true;
+	        },
+	        collect: function collect() {},
+	        goBack: function goBack() {
+	            if (this.path) {
+	                console.log(this.path);
+	                this.$router.push(this.path);
+	            } else {
+	                this.$router.go(-1);
+	            }
+	        }
+	    }
+	};
+	// </script>
+	// <style>
+	//     /*nav*/
+	//     .navigate{
+	//         position: fixed;
+	//         top:0;
+	//         z-index: 999999;
+	//         width:6.4rem ;
+	//         height:.8rem;
+	//         background: #f5f5f3;
+	//     }
+	//
+	//     .column{
+	//         position: relative;
+	//         width:5.8rem ;
+	//         height:.26rem;
+	//         margin: 0 auto;
+	//         padding: .18rem 0;
+	//     }
+	//
+	//     .column i{
+	//         font-size: .4rem;
+	//         line-height: .26rem;
+	//     }
+	//
+	//
+	//     .goback i{
+	//         width:.22rem;
+	//         height:.42rem;
+	//         position: absolute;
+	//         left:0;
+	//         color:#000;
+	//         top:.19rem;
+	//         background: url("../image/left-back.png");
+	//         background-size: .22rem .42rem;
+	//         display: inline-block;
+	//     }
+	//
+	//     .share i{
+	//         position: absolute;
+	//         font-size:.5rem;
+	//         right:0;
+	//         top:.28rem;
+	//         color:#999;
+	//     }
+	//     .collect i{
+	//         position: absolute;
+	//         font-size:.4rem;
+	//         right:.8rem;
+	//         top:.28rem;
+	//         color:#999;
+	//     }
+	// </style>
+	// <template>
+	//     <div class="navigate">
+	//         <div class="column">
+	//             <div class="goback">
+	//                 <i @click="goBack"></i>
+	//             </div>
+	//             <div class="collect">
+	//                 <i @click="collect" class="iconfont">&#xe68a;</i>
+	//             </div>
+	//             <div class="share">
+	//                 <i @click="shared" class="iconfont">&#xe648;</i>
+	//             </div>
+	//         </div>
+	//         <app-share :show="isOpen"></app-share>
+	//     </div>
+	// </template>
+	// <script>
+
+/***/ },
+/* 164 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__webpack_require__(165)
+	__vue_script__ = __webpack_require__(167)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\components\\shared.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(168)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-c7a18a80/shared.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 165 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 166 */,
+/* 167 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	// <template>
+	//
+	//
+	//
+	//
+	//
+	//
+	//         <transition name="slide-fade">
+	//
+	//
+	//                 <div v-show="show" class="shared-modal"  @click.stop.prevent="shutdown">
+	//
+	//
+	//
+	//                 <div class="h5share_panel" @click.stop.prevent="">
+	//                     <div class="item wxzone">
+	//                         <a class="jiathis_button_douban">
+	//                             <i class="iconfont">&#x3440;</i>
+	//                             <span>豆瓣</span>
+	//                         </a>
+	//                     </div>
+	//                     <div class="item qzone">
+	//                         <a class="jiathis_button_qzone">
+	//                             <i class="iconfont ">&#xe7dc;</i>
+	//                             <span>QQ空间</span>
+	//                         </a>
+	//                     </div>
+	//                     <!--<div class="item qq">-->
+	//                         <!--<a class="jiathis_button_cqq" >-->
+	//                             <!--<i class="iconfont ">&#xe607;</i>-->
+	//                             <!--<span>QQ好友</span>-->
+	//                         <!--</a>-->
+	//                     <!--</div>-->
+	//                     <div class="item wb">
+	//                         <a class="jiathis_button_tsina">
+	//                             <i class="iconfont">&#x3436;</i>
+	//                             <span>新浪</span>
+	//                         </a>
+	//                     </div>
+	//                 </div>
+	//                 <div class="share_shutdown" @click.stop.prevent="shutdown"><span>取消</span></div>
+	//             </div>
+	//
+	//
+	//         </transition>
+	//
+	//
+	//
+	//     </template>
+	//
+	//     <script>
+
+
+	exports.default = {
+	    props: {
+	        show: {
+	            type: Boolean,
+	            required: true,
+	            twoWay: true }
+	    },
+	    computed: {
+	        isShow: function isShow() {}
+	    },
+	    create: function create() {},
+	    mounted: function mounted() {
+
+	        $(document).ready(function () {
+	            var oHead = document.getElementsByTagName('HEAD').item(0);
+	            var oScript = document.createElement("script");
+	            oScript.type = "text/javascript";
+	            oScript.src = "http://v3.jiathis.com/code/jia.js";
+	            oHead.appendChild(oScript);
+
+	            //                     VueScript2.load('http://v3.jiathis.com/code/jia.js').then(function () {
+	            //   $('#msg').text('Hello from VueScript2!')
+	            // })
+	        });
+	    },
+	    data: function data() {
+	        return {};
+	    },
+
+	    methods: {
+	        shutdown: function shutdown() {
+
+	            this.$parent.isOpen = false;
+	        }
+	    }
+	};
+	// </script>
+	//
+	//     <style lang="sass" scoped>
+	//         .slide-fade-enter-active {
+	//             transition: all .3s ease;
+	//         }
+	//         .slide-fade-leave-active {
+	//             transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+	//         }
+	//         .slide-fade-enter, .slide-fade-leave-active {
+	//             opacity:0;
+	//         }
+	//         /*translate(x,y) 平移*/
+	//         .slide-fade-enter  .h5share_panel, .slide-fade-leave-active  .h5share_panel {
+	//
+	//             -webkit-transform: translate(0, 1.5rem);
+	//             transform: translate(0, 1.5rem);
+	//         }
+	//         .shared-modal{
+	//             transition: all .3s ease;
+	//         }
+	//         .shared-modal{
+	//             width:6.4rem;
+	//             z-index: 999999;
+	//             background: rgba(0,0,0,0.6);
+	//             position: fixed;
+	//             bottom:0;
+	//             height:100%;
+	//             .h5share_panel{
+	//                 width: 100%;
+	//                 background-color: #e6e6e6;
+	//                 border-bottom: 1px solid #dcdcdc;
+	//                 font-size: 0;
+	//                 margin: 0;
+	//                 padding: .2rem 0 0;
+	//                 box-sizing: border-box;
+	//                 position: absolute;
+	//                 bottom: .96rem;
+	//                 transition: all .3s ease;
+	//                 .item{
+	//                     width: .98rem;
+	//                     display: inline-block;
+	//                     text-align: center;
+	//                     margin: .25rem 0 .25rem .48rem;
+	//                 }
+	//                 .item i{
+	//                     height: .98rem;
+	//                     line-height: .98rem;
+	//                     width: .98rem;
+	//                     border-radius: .5rem;
+	//                     border: 1px solid #eee;
+	//                     background-color: #fff;
+	//                     display: inline-block;
+	//                     text-align: center;
+	//                     margin-bottom:.2rem;
+	//                     -webkit-tap-highlight-color: rgba(0,0,0,0);
+	//                     vertical-align: middle;
+	//                     display: block;
+	//                     font-size: .5rem;
+	//                 }
+	//                 .item span{
+	//                     display: block;
+	//                     font-size: .2rem;
+	//                 }
+	//                 .qzone i{
+	//                     color: #4c9aea;
+	//                 }
+	//                 .qq i{
+	//                     color:#5bc0de;
+	//                 }
+	//                 .wxzone i {
+	//                     color:#0ca726;
+	//                 }
+	//                 .wb i {
+	//                     color: #f90;
+	//                 }
+	//             }
+	//             .share_shutdown {
+	//                 width: 100%;
+	//                 height: .96rem;
+	//                 background-color: #fff;
+	//                 position: absolute;
+	//                 bottom: 0;
+	//                 text-align: center;
+	//                 padding-top: .28rem;
+	//                 box-sizing: border-box;
+	//                 span{
+	//                     font-size: .32rem;
+	//                     color: #333;
+	//                 }
+	//             }
+	//         }
+	//     </style>
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(115)))
+
+/***/ },
+/* 168 */
+/***/ function(module, exports) {
+
+	module.exports = "\n\n\n\n\n\n\n<transition name=\"slide-fade\" _v-c7a18a80=\"\">\n\n\n        <div v-show=\"show\" class=\"shared-modal\" @click.stop.prevent=\"shutdown\" _v-c7a18a80=\"\">\n\n\n\n        <div class=\"h5share_panel\" @click.stop.prevent=\"\" _v-c7a18a80=\"\">\n            <div class=\"item wxzone\" _v-c7a18a80=\"\">\n                <a class=\"jiathis_button_douban\" _v-c7a18a80=\"\">\n                    <i class=\"iconfont\" _v-c7a18a80=\"\">㑀</i>\n                    <span _v-c7a18a80=\"\">豆瓣</span>\n                </a>\n            </div>\n            <div class=\"item qzone\" _v-c7a18a80=\"\">\n                <a class=\"jiathis_button_qzone\" _v-c7a18a80=\"\">\n                    <i class=\"iconfont \" _v-c7a18a80=\"\"></i>\n                    <span _v-c7a18a80=\"\">QQ空间</span>\n                </a>\n            </div>\n            <!--<div class=\"item qq\">-->\n                <!--<a class=\"jiathis_button_cqq\" >-->\n                    <!--<i class=\"iconfont \">&#xe607;</i>-->\n                    <!--<span>QQ好友</span>-->\n                <!--</a>-->\n            <!--</div>-->\n            <div class=\"item wb\" _v-c7a18a80=\"\">\n                <a class=\"jiathis_button_tsina\" _v-c7a18a80=\"\">\n                    <i class=\"iconfont\" _v-c7a18a80=\"\">㐶</i>\n                    <span _v-c7a18a80=\"\">新浪</span>\n                </a>\n            </div>\n        </div>\n        <div class=\"share_shutdown\" @click.stop.prevent=\"shutdown\" _v-c7a18a80=\"\"><span _v-c7a18a80=\"\">取消</span></div>\n    </div>\n\n\n</transition>\n\n\n\n";
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 /***/ },
 /* 220 */
@@ -45653,7 +46690,11 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
+<<<<<<< HEAD
 	  var id = "_v-5fdcdade/login.vue"
+=======
+	  var id = "_v-12ed8432/detailFooter.vue"
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -45800,6 +46841,62 @@
 	// 		}
 	// 	}
 	// </style>
+<<<<<<< HEAD
+=======
+
+/***/ },
+/* 174 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__webpack_require__(175)
+	__vue_script__ = __webpack_require__(177)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\components\\favour.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(178)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-296e42ac/favour.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 175 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 176 */,
+/* 177 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	// <template>
 	// 	<div class="pt-perspective">
 	// 		<my-nav :goback="true" title="登录">
@@ -45828,7 +46925,97 @@
 	//
 	// 	</div>
 	// </template>
+<<<<<<< HEAD
 	// <script>
+=======
+	// <script >
+	exports.default = {
+		props: ['moduleid', 'itemid'],
+		data: function data() {
+			return {
+				isfavour: false,
+				favournum: { type: Number, default: 0 }
+			};
+		},
+		created: function created() {
+			this.getFavourNum();
+			if (this.is_favour()) {
+				this.isfavour = true;
+			}
+		},
+
+		methods: {
+			is_favour: function is_favour() {
+
+				if (localStorage.favour) {
+					var arr = localStorage.favour.split(',');
+					var str = this.moduleid + "|" + this.itemid;
+					console.log($.inArray(str, arr));
+					if ($.inArray(str, arr) != -1) {
+						return true;
+					} else {
+						return false;
+					}
+				} else {
+					return false;
+				}
+			},
+			favour: function favour() {
+				if (!this.is_favour()) {
+					this.favournum = parseInt(this.favournum) + 1;
+					this.isfavour = true;
+					this.setFavourNum();
+				}
+			},
+			getFavourNum: function getFavourNum() {
+				var url = "http://www.ey99.com/api/mobile/favour.php";
+				var option = { params: { type: "get", moduleid: this.moduleid, itemid: this.itemid } };
+				var _this = this;
+				this.$http.get(url, option).then(function (res) {
+					_this.favournum = res.body.favournum;
+				});
+			},
+			setFavourNum: function setFavourNum() {
+
+				var url = "http://www.ey99.com/api/mobile/favour.php";
+				var option = { params: { type: "set", moduleid: this.moduleid, itemid: this.itemid } };
+				this.$http.get(url, option);
+				if (localStorage.favour) {
+					localStorage.favour += "," + this.moduleid + "|" + this.itemid;
+				} else {
+					localStorage.favour = this.moduleid + "|" + this.itemid;
+				}
+			}
+		}
+	};
+	// </script>
+	// <style scoped>
+	// .favour-main{
+	// 	display: inline-block;
+	// }
+	// .favour-main span{
+	//     font-size:.2rem;
+	//     display: inline-block;
+	//     padding: .1rem 0;
+	// }
+	// .favour{
+	//   float: left;
+	//   font-size: .36rem;
+	//   line-height: .35rem;
+	//   padding-right: .1rem;
+	// }
+	// .red{
+	// 	color:red;
+	// }
+	// </style>
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(115)))
+
+/***/ },
+/* 178 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"favour-main\" _v-296e42ac=\"\">\n <i @click=\"favour\" :class=\"['iconfont','favour',{'red':isfavour}]\" _v-296e42ac=\"\"></i>\n <span _v-296e42ac=\"\">{{favournum}}</span>\n</div>\n";
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 /***/ },
 /* 227 */
@@ -45858,7 +47045,11 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
+<<<<<<< HEAD
 	  var id = "_v-af160282/blackNav.vue"
+=======
+	  var id = "_v-79a7e40f/report.vue"
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -45883,6 +47074,7 @@
 		value: true
 	});
 	// <template>
+<<<<<<< HEAD
 	// <div :class="['warp-header',theme]">
 	//
 	//   	<div v-show="goback" @click="back" class="goback" ></div>
@@ -45890,6 +47082,26 @@
 	// 	{{title}}
 	// 	<slot name="right"></slot>
 	// </div>		
+=======
+	// 	<div v-show="isshow" class="report-bg" @click="cancel">
+	// 		<div class="report-main" @click.stop="">
+	// 			<div class="report-head">
+	// 				<span class="send">举报内容问题</span>
+	// 			</div>
+	// 			<div class="content">
+	// 					<ul>
+	// 						<li v-for="(item,index) in items" v-on:click="checked(index)" :class="{'gray':gray}">
+	// 							 <span ><em v-if="item.checked" >已举报  </em>{{item.title}}</span>
+	// 						     <i  v-if="item.checked" class="iconfont">&#xe670;</i>
+	// 						</li>
+	// 					</ul>
+	// 				    <div class="report">
+	// 						<el-button type="primary">提交</el-button>
+	// 					</div>
+	// 			</div>
+	// 		</div>
+	// 	</div>
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	// </template>
 	// <script>
 	exports.default = {
@@ -45911,21 +47123,63 @@
 			}
 		},
 		data: function data() {
-			return {};
+			return {
+				items: [{
+					"title": "广告",
+					"checked": false
+
+				}, {
+					"title": "重复、旧闻",
+					"checked": false
+				}, {
+					"title": "格式问题",
+					"checked": false
+				}, {
+					"title": "低俗",
+					"checked": false
+				}, {
+					"title": "标题夸张",
+					"checked": false
+				}, {
+					"title": "已举报与事实不符",
+					"checked": false
+				}, {
+					"title": "疑似抄袭",
+					"checked": false
+				}, {
+					"title": "其他问题",
+					"checked": false
+				}]
+			};
 		},
 
 		methods: {
+<<<<<<< HEAD
 			back: function back() {
 				if (this.path) {
 					this.$router.push(this.path);
 				} else {
 					this.$router.go(-1);
 				}
+=======
+			checked: function checked(index) {
+				this.items[index].checked = !this.items[index].checked;
+				console.log(this.gray);
+				this.gray = !this.gyay;
+			},
+			cancel: function cancel() {
+				this.$parent.isshow = false;
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 			}
 		}
 	};
 	// </script>
+	//
+	//
+	//
+	//
 	// <style lang="sass" scoped>
+<<<<<<< HEAD
 	// .warp-header{
 	// 	position:relative;
 	// 	height:.8rem;
@@ -45971,6 +47225,82 @@
 	// 		}
 	// }
 	// </style>
+=======
+	// 	.report-bg{
+	// 		width: 6.4rem;
+	// 	    z-index: 999999;
+	// 	    background: rgba(0, 0, 0, 0.6);
+	// 	    position: fixed;
+	// 	    bottom: 0;
+	// 	    height: 100%;
+	// 	}
+	// 	.report-main{
+	// 		position:fixed;
+	// 		bottom:0;
+	// 		width:100%;
+	// 		.report-head{
+	// 			line-height: .6rem;
+	// 			width:90%;
+	// 			height:.6rem;
+	// 			text-align: center;
+	// 			background-color: #F7F7F7;
+	// 			padding:0 5%;
+	// 			.send{
+	// 				color:#6699FF;
+	// 				font-size: .28rem;
+	// 			}
+	// 		}
+	// 		.content{
+	// 			background-color:#FFF;
+	// 			width:90%;
+	// 			padding:0 5%;
+	// 			textarea{
+	// 				width:100%;
+	// 				padding:2% 0;
+	// 				border:none;
+	// 				min-height: 2rem;
+	// 			}
+	// 			li{
+	// 				padding:.15rem 0;
+	// 				border-bottom: 1px solid #e8e8e8;
+	// 			}
+	// 			.gray{
+	// 				color:gray;
+	// 			}
+	// 			span{
+	// 				font-size: .24rem;
+	// 			}
+	// 			i{
+	// 				color:#6699FF;
+	// 				float: right;
+	// 			}
+	// 			.report{
+	// 				text-align: center;
+	// 				padding: .3rem 0;
+	// 			}
+	//
+	// 		}
+	// 	}
+	// </style>
+
+/***/ },
+/* 183 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div v-show=\"isshow\" class=\"report-bg\" @click=\"cancel\" _v-79a7e40f=\"\">\n\t<div class=\"report-main\" @click.stop=\"\" _v-79a7e40f=\"\">\n\t\t<div class=\"report-head\" _v-79a7e40f=\"\">\n\t\t\t<span class=\"send\" _v-79a7e40f=\"\">举报内容问题</span>\n\t\t</div>\n\t\t<div class=\"content\" _v-79a7e40f=\"\">\n\t\t\t\t<ul _v-79a7e40f=\"\">\n\t\t\t\t\t<li v-for=\"(item,index) in items\" v-on:click=\"checked(index)\" :class=\"{'gray':gray}\" _v-79a7e40f=\"\">\n\t\t\t\t\t\t <span _v-79a7e40f=\"\"><em v-if=\"item.checked\" _v-79a7e40f=\"\">已举报  </em>{{item.title}}</span>\n\t\t\t\t\t     <i v-if=\"item.checked\" class=\"iconfont\" _v-79a7e40f=\"\"></i>\n\t\t\t\t\t</li>\n\t\t\t\t</ul>\n\t\t\t    <div class=\"report\" _v-79a7e40f=\"\">\n\t\t\t\t\t<el-button type=\"primary\" _v-79a7e40f=\"\">提交</el-button>\n\t\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n";
+
+/***/ },
+/* 184 */
+/***/ function(module, exports) {
+
+	module.exports = "\n\t <div class=\"footer\" _v-12ed8432=\"\">\n        <div class=\"footer-box\" _v-12ed8432=\"\">\n            <div class=\"footer-t\" _v-12ed8432=\"\">\n                <div class=\"foot-t-box\" _v-12ed8432=\"\">\n                    <favour :moduleid=\"moduleid\" :itemid=\"itemid\" _v-12ed8432=\"\"></favour>\n                    <i @click=\"report\" class=\"report\" _v-12ed8432=\"\"><b _v-12ed8432=\"\">举报</b></i>\n                </div>\n            </div>\n        </div>\n        <report :isshow=\"isshow\" _v-12ed8432=\"\"></report>\n    </div>\n";
+
+/***/ },
+/* 185 */
+/***/ function(module, exports, __webpack_require__) {
+
+	!function(t,e){ true?module.exports=e():"function"==typeof define&&define.amd?define([],e):"object"==typeof exports?exports.VueSwipe=e():t.VueSwipe=e()}(this,function(){return function(t){function e(i){if(n[i])return n[i].exports;var s=n[i]={exports:{},id:i,loaded:!1};return t[i].call(s.exports,s,s.exports,e),s.loaded=!0,s.exports}var n={};return e.m=t,e.c=n,e.p="",e(0)}([function(t,e,n){"use strict";function i(t){return t&&t.__esModule?t:{"default":t}}Object.defineProperty(e,"__esModule",{value:!0}),e.SwipeItem=e.Swipe=void 0;var s=n(7),a=i(s),r=n(6),o=i(r);e.Swipe=a["default"],e.SwipeItem=o["default"]},function(t,e){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e["default"]={name:"mt-swipe-item",mounted:function(){this.$parent&&this.$parent.swipeItemCreated(this)},destroyed:function(){this.$parent&&this.$parent.swipeItemDestroyed(this)}}},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var i=n(4),s=n(3);e["default"]={name:"mt-swipe",created:function(){this.dragState={}},data:function(){return{ready:!1,dragging:!1,userScrolling:!1,animating:!1,index:0,pages:[],timer:null,reInitTimer:null,noDrag:!1}},props:{speed:{type:Number,"default":300},auto:{type:Number,"default":3e3},continuous:{type:Boolean,"default":!0},showIndicators:{type:Boolean,"default":!0},noDragWhenSingle:{type:Boolean,"default":!0},prevent:{type:Boolean,"default":!1}},methods:{swipeItemCreated:function(){var t=this;this.ready&&(clearTimeout(this.reInitTimer),this.reInitTimer=setTimeout(function(){t.reInitPages()},100))},swipeItemDestroyed:function(){var t=this;this.ready&&(clearTimeout(this.reInitTimer),this.reInitTimer=setTimeout(function(){t.reInitPages()},100))},translate:function(t,e,n,s){var a=this,r=arguments;if(n){this.animating=!0,t.style.webkitTransition="-webkit-transform "+n+"ms ease-in-out",setTimeout(function(){t.style.webkitTransform="translate3d("+e+"px, 0, 0)"},50);var o=!1,l=function(){o||(o=!0,a.animating=!1,t.style.webkitTransition="",t.style.webkitTransform="",s&&s.apply(a,r))};(0,i.once)(t,"webkitTransitionEnd",l),setTimeout(l,n+100)}else t.style.webkitTransition="",t.style.webkitTransform="translate3d("+e+"px, 0, 0)"},reInitPages:function(){var t=this.$children;this.noDrag=1===t.length&&this.noDragWhenSingle;var e=[];this.index=0,t.forEach(function(t,n){e.push(t.$el),(0,s.removeClass)(t.$el,"is-active"),0===n&&(0,s.addClass)(t.$el,"is-active")}),this.pages=e},doAnimate:function(t,e){var n=this;if(0!==this.$children.length&&(e||!(this.$children.length<2))){var i,a,r,o,l,u=this.speed||300,d=this.index,c=this.pages,h=c.length;e?(i=e.prevPage,r=e.currentPage,a=e.nextPage,o=e.pageWidth,l=e.offsetLeft):(o=this.$el.clientWidth,r=c[d],i=c[d-1],a=c[d+1],this.continuous&&c.length>1&&(i||(i=c[c.length-1]),a||(a=c[0])),i&&(i.style.display="block",this.translate(i,-o)),a&&(a.style.display="block",this.translate(a,o)));var f,p=this.$children[d].$el;"prev"===t?(d>0&&(f=d-1),this.continuous&&0===d&&(f=h-1)):"next"===t&&(h-1>d&&(f=d+1),this.continuous&&d===h-1&&(f=0));var g=function(){if(void 0!==f){var t=n.$children[f].$el;(0,s.removeClass)(p,"is-active"),(0,s.addClass)(t,"is-active"),n.index=f}i&&(i.style.display=""),a&&(a.style.display="")};setTimeout(function(){"next"===t?(n.translate(r,-o,u,g),a&&n.translate(a,0,u)):"prev"===t?(n.translate(r,o,u,g),i&&n.translate(i,0,u)):(n.translate(r,0,u,g),"undefined"!=typeof l?(i&&l>0&&n.translate(i,-1*o,u),a&&0>l&&n.translate(a,o,u)):(i&&n.translate(i,-1*o,u),a&&n.translate(a,o,u)))},10)}},next:function(){this.doAnimate("next")},prev:function(){this.doAnimate("prev")},doOnTouchStart:function(t){if(!this.noDrag){var e=this.$el,n=this.dragState,i=t.touches[0];n.startTime=new Date,n.startLeft=i.pageX,n.startTop=i.pageY,n.startTopAbsolute=i.clientY,n.pageWidth=e.offsetWidth,n.pageHeight=e.offsetHeight;var s=this.$children[this.index-1],a=this.$children[this.index],r=this.$children[this.index+1];this.continuous&&this.pages.length>1&&(s||(s=this.$children[this.$children.length-1]),r||(r=this.$children[0])),n.prevPage=s?s.$el:null,n.dragPage=a?a.$el:null,n.nextPage=r?r.$el:null,n.prevPage&&(n.prevPage.style.display="block"),n.nextPage&&(n.nextPage.style.display="block")}},doOnTouchMove:function(t){if(!this.noDrag){var e=this.dragState,n=t.touches[0];e.currentLeft=n.pageX,e.currentTop=n.pageY,e.currentTopAbsolute=n.clientY;var i=e.currentLeft-e.startLeft,s=e.currentTopAbsolute-e.startTopAbsolute,a=Math.abs(i),r=Math.abs(s);if(5>a||a>=5&&r>=1.73*a)return void(this.userScrolling=!0);this.userScrolling=!1,t.preventDefault(),i=Math.min(Math.max(-e.pageWidth+1,i),e.pageWidth-1);var o=0>i?"next":"prev";e.prevPage&&"prev"===o&&this.translate(e.prevPage,i-e.pageWidth),this.translate(e.dragPage,i),e.nextPage&&"next"===o&&this.translate(e.nextPage,i+e.pageWidth)}},doOnTouchEnd:function(){if(!this.noDrag){var t=this.dragState,e=new Date-t.startTime,n=null,i=t.currentLeft-t.startLeft,s=t.currentTop-t.startTop,a=t.pageWidth,r=this.index,o=this.pages.length;if(300>e){var l=Math.abs(i)<5&&Math.abs(s)<5;(isNaN(i)||isNaN(s))&&(l=!0),l&&this.$children[this.index].$emit("tap")}300>e&&void 0===t.currentLeft||((300>e||Math.abs(i)>a/2)&&(n=0>i?"next":"prev"),this.continuous||(0===r&&"prev"===n||r===o-1&&"next"===n)&&(n=null),this.$children.length<2&&(n=null),this.doAnimate(n,{offsetLeft:i,pageWidth:t.pageWidth,prevPage:t.prevPage,currentPage:t.dragPage,nextPage:t.nextPage}),this.dragState={})}}},destroyed:function(){this.timer&&(clearInterval(this.timer),this.timer=null),this.reInitTimer&&(clearTimeout(this.reInitTimer),this.reInitTimer=null)},mounted:function(){var t=this;this.ready=!0,this.auto>0&&(this.timer=setInterval(function(){t.dragging||t.animating||t.next()},this.auto)),this.reInitPages();var e=this.$el;e.addEventListener("touchstart",function(e){t.prevent&&e.preventDefault(),t.animating||(t.dragging=!0,t.userScrolling=!1,t.doOnTouchStart(e))}),e.addEventListener("touchmove",function(e){t.dragging&&t.doOnTouchMove(e)}),e.addEventListener("touchend",function(e){return t.userScrolling?(t.dragging=!1,void(t.dragState={})):void(t.dragging&&(t.doOnTouchEnd(e),t.dragging=!1))})}}},function(t,e){"use strict";var n=function(t){return(t||"").replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g,"")},i=function(t,e){if(!t||!e)return!1;if(-1!=e.indexOf(" "))throw new Error("className should not contain space.");return t.classList?t.classList.contains(e):(" "+t.className+" ").indexOf(" "+e+" ")>-1},s=function(t,e){if(t){for(var n=t.className,s=(e||"").split(" "),a=0,r=s.length;r>a;a++){var o=s[a];o&&(t.classList?t.classList.add(o):i(t,o)||(n+=" "+o))}t.classList||(t.className=n)}},a=function(t,e){if(t&&e){for(var s=e.split(" "),a=" "+t.className+" ",r=0,o=s.length;o>r;r++){var l=s[r];l&&(t.classList?t.classList.remove(l):i(t,l)&&(a=a.replace(" "+l+" "," ")))}t.classList||(t.className=n(a))}};t.exports={hasClass:i,addClass:s,removeClass:a}},function(t,e){"use strict";var n=function(){return document.addEventListener?function(t,e,n){t&&e&&n&&t.addEventListener(e,n,!1)}:function(t,e,n){t&&e&&n&&t.attachEvent("on"+e,n)}}(),i=function(){return document.removeEventListener?function(t,e,n){t&&e&&t.removeEventListener(e,n,!1)}:function(t,e,n){t&&e&&t.detachEvent("on"+e,n)}}(),s=function(t,e,s){var a=function r(){s&&s.apply(this,arguments),i(t,e,r)};n(t,e,a)};t.exports={on:n,off:i,once:s}},function(t,e){},function(t,e,n){var i,s;i=n(1);var a=n(8);s=i=i||{},"object"!=typeof i["default"]&&"function"!=typeof i["default"]||(s=i=i["default"]),"function"==typeof s&&(s=s.options),s.render=a.render,s.staticRenderFns=a.staticRenderFns,t.exports=i},function(t,e,n){var i,s;n(5),i=n(2);var a=n(9);s=i=i||{},"object"!=typeof i["default"]&&"function"!=typeof i["default"]||(s=i=i["default"]),"function"==typeof s&&(s=s.options),s.render=a.render,s.staticRenderFns=a.staticRenderFns,t.exports=i},function(module,exports){module.exports={render:function(){with(this)return _h("div",{staticClass:"mint-swipe-item"},[_t("default")])},staticRenderFns:[]}},function(module,exports){module.exports={render:function(){with(this)return _h("div",{staticClass:"mint-swipe"},[_h("div",{ref:"wrap",staticClass:"mint-swipe-items-wrap"},[_t("default")])," ",_h("div",{directives:[{name:"show",rawName:"v-show",value:showIndicators,expression:"showIndicators"}],staticClass:"mint-swipe-indicators"},[_l(pages,function(t,e){return _h("div",{staticClass:"mint-swipe-indicator","class":{"is-active":e===index}})})])])},staticRenderFns:[]}}])});
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 /***/ },
 /* 231 */
@@ -45982,7 +47312,11 @@
 /* 232 */
 /***/ function(module, exports) {
 
+<<<<<<< HEAD
 	module.exports = "\n<div class=\"pt-perspective\" _v-5fdcdade=\"\">\n\t<my-nav :goback=\"true\" title=\"登录\" _v-5fdcdade=\"\">\n\t\t<router-link :to=\"{path:'/register'}\" class=\"nav-right\" slot=\"right\" _v-5fdcdade=\"\">注册</router-link>\n\t</my-nav>\n\t\n\n\t<div class=\"login-main\" _v-5fdcdade=\"\">\n\t\t\t<ul _v-5fdcdade=\"\">\n\t\t\t\t<li _v-5fdcdade=\"\">\n                     <i class=\"iconfont\" _v-5fdcdade=\"\">㐷</i>\n\t\t\t\t\t <el-input class=\"from-input\" placeholder=\"手机/当代账号\" v-model=\"user\" _v-5fdcdade=\"\"></el-input>\n\t\t\t\t</li>\n\t\t\t\t<li _v-5fdcdade=\"\">\n\t\t\t        <i class=\"iconfont\" _v-5fdcdade=\"\"></i>\n\t\t\t        <el-input class=\"from-input pwd\" :type=\"passwdtype\" placeholder=\"登录密码\" v-model=\"pwd\" _v-5fdcdade=\"\"></el-input>\n  \t\t\t        <el-switch v-model=\"status\" on-text=\"\" off-text=\"\" @change=\"passwdstatus\" _v-5fdcdade=\"\"></el-switch>\n\t\t\t\t</li>\n\t\t\t    <li _v-5fdcdade=\"\">\n\t\t\t\t   <el-button type=\"primary\" @click=\"login\" _v-5fdcdade=\"\">登录</el-button>\n\t\t\t    </li>\n\t\t</ul>\n\t</div>\n\n\t \n\n</div>\n";
+=======
+	module.exports = "\n<div style=\"height:100%\" _v-0e347e4b=\"\">\n\n\t<!-- nav -->\n    <app-nav :path=\"topath\" _v-0e347e4b=\"\"></app-nav>\n\n    <load v-if=\"loading\" _v-0e347e4b=\"\"></load>\n    <!-- content -->\n    <div v-else=\"\" _v-0e347e4b=\"\">\n        <div class=\"content-box\" _v-0e347e4b=\"\">\n            <!-- content-one -->\n            <div class=\"content\" _v-0e347e4b=\"\">\n                <div class=\"article_title\" _v-0e347e4b=\"\">\n                    <h1 _v-0e347e4b=\"\">{{item.title}}</h1>\n                </div>\n                <div class=\"article_info\" _v-0e347e4b=\"\">\n                    <i _v-0e347e4b=\"\">{{item.spmc}}</i>\n                    <span _v-0e347e4b=\"\">{{item.editdate}}</span>\n                </div>\n                <div class=\"product_banner\" _v-0e347e4b=\"\">\n\n                    <swipe class=\"my-swipe\" :speed=\"0\" :auto=\"0\" :show-indicators=\"false\" _v-0e347e4b=\"\">\n\n                        <swipe-item v-for=\"pic in item.sptp\" class=\"slide1\" _v-0e347e4b=\"\"> <img :src=\"pic\" _v-0e347e4b=\"\"></swipe-item>\n\n                    </swipe>\n                </div>\n\n                <div class=\"article_area\" _v-0e347e4b=\"\">\n                    <p v-if=\"item.cpqy\" _v-0e347e4b=\"\">出品企业:&nbsp;{{item.cpqy}}</p>\n                    <p v-if=\"item.sccj\" _v-0e347e4b=\"\">生产企业:&nbsp;{{item.sccj}}</p>\n                    <p v-if=\"item.company\" _v-0e347e4b=\"\">招商企业:&nbsp;{{item.company}}</p>\n                    <p _v-0e347e4b=\"\">发布日期:&nbsp;{{item.adddate}}</p>\n                    <p _v-0e347e4b=\"\">更新日期:&nbsp;{{item.editdate}}</p>\n                    <p _v-0e347e4b=\"\">点击数:&nbsp;{{item.hits}}</p>\n                </div>\n                <div class=\"article_area\" _v-0e347e4b=\"\">\n                    <h3 _v-0e347e4b=\"\"><b _v-0e347e4b=\"\">商品基本信息:</b></h3>\n                    <p v-if=\"item.spmc\" _v-0e347e4b=\"\">商品名称:&nbsp;{{item.spmc}}</p>\n                    <p v-if=\"item.sptym\" _v-0e347e4b=\"\">通用名称:&nbsp;{{item.sptym}}</p>\n                    <p v-if=\"item.pzwh\" _v-0e347e4b=\"\">批准文号:&nbsp;{{item.pzwh}}</p>\n                    <p _v-0e347e4b=\"\">分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类:&nbsp;{{item.catname}}</p>\n                    <p v-if=\"item.zybhpz\" _v-0e347e4b=\"\">中药保护品种:&nbsp;{{item.zybhpz}}</p>  \n                    <p v-if=\"item.mztx\" _v-0e347e4b=\"\">民族特性:&nbsp;{{item.mztx}}</p>  \n                    <p v-if=\"item.syjb\" _v-0e347e4b=\"\">适用疾病:&nbsp;{{item.syjb}}</p>                     \n                    <p v-if=\"item.syks\" _v-0e347e4b=\"\">适用科室:&nbsp;{{item.syks}}</p>\n                     <p v-if=\"item.cfysx\" _v-0e347e4b=\"\">处方药属性:&nbsp;{{item.cfysx}}</p>\n                    <p v-if=\"item.spjx\" _v-0e347e4b=\"\">商品剂型:&nbsp;{{item.spjx}}</p>\n                    <p v-if=\"item.spgg\" _v-0e347e4b=\"\">商品规格:&nbsp;{{item.spgg}}</p>\n                    <p v-if=\"item.jysx\" _v-0e347e4b=\"\">基药属性:&nbsp;{{item.jysx}}</p>\n                    <p v-if=\"item.ybsx\" _v-0e347e4b=\"\">医保属性:&nbsp;{{item.ybsx}}</p>\n                    <p v-if=\"item.zbqy\" _v-0e347e4b=\"\">中标区域:&nbsp;{{item.zbqy}}</p>\n                    <p v-if=\"item.shqd\" _v-0e347e4b=\"\">适合渠道:&nbsp;{{item.shqd}}</p>\n                    <p v-if=\"item.cpmd\" _v-0e347e4b=\"\">产品卖点:&nbsp;{{item.cpmd}}</p>\n                </div>\n                <div class=\"article_area\" _v-0e347e4b=\"\">\n                    <h3 _v-0e347e4b=\"\"><b _v-0e347e4b=\"\">商品详情信息:</b></h3>\n                    <p v-if=\"item.zyyl\" _v-0e347e4b=\"\">主要原料:&nbsp;{{item.zyyl}}</p>\n                    <p v-if=\"item.cs\" _v-0e347e4b=\"\">功效成分:&nbsp;{{item.cs}}</p>\n                    <p v-if=\"item.xz\" _v-0e347e4b=\"\">性状:&nbsp;{{item.xz}}</p>\n                    <p v-if=\"item.bjgn\" _v-0e347e4b=\"\">保健功能:&nbsp;{{item.bjgn}}</p>\n                    <p v-if=\"item.yfyl\" _v-0e347e4b=\"\">用法用量:&nbsp;{{item.yfyl}}</p>\n                    <p v-if=\"item.syrq\" _v-0e347e4b=\"\">适宜人群:&nbsp;{{item.syrq}}</p>\n                    <p v-if=\"item.syz\" _v-0e347e4b=\"\">适应症:&nbsp;{{item.syz}}</p>\n                    <p v-if=\"item.syff\" _v-0e347e4b=\"\">食用方法:&nbsp;{{item.syff}}</p>\n                    <p v-if=\"item.zysx\" _v-0e347e4b=\"\">注意事项:&nbsp;{{item.zysx}}</p>\n                    <p v-if=\"item.bz\" _v-0e347e4b=\"\">包&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;装:&nbsp;{{item.bz}}</p>\n                    <p v-if=\"item.zxbz\" _v-0e347e4b=\"\">执行标准:&nbsp;{{item.zxbz}}</p>\n                    <p v-if=\"item.scxkz\" _v-0e347e4b=\"\">生产许可证:&nbsp;{{item.scxkz}}</p>\n                    <p v-if=\"item.wsxkzh\" _v-0e347e4b=\"\">卫生许可证号:&nbsp;{{item.wsxkzh}}</p>\n                    <p v-if=\"item.cpry\" _v-0e347e4b=\"\">产品荣誉:&nbsp;{{item.cpry}}</p>\n                    <p v-if=\"item.bcsm\" _v-0e347e4b=\"\">补充说明:&nbsp;{{item.bcsm}}</p>\n                  \n                </div>\n                <div class=\"article_area\" _v-0e347e4b=\"\">\n                    <h3 _v-0e347e4b=\"\"><b _v-0e347e4b=\"\">招商要求:</b></h3>\n                    <p _v-0e347e4b=\"\">招商区域:&nbsp;{{item.zsqy ? item.zsqy : \"全国\"}}</p>\n                    <p _v-0e347e4b=\"\">招商要求:&nbsp;{{item.zsyq ? item.zsyq : \"暂无要求\"}}</p>\n                    <p _v-0e347e4b=\"\">可提供支持:&nbsp;{{item.ktgzc ? item.ktgzc : \"暂无支持\"}}</p>\n                </div>\n                <div class=\"article_area no_border\" _v-0e347e4b=\"\">\n                    <h3 _v-0e347e4b=\"\"><b _v-0e347e4b=\"\">联系信息:</b></h3>\n                    <p v-if=\"item.company\" _v-0e347e4b=\"\">企业名称:&nbsp;{{item.company}}</p>\n                    <p v-if=\"item.address\" _v-0e347e4b=\"\">联系地址:&nbsp;{{item.address}}</p>\n                    <p v-if=\"item.postcode\" _v-0e347e4b=\"\">邮政编码:&nbsp;{{item.postcode}}</p>\n                    <p v-if=\"item.truename\" _v-0e347e4b=\"\">联&nbsp;&nbsp;系&nbsp;&nbsp;人:&nbsp;{{item.truename}}</p>\n                    <p v-if=\"item.telephone\" _v-0e347e4b=\"\">电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话:&nbsp;{{item.telephone}}</p>\n                    <p v-if=\"item.mobile\" _v-0e347e4b=\"\">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机:&nbsp;{{item.mobile}}</p>\n                    <p v-if=\"item.fax\" _v-0e347e4b=\"\">传&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;真:&nbsp;{{item.fax}}</p>\n                    <p v-if=\"item.email\" _v-0e347e4b=\"\">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:&nbsp;{{item.email}}</p>\n                    <p v-if=\"item.qq\" _v-0e347e4b=\"\">Q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q:&nbsp;{{item.qq}}</p>\n                </div>\n\n            </div>\n\n        </div><!--content-box-->\n\n        <!-- footer -->\n        <detail-footer moduleid=\"22\" :itemid=\"item.itemid\" _v-0e347e4b=\"\"></detail-footer>\n\n    </div>\n   \n</div>\n\n\n";
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 /***/ },
 /* 233 */
@@ -46012,7 +47346,11 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
+<<<<<<< HEAD
 	  var id = "_v-6472e93e/register.vue"
+=======
+	  var id = "_v-679a6de8/healthDetail.vue"
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -46150,7 +47488,11 @@
 /* 237 */
 /***/ function(module, exports) {
 
+<<<<<<< HEAD
 	module.exports = "\n<div class=\"pt-perspective\" _v-6472e93e=\"\">\n\t<my-nav title=\"注册\" _v-6472e93e=\"\">\n\t\t<router-link :to=\"{path:'/login'}\" class=\"nav-right\" slot=\"right\" _v-6472e93e=\"\">登录</router-link>\n\t</my-nav>\n\t<div class=\"reg-main\" _v-6472e93e=\"\">\n\t\t<ul _v-6472e93e=\"\">\n\t\t\t<li _v-6472e93e=\"\">\n\t\t\t\t<span _v-6472e93e=\"\">手机号码</span>\n\t\t\t\t<input palceholder=\"手机号码\" _v-6472e93e=\"\">\n\t\t\t</li>\n\t\t\t<li _v-6472e93e=\"\">\n\t\t\t\t<span _v-6472e93e=\"\">验证码</span>\n\t\t\t\t<input class=\"validate\" maxlength=\"6\" _v-6472e93e=\"\">\n\t\t\t\t<el-button type=\"primary\" :disabled=\"true\" _v-6472e93e=\"\">获取验证码</el-button>\n\t\t\t</li>\n\t\t\t<li _v-6472e93e=\"\">\n\t\t\t\t<span _v-6472e93e=\"\">密码</span>\n\t\t\t\t<input palceholder=\"6-16位字母、数字和符号\" _v-6472e93e=\"\">\n\t\t\t</li>\n\t\t</ul>\n\n\t\t<el-button @click.native=\"open\" type=\"primary\" _v-6472e93e=\"\">注册</el-button>\n\t</div>\n</div>\n";
+=======
+	module.exports = "\n<div style=\"height:100%\" _v-679a6de8=\"\">\n\n\t<!-- nav -->\n    <app-nav :path=\"path\" _v-679a6de8=\"\"></app-nav>\n\n    <load v-if=\"loading\" _v-679a6de8=\"\"></load>\n    <!-- content -->\n    <div v-else=\"\" _v-679a6de8=\"\">\n        <div class=\"content-box\" _v-679a6de8=\"\">\n            <!-- content-one -->\n            <div class=\"content\" _v-679a6de8=\"\">\n                <div class=\"article_title\" _v-679a6de8=\"\">\n                    <h1 _v-679a6de8=\"\">{{item.title}}</h1>\n                </div>\n                <div class=\"article_info\" _v-679a6de8=\"\">\n                    <i _v-679a6de8=\"\">{{item.copyfrom ?item.copyfrom : \"当代医药市场网\"}}</i>\n                    <span _v-679a6de8=\"\">{{item.editdate}}</span>\n                </div>\n                 \n\n                <div class=\"article_area no_border\" _v-679a6de8=\"\">\n                 \t<div class=\"article_body\" v-html=\"item.content\" _v-679a6de8=\"\">\n                 \t</div>\n                </div>\n\n            </div>\n\n        </div><!--content-box-->\n\n        <!-- footer -->\n        <div class=\"footer\" _v-679a6de8=\"\">\n            <div class=\"footer-box\" _v-679a6de8=\"\">\n                <div class=\"footer-t\" _v-679a6de8=\"\">\n                    <div class=\"foot-t-box\" _v-679a6de8=\"\">\n                        <i class=\"iconfont favour\" _v-679a6de8=\"\"></i>\n                        <span _v-679a6de8=\"\">16</span>\n                        <i class=\"report\" _v-679a6de8=\"\"><b _v-679a6de8=\"\">举报</b></i>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n\n\n";
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 /***/ },
 /* 238 */
@@ -46180,7 +47522,11 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
+<<<<<<< HEAD
 	  var id = "_v-479ecafa/search.vue"
+=======
+	  var id = "_v-5fdcdade/login.vue"
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -46403,7 +47749,11 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
+<<<<<<< HEAD
 	  var id = "_v-22c19432/searchPage.vue"
+=======
+	  var id = "_v-af160282/blackNav.vue"
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -46666,7 +48016,11 @@
 /* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 	module.exports = { "default": __webpack_require__(247), __esModule: true };
+=======
+	module.exports = "\n<div :class=\"['warp-header',theme]\" _v-af160282=\"\">\n\n  \t<div v-show=\"goback\" @click=\"back\" class=\"goback\" _v-af160282=\"\"></div>\n\t\n\t{{title}}\n\t<slot name=\"right\" _v-af160282=\"\"></slot>\n</div>\t\t\n";
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 /***/ },
 /* 247 */
@@ -46682,6 +48036,7 @@
 /* 248 */
 /***/ function(module, exports) {
 
+<<<<<<< HEAD
 	module.exports = "\n<div class=\"search-main\" _v-22c19432=\"\">\n\t<div class=\"search-nav\" _v-22c19432=\"\">\n\t\t<i @click=\"goback\" class=\"iconfont goback\" _v-22c19432=\"\">󰀌</i>\n\t\t<div class=\"search-area\" _v-22c19432=\"\">\n\t\t\t<div class=\"option-area\" @click=\"selecttype\" _v-22c19432=\"\">\n\t\t\t\t{{type}}\n\t\t\t\t<i :class=\"['iconfont','option-icon',{'rotate':rotate}]\" _v-22c19432=\"\">㐸</i>\n\t\t\t</div>\n\t\t\t\n\n\t\t\t<input v-model=\"q\" class=\"search-text\" placeholder=\"药品\" _v-22c19432=\"\">\n\t\t</div>\n\t\t<i @click=\"gosearch\" class=\"iconfont search-icon\" _v-22c19432=\"\"></i>\n\t</div>\n\t<div v-show=\"optionstatus\" class=\"option-content\" _v-22c19432=\"\">\n\t\t<i class=\"iconfont option-bar\" _v-22c19432=\"\">㐸</i>\n\t\t<ul _v-22c19432=\"\">\n\t\t\t<li @click=\"checktype('招商')\" _v-22c19432=\"\">招商</li>\n\t\t\t<li @click=\"checktype('资讯')\" _v-22c19432=\"\">资讯</li>\n\t\t\t<li @click=\"checktype('视频')\" class=\"no-border\" _v-22c19432=\"\">视频</li>\n\t\t</ul>\n\t</div>\n\t<div class=\"history-area\" _v-22c19432=\"\">\n\t\t<div class=\"history-head\" _v-22c19432=\"\">\n\t\t\t<span class=\"title\" _v-22c19432=\"\">搜索历史</span>\n\t\t\t<span class=\"clean\" @click=\"clearSearchItems\" _v-22c19432=\"\"><i class=\"iconfont\" _v-22c19432=\"\"></i>清空</span>\n\t\t</div>\n\t\t<div class=\"history-list\" _v-22c19432=\"\">\n\t\t\t<ul _v-22c19432=\"\">\n\t\t\t\t<li v-for=\"item in searchItems\" _v-22c19432=\"\"><router-link :to=\"item\" _v-22c19432=\"\">{{item.query.q}}</router-link></li>\n\t\t\t</ul>\n\t\t</div>\n\t</div>\n\n</div>\n";
 
 /***/ },
@@ -46857,6 +48212,9 @@
 	// 	</div>
 	// </template>
 	// <script>
+=======
+	module.exports = "\n<div class=\"pt-perspective\" _v-5fdcdade=\"\">\n\t<my-nav :goback=\"true\" title=\"登录\" _v-5fdcdade=\"\">\n\t\t<router-link :to=\"{path:'/register'}\" class=\"nav-right\" slot=\"right\" _v-5fdcdade=\"\">注册</router-link>\n\t</my-nav>\n\t\n\n\t<div class=\"login-main\" _v-5fdcdade=\"\">\n\t\t\t<ul _v-5fdcdade=\"\">\n\t\t\t\t<li _v-5fdcdade=\"\">\n <i class=\"iconfont\" _v-5fdcdade=\"\">㐷</i>\n\t\t\t <el-input class=\"from-input\" placeholder=\"手机/当代账号\" v-model=\"user\" _v-5fdcdade=\"\"></el-input>\n\t\t\t\t</li>\n\t\t\t\t<li _v-5fdcdade=\"\">\n\t\n\t\t\t <i class=\"iconfont\" _v-5fdcdade=\"\"></i>\n\t\t\t <el-input class=\"from-input pwd\" :type=\"passwdtype\" placeholder=\"登录密码\" v-model=\"pwd\" _v-5fdcdade=\"\"></el-input>\t\n  \t\t\t<el-switch v-model=\"status\" on-text=\"\" off-text=\"\" @change=\"passwdstatus\" _v-5fdcdade=\"\"></el-switch>\n\t\t\t\t</li>\n\t\t\t<li _v-5fdcdade=\"\">\n\t\t\t\t<el-button type=\"primary\" @click=\"login\" _v-5fdcdade=\"\">登录</el-button>\n\t\t\t</li>\t\n\t\t</ul>\t\n\n\n\n\n\n\t</div>\n\n\t \n\n</div>\n";
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 /***/ },
 /* 251 */
@@ -46886,7 +48244,11 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
+<<<<<<< HEAD
 	  var id = "_v-33ad8656/searchArticleItem.vue"
+=======
+	  var id = "_v-6472e93e/register.vue"
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -47102,7 +48464,11 @@
 /* 255 */
 /***/ function(module, exports) {
 
+<<<<<<< HEAD
 	module.exports = "\n<div class=\"searItems\" _v-33ad8656=\"\">\n     <ul _v-33ad8656=\"\">                \n       <li v-for=\"item in items\" _v-33ad8656=\"\">\n           <template v-if=\"item.thumb\">\n           <router-link :to=\"{name:'healthDetail',query:{id:item.itemid}}\" _v-33ad8656=\"\">\n               <template v-if=\"item.level == 8\">                            \n                   <div class=\"midbox\" _v-33ad8656=\"\">\n                       <div class=\"title\" _v-33ad8656=\"\">{{item.title}}<div _v-33ad8656=\"\">\n                       <span _v-33ad8656=\"\"><img :src=\"item.thumb\" _v-33ad8656=\"\"></span>\n                       <span _v-33ad8656=\"\"><img class=\"imgmid\" :src=\"item.thumb1\" _v-33ad8656=\"\"></span>\n                       <span _v-33ad8656=\"\"><img :src=\"item.thumb2\" _v-33ad8656=\"\"></span>\n                       <i class=\"source\" _v-33ad8656=\"\">{{item.copyfrom}}</i>\n                       <i class=\"hits\" _v-33ad8656=\"\"><i class=\"iconfont\" _v-33ad8656=\"\">󰁈</i>{{item.hits}}</i>\n                    </div>                           \n               </div></div></template>  \n               <template v-if=\"item.level == 9\">                            \n                    <div class=\"bigbox\" _v-33ad8656=\"\">\n                       <div class=\"title\" _v-33ad8656=\"\">\n                         {{item.title}}\n                       </div>\n                      <img :src=\"item.thumb\" _v-33ad8656=\"\">\n                      <span _v-33ad8656=\"\">{{item.copyfrom}}</span>\n                      <span class=\"hits\" _v-33ad8656=\"\"><i class=\"iconfont\" _v-33ad8656=\"\">󰁈</i>{{item.hits}}</span>\n                   </div>                  \n               </template> \n              <template v-if=\"item.level != 8 &amp;&amp; item.level != 9\">  \n                   <div class=\"descBox\" _v-33ad8656=\"\">\n                       <div class=\"title\" _v-33ad8656=\"\">{{item.title | dsubstr(20)}}</div>\n                       <div class=\"footnote\" _v-33ad8656=\"\">\n                           <span class=\"source\" _v-33ad8656=\"\">{{item.copyfrom ? item.copyfrom : \"当代医药市场网\"}}</span>\n                           <span class=\"hits\" _v-33ad8656=\"\"><i class=\"iconfont\" _v-33ad8656=\"\">󰁈</i>{{item.hits}}</span>\n                       </div>\n                   </div>\n                   <span class=\"img\" _v-33ad8656=\"\">\n                       <img :src=\"item.thumb\" class=\"img-small\" _v-33ad8656=\"\">\n                   </span>\n               </template>  \n           </router-link>\n           </template>\n           <template v-else=\"\">\n               <router-link :to=\"{name:'healthDetail',query:{id:item.itemid}}\" _v-33ad8656=\"\">\n                   <h2 class=\"title\" _v-33ad8656=\"\">{{item.title | dsubstr(16)}}</h2>\n                   <span class=\"hits\" _v-33ad8656=\"\">\n                       <i class=\"iconfont\" _v-33ad8656=\"\">󰁈</i>{{item.hits}}\n                   </span>\n               </router-link>\n           </template>\n       </li>\n     </ul>\n </div>\n\n";
+=======
+	module.exports = "\n<div class=\"pt-perspective\" _v-6472e93e=\"\">\n\t<my-nav title=\"注册\" _v-6472e93e=\"\">\n\t\t<router-link :to=\"{path:'/login'}\" class=\"nav-right\" slot=\"right\" _v-6472e93e=\"\">登录</router-link>\n\t</my-nav>\n\t<div class=\"reg-main\" _v-6472e93e=\"\">\n\t\t<ul _v-6472e93e=\"\">\n\t\t\t<li _v-6472e93e=\"\">\n\t\t\t\t<span _v-6472e93e=\"\">手机号码</span>\n\t\t\t\t<input palceholder=\"手机号码\" _v-6472e93e=\"\">\n\t\t\t</li>\n\t\t\t<li _v-6472e93e=\"\">\n\t\t\t\t<span _v-6472e93e=\"\">验证码</span>\n\t\t\t\t<input class=\"validate\" maxlength=\"6\" _v-6472e93e=\"\">\n\t\t\t\t<el-button type=\"primary\" :disabled=\"true\" _v-6472e93e=\"\">获取验证码</el-button>\n\t\t\t</li>\n\t\t\t<li _v-6472e93e=\"\">\n\t\t\t\t<span _v-6472e93e=\"\">密码</span>\n\t\t\t\t<input palceholder=\"6-16位字母、数字和符号\" _v-6472e93e=\"\">\n\t\t\t</li>\n\t\t</ul>\n\n\t\t<el-button @click.native=\"open\" type=\"primary\" _v-6472e93e=\"\">注册</el-button>\n\t</div>\n</div>\n";
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 /***/ },
 /* 256 */
@@ -47115,8 +48481,13 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
+<<<<<<< HEAD
 	  console.warn("[vue-loader] src\\components\\searchInvestItem.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(260)
+=======
+	  console.warn("[vue-loader] src\\components\\search.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(228)
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -47132,7 +48503,11 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
+<<<<<<< HEAD
 	  var id = "_v-7e9394ea/searchInvestItem.vue"
+=======
+	  var id = "_v-479ecafa/search.vue"
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -47287,7 +48662,11 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
+<<<<<<< HEAD
 	  var id = "_v-937d1734/noData.vue"
+=======
+	  var id = "_v-22c19432/searchPage.vue"
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -47308,7 +48687,45 @@
 /***/ function(module, exports) {
 
 	// <template>
+<<<<<<< HEAD
 	// 	<div class="searchless"></div>
+=======
+	// 	<div class="search-main">
+	// 		<div class="search-nav">
+	// 			<i @click="goback" class="iconfont goback">&#xf000c;</i>
+	// 			<div class="search-area">
+	// 				<div class="option-area" @click="selecttype">
+	// 					{{type}}
+	// 					<i :class="['iconfont','option-icon',{'rotate':rotate}]">&#x3438;</i>
+	// 				</div>
+	//
+	//
+	// 				<input v-model="q" class="search-text" placeholder="药品">
+	// 			</div>
+	// 			<i @click="gosearch" class="iconfont search-icon">&#xe606;</i>
+	// 		</div>
+	// 		<div v-show="optionstatus" class="option-content">
+	// 			<i class="iconfont option-bar">&#x3438;</i>
+	// 			<ul>
+	// 				<li @click="checktype('招商')">招商</li>
+	// 				<li @click="checktype('资讯')">资讯</li>
+	// 				<li @click="checktype('视频')" class="no-border">视频</li>
+	// 			</ul>
+	// 		</div>
+	// 		<div class="history-area">
+	// 			<div class="history-head">
+	// 				<span class="title">搜索历史</span>
+	// 				<span class="clean" @click="clearSearchItems"><i class="iconfont">&#xe6b8;</i>清空</span>
+	// 			</div>
+	// 			<div class="history-list">
+	// 				<ul>
+	// 					<li v-for="item in searchItems" :to="item">{{item.query.q}}</li>
+	// 				</ul>
+	// 			</div>
+	// 		</div>
+	//
+	// 	</div>
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	// </template>
 	// <script>
 	// </script>
@@ -47340,7 +48757,11 @@
 /* 268 */
 /***/ function(module, exports) {
 
+<<<<<<< HEAD
 	module.exports = "\n<div _v-479ecafa=\"\">\n\t<component :is=\"currentView\" _v-479ecafa=\"\"></component>\n</div>\n";
+=======
+	module.exports = "\n<div class=\"search-main\" _v-22c19432=\"\">\n\t<div class=\"search-nav\" _v-22c19432=\"\">\n\t\t<i @click=\"goback\" class=\"iconfont goback\" _v-22c19432=\"\">󰀌</i>\n\t\t<div class=\"search-area\" _v-22c19432=\"\">\n\t\t\t<div class=\"option-area\" @click=\"selecttype\" _v-22c19432=\"\">\n\t\t\t\t{{type}}\n\t\t\t\t<i :class=\"['iconfont','option-icon',{'rotate':rotate}]\" _v-22c19432=\"\">㐸</i>\n\t\t\t</div>\n\t\t\t\n\n\t\t\t<input v-model=\"q\" class=\"search-text\" placeholder=\"药品\" _v-22c19432=\"\">\n\t\t</div>\n\t\t<i @click=\"gosearch\" class=\"iconfont search-icon\" _v-22c19432=\"\"></i>\n\t</div>\n\t<div v-show=\"optionstatus\" class=\"option-content\" _v-22c19432=\"\">\n\t\t<i class=\"iconfont option-bar\" _v-22c19432=\"\">㐸</i>\n\t\t<ul _v-22c19432=\"\">\n\t\t\t<li @click=\"checktype('招商')\" _v-22c19432=\"\">招商</li>\n\t\t\t<li @click=\"checktype('资讯')\" _v-22c19432=\"\">资讯</li>\n\t\t\t<li @click=\"checktype('视频')\" class=\"no-border\" _v-22c19432=\"\">视频</li>\n\t\t</ul>\n\t</div>\n\t<div class=\"history-area\" _v-22c19432=\"\">\n\t\t<div class=\"history-head\" _v-22c19432=\"\">\n\t\t\t<span class=\"title\" _v-22c19432=\"\">搜索历史</span>\n\t\t\t<span class=\"clean\" @click=\"clearSearchItems\" _v-22c19432=\"\"><i class=\"iconfont\" _v-22c19432=\"\"></i>清空</span>\n\t\t</div>\n\t\t<div class=\"history-list\" _v-22c19432=\"\">\n\t\t\t<ul _v-22c19432=\"\">\n\t\t\t\t<li v-for=\"item in searchItems\" :to=\"item\" _v-22c19432=\"\">{{item.query.q}}</li>\n\t\t\t</ul>\n\t\t</div>\n\t</div>\n\n</div>\n";
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 /***/ },
 /* 269 */
@@ -47354,8 +48775,13 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
+<<<<<<< HEAD
 	  console.warn("[vue-loader] src\\components\\mySetting.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(275)
+=======
+	  console.warn("[vue-loader] src\\components\\searchList.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(227)
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -47371,7 +48797,11 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
+<<<<<<< HEAD
 	  var id = "_v-0c44ce79/mySetting.vue"
+=======
+	  var id = "_v-3fbc42c1/searchList.vue"
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -47397,7 +48827,7 @@
 /* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -47412,16 +48842,33 @@
 	exports.default = {
 		data: function data() {
 			return {
+<<<<<<< HEAD
 				status: false
 			};
 		},
 
+=======
+				path: { path: "/search" }
+			};
+		},
+
+		computed: {
+			q: function q() {
+				return this.$route.query.q.length > 10 ? this.dSubstr(this.$route.query.q, 10) + "···" : this.$route.query.q;
+			}
+		},
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 		components: {
 			'my-nav': _blackNav2.default
 		},
 		methods: {
+<<<<<<< HEAD
 			passwdstatus: function passwdstatus() {
 				this.passwdtype = this.passwdtype == "password" ? "text" : "password";
+=======
+			dSubstr: function dSubstr(title, length) {
+				return title.substr(0, length);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 			}
 		}
 	};
@@ -47468,6 +48915,7 @@
 	// <style>
 	// </style>
 	// <template>
+<<<<<<< HEAD
 	// 	<div class="myset-area" >
 	// 		<my-nav theme="white" title="设置"></my-nav>
 	// 		<div class="myset-main">
@@ -47489,11 +48937,16 @@
 	// 		<div class="logout">
 	// 			<span>退出登录</span>
 	// 		</div>
+=======
+	// 	<div>
+	// 		<my-nav theme="white" :title="q"></my-nav>	
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	// 	</div>
 	// </template>
 	// <script>
 
 /***/ },
+<<<<<<< HEAD
 /* 275 */
 /***/ function(module, exports) {
 
@@ -47622,11 +49075,15 @@
 
 /***/ },
 /* 282 */
+=======
+/* 227 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
-	// removed by extract-text-webpack-plugin
+	module.exports = "\n<div>\n\t<my-nav theme=\"white\" :title=\"q\"></my-nav>\t\n</div>\n";
 
 /***/ },
+<<<<<<< HEAD
 /* 283 */,
 /* 284 */
 /***/ function(module, exports, __webpack_require__) {
@@ -47671,6 +49128,15 @@
 
 /***/ },
 /* 286 */
+=======
+/* 228 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div _v-479ecafa=\"\">\n\t<component :is=\"currentView\" _v-479ecafa=\"\"></component>\n</div>\n";
+
+/***/ },
+/* 229 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -47679,7 +49145,11 @@
 	    value: true
 	});
 
+<<<<<<< HEAD
 	var _promise = __webpack_require__(287);
+=======
+	var _promise = __webpack_require__(230);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	var _promise2 = _interopRequireDefault(_promise);
 
@@ -47713,6 +49183,7 @@
 	};
 
 /***/ },
+<<<<<<< HEAD
 /* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -47720,22 +49191,40 @@
 
 /***/ },
 /* 288 */
+=======
+/* 230 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(231), __esModule: true };
+
+/***/ },
+/* 231 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(101);
 	__webpack_require__(39);
 	__webpack_require__(83);
+<<<<<<< HEAD
 	__webpack_require__(289);
 	module.exports = __webpack_require__(47).Promise;
 
 /***/ },
 /* 289 */
+=======
+	__webpack_require__(232);
+	module.exports = __webpack_require__(47).Promise;
+
+/***/ },
+/* 232 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var LIBRARY            = __webpack_require__(44)
 	  , global             = __webpack_require__(46)
 	  , ctx                = __webpack_require__(48)
+<<<<<<< HEAD
 	  , classof            = __webpack_require__(290)
 	  , $export            = __webpack_require__(45)
 	  , isObject           = __webpack_require__(53)
@@ -47745,6 +49234,17 @@
 	  , speciesConstructor = __webpack_require__(296)
 	  , task               = __webpack_require__(297).set
 	  , microtask          = __webpack_require__(299)()
+=======
+	  , classof            = __webpack_require__(233)
+	  , $export            = __webpack_require__(45)
+	  , isObject           = __webpack_require__(53)
+	  , aFunction          = __webpack_require__(49)
+	  , anInstance         = __webpack_require__(234)
+	  , forOf              = __webpack_require__(235)
+	  , speciesConstructor = __webpack_require__(239)
+	  , task               = __webpack_require__(240).set
+	  , microtask          = __webpack_require__(242)()
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	  , PROMISE            = 'Promise'
 	  , TypeError          = global.TypeError
 	  , process            = global.process
@@ -47936,7 +49436,11 @@
 	    this._h = 0;              // <- rejection state, 0 - default, 1 - handled, 2 - unhandled
 	    this._n = false;          // <- notify
 	  };
+<<<<<<< HEAD
 	  Internal.prototype = __webpack_require__(300)($Promise.prototype, {
+=======
+	  Internal.prototype = __webpack_require__(243)($Promise.prototype, {
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	    // 25.4.5.3 Promise.prototype.then(onFulfilled, onRejected)
 	    then: function then(onFulfilled, onRejected){
 	      var reaction    = newPromiseCapability(speciesConstructor(this, $Promise));
@@ -47963,7 +49467,11 @@
 
 	$export($export.G + $export.W + $export.F * !USE_NATIVE, {Promise: $Promise});
 	__webpack_require__(79)($Promise, PROMISE);
+<<<<<<< HEAD
 	__webpack_require__(301)(PROMISE);
+=======
+	__webpack_require__(244)(PROMISE);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	Wrapper = __webpack_require__(47)[PROMISE];
 
 	// statics
@@ -47987,7 +49495,11 @@
 	    return capability.promise;
 	  }
 	});
+<<<<<<< HEAD
 	$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(302)(function(iter){
+=======
+	$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(245)(function(iter){
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	  $Promise.all(iter)['catch'](empty);
 	})), PROMISE, {
 	  // 25.4.4.1 Promise.all(iterable)
@@ -48033,7 +49545,11 @@
 	});
 
 /***/ },
+<<<<<<< HEAD
 /* 290 */
+=======
+/* 233 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	// getting tag from 19.1.3.6 Object.prototype.toString()
@@ -48061,7 +49577,11 @@
 	};
 
 /***/ },
+<<<<<<< HEAD
 /* 291 */
+=======
+/* 234 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	module.exports = function(it, Constructor, name, forbiddenField){
@@ -48071,6 +49591,7 @@
 	};
 
 /***/ },
+<<<<<<< HEAD
 /* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -48080,6 +49601,17 @@
 	  , anObject    = __webpack_require__(52)
 	  , toLength    = __webpack_require__(72)
 	  , getIterFn   = __webpack_require__(295)
+=======
+/* 235 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var ctx         = __webpack_require__(48)
+	  , call        = __webpack_require__(236)
+	  , isArrayIter = __webpack_require__(237)
+	  , anObject    = __webpack_require__(52)
+	  , toLength    = __webpack_require__(72)
+	  , getIterFn   = __webpack_require__(238)
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	  , BREAK       = {}
 	  , RETURN      = {};
 	var exports = module.exports = function(iterable, entries, fn, that, ITERATOR){
@@ -48101,7 +49633,11 @@
 	exports.RETURN = RETURN;
 
 /***/ },
+<<<<<<< HEAD
 /* 293 */
+=======
+/* 236 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	// call something on iterator step with safe closing on error
@@ -48118,7 +49654,11 @@
 	};
 
 /***/ },
+<<<<<<< HEAD
 /* 294 */
+=======
+/* 237 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	// check on default Array iterator
@@ -48131,10 +49671,17 @@
 	};
 
 /***/ },
+<<<<<<< HEAD
 /* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var classof   = __webpack_require__(290)
+=======
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var classof   = __webpack_require__(233)
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	  , ITERATOR  = __webpack_require__(80)('iterator')
 	  , Iterators = __webpack_require__(62);
 	module.exports = __webpack_require__(47).getIteratorMethod = function(it){
@@ -48144,7 +49691,11 @@
 	};
 
 /***/ },
+<<<<<<< HEAD
 /* 296 */
+=======
+/* 239 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.3.20 SpeciesConstructor(O, defaultConstructor)
@@ -48157,11 +49708,19 @@
 	};
 
 /***/ },
+<<<<<<< HEAD
 /* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var ctx                = __webpack_require__(48)
 	  , invoke             = __webpack_require__(298)
+=======
+/* 240 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var ctx                = __webpack_require__(48)
+	  , invoke             = __webpack_require__(241)
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	  , html               = __webpack_require__(78)
 	  , cel                = __webpack_require__(57)
 	  , global             = __webpack_require__(46)
@@ -48237,7 +49796,11 @@
 	};
 
 /***/ },
+<<<<<<< HEAD
 /* 298 */
+=======
+/* 241 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	// fast apply, http://jsperf.lnkit.com/fast-apply/5
@@ -48258,11 +49821,19 @@
 	};
 
 /***/ },
+<<<<<<< HEAD
 /* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var global    = __webpack_require__(46)
 	  , macrotask = __webpack_require__(297).set
+=======
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var global    = __webpack_require__(46)
+	  , macrotask = __webpack_require__(240).set
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	  , Observer  = global.MutationObserver || global.WebKitMutationObserver
 	  , process   = global.process
 	  , Promise   = global.Promise
@@ -48331,7 +49902,11 @@
 	};
 
 /***/ },
+<<<<<<< HEAD
 /* 300 */
+=======
+/* 243 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	var hide = __webpack_require__(50);
@@ -48343,7 +49918,11 @@
 	};
 
 /***/ },
+<<<<<<< HEAD
 /* 301 */
+=======
+/* 244 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48362,7 +49941,11 @@
 	};
 
 /***/ },
+<<<<<<< HEAD
 /* 302 */
+=======
+/* 245 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	var ITERATOR     = __webpack_require__(80)('iterator')
@@ -48388,6 +49971,7 @@
 	};
 
 /***/ },
+<<<<<<< HEAD
 /* 303 */,
 /* 304 */,
 /* 305 */,
@@ -48416,6 +50000,39 @@
 /* 328 */,
 /* 329 */,
 /* 330 */
+=======
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */,
+/* 268 */,
+/* 269 */,
+/* 270 */,
+/* 271 */,
+/* 272 */,
+/* 273 */,
+/* 274 */,
+/* 275 */,
+/* 276 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
@@ -48665,7 +50282,11 @@
 	})));
 
 /***/ },
+<<<<<<< HEAD
 /* 331 */
+=======
+/* 277 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports =
@@ -49779,25 +51400,41 @@
 	/* 7 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(332);
+=======
+		module.exports = __webpack_require__(278);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 8 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(349);
+=======
+		module.exports = __webpack_require__(296);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 9 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(350);
+=======
+		module.exports = __webpack_require__(297);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 10 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(340);
+=======
+		module.exports = __webpack_require__(287);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 11 */
@@ -49991,7 +51628,11 @@
 	/* 14 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(147);
+=======
+		module.exports = __webpack_require__(285);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 15 */
@@ -50259,13 +51900,21 @@
 	/* 19 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(333);
+=======
+		module.exports = __webpack_require__(279);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 20 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(335);
+=======
+		module.exports = __webpack_require__(281);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 21 */
@@ -50550,7 +52199,11 @@
 	/* 25 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(334);
+=======
+		module.exports = __webpack_require__(280);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 26 */
@@ -50653,7 +52306,11 @@
 	/* 29 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(337);
+=======
+		module.exports = __webpack_require__(283);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 30 */
@@ -52121,7 +53778,11 @@
 	/* 60 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(336);
+=======
+		module.exports = __webpack_require__(282);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 61 */
@@ -53899,7 +55560,11 @@
 	/* 89 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(339);
+=======
+		module.exports = __webpack_require__(286);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 90 */
@@ -54019,25 +55684,41 @@
 	/* 93 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(345);
+=======
+		module.exports = __webpack_require__(292);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 94 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(346);
+=======
+		module.exports = __webpack_require__(293);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 95 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(344);
+=======
+		module.exports = __webpack_require__(291);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 96 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(348);
+=======
+		module.exports = __webpack_require__(295);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 97 */
@@ -55163,7 +56844,11 @@
 	/* 117 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(347);
+=======
+		module.exports = __webpack_require__(294);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 118 */
@@ -56536,7 +58221,11 @@
 	/* 124 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(351);
+=======
+		module.exports = __webpack_require__(299);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 125 */
@@ -56833,7 +58522,11 @@
 	/* 128 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(352);
+=======
+		module.exports = __webpack_require__(300);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 129 */
@@ -57481,7 +59174,11 @@
 	/* 133 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(353);
+=======
+		module.exports = __webpack_require__(301);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 134 */
@@ -58252,7 +59949,11 @@
 	/* 139 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(354);
+=======
+		module.exports = __webpack_require__(302);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 140 */
@@ -62774,7 +64475,11 @@
 	/* 185 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(355);
+=======
+		module.exports = __webpack_require__(303);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 186 */
@@ -63481,7 +65186,11 @@
 	/* 202 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(356);
+=======
+		module.exports = __webpack_require__(304);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 203 */
@@ -65826,19 +67535,31 @@
 	/* 237 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(381);
+=======
+		module.exports = __webpack_require__(329);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 238 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(382);
+=======
+		module.exports = __webpack_require__(330);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 239 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(383);
+=======
+		module.exports = __webpack_require__(331);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 240 */
@@ -66943,7 +68664,11 @@
 	/* 262 */
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(384);
+=======
+		module.exports = __webpack_require__(332);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 	/* 263 */
@@ -69347,7 +71072,11 @@
 	/******/ ]);
 
 /***/ },
+<<<<<<< HEAD
 /* 332 */
+=======
+/* 278 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports =
@@ -69406,49 +71135,77 @@
 	/***/ 8:
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(333);
+=======
+		module.exports = __webpack_require__(279);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 
 	/***/ 9:
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(335);
+=======
+		module.exports = __webpack_require__(281);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 
 	/***/ 38:
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(334);
+=======
+		module.exports = __webpack_require__(280);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 
 	/***/ 53:
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(337);
+=======
+		module.exports = __webpack_require__(283);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 
 	/***/ 57:
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(339);
+=======
+		module.exports = __webpack_require__(286);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 
 	/***/ 66:
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(344);
+=======
+		module.exports = __webpack_require__(291);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 
 	/***/ 152:
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(340);
+=======
+		module.exports = __webpack_require__(287);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 
@@ -70218,21 +71975,33 @@
 	/***/ 210:
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(345);
+=======
+		module.exports = __webpack_require__(292);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 
 	/***/ 211:
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(346);
+=======
+		module.exports = __webpack_require__(293);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 
 	/***/ 212:
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(348);
+=======
+		module.exports = __webpack_require__(295);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 
@@ -70421,7 +72190,11 @@
 	/******/ });
 
 /***/ },
+<<<<<<< HEAD
 /* 333 */
+=======
+/* 279 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports =
@@ -70480,7 +72253,11 @@
 	/***/ 38:
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(334);
+=======
+		module.exports = __webpack_require__(280);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 
@@ -70893,7 +72670,11 @@
 	/******/ });
 
 /***/ },
+<<<<<<< HEAD
 /* 334 */
+=======
+/* 280 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	"use strict";
@@ -70934,14 +72715,22 @@
 	};
 
 /***/ },
+<<<<<<< HEAD
 /* 335 */
+=======
+/* 281 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	exports.__esModule = true;
 
+<<<<<<< HEAD
 	var _event = __webpack_require__(336);
+=======
+	var _event = __webpack_require__(282);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	var nodeList = [];
 	var ctx = '@@clickoutsideContext';
@@ -70995,7 +72784,11 @@
 	};
 
 /***/ },
+<<<<<<< HEAD
 /* 336 */
+=======
+/* 282 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	var bindEvent = (function() {
@@ -71047,18 +72840,30 @@
 	};
 
 /***/ },
+<<<<<<< HEAD
 /* 337 */
+=======
+/* 283 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	exports.__esModule = true;
 
+<<<<<<< HEAD
 	var _popper = __webpack_require__(338);
 
 	var _popper2 = _interopRequireDefault(_popper);
 
 	var _vuePopup = __webpack_require__(147);
+=======
+	var _popper = __webpack_require__(284);
+
+	var _popper2 = _interopRequireDefault(_popper);
+
+	var _vuePopup = __webpack_require__(285);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -71209,7 +73014,11 @@
 	};
 
 /***/ },
+<<<<<<< HEAD
 /* 338 */
+=======
+/* 284 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -72464,14 +74273,28 @@
 	});
 
 /***/ },
+<<<<<<< HEAD
 /* 339 */
+=======
+/* 285 */
+/***/ function(module, exports, __webpack_require__) {
+
+	!function(e,t){ true?module.exports=t(__webpack_require__(1)):"function"==typeof define&&define.amd?define("VuePopup",["vue"],t):"object"==typeof exports?exports.VuePopup=t(require("vue")):e.VuePopup=t(e.vue)}(this,function(e){return function(e){function t(n){if(o[n])return o[n].exports;var i=o[n]={i:n,l:!1,exports:{}};return e[n].call(i.exports,i,i.exports,t),i.l=!0,i.exports}var o={};return t.m=e,t.c=o,t.i=function(e){return e},t.d=function(e,t,o){Object.defineProperty(e,t,{configurable:!1,enumerable:!0,get:o})},t.n=function(e){var o=e&&e.__esModule?function(){return e["default"]}:function(){return e};return t.d(o,"a",o),o},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="/lib/",t(t.s=6)}([function(e,t,o){"use strict";function n(e){return e&&e.__esModule?e:{"default":e}}t.__esModule=!0,t.PopupManager=void 0;var i=o(5),l=n(i),s=o(3),d=o(2),a=n(d);o(4);var r=1,u=[],c=function(e){if(u.indexOf(e)===-1){var t=function(e){var t=e.__vue__;if(!t){var o=e.previousSibling;o.__vue__&&(t=o.__vue__)}return t};l["default"].transition(e,{afterEnter:function(e){var o=t(e);o&&o.doAfterOpen&&o.doAfterOpen()},afterLeave:function(e){var o=t(e);o&&o.doAfterClose&&o.doAfterClose()}})}},f=void 0,p=function(){if(void 0!==f)return f;var e=document.createElement("div");e.style.visibility="hidden",e.style.width="100px",e.style.position="absolute",e.style.top="-9999px",document.body.appendChild(e);var t=e.offsetWidth;e.style.overflow="scroll";var o=document.createElement("div");o.style.width="100%",e.appendChild(o);var n=o.offsetWidth;return e.parentNode.removeChild(e),t-n},h=function m(e){return 3===e.nodeType&&(e=e.nextElementSibling||e.nextSibling,m(e)),e};t["default"]={props:{value:{type:Boolean,"default":!1},transition:{type:String,"default":""},openDelay:{},closeDelay:{},zIndex:{},modal:{type:Boolean,"default":!1},modalFade:{type:Boolean,"default":!0},modalClass:{},lockScroll:{type:Boolean,"default":!0},closeOnPressEscape:{type:Boolean,"default":!1},closeOnClickModal:{type:Boolean,"default":!1}},created:function(){this.transition&&c(this.transition)},beforeMount:function(){this._popupId="popup-"+r++,a["default"].register(this._popupId,this)},beforeDestroy:function(){a["default"].deregister(this._popupId),a["default"].closeModal(this._popupId),this.modal&&null!==this.bodyOverflow&&"hidden"!==this.bodyOverflow&&(document.body.style.overflow=this.bodyOverflow,document.body.style.paddingRight=this.bodyPaddingRight),this.bodyOverflow=null,this.bodyPaddingRight=null},data:function(){return{opened:!1,bodyOverflow:null,bodyPaddingRight:null,rendered:!1}},watch:{value:function(e){var t=this;if(e){if(this._opening)return;this.rendered?this.open():(this.rendered=!0,l["default"].nextTick(function(){t.open()}))}else this.close()}},methods:{open:function(e){var t=this;this.rendered||(this.rendered=!0,this.$emit("input",!0));var o=(0,s.merge)({},this,e);this._closeTimer&&(clearTimeout(this._closeTimer),this._closeTimer=null),clearTimeout(this._openTimer);var n=Number(o.openDelay);n>0?this._openTimer=setTimeout(function(){t._openTimer=null,t.doOpen(o)},n):this.doOpen(o)},doOpen:function(e){if((!this.willOpen||this.willOpen())&&!this.opened){this._opening=!0,this.visible=!0,this.$emit("input",!0);var t=h(this.$el),o=e.modal,n=e.zIndex;if(n&&(a["default"].zIndex=n),o&&(this._closing&&(a["default"].closeModal(this._popupId),this._closing=!1),a["default"].openModal(this._popupId,a["default"].nextZIndex(),t,e.modalClass,e.modalFade),e.lockScroll)){this.bodyOverflow||(this.bodyPaddingRight=document.body.style.paddingRight,this.bodyOverflow=document.body.style.overflow),f=p();var i=document.documentElement.clientHeight<document.body.scrollHeight;f>0&&i&&(document.body.style.paddingRight=f+"px"),document.body.style.overflow="hidden"}"static"===getComputedStyle(t).position&&(t.style.position="absolute"),o?t.style.zIndex=a["default"].nextZIndex():n&&(t.style.zIndex=n),this.opened=!0,this.onOpen&&this.onOpen(),this.transition||this.doAfterOpen()}},doAfterOpen:function(){this._opening=!1},close:function(){var e=this;if(!this.willClose||this.willClose()){null!==this._openTimer&&(clearTimeout(this._openTimer),this._openTimer=null),clearTimeout(this._closeTimer);var t=Number(this.closeDelay);t>0?this._closeTimer=setTimeout(function(){e._closeTimer=null,e.doClose()},t):this.doClose()}},doClose:function(){var e=this;this.visible=!1,this.$emit("input",!1),this._closing=!0,this.onClose&&this.onClose(),this.lockScroll&&setTimeout(function(){e.modal&&"hidden"!==e.bodyOverflow&&(document.body.style.overflow=e.bodyOverflow,document.body.style.paddingRight=e.bodyPaddingRight),e.bodyOverflow=null,e.bodyPaddingRight=null},200),this.opened=!1,this.transition||this.doAfterClose()},doAfterClose:function(){a["default"].closeModal(this._popupId),this._closing=!1}}},t.PopupManager=a["default"]},function(e,t){var o=function(e){return(e||"").replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g,"")},n=function(e,t){if(!e||!t)return!1;if(t.indexOf(" ")!=-1)throw new Error("className should not contain space.");return e.classList?e.classList.contains(t):(" "+e.className+" ").indexOf(" "+t+" ")>-1},i=function(e,t){if(e){for(var o=e.className,i=(t||"").split(" "),l=0,s=i.length;l<s;l++){var d=i[l];d&&(e.classList?e.classList.add(d):n(e,d)||(o+=" "+d))}e.classList||(e.className=o)}},l=function(e,t){if(e&&t){for(var i=t.split(" "),l=" "+e.className+" ",s=0,d=i.length;s<d;s++){var a=i[s];a&&(e.classList?e.classList.remove(a):n(e,a)&&(l=l.replace(" "+a+" "," ")))}e.classList||(e.className=o(l))}};e.exports={hasClass:n,addClass:i,removeClass:l}},function(e,t,o){"use strict";t.__esModule=!0;var n=o(1),i=!1,l=function(){var e=d.modalDom;return e?i=!0:(i=!1,e=document.createElement("div"),d.modalDom=e,e.addEventListener("touchmove",function(e){e.preventDefault(),e.stopPropagation()}),e.addEventListener("click",function(){d.doOnModalClick&&d.doOnModalClick()})),e},s={},d={zIndex:2e3,modalFade:!0,getInstance:function(e){return s[e]},register:function(e,t){e&&t&&(s[e]=t)},deregister:function(e){e&&(s[e]=null,delete s[e])},nextZIndex:function(){return d.zIndex++},modalStack:[],doOnModalClick:function(){var e=d.modalStack[d.modalStack.length-1];if(e){var t=d.getInstance(e.id);t&&t.closeOnClickModal&&t.close()}},openModal:function(e,t,o,s,d){if(e&&void 0!==t){this.modalFade=d;for(var a=this.modalStack,r=0,u=a.length;r<u;r++){var c=a[r];if(c.id===e)return}var f=l();if((0,n.addClass)(f,"v-modal"),this.modalFade&&!i&&(0,n.addClass)(f,"v-modal-enter"),s){var p=s.trim().split(/\s+/);p.forEach(function(e){return(0,n.addClass)(f,e)})}setTimeout(function(){(0,n.removeClass)(f,"v-modal-enter")},200),o&&o.parentNode&&11!==o.parentNode.nodeType?o.parentNode.appendChild(f):document.body.appendChild(f),t&&(f.style.zIndex=t),f.style.display="",this.modalStack.push({id:e,zIndex:t,modalClass:s})}},closeModal:function(e){var t=this.modalStack,o=l();if(t.length>0){var i=t[t.length-1];if(i.id===e){if(i.modalClass){var s=i.modalClass.trim().split(/\s+/);s.forEach(function(e){return(0,n.removeClass)(o,e)})}t.pop(),t.length>0&&(o.style.zIndex=t[t.length-1].zIndex)}else for(var a=t.length-1;a>=0;a--)if(t[a].id===e){t.splice(a,1);break}}0===t.length&&(this.modalFade&&(0,n.addClass)(o,"v-modal-leave"),setTimeout(function(){0===t.length&&(o.parentNode&&o.parentNode.removeChild(o),o.style.display="none",d.modalDom=void 0),(0,n.removeClass)(o,"v-modal-leave")},200))}};window.addEventListener("keydown",function(e){if(27===e.keyCode&&d.modalStack.length>0){var t=d.modalStack[d.modalStack.length-1];if(!t)return;var o=d.getInstance(t.id);o.closeOnPressEscape&&o.close()}}),t["default"]=d},function(e,t){"use strict";function o(e){for(var t=1,o=arguments.length;t<o;t++){var n=arguments[t];for(var i in n)if(n.hasOwnProperty(i)){var l=n[i];void 0!==l&&(e[i]=l)}}return e}t.__esModule=!0,t.merge=o},function(e,t){},function(t,o){t.exports=e},function(e,t,o){e.exports=o(0)}])});
+
+/***/ },
+/* 286 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	exports.__esModule = true;
 
+<<<<<<< HEAD
 	var _locale = __webpack_require__(340);
+=======
+	var _locale = __webpack_require__(287);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	exports.default = {
 	  methods: {
@@ -72486,7 +74309,11 @@
 	};
 
 /***/ },
+<<<<<<< HEAD
 /* 340 */
+=======
+/* 287 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -72494,7 +74321,11 @@
 	exports.__esModule = true;
 	exports.use = exports.t = undefined;
 
+<<<<<<< HEAD
 	var _zhCN = __webpack_require__(341);
+=======
+	var _zhCN = __webpack_require__(288);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	var _zhCN2 = _interopRequireDefault(_zhCN);
 
@@ -72502,11 +74333,19 @@
 
 	var _vue2 = _interopRequireDefault(_vue);
 
+<<<<<<< HEAD
 	var _deepmerge = __webpack_require__(342);
 
 	var _deepmerge2 = _interopRequireDefault(_deepmerge);
 
 	var _format = __webpack_require__(343);
+=======
+	var _deepmerge = __webpack_require__(289);
+
+	var _deepmerge2 = _interopRequireDefault(_deepmerge);
+
+	var _format = __webpack_require__(290);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	var _format2 = _interopRequireDefault(_format);
 
@@ -72544,7 +74383,11 @@
 	exports.default = { use: use, t: t };
 
 /***/ },
+<<<<<<< HEAD
 /* 341 */
+=======
+/* 288 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	'use strict';
@@ -72638,7 +74481,11 @@
 	};
 
 /***/ },
+<<<<<<< HEAD
 /* 342 */
+=======
+/* 289 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (root, factory) {
@@ -72728,7 +74575,11 @@
 
 
 /***/ },
+<<<<<<< HEAD
 /* 343 */
+=======
+/* 290 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	'use strict';
@@ -72789,7 +74640,11 @@
 	var RE_NARGS = /(%|)\{([0-9a-zA-Z_]+)\}/g;
 
 /***/ },
+<<<<<<< HEAD
 /* 344 */
+=======
+/* 291 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	var trim = function (string) {
@@ -72857,7 +74712,11 @@
 	};
 
 /***/ },
+<<<<<<< HEAD
 /* 345 */
+=======
+/* 292 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	module.exports =
@@ -73028,12 +74887,20 @@
 	/******/ });
 
 /***/ },
+<<<<<<< HEAD
 /* 346 */
+=======
+/* 293 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	/* eslint-disable no-undefined */
 
+<<<<<<< HEAD
 	var throttle = __webpack_require__(347);
+=======
+	var throttle = __webpack_require__(294);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/**
 	 * Debounce execution of a function. Debouncing, unlike throttling,
@@ -73055,7 +74922,11 @@
 
 
 /***/ },
+<<<<<<< HEAD
 /* 347 */
+=======
+/* 294 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	/* eslint-disable no-undefined,no-param-reassign,no-shadow */
@@ -73152,7 +75023,11 @@
 
 
 /***/ },
+<<<<<<< HEAD
 /* 348 */
+=======
+/* 295 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	'use strict';
@@ -73322,7 +75197,11 @@
 	};
 
 /***/ },
+<<<<<<< HEAD
 /* 349 */
+=======
+/* 296 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports =
@@ -73381,7 +75260,11 @@
 	/***/ 38:
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(334);
+=======
+		module.exports = __webpack_require__(280);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 
@@ -73607,7 +75490,11 @@
 	/******/ });
 
 /***/ },
+<<<<<<< HEAD
 /* 350 */
+=======
+/* 297 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -73672,10 +75559,203 @@
 	    }
 	  }
 	};
+<<<<<<< HEAD
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(161)))
 
 /***/ },
 /* 351 */
+=======
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(298)))
+
+/***/ },
+/* 298 */
+/***/ function(module, exports) {
+
+	// shim for using process in browser
+	var process = module.exports = {};
+
+	// cached from whatever global is present so that test runners that stub it
+	// don't break things.  But we need to wrap it in a try catch in case it is
+	// wrapped in strict mode code which doesn't define any globals.  It's inside a
+	// function because try/catches deoptimize in certain engines.
+
+	var cachedSetTimeout;
+	var cachedClearTimeout;
+
+	function defaultSetTimout() {
+	    throw new Error('setTimeout has not been defined');
+	}
+	function defaultClearTimeout () {
+	    throw new Error('clearTimeout has not been defined');
+	}
+	(function () {
+	    try {
+	        if (typeof setTimeout === 'function') {
+	            cachedSetTimeout = setTimeout;
+	        } else {
+	            cachedSetTimeout = defaultSetTimout;
+	        }
+	    } catch (e) {
+	        cachedSetTimeout = defaultSetTimout;
+	    }
+	    try {
+	        if (typeof clearTimeout === 'function') {
+	            cachedClearTimeout = clearTimeout;
+	        } else {
+	            cachedClearTimeout = defaultClearTimeout;
+	        }
+	    } catch (e) {
+	        cachedClearTimeout = defaultClearTimeout;
+	    }
+	} ())
+	function runTimeout(fun) {
+	    if (cachedSetTimeout === setTimeout) {
+	        //normal enviroments in sane situations
+	        return setTimeout(fun, 0);
+	    }
+	    // if setTimeout wasn't available but was latter defined
+	    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+	        cachedSetTimeout = setTimeout;
+	        return setTimeout(fun, 0);
+	    }
+	    try {
+	        // when when somebody has screwed with setTimeout but no I.E. maddness
+	        return cachedSetTimeout(fun, 0);
+	    } catch(e){
+	        try {
+	            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+	            return cachedSetTimeout.call(null, fun, 0);
+	        } catch(e){
+	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+	            return cachedSetTimeout.call(this, fun, 0);
+	        }
+	    }
+
+
+	}
+	function runClearTimeout(marker) {
+	    if (cachedClearTimeout === clearTimeout) {
+	        //normal enviroments in sane situations
+	        return clearTimeout(marker);
+	    }
+	    // if clearTimeout wasn't available but was latter defined
+	    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+	        cachedClearTimeout = clearTimeout;
+	        return clearTimeout(marker);
+	    }
+	    try {
+	        // when when somebody has screwed with setTimeout but no I.E. maddness
+	        return cachedClearTimeout(marker);
+	    } catch (e){
+	        try {
+	            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+	            return cachedClearTimeout.call(null, marker);
+	        } catch (e){
+	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+	            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+	            return cachedClearTimeout.call(this, marker);
+	        }
+	    }
+
+
+
+	}
+	var queue = [];
+	var draining = false;
+	var currentQueue;
+	var queueIndex = -1;
+
+	function cleanUpNextTick() {
+	    if (!draining || !currentQueue) {
+	        return;
+	    }
+	    draining = false;
+	    if (currentQueue.length) {
+	        queue = currentQueue.concat(queue);
+	    } else {
+	        queueIndex = -1;
+	    }
+	    if (queue.length) {
+	        drainQueue();
+	    }
+	}
+
+	function drainQueue() {
+	    if (draining) {
+	        return;
+	    }
+	    var timeout = runTimeout(cleanUpNextTick);
+	    draining = true;
+
+	    var len = queue.length;
+	    while(len) {
+	        currentQueue = queue;
+	        queue = [];
+	        while (++queueIndex < len) {
+	            if (currentQueue) {
+	                currentQueue[queueIndex].run();
+	            }
+	        }
+	        queueIndex = -1;
+	        len = queue.length;
+	    }
+	    currentQueue = null;
+	    draining = false;
+	    runClearTimeout(timeout);
+	}
+
+	process.nextTick = function (fun) {
+	    var args = new Array(arguments.length - 1);
+	    if (arguments.length > 1) {
+	        for (var i = 1; i < arguments.length; i++) {
+	            args[i - 1] = arguments[i];
+	        }
+	    }
+	    queue.push(new Item(fun, args));
+	    if (queue.length === 1 && !draining) {
+	        runTimeout(drainQueue);
+	    }
+	};
+
+	// v8 likes predictible objects
+	function Item(fun, array) {
+	    this.fun = fun;
+	    this.array = array;
+	}
+	Item.prototype.run = function () {
+	    this.fun.apply(null, this.array);
+	};
+	process.title = 'browser';
+	process.browser = true;
+	process.env = {};
+	process.argv = [];
+	process.version = ''; // empty string to avoid regexp issues
+	process.versions = {};
+
+	function noop() {}
+
+	process.on = noop;
+	process.addListener = noop;
+	process.once = noop;
+	process.off = noop;
+	process.removeListener = noop;
+	process.removeAllListeners = noop;
+	process.emit = noop;
+
+	process.binding = function (name) {
+	    throw new Error('process.binding is not supported');
+	};
+
+	process.cwd = function () { return '/' };
+	process.chdir = function (dir) {
+	    throw new Error('process.chdir is not supported');
+	};
+	process.umask = function() { return 0; };
+
+
+/***/ },
+/* 299 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports =
@@ -73915,7 +75995,11 @@
 	/***/ 38:
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(334);
+=======
+		module.exports = __webpack_require__(280);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 
@@ -74029,7 +76113,11 @@
 	/******/ });
 
 /***/ },
+<<<<<<< HEAD
 /* 352 */
+=======
+/* 300 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports =
@@ -74088,7 +76176,11 @@
 	/***/ 38:
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(334);
+=======
+		module.exports = __webpack_require__(280);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 
@@ -74192,7 +76284,11 @@
 	/******/ });
 
 /***/ },
+<<<<<<< HEAD
 /* 353 */
+=======
+/* 301 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	"use strict";
@@ -74218,7 +76314,11 @@
 	;
 
 /***/ },
+<<<<<<< HEAD
 /* 354 */
+=======
+/* 302 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -74543,7 +76643,11 @@
 	})(undefined);
 
 /***/ },
+<<<<<<< HEAD
 /* 355 */
+=======
+/* 303 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	module.exports =
@@ -74744,7 +76848,11 @@
 	/******/ });
 
 /***/ },
+<<<<<<< HEAD
 /* 356 */
+=======
+/* 304 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -74757,6 +76865,7 @@
 
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
+<<<<<<< HEAD
 	var _util = __webpack_require__(357);
 
 	var _validator = __webpack_require__(358);
@@ -74766,6 +76875,17 @@
 	var _messages2 = __webpack_require__(380);
 
 	var _rule = __webpack_require__(360);
+=======
+	var _util = __webpack_require__(305);
+
+	var _validator = __webpack_require__(306);
+
+	var _validator2 = _interopRequireDefault(_validator);
+
+	var _messages2 = __webpack_require__(328);
+
+	var _rule = __webpack_require__(308);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -75017,7 +77137,11 @@
 	module.exports = exports['default'];
 
 /***/ },
+<<<<<<< HEAD
 /* 357 */
+=======
+/* 305 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -75227,15 +77351,23 @@
 	  }
 	  return target;
 	}
+<<<<<<< HEAD
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(161)))
 
 /***/ },
 /* 358 */
+=======
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(298)))
+
+/***/ },
+/* 306 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	module.exports = {
+<<<<<<< HEAD
 	  string: __webpack_require__(359),
 	  method: __webpack_require__(367),
 	  number: __webpack_require__(368),
@@ -75256,6 +77388,28 @@
 
 /***/ },
 /* 359 */
+=======
+	  string: __webpack_require__(307),
+	  method: __webpack_require__(315),
+	  number: __webpack_require__(316),
+	  "boolean": __webpack_require__(317),
+	  regexp: __webpack_require__(318),
+	  integer: __webpack_require__(319),
+	  "float": __webpack_require__(320),
+	  array: __webpack_require__(321),
+	  object: __webpack_require__(322),
+	  "enum": __webpack_require__(323),
+	  pattern: __webpack_require__(324),
+	  email: __webpack_require__(325),
+	  url: __webpack_require__(325),
+	  date: __webpack_require__(326),
+	  hex: __webpack_require__(325),
+	  required: __webpack_require__(327)
+	};
+
+/***/ },
+/* 307 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75264,11 +77418,19 @@
 	  value: true
 	});
 
+<<<<<<< HEAD
 	var _rule = __webpack_require__(360);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
 	var _util = __webpack_require__(357);
+=======
+	var _rule = __webpack_require__(308);
+
+	var _rule2 = _interopRequireDefault(_rule);
+
+	var _util = __webpack_require__(305);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -75306,7 +77468,11 @@
 	module.exports = exports['default'];
 
 /***/ },
+<<<<<<< HEAD
 /* 360 */
+=======
+/* 308 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75315,17 +77481,30 @@
 	  value: true
 	});
 	exports["default"] = {
+<<<<<<< HEAD
 	  required: __webpack_require__(361),
 	  whitespace: __webpack_require__(362),
 	  type: __webpack_require__(363),
 	  range: __webpack_require__(364),
 	  "enum": __webpack_require__(365),
 	  pattern: __webpack_require__(366)
+=======
+	  required: __webpack_require__(309),
+	  whitespace: __webpack_require__(310),
+	  type: __webpack_require__(311),
+	  range: __webpack_require__(312),
+	  "enum": __webpack_require__(313),
+	  pattern: __webpack_require__(314)
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	};
 	module.exports = exports['default'];
 
 /***/ },
+<<<<<<< HEAD
 /* 361 */
+=======
+/* 309 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75334,7 +77513,11 @@
 	  value: true
 	});
 
+<<<<<<< HEAD
 	var _util = __webpack_require__(357);
+=======
+	var _util = __webpack_require__(305);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	var util = _interopRequireWildcard(_util);
 
@@ -75361,7 +77544,11 @@
 	module.exports = exports['default'];
 
 /***/ },
+<<<<<<< HEAD
 /* 362 */
+=======
+/* 310 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75370,7 +77557,11 @@
 	  value: true
 	});
 
+<<<<<<< HEAD
 	var _util = __webpack_require__(357);
+=======
+	var _util = __webpack_require__(305);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	var util = _interopRequireWildcard(_util);
 
@@ -75397,7 +77588,11 @@
 	module.exports = exports['default'];
 
 /***/ },
+<<<<<<< HEAD
 /* 363 */
+=======
+/* 311 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75408,11 +77603,19 @@
 
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
+<<<<<<< HEAD
 	var _util = __webpack_require__(357);
 
 	var util = _interopRequireWildcard(_util);
 
 	var _required = __webpack_require__(361);
+=======
+	var _util = __webpack_require__(305);
+
+	var util = _interopRequireWildcard(_util);
+
+	var _required = __webpack_require__(309);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	var _required2 = _interopRequireDefault(_required);
 
@@ -75506,7 +77709,11 @@
 	module.exports = exports['default'];
 
 /***/ },
+<<<<<<< HEAD
 /* 364 */
+=======
+/* 312 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75515,7 +77722,11 @@
 	  value: true
 	});
 
+<<<<<<< HEAD
 	var _util = __webpack_require__(357);
+=======
+	var _util = __webpack_require__(305);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	var util = _interopRequireWildcard(_util);
 
@@ -75574,7 +77785,11 @@
 	module.exports = exports['default'];
 
 /***/ },
+<<<<<<< HEAD
 /* 365 */
+=======
+/* 313 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75583,7 +77798,11 @@
 	  value: true
 	});
 
+<<<<<<< HEAD
 	var _util = __webpack_require__(357);
+=======
+	var _util = __webpack_require__(305);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	var util = _interopRequireWildcard(_util);
 
@@ -75613,7 +77832,11 @@
 	module.exports = exports['default'];
 
 /***/ },
+<<<<<<< HEAD
 /* 366 */
+=======
+/* 314 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75622,7 +77845,11 @@
 	  value: true
 	});
 
+<<<<<<< HEAD
 	var _util = __webpack_require__(357);
+=======
+	var _util = __webpack_require__(305);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	var util = _interopRequireWildcard(_util);
 
@@ -75651,7 +77878,11 @@
 	module.exports = exports['default'];
 
 /***/ },
+<<<<<<< HEAD
 /* 367 */
+=======
+/* 315 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75660,11 +77891,19 @@
 	  value: true
 	});
 
+<<<<<<< HEAD
 	var _rule = __webpack_require__(360);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
 	var _util = __webpack_require__(357);
+=======
+	var _rule = __webpack_require__(308);
+
+	var _rule2 = _interopRequireDefault(_rule);
+
+	var _util = __webpack_require__(305);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -75697,7 +77936,11 @@
 	module.exports = exports['default'];
 
 /***/ },
+<<<<<<< HEAD
 /* 368 */
+=======
+/* 316 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75706,11 +77949,19 @@
 	  value: true
 	});
 
+<<<<<<< HEAD
 	var _rule = __webpack_require__(360);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
 	var _util = __webpack_require__(357);
+=======
+	var _rule = __webpack_require__(308);
+
+	var _rule2 = _interopRequireDefault(_rule);
+
+	var _util = __webpack_require__(305);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -75744,7 +77995,11 @@
 	module.exports = exports['default'];
 
 /***/ },
+<<<<<<< HEAD
 /* 369 */
+=======
+/* 317 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75753,9 +78008,15 @@
 	  value: true
 	});
 
+<<<<<<< HEAD
 	var _util = __webpack_require__(357);
 
 	var _rule = __webpack_require__(360);
+=======
+	var _util = __webpack_require__(305);
+
+	var _rule = __webpack_require__(308);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	var _rule2 = _interopRequireDefault(_rule);
 
@@ -75790,7 +78051,11 @@
 	module.exports = exports['default'];
 
 /***/ },
+<<<<<<< HEAD
 /* 370 */
+=======
+/* 318 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75799,11 +78064,19 @@
 	  value: true
 	});
 
+<<<<<<< HEAD
 	var _rule = __webpack_require__(360);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
 	var _util = __webpack_require__(357);
+=======
+	var _rule = __webpack_require__(308);
+
+	var _rule2 = _interopRequireDefault(_rule);
+
+	var _util = __webpack_require__(305);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -75836,7 +78109,11 @@
 	module.exports = exports['default'];
 
 /***/ },
+<<<<<<< HEAD
 /* 371 */
+=======
+/* 319 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75845,11 +78122,19 @@
 	  value: true
 	});
 
+<<<<<<< HEAD
 	var _rule = __webpack_require__(360);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
 	var _util = __webpack_require__(357);
+=======
+	var _rule = __webpack_require__(308);
+
+	var _rule2 = _interopRequireDefault(_rule);
+
+	var _util = __webpack_require__(305);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -75883,7 +78168,11 @@
 	module.exports = exports['default'];
 
 /***/ },
+<<<<<<< HEAD
 /* 372 */
+=======
+/* 320 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75892,11 +78181,19 @@
 	  value: true
 	});
 
+<<<<<<< HEAD
 	var _rule = __webpack_require__(360);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
 	var _util = __webpack_require__(357);
+=======
+	var _rule = __webpack_require__(308);
+
+	var _rule2 = _interopRequireDefault(_rule);
+
+	var _util = __webpack_require__(305);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -75930,7 +78227,11 @@
 	module.exports = exports['default'];
 
 /***/ },
+<<<<<<< HEAD
 /* 373 */
+=======
+/* 321 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75939,11 +78240,19 @@
 	  value: true
 	});
 
+<<<<<<< HEAD
 	var _rule = __webpack_require__(360);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
 	var _util = __webpack_require__(357);
+=======
+	var _rule = __webpack_require__(308);
+
+	var _rule2 = _interopRequireDefault(_rule);
+
+	var _util = __webpack_require__(305);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -75977,7 +78286,11 @@
 	module.exports = exports['default'];
 
 /***/ },
+<<<<<<< HEAD
 /* 374 */
+=======
+/* 322 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75986,11 +78299,19 @@
 	  value: true
 	});
 
+<<<<<<< HEAD
 	var _rule = __webpack_require__(360);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
 	var _util = __webpack_require__(357);
+=======
+	var _rule = __webpack_require__(308);
+
+	var _rule2 = _interopRequireDefault(_rule);
+
+	var _util = __webpack_require__(305);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -76023,7 +78344,11 @@
 	module.exports = exports['default'];
 
 /***/ },
+<<<<<<< HEAD
 /* 375 */
+=======
+/* 323 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -76032,11 +78357,19 @@
 	  value: true
 	});
 
+<<<<<<< HEAD
 	var _rule = __webpack_require__(360);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
 	var _util = __webpack_require__(357);
+=======
+	var _rule = __webpack_require__(308);
+
+	var _rule2 = _interopRequireDefault(_rule);
+
+	var _util = __webpack_require__(305);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -76071,7 +78404,11 @@
 	module.exports = exports['default'];
 
 /***/ },
+<<<<<<< HEAD
 /* 376 */
+=======
+/* 324 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -76080,11 +78417,19 @@
 	  value: true
 	});
 
+<<<<<<< HEAD
 	var _rule = __webpack_require__(360);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
 	var _util = __webpack_require__(357);
+=======
+	var _rule = __webpack_require__(308);
+
+	var _rule2 = _interopRequireDefault(_rule);
+
+	var _util = __webpack_require__(305);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -76120,7 +78465,11 @@
 	module.exports = exports['default'];
 
 /***/ },
+<<<<<<< HEAD
 /* 377 */
+=======
+/* 325 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -76129,11 +78478,19 @@
 	  value: true
 	});
 
+<<<<<<< HEAD
 	var _rule = __webpack_require__(360);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
 	var _util = __webpack_require__(357);
+=======
+	var _rule = __webpack_require__(308);
+
+	var _rule2 = _interopRequireDefault(_rule);
+
+	var _util = __webpack_require__(305);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -76157,7 +78514,11 @@
 	module.exports = exports['default'];
 
 /***/ },
+<<<<<<< HEAD
 /* 378 */
+=======
+/* 326 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -76166,11 +78527,19 @@
 	  value: true
 	});
 
+<<<<<<< HEAD
 	var _rule = __webpack_require__(360);
 
 	var _rule2 = _interopRequireDefault(_rule);
 
 	var _util = __webpack_require__(357);
+=======
+	var _rule = __webpack_require__(308);
+
+	var _rule2 = _interopRequireDefault(_rule);
+
+	var _util = __webpack_require__(305);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -76198,7 +78567,11 @@
 	module.exports = exports['default'];
 
 /***/ },
+<<<<<<< HEAD
 /* 379 */
+=======
+/* 327 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -76209,7 +78582,11 @@
 
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
+<<<<<<< HEAD
 	var _rule = __webpack_require__(360);
+=======
+	var _rule = __webpack_require__(308);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	var _rule2 = _interopRequireDefault(_rule);
 
@@ -76226,7 +78603,11 @@
 	module.exports = exports['default'];
 
 /***/ },
+<<<<<<< HEAD
 /* 380 */
+=======
+/* 328 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	'use strict';
@@ -76293,7 +78674,11 @@
 	var messages = exports.messages = newMessages();
 
 /***/ },
+<<<<<<< HEAD
 /* 381 */
+=======
+/* 329 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports =
@@ -76352,7 +78737,11 @@
 	/***/ 8:
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(333);
+=======
+		module.exports = __webpack_require__(279);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 
@@ -76639,7 +79028,11 @@
 	/***/ 115:
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(336);
+=======
+		module.exports = __webpack_require__(282);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 
@@ -76724,7 +79117,11 @@
 	/******/ });
 
 /***/ },
+<<<<<<< HEAD
 /* 382 */
+=======
+/* 330 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports =
@@ -76783,7 +79180,11 @@
 	/***/ 53:
 	/***/ function(module, exports) {
 
+<<<<<<< HEAD
 		module.exports = __webpack_require__(337);
+=======
+		module.exports = __webpack_require__(283);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	/***/ },
 
@@ -76967,7 +79368,11 @@
 	/******/ });
 
 /***/ },
+<<<<<<< HEAD
 /* 383 */
+=======
+/* 331 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	var SPECIAL_CHARS_REGEXP = /([\:\-\_]+(.))/g;
@@ -77043,7 +79448,11 @@
 	};
 
 /***/ },
+<<<<<<< HEAD
 /* 384 */
+=======
+/* 332 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	module.exports =
@@ -77354,12 +79763,17 @@
 	/******/ });
 
 /***/ },
+<<<<<<< HEAD
 /* 385 */
+=======
+/* 333 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
+<<<<<<< HEAD
 /* 386 */,
 /* 387 */,
 /* 388 */,
@@ -77373,6 +79787,14 @@
 /***/ },
 /* 392 */,
 /* 393 */
+=======
+/* 334 */,
+/* 335 */,
+/* 336 */,
+/* 337 */,
+/* 338 */,
+/* 339 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -77423,19 +79845,32 @@
 	    }
 	};
 
+<<<<<<< HEAD
 	__webpack_require__(394);
+=======
+	__webpack_require__(340);
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 
 	//require('../css/ios.common.scss');
 
 /***/ },
+<<<<<<< HEAD
 /* 394 */
+=======
+/* 340 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
+<<<<<<< HEAD
 /* 395 */,
 /* 396 */
+=======
+/* 341 */,
+/* 342 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {"use strict";
@@ -77447,9 +79882,6 @@
 		if ($(".white_box")[0] && $("#app")[0] && $(".nav")[0] && $(".footer")[0] && $(".page")[0]) {
 			$(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
 			$(".page").height($(".white_box").height());
-		}
-		if ($(".warp-header")[0]) {
-			$(".white_box").height($("#app")[0].clientHeight - $(".warp-header")[0].clientHeight);
 		}
 	}
 
@@ -77465,7 +79897,11 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(114)))
 
 /***/ },
+<<<<<<< HEAD
 /* 397 */
+=======
+/* 343 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	'use strict';
@@ -77493,31 +79929,53 @@
 	})(document, window);
 
 /***/ },
+<<<<<<< HEAD
 /* 398 */
+=======
+/* 344 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
+<<<<<<< HEAD
 /* 399 */,
 /* 400 */
+=======
+/* 345 */,
+/* 346 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
+<<<<<<< HEAD
 /* 401 */,
 /* 402 */,
 /* 403 */,
 /* 404 */,
 /* 405 */,
 /* 406 */
+=======
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	module.exports = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wgARCACCAJMDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAMEAQb/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAffgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAITNbnQAAAAAAADFj2RmNto2uwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/EAB4QAAMAAAcBAAAAAAAAAAAAAAECAwAEERITQHAx/9oACAEBAAEFAvDXcqeVgfo6FTpQWSzzUKnQvA2wmU4pzTYnhv8A/8QAFhEBAQEAAAAAAAAAAAAAAAAAEVAB/9oACAEDAQE/AZmrO//EABgRAAIDAAAAAAAAAAAAAAAAAAFQAhIx/9oACAECAQE/AVlpDF3/xAAiEAABAwMDBQAAAAAAAAAAAAABAAIREiExQGFwQVFxgcH/2gAIAQEABj8C4NAAF90AWZ7FW0LTsfips4+FAjrjQiH0+kQx8POXwqSZ34O//8QAHxABAAEEAwADAAAAAAAAAAAAAREAITFhQEFwUbHR/9oACAEBAAE/IfDUIILeGI1ukOrouLicRqhAVI4Tg66+6lxekNJlIHRltwSRYCOUzH5XUucmPgvamOTlWETLPh3/2gAMAwEAAgADAAAAEPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPvPPPPPPPPMvPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP/8QAGREAAgMBAAAAAAAAAAAAAAAAAVARITAx/9oACAEDAQE/EEU5CdOLv//EABoRAQACAwEAAAAAAAAAAAAAAAERUDAxQeH/2gAIAQIBAT8Qood4lAAjvld//8QAIBABAQABBAIDAQAAAAAAAAAAARExACFBUUBwYXGBsf/aAAgBAQABPxD0a71QWIIcLSJDUGN1Ubtw36HR5BVFE8FjEFdTGgHwUdGXFJ3v18aAxlQArInSz88Gf3wPJTJMNLlzCh1fo3r/ACF4ERvEwrM+jv/Z"
 
 /***/ },
+<<<<<<< HEAD
 /* 407 */
+=======
+/* 353 */
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 /***/ function(module, exports) {
 
 	module.exports = "data:image/gif;base64,R0lGODlhIAAgALMAAP///7Ozs/v7+9bW1uHh4fLy8rq6uoGBgTQ0NAEBARsbG8TExJeXl/39/VRUVAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFBQAAACwAAAAAIAAgAAAE5xDISSlLrOrNp0pKNRCdFhxVolJLEJQUoSgOpSYT4RowNSsvyW1icA16k8MMMRkCBjskBTFDAZyuAEkqCfxIQ2hgQRFvAQEEIjNxVDW6XNE4YagRjuBCwe60smQUDnd4Rz1ZAQZnFAGDd0hihh12CEE9kjAEVlycXIg7BAsMB6SlnJ87paqbSKiKoqusnbMdmDC2tXQlkUhziYtyWTxIfy6BE8WJt5YEvpJivxNaGmLHT0VnOgGYf0dZXS7APdpB309RnHOG5gDqXGLDaC457D1zZ/V/nmOM82XiHQjYKhKP1oZmADdEAAAh+QQFBQAAACwAAAAAGAAXAAAEchDISasKNeuJFKoHs4mUYlJIkmjIV54Soypsa0wmLSnqoTEtBw52mG0AjhYpBxioEqRNy8V0qFzNw+GGwlJki4lBqx1IBgjMkRIghwjrzcDti2/Gh7D9qN774wQGAYOEfwCChIV/gYmDho+QkZKTR3p7EQAh+QQFBQAAACwBAAAAHQAOAAAEchDISWdANesNHHJZwE2DUSEo5SjKKB2HOKGYFLD1CB/DnEoIlkti2PlyuKGEATMBaAACSyGbEDYD4zN1YIEmh0SCQQgYehNmTNNaKsQJXmBuuEYPi9ECAU/UFnNzeUp9VBQEBoFOLmFxWHNoQw6RWEocEQAh+QQFBQAAACwHAAAAGQARAAAEaRDICdZZNOvNDsvfBhBDdpwZgohBgE3nQaki0AYEjEqOGmqDlkEnAzBUjhrA0CoBYhLVSkm4SaAAWkahCFAWTU0A4RxzFWJnzXFWJJWb9pTihRu5dvghl+/7NQmBggo/fYKHCX8AiAmEEQAh+QQFBQAAACwOAAAAEgAYAAAEZXCwAaq9ODAMDOUAI17McYDhWA3mCYpb1RooXBktmsbt944BU6zCQCBQiwPB4jAihiCK86irTB20qvWp7Xq/FYV4TNWNz4oqWoEIgL0HX/eQSLi69boCikTkE2VVDAp5d1p0CW4RACH5BAUFAAAALA4AAAASAB4AAASAkBgCqr3YBIMXvkEIMsxXhcFFpiZqBaTXisBClibgAnd+ijYGq2I4HAamwXBgNHJ8BEbzgPNNjz7LwpnFDLvgLGJMdnw/5DRCrHaE3xbKm6FQwOt1xDnpwCvcJgcJMgEIeCYOCQlrF4YmBIoJVV2CCXZvCooHbwGRcAiKcmFUJhEAIfkEBQUAAAAsDwABABEAHwAABHsQyAkGoRivELInnOFlBjeM1BCiFBdcbMUtKQdTN0CUJru5NJQrYMh5VIFTTKJcOj2HqJQRhEqvqGuU+uw6AwgEwxkOO55lxIihoDjKY8pBoThPxmpAYi+hKzoeewkTdHkZghMIdCOIhIuHfBMOjxiNLR4KCW1ODAlxSxEAIfkEBQUAAAAsCAAOABgAEgAABGwQyEkrCDgbYvvMoOF5ILaNaIoGKroch9hacD3MFMHUBzMHiBtgwJMBFolDB4GoGGBCACKRcAAUWAmzOWJQExysQsJgWj0KqvKalTiYPhp1LBFTtp10Is6mT5gdVFx1bRN8FTsVCAqDOB9+KhEAIfkEBQUAAAAsAgASAB0ADgAABHgQyEmrBePS4bQdQZBdR5IcHmWEgUFQgWKaKbWwwSIhc4LonsXhBSCsQoOSScGQDJiWwOHQnAxWBIYJNXEoFCiEWDI9jCzESey7GwMM5doEwW4jJoypQQ743u1WcTV0CgFzbhJ5XClfHYd/EwZnHoYVDgiOfHKQNREAIfkEBQUAAAAsAAAPABkAEQAABGeQqUQruDjrW3vaYCZ5X2ie6EkcKaooTAsi7ytnTq046BBsNcTvItz4AotMwKZBIC6H6CVAJaCcT0CUBTgaTg5nTCu9GKiDEMPJg5YBBOpwlnVzLwtqyKnZagZWahoMB2M3GgsHSRsRACH5BAUFAAAALAEACAARABgAAARcMKR0gL34npkUyyCAcAmyhBijkGi2UW02VHFt33iu7yiDIDaD4/erEYGDlu/nuBAOJ9Dvc2EcDgFAYIuaXS3bbOh6MIC5IAP5Eh5fk2exC4tpgwZyiyFgvhEMBBEAIfkEBQUAAAAsAAACAA4AHQAABHMQyAnYoViSlFDGXBJ808Ep5KRwV8qEg+pRCOeoioKMwJK0Ekcu54h9AoghKgXIMZgAApQZcCCu2Ax2O6NUud2pmJcyHA4L0uDM/ljYDCnGfGakJQE5YH0wUBYBAUYfBIFkHwaBgxkDgX5lgXpHAXcpBIsRADs="

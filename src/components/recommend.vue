@@ -60,18 +60,15 @@
             loadData:function(finshCallback){
                 this.page += 1;
                 var _this = this;
-                var url = "http://www.ey99.com/api/mobile/recommend.php";
+                var url = "http://www.ey99.com/api/mobile/ad.php";
                 //url += "page=" + this.page;
-                var option = {params:{page:this.page}};
+                var param = {"params":{"page":this.page,"a":"ad"}};
 
-                this.$http.get(url,option).then(function(response){
-                    
-                    console.log(response);
+                this.$http.get(url, param).then(function(response){
 
                     _this.pageTotal = Math.ceil( response.body.count / 10 );
 
 
-                    _this.loading = false;
 
 
                     //如果超过总页数 返回没有了
@@ -107,16 +104,17 @@
 
 
                     if(response.body.count > 0){
-                        
-                        
+                        setTimeout(
+                                function(){
 
-                            $(document).ready(function() {
-                                $(".page").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
-                            });
+                                    $(document).ready(function() {
+                                        $(".page").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
+                                    });
 
-                       
-                             
-                       
+                                   _this.loading = false;
+
+                                },500
+                        )
 
 
                     }
@@ -124,7 +122,6 @@
 
                 }, function(response){
                     // 响应成功回调
-                    
                 });
             },
             onPullup(finshCallback) {
@@ -226,7 +223,7 @@
         width: 1.8rem;height: 1.2rem;
         float:right;
     }
-    .content1-right  img{
+    .content1-right a img{
         width:1.8rem;
         height:1.2rem;
     }
@@ -262,7 +259,7 @@
         margin-right: .06rem;
     }
 
-    .content3-img img{
+    .content3-img a img{
         width:5.79rem;
         height:2.84rem;
     }

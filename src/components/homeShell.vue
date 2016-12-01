@@ -20,7 +20,7 @@
 
 </template>
 <script>
-  
+    import { Swipe, SwipeItem } from 'vue-swipe';
     import load from './loading.vue';
 
 
@@ -33,10 +33,6 @@
                 type:Boolean,
                 required:true,
                 default:true,
-            },
-            type:{
-                type:Number,
-                default:0,
             }
         },
         data(){
@@ -46,7 +42,8 @@
             }
         },
         components:{
-          
+            'swipe':Swipe,
+            'swipe-item':SwipeItem,
             'load':load,
             'pull-to-refresh':PullToRefresh,
 
@@ -54,42 +51,25 @@
         updated(){
             $(document).ready(function() {
                 //获取数据后  固定page高度 即滑动区域 
-                //$(".page").height(400);
-
-                if($(".warp-header")[0]){
-                    $(".page").height($("#app")[0].clientHeight - $(".warp-header")[0].clientHeight );
-
-                }
-                if($(".top")[0] && $(".nav")[0] && $(".footer")[0]) {
-                    $(".page").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
-                }
-              
+                $(".page").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
             });
         },
         mounted(){
-            
+            $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
 
-             if($(".warp-header")[0]){
-                    $(".white_box").height($("#app")[0].clientHeight - $(".warp-header")[0].clientHeight );
-
-                }
-                if($(".top")[0] && $(".nav")[0] && $(".footer")[0]) {
-                    $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
-                }
-            
- 
+            console.log(this);
         },
         methods:{
 
             onPullup(finshCallback) {
-                this.$parent.loadData(finshCallback,false,this.type);
+                this.$parent.loadData(finshCallback);
 
                 //this.loadData(finshCallback);
             },
 
             onPulldown(finshCallback) {
                 ///finshCallback 回归位置 页面扩充后 拉取高度 不执行的话 高度不拉伸
-                this.$parent.loadData(finshCallback,true,this.type);
+                this.$parent.loadData(finshCallback,true);
 
                 //finshCallback  调整位置
 //                this.noPage = false;

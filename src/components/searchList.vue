@@ -1,16 +1,20 @@
 <template>
 	<div>
 		<my-nav theme="white" :title="q"></my-nav>	
+<<<<<<< HEAD
 		<home-shell v-if="!noData" :loading="loading" :type="type">
 			 <div slot="content" v-if="!loading">
 			 	<component :items="items.list" :is="currentView"></component>
 			 </div>
 		</home-shell>
 		<no-data v-else></no-data>
+=======
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 	</div>
 </template>
 <script>
 	import blackNav from './blackNav';
+<<<<<<< HEAD
 	import homeShell from './homeShell';
 	import searchArticleItem from './searchArticleItem';
 	import searchInvestItem from './searchInvestItem';
@@ -26,6 +30,13 @@
 				'items':null,
 				type:0,
 				'noData':false,
+=======
+	export default {
+		
+		data(){
+			return {
+				path:{path:"/search"}
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 			}
 		},
 		computed:{
@@ -33,28 +44,19 @@
 				return this.$route.query.q.length > 10 ?  this.dSubstr(this.$route.query.q,10) + "···" : this.$route.query.q;
 			}
 		},
-		created(){
-			if(this.$route.query.type == "资讯"){
-				this.currentView = searchArticleItem;
-				this.loadData(false,false,0);
-			}else if(this.$route.query.type == "视频"){
-				this.loadData(false,false,1);
-				this.currentView = searchArticleItem;
-			}else{
-				this.loadData(false,false,1);
-				this.type = 1;
-				this.currentView = searchInvestItem;
-			}
-			
-		},
 		components:{
+<<<<<<< HEAD
 			'my-nav':blackNav,
 			'home-shell':homeShell,
 			'no-data':noData,
+=======
+			'my-nav':blackNav
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 		},
 		methods:{
 			dSubstr(title,length){
     			return title.substr(0,length);
+<<<<<<< HEAD
 			},
 			  loadData(finshCallback,refresh,type=0){
 
@@ -111,6 +113,9 @@
                 }
                 );
             }
+=======
+			}
+>>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 		}
 	}
 </script>

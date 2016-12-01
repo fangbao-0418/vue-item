@@ -1,9 +1,15 @@
 <template>
-	<div>
-		没有数据
-	</div>
+	<div class="searchless"></div>
 </template>
 <script>
 </script>
-<style>
+
+<style scoped>
+	.searchless{
+       	background: url("../imgs/searchless.png");
+		width: 2.5rem;
+		height: 4rem;
+		background-size:cover;
+		margin: 17% auto ;
+	}
 </style>

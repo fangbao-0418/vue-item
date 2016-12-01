@@ -15,7 +15,8 @@
 			}
 		},
 		computed:{
-			currentView(){				 
+			currentView(){
+				console.log(this.$route);
 				return this.$route.query.q &&  this.$route.query.type ? "searchList" : "searchPage";
 			}
 		},
@@ -24,7 +25,7 @@
 			searchList
 		},	
 		mounted(){
-			 
+			console.log(this.currentView);
 		}	
 		
 	}

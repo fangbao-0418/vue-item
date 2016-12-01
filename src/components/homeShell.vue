@@ -1,22 +1,20 @@
 <template>
-    <div class="page_container">
-        <load  :loading="loading" ></load>
+    <div class="white_box">
+        <load  v-if="loading"  ></load>
 
-        <div v-if="!loading" >
-            <mt-loadmore :bottom-method="loadBottom"  ref="loadmore">
-                
-             
-                <my-paging :items="items"></my-paging>
-              
-                
-                <div v-show="noData" slot="bottom" class="mint-loadmore-bottom">
+        <div id="pullDown"  v-else>
+            <pull-to-refresh
+                    @on-pullup='onPullup'
+                    @on-pulldown='onPulldown' class="page">
+
+                <slot name="content"></slot>
+
+                <div v-show="noPage" class="noPage">
                     没有了
                 </div>
-            </mt-loadmore>
+            </pull-to-refresh>
         </div>
-        <div v-if="issearchpage">
-        <no-data v-if="emptyresource && page == 1"></no-data>
-        </div>
+
         <div class="clear"></div>
     </div>
 
@@ -25,112 +23,79 @@
   
     import load from './loading.vue';
 
-    import { Loadmore } from 'mint-ui';
-    import { Indicator } from 'mint-ui';
-    
-    import noData from './noData';
-  
-    import Vue from 'vue';
+
+    //上拉下拉组件 pull-to-refresh 必须给该组件 定高度 class="page" 可改变className
+    import PullToRefresh from './pull-to-refresh.vue'
+
     export default {
-        props:{  
-            currentview:Object,
-            getparams:Object,
-            issearchpage:{
-                default:false
+        props:{
+            loading:{
+                type:Boolean,
+                required:true,
+                default:true,
+            },
+            type:{
+                type:Number,
+                default:0,
             }
         },
         data(){
             return {
-                loading:true,
                 items:null,
-                page:0,
-                noData:false,
-                emptyresource:false
+                'noPage':false,
             }
         },
         components:{
+          
             'load':load,
-            noData,
+            'pull-to-refresh':PullToRefresh,
+
         },
-        updated(){   
+        updated(){
+            $(document).ready(function() {
+                //获取数据后  固定page高度 即滑动区域 
+                //$(".page").height(400);
+
+                if($(".warp-header")[0]){
+                    $(".page").height($("#app")[0].clientHeight - $(".warp-header")[0].clientHeight );
+
+                }
+                if($(".top")[0] && $(".nav")[0] && $(".footer")[0]) {
+                    $(".page").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
+                }
+              
+            });
+        },
+        mounted(){
+            
+
+             if($(".warp-header")[0]){
+                    $(".white_box").height($("#app")[0].clientHeight - $(".warp-header")[0].clientHeight );
+
+                }
+                if($(".top")[0] && $(".nav")[0] && $(".footer")[0]) {
+                    $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
+                }
+            
  
         },
-        created(){
-            this.loadData();
-        },
-        mounted(){ 
-
-            console.log(this.getparams)
-
-            Vue.component('my-paging',this.currentview);
-           
-        },
-
         methods:{
-            loadTop(id) {
-                this.loadData(id,true);              
+
+            onPullup(finshCallback) {
+                this.$parent.loadData(finshCallback,false,this.type);
+
+                //this.loadData(finshCallback);
             },
-            loadBottom(id) {
 
-              
-                    this.loadData(id); 
-              
-              
-            
-            },
-            loadData(id,refresh=false){
-                if(refresh){
-                    this.page = 0;
-                    if(id) this.$refs.loadmore.onTopLoaded(id);
-                }
- 
+            onPulldown(finshCallback) {
+                ///finshCallback 回归位置 页面扩充后 拉取高度 不执行的话 高度不拉伸
+                this.$parent.loadData(finshCallback,true,this.type);
 
-                var url = this.getparams.url;
-                var option = this.getparams.option;
-                var _this = this;       
-                this.page += 1;
-                option.params.page = this.page;
-                this.$http.get(url,option).then(
-
-                    (res)=>{
-                        if(res.body.list.length){ 
-                            if(_this.page == 1){
-                                _this.items = res.body.list;
-                              
-                            }else{
-                                for(var i=0;i<res.body.list.length;i++){
-                                    _this.items.push(res.body.list[i]);
-                                }                              
-                            } 
-                            
-                            if(id) this.$refs.loadmore.onBottomLoaded(id);
-                            _this.loading = false; 
-
-                        }else{     
-                            //if(id) this.$refs.loadmore.onBottomLoaded(id);              
-                            _this.noData = true;
-                            setTimeout(()=>{
-                                _this.noData = false;
-                                if(id) _this.$refs.loadmore.onBottomLoaded(id);
-                            },1000)
-                            _this.emptyresource = true;
-                        }
-                        
-                        Indicator.close();
-                        
-                       
-                },
-                        (err)=>{
-
-                }
-                );
+                //finshCallback  调整位置
+//                this.noPage = false;
+//                this.page = 0;
+//                this.loadData(finshCallback);
             }
-            
         }
     }
 </script>
-<style scoped>
-    .page_container{
-        background: #FFF;
-    }
-</style>

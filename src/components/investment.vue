@@ -1,8 +1,8 @@
 <template>
 <div class="white_box">
-    <load ></load>
+    <load  v-if="loading"  ></load>
 
-    <div id="pullDown"  v-if="!loading">
+    <div id="pullDown"  v-else>
         <pull-to-refresh
                 @on-pullup='onPullup'
                 @on-pulldown='onPulldown' class="page">
@@ -20,7 +20,7 @@
 
 <script>
 
-    import { Indicator } from 'mint-ui';
+
     import invementList from './investmentList.vue';
     import loading from './loading.vue';
     import PullToRefresh from './pull-to-refresh.vue'
@@ -42,11 +42,11 @@
                 noPage:false,
             }
         },
-        created(){          
-            this.loadData(false);
+        created(){
+             this.loadData(false);
          },
         mounted(){
-            // $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
+            $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
         },
         methods: {
             loadData:function(finshCallback){
@@ -61,8 +61,7 @@
              
                 this.$http.get(url, option).then(function(response){
 
-                    Indicator.close();
-
+                    
                     _this.pageTotal = Math.ceil( response.body.count / 10 );
 
 

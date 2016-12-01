@@ -1,4 +1,4 @@
-late>
+<template>
 	<div class="search-items">
 		fdsf
 	</div>

@@ -4,24 +4,13 @@
         <!--<div class="bounce2"></div>-->
         <!--<div class="bounce3"></div>-->
     <!--</div>-->
-   <!--  <div class="box">
+    <div class="box">
         <i></i>
-    </div> -->
+    </div>
 </template>
 <script>
-    import { Indicator } from 'mint-ui';
     export default {
-       props:['loading'],
-       mounted(){
-           Indicator.open({
-              text: '数据加载中',
-              spinnerType: 'fading-circle'
-            });
-
-       },
-       updated(){
-         
-       }
+       
     }
 </script>
 <style scoped>

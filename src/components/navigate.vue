@@ -5,8 +5,7 @@
                 <i @click="goBack"></i>
             </div>
             <div class="collect">
-                <i v-if="!collected" @click="collect" class="iconfont">&#xe68a;</i>
-                <i v-else @click="collect" class="iconfont collected"> &#xe600;</i>               
+                <i @click="collect" class="iconfont">&#xe68a;</i>
             </div>
             <div class="share">
                 <i @click="shared" class="iconfont">&#xe648;</i>
@@ -17,79 +16,27 @@
 </template>
 <script>
     import share from './shared.vue';
-
-    import auth from '../auth.js';
-    
-    import { Toast } from 'mint-ui';
-
     export default {
         props:{
             path:{
                 default:null
-            },
-            moduleid:{default:null},
-            id:{}
+            }
         },
         data(){
             return {
-                isOpen:false,  
-                collected:false              
+                isOpen:false,
             }
-        },
-        created(){
-            this.iscollected();          
-        },
-        computed:{
-           
         },
         components:{
             'app-share':share,
         },
         methods:{
-            iscollected(){
-                var _this = this;
-                 auth.getUserInfo().then((info)=>{
-                    if(info){                       
-                        var url = "http://www.ey99.com/api/mobile/collect.php";
-                        var option = {params:{moduleid:this.moduleid,itemid:this.id,userid:info.userid,type:"get"},emulateJSON:true};
-                        _this.$http.post(url,[],option).then((res)=>{                           
-                             _this.collected = res.body.res;
-                        })
-                    }else{
-                        _this.collected = false;
-                    }
-                },()=>{ _this.collected = false; });    
-            },           
             shared(){
                 this.isOpen = true;
             },
-            collect(){                             
-                var _this = this;
-                auth.getUserInfo().then((info)=>{                  
-                    if(info){
-                        var url = "http://www.ey99.com/api/mobile/collect.php";
-                        var option = {params:{type:"set",moduleid:this.moduleid,itemid:this.id,userid:info.userid},emulateJSON:true};
-                        _this.$http.post(url,[],option).then((res)=>{
-                            if(res.body.res){
-                                _this.collected = true;   
-                            }
-                        });
-                    }else{
-                        Toast({
-                          message: '请先登录',
-                          position: 'bottom',
-                          duration: 5000
-                        });
-                    }
-                },()=>{
-                     Toast({
-                          message: '请先登录',
-                          position: 'bottom',
-                          duration: 5000
-                        });
-                });
+            collect(){
+
             },
-            
             goBack(){
 
                 this.$router.go(-1);
@@ -154,8 +101,5 @@
         right:.8rem;
         top:.28rem;
         color:#999;
-    }
-    .collect .collected{
-        color:#FF3333;
     }
 </style>

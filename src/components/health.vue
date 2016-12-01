@@ -1,6 +1,6 @@
 <template>
-  <div >
-      <div slot="content" >
+  <home-shell :loading="loading" >
+      <div slot="content" v-if="!loading">
           <swipe class="my-swipe" :speed="1000" :show-indicators="false" >
 
               <swipe-item v-for="item in carousel" >
@@ -14,34 +14,81 @@
 
           <div class="card">
               <h2 class="cardTitle">今日推荐</h2>
-             
-                <home-shell :currentview="currentview" :getparams="getparams" ></home-shell>
-              
+              <ul>                
+                <li v-for="item in items.list">
+                    <template v-if="item.thumb" >
+                    <router-link  :to="{name:'healthDetail',query:{id:item.itemid}}" >
+                        <template v-if="item.level == 8">                            
+                            <div class="midbox">
+                                <div class=title>{{item.title}}<div>
+                                <span><img :src="item.thumb"/></span>
+                                <span><img class="imgmid" :src="item.thumb1"/></span>
+                                <span><img :src="item.thumb2"/></span>
+                                <i class="source">{{item.copyfrom}}</i>
+                                <i class="hits"><i class="iconfont">&#xf0048;</i>{{item.hits}}</i>
+                             </div>                           
+                        </template>  
+                        <template v-if="item.level == 9">                            
+                             <div class="bigbox">
+                                <div class="title">
+                                  {{item.title}}
+                                </div>
+                               <img :src="item.thumb"/>
+                               <span>{{item.copyfrom}}</span>
+                               <span class="hits"><i class="iconfont">&#xf0048;</i>{{item.hits}}</span>
+                            </div>                  
+                        </template> 
+                       <template  v-if="item.level != 8 && item.level != 9">  
+                            <div class="descBox">
+                                <div class="title">{{item.title | dsubstr(20)}}</div>
+                                <div class="footnote">
+                                    <span class="source">{{item.copyfrom ? item.copyfrom : "当代医药市场网"}}</span>
+                                    <span class="hits"><i class="iconfont">&#xf0048;</i>{{item.hits}}</span>
+                                </div>
+                            </div>
+                            <span class="img" >
+                                <img :src="item.thumb" class="img-small"/>
+                            </span>
+                        </template>  
+                    </router-link >
+                    </template>
+                    <template  v-else >
+                        <router-link :to="{name:'healthDetail',query:{id:item.itemid}}" >
+                            <h2 class="title">{{item.title | dsubstr(16)}}</h2>
+                            <span class="hits">
+                                <i class="iconfont">&#xf0048;</i>{{item.hits}}
+                            </span>
+                        </router-link >
+                    </template>
+                </li>
+              </ul>
           </div>
 
       </div>
-  </div>
+  </home-shell>
 </template>
 <script>
     import { Swipe, SwipeItem } from 'vue-swipe';
     import homeShell from './homeShell.vue';
-    import searchArticleItem from './searchArticleItem';
+
     export default {
         data(){
-            return {               
-                'carousel':[{"pic":"http://www.ey99.com/file/upload/201609/30/225028701.jpg","title":"中国生命电子学会年会","url":""},{"pic":"http://www.ey99.com/file/upload/201609/30/225103531.jpg","title":"第十三届中医药博览会","url":""},{"pic":"http://www.ey99.com/file/upload/201609/08/085935452830.jpg","title":"博性康药膜","url":""}],
-                'getparams':{url:"22222"},
-                'currentview':searchArticleItem
+            return {
+                items:null,
+                loading:true,
+                'noPage':false,
+                'carousel':[{"pic":"http://www.ey99.com/file/upload/201609/30/225028701.jpg","title":"习大大访问你家","url":""},{"pic":"http://www.ey99.com/file/upload/201609/30/225103531.jpg","title":"习大大访问我家","url":""},{"pic":"http://www.ey99.com/file/upload/201609/08/085935452830.jpg","title":"习大大访问她家","url":""}],
+                'page':0,
+               
             }
         },
         components:{
             'swipe':Swipe,
             'swipe-item':SwipeItem,
             'home-shell':homeShell,
-            
         },
-        created(){
-            this.setGetParams();
+        mounted(){
+            this.loadData(false);
         },
         filters:{
             dsubstr(title,length){
@@ -49,11 +96,51 @@
             }
         },
         methods:{
-            setGetParams(){              
+            loadData(finshCallback,refresh){
+
+                if(refresh){
+                    this.page = 0;
+                }
+
+                var _this = this;
                 var url = "http://www.ey99.com/api/mobile/article.php";
-                var option = {params:{catid:331}};
-                this.getparams = {url:url,option:option};
-                console.log(this.getparams);
+                this.page += 1;
+
+                var option = {params:{catid:331,page:this.page}};
+                this.$http.get(url,option).then(
+                        (res)=>{
+
+                            console.log(res);
+
+                        if(_this.page == 1){
+                            _this.items = res.body;
+                            _this.loading = false;
+                            
+                            if(finshCallback){
+                                 finshCallback()
+                            }                   
+                        
+                        }
+                        if(_this.page > 1 && _this.page <= Math.ceil(res.body.count/20)){
+
+
+                                for(var i=0;i<res.body.list.length;i++){
+                                    _this.items.list.push(res.body.list[i]);
+                                }
+
+                            _this.loading = false;
+                             if(finshCallback){
+                                 finshCallback()
+                            }
+                        }
+
+
+
+                },
+                        (err)=>{
+
+                }
+                );
             }
         },
 
@@ -82,7 +169,6 @@
     }
     .card{
         .cardTitle{
-            background: #fff;
             color: #333;
             padding-left: .2rem;
             height: .85rem;

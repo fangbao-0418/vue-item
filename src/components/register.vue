@@ -82,7 +82,7 @@
 					input{
 						width:70%;
 						height:.8rem;
-						line-height:.4rem;
+						line-height:.8rem;
 						float:right;
 						font-size:.3rem;
 						border:none;

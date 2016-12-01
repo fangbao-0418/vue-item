@@ -40,10 +40,10 @@ gulp.task("webpack-dev-server", function(callback) {
         //proxy: {
         //    '*': 'http://localhost:3000'
         //},
-    }).listen(8088, "192.168.1.98", function(err) {
+    }).listen(8088, "192.168.1.15", function(err) {
         if(err) throw new gutil.PluginError("webpack-dev-server", err);
         // Server listening
-        gutil.log("[webpack-dev-server]", "http://192.168.1.98:8088/webpack-dev-server/index.html");
+        gutil.log("[webpack-dev-server]", "http://192.168.1.15:8088/webpack-dev-server/index.html");
 
         // keep the server alive or continue?
         // callback();

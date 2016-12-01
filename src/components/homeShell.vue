@@ -1,81 +1,136 @@
 <template>
-    <div class="white_box">
-        <load  v-if="loading"  ></load>
+    <div class="page_container">
+        <load  :loading="loading" ></load>
 
-        <div id="pullDown"  v-else>
-            <pull-to-refresh
-                    @on-pullup='onPullup'
-                    @on-pulldown='onPulldown' class="page">
-
-                <slot name="content"></slot>
-
-                <div v-show="noPage" class="noPage">
+        <div v-if="!loading" >
+            <mt-loadmore :bottom-method="loadBottom"  ref="loadmore">
+                
+             
+                <my-paging :items="items"></my-paging>
+              
+                
+                <div v-show="noData" slot="bottom" class="mint-loadmore-bottom">
                     没有了
                 </div>
-            </pull-to-refresh>
+            </mt-loadmore>
         </div>
-
+        <div v-if="issearchpage">
+        <no-data v-if="emptyresource && page == 1"></no-data>
+        </div>
         <div class="clear"></div>
     </div>
 
 </template>
 <script>
-    import { Swipe, SwipeItem } from 'vue-swipe';
+  
     import load from './loading.vue';
 
-
-    //上拉下拉组件 pull-to-refresh 必须给该组件 定高度 class="page" 可改变className
-    import PullToRefresh from './pull-to-refresh.vue'
-
+    import { Loadmore } from 'mint-ui';
+    import { Indicator } from 'mint-ui';
+    
+    import noData from './noData';
+  
+    import Vue from 'vue';
     export default {
-        props:{
-            loading:{
-                type:Boolean,
-                required:true,
-                default:true,
+        props:{  
+            currentview:Object,
+            getparams:Object,
+            issearchpage:{
+                default:false
             }
         },
         data(){
             return {
+                loading:true,
                 items:null,
-                'noPage':false,
+                page:0,
+                noData:false,
+                emptyresource:false
             }
         },
         components:{
-            'swipe':Swipe,
-            'swipe-item':SwipeItem,
             'load':load,
-            'pull-to-refresh':PullToRefresh,
+            noData,
+        },
+        updated(){   
+ 
+        },
+        created(){
+            this.loadData();
+        },
+        mounted(){ 
 
-        },
-        updated(){
-            $(document).ready(function() {
-                //获取数据后  固定page高度 即滑动区域 
-                $(".page").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
-            });
-        },
-        mounted(){
-            $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
+            console.log(this.getparams)
 
-            console.log(this);
+            Vue.component('my-paging',this.currentview);
+           
         },
+
         methods:{
-
-            onPullup(finshCallback) {
-                this.$parent.loadData(finshCallback);
-
-                //this.loadData(finshCallback);
+            loadTop(id) {
+                this.loadData(id,true);              
             },
+            loadBottom(id) {
 
-            onPulldown(finshCallback) {
-                ///finshCallback 回归位置 页面扩充后 拉取高度 不执行的话 高度不拉伸
-                this.$parent.loadData(finshCallback,true);
+              
+                    this.loadData(id); 
+              
+              
+            
+            },
+            loadData(id,refresh=false){
+                if(refresh){
+                    this.page = 0;
+                    if(id) this.$refs.loadmore.onTopLoaded(id);
+                }
+ 
 
-                //finshCallback  调整位置
-//                this.noPage = false;
-//                this.page = 0;
-//                this.loadData(finshCallback);
+                var url = this.getparams.url;
+                var option = this.getparams.option;
+                var _this = this;       
+                this.page += 1;
+                option.params.page = this.page;
+                this.$http.get(url,option).then(
+
+                    (res)=>{
+                        if(res.body.list.length){ 
+                            if(_this.page == 1){
+                                _this.items = res.body.list;
+                              
+                            }else{
+                                for(var i=0;i<res.body.list.length;i++){
+                                    _this.items.push(res.body.list[i]);
+                                }                              
+                            } 
+                            
+                            if(id) this.$refs.loadmore.onBottomLoaded(id);
+                            _this.loading = false; 
+
+                        }else{     
+                            //if(id) this.$refs.loadmore.onBottomLoaded(id);              
+                            _this.noData = true;
+                            setTimeout(()=>{
+                                _this.noData = false;
+                                if(id) _this.$refs.loadmore.onBottomLoaded(id);
+                            },1000)
+                            _this.emptyresource = true;
+                        }
+                        
+                        Indicator.close();
+                        
+                       
+                },
+                        (err)=>{
+
+                }
+                );
             }
+            
         }
     }
 </script>
+<style scoped>
+    .page_container{
+        background: #FFF;
+    }
+</style>

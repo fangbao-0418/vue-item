@@ -11,13 +11,8 @@
 						     <i  v-if="item.checked" class="iconfont">&#xe670;</i>
 						</li>
 					</ul>
-<<<<<<< HEAD
 				    <div class="report" @click="submit">
 						<el-button type="primary" :disabled="disabled">提交</el-button>
-=======
-				    <div class="report">
-						<el-button type="primary">提交</el-button>
->>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 					</div>
 			</div>
 		</div>
@@ -50,11 +45,7 @@
 						"title":"标题夸张",
 						"checked":false
 					},{
-<<<<<<< HEAD
 						"title":"与事实不符",
-=======
-						"title":"已举报与事实不符",
->>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 						"checked":false
 					},{
 						"title":"疑似抄袭",
@@ -66,7 +57,6 @@
 				]
 			};
 
-<<<<<<< HEAD
 		},
 		computed:{
 			disabled(){
@@ -78,8 +68,6 @@
 				}
 				return disabled;
 			}
-=======
->>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 		},
 		mounted(){
 			 
@@ -159,13 +147,8 @@
 				min-height: 2rem;
 			}
 			li{
-<<<<<<< HEAD
 				padding:.2rem 0;
 				border-bottom: 1px solid #efefef;
-=======
-				padding:.15rem 0;
-				border-bottom: 1px solid #e8e8e8;
->>>>>>> 619844e82610499b4c5920d51b8f6385df3337b0
 			}
 			.gray{
 				color:gray;

@@ -8,18 +8,24 @@
 		<div class="login-main">
 				<ul>
 					<li>
-	                     <i class="iconfont">&#x3437;</i>
-						 <el-input class="from-input" placeholder="手机/当代账号" v-model="user"></el-input>
+	 <i class="iconfont">&#x3437;</i>
+				 <el-input class="from-input" placeholder="手机/当代账号" v-model="user"></el-input>
 					</li>
 					<li>
-				        <i class="iconfont">&#xe678;</i>
-				        <el-input class="from-input pwd" :type="passwdtype" placeholder="登录密码" v-model="pwd"></el-input>
-	  			        <el-switch v-model="status" on-text="" off-text="" @change="passwdstatus"></el-switch>
+		
+				 <i class="iconfont">&#xe678;</i>
+				 <el-input class="from-input pwd" :type="passwdtype" placeholder="登录密码" v-model="pwd"></el-input>	
+	  			<el-switch v-model="status" on-text="" off-text="" @change="passwdstatus"></el-switch>
 					</li>
-				    <li>
-					   <el-button type="primary" @click="login">登录</el-button>
-				    </li>
-			</ul>
+				<li>
+					<el-button type="primary" @click="login">登录</el-button>
+				</li>	
+			</ul>	
+
+ 
+
+
+
 		</div>
 
 		 
@@ -28,7 +34,7 @@
 </template>
 <script>
 import blackNav from './blackNav.vue';
- 
+import { Toast } from 'mint-ui';
 export default {
   data() {
     return {
@@ -69,9 +75,18 @@ export default {
   	},
   	alert(type){
   		if(type == 1){
-  			this.$message.error('账号或密码输入错误！');
+  			Toast({
+			  message: '账号或密码输入错误',
+			  position: 'bottom',
+			  duration: 5000
+			});
+ 
   		}else if(type == 2){
-  			this.$message.error('账号已被锁定一小时后再试！');
+			Toast({
+			  message: '账号已被锁定一小时后再试！',
+			  position: 'bottom',
+			  duration: 5000
+			}); 
   		}
   	}
   }
@@ -88,7 +103,7 @@ export default {
 				.el-input__inner{
 					padding-top:.14rem;
 					height:.8rem;
-					line-height: .8rem;
+					line-height: .4rem;
 					padding-left:.6rem;
 					font-size:.3rem;
 				}						

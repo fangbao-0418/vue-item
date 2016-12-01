@@ -2,11 +2,11 @@
     <div style="height:100%">
 
     	<!-- nav -->
-        <app-nav :path="topath"></app-nav>
+        <app-nav :path="topath" :id="id" moduleid="22"></app-nav>
 
-        <load v-if="loading"></load>
+        <load></load>
         <!-- content -->
-        <div v-else>
+        <div  v-if="!loading">
             <div class="content-box">
                 <!-- content-one -->
                 <div class="content">
@@ -108,7 +108,7 @@
 <script>
     import nav from './navigate.vue';
     import load from './loading.vue';
-  
+    import { Indicator } from 'mint-ui';
   
     import detailFooter from './detailFooter.vue';
     require('vue-swipe/dist/vue-swipe.css');
@@ -191,9 +191,12 @@
                 topid:null,                
             }
         },
-        mounted(){
-            this.id = this.$route.query.id;
+        created(){          
+            this.id = parseInt(this.$route.query.id);
             this.loadData();
+        },
+        mounted(){
+        
         },
         methods:{
             loadData(){
@@ -204,9 +207,12 @@
                 this.$http.get(url,option).then(
                         (res)=>{                      
                         if(res.data.title){
+                            Indicator.close();
+                        res.data.hits = parseInt( res.data.hits ) + 1;
                         _this.item = res.data;
                         _this.loading = false;
                         _this.topid = res.data.topid;
+                        _this.hits(res.data.itemid);
                     }
                 },
                         (err)=>{
@@ -214,7 +220,11 @@
                 }
                 );
             },
-
+            hits(itemid){
+                var url = "http://www.ey99.com/api/mobile/hits.php";
+                var option = { params : {moduleid:22 ,itemid} };
+                this.$http.get(url,option)
+            }
         },
         components:{
             'app-nav':nav,

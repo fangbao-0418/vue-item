@@ -11,18 +11,7 @@
             </div>
 
         </div>
-        <div class="nav">
-            <div id="nav-smartSetup">
-                <div id="scroller">
-                    <ul>
-                        <li :class="{'cur':isCur[0]}" >推荐</li>
-                        <li >全部</li>
-                         <li >展会</li>
-                    </ul>
-                </div>
-            </div>
-          
-        </div>
+        
 
     </div>
 </template>
@@ -115,16 +104,14 @@
 
         },
         updated(){
-
-
-
         }
 
     }
 </script>
 <style lang="sass" scoped>
     .box{
-        height:1.44rem;
+       width:100%;
+       height:.84rem;
     }
     .wrap{
         width:5.8rem;

@@ -3,7 +3,7 @@
         <ul>                
           <li v-for="item in items">
               <template v-if="item.thumb" >
-              <router-link  :to="{name:'healthDetail',query:{id:item.itemid}}" >
+              <router-link  :to="{name:'newsDetail',query:{id:item.itemid}}" >
                   <template v-if="item.level == 8">                            
                       <div class="midbox">
                           <div class=title>{{item.title}}<div>
@@ -39,7 +39,7 @@
               </router-link >
               </template>
               <template  v-else >
-                  <router-link :to="{name:'healthDetail',query:{id:item.itemid}}" >
+                  <router-link :to="{name:'newsDetail',query:{id:item.itemid}}" >
                       <h2 class="title">{{item.title | dsubstr(16)}}</h2>
                       <span class="hits">
                           <i class="iconfont">&#xf0048;</i>{{item.hits}}

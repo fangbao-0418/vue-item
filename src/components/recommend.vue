@@ -3,9 +3,9 @@
     <div class="white_box">
 
 
-         <load  v-if="loading"></load>
+         <load ></load>
 
-        <div id="pullDown"  v-else>
+        <div id="pullDown"  v-if="!loading">
             <pull-to-refresh
                     @on-pullup='onPullup'
                     @on-pulldown='onPulldown' class="page">
@@ -28,7 +28,7 @@
     import indexMain from './indexMain.vue';
     import loading from './loading.vue';
     import PullToRefresh from './pull-to-refresh.vue'
-
+    import { Indicator } from 'mint-ui';
     export default {
         components: {
             "pull-to-refresh":PullToRefresh,
@@ -66,7 +66,7 @@
 
                 this.$http.get(url,option).then(function(response){
                     
-                    console.log(response);
+                    Indicator.close();
 
                     _this.pageTotal = Math.ceil( response.body.count / 10 );
 
@@ -158,11 +158,6 @@
         line-height: .50rem;
         color: #888;
     }
-</style>
-<style>
-    .clear{
-        clear: both;
-    }
     #pullDown{
         background: #FFFFFF;
     }
@@ -172,101 +167,6 @@
         flex: 1;
         overflow: hidden;
     }
-    .ad_content{
-        width:5.8rem;
-        margin: 0 auto;
-        padding:.10rem 0;
-        position: relative;
-        margin-bottom: .1rem;
-    }
-    .ad_code_one{
-        width:100%;
-        height: 1.2rem;
-        padding:.16rem 0px;
-        border-bottom:1px solid #e7e7e7;
-    }
-    .ad_code_two{
-        width:100%;
-        padding-bottom:.7rem;
-        border-bottom:1px solid #e7e7e7;
-    }
-    .ad_code_three{
-        width:100%;
-        padding-bottom:.6rem;
-        border-bottom:1px solid #e7e7e7;
-    }
-    .content1-left{
-        width: 4rem;
-
-        float: left;
-    }
-
-    .content-title h2{
-        padding-right:.2rem;
-        font-size: .3rem;
-    }
-
-    .content-info{
-        position: absolute;
-        bottom:.3rem;
-    }
-    .content-info ul{
-        width:100% ;
-        height:.3rem ;
-        line-height: .3rem;
-    }
-
-    .content-info li {
-        float: left;
-    }
-
-
-
-    .content1-right{
-        width: 1.8rem;height: 1.2rem;
-        float:right;
-    }
-    .content1-right  img{
-        width:1.8rem;
-        height:1.2rem;
-    }
-    .click,.time{
-        color:#8a8a8a ;
-        font-size:.22rem ;
-
-        margin-right:.26rem;
-        display: inline-block;
-    }
-
-
-
-    .content-Title{
-        padding-bottom: .16rem;
-    }
-
-    .content2-img{
-        width: 5.8rem;height: 1.23rem;
-    }
-
-
-
-    .content2-img img{
-        display: block!important;
-        float: left!important;
-    }
-    .content2-img a img{
-        width:1.89rem;
-        height:1.23rem;
-    }
-    .c2-img{
-        margin-right: .06rem;
-    }
-
-    .content3-img img{
-        width:5.79rem;
-        height:2.84rem;
-    }
-
 
     .page{
 
@@ -309,4 +209,5 @@
         background: #999;
     }
     /*scrollbar end*/
+    
 </style>

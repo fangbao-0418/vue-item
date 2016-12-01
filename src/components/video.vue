@@ -2,10 +2,10 @@
 
 <template>
  <div class="white-box">
-    <my-header></my-header>
-    
-          <video-list></video-list>
-        
+    <my-top></my-top>
+    <div class="video-area">
+    <video-list></video-list>
+    </div>    
     <my-footer></my-footer>   
  </div>
 </template>
@@ -13,7 +13,7 @@
 <script>
     import footer from './footer.vue';
     import videoList from './videoList.vue';
-    import header from './videoHeader.vue';
+    import myTop from './top.vue';
     import homeShell from './homeShell.vue';   
 
     export default {
@@ -24,7 +24,7 @@
             return {}  
         },
         components: {  
-            'my-header':header, 
+            myTop,
             'video-list':videoList,              
             'my-footer':footer
         },
@@ -44,5 +44,7 @@
 .slider-item{
     width:100%;
 }
-
+.video-area{
+    padding-top:.84rem;
+}
 </style>

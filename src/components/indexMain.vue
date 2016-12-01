@@ -3,7 +3,7 @@
 
     <div>
         <div class="ad_content"  v-for="item in items.list">
-            <a :href="item.text_url">
+            <a :href="item.text_url" class="click_area">
                 <div v-html="item.code"></div>
                 <div class="content-info">
                     <ul>
@@ -64,6 +64,10 @@
 
 
 <style lang="sass" scoped>
+    .click_area{
+        display: inline-block;
+    }
+
     .click, .time {
         font-size:12px;
         height:18px;
@@ -80,3 +84,107 @@
         }
     }
 </style>
+<style>
+   
+  
+     .clear{
+        clear: both;
+    }
+    .ad_content{
+        width:5.8rem;
+        margin: 0 auto;
+        padding:.10rem 0;
+        position: relative;
+        margin-bottom: .1rem;
+    }
+    .ad_code_one{
+        width:100%;
+        height: 1.2rem;
+        padding:.16rem 0px;
+        border-bottom:1px solid #e7e7e7;
+    }
+    .ad_code_two{
+        width:100%;
+        padding-bottom:.7rem;
+        border-bottom:1px solid #e7e7e7;
+    }
+    .ad_code_three{
+        width:100%;
+        padding-bottom:.6rem;
+        border-bottom:1px solid #e7e7e7;
+    }
+    .content1-left{
+        width: 4rem;
+
+        float: left;
+    }
+
+    .content-title h2{
+        padding-right:.2rem;
+        font-size: .3rem;
+    }
+
+    .content-info{
+        position: absolute;
+        bottom:.3rem;
+    }
+    .content-info ul{
+        width:100% ;
+        height:.3rem ;
+        line-height: .3rem;
+    }
+
+    .content-info li {
+        float: left;
+    }
+
+
+
+    .content1-right{
+        width: 1.8rem;height: 1.2rem;
+        float:right;
+    }
+    .content1-right  img{
+        width:1.8rem;
+        height:1.2rem;
+    }
+    .click,.time{
+        color:#8a8a8a ;
+        font-size:.22rem ;
+
+        margin-right:.26rem;
+        display: inline-block;
+    }
+
+
+
+    .content-Title{
+        padding-bottom: .16rem;
+    }
+
+    .content2-img{
+        width: 5.8rem;height: 1.23rem;
+    }
+
+
+
+    .content2-img img{
+        display: block!important;
+        float: left!important;
+    }
+    .content2-img img{
+        width:1.89rem;
+        height:1.23rem;
+    }
+    .c2-img{
+        margin-right: .06rem;
+    }
+
+    .content3-img img{
+        width:5.79rem;
+        height:2.84rem;
+    }
+
+
+</style>
+

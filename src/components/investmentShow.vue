@@ -2,11 +2,11 @@
     <div style="height:100%">
 
     	<!-- nav -->
-        <app-nav :path="topath"></app-nav>
+        <app-nav :path="topath" :id="id" moduleid="22"></app-nav>
 
-        <load v-if="loading"></load>
+        <load></load>
         <!-- content -->
-        <div v-else>
+        <div  v-if="!loading">
             <div class="content-box">
                 <!-- content-one -->
                 <div class="content">
@@ -108,7 +108,7 @@
 <script>
     import nav from './navigate.vue';
     import load from './loading.vue';
-  
+    import { Indicator } from 'mint-ui';
   
     import detailFooter from './detailFooter.vue';
     require('vue-swipe/dist/vue-swipe.css');
@@ -192,7 +192,7 @@
             }
         },
         created(){          
-            this.id = this.$route.query.id;
+            this.id = parseInt(this.$route.query.id);
             this.loadData();
         },
         mounted(){
@@ -207,6 +207,7 @@
                 this.$http.get(url,option).then(
                         (res)=>{                      
                         if(res.data.title){
+                            Indicator.close();
                         res.data.hits = parseInt( res.data.hits ) + 1;
                         _this.item = res.data;
                         _this.loading = false;

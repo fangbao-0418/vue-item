@@ -1,8 +1,8 @@
 <template>
-    <div class="page_container">
+    <div class="page-container">
         <load  :loading="loading" ></load>
 
-        <div v-if="!loading" >
+        <div v-if="!loading" class="page-items">
             <mt-loadmore :bottom-method="loadBottom"  ref="loadmore">
                 
              
@@ -14,9 +14,9 @@
                 </div>
             </mt-loadmore>
         </div>
-        <div v-if="issearchpage">
-        <no-data v-if="emptyresource && page == 1"></no-data>
-        </div>
+      
+        <no-data v-if="issearchpage && emptyresource && page == 1"></no-data>
+       
         <div class="clear"></div>
     </div>
 
@@ -129,8 +129,10 @@
         }
     }
 </script>
-<style scoped>
-    .page_container{
-        background: #FFF;
+<style lang="sass" scoped>
+    .page-container{
+        .page-items{
+            background: #FFF;
+        }
     }
 </style>

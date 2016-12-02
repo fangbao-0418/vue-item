@@ -14,7 +14,8 @@ export default {
    
     var p = new Promise(function(resolve, reject){
         vue.$http.get(url,option).then((res)=>{ 
-            if(res.body != null){ 
+            
+            if(res.body.userid != null){ 
               resolve(res.body);  
             }  else{
               reject();    

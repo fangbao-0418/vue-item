@@ -14850,7 +14850,7 @@
 	            this.page += 1;
 	            option.params.page = this.page;
 	            this.$http.get(url, option).then(function (res) {
-
+	                console.log(res);
 	                if (res.body.list.length) {
 	                    if (_this.page == 1) {
 	                        _this.items = res.body.list;
@@ -29151,7 +29151,7 @@
 	// <!--conten1-->
 	// <template>
 	//     <!-- content1-->
-	//     <div id="items" v-if="items[0]"  >
+	//     <div id="items">
 	//     <div class="item" v-for="item in items">
 	//         <mt-button type="danger" v-if="del">删除</mt-button>
 	//         <router-link  :to="{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}" >
@@ -29178,7 +29178,7 @@
 /* 161 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n<!-- content1-->\n<div id=\"items\" v-if=\"items[0]\" _v-1ce4945d=\"\">\n<div class=\"item\" v-for=\"item in items\" _v-1ce4945d=\"\">\n    <mt-button type=\"danger\" v-if=\"del\" _v-1ce4945d=\"\">删除</mt-button>\n    <router-link :to=\"{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}\" _v-1ce4945d=\"\">\n        <div class=\"item_left\" _v-1ce4945d=\"\">\n            <div class=\"item_tit\" _v-1ce4945d=\"\">\n                {{item.title | dSubstr(20) }}\n            </div>\n\n            <span class=\"item_hit\" _v-1ce4945d=\"\">{{item.hits}}点击</span>\n            <span class=\"item_date\" _v-1ce4945d=\"\">{{item.editdate}}</span>\n        </div>\n        <img v-lazy=\"item.sptp[0]\" class=\"item_img\" _v-1ce4945d=\"\">\n        <div class=\"clear\" _v-1ce4945d=\"\"></div>\n    </router-link>\n</div>\n</div>\n\n";
+	module.exports = "\n\n\n<!-- content1-->\n<div id=\"items\" _v-1ce4945d=\"\">\n<div class=\"item\" v-for=\"item in items\" _v-1ce4945d=\"\">\n    <mt-button type=\"danger\" v-if=\"del\" _v-1ce4945d=\"\">删除</mt-button>\n    <router-link :to=\"{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}\" _v-1ce4945d=\"\">\n        <div class=\"item_left\" _v-1ce4945d=\"\">\n            <div class=\"item_tit\" _v-1ce4945d=\"\">\n                {{item.title | dSubstr(20) }}\n            </div>\n\n            <span class=\"item_hit\" _v-1ce4945d=\"\">{{item.hits}}点击</span>\n            <span class=\"item_date\" _v-1ce4945d=\"\">{{item.editdate}}</span>\n        </div>\n        <img v-lazy=\"item.sptp[0]\" class=\"item_img\" _v-1ce4945d=\"\">\n        <div class=\"clear\" _v-1ce4945d=\"\"></div>\n    </router-link>\n</div>\n</div>\n\n";
 
 /***/ },
 /* 162 */
@@ -43517,7 +43517,8 @@
 
 	    var p = new _promise2.default(function (resolve, reject) {
 	      vue.$http.get(url, option).then(function (res) {
-	        if (res.body != null) {
+
+	        if (res.body.userid != null) {
 	          resolve(res.body);
 	        } else {
 	          reject();

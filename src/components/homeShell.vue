@@ -102,7 +102,7 @@
                 this.$http.get(url,option).then(
 
                     (res)=>{
-                      
+                        console.log(res);
                         if(res.body.list.length){ 
                             if(_this.page == 1){
                                 _this.items = res.body.list;

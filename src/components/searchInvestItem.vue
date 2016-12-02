@@ -2,7 +2,7 @@
 <!--conten1-->
 <template>
     <!-- content1-->
-    <div id="items" v-if="items[0]"  >
+    <div id="items">
     <div class="item" v-for="item in items">
         <mt-button type="danger" v-if="del">删除</mt-button>
         <router-link  :to="{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}" >

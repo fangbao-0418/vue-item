@@ -100,7 +100,8 @@
     .ad_code_one{
         width:100%;
         height: 1.2rem;
-        padding:.16rem 0px;
+        padding: .02rem 0px .16rem 0px;
+        margin-bottom: -.1rem;
         border-bottom:1px solid #e7e7e7;
     }
     .ad_code_two{

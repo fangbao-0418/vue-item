@@ -1,23 +1,20 @@
 <template>
 	<div>
 		<my-nav theme="white" :title="q"></my-nav>	
-		<home-shell :currentview="currentView" :getparams="getParams" :issearchpage="true"></home-shell>
+		<home-shell :type="type" :getparams="getParams" :issearchpage="true"></home-shell>
 	</div>
 </template>
 <script>
  
 	import blackNav from './blackNav';
 	import homeShell from './homeShell';
-	import searchArticleItem from './searchArticleItem';
-	import searchInvestItem from './searchInvestItem';
-
+	 
 	export default {		
 		data(){
 			return {
-				path:{path:"/search"},
-				'currentView':searchInvestItem,
+				path:{path:"/search"},				 
 				'items':null,
-				type:0,
+				type:22,
 				'getParams':null,
 			}
 		},
@@ -28,15 +25,11 @@
 		},
 		created(){
 			if(this.$route.query.type == "资讯"){
-				this.currentView = searchArticleItem;
-			  
+				this.type = 21;			  
 			}else if(this.$route.query.type == "视频"){
-				 
-				this.currentView = searchArticleItem;
-			}else{
-			 
-				this.type = 1;
-				this.currentView = searchInvestItem;
+				this.type = 22;
+			}else{			 
+				this.type = 22;			 
 			}
 			
 			this.setGetParams(this.type);
@@ -51,10 +44,10 @@
 			},
 			  setGetParams(type=0){
                 
-                if(type == 0){
+                if(type == 21){
                 	var url = "http://www.ey99.com/api/mobile/article.php";
                 }
-                if(type == 1){
+                if(type == 22){
                 	var url = "http://www.ey99.com/api/mobile/investment.php";
                 }              
 

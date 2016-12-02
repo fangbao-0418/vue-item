@@ -2,9 +2,10 @@
 <!--conten1-->
 <template>
     <!-- content1-->
-    <div id="items">
-    <div class="item"  v-for="item in items">
-        <router-link :to="{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}" >
+    <div id="items" v-if="items[0]"  >
+    <div class="item" v-for="item in items">
+        <mt-button type="danger" v-if="del">删除</mt-button>
+        <router-link  :to="{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}" >
             <div class="item_left">
                 <div class="item_tit">
                     {{item.title | dSubstr(20) }}
@@ -24,20 +25,33 @@
 
 <script>
 
+    import { Button } from 'mint-ui';
 
     export default {
         props: ['items'],
+        computed:{
+            del(){
+                return true;
+            }
+        },
         data () {
             return {
 
             }
         },
-
+        components:{
+            'mt-button':Button
+        },
         mounted(){
-            console.log(this.items);
+            this.$on("collect-del",this.collectDel);
         },
         methods:{
-
+            onDoubleTap(){
+                alert(2);
+            },
+            collectDel(){
+                alert(2);
+            }
         },
         filters:{
             dSubstr(title,length){
@@ -53,12 +67,17 @@
 </script>
 
 
-<style scoped>
+<style lang="sass" scoped>
     .item{
         margin:0px .3rem;
         padding:.2rem 0px;
         width:5.8rem;
         border-bottom: 1px solid #e7e7e7;
+        position: relative;
+        .mint-button{
+            position:absolute;
+            right:0;
+        }
     }
 
     .item_left{

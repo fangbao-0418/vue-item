@@ -12,12 +12,10 @@
 
           </swipe>
 
-          <div class="card">
-              <h2 class="cardTitle">今日推荐</h2>
-             
-                <home-shell :currentview="currentview" :getparams="getparams" ></home-shell>
-              
-          </div>
+            <div class="card">
+                <h2 class="cardTitle">今日推荐</h2>
+                <home-shell type="21" :getparams="getparams" ></home-shell>
+            </div>
 
       </div>
   </div>

@@ -14,11 +14,11 @@ export default {
    
     var p = new Promise(function(resolve, reject){
         vue.$http.get(url,option).then((res)=>{ 
-              if(res.body != null){ 
-                resolve(res.body);  
-              }  else{
-                reject();    
-              }
+            if(res.body != null){ 
+              resolve(res.body);  
+            }  else{
+              reject();    
+            }
         });
     });
     return p; 

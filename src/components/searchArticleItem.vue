@@ -53,7 +53,12 @@
 </template>
 <script>
   export default {
-      props:['items'],
+      props:{
+        items:{
+          type:Array,
+          default:null
+        }
+      },
       mounted(){
         console.log(this.items);
       },
@@ -79,6 +84,7 @@
             padding:0px .2rem;
             li{
                 width: 100%;
+                padding-top:.2rem;
                 margin-bottom:.2rem;
                 border-bottom:dashed #ccc 1px;
                 .bigbox{

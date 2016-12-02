@@ -3,13 +3,16 @@
         <load  :loading="loading" ></load>
 
         <div v-if="!loading" class="page-items">
-            <mt-loadmore :bottom-method="loadBottom"  ref="loadmore">
+            <!--  -->
+            <mt-loadmore :bottom-method="loadBottom" bottom-pull-text="上拉加载" :bottom-all-loaded="allLoaded" ref="loadmore">
                 
+
+                <invest-item v-if="type == 22" :items="items"></invest-item>
+
+                <article-item v-if="type == 21" :items="items"></article-item>
              
-                <my-paging :items="items"></my-paging>
-              
                 
-                <div v-show="noData" slot="bottom" class="mint-loadmore-bottom">
+                <div v-if="noData" slot="bottom" class="mint-loadmore-bottom">
                     没有了
                 </div>
             </mt-loadmore>
@@ -29,7 +32,11 @@
     import { Indicator } from 'mint-ui';
     
     import noData from './noData';
-  
+    
+    import searchArticleItem from './searchArticleItem';
+    import searchInvestItem from './searchInvestItem';
+
+
     import Vue from 'vue';
     export default {
         props:{  
@@ -37,10 +44,14 @@
             getparams:Object,
             issearchpage:{
                 default:false
+            },
+            type:{
+                default:0
             }
         },
         data(){
             return {
+                allLoaded:false,
                 loading:true,
                 items:null,
                 page:0,
@@ -51,6 +62,8 @@
         components:{
             'load':load,
             noData,
+            "article-item":searchArticleItem,
+            "invest-item":searchInvestItem
         },
         updated(){   
  
@@ -59,10 +72,6 @@
             this.loadData();
         },
         mounted(){ 
-
-            console.log(this.getparams)
-
-            Vue.component('my-paging',this.currentview);
            
         },
 
@@ -93,6 +102,7 @@
                 this.$http.get(url,option).then(
 
                     (res)=>{
+                      
                         if(res.body.list.length){ 
                             if(_this.page == 1){
                                 _this.items = res.body.list;
@@ -108,7 +118,8 @@
 
                         }else{     
                             //if(id) this.$refs.loadmore.onBottomLoaded(id);              
-                            _this.noData = true;
+                           _this.allLoaded = true;
+                           _this.noData = true;
                             setTimeout(()=>{
                                 _this.noData = false;
                                 if(id) _this.$refs.loadmore.onBottomLoaded(id);

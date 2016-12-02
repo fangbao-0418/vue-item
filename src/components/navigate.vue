@@ -156,6 +156,6 @@
         color:#999;
     }
     .collect .collected{
-        color:#FF3333;
+        color:#FFB040;
     }
 </style>

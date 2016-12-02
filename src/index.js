@@ -24,7 +24,8 @@ Vue.use(VueRouter);
 Vue.use(VueResource);   //加载Resource
 Vue.use(ElementUI);
 
-Vue.use(MintUI)
+Vue.use(MintUI);
+
 
 
 Vue.use(VueLazyload, {

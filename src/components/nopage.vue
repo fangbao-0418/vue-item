@@ -7,9 +7,9 @@
 <style scoped>
 	.searchless{
 	
-       	background: url("../imgs/xiaoren.png");
-		width: 4rem;
-		height: 4rem;
+       	background: url("../imgs/404.png");
+		width: 6.4rem;
+		height: 6.4rem;
 		background-size:cover;
 		margin: 14% auto ;
 	}

@@ -17,6 +17,7 @@ import mySetting from './components/mySetting';
 import collect from './components/collect';//收藏
 import integral from './components/integral';//积分成长值
 
+import nopage from './components/nopage';
  
 import auth from './auth.js';
 function requireAuth (to, from, next) {  	
@@ -59,6 +60,7 @@ export default {
 		{ path: '/investment', component: investment},
 		{ name : 'investmentShow', path: '/investment/show', component: investmentShow },
 		{ name : 'newsDetail', path: '/news/show', component: newsDetail },
+		{ name : '404', path: '/404', component: nopage},
 		{ path: '*', redirect: 'home' }
 
 	]

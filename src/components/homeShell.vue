@@ -7,9 +7,9 @@
             <mt-loadmore :bottom-method="loadBottom" bottom-pull-text="上拉加载" :bottom-all-loaded="allLoaded" ref="loadmore">
                 
 
-                <invest-item v-if="type == 22" :items="items"></invest-item>
+                <invest-item :collect="collect" v-if="type == 22" :items="items"></invest-item>
 
-                <article-item v-if="type == 21" :items="items"></article-item>
+                <article-item :collect="collect" v-if="type == 21" :items="items"></article-item>
              
                 
                 <div v-if="noData" slot="bottom" class="mint-loadmore-bottom">
@@ -42,6 +42,10 @@
         props:{  
             currentview:Object,
             getparams:Object,
+            collect:{
+                type:Boolean,
+                default:false,
+            },
             issearchpage:{
                 default:false
             },
@@ -102,7 +106,7 @@
                 this.$http.get(url,option).then(
 
                     (res)=>{
-                        console.log(res);
+                        //console.log(res);
                         if(res.body.list.length){ 
                             if(_this.page == 1){
                                 _this.items = res.body.list;

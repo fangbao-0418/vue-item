@@ -21,7 +21,7 @@
 <template>
 	<div class="collect-area" >
 		<my-nav theme="white" title="收藏">
-		<span slot="right" class="nav-right" @click="del">删除</span>
+		<span slot="right" class="nav-right" @click="del">{{rightTitle}}</span>
 		</my-nav>
 		<div class="collect-main">
 			<mt-navbar v-model="active">
@@ -32,11 +32,11 @@
 
 			<mt-tab-container v-model="active" :swipeable="true">
 			  <mt-tab-container-item id="tab-container1">
-			  	<home-shell v-if="active == 'tab-container1'" :type="22" :getparams="params1"></home-shell>
+			  	<home-shell :collect="true" v-if="active == 'tab-container1'" :type="22" :getparams="params1"></home-shell>
 			  </mt-tab-container-item>
 			  <mt-tab-container-item id="tab-container2">
 			  	
-			  	<home-shell v-if="active == 'tab-container2'" :type="21" :getparams="params2"></home-shell>
+			  	<home-shell :collect="true" v-if="active == 'tab-container2'" :type="21" :getparams="params2"></home-shell>
 
 			  </mt-tab-container-item>
 			  <mt-tab-container-item id="tab-container3">
@@ -52,15 +52,19 @@
 	import { TabContainer, TabContainerItem } from 'mint-ui';
 	import homeShell from './homeShell';
 	 
+  
+	import store from '../store';
 	export default {
 		methods:{
 			del(){
-				this.$emit("collect-del");
+				 this.rightTitle = this.rightTitle == "删除" ? "取消" : "删除";
+				 store.commit('collectDel')
 			}
 		},
 		data(){
 			return {
 				active:"tab-container1",
+				rightTitle:"删除",
 				params1:{
 					url:"http://www.ey99.com/api/mobile/mycollect.php",
 					option:{params:{token:localStorage.token,type:22}}

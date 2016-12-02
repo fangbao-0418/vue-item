@@ -1,10 +1,11 @@
 <template>
    <div class="searItems">
         <ul>                
-          <li v-for="item in items">
+          <li v-for="(item,index) in items">
+              <collect-del-button v-if="collect" :items="items" :type="21" :index="index" class="collect-del-botton"></collect-del-button>  
               <template v-if="item.thumb" >
               <router-link  :to="{name:'newsDetail',query:{id:item.itemid}}" >
-                  <template v-if="item.level == 8">                            
+                  <template v-if="item.level == 8">                                                 
                       <div class="midbox">
                           <div class=title>{{item.title}}<div>
                           <span><img :src="item.thumb"/></span>
@@ -39,6 +40,7 @@
               </router-link >
               </template>
               <template  v-else >
+
                   <router-link :to="{name:'newsDetail',query:{id:item.itemid}}" >
                       <h2 class="title">{{item.title | dsubstr(16)}}</h2>
                       <span class="hits">
@@ -52,13 +54,20 @@
 
 </template>
 <script>
+
+  import collectDelButton from './collectDelButton';
+
   export default {
       props:{
-        items:{
-          type:Array,
-          default:null
-        }
+          items:{},
+          collect:{
+              type:Boolean,
+              default:false
+          }
       },
+      components:{
+        collectDelButton
+      },        
       mounted(){
         console.log(this.items);
       },
@@ -87,6 +96,11 @@
                 padding-top:.2rem;
                 margin-bottom:.2rem;
                 border-bottom:dashed #ccc 1px;
+                position:relative;
+                .collect-del-botton{
+                  position:absolute;
+                  right:0;
+                }
                 .bigbox{
                     width: 6rem;
                      span{

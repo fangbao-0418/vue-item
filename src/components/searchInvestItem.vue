@@ -3,8 +3,8 @@
 <template>
     <!-- content1-->
     <div id="items">
-    <div class="item" v-for="item in items">
-        <mt-button type="danger" v-if="del">删除</mt-button>
+    <div class="item" v-for="(item,index) in items">
+        <collect-del-button v-if="collect" :items="items" :type="22" :index="index" class="collect-del-botton"></collect-del-button>   
         <router-link  :to="{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}" >
             <div class="item_left">
                 <div class="item_tit">
@@ -24,11 +24,17 @@
 
 
 <script>
-
-    import { Button } from 'mint-ui';
+    
+    import collectDelButton from './collectDelButton';
 
     export default {
-        props: ['items'],
+        props: {
+            items:{},
+            collect:{
+                type:Boolean,
+                default:false
+            }
+        },
         computed:{
             del(){
                 return true;
@@ -36,22 +42,18 @@
         },
         data () {
             return {
-
+               
             }
         },
         components:{
-            'mt-button':Button
+            collectDelButton
         },
+        
         mounted(){
-            this.$on("collect-del",this.collectDel);
+            
         },
         methods:{
-            onDoubleTap(){
-                alert(2);
-            },
-            collectDel(){
-                alert(2);
-            }
+           
         },
         filters:{
             dSubstr(title,length){
@@ -74,7 +76,7 @@
         width:5.8rem;
         border-bottom: 1px solid #e7e7e7;
         position: relative;
-        .mint-button{
+        .collect-del-botton{
             position:absolute;
             right:0;
         }

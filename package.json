@@ -7,8 +7,8 @@
     "start": "webpack-dev-server --port 8088 --inline --hot --compress"
   },
   "dependencies": {
-    "element-ui": "^1.0.0",  
-    "mint-ui": "^2.0.4",
+    "element-ui": "^1.0.0",
+    "mint-ui": "^2.0.5",
     "scss": "^0.2.4",
     "vue": "^2.0.5",
     "vue-bulma-slider": "^1.0.0",

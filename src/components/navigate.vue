@@ -21,7 +21,9 @@
     import auth from '../auth.js';
     
     import { Toast } from 'mint-ui';
-
+    
+    
+    
     export default {
         props:{
             path:{

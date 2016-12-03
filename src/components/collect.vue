@@ -7,28 +7,68 @@
 
 <style lang="sass" scoped>
 	.collect-area{
+		height:100%;
+		display:flex;
+		flex-direction: column;
+		background:#ffffff;
+		.collect-nav{
+			border-bottom: 1px solid #fafafa;
+			position: fixed;
+			top: 0;
+			z-index: 999;
+			.nav-right{	
+				position:absolute;
+				right:5%;
+				color: #0aa6de;
+				font-size:.3rem;
+			}
+		}
 		.collect-main{
+
+			flex:1;
+			height: 100%;
+			padding-top:.81rem;
+			display:flex;
+			flex-direction: column;
 			.mint-navbar{
 				.mint-tab-item-label{
 
 				}
 			}
+			::-webkit-scrollbar  
+				{  
+				    width: 2px;  
+				    height: 2px;  
+				    background-color: #fff;  
+				} 
+
+
+			::-webkit-scrollbar-thumb  
+			{  
+			    border-radius: 2px;  
+			 
+			    background-color: #FF0033;  
+			}  
+
 			.mint-tab-container{
+				height: 100%;
+				flex:1;
+				overflow-x: hidden;
+				overflow-y: auto;
+
+				background:#ffffff;
+			
 				margin-top:3px;
+
 			}
 		}
-		.nav-right{	
-			position:absolute;
-			right:5%;
-			color: #0aa6de;
-			font-size:.3rem;
-		}
+		
 	}
 </style>
 <template>
 	<div class="collect-area" >
-		<my-nav theme="white" title="收藏">
-		<span slot="right" class="nav-right" @click="del">{{rightTitle}}</span>
+		<my-nav class="collect-nav" theme="white" title="收藏">
+			<span slot="right" class="nav-right" @click="del">{{rightTitle}}</span>
 		</my-nav>
 		<div class="collect-main">
 			<mt-navbar v-model="active">

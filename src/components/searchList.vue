@@ -1,7 +1,18 @@
+<style scoped>
+	.search-nav{
+		border-bottom: 1px solid #fafafa;
+		position: fixed;
+		top: 0;
+		z-index: 999;
+	}
+	.search-list{
+		padding-top:.81rem;
+	}
+</style>
 <template>
 	<div>
-		<my-nav theme="white" :title="q"></my-nav>	
-		<home-shell :type="type" :getparams="getParams" :issearchpage="true"></home-shell>
+		<my-nav class="search-nav" theme="white" :title="q"></my-nav>	
+		<home-shell class="search-list" :type="type" :getparams="getParams" :issearchpage="true"></home-shell>
 	</div>
 </template>
 <script>

@@ -30,6 +30,16 @@ function requireAuth (to, from, next) {
 	});
  
 }
+function requireLogin (to, from, next) {  	
+	auth.getUserInfo().then((data)=>{
+  		next({
+		      path: '/my'		      
+    	})
+	},()=>{
+ 		next()
+	});
+ 
+}
  
 
 // 定义路由规则
@@ -54,7 +64,7 @@ export default {
 		{ name: 'mySetting', path: '/mySetting', component: mySetting, beforeEnter: requireAuth},
 		{ name: 'collect', path: '/collect', component: collect, beforeEnter: requireAuth},
 		{ name: 'integral', path: '/integral', component: integral, beforeEnter: requireAuth},
-		{ path : '/login' , component: login},
+		{ path : '/login' , component: login, beforeEnter: requireLogin},
 		{ path : '/register' , component: register},
 		{ path : '/search' , component : search},
 		{ path: '/investment', component: investment},

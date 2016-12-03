@@ -169,7 +169,7 @@
 	width: 6.4rem;
 	height:1.25rem ;
 	background:#fff;	
-	border-bottom: 1px solid #e8e8e8;
+	border-bottom: 1px solid #fafafa;
 }
 
 .nav{
@@ -190,8 +190,8 @@
 	width:2rem ;
 	height:1.24rem;
 	box-sizing:border-box;
-	border-left: 1px solid #e8e8e8;
-	border-right: 1px solid #e8e8e8;
+	border-left: 1px solid #fafafa;
+	border-right: 1px solid #fafafa;
 }
 
 
@@ -241,7 +241,7 @@
 .detal-box{
 	width:5.8rem; 
 	height: .85rem;
-	border-bottom: 1px solid #e8e8e8;
+	border-bottom: 1px solid #fafafa;
 	line-height: .85rem;
 }
 

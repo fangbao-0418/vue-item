@@ -26,7 +26,8 @@ Vue.use(ElementUI);
 
 Vue.use(MintUI);
 
-
+import Vuex from 'Vuex';
+Vue.use(Vuex);
 
 Vue.use(VueLazyload, {
     error:require("./assets/err.jpg"),

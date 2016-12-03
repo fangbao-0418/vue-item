@@ -58,7 +58,7 @@
         margin:0px .3rem;
         padding:.2rem 0px;
         wdth:5.8rem;
-        border-bottom: 1px solid #e7e7e7;
+        border-bottom: 1px solid #fafafa;
     }
 
     .item_left{

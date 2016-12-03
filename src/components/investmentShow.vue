@@ -269,7 +269,7 @@
 }
 
 .article_area{
-    border-bottom:solid 1px #d7d7d7;
+    border-bottom:solid 1px #fafafa;
     padding:.2rem 0 .1rem 0;
     p{
         font-size: .25rem;

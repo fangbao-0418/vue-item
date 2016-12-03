@@ -14,7 +14,7 @@
 
             <div class="card">
                 <h2 class="cardTitle">今日推荐</h2>
-                <home-shell type="21" :getparams="getparams" ></home-shell>
+                <home-shell class="page-list" type="21" :getparams="getparams" ></home-shell>
             </div>
 
       </div>
@@ -87,6 +87,9 @@
             line-height: .85rem;
             font-weight: 700;
             font-size: .36rem;
+        }
+        .page-list{
+            padding-bottom:.94rem;
         }
         ul{
             width:6rem;

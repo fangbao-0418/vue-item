@@ -40,12 +40,14 @@
               </router-link >
               </template>
               <template  v-else >
-
                   <router-link :to="{name:'newsDetail',query:{id:item.itemid}}" >
                       <h2 class="title">{{item.title | dsubstr(16)}}</h2>
+                      <p>
+                      <span class="copyfrom">{{item.copyfrom}}</span>
                       <span class="hits">
                           <i class="iconfont">&#xf0048;</i>{{item.hits}}
                       </span>
+                      </p>
                   </router-link >
               </template>
           </li>
@@ -93,9 +95,9 @@
             padding:0px .2rem;
             li{
                 width: 100%;
-                padding-top:.2rem;
-                margin-bottom:.2rem;
-                border-bottom:dashed #ccc 1px;
+                padding:.14rem 0;
+               
+                border-bottom:solid #fafafa 1px;
                 position:relative;
                 .collect-del-botton{
                   position:absolute;
@@ -179,12 +181,22 @@
                     width: 100%;
                 }
                 h2{
-                    padding-bottom:.2rem;
+                    padding-bottom:.1rem;
                     display: inline-block;
                     font-size:.3rem;
-                    width:90%;
+                    width:100%;
                     float:left;
 
+                }
+                p{
+                 
+                  width:100%;
+                  display: inline-block;
+                  .copyfrom{
+                     font-size: .24rem;
+                     color: #8f8f8f;
+                     line-height: .36rem;
+                  }
                 }
                 .hits{
                     font-size:.2rem;

@@ -1,6 +1,13 @@
+/**
+ *  Created by fangbao on 12/03/2016
+ *
+ *  公共上拉加载组件
+ *
+ */
+
 <template>
     <div class="page-container">
-        <load  :loading="loading" ></load>
+        <load></load>
 
         <div v-if="!loading" class="page-items">
             <!--  -->
@@ -73,35 +80,32 @@
  
         },
         created(){
+           
             this.loadData();
         },
         mounted(){ 
-           
+          
         },
 
         methods:{
             loadTop(id) {
-                this.loadData(id,true);              
+                //this.loadData(id,true);              
             },
-            loadBottom(id) {
-
-              
-                    this.loadData(id); 
-              
-              
-            
+            loadBottom(id) { 
+                //console.log(this._uid);             
+                this.loadData(id);
             },
             loadData(id,refresh=false){
                 if(refresh){
                     this.page = 0;
                     if(id) this.$refs.loadmore.onTopLoaded(id);
                 }
- 
-
+                
                 var url = this.getparams.url;
                 var option = this.getparams.option;
                 var _this = this;       
                 this.page += 1;
+                 console.log(id);
                 option.params.page = this.page;
                 this.$http.get(url,option).then(
 
@@ -126,7 +130,9 @@
                            _this.noData = true;
                             setTimeout(()=>{
                                 _this.noData = false;
+                              
                                 if(id) _this.$refs.loadmore.onBottomLoaded(id);
+
                             },1000)
                             _this.emptyresource = true;
                         }

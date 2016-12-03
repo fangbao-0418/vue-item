@@ -74,7 +74,7 @@
         margin:0px .3rem;
         padding:.2rem 0px;
         width:5.8rem;
-        border-bottom: 1px solid #e7e7e7;
+        border-bottom: 1px solid #fafafa;
         position: relative;
         .collect-del-botton{
             position:absolute;

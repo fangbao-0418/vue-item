@@ -1,3 +1,10 @@
+/**
+ *  Created by fangbao on 12/03/2016
+ *
+ *  收藏列表
+ *
+ */
+
 <style lang="sass" scoped>
 	.collect-area{
 		.collect-main{
@@ -40,7 +47,7 @@
 
 			  </mt-tab-container-item>
 			  <mt-tab-container-item id="tab-container3">
-			     
+			     <home-shell :collect="true" v-if="active == 'tab-container3'" :type="21" :getparams="params2"></home-shell>
 			  </mt-tab-container-item>
 			</mt-tab-container>
 		</div>
@@ -57,9 +64,12 @@
 	export default {
 		methods:{
 			del(){
-				 this.rightTitle = this.rightTitle == "删除" ? "取消" : "删除";
 				 store.commit('collectDel')
+				 this.rightTitle = store.state.collectDelIsOpen ? "取消" : "删除";
 			}
+		},
+		created(){
+			store.state.collectDelIsOpen = false;
 		},
 		data(){
 			return {

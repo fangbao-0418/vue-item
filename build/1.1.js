@@ -2677,8 +2677,8 @@ webpackJsonp([1],{
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-02dad7bf&scoped=true!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./indexMain.vue", function() {
-				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-02dad7bf&scoped=true!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./indexMain.vue");
+			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./indexMain.vue", function() {
+				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./indexMain.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -2697,7 +2697,7 @@ webpackJsonp([1],{
 
 
 	// module
-	exports.push([module.id, ".click_area[_v-02dad7bf] {\n  display: inline-block; }\n\n.click[_v-02dad7bf], .time[_v-02dad7bf] {\n  font-size: 12px;\n  height: 18px;\n  line-height: 18px; }\n\n.note[_v-02dad7bf] {\n  display: inline-block;\n  margin-right: .2rem; }\n  .note .el-tag[_v-02dad7bf] {\n    font-size: 12px;\n    height: 16px;\n    line-height: 16px; }\n", ""]);
+	exports.push([module.id, "\n\n\n .clear{\n    clear: both;\n}\n.ad_content{\n    width:5.8rem;\n    margin: 0 auto;\n    padding:0;\n    position: relative;\n    margin-bottom: .1rem;\n}\n.ad_code_one{\n    width:100%;\n    min-height: 1.5rem;\n    padding: .08rem 0px .16rem 0px;\n   \n    border-bottom:1px solid #fafafa;\n}\n.ad_code_two{\n    padding-top:.16rem;\n    width:100%;\n    padding-bottom:.8rem;\n    border-bottom:1px solid #fafafa;\n}\n.ad_code_three{\n    width:100%;\n    padding-top:.1rem;\n    padding-bottom:.8rem;\n    border-bottom:1px solid #fafafa;\n}\n.content1-left{\n    width: 4rem;\n    min-height: 1.5rem;\n    float: left;\n}\n\n.content-title h2{\n    padding-right:.2rem;\n    font-size: .3rem;\n}\n\n.content-info{\n    position: absolute;\n    bottom:.3rem;\n}\n.content-info ul{\n    width:100% ;\n    height:.3rem ;\n    line-height: .3rem;\n}\n\n.content-info li {\n    float: left;\n}\n\n\n\n.content1-right{\n    width: 1.8rem;min-height: 1.5rem;\n    float:right;\n}\n.content1-right  img{\n    width:1.8rem;\n    height:1.2rem;\n}\n.click,.time{\n    color:#8a8a8a ;\n    font-size:.22rem ;\n\n    margin-right:.26rem;\n    display: inline-block;\n}\n\n\n\n.content-Title{\n    padding-bottom: .16rem;\n}\n\n.content2-img{\n    width: 5.8rem;height: 1.23rem;\n}\n\n\n\n.content2-img img{\n    display: block!important;\n    float: left!important;\n}\n.content2-img img{\n    width:1.89rem;\n    height:1.23rem;\n}\n.c2-img{\n    margin-right: .06rem;\n}\n\n.content3-img img{\n    width:5.79rem;\n    height:2.84rem;\n}\n\n\n", ""]);
 
 	// exports
 
@@ -2719,8 +2719,8 @@ webpackJsonp([1],{
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=1!./indexMain.vue", function() {
-				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=1!./indexMain.vue");
+			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-02dad7bf&scoped=true!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=1!./indexMain.vue", function() {
+				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-02dad7bf&scoped=true!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=1!./indexMain.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -2739,7 +2739,7 @@ webpackJsonp([1],{
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n .clear{\n    clear: both;\n}\n.ad_content{\n    width:5.8rem;\n    margin: 0 auto;\n    padding:.10rem 0;\n    position: relative;\n    margin-bottom: .1rem;\n}\n.ad_code_one{\n    width:100%;\n    height: 1.2rem;\n    padding: .02rem 0px .16rem 0px;\n    margin-bottom: -.1rem;\n    border-bottom:1px solid #e7e7e7;\n}\n.ad_code_two{\n    width:100%;\n    padding-bottom:.7rem;\n    border-bottom:1px solid #e7e7e7;\n}\n.ad_code_three{\n    width:100%;\n    padding-bottom:.6rem;\n    border-bottom:1px solid #e7e7e7;\n}\n.content1-left{\n    width: 4rem;\n\n    float: left;\n}\n\n.content-title h2{\n    padding-right:.2rem;\n    font-size: .3rem;\n}\n\n.content-info{\n    position: absolute;\n    bottom:.3rem;\n}\n.content-info ul{\n    width:100% ;\n    height:.3rem ;\n    line-height: .3rem;\n}\n\n.content-info li {\n    float: left;\n}\n\n\n\n.content1-right{\n    width: 1.8rem;height: 1.2rem;\n    float:right;\n}\n.content1-right  img{\n    width:1.8rem;\n    height:1.2rem;\n}\n.click,.time{\n    color:#8a8a8a ;\n    font-size:.22rem ;\n\n    margin-right:.26rem;\n    display: inline-block;\n}\n\n\n\n.content-Title{\n    padding-bottom: .16rem;\n}\n\n.content2-img{\n    width: 5.8rem;height: 1.23rem;\n}\n\n\n\n.content2-img img{\n    display: block!important;\n    float: left!important;\n}\n.content2-img img{\n    width:1.89rem;\n    height:1.23rem;\n}\n.c2-img{\n    margin-right: .06rem;\n}\n\n.content3-img img{\n    width:5.79rem;\n    height:2.84rem;\n}\n\n\n", ""]);
+	exports.push([module.id, ".click_area[_v-02dad7bf] {\n  display: inline-block; }\n\n.click[_v-02dad7bf], .time[_v-02dad7bf] {\n  font-size: 12px;\n  height: 18px;\n  line-height: 18px; }\n\n.note[_v-02dad7bf] {\n  display: inline-block;\n  margin-right: .2rem; }\n  .note .el-tag[_v-02dad7bf] {\n    font-size: 12px;\n    height: 16px;\n    line-height: 16px; }\n", ""]);
 
 	// exports
 
@@ -2754,6 +2754,112 @@ webpackJsonp([1],{
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+	// <style>
+	//
+	//
+	//      .clear{
+	//         clear: both;
+	//     }
+	//     .ad_content{
+	//         width:5.8rem;
+	//         margin: 0 auto;
+	//         padding:0;
+	//         position: relative;
+	//         margin-bottom: .1rem;
+	//     }
+	//     .ad_code_one{
+	//         width:100%;
+	//         min-height: 1.5rem;
+	//         padding: .08rem 0px .16rem 0px;
+	//
+	//         border-bottom:1px solid #fafafa;
+	//     }
+	//     .ad_code_two{
+	//         padding-top:.16rem;
+	//         width:100%;
+	//         padding-bottom:.8rem;
+	//         border-bottom:1px solid #fafafa;
+	//     }
+	//     .ad_code_three{
+	//         width:100%;
+	//         padding-top:.1rem;
+	//         padding-bottom:.8rem;
+	//         border-bottom:1px solid #fafafa;
+	//     }
+	//     .content1-left{
+	//         width: 4rem;
+	//         min-height: 1.5rem;
+	//         float: left;
+	//     }
+	//
+	//     .content-title h2{
+	//         padding-right:.2rem;
+	//         font-size: .3rem;
+	//     }
+	//
+	//     .content-info{
+	//         position: absolute;
+	//         bottom:.3rem;
+	//     }
+	//     .content-info ul{
+	//         width:100% ;
+	//         height:.3rem ;
+	//         line-height: .3rem;
+	//     }
+	//
+	//     .content-info li {
+	//         float: left;
+	//     }
+	//
+	//
+	//
+	//     .content1-right{
+	//         width: 1.8rem;min-height: 1.5rem;
+	//         float:right;
+	//     }
+	//     .content1-right  img{
+	//         width:1.8rem;
+	//         height:1.2rem;
+	//     }
+	//     .click,.time{
+	//         color:#8a8a8a ;
+	//         font-size:.22rem ;
+	//
+	//         margin-right:.26rem;
+	//         display: inline-block;
+	//     }
+	//
+	//
+	//
+	//     .content-Title{
+	//         padding-bottom: .16rem;
+	//     }
+	//
+	//     .content2-img{
+	//         width: 5.8rem;height: 1.23rem;
+	//     }
+	//
+	//
+	//
+	//     .content2-img img{
+	//         display: block!important;
+	//         float: left!important;
+	//     }
+	//     .content2-img img{
+	//         width:1.89rem;
+	//         height:1.23rem;
+	//     }
+	//     .c2-img{
+	//         margin-right: .06rem;
+	//     }
+	//
+	//     .content3-img img{
+	//         width:5.79rem;
+	//         height:2.84rem;
+	//     }
+	//
+	//
+	// </style>
 	//
 	// <template>
 	//
@@ -2833,110 +2939,6 @@ webpackJsonp([1],{
 	//         }
 	//     }
 	// </style>
-	// <style>
-	//
-	//
-	//      .clear{
-	//         clear: both;
-	//     }
-	//     .ad_content{
-	//         width:5.8rem;
-	//         margin: 0 auto;
-	//         padding:.10rem 0;
-	//         position: relative;
-	//         margin-bottom: .1rem;
-	//     }
-	//     .ad_code_one{
-	//         width:100%;
-	//         height: 1.2rem;
-	//         padding: .02rem 0px .16rem 0px;
-	//         margin-bottom: -.1rem;
-	//         border-bottom:1px solid #e7e7e7;
-	//     }
-	//     .ad_code_two{
-	//         width:100%;
-	//         padding-bottom:.7rem;
-	//         border-bottom:1px solid #e7e7e7;
-	//     }
-	//     .ad_code_three{
-	//         width:100%;
-	//         padding-bottom:.6rem;
-	//         border-bottom:1px solid #e7e7e7;
-	//     }
-	//     .content1-left{
-	//         width: 4rem;
-	//
-	//         float: left;
-	//     }
-	//
-	//     .content-title h2{
-	//         padding-right:.2rem;
-	//         font-size: .3rem;
-	//     }
-	//
-	//     .content-info{
-	//         position: absolute;
-	//         bottom:.3rem;
-	//     }
-	//     .content-info ul{
-	//         width:100% ;
-	//         height:.3rem ;
-	//         line-height: .3rem;
-	//     }
-	//
-	//     .content-info li {
-	//         float: left;
-	//     }
-	//
-	//
-	//
-	//     .content1-right{
-	//         width: 1.8rem;height: 1.2rem;
-	//         float:right;
-	//     }
-	//     .content1-right  img{
-	//         width:1.8rem;
-	//         height:1.2rem;
-	//     }
-	//     .click,.time{
-	//         color:#8a8a8a ;
-	//         font-size:.22rem ;
-	//
-	//         margin-right:.26rem;
-	//         display: inline-block;
-	//     }
-	//
-	//
-	//
-	//     .content-Title{
-	//         padding-bottom: .16rem;
-	//     }
-	//
-	//     .content2-img{
-	//         width: 5.8rem;height: 1.23rem;
-	//     }
-	//
-	//
-	//
-	//     .content2-img img{
-	//         display: block!important;
-	//         float: left!important;
-	//     }
-	//     .content2-img img{
-	//         width:1.89rem;
-	//         height:1.23rem;
-	//     }
-	//     .c2-img{
-	//         margin-right: .06rem;
-	//     }
-	//
-	//     .content3-img img{
-	//         width:5.79rem;
-	//         height:2.84rem;
-	//     }
-	//
-	//
-	// </style>
 	//
 
 /***/ },
@@ -2944,7 +2946,7 @@ webpackJsonp([1],{
 /***/ 333:
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n<div _v-02dad7bf=\"\">\n    <div class=\"ad_content\" v-for=\"item in items.list\" _v-02dad7bf=\"\">\n        <a :href=\"item.text_url\" class=\"click_area\" _v-02dad7bf=\"\">\n            <div v-html=\"item.code\" _v-02dad7bf=\"\"></div>\n            <div class=\"content-info\" _v-02dad7bf=\"\">\n                <ul _v-02dad7bf=\"\">\n\n                    <li _v-02dad7bf=\"\"><span v-if=\"item.note\" class=\"note\" _v-02dad7bf=\"\"><el-tag :type=\"types(item.note)\" _v-02dad7bf=\"\">{{item.note}}</el-tag></span></li>\n                <!--     <li><span class=\"click\">{{item.hits}}</span></li> -->\n                    <li _v-02dad7bf=\"\"><span class=\"time\" _v-02dad7bf=\"\">{{item.ago}}</span></li>\n                </ul>\n            </div>\n        </a>\n        <div class=\"clear\" _v-02dad7bf=\"\"></div>\n    </div>\n</div>\n\n";
+	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<div _v-02dad7bf=\"\">\n    <div class=\"ad_content\" v-for=\"item in items.list\" _v-02dad7bf=\"\">\n        <a :href=\"item.text_url\" class=\"click_area\" _v-02dad7bf=\"\">\n            <div v-html=\"item.code\" _v-02dad7bf=\"\"></div>\n            <div class=\"content-info\" _v-02dad7bf=\"\">\n                <ul _v-02dad7bf=\"\">\n\n                    <li _v-02dad7bf=\"\"><span v-if=\"item.note\" class=\"note\" _v-02dad7bf=\"\"><el-tag :type=\"types(item.note)\" _v-02dad7bf=\"\">{{item.note}}</el-tag></span></li>\n                <!--     <li><span class=\"click\">{{item.hits}}</span></li> -->\n                    <li _v-02dad7bf=\"\"><span class=\"time\" _v-02dad7bf=\"\">{{item.ago}}</span></li>\n                </ul>\n            </div>\n        </a>\n        <div class=\"clear\" _v-02dad7bf=\"\"></div>\n    </div>\n</div>\n\n";
 
 /***/ },
 
@@ -3318,7 +3320,7 @@ webpackJsonp([1],{
 
 
 	// module
-	exports.push([module.id, ".my-swipe[_v-b32fc110] {\n  width: 6.4rem;\n  height: 2.8rem;\n  position: relative; }\n  .my-swipe img[_v-b32fc110] {\n    width: 6.4rem;\n    height: 2.8rem; }\n  .my-swipe span[_v-b32fc110] {\n    font-size: .28rem;\n    line-height: .52rem;\n    padding-left: .2rem;\n    color: #FFF;\n    width: 6.2rem;\n    height: .5rem;\n    background: rgba(0, 0, 0, 0.5);\n    position: absolute;\n    bottom: 0; }\n\n.card .cardTitle[_v-b32fc110] {\n  background: #fff;\n  color: #333;\n  padding-left: .2rem;\n  height: .85rem;\n  line-height: .85rem;\n  font-weight: 700;\n  font-size: .36rem; }\n\n.card ul[_v-b32fc110] {\n  width: 6rem;\n  padding: 0px .2rem; }\n  .card ul li[_v-b32fc110] {\n    width: 100%;\n    margin-bottom: .2rem;\n    border-bottom: dashed #ccc 1px; }\n    .card ul li .bigbox[_v-b32fc110] {\n      width: 6rem; }\n      .card ul li .bigbox span[_v-b32fc110] {\n        color: #8f8f8f;\n        display: inline-block;\n        padding: .1rem .05rem .1rem 0;\n        font-size: .24rem; }\n      .card ul li .bigbox img[_v-b32fc110] {\n        width: 6rem;\n        height: 3rem; }\n      .card ul li .bigbox .hits[_v-b32fc110] {\n        font-size: .18rem; }\n        .card ul li .bigbox .hits i[_v-b32fc110] {\n          font-size: .24rem; }\n    .card ul li .midbox[_v-b32fc110] {\n      width: 6rem; }\n      .card ul li .midbox img[_v-b32fc110] {\n        width: 1.94rem;\n        height: 1.23rem;\n        padding-top: .2rem; }\n      .card ul li .midbox span[_v-b32fc110] {\n        display: inline-block;\n        float: left; }\n      .card ul li .midbox .imgmid[_v-b32fc110] {\n        padding: 0.2rem .088rem 0 .088rem; }\n      .card ul li .midbox .source[_v-b32fc110] {\n        color: #8f8f8f;\n        display: inline-block;\n        padding: .1rem .05rem .1rem 0;\n        font-size: .24rem; }\n      .card ul li .midbox .hits[_v-b32fc110] {\n        color: #8f8f8f;\n        display: inline-block;\n        padding: .1rem .05rem .1rem 0;\n        font-size: .18rem; }\n    .card ul li .title[_v-b32fc110] {\n      font-size: .3rem; }\n    .card ul li .descBox[_v-b32fc110] {\n      width: 69%;\n      min-height: 1rem;\n      float: left; }\n      .card ul li .descBox .title[_v-b32fc110] {\n        min-height: 1rem;\n        font-size: .3rem; }\n      .card ul li .descBox .source[_v-b32fc110] {\n        font-size: .24rem;\n        color: #8f8f8f;\n        line-height: .4rem; }\n      .card ul li .descBox .hits[_v-b32fc110] {\n        float: right;\n        font-size: .18rem; }\n    .card ul li .img-small[_v-b32fc110] {\n      float: right;\n      width: 25%;\n      height: 1.2rem; }\n    .card ul li a[_v-b32fc110] {\n      display: inline-block;\n      width: 100%; }\n    .card ul li h2[_v-b32fc110] {\n      padding-bottom: .2rem;\n      display: inline-block;\n      font-size: .3rem;\n      width: 90%;\n      float: left; }\n    .card ul li .hits[_v-b32fc110] {\n      font-size: .2rem;\n      width: 10%;\n      float: right;\n      text-align: right;\n      color: #8f8f8f; }\n      .card ul li .hits i[_v-b32fc110] {\n        font-size: .24rem; }\n", ""]);
+	exports.push([module.id, ".my-swipe[_v-b32fc110] {\n  width: 6.4rem;\n  height: 2.8rem;\n  position: relative; }\n  .my-swipe img[_v-b32fc110] {\n    width: 6.4rem;\n    height: 2.8rem; }\n  .my-swipe span[_v-b32fc110] {\n    font-size: .28rem;\n    line-height: .52rem;\n    padding-left: .2rem;\n    color: #FFF;\n    width: 6.2rem;\n    height: .5rem;\n    background: rgba(0, 0, 0, 0.5);\n    position: absolute;\n    bottom: 0; }\n\n.card .cardTitle[_v-b32fc110] {\n  background: #fff;\n  color: #333;\n  padding-left: .2rem;\n  height: .85rem;\n  line-height: .85rem;\n  font-weight: 700;\n  font-size: .36rem; }\n\n.card .page-list[_v-b32fc110] {\n  padding-bottom: .94rem; }\n\n.card ul[_v-b32fc110] {\n  width: 6rem;\n  padding: 0px .2rem; }\n  .card ul li[_v-b32fc110] {\n    width: 100%;\n    margin-bottom: .2rem;\n    border-bottom: dashed #ccc 1px; }\n    .card ul li .bigbox[_v-b32fc110] {\n      width: 6rem; }\n      .card ul li .bigbox span[_v-b32fc110] {\n        color: #8f8f8f;\n        display: inline-block;\n        padding: .1rem .05rem .1rem 0;\n        font-size: .24rem; }\n      .card ul li .bigbox img[_v-b32fc110] {\n        width: 6rem;\n        height: 3rem; }\n      .card ul li .bigbox .hits[_v-b32fc110] {\n        font-size: .18rem; }\n        .card ul li .bigbox .hits i[_v-b32fc110] {\n          font-size: .24rem; }\n    .card ul li .midbox[_v-b32fc110] {\n      width: 6rem; }\n      .card ul li .midbox img[_v-b32fc110] {\n        width: 1.94rem;\n        height: 1.23rem;\n        padding-top: .2rem; }\n      .card ul li .midbox span[_v-b32fc110] {\n        display: inline-block;\n        float: left; }\n      .card ul li .midbox .imgmid[_v-b32fc110] {\n        padding: 0.2rem .088rem 0 .088rem; }\n      .card ul li .midbox .source[_v-b32fc110] {\n        color: #8f8f8f;\n        display: inline-block;\n        padding: .1rem .05rem .1rem 0;\n        font-size: .24rem; }\n      .card ul li .midbox .hits[_v-b32fc110] {\n        color: #8f8f8f;\n        display: inline-block;\n        padding: .1rem .05rem .1rem 0;\n        font-size: .18rem; }\n    .card ul li .title[_v-b32fc110] {\n      font-size: .3rem; }\n    .card ul li .descBox[_v-b32fc110] {\n      width: 69%;\n      min-height: 1rem;\n      float: left; }\n      .card ul li .descBox .title[_v-b32fc110] {\n        min-height: 1rem;\n        font-size: .3rem; }\n      .card ul li .descBox .source[_v-b32fc110] {\n        font-size: .24rem;\n        color: #8f8f8f;\n        line-height: .4rem; }\n      .card ul li .descBox .hits[_v-b32fc110] {\n        float: right;\n        font-size: .18rem; }\n    .card ul li .img-small[_v-b32fc110] {\n      float: right;\n      width: 25%;\n      height: 1.2rem; }\n    .card ul li a[_v-b32fc110] {\n      display: inline-block;\n      width: 100%; }\n    .card ul li h2[_v-b32fc110] {\n      padding-bottom: .2rem;\n      display: inline-block;\n      font-size: .3rem;\n      width: 90%;\n      float: left; }\n    .card ul li .hits[_v-b32fc110] {\n      font-size: .2rem;\n      width: 10%;\n      float: right;\n      text-align: right;\n      color: #8f8f8f; }\n      .card ul li .hits i[_v-b32fc110] {\n        font-size: .24rem; }\n", ""]);
 
 	// exports
 
@@ -3411,6 +3413,9 @@ webpackJsonp([1],{
 	//             line-height: .85rem;
 	//             font-weight: 700;
 	//             font-size: .36rem;
+	//         }
+	//         .page-list{
+	//             padding-bottom:.94rem;
 	//         }
 	//         ul{
 	//             width:6rem;
@@ -3536,7 +3541,7 @@ webpackJsonp([1],{
 	//
 	//             <div class="card">
 	//                 <h2 class="cardTitle">今日推荐</h2>
-	//                 <home-shell type="21" :getparams="getparams" ></home-shell>
+	//                 <home-shell class="page-list" type="21" :getparams="getparams" ></home-shell>
 	//             </div>
 	//
 	//       </div>
@@ -3549,7 +3554,7 @@ webpackJsonp([1],{
 /***/ 343:
 /***/ function(module, exports) {
 
-	module.exports = "\n<div _v-b32fc110=\"\">\n    <div slot=\"content\" _v-b32fc110=\"\">\n        <swipe class=\"my-swipe\" :speed=\"1000\" :show-indicators=\"false\" _v-b32fc110=\"\">\n\n            <swipe-item v-for=\"item in carousel\" _v-b32fc110=\"\">\n                <a :src=\"item.url\" _v-b32fc110=\"\">\n                    <img :src=\"item.pic\" _v-b32fc110=\"\">\n                    <span _v-b32fc110=\"\">{{item.title}}</span>\n                </a>\n            </swipe-item>\n\n        </swipe>\n\n          <div class=\"card\" _v-b32fc110=\"\">\n              <h2 class=\"cardTitle\" _v-b32fc110=\"\">今日推荐</h2>\n              <home-shell type=\"21\" :getparams=\"getparams\" _v-b32fc110=\"\"></home-shell>\n          </div>\n\n    </div>\n</div>\n";
+	module.exports = "\n<div _v-b32fc110=\"\">\n    <div slot=\"content\" _v-b32fc110=\"\">\n        <swipe class=\"my-swipe\" :speed=\"1000\" :show-indicators=\"false\" _v-b32fc110=\"\">\n\n            <swipe-item v-for=\"item in carousel\" _v-b32fc110=\"\">\n                <a :src=\"item.url\" _v-b32fc110=\"\">\n                    <img :src=\"item.pic\" _v-b32fc110=\"\">\n                    <span _v-b32fc110=\"\">{{item.title}}</span>\n                </a>\n            </swipe-item>\n\n        </swipe>\n\n          <div class=\"card\" _v-b32fc110=\"\">\n              <h2 class=\"cardTitle\" _v-b32fc110=\"\">今日推荐</h2>\n              <home-shell class=\"page-list\" type=\"21\" :getparams=\"getparams\" _v-b32fc110=\"\"></home-shell>\n          </div>\n\n    </div>\n</div>\n";
 
 /***/ },
 

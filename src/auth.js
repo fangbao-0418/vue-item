@@ -24,7 +24,21 @@ export default {
     });
     return p; 
   },
-
+  checkun(username){
+    var url = "http://www.ey99.com/api/mobile/auth.php";
+    var body = {username:username};
+    var option = {emulateJSON:true,params:{job:"checkun"}};    
+    var p = new Promise(function(resolve, reject){
+        vue.$http.post(url,body,option).then((res)=>{ 
+            if(res.body == 1){ 
+              resolve();  
+            }  else{
+              reject();    
+            }
+        });
+    });
+    return p; 
+  },
   onChange () {}
 }
  

@@ -129,6 +129,10 @@
 
 	__webpack_require__(406);
 
+	var _Vuex = __webpack_require__(161);
+
+	var _Vuex2 = _interopRequireDefault(_Vuex);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	__webpack_require__(408); //路由配置文件
@@ -146,6 +150,8 @@
 	_vue2.default.use(_elementUi2.default);
 
 	_vue2.default.use(_mintUi2.default);
+
+	_vue2.default.use(_Vuex2.default);
 
 	_vue2.default.use(_vueLazyload2.default, {
 	    error: __webpack_require__(421),
@@ -14739,6 +14745,7 @@
 	    },
 	    updated: function updated() {},
 	    created: function created() {
+
 	        this.loadData();
 	    },
 	    mounted: function mounted() {},
@@ -14746,10 +14753,10 @@
 
 	    methods: {
 	        loadTop: function loadTop(id) {
-	            this.loadData(id, true);
+	            //this.loadData(id,true);              
 	        },
 	        loadBottom: function loadBottom(id) {
-
+	            //console.log(this._uid);             
 	            this.loadData(id);
 	        },
 	        loadData: function loadData(id) {
@@ -14766,6 +14773,7 @@
 	            var option = this.getparams.option;
 	            var _this = this;
 	            this.page += 1;
+	            console.log(id);
 	            option.params.page = this.page;
 	            this.$http.get(url, option).then(function (res) {
 	                //console.log(res);
@@ -14786,6 +14794,7 @@
 	                    _this.noData = true;
 	                    setTimeout(function () {
 	                        _this.noData = false;
+
 	                        if (id) _this.$refs.loadmore.onBottomLoaded(id);
 	                    }, 1000);
 	                    _this.emptyresource = true;
@@ -14804,9 +14813,16 @@
 	//         }
 	//     }
 	// </style>
+	// /**
+	//  *  Created by fangbao on 12/03/2016
+	//  *
+	//  *  公共上拉加载组件
+	//  *
+	//  */
+	//
 	// <template>
 	//     <div class="page-container">
-	//         <load  :loading="loading" ></load>
+	//         <load></load>
 	//
 	//         <div v-if="!loading" class="page-items">
 	//             <!--  -->
@@ -28762,9 +28778,9 @@
 	//             padding:0px .2rem;
 	//             li{
 	//                 width: 100%;
-	//                 padding-top:.2rem;
-	//                 margin-bottom:.2rem;
-	//                 border-bottom:dashed #ccc 1px;
+	//                 padding:.14rem 0;
+	//
+	//                 border-bottom:solid #fafafa 1px;
 	//                 position:relative;
 	//                 .collect-del-botton{
 	//                   position:absolute;
@@ -28848,12 +28864,22 @@
 	//                     width: 100%;
 	//                 }
 	//                 h2{
-	//                     padding-bottom:.2rem;
+	//                     padding-bottom:.1rem;
 	//                     display: inline-block;
 	//                     font-size:.3rem;
-	//                     width:90%;
+	//                     width:100%;
 	//                     float:left;
 	//
+	//                 }
+	//                 p{
+	//
+	//                   width:100%;
+	//                   display: inline-block;
+	//                   .copyfrom{
+	//                      font-size: .24rem;
+	//                      color: #8f8f8f;
+	//                      line-height: .36rem;
+	//                   }
 	//                 }
 	//                 .hits{
 	//                     font-size:.2rem;
@@ -28915,12 +28941,14 @@
 	//               </router-link >
 	//               </template>
 	//               <template  v-else >
-	//
 	//                   <router-link :to="{name:'newsDetail',query:{id:item.itemid}}" >
 	//                       <h2 class="title">{{item.title | dsubstr(16)}}</h2>
+	//                       <p>
+	//                       <span class="copyfrom">{{item.copyfrom}}</span>
 	//                       <span class="hits">
 	//                           <i class="iconfont">&#xf0048;</i>{{item.hits}}
 	//                       </span>
+	//                       </p>
 	//                   </router-link >
 	//               </template>
 	//           </li>
@@ -29617,7 +29645,7 @@
 /* 163 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"searItems\" _v-7214e175=\"\">\n     <ul _v-7214e175=\"\">                \n       <li v-for=\"(item,index) in items\" _v-7214e175=\"\">\n           <collect-del-button v-if=\"collect\" :items=\"items\" :type=\"21\" :index=\"index\" class=\"collect-del-botton\" _v-7214e175=\"\"></collect-del-button>  \n           <template v-if=\"item.thumb\">\n           <router-link :to=\"{name:'newsDetail',query:{id:item.itemid}}\" _v-7214e175=\"\">\n               <template v-if=\"item.level == 8\">                                                 \n                   <div class=\"midbox\" _v-7214e175=\"\">\n                       <div class=\"title\" _v-7214e175=\"\">{{item.title}}<div _v-7214e175=\"\">\n                       <span _v-7214e175=\"\"><img :src=\"item.thumb\" _v-7214e175=\"\"></span>\n                       <span _v-7214e175=\"\"><img class=\"imgmid\" :src=\"item.thumb1\" _v-7214e175=\"\"></span>\n                       <span _v-7214e175=\"\"><img :src=\"item.thumb2\" _v-7214e175=\"\"></span>\n                       <i class=\"source\" _v-7214e175=\"\">{{item.copyfrom}}</i>\n                       <i class=\"hits\" _v-7214e175=\"\"><i class=\"iconfont\" _v-7214e175=\"\">󰁈</i>{{item.hits}}</i>\n                    </div>                           \n               </div></div></template>  \n               <template v-if=\"item.level == 9\">                            \n                    <div class=\"bigbox\" _v-7214e175=\"\">\n                       <div class=\"title\" _v-7214e175=\"\">\n                         {{item.title}}\n                       </div>\n                      <img :src=\"item.thumb\" _v-7214e175=\"\">\n                      <span _v-7214e175=\"\">{{item.copyfrom}}</span>\n                      <span class=\"hits\" _v-7214e175=\"\"><i class=\"iconfont\" _v-7214e175=\"\">󰁈</i>{{item.hits}}</span>\n                   </div>                  \n               </template> \n              <template v-if=\"item.level != 8 &amp;&amp; item.level != 9\">  \n                   <div class=\"descBox\" _v-7214e175=\"\">\n                       <div class=\"title\" _v-7214e175=\"\">{{item.title | dsubstr(20)}}</div>\n                       <div class=\"footnote\" _v-7214e175=\"\">\n                           <span class=\"source\" _v-7214e175=\"\">{{item.copyfrom ? item.copyfrom : \"当代医药市场网\"}}</span>\n                           <span class=\"hits\" _v-7214e175=\"\"><i class=\"iconfont\" _v-7214e175=\"\">󰁈</i>{{item.hits}}</span>\n                       </div>\n                   </div>\n                   <span class=\"img\" _v-7214e175=\"\">\n                       <img :src=\"item.thumb\" class=\"img-small\" _v-7214e175=\"\">\n                   </span>\n               </template>  \n           </router-link>\n           </template>\n           <template v-else=\"\">\n\n               <router-link :to=\"{name:'newsDetail',query:{id:item.itemid}}\" _v-7214e175=\"\">\n                   <h2 class=\"title\" _v-7214e175=\"\">{{item.title | dsubstr(16)}}</h2>\n                   <span class=\"hits\" _v-7214e175=\"\">\n                       <i class=\"iconfont\" _v-7214e175=\"\">󰁈</i>{{item.hits}}\n                   </span>\n               </router-link>\n           </template>\n       </li>\n     </ul>\n </div>\n\n";
+	module.exports = "\n<div class=\"searItems\" _v-7214e175=\"\">\n     <ul _v-7214e175=\"\">                \n       <li v-for=\"(item,index) in items\" _v-7214e175=\"\">\n           <collect-del-button v-if=\"collect\" :items=\"items\" :type=\"21\" :index=\"index\" class=\"collect-del-botton\" _v-7214e175=\"\"></collect-del-button>  \n           <template v-if=\"item.thumb\">\n           <router-link :to=\"{name:'newsDetail',query:{id:item.itemid}}\" _v-7214e175=\"\">\n               <template v-if=\"item.level == 8\">                                                 \n                   <div class=\"midbox\" _v-7214e175=\"\">\n                       <div class=\"title\" _v-7214e175=\"\">{{item.title}}<div _v-7214e175=\"\">\n                       <span _v-7214e175=\"\"><img :src=\"item.thumb\" _v-7214e175=\"\"></span>\n                       <span _v-7214e175=\"\"><img class=\"imgmid\" :src=\"item.thumb1\" _v-7214e175=\"\"></span>\n                       <span _v-7214e175=\"\"><img :src=\"item.thumb2\" _v-7214e175=\"\"></span>\n                       <i class=\"source\" _v-7214e175=\"\">{{item.copyfrom}}</i>\n                       <i class=\"hits\" _v-7214e175=\"\"><i class=\"iconfont\" _v-7214e175=\"\">󰁈</i>{{item.hits}}</i>\n                    </div>                           \n               </div></div></template>  \n               <template v-if=\"item.level == 9\">                            \n                    <div class=\"bigbox\" _v-7214e175=\"\">\n                       <div class=\"title\" _v-7214e175=\"\">\n                         {{item.title}}\n                       </div>\n                      <img :src=\"item.thumb\" _v-7214e175=\"\">\n                      <span _v-7214e175=\"\">{{item.copyfrom}}</span>\n                      <span class=\"hits\" _v-7214e175=\"\"><i class=\"iconfont\" _v-7214e175=\"\">󰁈</i>{{item.hits}}</span>\n                   </div>                  \n               </template> \n              <template v-if=\"item.level != 8 &amp;&amp; item.level != 9\">  \n                   <div class=\"descBox\" _v-7214e175=\"\">\n                       <div class=\"title\" _v-7214e175=\"\">{{item.title | dsubstr(20)}}</div>\n                       <div class=\"footnote\" _v-7214e175=\"\">\n                           <span class=\"source\" _v-7214e175=\"\">{{item.copyfrom ? item.copyfrom : \"当代医药市场网\"}}</span>\n                           <span class=\"hits\" _v-7214e175=\"\"><i class=\"iconfont\" _v-7214e175=\"\">󰁈</i>{{item.hits}}</span>\n                       </div>\n                   </div>\n                   <span class=\"img\" _v-7214e175=\"\">\n                       <img :src=\"item.thumb\" class=\"img-small\" _v-7214e175=\"\">\n                   </span>\n               </template>  \n           </router-link>\n           </template>\n           <template v-else=\"\">\n               <router-link :to=\"{name:'newsDetail',query:{id:item.itemid}}\" _v-7214e175=\"\">\n                   <h2 class=\"title\" _v-7214e175=\"\">{{item.title | dsubstr(16)}}</h2>\n                   <p _v-7214e175=\"\">\n                   <span class=\"copyfrom\" _v-7214e175=\"\">{{item.copyfrom}}</span>\n                   <span class=\"hits\" _v-7214e175=\"\">\n                       <i class=\"iconfont\" _v-7214e175=\"\">󰁈</i>{{item.hits}}\n                   </span>\n                   </p>\n               </router-link>\n           </template>\n       </li>\n     </ul>\n </div>\n\n";
 
 /***/ },
 /* 164 */
@@ -29718,7 +29746,7 @@
 	//         margin:0px .3rem;
 	//         padding:.2rem 0px;
 	//         width:5.8rem;
-	//         border-bottom: 1px solid #e7e7e7;
+	//         border-bottom: 1px solid #fafafa;
 	//         position: relative;
 	//         .collect-del-botton{
 	//             position:absolute;
@@ -29805,7 +29833,7 @@
 /* 169 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"page-container\" _v-90ea90b6=\"\">\n    <load :loading=\"loading\" _v-90ea90b6=\"\"></load>\n\n    <div v-if=\"!loading\" class=\"page-items\" _v-90ea90b6=\"\">\n        <!--  -->\n        <mt-loadmore :bottom-method=\"loadBottom\" bottom-pull-text=\"上拉加载\" :bottom-all-loaded=\"allLoaded\" ref=\"loadmore\" _v-90ea90b6=\"\">\n            \n\n            <invest-item :collect=\"collect\" v-if=\"type == 22\" :items=\"items\" _v-90ea90b6=\"\"></invest-item>\n\n            <article-item :collect=\"collect\" v-if=\"type == 21\" :items=\"items\" _v-90ea90b6=\"\"></article-item>\n         \n            \n            <div v-if=\"noData\" slot=\"bottom\" class=\"mint-loadmore-bottom\" _v-90ea90b6=\"\">\n                没有了\n            </div>\n        </mt-loadmore>\n    </div>\n  \n    <no-data v-if=\"issearchpage &amp;&amp; emptyresource &amp;&amp; page == 1\" _v-90ea90b6=\"\"></no-data>\n   \n    <div class=\"clear\" _v-90ea90b6=\"\"></div>\n</div>\n\n";
+	module.exports = "\n\n\n\n\n\n\n\n<div class=\"page-container\" _v-90ea90b6=\"\">\n    <load _v-90ea90b6=\"\"></load>\n\n    <div v-if=\"!loading\" class=\"page-items\" _v-90ea90b6=\"\">\n        <!--  -->\n        <mt-loadmore :bottom-method=\"loadBottom\" bottom-pull-text=\"上拉加载\" :bottom-all-loaded=\"allLoaded\" ref=\"loadmore\" _v-90ea90b6=\"\">\n            \n\n            <invest-item :collect=\"collect\" v-if=\"type == 22\" :items=\"items\" _v-90ea90b6=\"\"></invest-item>\n\n            <article-item :collect=\"collect\" v-if=\"type == 21\" :items=\"items\" _v-90ea90b6=\"\"></article-item>\n         \n            \n            <div v-if=\"noData\" slot=\"bottom\" class=\"mint-loadmore-bottom\" _v-90ea90b6=\"\">\n                没有了\n            </div>\n        </mt-loadmore>\n    </div>\n  \n    <no-data v-if=\"issearchpage &amp;&amp; emptyresource &amp;&amp; page == 1\" _v-90ea90b6=\"\"></no-data>\n   \n    <div class=\"clear\" _v-90ea90b6=\"\"></div>\n</div>\n\n";
 
 /***/ },
 /* 170 */
@@ -30044,7 +30072,7 @@
 	// 	width: 6.4rem;
 	// 	height:1.25rem ;
 	// 	background:#fff;	
-	// 	border-bottom: 1px solid #e8e8e8;
+	// 	border-bottom: 1px solid #fafafa;
 	// }
 	//
 	// .nav{
@@ -30065,8 +30093,8 @@
 	// 	width:2rem ;
 	// 	height:1.24rem;
 	// 	box-sizing:border-box;
-	// 	border-left: 1px solid #e8e8e8;
-	// 	border-right: 1px solid #e8e8e8;
+	// 	border-left: 1px solid #fafafa;
+	// 	border-right: 1px solid #fafafa;
 	// }
 	//
 	//
@@ -30116,7 +30144,7 @@
 	// .detal-box{
 	// 	width:5.8rem; 
 	// 	height: .85rem;
-	// 	border-bottom: 1px solid #e8e8e8;
+	// 	border-bottom: 1px solid #fafafa;
 	// 	line-height: .85rem;
 	// }
 	//
@@ -40855,7 +40883,7 @@
 	//         margin:0px .3rem;
 	//         padding:.2rem 0px;
 	//         wdth:5.8rem;
-	//         border-bottom: 1px solid #e7e7e7;
+	//         border-bottom: 1px solid #fafafa;
 	//     }
 	//
 	//     .item_left{
@@ -43615,7 +43643,7 @@
 	// }
 	//
 	// .article_area{
-	//     border-bottom:solid 1px #d7d7d7;
+	//     border-bottom:solid 1px #fafafa;
 	//     padding:.2rem 0 .1rem 0;
 	//     p{
 	//         font-size: .25rem;
@@ -44141,6 +44169,21 @@
 
 	        if (res.body.userid != null) {
 	          resolve(res.body);
+	        } else {
+	          reject();
+	        }
+	      });
+	    });
+	    return p;
+	  },
+	  checkun: function checkun(username) {
+	    var url = "http://www.ey99.com/api/mobile/auth.php";
+	    var body = { username: username };
+	    var option = { emulateJSON: true, params: { job: "checkun" } };
+	    var p = new _promise2.default(function (resolve, reject) {
+	      vue.$http.post(url, body, option).then(function (res) {
+	        if (res.body == 1) {
+	          resolve();
 	        } else {
 	          reject();
 	        }
@@ -44938,7 +44981,6 @@
 	// 		.footer-t{
 	// 		  	width: 5.8rem;
 	// 			padding-bottom: .2rem;
-	// 			border-bottom:1px solid #e9e9e9;
 	// 		  	margin: 0 auto;
 	// 			.foot-t-box {
 	// 				i{
@@ -46068,22 +46110,127 @@
 
 	var _blackNav2 = _interopRequireDefault(_blackNav);
 
+	var _mintUi = __webpack_require__(122);
+
+	var _auth = __webpack_require__(216);
+
+	var _auth2 = _interopRequireDefault(_auth);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	// <template>
+	// 	<div class="pt-perspective">
+	// 		<my-nav title="注册">
+	// 			<router-link :to="{path:'/login'}" class="nav-right" slot="right">登录</router-link>
+	// 		</my-nav>
+	// 		<div class="reg-main">
+	// 			<ul>
+	// 				<li>
+	// 					<span>手机号码</span>
+	// 					<input maxlength="11" v-model="mobile" palceholder="手机号码"/>
+	// 				</li>
+	// 				<li>
+	// 					<span>验证码</span>
+	// 					<input class="validate" v-model="validate" maxlength="6"/>
+	// 					<el-button type="primary" @click="sendvalidate" :disabled="disabled">{{validatetext}}</el-button>
+	// 				</li>
+	// 				<li>
+	// 					<span>密码</span>
+	// 					<input v-if="passwordshow" type="text" v-model="password" palceholder="6-16位字母、数字和符号" />
+	// 					<input v-if="!passwordshow" type="password" v-model="password" palceholder="6-16位字母、数字和符号" />
+	// 					<mt-switch v-model="passwordshow"></mt-switch>
+	// 				</li>
+	// 			</ul>
+	//
+	// 			<el-button @click.native="submit" :disabled="!validateok" type="primary">注册</el-button>
+	// 		</div>
+	// 	</div>
+	// </template>
+	// <script>
 	exports.default = {
+		data: function data() {
+			return {
+				mobile: null,
+				password: null,
+				validate: null,
+				issend: false,
+				validatetext: "获取验证码",
+				timer: null,
+				passwordshow: false,
+				passwordtype: "password"
+			};
+		},
+
+		computed: {
+			disabled: function disabled() {
+				if (this.mobile && !this.issend) {
+					return false;
+				} else {
+					return true;
+				}
+			},
+			validateok: function validateok() {
+				if (this.mobile && this.validate && this.password) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		},
 		components: {
 			'my-nav': _blackNav2.default
+
 		},
 		methods: {
-			open: function open() {
-				this.$message({
-					showClose: true,
-					message: '恭喜你，这是一条成功消息',
-					top: "80%"
+			toast: function toast(message) {
+				(0, _mintUi.Toast)({
+					message: message,
+					position: 'bottom',
+					duration: 5000
 				});
+			},
+			submit: function submit() {
+				var _this2 = this;
+
+				if (this.validateok) {
+					var pattern = /^1[3|4|5|7|8][0-9]\d{8}$/;
+					if (pattern.exec(this.mobile)) {
+						this.toast("手机号码格式有误");
+					} else {
+						_auth2.default.checkun(this.mobile).then(function () {
+							if (_this2.validate !== "123456") {
+								_this2.toast("验证码错误");
+							} else if (_this2.password.length < 6) {
+								_this2.toast("密码输入过短");
+							} else {
+								_this2.toast("暂停注册");
+							}
+						}, function () {
+							_this2.toast("该手机号已被使用");
+						});
+					}
+				}
+			},
+			sendvalidate: function sendvalidate() {
+				this.issend = true;
+				var time = 60;
+				var _this = this;
+				this.timer = setInterval(function () {
+					time--;
+					_this.validatetext = "重新获取(" + time + ")秒";
+					if (time == 1) {
+						_this.issend = false;
+						_this.validatetext = "重新获取";
+						clearInterval(_this.timer);
+					}
+				}, 100);
+			}
+		},
+		beforeDestory: function beforeDestory() {
+			if (this.timer) {
+				clearInterval(this.timer);
 			}
 		}
-
 	};
 	// </script>
 	//
@@ -46114,14 +46261,20 @@
 	// 						font-size:.3rem;
 	// 						float:left;
 	// 					}
+	// 					.mint-switch{
+	// 						position:absolute;
+	// 						right:0;
+	// 						display:inline-block;
+	// 					}
 	// 					.el-button{
 	// 						padding:0px;
 	// 						margin:0px;
 	// 						position:absolute;
-	// 						width:32%;
+	// 						width:2.3rem;
 	// 						top:.1rem;
 	// 						right:0px;
 	// 						height:.6rem;
+	// 						font-size:.28rem;
 	// 					}
 	// 					input{
 	// 						width:70%;
@@ -46145,39 +46298,12 @@
 	// 	}
 	//
 	// </style>
-	// <template>
-	// 	<div class="pt-perspective">
-	// 		<my-nav title="注册">
-	// 			<router-link :to="{path:'/login'}" class="nav-right" slot="right">登录</router-link>
-	// 		</my-nav>
-	// 		<div class="reg-main">
-	// 			<ul>
-	// 				<li>
-	// 					<span>手机号码</span>
-	// 					<input palceholder="手机号码"/>
-	// 				</li>
-	// 				<li>
-	// 					<span>验证码</span>
-	// 					<input class="validate" maxlength="6"/>
-	// 					<el-button type="primary" :disabled="true">获取验证码</el-button>
-	// 				</li>
-	// 				<li>
-	// 					<span>密码</span>
-	// 					<input palceholder="6-16位字母、数字和符号" />
-	// 				</li>
-	// 			</ul>
-	//
-	// 			<el-button @click.native="open" type="primary">注册</el-button>
-	// 		</div>
-	// 	</div>
-	// </template>
-	// <script>
 
 /***/ },
 /* 276 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"pt-perspective\" _v-6725bf3f=\"\">\n\t<my-nav title=\"注册\" _v-6725bf3f=\"\">\n\t\t<router-link :to=\"{path:'/login'}\" class=\"nav-right\" slot=\"right\" _v-6725bf3f=\"\">登录</router-link>\n\t</my-nav>\n\t<div class=\"reg-main\" _v-6725bf3f=\"\">\n\t\t<ul _v-6725bf3f=\"\">\n\t\t\t<li _v-6725bf3f=\"\">\n\t\t\t\t<span _v-6725bf3f=\"\">手机号码</span>\n\t\t\t\t<input palceholder=\"手机号码\" _v-6725bf3f=\"\">\n\t\t\t</li>\n\t\t\t<li _v-6725bf3f=\"\">\n\t\t\t\t<span _v-6725bf3f=\"\">验证码</span>\n\t\t\t\t<input class=\"validate\" maxlength=\"6\" _v-6725bf3f=\"\">\n\t\t\t\t<el-button type=\"primary\" :disabled=\"true\" _v-6725bf3f=\"\">获取验证码</el-button>\n\t\t\t</li>\n\t\t\t<li _v-6725bf3f=\"\">\n\t\t\t\t<span _v-6725bf3f=\"\">密码</span>\n\t\t\t\t<input palceholder=\"6-16位字母、数字和符号\" _v-6725bf3f=\"\">\n\t\t\t</li>\n\t\t</ul>\n\n\t\t<el-button @click.native=\"open\" type=\"primary\" _v-6725bf3f=\"\">注册</el-button>\n\t</div>\n</div>\n";
+	module.exports = "\n<div class=\"pt-perspective\" _v-6725bf3f=\"\">\n\t<my-nav title=\"注册\" _v-6725bf3f=\"\">\n\t\t<router-link :to=\"{path:'/login'}\" class=\"nav-right\" slot=\"right\" _v-6725bf3f=\"\">登录</router-link>\n\t</my-nav>\n\t<div class=\"reg-main\" _v-6725bf3f=\"\">\n\t\t<ul _v-6725bf3f=\"\">\n\t\t\t<li _v-6725bf3f=\"\">\n\t\t\t\t<span _v-6725bf3f=\"\">手机号码</span>\n\t\t\t\t<input maxlength=\"11\" v-model=\"mobile\" palceholder=\"手机号码\" _v-6725bf3f=\"\">\n\t\t\t</li>\n\t\t\t<li _v-6725bf3f=\"\">\n\t\t\t\t<span _v-6725bf3f=\"\">验证码</span>\n\t\t\t\t<input class=\"validate\" v-model=\"validate\" maxlength=\"6\" _v-6725bf3f=\"\">\n\t\t\t\t<el-button type=\"primary\" @click=\"sendvalidate\" :disabled=\"disabled\" _v-6725bf3f=\"\">{{validatetext}}</el-button>\n\t\t\t</li>\n\t\t\t<li _v-6725bf3f=\"\">\n\t\t\t\t<span _v-6725bf3f=\"\">密码</span>\n\t\t\t\t<input v-if=\"passwordshow\" type=\"text\" v-model=\"password\" palceholder=\"6-16位字母、数字和符号\" _v-6725bf3f=\"\">\n\t\t\t\t<input v-if=\"!passwordshow\" type=\"password\" v-model=\"password\" palceholder=\"6-16位字母、数字和符号\" _v-6725bf3f=\"\">\n\t\t\t\t<mt-switch v-model=\"passwordshow\" _v-6725bf3f=\"\"></mt-switch>\n\t\t\t</li>\n\t\t</ul>\n\n\t\t<el-button @click.native=\"submit\" :disabled=\"!validateok\" type=\"primary\" _v-6725bf3f=\"\">注册</el-button>\n\t</div>\n</div>\n";
 
 /***/ },
 /* 277 */
@@ -47065,9 +47191,12 @@
 	exports.default = {
 		methods: {
 			del: function del() {
-				this.rightTitle = this.rightTitle == "删除" ? "取消" : "删除";
 				_store2.default.commit('collectDel');
+				this.rightTitle = _store2.default.state.collectDelIsOpen ? "取消" : "删除";
 			}
+		},
+		created: function created() {
+			_store2.default.state.collectDelIsOpen = false;
 		},
 		data: function data() {
 			return {
@@ -47099,6 +47228,13 @@
 		}
 	};
 	// </script>
+	// /**
+	//  *  Created by fangbao on 12/03/2016
+	//  *
+	//  *  收藏列表
+	//  *
+	//  */
+	//
 	// <style lang="sass" scoped>
 	// 	.collect-area{
 	// 		.collect-main{
@@ -47141,7 +47277,7 @@
 	//
 	// 			  </mt-tab-container-item>
 	// 			  <mt-tab-container-item id="tab-container3">
-	//
+	// 			     <home-shell :collect="true" v-if="active == 'tab-container3'" :type="21" :getparams="params2"></home-shell>
 	// 			  </mt-tab-container-item>
 	// 			</mt-tab-container>
 	// 		</div>
@@ -47153,7 +47289,7 @@
 /* 303 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<div class=\"collect-area\" _v-09a786be=\"\">\n\t<my-nav theme=\"white\" title=\"收藏\" _v-09a786be=\"\">\n\t<span slot=\"right\" class=\"nav-right\" @click=\"del\" _v-09a786be=\"\">{{rightTitle}}</span>\n\t</my-nav>\n\t<div class=\"collect-main\" _v-09a786be=\"\">\n\t\t<mt-navbar v-model=\"active\" _v-09a786be=\"\">\n\t\t  <mt-tab-item id=\"tab-container1\" _v-09a786be=\"\">产品</mt-tab-item>\n\t\t  <mt-tab-item id=\"tab-container2\" _v-09a786be=\"\">资讯</mt-tab-item>\n\t\t  <mt-tab-item id=\"tab-container3\" _v-09a786be=\"\">视频</mt-tab-item>\n\t\t</mt-navbar>\n\n\t\t<mt-tab-container v-model=\"active\" :swipeable=\"true\" _v-09a786be=\"\">\n\t\t  <mt-tab-container-item id=\"tab-container1\" _v-09a786be=\"\">\n\t\t  \t<home-shell :collect=\"true\" v-if=\"active == 'tab-container1'\" :type=\"22\" :getparams=\"params1\" _v-09a786be=\"\"></home-shell>\n\t\t  </mt-tab-container-item>\n\t\t  <mt-tab-container-item id=\"tab-container2\" _v-09a786be=\"\">\n\t\t  \t\n\t\t  \t<home-shell :collect=\"true\" v-if=\"active == 'tab-container2'\" :type=\"21\" :getparams=\"params2\" _v-09a786be=\"\"></home-shell>\n\n\t\t  </mt-tab-container-item>\n\t\t  <mt-tab-container-item id=\"tab-container3\" _v-09a786be=\"\">\n\t\t     \n\t\t  </mt-tab-container-item>\n\t\t</mt-tab-container>\n\t</div>\n</div>\n";
+	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<div class=\"collect-area\" _v-09a786be=\"\">\n\t<my-nav theme=\"white\" title=\"收藏\" _v-09a786be=\"\">\n\t<span slot=\"right\" class=\"nav-right\" @click=\"del\" _v-09a786be=\"\">{{rightTitle}}</span>\n\t</my-nav>\n\t<div class=\"collect-main\" _v-09a786be=\"\">\n\t\t<mt-navbar v-model=\"active\" _v-09a786be=\"\">\n\t\t  <mt-tab-item id=\"tab-container1\" _v-09a786be=\"\">产品</mt-tab-item>\n\t\t  <mt-tab-item id=\"tab-container2\" _v-09a786be=\"\">资讯</mt-tab-item>\n\t\t  <mt-tab-item id=\"tab-container3\" _v-09a786be=\"\">视频</mt-tab-item>\n\t\t</mt-navbar>\n\n\t\t<mt-tab-container v-model=\"active\" :swipeable=\"true\" _v-09a786be=\"\">\n\t\t  <mt-tab-container-item id=\"tab-container1\" _v-09a786be=\"\">\n\t\t  \t<home-shell :collect=\"true\" v-if=\"active == 'tab-container1'\" :type=\"22\" :getparams=\"params1\" _v-09a786be=\"\"></home-shell>\n\t\t  </mt-tab-container-item>\n\t\t  <mt-tab-container-item id=\"tab-container2\" _v-09a786be=\"\">\n\t\t  \t\n\t\t  \t<home-shell :collect=\"true\" v-if=\"active == 'tab-container2'\" :type=\"21\" :getparams=\"params2\" _v-09a786be=\"\"></home-shell>\n\n\t\t  </mt-tab-container-item>\n\t\t  <mt-tab-container-item id=\"tab-container3\" _v-09a786be=\"\">\n\t\t     <home-shell :collect=\"true\" v-if=\"active == 'tab-container3'\" :type=\"21\" :getparams=\"params2\" _v-09a786be=\"\"></home-shell>\n\t\t  </mt-tab-container-item>\n\t\t</mt-tab-container>\n\t</div>\n</div>\n";
 
 /***/ },
 /* 304 */
@@ -76412,20 +76548,21 @@
 	if (localStorage.currentlight == "black") {
 		$('.app-shade').css({ "background-color": "rgba(0,0,0,0.5)" });
 	}
-	// function resetHeight(){
-	// 	if( $(".white_box")[0] && $("#app")[0] && $(".nav")[0] && $(".footer")[0] && $(".page")[0] ){
-	// 	    $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
-	// 	    $(".page").height($(".white_box").height())
-	// 	} 
-	// 	if($(".warp-header")[0]){
-	// 		$(".white_box").height($("#app")[0].clientHeight - $(".warp-header")[0].clientHeight );
-	// 	}   
-	// }
+	function resetHeight() {
+		$("#app").height(document.documentElement.clientHeight);
+		if ($(".white_box")[0] && $("#app")[0] && $(".nav")[0] && $(".footer")[0] && $(".page")[0]) {
+			$(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
+			$(".page").height($(".white_box").height());
+		}
+		if ($(".warp-header")[0]) {
+			$(".white_box").height($("#app")[0].clientHeight - $(".warp-header")[0].clientHeight);
+		}
+	}
 
 	var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
 
 	var recalc = function recalc() {
-		//resetHeight();
+		resetHeight();
 	};
 
 	window.addEventListener(resizeEvt, recalc, false);

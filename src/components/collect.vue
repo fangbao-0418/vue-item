@@ -38,7 +38,8 @@
 			::-webkit-scrollbar  
 				{  
 				    width: 2px;  
-				    height: 2px;  
+				    height: 2
+				    px;  
 				    background-color: #fff;  
 				} 
 

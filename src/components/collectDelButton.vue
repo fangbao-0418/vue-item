@@ -5,31 +5,50 @@
 </style>
 <template>
 	<div class="del-button">
-		<mt-button type="danger" @click="delCollect" v-if="store.state.collectDelIsOpen">删除</mt-button>
+		<mt-button type="danger" v-on:click="delCollect"  v-if="store.state.collectDelIsOpen">删除</mt-button>
 	</div>
 </template>
 <script>
 	import { Button } from 'mint-ui';
     import store from '../store';
+    import bus from '../bus.js';
     export default {
-    	props:['type','index','items'],
+	   props:{
+            type:Number,
+            index:Number,
+            items:Array,
+        },
     	data(){
     		return {
-    			store:store
+    			store:store,
+                data:null
     		}
     	},
+        computed(){
+            newitems:{
+                if(this.data){
+                    return this.data;
+                }else{
+                    return this.items;
+                }
+            }
+        },
     	components:{
             'mt-button':Button
         },
+       
     	methods:{
+            refresh(){   
+                bus.$emit('refresh');  
+            },
     		delCollect(){
-                var _this = this;
+                 
                 var url = "http://www.ey99.com/api/mobile/mycollect.php";
                 var option = {emulateJSON:true};
                 var body = {linkurl:this.items[this.index].linkurl,type:this.type,action:"del",token:localStorage.token};
                 this.$http.post(url,body,option).then((res)=>{
                     if(res.body.query_res){
-                        _this.items.splice(_this.index,1);
+                        this.refresh();
                     }
                 });
             }

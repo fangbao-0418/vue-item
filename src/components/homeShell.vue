@@ -11,7 +11,7 @@
 
         <div v-if="!loading" class="page-items">
             <!--  -->
-            <mt-loadmore :bottom-method="loadBottom" bottom-pull-text="上拉加载" :bottom-all-loaded="allLoaded" ref="loadmore">
+            <mt-loadmore :top-method="loadTop" :bottom-method="loadBottom" :bottom-all-loaded="allLoaded" bottom-pull-text="上拉加载"  ref="loadmore">
                 
 
                 <invest-item :collect="collect" v-if="type == 22" :items="items"></invest-item>
@@ -42,9 +42,8 @@
     
     import searchArticleItem from './searchArticleItem';
     import searchInvestItem from './searchInvestItem';
-
-
-    import Vue from 'vue';
+    
+     import bus from '../bus.js';
     export default {
         props:{  
             currentview:Object,
@@ -80,19 +79,26 @@
  
         },
         created(){
-           
+            bus.$on('refresh',()=>{
+                this.loadData(false,true);        
+            });
             this.loadData();
         },
         mounted(){ 
-          
+        
         },
 
         methods:{
+            addTodo() {
+              
+                console.log(2222);
+             },
             loadTop(id) {
-                //this.loadData(id,true);              
+                this.loadData(id,true);              
             },
             loadBottom(id) { 
-                //console.log(this._uid);             
+                //console.log(this._uid); 
+                console.log(id);            
                 this.loadData(id);
             },
             loadData(id,refresh=false){
@@ -105,12 +111,12 @@
                 var option = this.getparams.option;
                 var _this = this;       
                 this.page += 1;
-                 console.log(id);
+               
                 option.params.page = this.page;
                 this.$http.get(url,option).then(
 
                     (res)=>{
-                        //console.log(res);
+                        console.log(res);
                         if(res.body.list.length){ 
                             if(_this.page == 1){
                                 _this.items = res.body.list;
@@ -127,6 +133,9 @@
                         }else{     
                             //if(id) this.$refs.loadmore.onBottomLoaded(id);              
                            _this.allLoaded = true;
+                           if(_this.page == 1) {
+                                _this.items = null;
+                           }
                            _this.noData = true;
                             setTimeout(()=>{
                                 _this.noData = false;

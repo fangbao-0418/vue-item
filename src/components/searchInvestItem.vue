@@ -4,7 +4,7 @@
     <!-- content1-->
     <div id="items">
     <div class="item" v-for="(item,index) in items">
-        <collect-del-button v-if="collect" :items="items" :type="22" :index="index" class="collect-del-botton"></collect-del-button>   
+        <collect-del-button v-if="collect" :items.sync="items" :type="22" :index="index" class="collect-del-botton"></collect-del-button>   
         <router-link  :to="{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}" >
             <div class="item_left">
                 <div class="item_tit">

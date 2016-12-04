@@ -5,7 +5,20 @@
               <collect-del-button v-if="collect" :items="items" :type="21" :index="index" class="collect-del-botton"></collect-del-button>  
               <template v-if="item.thumb" >
               <router-link  :to="{name:'newsDetail',query:{id:item.itemid}}" >
-                  <template v-if="item.level == 8">                                                 
+                 <template  v-if="item.level !== '8' && item.level !== '9'">  
+                      <div class="descBox">
+                          <div class="title">{{item.title | dsubstr(20)}}</div>
+                          <div class="footnote">
+                              <span class="source">{{item.copyfrom ? item.copyfrom : "当代医药市场网" + item.level}}</span>
+                              <span class="hits"><i class="iconfont">&#xf0048;</i>{{item.hits}}</span>
+                          </div>
+                      </div>
+                      <span class="img" >
+                          <img :src="item.thumb" class="img-small"/>
+                      </span>
+                  </template>  
+                  <template v-else>
+                      <template v-if="item.level == '8'">                                                 
                       <div class="midbox">
                           <div class=title>{{item.title}}<div>
                           <span><img :src="item.thumb"/></span>
@@ -14,29 +27,18 @@
                           <i class="source">{{item.copyfrom}}</i>
                           <i class="hits"><i class="iconfont">&#xf0048;</i>{{item.hits}}</i>
                        </div>                           
-                  </template>  
-                  <template v-if="item.level == 9">                            
-                       <div class="bigbox">
-                          <div class="title">
-                            {{item.title}}
-                          </div>
-                         <img :src="item.thumb"/>
-                         <span>{{item.copyfrom}}</span>
-                         <span class="hits"><i class="iconfont">&#xf0048;</i>{{item.hits}}</span>
-                      </div>                  
-                  </template> 
-                 <template  v-if="item.level != 8 && item.level != 9">  
-                      <div class="descBox">
-                          <div class="title">{{item.title | dsubstr(20)}}</div>
-                          <div class="footnote">
-                              <span class="source">{{item.copyfrom ? item.copyfrom : "当代医药市场网"}}</span>
-                              <span class="hits"><i class="iconfont">&#xf0048;</i>{{item.hits}}</span>
-                          </div>
-                      </div>
-                      <span class="img" >
-                          <img :src="item.thumb" class="img-small"/>
-                      </span>
-                  </template>  
+                      </template>  
+                      <template v-if="item.level == '9'">                            
+                           <div class="bigbox">
+                              <div class="title">
+                                {{item.title}}
+                              </div>
+                             <img :src="item.thumb"/>
+                             <span>{{item.copyfrom}}</span>
+                             <span class="hits"><i class="iconfont">&#xf0048;</i>{{item.hits}}</span>
+                          </div>                  
+                      </template> 
+                  </template>
               </router-link >
               </template>
               <template  v-else >
@@ -72,6 +74,9 @@
       },        
       mounted(){
         console.log(this.items);
+      },
+      methods:{
+       
       },
       filters:{
           dsubstr(title,length){
@@ -189,7 +194,6 @@
 
                 }
                 p{
-                 
                   width:100%;
                   display: inline-block;
                   .copyfrom{
@@ -200,8 +204,6 @@
                 }
                 .hits{
                     font-size:.2rem;
-                    width:10%;
-                   
                     float:right;
                     text-align: right;
                     color:#8f8f8f;

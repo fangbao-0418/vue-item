@@ -3,10 +3,10 @@
 		<!-- header -->
 	    <div class="header" >
 	       <div class="header-logo">
-	         <a><img src="../imgs/tx.jpg"/></a>
+	         <img :src="userinfo.avatar"/>
 	       </div>
 	       <div class="header-title">
-	        当代药物市场
+	        {{userinfo.username}}
 	       </div>
 	    </div>
 	    <!--/header -->
@@ -45,7 +45,7 @@
 	     <!-- detal-->
 	     <div class="detal">
             <router-link class="jf detal-box" :to="{name:'integral'}" tag="div">
-                <span>我的成长值</span>
+                <span>成长值明细</span>
                 <div class="jt">
                    <i class="iconfont">&#xe604;</i>
                 </div>
@@ -76,11 +76,34 @@
 <script>
 	import footer from './footer.vue';
 	import { Toast } from 'mint-ui';
+	import serverapi from '../serverapi';
 	export default {
+		data(){
+			return {
+				userinfo:{
+					username:null
+				}
+			}
+		},
 		components:{
 			'my-footer':footer
 		},
+		mounted(){
+
+			this.loadData();
+		
+		},
 		methods:{
+			loadData(){
+				var url = serverapi.info;
+				var body = {token:localStorage.token};
+				var option = {emulateJSON:true};
+				this.$http.post(url,body,option).then((res) => {
+					console.log(res);
+					this.userinfo = res.body;
+					
+				})
+			},
 			loginout(){
 				localStorage.removeItem('token');
 				this.$router.push({path:'/login'})
@@ -126,10 +149,10 @@
 .header-logo{
 	position: absolute;
 	top:.6rem;
-	left:2.4rem;
 	border-radius:50% 50%;
-	width: 1.45rem;
-	height:1.45rem;
+	left:2.47rem;
+	width: 1.46rem;
+	height:1.46rem;
 	background:#fff;
 }
 
@@ -137,14 +160,15 @@
 	border-radius:50% 50%;
     margin-left:.05rem;
     margin-top:.05rem ;
-    width: 1.35rem;
-    height: 1.35rem;	
+    width: 1.36rem;
+    height: 1.36rem;	
 }
    
 .header-title{
    position: absolute;
    bottom: .72rem;
-   left:2.4rem;
+   width: 100%;
+   text-align: center;
    font-size: .25rem;
   
 }   

@@ -61,11 +61,9 @@
              
                 this.$http.get(url, option).then(function(response){
 
-                    Indicator.close();
+                  
 
                     _this.pageTotal = Math.ceil( response.body.count / 10 );
-
-
 
                     if(finshCallback){
                         finshCallback();
@@ -85,12 +83,9 @@
                         _this.items =  response.body;
                     }else{
                         for(var i=0; i< response.body.list.length; i++){
-
                             _this.items.list.push( response.body.list[i] );
-
                         }
                     }
-
 
                     if(response.body.count > 0){
                         $(document).ready(function() {
@@ -100,6 +95,7 @@
                         _this.loading = false;
                     }
 
+                    Indicator.close();
                     // 响应成功回调
                 }, function(response){
                     // 响应成功回调

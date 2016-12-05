@@ -13,7 +13,7 @@
                 <span class="item_hit">{{item.hits}}点击</span>
                 <span class="item_date">{{item.editdate}}</span>
             </div>
-            <img  v-lazy="item.sptp[0]" class="item_img" />
+            <img  v-lazy="item.sptp != null ? item.sptp[0] : null" class="item_img" />
             <div class="clear"></div>
         </router-link>
     </div>
@@ -34,7 +34,7 @@
         },
 
         mounted(){
-
+            console.log(this.items);
         },
         methods:{
 

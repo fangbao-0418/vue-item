@@ -35,6 +35,7 @@
 <script>
 import blackNav from './blackNav.vue';
 import { Toast } from 'mint-ui';
+import serverapi from '../serverapi';
 export default {
   data() {
     return {
@@ -56,12 +57,10 @@ export default {
   	},
   	checklogin(){
 
-  		var url = "http://www.ey99.com/api/mobile/auth.php";
-
+  		var url = serverapi.auth;
   		var option = {params:{moduleid:2,job:"checklogin",user:this.user,password:this.pwd}}
   		var _this = this;
-  		this.$http.get(url,option).then((res)=>{
-  		
+  		this.$http.get(url,option).then((res)=>{  		
   			if(res.body.res[0] == 1 && res.body.res[1] == 1 && res.body.res[2] != 8){
   				localStorage.token = res.body.token;
   				_this.$router.push({path:'/my'});

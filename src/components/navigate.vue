@@ -21,7 +21,9 @@
     import auth from '../auth.js';
     
     import { Toast } from 'mint-ui';
-
+    
+    
+    
     export default {
         props:{
             path:{
@@ -156,6 +158,6 @@
         color:#999;
     }
     .collect .collected{
-        color:#FF3333;
+        color:#FFB040;
     }
 </style>

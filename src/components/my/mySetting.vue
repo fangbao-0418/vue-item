@@ -5,18 +5,18 @@
 		<my-nav theme="white" title="设置"></my-nav>
 		<div class="myset-main">
 				<ul>
-				<li>
+				<router-link :to="{path:'/my/infoedit'}" tag="li">
 					<span>个人资料修改</span>
 					<i class="iconfont">&#xe604;</i>
-				</li>
-				<li>
+				</router-link>
+				<!-- <li>
 					<span>签到提醒</span>
 					<i><el-switch v-model="status" on-text="" off-text="" @change="passwdstatus"></el-switch></i>
 				</li>
 				<li>
 					<span>意见反馈</span>
 					<i class="iconfont">&#xe604;</i>
-				</li>
+				</li> -->
 			</ul>
 		</div>
 		<div class="logout">
@@ -25,7 +25,7 @@
 	</div>
 </template>
 <script>
-	import blackNav from './blackNav';
+	import blackNav from '../blackNav';
 	export default {
 		data(){
 			return {
@@ -36,9 +36,7 @@
 			'my-nav':blackNav
 		},
 		methods:{
-			passwdstatus(){
-				this.passwdtype = this.passwdtype == "password" ? "text" : "password";
-			},
+			
 		}
 	}
 </script>

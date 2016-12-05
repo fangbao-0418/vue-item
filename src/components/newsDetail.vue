@@ -2,7 +2,7 @@
     <div style="height:100%">
 
     	<!-- nav -->
-        <app-nav :path="path"></app-nav>
+        <app-nav moduleid=21 :id="id" :path="path"></app-nav>
 
         <load v-if="loading"></load>
         <!-- content -->

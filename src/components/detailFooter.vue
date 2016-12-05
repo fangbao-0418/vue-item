@@ -42,7 +42,6 @@
 		.footer-t{
 		  	width: 5.8rem;
 			padding-bottom: .2rem;
-			border-bottom:1px solid #e9e9e9;
 		  	margin: 0 auto;
 			.foot-t-box {
 				i{

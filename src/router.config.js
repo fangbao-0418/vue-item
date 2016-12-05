@@ -5,18 +5,27 @@ import Common from './components/common.vue';
 const Home = resolve => require(['./components/home.vue'],resolve);
 
 import Video from './components/video.vue';
-import My from './components/my.vue';
 import investment from './components/investment.vue';
 import investmentShow from './components/investmentShow.vue';
 import newsDetail from './components/newsDetail.vue';
+
+import search from './components/search.vue';
+
+
 import login from './components/login.vue';
 import register from './components/register.vue';
-import search from './components/search.vue';
-import mySetting from './components/mySetting';
 
-import collect from './components/collect';//收藏
-import integral from './components/integral';//积分成长值
 
+
+import My from './components/my.vue';
+import mySetting from './components/my/mySetting';
+import infoEdit from './components/my/infoEdit';
+import collect from './components/my/collect';//收藏
+import integral from './components/my/integral';//积分成长值
+
+
+
+import nopage from './components/nopage';
  
 import auth from './auth.js';
 function requireAuth (to, from, next) {  	
@@ -26,6 +35,16 @@ function requireAuth (to, from, next) {
  		next({
 		      path: '/login'		      
     	})
+	});
+ 
+}
+function requireLogin (to, from, next) {  	
+	auth.getUserInfo().then((data)=>{
+  		next({
+		      path: '/my'		      
+    	})
+	},()=>{
+ 		next()
 	});
  
 }
@@ -49,16 +68,20 @@ export default {
 
 		{ path: '/',  redirect: '/home'},
 		{ path: '/video', component: Video },
-		{ name: 'my', path: '/my', component: My , beforeEnter: requireAuth },
-		{ name: 'mySetting', path: '/mySetting', component: mySetting, beforeEnter: requireAuth},
-		{ name: 'collect', path: '/collect', component: collect, beforeEnter: requireAuth},
-		{ name: 'integral', path: '/integral', component: integral, beforeEnter: requireAuth},
-		{ path : '/login' , component: login},
+
+		{ name: 'my', path: '/my', component: My, beforeEnter: requireAuth},
+		{ name : 'infoedit',path : '/my/infoedit', component : infoEdit },
+		{ name: 'mySetting', path: '/my/mySetting', component: mySetting, beforeEnter: requireAuth},
+		{ name: 'collect', path: '/my/collect', component: collect, beforeEnter: requireAuth},
+		{ name: 'integral', path: '/my/integral', component: integral, beforeEnter: requireAuth},
+		
+		{ path : '/login' , component: login, beforeEnter: requireLogin},
 		{ path : '/register' , component: register},
 		{ path : '/search' , component : search},
 		{ path: '/investment', component: investment},
 		{ name : 'investmentShow', path: '/investment/show', component: investmentShow },
 		{ name : 'newsDetail', path: '/news/show', component: newsDetail },
+		{ name : '404', path: '/404', component: nopage},
 		{ path: '*', redirect: 'home' }
 
 	]

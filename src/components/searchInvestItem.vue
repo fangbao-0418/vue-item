@@ -3,8 +3,9 @@
 <template>
     <!-- content1-->
     <div id="items">
-    <div class="item"  v-for="item in items">
-        <router-link :to="{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}" >
+    <div class="item" v-for="(item,index) in items">
+        <collect-del-button v-if="collect" :items.sync="items" :type="22" :index="index" class="collect-del-botton"></collect-del-button>   
+        <router-link  :to="{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}" >
             <div class="item_left">
                 <div class="item_tit">
                     {{item.title | dSubstr(20) }}
@@ -23,21 +24,36 @@
 
 
 <script>
-
+    
+    import collectDelButton from './collectDelButton';
 
     export default {
-        props: ['items'],
-        data () {
-            return {
-
+        props: {
+            items:{},
+            collect:{
+                type:Boolean,
+                default:false
             }
         },
-
+        computed:{
+            del(){
+                return true;
+            }
+        },
+        data () {
+            return {
+               
+            }
+        },
+        components:{
+            collectDelButton
+        },
+        
         mounted(){
-            console.log(this.items);
+            
         },
         methods:{
-
+           
         },
         filters:{
             dSubstr(title,length){
@@ -53,12 +69,17 @@
 </script>
 
 
-<style scoped>
+<style lang="sass" scoped>
     .item{
         margin:0px .3rem;
         padding:.2rem 0px;
         width:5.8rem;
-        border-bottom: 1px solid #e7e7e7;
+        border-bottom: 1px solid #fafafa;
+        position: relative;
+        .collect-del-botton{
+            position:absolute;
+            right:0;
+        }
     }
 
     .item_left{

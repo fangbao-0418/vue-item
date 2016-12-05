@@ -24,10 +24,8 @@ Vue.use(VueRouter);
 Vue.use(VueResource);   //加载Resource
 Vue.use(ElementUI);
 
-Vue.use(MintUI);
+Vue.use(MintUI)
 
-import Vuex from 'Vuex';
-Vue.use(Vuex);
 
 Vue.use(VueLazyload, {
     error:require("./assets/err.jpg"),

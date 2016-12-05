@@ -70,11 +70,9 @@
 				this.selecttype();
 			},
 			gosearch(){	
-				if(this.q){
-					this.setSearchItems();
-					this.$parent.currentView = "searchList";
-					this.$router.push({path:'/search',query:{type:this.type,q:this.q}});
-				}			
+				this.setSearchItems();
+				this.$parent.currentView = "searchList";
+				this.$router.push({path:'/search',query:{type:this.type,q:this.q}});
 			},
 			clearSearchItems(){
 				this.searchItems = [];
@@ -96,14 +94,12 @@
 </script>
 <style lang="sass" scoped>
 .search-main{
-	height:100%;
-	background-color:#ffffff;
 	.search-nav{
 		padding:0px 5%;
 		height:.8rem;
 		line-height: .8rem;
 		border-bottom:#FF9900 solid 1px;
-		position:relative;		
+		position:relative;
 		.goback{
 			font-size:.4rem;
 			position:absolute;
@@ -124,10 +120,9 @@
 			line-height: .6rem;
 			margin-left:.2rem;
 			display: inline-block;
-			border:#f0f0f0 solid 1px;
-			background-color: #f0f0f0;
+			border:#efefef solid 1px;
+			background-color: #cfcfcf;
 			border-radius:.05rem;
-
 			::-webkit-input-placeholder { /* WebKit browsers */ 
 			color: #666; 
 			} 
@@ -221,11 +216,8 @@
 			}
 		}
 		.history-list{
-			display: flex;
 			padding-top:.1rem;
 			ul{
-				
-				width:100%;
 				li{
 					width:50%;
 					float:left;

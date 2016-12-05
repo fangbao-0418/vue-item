@@ -7,7 +7,7 @@
 				<ul>
 				<li>
 					<span>个人资料修改</span>
-					<i>&gt;</i>
+					<i class="iconfont">&#xe604;</i>
 				</li>
 				<li>
 					<span>签到提醒</span>
@@ -15,7 +15,7 @@
 				</li>
 				<li>
 					<span>意见反馈</span>
-					<i>&gt;</i>
+					<i class="iconfont">&#xe604;</i>
 				</li>
 			</ul>
 		</div>
@@ -48,36 +48,39 @@
 	background: #fff;
     width: 6rem;
     padding:0 .2rem;
-	margin-top: .2rem;
+	margin-top: .3rem;
     border-bottom: 1px solid #cdcdcd;
-}
-
-.myset-main li {
-	list-style: none;
-	font-size: .25rem;
-	padding: .15rem 0;
-}
-
-.myset-main i {
-	float: right;
-	color:#c3c3c3;
-	font-size: .35rem;
-	line-height: 1;
+    border-top: 1px solid #cdcdcd;
+	li{
+		list-style: none;
+		font-size: .25rem;
+		padding: .19rem 0;
+	}
+	li:nth-child(1){
+		border-bottom:1px solid #e8e8e8;
+	}
+	li:nth-child(2){
+		border-bottom:1px solid #e8e8e8;
+	}
+	i{
+		float: right;
+		color:#c3c3c3;
+		font-size: .35rem;
+		line-height: 1;
+		-moz-transform:rotate(180deg); -webkit-transform:rotate(180deg);transform:rotate(180deg);
+	}
 }
 
 .logout{
 	text-align: center;
 	width: 6rem;
 	padding: .15rem .2rem;
-	margin-top: .2rem;
+	margin-top: .3rem;
 	background:#fff;
 	color: #e9547a;
 	font-size: .26rem;
     border-bottom: 1px solid #cdcdcd;
+    border-top: 1px solid #cdcdcd;
 }
-
-
-
-
 
 </style>

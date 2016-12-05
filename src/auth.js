@@ -14,31 +14,16 @@ export default {
    
     var p = new Promise(function(resolve, reject){
         vue.$http.get(url,option).then((res)=>{ 
-            
-            if(res.body.userid != null){ 
-              resolve(res.body);  
-            }  else{
-              reject();    
-            }
+              if(res.body != null){ 
+                resolve(res.body);  
+              }  else{
+                reject();    
+              }
         });
     });
     return p; 
   },
-  checkun(username){
-    var url = "http://www.ey99.com/api/mobile/auth.php";
-    var body = {username:username};
-    var option = {emulateJSON:true,params:{job:"checkun"}};    
-    var p = new Promise(function(resolve, reject){
-        vue.$http.post(url,body,option).then((res)=>{ 
-            if(res.body == 1){ 
-              resolve();  
-            }  else{
-              reject();    
-            }
-        });
-    });
-    return p; 
-  },
+
   onChange () {}
 }
  

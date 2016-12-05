@@ -7,114 +7,37 @@
 			<ul>
 				<li>
 					<span>手机号码</span>
-					<input maxlength="11" v-model="mobile" palceholder="手机号码"/>
+					<input palceholder="手机号码"/>
 				</li>
 				<li>
 					<span>验证码</span>
-					<input class="validate" v-model="validate" maxlength="6"/>
-					<el-button type="primary" @click="sendvalidate" :disabled="disabled">{{validatetext}}</el-button>
+					<input class="validate" maxlength="6"/>
+					<el-button type="primary" :disabled="true">获取验证码</el-button>
 				</li>
 				<li>
 					<span>密码</span>
-					<input v-if="passwordshow" type="text" v-model="password" palceholder="6-16位字母、数字和符号" />
-					<input v-if="!passwordshow" type="password" v-model="password" palceholder="6-16位字母、数字和符号" />
-					<mt-switch v-model="passwordshow"></mt-switch>
+					<input palceholder="6-16位字母、数字和符号" />
 				</li>
 			</ul>
 
-			<el-button @click.native="submit" :disabled="!validateok" type="primary">注册</el-button>
+			<el-button @click.native="open" type="primary">注册</el-button>
 		</div>
 	</div>
 </template>
 <script>
 	import blackNav from './blackNav.vue';
-	import { Switch } from 'mint-ui';
-	import { Toast } from 'mint-ui';
-	import auth from '../auth';
 	export default {
-		data(){
-			return {
-				mobile:null,
-				password:null,
-				validate:null,
-				issend:false,
-				validatetext:"获取验证码",
-				timer:null,
-				passwordshow:false,	
-				passwordtype:"password"			
-			}		
-		},
-		computed:{
-			disabled(){
-				if(this.mobile && !this.issend ){
-					return false;
-				}else{
-					return true;
-				}
-			},
-			validateok(){
-				if(this.mobile && this.validate && this.password){
-					return true;
-				}else{
-					return false;
-				}
-			}
-			 
-		},
 		components:{
 			'my-nav':blackNav,
-			
 		},
 		methods: {
-			toast(message){
-				Toast({
-					  message: message,
-					  position: 'bottom',
-					  duration: 5000
-					});
-			},
-
-      		submit() {
-      			if(this.validateok){
-      				var pattern = /^1[3|4|5|7|8][0-9]\d{8}$/;
-      				if(pattern.exec(this.mobile)){
-      					this.toast("手机号码格式有误");
-      				}else{
-      					auth.checkun(this.mobile).then(()=>{
-      						if(this.validate !== "123456"){
-								this.toast("验证码错误");
-      						}else if(this.password.length < 6){
-		      					this.toast("密码输入过短");
-		      				}else{
-		      					this.toast("暂停注册");
-		      				}
-      				
-      					},()=>{
-      						this.toast("该手机号已被使用");
-      					})
-      				}      				
-      			}
-      		},
-      		sendvalidate(){
-      			this.issend = true;
-      			var time = 60;
-      			var _this = this;
-      			this.timer = setInterval(()=>{
-      				time--;
-      				_this.validatetext = "重新获取(" + time + ")秒";
-      				if (time == 1){
-      					_this.issend = false;
-      					_this.validatetext = "重新获取"
-      					clearInterval(_this.timer);
-      				}
-      			},100)
-      		},
-      	
-    	},
-    	beforeDestory(){
-    		if(this.timer){
-    			clearInterval(this.timer);
-    		}
+      		open() {
+      			this.$message({
+		          showClose: true,
+		          message: '恭喜你，这是一条成功消息',
+		          top:"80%"
+		        });
+      		}
     	}
 
 	}
@@ -147,20 +70,14 @@
 						font-size:.3rem;
 						float:left;
 					}
-					.mint-switch{
-						position:absolute;
-						right:0;
-						display:inline-block;
-					}
 					.el-button{
 						padding:0px;
 						margin:0px;
 						position:absolute;
-						width:2.3rem;
+						width:32%;
 						top:.1rem;
 						right:0px;
 						height:.6rem;
-						font-size:.28rem;
 					}
 					input{
 						width:70%;

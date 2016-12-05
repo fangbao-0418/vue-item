@@ -17,7 +17,6 @@ import mySetting from './components/mySetting';
 import collect from './components/collect';//收藏
 import integral from './components/integral';//积分成长值
 
-import nopage from './components/nopage';
  
 import auth from './auth.js';
 function requireAuth (to, from, next) {  	
@@ -27,16 +26,6 @@ function requireAuth (to, from, next) {
  		next({
 		      path: '/login'		      
     	})
-	});
- 
-}
-function requireLogin (to, from, next) {  	
-	auth.getUserInfo().then((data)=>{
-  		next({
-		      path: '/my'		      
-    	})
-	},()=>{
- 		next()
 	});
  
 }
@@ -64,13 +53,12 @@ export default {
 		{ name: 'mySetting', path: '/mySetting', component: mySetting, beforeEnter: requireAuth},
 		{ name: 'collect', path: '/collect', component: collect, beforeEnter: requireAuth},
 		{ name: 'integral', path: '/integral', component: integral, beforeEnter: requireAuth},
-		{ path : '/login' , component: login, beforeEnter: requireLogin},
+		{ path : '/login' , component: login},
 		{ path : '/register' , component: register},
 		{ path : '/search' , component : search},
 		{ path: '/investment', component: investment},
 		{ name : 'investmentShow', path: '/investment/show', component: investmentShow },
 		{ name : 'newsDetail', path: '/news/show', component: newsDetail },
-		{ name : '404', path: '/404', component: nopage},
 		{ path: '*', redirect: 'home' }
 
 	]

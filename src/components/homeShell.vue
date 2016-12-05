@@ -1,25 +1,15 @@
-/**
- *  Created by fangbao on 12/03/2016
- *
- *  公共上拉加载组件
- *
- */
-
 <template>
     <div class="page-container">
-        <load></load>
+        <load  :loading="loading" ></load>
 
         <div v-if="!loading" class="page-items">
-            <!--  -->
-            <mt-loadmore :top-method="loadTop" :bottom-method="loadBottom" :bottom-all-loaded="allLoaded" bottom-pull-text="上拉加载"  ref="loadmore">
+            <mt-loadmore :bottom-method="loadBottom"  ref="loadmore">
                 
-
-                <invest-item :collect="collect" v-if="type == 22" :items="items"></invest-item>
-
-                <article-item :collect="collect" v-if="type == 21" :items="items"></article-item>
              
+                <my-paging :items="items"></my-paging>
+              
                 
-                <div v-if="noData" slot="bottom" class="mint-loadmore-bottom">
+                <div v-show="noData" slot="bottom" class="mint-loadmore-bottom">
                     没有了
                 </div>
             </mt-loadmore>
@@ -39,29 +29,18 @@
     import { Indicator } from 'mint-ui';
     
     import noData from './noData';
-    
-    import searchArticleItem from './searchArticleItem';
-    import searchInvestItem from './searchInvestItem';
-    
-     import bus from '../bus.js';
+  
+    import Vue from 'vue';
     export default {
         props:{  
             currentview:Object,
             getparams:Object,
-            collect:{
-                type:Boolean,
-                default:false,
-            },
             issearchpage:{
                 default:false
-            },
-            type:{
-                default:0
             }
         },
         data(){
             return {
-                allLoaded:false,
                 loading:true,
                 items:null,
                 page:0,
@@ -72,51 +51,48 @@
         components:{
             'load':load,
             noData,
-            "article-item":searchArticleItem,
-            "invest-item":searchInvestItem
         },
         updated(){   
  
         },
         created(){
-            bus.$on('refresh',()=>{
-                this.loadData(false,true);        
-            });
             this.loadData();
         },
         mounted(){ 
-        
+
+            console.log(this.getparams)
+
+            Vue.component('my-paging',this.currentview);
+           
         },
 
         methods:{
-            addTodo() {
-              
-                console.log(2222);
-             },
             loadTop(id) {
                 this.loadData(id,true);              
             },
-            loadBottom(id) { 
-                //console.log(this._uid); 
-                console.log(id);            
-                this.loadData(id);
+            loadBottom(id) {
+
+              
+                    this.loadData(id); 
+              
+              
+            
             },
             loadData(id,refresh=false){
                 if(refresh){
                     this.page = 0;
                     if(id) this.$refs.loadmore.onTopLoaded(id);
                 }
-                
+ 
+
                 var url = this.getparams.url;
                 var option = this.getparams.option;
                 var _this = this;       
                 this.page += 1;
-               
                 option.params.page = this.page;
                 this.$http.get(url,option).then(
 
                     (res)=>{
-                        console.log(res);
                         if(res.body.list.length){ 
                             if(_this.page == 1){
                                 _this.items = res.body.list;
@@ -132,16 +108,10 @@
 
                         }else{     
                             //if(id) this.$refs.loadmore.onBottomLoaded(id);              
-                           _this.allLoaded = true;
-                           if(_this.page == 1) {
-                                _this.items = null;
-                           }
-                           _this.noData = true;
+                            _this.noData = true;
                             setTimeout(()=>{
                                 _this.noData = false;
-                              
                                 if(id) _this.$refs.loadmore.onBottomLoaded(id);
-
                             },1000)
                             _this.emptyresource = true;
                         }

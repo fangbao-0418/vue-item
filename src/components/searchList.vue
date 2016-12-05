@@ -1,31 +1,23 @@
-<style scoped>
-	.search-nav{
-		border-bottom: 1px solid #fafafa;
-		position: fixed;
-		top: 0;
-		z-index: 999;
-	}
-	.search-list{
-		padding-top:.81rem;
-	}
-</style>
 <template>
 	<div>
-		<my-nav class="search-nav" theme="white" :title="q"></my-nav>	
-		<home-shell class="search-list" :type="type" :getparams="getParams" :issearchpage="true"></home-shell>
+		<my-nav theme="white" :title="q"></my-nav>	
+		<home-shell :currentview="currentView" :getparams="getParams" :issearchpage="true"></home-shell>
 	</div>
 </template>
 <script>
  
 	import blackNav from './blackNav';
 	import homeShell from './homeShell';
-	 
+	import searchArticleItem from './searchArticleItem';
+	import searchInvestItem from './searchInvestItem';
+
 	export default {		
 		data(){
 			return {
-				path:{path:"/search"},				 
+				path:{path:"/search"},
+				'currentView':searchInvestItem,
 				'items':null,
-				type:22,
+				type:0,
 				'getParams':null,
 			}
 		},
@@ -36,11 +28,15 @@
 		},
 		created(){
 			if(this.$route.query.type == "资讯"){
-				this.type = 21;			  
+				this.currentView = searchArticleItem;
+			  
 			}else if(this.$route.query.type == "视频"){
-				this.type = 22;
-			}else{			 
-				this.type = 22;			 
+				 
+				this.currentView = searchArticleItem;
+			}else{
+			 
+				this.type = 1;
+				this.currentView = searchInvestItem;
 			}
 			
 			this.setGetParams(this.type);
@@ -55,10 +51,10 @@
 			},
 			  setGetParams(type=0){
                 
-                if(type == 21){
+                if(type == 0){
                 	var url = "http://www.ey99.com/api/mobile/article.php";
                 }
-                if(type == 22){
+                if(type == 1){
                 	var url = "http://www.ey99.com/api/mobile/investment.php";
                 }              
 

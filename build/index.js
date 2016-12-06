@@ -44682,7 +44682,9 @@
 	exports.default = {
 		integral: host + api_path + "integral.php", //成长值接口
 		info: host + api_path + "info.php", //会员信息接口
-		auth: host + api_path + "auth.php"
+		auth: host + api_path + "auth.php",
+		validate: host + api_path + "sendvalidate.php"
+
 	};
 
 /***/ },
@@ -46496,37 +46498,12 @@
 
 	var _auth2 = _interopRequireDefault(_auth);
 
+	var _serverapi = __webpack_require__(224);
+
+	var _serverapi2 = _interopRequireDefault(_serverapi);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// <template>
-	// 	<div class="pt-perspective">
-	// 		<my-nav title="注册">
-	// 			<router-link :to="{path:'/login'}" class="nav-right" slot="right">登录</router-link>
-	// 		</my-nav>
-	// 		<div class="reg-main">
-	// 			<ul>
-	// 				<li>
-	// 					<span>手机号码</span>
-	// 					<input maxlength="11" v-model="mobile" palceholder="手机号码"/>
-	// 				</li>
-	// 				<li>
-	// 					<span>验证码</span>
-	// 					<input class="validate" v-model="validate" maxlength="6"/>
-	// 					<el-button type="primary" @click="sendvalidate" :disabled="disabled">{{validatetext}}</el-button>
-	// 				</li>
-	// 				<li>
-	// 					<span>密码</span>
-	// 					<input v-if="passwordshow" type="text" v-model="password" palceholder="6-16位字母、数字和符号" />
-	// 					<input v-if="!passwordshow" type="password" v-model="password" palceholder="6-16位字母、数字和符号" />
-	// 					<mt-switch v-model="passwordshow"></mt-switch>
-	// 				</li>
-	// 			</ul>
-	//
-	// 			<el-button @click.native="submit" :disabled="!validateok" type="primary">注册</el-button>
-	// 		</div>
-	// 	</div>
-	// </template>
-	// <script>
 	exports.default = {
 		data: function data() {
 			return {
@@ -46574,7 +46551,7 @@
 
 				if (this.validateok) {
 					var pattern = /^1[3|4|5|7|8][0-9]\d{8}$/;
-					if (pattern.exec(this.mobile)) {
+					if (!pattern.exec(this.mobile)) {
 						this.toast("手机号码格式有误");
 					} else {
 						_auth2.default.checkun(this.mobile).then(function () {
@@ -46592,6 +46569,14 @@
 				}
 			},
 			sendvalidate: function sendvalidate() {
+				if (this.issend == false) {
+					var url = _serverapi2.default.validate;
+					var body = { mobile: this.mobile };
+					var option = { emulateJSON: true };
+					this.$http.post(url, body, option).then(function (res) {
+						console.log(res);
+					});
+				}
 				this.issend = true;
 				var time = 60;
 				var _this = this;
@@ -46603,7 +46588,7 @@
 						_this.validatetext = "重新获取";
 						clearInterval(_this.timer);
 					}
-				}, 100);
+				}, 1000);
 			}
 		},
 		beforeDestory: function beforeDestory() {
@@ -46678,6 +46663,35 @@
 	// 	}
 	//
 	// </style>
+	// <template>
+	// 	<div class="pt-perspective">
+	// 		<my-nav title="注册">
+	// 			<router-link :to="{path:'/login'}" class="nav-right" slot="right">登录</router-link>
+	// 		</my-nav>
+	// 		<div class="reg-main">
+	// 			<ul>
+	// 				<li>
+	// 					<span>手机号码</span>
+	// 					<input maxlength="11" v-model="mobile" palceholder="手机号码"/>
+	// 				</li>
+	// 				<li>
+	// 					<span>验证码</span>
+	// 					<input class="validate" v-model="validate" maxlength="6"/>
+	// 					<el-button type="primary" @click="sendvalidate" :disabled="disabled">{{validatetext}}</el-button>
+	// 				</li>
+	// 				<li>
+	// 					<span>密码</span>
+	// 					<input v-if="passwordshow" type="text" v-model="password" palceholder="6-16位字母、数字和符号" />
+	// 					<input v-if="!passwordshow" type="password" v-model="password" palceholder="6-16位字母、数字和符号" />
+	// 					<mt-switch v-model="passwordshow"></mt-switch>
+	// 				</li>
+	// 			</ul>
+	//
+	// 			<el-button @click.native="submit" :disabled="!validateok" type="primary">注册</el-button>
+	// 		</div>
+	// 	</div>
+	// </template>
+	// <script>
 
 /***/ },
 /* 285 */
@@ -47710,7 +47724,7 @@
 	// 	<div class="integral-area" >
 	// 		<my-nav class="fixed-nav" theme="white" title="成长值明细"></my-nav>
 	// 		<div class="integral-main">
-	// 			<mt-loadmore :bottom-method="loadBottom" bottom-pull-text="上拉加载" :bottom-all-loaded="allLoaded" ref="loadmore">
+	// 			<mt-loadmore v-if="items != null" :bottom-method="loadBottom" bottom-pull-text="上拉加载" :bottom-all-loaded="allLoaded" ref="loadmore">
 	// 				<ul>
 	// 					<li v-for="item in items">
 	// 						<div class="integral-detail-1">
@@ -47736,7 +47750,7 @@
 /* 316 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t<div class=\"integral-area\" _v-b6509802=\"\">\n\t\t<my-nav class=\"fixed-nav\" theme=\"white\" title=\"成长值明细\" _v-b6509802=\"\"></my-nav>\n\t\t<div class=\"integral-main\" _v-b6509802=\"\">\n\t\t\t<mt-loadmore :bottom-method=\"loadBottom\" bottom-pull-text=\"上拉加载\" :bottom-all-loaded=\"allLoaded\" ref=\"loadmore\" _v-b6509802=\"\">\n\t\t\t\t<ul _v-b6509802=\"\">\n\t\t\t\t\t<li v-for=\"item in items\" _v-b6509802=\"\">\n\t\t\t\t\t\t<div class=\"integral-detail-1\" _v-b6509802=\"\">\n\t\t\t\t\t\t\t<span class=\"title\" _v-b6509802=\"\">{{item.reason}}</span>\n\t\t\t\t\t\t\t<span :class=\"getColor(item.amount)\" _v-b6509802=\"\">{{ parseInt(item.amount) &gt; 0 ? \"+\" + item.amount : item.amount }}</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"integral-detail-2\" _v-b6509802=\"\">\n\t\t\t\t\t\t\t<span class=\"addtime\" _v-b6509802=\"\">{{item.adddate}}</span>\n\t\t\t\t\t\t\t<span class=\"balance\" _v-b6509802=\"\">{{item.balance}}</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</li>\n\t\t\t\t</ul>\n\t\t\t\t  <div v-if=\"noData\" slot=\"bottom\" class=\"mint-loadmore-bottom\" _v-b6509802=\"\">\n                    没有了\n                </div>\n\t\t\t</mt-loadmore>\n\t\t</div>\n\t</div>\n";
+	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t<div class=\"integral-area\" _v-b6509802=\"\">\n\t\t<my-nav class=\"fixed-nav\" theme=\"white\" title=\"成长值明细\" _v-b6509802=\"\"></my-nav>\n\t\t<div class=\"integral-main\" _v-b6509802=\"\">\n\t\t\t<mt-loadmore v-if=\"items != null\" :bottom-method=\"loadBottom\" bottom-pull-text=\"上拉加载\" :bottom-all-loaded=\"allLoaded\" ref=\"loadmore\" _v-b6509802=\"\">\n\t\t\t\t<ul _v-b6509802=\"\">\n\t\t\t\t\t<li v-for=\"item in items\" _v-b6509802=\"\">\n\t\t\t\t\t\t<div class=\"integral-detail-1\" _v-b6509802=\"\">\n\t\t\t\t\t\t\t<span class=\"title\" _v-b6509802=\"\">{{item.reason}}</span>\n\t\t\t\t\t\t\t<span :class=\"getColor(item.amount)\" _v-b6509802=\"\">{{ parseInt(item.amount) &gt; 0 ? \"+\" + item.amount : item.amount }}</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"integral-detail-2\" _v-b6509802=\"\">\n\t\t\t\t\t\t\t<span class=\"addtime\" _v-b6509802=\"\">{{item.adddate}}</span>\n\t\t\t\t\t\t\t<span class=\"balance\" _v-b6509802=\"\">{{item.balance}}</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</li>\n\t\t\t\t</ul>\n\t\t\t\t  <div v-if=\"noData\" slot=\"bottom\" class=\"mint-loadmore-bottom\" _v-b6509802=\"\">\n                    没有了\n                </div>\n\t\t\t</mt-loadmore>\n\t\t</div>\n\t</div>\n";
 
 /***/ },
 /* 317 */

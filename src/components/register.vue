@@ -31,6 +31,7 @@
 	import { Switch } from 'mint-ui';
 	import { Toast } from 'mint-ui';
 	import auth from '../auth';
+	import serverapi from '../serverapi';
 	export default {
 		data(){
 			return {
@@ -77,11 +78,15 @@
       		submit() {
       			if(this.validateok){
       				var pattern = /^1[3|4|5|7|8][0-9]\d{8}$/;
-      				if(pattern.exec(this.mobile)){
+      				if(!pattern.exec(this.mobile)){
       					this.toast("手机号码格式有误");
       				}else{
-      					auth.checkun(this.mobile).then(()=>{
-      						if(this.validate !== "123456"){
+      					var url = serverapi.register;
+      					var body = {username:this.mobile,validate:this.validate,password:this.password};
+      					var option = {emulateJSON:true};
+      					this.$http.post(url,body,option).then((res)=>{
+      						console.log(res)
+      						if(!res.body.validate){
 								this.toast("验证码错误");
       						}else if(this.password.length < 6){
 		      					this.toast("密码输入过短");
@@ -96,6 +101,14 @@
       			}
       		},
       		sendvalidate(){
+      			if(this.issend == false){
+      				var url = serverapi.validate;
+      				var body = {mobile:this.mobile};
+      				var option = {emulateJSON:true};
+      				this.$http.post(url,body,option).then((res)=>{
+      					console.log(res);
+      				})
+      			}
       			this.issend = true;
       			var time = 60;
       			var _this = this;
@@ -107,7 +120,7 @@
       					_this.validatetext = "重新获取"
       					clearInterval(_this.timer);
       				}
-      			},100)
+      			},1000)
       		},
       	
     	},

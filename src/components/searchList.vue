@@ -1,16 +1,6 @@
-<style scoped>
-	.search-nav{
-		border-bottom: 1px solid #fafafa;
-		position: fixed;
-		top: 0;
-		z-index: 999;
-	}
-	.search-list{
-		padding-top:.81rem;
-	}
-</style>
+
 <template>
-	<div>
+	<div class="search-main">
 		<my-nav class="search-nav" theme="white" :title="q"></my-nav>	
 		<home-shell class="search-list" :type="type" :getparams="getParams" :issearchpage="true"></home-shell>
 	</div>
@@ -68,3 +58,17 @@
 		}
 	}
 </script>
+<style lang="sass" scoped>
+	.search-main{
+		.search-nav{
+			border-bottom: 1px solid #fafafa;
+			position: fixed;
+			top: 0;
+			z-index: 999;
+		}
+		.search-list{
+			padding-top:.81rem;
+		}
+	}
+	
+</style>

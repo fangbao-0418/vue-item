@@ -183,7 +183,6 @@
 
 .content{
 	width: 6.4rem;
-
     margin: 0 auto;
 	background:#fff;
 }

@@ -44,29 +44,27 @@
 <style lang="sass" scoped>
 .myset-main{
 	background: #fff;
-    width: 6rem;
-    padding:0 .2rem;
+    width: 100%;
 	margin-top: .3rem;
-    border-bottom: 1px solid #cdcdcd;
-    border-top: 1px solid #cdcdcd;
-	li{
-		list-style: none;
-		font-size: .25rem;
-		padding: .19rem 0;
+	ul{
+		li{
+			width: 6rem;
+			padding:.19rem .2rem;
+			list-style: none;
+			font-size: .3rem;			
+			border:1px solid #DFDFDF;
+			i{
+				float: right;
+				color:#c3c3c3;
+				font-size: .35rem;
+				line-height: 1;
+				-moz-transform:rotate(180deg); -webkit-transform:rotate(180deg);transform:rotate(180deg);
+			}			
+		}
 	}
-	li:nth-child(1){
-		border-bottom:1px solid #e8e8e8;
-	}
-	li:nth-child(2){
-		border-bottom:1px solid #e8e8e8;
-	}
-	i{
-		float: right;
-		color:#c3c3c3;
-		font-size: .35rem;
-		line-height: 1;
-		-moz-transform:rotate(180deg); -webkit-transform:rotate(180deg);transform:rotate(180deg);
-	}
+	
+	
+	
 }
 
 .logout{
@@ -76,9 +74,9 @@
 	margin-top: .3rem;
 	background:#fff;
 	color: #e9547a;
-	font-size: .26rem;
-    border-bottom: 1px solid #cdcdcd;
-    border-top: 1px solid #cdcdcd;
+	font-size: .3rem;
+    border-bottom: 1px solid #DFDFDF;
+    border-top: 1px solid #DFDFDF;
 }
 
 </style>

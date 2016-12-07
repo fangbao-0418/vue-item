@@ -12,10 +12,12 @@
     "scss": "^0.2.4",
     "vue": "^2.0.5",
     "vue-bulma-slider": "^1.0.0",
+    "vue-core-image-upload": "^1.0.0",
     "vue-lazyload": "^0.9.0",
     "vue-router": "^2.0.0",
     "vue-script2": "^1.2.2",
-    "vue-video-player": "^2.3.4"
+    "vue-video-player": "^2.3.4",
+    "vue2.x-core-image-upload": "^0.9.2"
   },
   "devDependencies": {
     "babel": "^6.5.2",

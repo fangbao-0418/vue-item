@@ -8,6 +8,6 @@ export default {
 	validate: host + api_path + "sendvalidate.php",
 	register: host + api_path + "register.php",
 	avatarupload: host + api_path + "avatarupload.php",
-	origin: host + api_path + "origin.php", //地区接口
+	region: host + api_path + "region.php", //地区接口
 	video: host + api_path + "video.php" //视频接口
 }

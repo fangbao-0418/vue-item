@@ -110,7 +110,10 @@
                 }
                 .bigbox{
                     width: 6rem;
-                     span{
+                    .title{
+                      padding-bottom: .2rem;
+                    }
+                    span{
                        color: #8f8f8f;
                        display: inline-block;
                        padding: .1rem .05rem .1rem 0;

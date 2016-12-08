@@ -16,10 +16,10 @@
 				</li>
 				<li><span>单位名称:</span><input v-model="userinfo.company" type="text" placeholder="124"/></li>
 				
-				<li><span>所在地区:</span><i @click="selectorigin" class="gray">{{myorigin}}</i>
-					<div v-show="originIsClick" class="selectorigin">
+				<li><span>所在地区:</span><i @click="selectregion" class="gray">{{userinfo.region}}</i>
+					<div v-if="regionIsClick" class="selectregion">
 						<mt-picker :show-toolbar="true" :slots="slots" @change="onValuesChange"></mt-picker>
-						<mt-button @click="selectorigin" type="primary">确定</mt-button>
+						<mt-button @click="selectregion" type="primary">确定</mt-button>
 					</div>
 				</li>
 				<li>
@@ -55,7 +55,7 @@
 					<i><input type="text" v-model="userinfo.email"></i>
 				</li>
 			</ul>
-			<div class="save" @click="save">
+			<div :class="['save',{'disabled':!saved}]" @click="save">
 				<span>保存</span>
 			</div>
 		</div>
@@ -70,16 +70,18 @@
 	import { Button } from 'mint-ui';
 	import radioSelect from '../common/radioselect';
 	import bus from '../../bus.js';
-	import { Indicator } from 'mint-ui';
+	import { Indicator, Toast } from 'mint-ui';
+
 	export default {
 		data(){
 			return {
+				saved:false,
 				sexradio:[1,2],
 				show:false,
-				origin:null,
-				myorigin:null,
+				region:null,
+			
 				userinfo:null,
-				originIsClick:false,
+				regionIsClick:false,
 				slots: [{
 				          flex: 1,
 				          values: [],
@@ -112,8 +114,8 @@
 		},
 		computed:{
 			slot1(){
-				if(this.origin){
-					return this.origin[0];
+				if(this.region){
+					return this.region[0];
 				}else{
 					return null;
 				}				
@@ -126,15 +128,13 @@
 		},	
 		created(){
 			this.loadUserInfo();
-			this.loadOrigin();
+			this.loadregion();
 			
 		},
 		updated(){
-			this.$watch('userinfo', function (newValue, oldValue) {
-			  		console.log('inner:', newValue) // 后输出 "inner" 2			  		
-			})
-			console.log(222);
+			
 		},
+		 
 		mounted(){
 			Indicator.open({			
 			  spinnerType: 'fading-circle'
@@ -144,12 +144,14 @@
 				that.userinfo.gender = value;			
 				that.radioChange()
 			});
+
 		},
 		methods:{
 			watchUserInfo(){
+			 	var _this = this;
 			 	this.$watch('userinfo', function (newValue, oldValue) {
-			  		console.log('inner:', newValue) // 后输出 "inner" 2			  		
-				})
+			  		_this.saved = true;		  		
+				},{deep: true})
 			},
 			radioChange(value){
 				this.show = false;
@@ -157,13 +159,50 @@
 			radioselect(){
 				this.show = true;
 			},
+			toast(msg){
+				Toast({
+				  message: msg,
+				  position: 'bottom',
+				  duration: 2000
+				});
+			},
 			save(){
-				var url = serverapi.info;
-				var body = {action:"infoedit",data:this.userinfo,token:localStorage.token};
-				var option = {emulateJSON:true};
-				this.$http.post(url,body,option).then((res)=>{
-					console.log(res)
-				})
+				if(this.saved){
+					var postcodeReg =  /^[1-9]\d{5}$/;
+					var qqReg = /^[1-9][0-9]{4,}$/;
+					var emailReg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+					if(this.userinfo.nickname<=4 || this.userinfo.nickname >30){
+						this.toast("昵称不合法，昵称必须是4~30位字符");
+					}else if(this.userinfo.company<=4 || this.userinfo.company >60){
+						this.toast("单位名称不合法，名称必须是4~60位字符");
+					}else if(this.userinfo.address<=4 || this.userinfo.company >120){
+						this.toast("联系地址不合法，地址必须是4~120位字符");
+					}else if( !postcodeReg.exec(this.userinfo.postcode)  ){
+						this.toast("邮编格式不正确");
+					}else if( !qqReg.exec(this.userinfo.qq)  ){
+						this.toast("QQ格式不正确");
+					}else if( !emailReg.exec(this.userinfo.email)  ){
+						this.toast("邮箱格式不正确");
+					}else{
+						Indicator.open({
+							text: '正在保存',			
+						  	spinnerType: 'fading-circle'
+						});
+
+						var url = serverapi.info;
+						var body = {action:"infoedit",data:this.userinfo,token:localStorage.token};
+						var option = {emulateJSON:true};
+						this.$http.post(url,body,option).then((res)=>{
+							Indicator.close();
+							this.$router.push({path:'/my/mySetting'});
+						})
+
+					}
+
+
+					
+				}
+				
 			},
 			loadUserInfo(){
 				var url = serverapi.info;
@@ -173,20 +212,22 @@
 					//console.log(res.body);			
 					this.userinfo = res.body;
 					Indicator.close();
-					
+
+					//获取用户信息后监听改变
+					this.watchUserInfo();
 				})
 			},
-			selectorigin(){
-				this.originIsClick = !this.originIsClick;
+			selectregion(){
+				this.regionIsClick = !this.regionIsClick;
 			},
-			loadOrigin(){
-				var url = serverapi.origin;
+			loadregion(){
+				var url = serverapi.region;
 				this.$http.get(url).then((res)=>{
 					//console.log(res.body);
-					this.origin = res.body;
+					this.region = res.body;
 					//console.log(this.slots);
 					this.slots[0].values = res.body[0];
-					//console.log(this.origin);
+					//console.log(this.region);
 					this.slots[2].values = res.body['0_0'];
 					this.slots[4].values = res.body['0_0_0'];
 					//this.onValuesChange(Picker,values);
@@ -194,11 +235,11 @@
 			},
 			onValuesChange(picker, values) {
 				var index = [0,0];
-				index[0] = this.origin[0].indexOf(values[0]);
-				index[1] = this.origin['0_'+index[0]].indexOf( values[1] );	
-				picker.setSlotValues(1,this.origin['0_' + index[0] ]);				
-				picker.setSlotValues(2,this.origin['0_' + index[0] + '_' + index[1] ]);
-				this.myorigin = values[0] + '-' + values[1] + '-' + values[2]; 
+				index[0] = this.region[0].indexOf(values[0]);
+				index[1] = this.region['0_'+index[0]].indexOf( values[1] );	
+				picker.setSlotValues(1,this.region['0_' + index[0] ]);				
+				picker.setSlotValues(2,this.region['0_' + index[0] + '_' + index[1] ]);
+				this.userinfo.region = values[0] + '-' + values[1] + '-' + values[2]; 
 			}
 		}
 	}
@@ -234,6 +275,7 @@
 				margin-top:.2rem;
 				background:#fff;
 				padding: 0 .2rem;
+				margin-bottom: .4rem;
 				li{
 					font-size: .3rem;
 					padding:.25rem 0;
@@ -243,7 +285,7 @@
 						font-size: .27rem;
 					}
 				}
-		       	.selectorigin{
+		       	.selectregion{
 		       		.picker{
 		       				font-size:.3rem;
 		       		}
@@ -279,10 +321,13 @@
 				width:97%;
 				margin:0 auto;
 				text-align: center;
-				background: #c8c8c8;
+				background: rgb(11,190,6);
 				font-size: .3rem;
 				padding: .28rem 0;
 				color: #fff;
+			}
+			.disabled{
+				background: #c8c8c8;
 			}
 		}
 	}	 

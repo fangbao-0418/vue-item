@@ -242,16 +242,7 @@
         text-size-adjust: none;
     }
 
-    #app {
-        height: 100%;
-        max-width: 400px;
-        margin: 0 auto
-    }
-    ul{
-        list-style: none;
-        padding: 0px;
-        margin: 0px
-    }
+  
 
 
     /*scrollbar start*/

@@ -4,28 +4,46 @@ import Common from './components/common.vue';
 //import Home from './components/home.vue';
 const Home = resolve => require(['./components/home.vue'],resolve);
 
-import Video from './components/video.vue';
-import investment from './components/investment.vue';
-import investmentShow from './components/investmentShow.vue';
-import newsDetail from './components/newsDetail.vue';
+//import Video from './components/video.vue';
+const Video = resolve => require(['./components/video.vue'],resolve);
 
-import search from './components/search.vue';
+//import investment from './components/investment.vue';
+const investment = resolve => require(['./components/investment.vue'],resolve);
+//import investmentShow from './components/investmentShow.vue';
+const investmentShow = resolve => require(['./components/investmentShow.vue'],resolve);
+//import newsDetail from './components/newsDetail.vue';
+const newsDetail = resolve => require(['./components/newsDetail.vue'],resolve);
+//import search from './components/search.vue';
+const search = resolve => require(['./components/search.vue'],resolve);
 
+//import login from './components/login.vue';
+const login = resolve => require(['./components/login.vue'],resolve);
 
-import login from './components/login.vue';
-import register from './components/register.vue';
-
-
-
-import My from './components/my.vue';
-import mySetting from './components/my/mySetting';
-import infoEdit from './components/my/infoEdit';
-import collect from './components/my/collect';//收藏
-import integral from './components/my/integral';//积分成长值
-
+//import register from './components/register.vue';
+const register = resolve => require(['./components/register.vue'],resolve);
 
 
-import nopage from './components/nopage';
+
+//import My from './components/my.vue';
+const My  = resolve => require(['./components/my.vue'],resolve);
+
+
+//import mySetting from './components/my/mySetting';
+const mySetting = resolve => require(['./components/my/mySetting.vue'],resolve);
+
+//import infoEdit from './components/my/infoEdit';
+const infoEdit = resolve => require(['./components/my/infoEdit.vue'],resolve);
+
+//import collect from './components/my/collect';//收藏
+const collect = resolve => require(['./components/my/collect.vue'],resolve);
+
+//import integral from './components/my/integral';//积分成长值
+const integral = resolve => require(['./components/my/integral.vue'],resolve);
+
+
+
+//import nopage from './components/nopage';
+const nopage = resolve => require(['./components/nopage.vue'],resolve);
  
 import auth from './auth.js';
 function requireAuth (to, from, next) {  	

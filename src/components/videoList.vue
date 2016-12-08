@@ -20,39 +20,32 @@
 </template>
 <script>
  	import vueVideo from './common/video.vue';
+ 	import serverapi from '../serverapi';
 	export default {
 		data () {
-		  return {
-     	 		items:[
-     	 			{
-     	 				source : 
-		                    {
-		                        src : 'http://www.runoob.com/try/demo_source/movie.mp4',
-		                      	thumb: 'http://www.ey99.com/file/upload/201611/29/095833211.gif'
-		                    },
-		                title:"习大大访问你"
-     	 			}					
-     	 		]
+		    return {
+     	 		items:[]
 			 
 
-		  	}
-		  },
- methods: {
-    playerStateChanged(playerCurrentState) {
-      console.log(playerCurrentState)
-    }
-  },
+		 	}
+		},
+		mounted(){
+			this.loadData();
+		},
+		methods: {
+			loadData(){
+				var url = serverapi.video;
+				this.$http.get(url).then((res)=>{
+					this.items = res.body.list
+				})
+			}   
+		},
 		components: {
 		    'vplayer': vueVideo
-		  },
-
-		   events: {
-    'playerStateChanged': function (playerCurrentState) {
-      console.log(playerCurrentState)
-    }
+		},
+ 
   }
-
-	}
+ 
 </script>
 <style lang="sass" scoped>
 	.videoItem{

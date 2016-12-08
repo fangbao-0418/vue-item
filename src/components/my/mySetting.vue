@@ -19,7 +19,7 @@
 				</li> -->
 			</ul>
 		</div>
-		<div class="logout">
+		<div @click="loginout" class="logout">
 			<span>退出登录</span>
 		</div>
 	</div>
@@ -36,7 +36,10 @@
 			'my-nav':blackNav
 		},
 		methods:{
-			
+			loginout(){
+				localStorage.removeItem('token');
+				this.$router.push({path:'/login'})
+			},
 		}
 	}
 </script>

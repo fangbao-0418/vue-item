@@ -267,11 +267,11 @@
     <div id="vue-video" ref="box">
         <div class="v-mask" ref="mask" @click="play" @dblclick="screen" @mousemove="tool">
             <video preload="auto" ref="video">
-                <source :src="source.src" :type="source.type">
+                <source v-for="list in source.list" :src="list.src" :type="'video/' + list.type">
             </video>
             <div class="v-load" ref="load">
 
-  <div class="imgarea">
+            <div class="imgarea">
                 <img :src="source.thumb"/>
                 <i></i>
             </div>

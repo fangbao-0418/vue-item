@@ -1,24 +1,20 @@
 <template>
-	<div class="info-box">
+	<div class="info-box" v-if="userinfo">
 		<my-nav class="info-head" theme="white" title="个人资料"></my-nav>
 		
-		<div class="particulars">
+		<div class="particulars" >
 			<avatar-upload></avatar-upload>
 			<ul>
 				<li>
 				<span>昵称:</span>
-					<i><input type="text" v-model="userinfo.nickname"  placeholder="小明"></i>
+					<i><input type="text" v-model="userinfo.nickname" ></i>
 				</li>
-				<li>
+				<li @click="radioselect">
 					<span>性别:</span>
-					<i><input type="text" placeholder="男"></i>
+					<i v-if="userinfo.gender == 1" class="gray">男士</i>
+					<i v-if="userinfo.gender == 2" class="gray">女士</i>
 				</li>
-				<li>
-					<span>生日:</span>
-					<i><input type="text" placeholder="2011-1-1"></i>
-				</li>
-			 
-				<li><span><em>*</em>单位名称:</span><input v-model="userinfo.company" type="text" placeholder="124"/></li>
+				<li><span>单位名称:</span><input v-model="userinfo.company" type="text" placeholder="124"/></li>
 				
 				<li><span>所在地区:</span><i @click="selectorigin" class="gray">{{myorigin}}</i>
 					<div v-show="originIsClick" class="selectorigin">
@@ -32,38 +28,38 @@
 				</li>
 				<li>
 					<span>邮编:</span>
-					<i><input type="text" placeholder="请输入真实邮编,以便联系业务"></i>
+					<i><input type="text" v-model="userinfo.postcode"></i>
 				</li>
 				<li>
 					<span>电话:</span>
-					<i><input type="text" value="130-545454"></i>
+					<i><input type="text" v-model="userinfo.telephone" ></i>
 				</li>
 				<li>
 					<span>联系人:</span>
-					<i><input type="text" placeholder="ANN"></i>
+					<i><input type="text"  v-model="userinfo.truename" ></i>
 				</li>
 				<li>
 					<span>手机:</span>
-					<i><input type="text"></i>
+					<i><input type="text" v-model="userinfo.mobile" ></i>
 				</li>
 				<li>
 					<span>传真:</span>
-					<i><input type="text" placeholder="请输入真实传真号,以便联系业务"></i>
+					<i><input type="text" v-model="userinfo.fax" ></i>
 				</li>
 				<li>
 					<span>QQ:</span>
-					<i><input type="text" placeholder="请输入真实QQ号,以便联系业务"></i>
+					<i><input type="text" v-model="userinfo.qq"></i>
 				</li>
 				<li>
 					<span>E-mail:</span>
-					<i><input type="text"placeholder="1197036595@QQ.com"></i>
+					<i><input type="text" v-model="userinfo.email"></i>
 				</li>
 			</ul>
-			<div class="save">
+			<div class="save" @click="save">
 				<span>保存</span>
 			</div>
 		</div>
-
+		<radio-select :show="show" :value="userinfo.gender" :option="sexradio"></radio-select>
 	</div>
 </template>
 <script>
@@ -72,19 +68,17 @@
 	import { Picker } from 'mint-ui';
 	import serverapi from '../../serverapi';
 	import { Button } from 'mint-ui';
+	import radioSelect from '../common/radioselect';
+	import bus from '../../bus.js';
+	import { Indicator } from 'mint-ui';
 	export default {
 		data(){
 			return {
+				sexradio:[1,2],
+				show:false,
 				origin:null,
 				myorigin:null,
-				userinfo:{
-					member:{
-
-					},
-					company:{
-
-					}
-				},
+				userinfo:null,
 				originIsClick:false,
 				slots: [{
 				          flex: 1,
@@ -127,24 +121,59 @@
 		},
 		components:{
 			'my-nav':blackNav,
-			avatarUpload
+			avatarUpload,
+			radioSelect
 		},	
 		created(){
 			this.loadUserInfo();
 			this.loadOrigin();
-
-		},
-		mounted(){
 			
 		},
+		updated(){
+			this.$watch('userinfo', function (newValue, oldValue) {
+			  		console.log('inner:', newValue) // 后输出 "inner" 2			  		
+			})
+			console.log(222);
+		},
+		mounted(){
+			Indicator.open({			
+			  spinnerType: 'fading-circle'
+			});
+			var that = this;
+			bus.$on('close',function(value){
+				that.userinfo.gender = value;			
+				that.radioChange()
+			});
+		},
 		methods:{
+			watchUserInfo(){
+			 	this.$watch('userinfo', function (newValue, oldValue) {
+			  		console.log('inner:', newValue) // 后输出 "inner" 2			  		
+				})
+			},
+			radioChange(value){
+				this.show = false;
+			},
+			radioselect(){
+				this.show = true;
+			},
+			save(){
+				var url = serverapi.info;
+				var body = {action:"infoedit",data:this.userinfo,token:localStorage.token};
+				var option = {emulateJSON:true};
+				this.$http.post(url,body,option).then((res)=>{
+					console.log(res)
+				})
+			},
 			loadUserInfo(){
 				var url = serverapi.info;
 				var body = {token:localStorage.token};
 				var option = {emulateJSON:true};
 				this.$http.post(url,body,option).then((res) => {	
-					console.log(res.body);			
+					//console.log(res.body);			
 					this.userinfo = res.body;
+					Indicator.close();
+					
 				})
 			},
 			selectorigin(){

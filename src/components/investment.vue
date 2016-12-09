@@ -1,6 +1,6 @@
 <template>
 <div class="white_box">
-    <load ></load>
+    <load :loading="loading"></load>
 
     <div id="pullDown"  v-if="!loading">
         <pull-to-refresh
@@ -38,13 +38,23 @@
                 loading:true,
                 page:0,
                 pageTotal:0,
-
                 noPage:false,
             }
         },
         created(){          
             this.loadData(false);
-         },
+        },
+        updated(){
+            console.log(this.catid);
+        },
+        watch: {
+            '$route' (to, from) {
+                console.log(to);
+                this.loading = true;
+                this.page = 0;
+                this.loadData(false);             
+            }
+        },
         mounted(){
             // $(".white_box").height($("#app")[0].clientHeight - $(".top")[0].clientHeight - $(".nav")[0].clientHeight - $(".footer")[0].clientHeight);
         },

@@ -61,7 +61,6 @@
   .dropped{
     border:4px solid #ea6153;
   }
-
   .g-core-image-corp-container{
     z-index: 1900;
     position:fixed;
@@ -117,7 +116,6 @@
     width: 100%;
     color:#999;    
   }
-
   .g-core-image-corp-container .info-aside .config-info .image-details td{
     border:none; 
     line-height: 24px;
@@ -218,23 +216,18 @@
 
 <script>
   /**simple ajax handler**/
-
   let xhr = function (method, url, headers, data, callback,error) {
-
     var r = new XMLHttpRequest();
     var error = error || function() {
       console.error('AJAX ERROR!')
     };
-
     // Binary?
     var binary = false;
     if (method === 'blob') {
         binary = method;
         method = 'GET';
     }
-
     method = method.toUpperCase();
-
     // Xhr.responseType 'json' is not supported in any of the vendors yet.
     r.onload = function (e) {
         var json = r.response;
@@ -245,24 +238,18 @@
                 json = error('access_denied', r.statusText);
             }
         }
-
         var headers = headersToJSON(r.getAllResponseHeaders());
         headers.statusCode = r.status;
-
         callback(json || (method === 'GET' ? error('empty_response', 'Could not get resource') : {}), headers);
     };
-
     r.onerror = function (e) {
         var json = r.responseText;
         try {
             json = JSON.parse(r.responseText);
         } catch (_e) {}
-
         callback(json || error('access_denied', 'Could not get resource'));
     };
-
     var x;
-
     // Should we add the query to the URL?
     if (method === 'GET' || method === 'DELETE') {
         data = null;
@@ -281,13 +268,10 @@
                     f.append(x, data[x]);
                 }
             }
-
         data = f;
     }
-
     // Open the path, async
     r.open(method, url, true);
-
     if (binary) {
       if ('responseType' in r) {
           r.responseType = binary;
@@ -295,18 +279,14 @@
           r.overrideMimeType('text/plain; charset=x-user-defined');
       }
     }
-
     // Set any bespoke headers
     if (headers) {
         for (x in headers) {
             r.setRequestHeader(x, headers[x]);
         }
     }
-
     r.send(data);
-
     return r;
-
     // Headers are returned as a string
     function headersToJSON(s) {
       var r = {};
@@ -315,7 +295,6 @@
       while ((m = reg.exec(s))) {
           r[m[1]] = m[2];
       }
-
       return r;
     }
   };
@@ -367,7 +346,6 @@
       let $halfY = parseInt(document.body.offsetHeight) - parseInt(window.getComputedStyle($dotBox).height) - parseInt(window.getComputedStyle($topH).height);
       let resetX = isMobile ? e.changedTouches[0]['clientX'] : e.clientX;
       let resetY = isMobile ? e.changedTouches[0]['clientY'] : e.clientY;
-
       if (this.splitX > this.splitY) {
         if (parseInt(resetX) >= ($halfX / 2) + parseInt(window.getComputedStyle($dotBox).width)) {
           return;
@@ -430,7 +408,6 @@
           //现在拖拉范围不准超过某一边的范围
           return;
         } else {
-
           this.el.style.width = (this.coor.w + (isMobile ? e.changedTouches[0]['clientX']:e.clientX) - this.coor.x) + 'px';
           this.el.style.height = this.el.style.width;
           //限制拖拉的范围在图片内
@@ -497,7 +474,6 @@
       }
       document.addEventListener('mousemove',moves,false);
       document.addEventListener('mouseup',stopM,false);
-
     }
     
     move(e) {
@@ -549,13 +525,15 @@
   const GIF_LOADING_SRC = 'data:image/gif;base64,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';
     
 
+  import bus from '../../bus.js';
+
   export default {
     props:{
       url: {
         type: String,
       },
       text: {
-        type:String,
+        type:String,     
       },
       class: {
         type: Array,
@@ -622,7 +600,8 @@
     methods: {
       
       __dispatch(name,res) {
-        this.$emit && this.$emit(name, res);
+        console.log(name);
+        bus.$emit && bus.$emit(name, res);
       },
       __find(str) {
         let dq = document.querySelector('#vciu-modal-' + this.formID);
@@ -638,7 +617,6 @@
                 return this.__dispatch('errorHandle','TYPE ERROR');
             }
         }
-
         if (e.target.files[0].size > this.maxFileSize) {
             var formatSize;
             if (parseInt(this.maxFileSize / 1024 / 1024) > 0) {
@@ -648,8 +626,7 @@
             } else {
                 formatSize = options.maxFileSize.toFixed(2) + 'Byte';
             }
-            this.errorHandle('FILE IS TOO LARGER MAX FILE IS ' + formatSize);
-            return;
+            return this.__dispatch('errorHandle','图片大小超过' + (this.maxFileSize / 1024 / 1024) + 'MB');
         }
         
         this.files = e.target.files;
@@ -791,7 +768,6 @@
               }
               
             }      
-
         }
         this. __dispatch('imageuploading',this.files);
         xhr('POST',this.url,{},data,function(res) {
@@ -823,5 +799,4 @@
     },
     
   };
-
 </script>

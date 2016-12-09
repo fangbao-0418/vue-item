@@ -80,14 +80,14 @@
 
 
 
-.footer[_v-760fc992]{
+.footer[_v-4d19d370]{
     background-color: #f4f5f6;
     width:6.4rem;
     position: fixed;
     bottom: 0px;
     padding:.08rem 0px;
 }
-.footer .home[_v-760fc992]{
+.footer .home[_v-4d19d370]{
     margin-left: .56rem;
     float: left;
     width:1rem;
@@ -95,7 +95,7 @@
     text-align: center;
     cursor: pointer;
 }
-.footer .home i[_v-760fc992]{
+.footer .home i[_v-4d19d370]{
 
     background: url(images/home_icon.png);
     width:.40rem;
@@ -103,7 +103,7 @@
     display: inline-block;
     background-size: .40rem .40rem;
 }
-.footer .home .cur[_v-760fc992]{
+.footer .home .cur[_v-4d19d370]{
 
     background: url(images/home_icon_on.png);
     width:.40rem;
@@ -113,7 +113,7 @@
 }
 
 
-.footer .video[_v-760fc992]{
+.footer .video[_v-4d19d370]{
     margin-left:1.2rem;
     float: left;
     width:1rem;
@@ -121,7 +121,7 @@
     text-align: center;
     cursor: pointer;
 }
-.footer .video .cur[_v-760fc992]{
+.footer .video .cur[_v-4d19d370]{
 
     background: url(images/video_icon_on.png) no-repeat;
     width:.40rem;
@@ -130,7 +130,7 @@
     background-size: .38rem .38rem;
     background-position: center;
 }
-.footer .video i[_v-760fc992]{
+.footer .video i[_v-4d19d370]{
 
     background: url(images/video_icon.png) no-repeat;
     width:.40rem;
@@ -141,7 +141,7 @@
 }
 
 
-.footer .my[_v-760fc992]{
+.footer .my[_v-4d19d370]{
     margin-left: 1.2rem;
     float: left;
     width:1rem;
@@ -149,7 +149,7 @@
     text-align: center;
     cursor: pointer;
 }
-.footer .my i[_v-760fc992]{
+.footer .my i[_v-4d19d370]{
 
     background: url(images/my_icon.png);
     width:.40rem;
@@ -157,7 +157,7 @@
     display: inline-block;
     background-size: .40rem .40rem;
 }
-.footer .my .cur[_v-760fc992]{
+.footer .my .cur[_v-4d19d370]{
     background: url(images/my_icon_on.png);
     width:.40rem;
     height: .40rem;
@@ -165,13 +165,13 @@
     background-size: .40rem .40rem;
 }
 
- .footer span[_v-760fc992]{
+ .footer span[_v-4d19d370]{
      display: block;
      width: 1rem;
      font-size: .22rem;
      color: #4c4c4c;
  }
-.footer .on span[_v-760fc992]{
+.footer .on span[_v-4d19d370]{
     display: block;
     width: 1rem;
     font-size: .22rem;
@@ -2707,7 +2707,9 @@ to{opacity:0
 .mintui-field-warning:before { content: "\E608"; }
 .mintui-success:before { content: "\E602"; }
 .mintui-field-success:before { content: "\E609"; }
-.Drugs {
+.mint-indicator-wrapper{
+	z-index:999999999;
+}.Drugs {
   border: 1px solid #bae3fa;
   color: #bae3fa;
   border-radius: .05rem;

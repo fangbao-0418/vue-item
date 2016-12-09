@@ -3,7 +3,7 @@
 		<my-nav class="info-head" theme="white" title="个人资料"></my-nav>
 		
 		<div class="particulars" >
-			<avatar-upload></avatar-upload>
+			<avatar-upload :src="userinfo.avatar"></avatar-upload>
 			<ul>
 				<li>
 				<span>昵称:</span>

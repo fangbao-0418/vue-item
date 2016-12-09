@@ -6,14 +6,14 @@
     <div class="video-area">
     <video-list></video-list>
     </div>    
-    <my-footer></my-footer>   
+   
  </div>
 </template>
 
 <script>
     import footer from './footer.vue';
     import videoList from './videoList.vue';
-    import myTop from './top.vue';
+    import myTop from './common/top.vue';
     import homeShell from './homeShell.vue';   
 
     export default {

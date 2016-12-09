@@ -17,7 +17,18 @@
               text: '数据加载中',
               spinnerType: 'fading-circle'
             });
-
+       },
+       watch:{
+            loading:function(val,oldVal){
+                if(val){
+                      Indicator.open({
+                          text: '数据加载中',
+                          spinnerType: 'fading-circle'
+                        });
+                }else{
+                     Indicator.close()
+                }
+            } 
        },
        updated(){
          

@@ -32,12 +32,12 @@
 		        width:3rem;
 		        height:0.4rem;
 		        display: inline-block;
-		        background: url("../image/logo.png") no-repeat;
+		        background: url("../../image/logo.png") no-repeat;
 		        background-size: 3rem .4rem;
 		        margin-top:.22rem;
     		}
 	    	.search_bg{
-		        background: url("../image/search_bg.png");
+		        background: url("../../image/search_bg.png");
 		        width:2.61rem;
 		        height:.5rem;
 		        line-height: .5rem;

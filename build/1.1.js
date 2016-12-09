@@ -26,7 +26,7 @@ webpackJsonp([1,3],Array(90).concat([
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-df052d0a/home.vue"
+	  var id = "_v-7eedf4cc/home.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -50,8 +50,8 @@ webpackJsonp([1,3],Array(90).concat([
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-df052d0a&scoped=true!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./home.vue", function() {
-				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-df052d0a&scoped=true!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./home.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-7eedf4cc&scoped=true!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./home.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-7eedf4cc&scoped=true!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./home.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -69,7 +69,7 @@ webpackJsonp([1,3],Array(90).concat([
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.content[_v-df052d0a]{\n    height:100%;\n}\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.content[_v-7eedf4cc]{\n    height:100%;\n}\n", ""]);
 
 	// exports
 
@@ -190,7 +190,7 @@ webpackJsonp([1,3],Array(90).concat([
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-33ab01ae/header.vue"
+	  var id = "_v-0ab50b8c/header.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -214,8 +214,8 @@ webpackJsonp([1,3],Array(90).concat([
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-33ab01ae&scoped=true!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./header.vue", function() {
-				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-33ab01ae&scoped=true!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./header.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-0ab50b8c&scoped=true!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./header.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-0ab50b8c&scoped=true!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./header.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -233,7 +233,7 @@ webpackJsonp([1,3],Array(90).concat([
 
 
 	// module
-	exports.push([module.id, ".box[_v-33ab01ae] {\n  height: 1.44rem; }\n\n.nav[_v-33ab01ae] {\n  width: 5.8rem;\n  height: .6rem;\n  padding: 0px .3rem;\n  position: fixed;\n  top: .84rem;\n  background-color: #f5f5f3;\n  z-index: 999999; }\n\n#nav-smartSetup[_v-33ab01ae] {\n  position: absolute;\n  z-index: 1;\n  margin-left: -.3rem;\n  padding-left: .1rem;\n  height: .6rem;\n  width: 6rem;\n  overflow: hidden; }\n\n#nav-smartSetup ul li[_v-33ab01ae] {\n  float: left;\n  line-height: .64rem;\n  font-size: .3rem;\n  padding: 0px .2rem;\n  height: .6rem; }\n\n#nav-smartSetup ul .cur[_v-33ab01ae] {\n  font-size: .32rem;\n  color: #ed1b23;\n  float: left;\n  line-height: .64rem;\n  padding: 0px .2rem; }\n\n#scroller[_v-33ab01ae] {\n  position: absolute;\n  z-index: 1;\n  -webkit-tap-highlight-color: transparent;\n  height: 100%;\n  -webkit-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -webkit-text-size-adjust: none;\n  -ms-text-size-adjust: none;\n  -o-text-size-adjust: none;\n  text-size-adjust: none; }\n\n#scroller ul[_v-33ab01ae] {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  width: 110%;\n  line-height: 4rem;\n  height: .6rem;\n  text-align: center; }\n\n.line_a[_v-33ab01ae] {\n  background: url(" + __webpack_require__(97) + ");\n  display: inline-block;\n  width: .14rem;\n  height: .6rem;\n  background-size: .14rem .6rem;\n  position: absolute;\n  top: 0px;\n  right: .67rem;\n  z-index: 999; }\n\n.plus_a[_v-33ab01ae] {\n  position: absolute;\n  right: .3rem;\n  background: url(" + __webpack_require__(98) + ");\n  display: inline-block;\n  width: .37rem;\n  height: .36rem;\n  float: right;\n  margin-top: .10rem;\n  cursor: pointer;\n  background-size: .37rem .36rem;\n  z-index: 999; }\n", ""]);
+	exports.push([module.id, ".box[_v-0ab50b8c] {\n  height: 1.44rem; }\n\n.nav[_v-0ab50b8c] {\n  width: 5.8rem;\n  height: .6rem;\n  padding: 0px .3rem;\n  position: fixed;\n  top: .84rem;\n  background-color: #f5f5f3;\n  z-index: 999999; }\n\n#nav-smartSetup[_v-0ab50b8c] {\n  position: absolute;\n  z-index: 1;\n  margin-left: -.3rem;\n  padding-left: .1rem;\n  height: .6rem;\n  width: 6rem;\n  overflow: hidden; }\n\n#nav-smartSetup ul li[_v-0ab50b8c] {\n  float: left;\n  line-height: .64rem;\n  font-size: .3rem;\n  padding: 0px .2rem;\n  height: .6rem; }\n\n#nav-smartSetup ul .cur[_v-0ab50b8c] {\n  font-size: .32rem;\n  color: #ed1b23;\n  float: left;\n  line-height: .64rem;\n  padding: 0px .2rem; }\n\n#scroller[_v-0ab50b8c] {\n  position: absolute;\n  z-index: 1;\n  -webkit-tap-highlight-color: transparent;\n  height: 100%;\n  -webkit-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -webkit-text-size-adjust: none;\n  -ms-text-size-adjust: none;\n  -o-text-size-adjust: none;\n  text-size-adjust: none; }\n\n#scroller ul[_v-0ab50b8c] {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  width: 110%;\n  line-height: 4rem;\n  height: .6rem;\n  text-align: center; }\n\n.line_a[_v-0ab50b8c] {\n  background: url(" + __webpack_require__(97) + ");\n  display: inline-block;\n  width: .14rem;\n  height: .6rem;\n  background-size: .14rem .6rem;\n  position: absolute;\n  top: 0px;\n  right: .67rem;\n  z-index: 999; }\n\n.plus_a[_v-0ab50b8c] {\n  position: absolute;\n  right: .3rem;\n  background: url(" + __webpack_require__(98) + ");\n  display: inline-block;\n  width: .37rem;\n  height: .36rem;\n  float: right;\n  margin-top: .10rem;\n  cursor: pointer;\n  background-size: .37rem .36rem;\n  z-index: 999; }\n", ""]);
 
 	// exports
 
@@ -520,7 +520,7 @@ webpackJsonp([1,3],Array(90).concat([
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-19b9912e/top.vue"
+	  var id = "_v-d0890410/top.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -544,8 +544,8 @@ webpackJsonp([1,3],Array(90).concat([
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-19b9912e&scoped=true!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./top.vue", function() {
-				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-19b9912e&scoped=true!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./top.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-d0890410&scoped=true!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./top.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-d0890410&scoped=true!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./top.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -563,7 +563,7 @@ webpackJsonp([1,3],Array(90).concat([
 
 
 	// module
-	exports.push([module.id, ".top[_v-19b9912e] {\n  position: fixed;\n  top: 0px;\n  width: 6.4rem;\n  height: .84rem;\n  background: #ed1b23;\n  z-index: 999999; }\n  .top .wrap[_v-19b9912e] {\n    width: 5.8rem;\n    margin: 0px .3rem; }\n    .top .wrap .logo[_v-19b9912e] {\n      width: 3rem;\n      height: 0.4rem;\n      display: inline-block;\n      background: url(" + __webpack_require__(104) + ") no-repeat;\n      background-size: 3rem .4rem;\n      margin-top: .22rem; }\n    .top .wrap .search_bg[_v-19b9912e] {\n      background: url(" + __webpack_require__(105) + ");\n      width: 2.61rem;\n      height: .5rem;\n      line-height: .5rem;\n      float: right;\n      margin-top: .16rem;\n      background-size: 2.61rem .5rem; }\n      .top .wrap .search_bg i[_v-19b9912e] {\n        font-size: .24rem;\n        color: #8f8f8f;\n        padding-left: .5rem;\n        display: inline-block; }\n", ""]);
+	exports.push([module.id, ".top[_v-d0890410] {\n  position: fixed;\n  top: 0px;\n  width: 6.4rem;\n  height: .84rem;\n  background: #ed1b23;\n  z-index: 999999; }\n  .top .wrap[_v-d0890410] {\n    width: 5.8rem;\n    margin: 0px .3rem; }\n    .top .wrap .logo[_v-d0890410] {\n      width: 3rem;\n      height: 0.4rem;\n      display: inline-block;\n      background: url(" + __webpack_require__(104) + ") no-repeat;\n      background-size: 3rem .4rem;\n      margin-top: .22rem; }\n    .top .wrap .search_bg[_v-d0890410] {\n      background: url(" + __webpack_require__(105) + ");\n      width: 2.61rem;\n      height: .5rem;\n      line-height: .5rem;\n      float: right;\n      margin-top: .16rem;\n      background-size: 2.61rem .5rem; }\n      .top .wrap .search_bg i[_v-d0890410] {\n        font-size: .24rem;\n        color: #8f8f8f;\n        padding-left: .5rem;\n        display: inline-block; }\n", ""]);
 
 	// exports
 
@@ -652,7 +652,7 @@ webpackJsonp([1,3],Array(90).concat([
 /* 107 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\t<div class=\"top\" _v-19b9912e=\"\">\n            <div class=\"wrap\" _v-19b9912e=\"\">\n                <i class=\"logo\" _v-19b9912e=\"\"></i>\n                <div class=\"search_bg\" @click=\"gosearch\" _v-19b9912e=\"\">\n                    <i _v-19b9912e=\"\">当代医药市场网</i>\n                </div>\n            </div>\n    </div>\n";
+	module.exports = "\n\t<div class=\"top\" _v-d0890410=\"\">\n            <div class=\"wrap\" _v-d0890410=\"\">\n                <i class=\"logo\" _v-d0890410=\"\"></i>\n                <div class=\"search_bg\" @click=\"gosearch\" _v-d0890410=\"\">\n                    <i _v-d0890410=\"\">当代医药市场网</i>\n                </div>\n            </div>\n    </div>\n";
 
 /***/ },
 /* 108 */
@@ -3272,7 +3272,7 @@ webpackJsonp([1,3],Array(90).concat([
 /* 128 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n<div class=\"box\" _v-33ab01ae=\"\">\n    <my-top _v-33ab01ae=\"\"></my-top>\n    <div class=\"nav\" _v-33ab01ae=\"\">\n        <div id=\"nav-smartSetup\" _v-33ab01ae=\"\">\n            <div id=\"scroller\" _v-33ab01ae=\"\">\n                <ul _v-33ab01ae=\"\">\n                    <li v-on:click=\"selectType('recommend')\" :class=\"{'cur':isCur[0]}\" _v-33ab01ae=\"\">推荐</li>\n                    <li v-on:click=\"selectType('drug',4)\" :class=\"{'cur':isCur[1]}\" _v-33ab01ae=\"\">药品 </li>\n                    <li v-on:click=\"selectType('zyc',11)\" :class=\"{'cur':isCur[2]}\" _v-33ab01ae=\"\">中药材</li>\n                    <li v-on:click=\"selectType('bjsp',5)\" :class=\"{'cur':isCur[3]}\" _v-33ab01ae=\"\">保健食品</li>\n                    <li v-on:click=\"selectType('ylqx',13)\" :class=\"{'cur':isCur[4]}\" _v-33ab01ae=\"\">医疗器械 </li>\n                    <li v-on:click=\"selectType('mrhf',20)\" :class=\"{'cur':isCur[5]}\" _v-33ab01ae=\"\">美容护肤 </li>\n                    <li v-on:click=\"selectType('jsyp',18)\" :class=\"{'cur':isCur[6]}\" _v-33ab01ae=\"\">计生用品 </li>\n                    <li v-on:click=\"selectType('zysb',15)\" :class=\"{'cur':isCur[7]}\" _v-33ab01ae=\"\">制药设备 </li>\n                    <li v-on:click=\"selectType('yly',7)\" :class=\"{'cur':isCur[8]}\" _v-33ab01ae=\"\">原料药 </li>\n                    <li v-on:click=\"selectType('health')\" :class=\"{'cur':isCur[9]}\" _v-33ab01ae=\"\">健康 </li>\n                </ul>\n            </div>\n        </div>\n       <!--  <i class=\"line_a\"></i>\n        <i class=\"plus_a\"></i> -->\n    </div>\n\n</div>\n";
+	module.exports = "\n\n\n<div class=\"box\" _v-0ab50b8c=\"\">\n    <my-top _v-0ab50b8c=\"\"></my-top>\n    <div class=\"nav\" _v-0ab50b8c=\"\">\n        <div id=\"nav-smartSetup\" _v-0ab50b8c=\"\">\n            <div id=\"scroller\" _v-0ab50b8c=\"\">\n                <ul _v-0ab50b8c=\"\">\n                    <li v-on:click=\"selectType('recommend')\" :class=\"{'cur':isCur[0]}\" _v-0ab50b8c=\"\">推荐</li>\n                    <li v-on:click=\"selectType('drug',4)\" :class=\"{'cur':isCur[1]}\" _v-0ab50b8c=\"\">药品 </li>\n                    <li v-on:click=\"selectType('zyc',11)\" :class=\"{'cur':isCur[2]}\" _v-0ab50b8c=\"\">中药材</li>\n                    <li v-on:click=\"selectType('bjsp',5)\" :class=\"{'cur':isCur[3]}\" _v-0ab50b8c=\"\">保健食品</li>\n                    <li v-on:click=\"selectType('ylqx',13)\" :class=\"{'cur':isCur[4]}\" _v-0ab50b8c=\"\">医疗器械 </li>\n                    <li v-on:click=\"selectType('mrhf',20)\" :class=\"{'cur':isCur[5]}\" _v-0ab50b8c=\"\">美容护肤 </li>\n                    <li v-on:click=\"selectType('jsyp',18)\" :class=\"{'cur':isCur[6]}\" _v-0ab50b8c=\"\">计生用品 </li>\n                    <li v-on:click=\"selectType('zysb',15)\" :class=\"{'cur':isCur[7]}\" _v-0ab50b8c=\"\">制药设备 </li>\n                    <li v-on:click=\"selectType('yly',7)\" :class=\"{'cur':isCur[8]}\" _v-0ab50b8c=\"\">原料药 </li>\n                    <li v-on:click=\"selectType('health')\" :class=\"{'cur':isCur[9]}\" _v-0ab50b8c=\"\">健康 </li>\n                </ul>\n            </div>\n        </div>\n       <!--  <i class=\"line_a\"></i>\n        <i class=\"plus_a\"></i> -->\n    </div>\n\n</div>\n";
 
 /***/ },
 /* 129 */
@@ -3303,7 +3303,7 @@ webpackJsonp([1,3],Array(90).concat([
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-02dad7bf/indexMain.vue"
+	  var id = "_v-5641b70e/indexMain.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -3327,8 +3327,8 @@ webpackJsonp([1,3],Array(90).concat([
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./indexMain.vue", function() {
-				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./indexMain.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./indexMain.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./indexMain.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -3367,8 +3367,8 @@ webpackJsonp([1,3],Array(90).concat([
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-02dad7bf&scoped=true!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=1!./indexMain.vue", function() {
-				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-02dad7bf&scoped=true!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=1!./indexMain.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-5641b70e&scoped=true!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=1!./indexMain.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-5641b70e&scoped=true!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=1!./indexMain.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -3386,7 +3386,7 @@ webpackJsonp([1,3],Array(90).concat([
 
 
 	// module
-	exports.push([module.id, ".click_area[_v-02dad7bf] {\n  display: inline-block; }\n\n.click[_v-02dad7bf], .time[_v-02dad7bf] {\n  font-size: 12px;\n  height: 18px;\n  line-height: 18px; }\n\n.note[_v-02dad7bf] {\n  display: inline-block;\n  margin-right: .2rem; }\n  .note .el-tag[_v-02dad7bf] {\n    font-size: 12px;\n    height: 16px;\n    line-height: 16px; }\n", ""]);
+	exports.push([module.id, ".click_area[_v-5641b70e] {\n  display: inline-block; }\n\n.click[_v-5641b70e], .time[_v-5641b70e] {\n  font-size: 12px;\n  height: 18px;\n  line-height: 18px; }\n\n.note[_v-5641b70e] {\n  display: inline-block;\n  margin-right: .2rem; }\n  .note .el-tag[_v-5641b70e] {\n    font-size: 12px;\n    height: 16px;\n    line-height: 16px; }\n", ""]);
 
 	// exports
 
@@ -3591,7 +3591,7 @@ webpackJsonp([1,3],Array(90).concat([
 /* 135 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<div _v-02dad7bf=\"\">\n    <div class=\"ad_content\" v-for=\"item in items.list\" _v-02dad7bf=\"\">\n        <a :href=\"item.text_url\" class=\"click_area\" _v-02dad7bf=\"\">\n            <div v-html=\"item.code\" _v-02dad7bf=\"\"></div>\n            <div class=\"content-info\" _v-02dad7bf=\"\">\n                <ul _v-02dad7bf=\"\">\n\n                    <li _v-02dad7bf=\"\"><span v-if=\"item.note\" class=\"note\" _v-02dad7bf=\"\"><el-tag :type=\"types(item.note)\" _v-02dad7bf=\"\">{{item.note}}</el-tag></span></li>\n                <!--     <li><span class=\"click\">{{item.hits}}</span></li> -->\n                    <li _v-02dad7bf=\"\"><span class=\"time\" _v-02dad7bf=\"\">{{item.ago}}</span></li>\n                </ul>\n            </div>\n        </a>\n        <div class=\"clear\" _v-02dad7bf=\"\"></div>\n    </div>\n</div>\n\n";
+	module.exports = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<div _v-5641b70e=\"\">\n    <div class=\"ad_content\" v-for=\"item in items.list\" _v-5641b70e=\"\">\n        <a :href=\"item.text_url\" class=\"click_area\" _v-5641b70e=\"\">\n            <div v-html=\"item.code\" _v-5641b70e=\"\"></div>\n            <div class=\"content-info\" _v-5641b70e=\"\">\n                <ul _v-5641b70e=\"\">\n\n                    <li _v-5641b70e=\"\"><span v-if=\"item.note\" class=\"note\" _v-5641b70e=\"\"><el-tag :type=\"types(item.note)\" _v-5641b70e=\"\">{{item.note}}</el-tag></span></li>\n                <!--     <li><span class=\"click\">{{item.hits}}</span></li> -->\n                    <li _v-5641b70e=\"\"><span class=\"time\" _v-5641b70e=\"\">{{item.ago}}</span></li>\n                </ul>\n            </div>\n        </a>\n        <div class=\"clear\" _v-5641b70e=\"\"></div>\n    </div>\n</div>\n\n";
 
 /***/ },
 /* 136 */
@@ -3622,7 +3622,7 @@ webpackJsonp([1,3],Array(90).concat([
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7aab4b22/investment.vue"
+	  var id = "_v-47c13600/investment.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -3646,8 +3646,8 @@ webpackJsonp([1,3],Array(90).concat([
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-7aab4b22&scoped=true!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./investment.vue", function() {
-				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-7aab4b22&scoped=true!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./investment.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-47c13600&scoped=true!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./investment.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-47c13600&scoped=true!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./investment.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -3665,7 +3665,7 @@ webpackJsonp([1,3],Array(90).concat([
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.noPage[_v-7aab4b22]{\n    font-size: .2rem;\n    text-align: center;\n    height: .50rem;\n    line-height: .50rem;\n    color: #888;\n}\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.noPage[_v-47c13600]{\n    font-size: .2rem;\n    text-align: center;\n    height: .50rem;\n    line-height: .50rem;\n    color: #888;\n}\n", ""]);
 
 	// exports
 
@@ -3686,8 +3686,8 @@ webpackJsonp([1,3],Array(90).concat([
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=1!./investment.vue", function() {
-				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=1!./investment.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=1!./investment.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=1!./investment.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -4055,7 +4055,7 @@ webpackJsonp([1,3],Array(90).concat([
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-5b87a6a6/investmentList.vue"
+	  var id = "_v-83d0f284/investmentList.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4079,8 +4079,8 @@ webpackJsonp([1,3],Array(90).concat([
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-5b87a6a6&scoped=true!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./investmentList.vue", function() {
-				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-5b87a6a6&scoped=true!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./investmentList.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-83d0f284&scoped=true!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./investmentList.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-83d0f284&scoped=true!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./investmentList.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -4098,7 +4098,7 @@ webpackJsonp([1,3],Array(90).concat([
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.item[_v-5b87a6a6]{\n    margin:0px .3rem;\n    padding:.2rem 0px;\n    wdth:5.8rem;\n    border-bottom: 1px solid #fafafa;\n}\n\n.item_left[_v-5b87a6a6]{\n    width:4rem;\n    float:left;\n}\n.item_tit[_v-5b87a6a6]{\n    padding-right:.2rem;\n    padding-top:.1rem;\n    font-size: .3rem;\n    height:.8rem;\n}\n.item_img[_v-5b87a6a6]{\n    width: 1.8rem;\n    height: 1.2rem;\n}\n.item_cat[_v-5b87a6a6]{\n    border: 1px solid #bae3fa;\n    color: #bae3fa;\n    border-radius: .05rem;\n    font-size: .16rem;\n    padding: 0 .05rem;\n    height: .24rem;\n    line-height: .30rem;\n    display: inline-block;\n    margin-right: .14rem;\n}\n.item_hit[_v-5b87a6a6]{\n    color: #8a8a8a;\n    font-size: .22rem;\n    height: .34rem;\n    line-height: .34rem;\n    margin-right: .26rem;\n    display: inline-block;\n}\n.item_date[_v-5b87a6a6]{\n    height: .34rem;\n    line-height: .34rem;\n    color: #8a8a8a;\n    font-size: .22rem;\n    margin-right: .26rem;\n    display: inline-block;\n}\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.item[_v-83d0f284]{\n    margin:0px .3rem;\n    padding:.2rem 0px;\n    wdth:5.8rem;\n    border-bottom: 1px solid #fafafa;\n}\n\n.item_left[_v-83d0f284]{\n    width:4rem;\n    float:left;\n}\n.item_tit[_v-83d0f284]{\n    padding-right:.2rem;\n    padding-top:.1rem;\n    font-size: .3rem;\n    height:.8rem;\n}\n.item_img[_v-83d0f284]{\n    width: 1.8rem;\n    height: 1.2rem;\n}\n.item_cat[_v-83d0f284]{\n    border: 1px solid #bae3fa;\n    color: #bae3fa;\n    border-radius: .05rem;\n    font-size: .16rem;\n    padding: 0 .05rem;\n    height: .24rem;\n    line-height: .30rem;\n    display: inline-block;\n    margin-right: .14rem;\n}\n.item_hit[_v-83d0f284]{\n    color: #8a8a8a;\n    font-size: .22rem;\n    height: .34rem;\n    line-height: .34rem;\n    margin-right: .26rem;\n    display: inline-block;\n}\n.item_date[_v-83d0f284]{\n    height: .34rem;\n    line-height: .34rem;\n    color: #8a8a8a;\n    font-size: .22rem;\n    margin-right: .26rem;\n    display: inline-block;\n}\n", ""]);
 
 	// exports
 
@@ -4215,7 +4215,7 @@ webpackJsonp([1,3],Array(90).concat([
 /* 169 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n<!-- content1-->\n<div id=\"items\" _v-5b87a6a6=\"\">\n<div class=\"item\" v-for=\"item in items.list\" _v-5b87a6a6=\"\">\n    <router-link :to=\"{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}\" append=\"\" _v-5b87a6a6=\"\">\n        <div class=\"item_left\" _v-5b87a6a6=\"\">\n            <div class=\"item_tit\" _v-5b87a6a6=\"\">\n                {{item.title | dSubstr(20) }}\n            </div>\n\n            <span class=\"item_hit\" _v-5b87a6a6=\"\">{{item.hits}}点击</span>\n            <span class=\"item_date\" _v-5b87a6a6=\"\">{{item.editdate}}</span>\n        </div>\n        <img v-lazy=\"item.sptp != null ? item.sptp[0] : null\" class=\"item_img\" _v-5b87a6a6=\"\">\n        <div class=\"clear\" _v-5b87a6a6=\"\"></div>\n    </router-link>\n</div>\n</div>\n\n";
+	module.exports = "\n\n\n<!-- content1-->\n<div id=\"items\" _v-83d0f284=\"\">\n<div class=\"item\" v-for=\"item in items.list\" _v-83d0f284=\"\">\n    <router-link :to=\"{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}\" append=\"\" _v-83d0f284=\"\">\n        <div class=\"item_left\" _v-83d0f284=\"\">\n            <div class=\"item_tit\" _v-83d0f284=\"\">\n                {{item.title | dSubstr(20) }}\n            </div>\n\n            <span class=\"item_hit\" _v-83d0f284=\"\">{{item.hits}}点击</span>\n            <span class=\"item_date\" _v-83d0f284=\"\">{{item.editdate}}</span>\n        </div>\n        <img v-lazy=\"item.sptp != null ? item.sptp[0] : null\" class=\"item_img\" _v-83d0f284=\"\">\n        <div class=\"clear\" _v-83d0f284=\"\"></div>\n    </router-link>\n</div>\n</div>\n\n";
 
 /***/ },
 /* 170 */
@@ -4245,7 +4245,7 @@ webpackJsonp([1,3],Array(90).concat([
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-e542a460/loading.vue"
+	  var id = "_v-084314df/loading.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4269,8 +4269,8 @@ webpackJsonp([1,3],Array(90).concat([
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-e542a460&scoped=true!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./loading.vue", function() {
-				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-e542a460&scoped=true!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./loading.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-084314df&scoped=true!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./loading.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-084314df&scoped=true!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./loading.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -4288,7 +4288,7 @@ webpackJsonp([1,3],Array(90).concat([
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.box[_v-e542a460]{\n    width:6.4rem;\n    text-align: center; /* Safari */\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    background-color:transparent;\n    height:100%;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n}\n.box i[_v-e542a460]{\n   display: inline-block;\n    -ms-flex-item-align: center;\n        -ms-grid-row-align: center;\n        align-self: center;\n    background: url(" + __webpack_require__(173) + ") no-repeat;\n    background-size: 1.2rem 1.2rem;\n    width:1.2rem;\n    height:1.2rem;\n    display: inline-block;\n    background-color:transparent;\n}\n.spinner[_v-e542a460] {\n    width: 6.4rem;\n    text-align: center;\n\n}\n\n.spinner > div[_v-e542a460] {\n    width: .20rem;\n    height: .20rem;\n    background-color: #ed1b23;\n    border-radius: 100%;\n    display: inline-block;\n    -webkit-animation: bouncedelay 1.4s infinite ease-in-out;\n    animation: bouncedelay 1.4s infinite ease-in-out;\n    /* Prevent first frame from flickering when animation starts */\n    -webkit-animation-fill-mode: both;\n    animation-fill-mode: both;\n}\n\n.spinner .bounce1[_v-e542a460] {\n    -webkit-animation-delay: -0.32s;\n    animation-delay: -0.32s;\n}\n\n.spinner .bounce2[_v-e542a460] {\n    -webkit-animation-delay: -0.16s;\n    animation-delay: -0.16s;\n}\n\n@-webkit-keyframes bouncedelay {\n    0%, 80%, 100% { -webkit-transform: scale(0.0) }\n    40% { -webkit-transform: scale(1.0) }\n}\n\n@keyframes bouncedelay {\n    0%, 80%, 100% {\n        transform: scale(0.0);\n        -webkit-transform: scale(0.0);\n    } 40% {\n          transform: scale(1.0);\n          -webkit-transform: scale(1.0);\n      }\n}\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.box[_v-084314df]{\n    width:6.4rem;\n    text-align: center; /* Safari */\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    background-color:transparent;\n    height:100%;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n}\n.box i[_v-084314df]{\n   display: inline-block;\n    -ms-flex-item-align: center;\n        -ms-grid-row-align: center;\n        align-self: center;\n    background: url(" + __webpack_require__(173) + ") no-repeat;\n    background-size: 1.2rem 1.2rem;\n    width:1.2rem;\n    height:1.2rem;\n    display: inline-block;\n    background-color:transparent;\n}\n.spinner[_v-084314df] {\n    width: 6.4rem;\n    text-align: center;\n\n}\n\n.spinner > div[_v-084314df] {\n    width: .20rem;\n    height: .20rem;\n    background-color: #ed1b23;\n    border-radius: 100%;\n    display: inline-block;\n    -webkit-animation: bouncedelay 1.4s infinite ease-in-out;\n    animation: bouncedelay 1.4s infinite ease-in-out;\n    /* Prevent first frame from flickering when animation starts */\n    -webkit-animation-fill-mode: both;\n    animation-fill-mode: both;\n}\n\n.spinner .bounce1[_v-084314df] {\n    -webkit-animation-delay: -0.32s;\n    animation-delay: -0.32s;\n}\n\n.spinner .bounce2[_v-084314df] {\n    -webkit-animation-delay: -0.16s;\n    animation-delay: -0.16s;\n}\n\n@-webkit-keyframes bouncedelay {\n    0%, 80%, 100% { -webkit-transform: scale(0.0) }\n    40% { -webkit-transform: scale(1.0) }\n}\n\n@keyframes bouncedelay {\n    0%, 80%, 100% {\n        transform: scale(0.0);\n        -webkit-transform: scale(0.0);\n    } 40% {\n          transform: scale(1.0);\n          -webkit-transform: scale(1.0);\n      }\n}\n", ""]);
 
 	// exports
 
@@ -4433,7 +4433,7 @@ webpackJsonp([1,3],Array(90).concat([
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2947efb6/pull-to-refresh.vue"
+	  var id = "_v-7aebf034/pull-to-refresh.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -4457,8 +4457,8 @@ webpackJsonp([1,3],Array(90).concat([
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-2947efb6&scoped=true!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./pull-to-refresh.vue", function() {
-				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-2947efb6&scoped=true!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./pull-to-refresh.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-7aebf034&scoped=true!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./pull-to-refresh.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-7aebf034&scoped=true!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./pull-to-refresh.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -4476,7 +4476,7 @@ webpackJsonp([1,3],Array(90).concat([
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.scroller[_v-2947efb6]{\n  min-height: 101%;/*修正内容高度不够无法scroll*/\n  -webkit-tap-highlight-color:rgba(0,0,0,0);\n}\n.pulldown[_v-2947efb6],.pullup[_v-2947efb6]{\n  -webkit-transition: all 0.2s linear;\n  transition: all 0.2s linear;\n}\n.hide[_v-2947efb6]{\n  display: none;\n}\n.pull-container[_v-2947efb6] {\n  -webkit-transform: translateZ(0);\n          transform: translateZ(0);\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  -webkit-text-size-adjust: none;\n      -ms-text-size-adjust: none;\n          text-size-adjust: none;\n}\n\n/*refresh start*/\n.pulldown[_v-2947efb6],.pullup[_v-2947efb6] {\n  height: .50rem;\n  line-height: .50rem;\n  padding: .05rem .15rem;\n  font-weight: bold;\n  font-size: .14rem;\n  color: #888;\n  text-align: center;\n}\n\n.pulldown .pulldown-icon[_v-2947efb6],.pullup .pullup-icon[_v-2947efb6] {\n  width: .40rem;\n  height: .40rem;\n  background: url(" + __webpack_require__(179) + ") 0 0 no-repeat;\n  background-size: .40rem .80rem;\n  -webkit-transition-property: -webkit-transform;\n  -webkit-transition-duration: 250ms;\n  position: relative;\n  top: .05rem;\n  left: .2rem;\n}\n\n.pulldown .pulldown-label[_v-2947efb6], .pullup .pullup-label[_v-2947efb6]{\n  position:relative;\n  top: -.40rem;\n  font-size:.2rem;\n}\n.pulldown .pulldown-icon[_v-2947efb6] {\n  -webkit-transform: rotate(0deg) translateZ(0);\n}\n.pullup .pullup-icon[_v-2947efb6] {\n  -webkit-transform: rotate(-180deg) translateZ(0);\n}\n\n.pulldown.release .pulldown-icon[_v-2947efb6] {\n  -webkit-transform: rotate(-180deg) translateZ(0);\n}\n\n.pullup.release .pullup-icon[_v-2947efb6] {\n  -webkit-transform: rotate(0deg) translateZ(0);\n}\n\n.pulldown.refresh .pulldown-icon[_v-2947efb6],.pullup.refresh .pullup-icon[_v-2947efb6] {\n  background-position: 0 100%;\n  -webkit-transition-duration: 0ms;\n  -webkit-animation: spinner 3s infinite linear;\n  animation: spinner 3s infinite linear;\n}\n/*通用转动动画*/\n@-webkit-keyframes spinner {\n  0% { -webkit-transform: rotate(0deg); }\n  50% { -webkit-transform: rotate(180deg); }\n  100% { -webkit-transform: rotate(360deg); }\n}\n/*refresh end*/\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.scroller[_v-7aebf034]{\n  min-height: 101%;/*修正内容高度不够无法scroll*/\n  -webkit-tap-highlight-color:rgba(0,0,0,0);\n}\n.pulldown[_v-7aebf034],.pullup[_v-7aebf034]{\n  -webkit-transition: all 0.2s linear;\n  transition: all 0.2s linear;\n}\n.hide[_v-7aebf034]{\n  display: none;\n}\n.pull-container[_v-7aebf034] {\n  -webkit-transform: translateZ(0);\n          transform: translateZ(0);\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  -webkit-text-size-adjust: none;\n      -ms-text-size-adjust: none;\n          text-size-adjust: none;\n}\n\n/*refresh start*/\n.pulldown[_v-7aebf034],.pullup[_v-7aebf034] {\n  height: .50rem;\n  line-height: .50rem;\n  padding: .05rem .15rem;\n  font-weight: bold;\n  font-size: .14rem;\n  color: #888;\n  text-align: center;\n}\n\n.pulldown .pulldown-icon[_v-7aebf034],.pullup .pullup-icon[_v-7aebf034] {\n  width: .40rem;\n  height: .40rem;\n  background: url(" + __webpack_require__(179) + ") 0 0 no-repeat;\n  background-size: .40rem .80rem;\n  -webkit-transition-property: -webkit-transform;\n  -webkit-transition-duration: 250ms;\n  position: relative;\n  top: .05rem;\n  left: .2rem;\n}\n\n.pulldown .pulldown-label[_v-7aebf034], .pullup .pullup-label[_v-7aebf034]{\n  position:relative;\n  top: -.40rem;\n  font-size:.2rem;\n}\n.pulldown .pulldown-icon[_v-7aebf034] {\n  -webkit-transform: rotate(0deg) translateZ(0);\n}\n.pullup .pullup-icon[_v-7aebf034] {\n  -webkit-transform: rotate(-180deg) translateZ(0);\n}\n\n.pulldown.release .pulldown-icon[_v-7aebf034] {\n  -webkit-transform: rotate(-180deg) translateZ(0);\n}\n\n.pullup.release .pullup-icon[_v-7aebf034] {\n  -webkit-transform: rotate(0deg) translateZ(0);\n}\n\n.pulldown.refresh .pulldown-icon[_v-7aebf034],.pullup.refresh .pullup-icon[_v-7aebf034] {\n  background-position: 0 100%;\n  -webkit-transition-duration: 0ms;\n  -webkit-animation: spinner 3s infinite linear;\n  animation: spinner 3s infinite linear;\n}\n/*通用转动动画*/\n@-webkit-keyframes spinner {\n  0% { -webkit-transform: rotate(0deg); }\n  50% { -webkit-transform: rotate(180deg); }\n  100% { -webkit-transform: rotate(360deg); }\n}\n/*refresh end*/\n\n", ""]);
 
 	// exports
 
@@ -6814,13 +6814,13 @@ webpackJsonp([1,3],Array(90).concat([
 /* 183 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n<div :id=\"eleId\" class=\"pull-container\" _v-2947efb6=\"\">\n  <div class=\"scroller\" _v-2947efb6=\"\">\n    <div class=\"pulldown\" :class=\"[pulldownChangeStyle,{'hide':!displaypullDownDiv}]\" _v-2947efb6=\"\">\n      <div class=\"pulldown-icon\" _v-2947efb6=\"\"></div>\n      <div class=\"pulldown-label\" _v-2947efb6=\"\">{{pullDownTip}}</div>\n    </div>\n    <slot _v-2947efb6=\"\"></slot>\n    <div class=\"pullup\" :class=\"[pullupChangeStyle,{'hide':!displaypullUpDiv}]\" _v-2947efb6=\"\">\n      <div class=\"pullup-icon\" _v-2947efb6=\"\"></div>\n      <div class=\"pullup-label\" _v-2947efb6=\"\">{{pullUpTip}}</div>\n    </div>\n  </div>\n</div>\n\n";
+	module.exports = "\n\n<div :id=\"eleId\" class=\"pull-container\" _v-7aebf034=\"\">\n  <div class=\"scroller\" _v-7aebf034=\"\">\n    <div class=\"pulldown\" :class=\"[pulldownChangeStyle,{'hide':!displaypullDownDiv}]\" _v-7aebf034=\"\">\n      <div class=\"pulldown-icon\" _v-7aebf034=\"\"></div>\n      <div class=\"pulldown-label\" _v-7aebf034=\"\">{{pullDownTip}}</div>\n    </div>\n    <slot _v-7aebf034=\"\"></slot>\n    <div class=\"pullup\" :class=\"[pullupChangeStyle,{'hide':!displaypullUpDiv}]\" _v-7aebf034=\"\">\n      <div class=\"pullup-icon\" _v-7aebf034=\"\"></div>\n      <div class=\"pullup-label\" _v-7aebf034=\"\">{{pullUpTip}}</div>\n    </div>\n  </div>\n</div>\n\n";
 
 /***/ },
 /* 184 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"white_box\" _v-7aab4b22=\"\">\n    <load _v-7aab4b22=\"\"></load>\n\n    <div id=\"pullDown\" v-if=\"!loading\" _v-7aab4b22=\"\">\n        <pull-to-refresh @on-pullup=\"onPullup\" @on-pulldown=\"onPulldown\" class=\"page\" _v-7aab4b22=\"\">\n            <inv-list :items=\"items\" _v-7aab4b22=\"\"></inv-list>\n            <div v-show=\"noPage\" class=\"noPage\" _v-7aab4b22=\"\">\n                没有了\n            </div>\n        </pull-to-refresh>\n    </div>\n\n    <div class=\"clear\" _v-7aab4b22=\"\"></div>\n</div>\n\n";
+	module.exports = "\n<div class=\"white_box\" _v-47c13600=\"\">\n    <load _v-47c13600=\"\"></load>\n\n    <div id=\"pullDown\" v-if=\"!loading\" _v-47c13600=\"\">\n        <pull-to-refresh @on-pullup=\"onPullup\" @on-pulldown=\"onPulldown\" class=\"page\" _v-47c13600=\"\">\n            <inv-list :items=\"items\" _v-47c13600=\"\"></inv-list>\n            <div v-show=\"noPage\" class=\"noPage\" _v-47c13600=\"\">\n                没有了\n            </div>\n        </pull-to-refresh>\n    </div>\n\n    <div class=\"clear\" _v-47c13600=\"\"></div>\n</div>\n\n";
 
 /***/ },
 /* 185 */
@@ -6850,7 +6850,7 @@ webpackJsonp([1,3],Array(90).concat([
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-e20be360/recommend.vue"
+	  var id = "_v-3b3e24c2/recommend.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -6874,8 +6874,8 @@ webpackJsonp([1,3],Array(90).concat([
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-e20be360&scoped=true!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./recommend.vue", function() {
-				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-e20be360&scoped=true!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./recommend.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-3b3e24c2&scoped=true!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./recommend.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-3b3e24c2&scoped=true!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./recommend.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -6893,7 +6893,7 @@ webpackJsonp([1,3],Array(90).concat([
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.noPage[_v-e20be360]{\n    font-size: .2rem;\n    text-align: center;\n    height: .50rem;\n    line-height: .50rem;\n    color: #888;\n}\n#pullDown[_v-e20be360]{\n    background: #FFFFFF;\n}\n.white_box[_v-e20be360]{\n    width:6.4rem;\n    background-color:transparent;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n    overflow: hidden;\n}\n\n.page[_v-e20be360]{\n\n    overflow: hidden;\n    position: relative;\n    /* Prevent native touch events on Windows */\n    -ms-touch-action: none;\n    /* Prevent the callout on tap-hold and text selection */\n    -webkit-touch-callout: none;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    -webkit-text-size-adjust: none;\n        -ms-text-size-adjust: none;\n            text-size-adjust: none;\n}\n\n\n\n/*scrollbar start*/\n.iScrollVerticalScrollbar[_v-e20be360] {\n    position: absolute;\n    z-index: 9999;\n    width: 2px;\n    bottom: 2px;\n    top: 2px;\n    right: 2px;\n    overflow: hidden;\n}\n\n.iScrollVerticalScrollbar.iScrollBothScrollbars[_v-e20be360] {\n    bottom: 18px;\n}\n\n.iScrollIndicator[_v-e20be360] {\n    position: absolute;\n    background: #999;\n    border-radius: 6px;\n    opacity: .8;\n}\n\n.iScrollVerticalScrollbar .iScrollIndicator[_v-e20be360] {\n    width: 100%;\n    background: #999;\n}\n/*scrollbar end*/\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.noPage[_v-3b3e24c2]{\n    font-size: .2rem;\n    text-align: center;\n    height: .50rem;\n    line-height: .50rem;\n    color: #888;\n}\n#pullDown[_v-3b3e24c2]{\n    background: #FFFFFF;\n}\n.white_box[_v-3b3e24c2]{\n    width:6.4rem;\n    background-color:transparent;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n    overflow: hidden;\n}\n\n.page[_v-3b3e24c2]{\n\n    overflow: hidden;\n    position: relative;\n    /* Prevent native touch events on Windows */\n    -ms-touch-action: none;\n    /* Prevent the callout on tap-hold and text selection */\n    -webkit-touch-callout: none;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    -webkit-text-size-adjust: none;\n        -ms-text-size-adjust: none;\n            text-size-adjust: none;\n}\n\n\n\n/*scrollbar start*/\n.iScrollVerticalScrollbar[_v-3b3e24c2] {\n    position: absolute;\n    z-index: 9999;\n    width: 2px;\n    bottom: 2px;\n    top: 2px;\n    right: 2px;\n    overflow: hidden;\n}\n\n.iScrollVerticalScrollbar.iScrollBothScrollbars[_v-3b3e24c2] {\n    bottom: 18px;\n}\n\n.iScrollIndicator[_v-3b3e24c2] {\n    position: absolute;\n    background: #999;\n    border-radius: 6px;\n    opacity: .8;\n}\n\n.iScrollVerticalScrollbar .iScrollIndicator[_v-3b3e24c2] {\n    width: 100%;\n    background: #999;\n}\n/*scrollbar end*/\n\n", ""]);
 
 	// exports
 
@@ -7113,7 +7113,7 @@ webpackJsonp([1,3],Array(90).concat([
 /* 189 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n<div class=\"white_box\" _v-e20be360=\"\">\n\n\n     <load _v-e20be360=\"\"></load>\n\n    <div id=\"pullDown\" v-if=\"!loading\" _v-e20be360=\"\">\n        <pull-to-refresh @on-pullup=\"onPullup\" @on-pulldown=\"onPulldown\" class=\"page\" _v-e20be360=\"\">\n            <index-main :items=\"items\" _v-e20be360=\"\"></index-main>\n            <div v-show=\"noPage\" class=\"noPage\" _v-e20be360=\"\">\n                没有了\n            </div>\n        </pull-to-refresh>\n\n    </div>\n\n\n    <div class=\"clear\" _v-e20be360=\"\"></div>\n</div>\n";
+	module.exports = "\n\n<div class=\"white_box\" _v-3b3e24c2=\"\">\n\n\n     <load _v-3b3e24c2=\"\"></load>\n\n    <div id=\"pullDown\" v-if=\"!loading\" _v-3b3e24c2=\"\">\n        <pull-to-refresh @on-pullup=\"onPullup\" @on-pulldown=\"onPulldown\" class=\"page\" _v-3b3e24c2=\"\">\n            <index-main :items=\"items\" _v-3b3e24c2=\"\"></index-main>\n            <div v-show=\"noPage\" class=\"noPage\" _v-3b3e24c2=\"\">\n                没有了\n            </div>\n        </pull-to-refresh>\n\n    </div>\n\n\n    <div class=\"clear\" _v-3b3e24c2=\"\"></div>\n</div>\n";
 
 /***/ },
 /* 190 */
@@ -7143,7 +7143,7 @@ webpackJsonp([1,3],Array(90).concat([
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-b32fc110/health.vue"
+	  var id = "_v-8a39caee/health.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7167,8 +7167,8 @@ webpackJsonp([1,3],Array(90).concat([
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-b32fc110&scoped=true!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./health.vue", function() {
-				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-b32fc110&scoped=true!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./health.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-8a39caee&scoped=true!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./health.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-8a39caee&scoped=true!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./health.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -7186,7 +7186,7 @@ webpackJsonp([1,3],Array(90).concat([
 
 
 	// module
-	exports.push([module.id, ".my-swipe[_v-b32fc110] {\n  width: 6.4rem;\n  height: 2.8rem;\n  position: relative; }\n  .my-swipe img[_v-b32fc110] {\n    width: 6.4rem;\n    height: 2.8rem; }\n  .my-swipe span[_v-b32fc110] {\n    font-size: .28rem;\n    line-height: .52rem;\n    padding-left: .2rem;\n    color: #FFF;\n    width: 6.2rem;\n    height: .5rem;\n    background: rgba(0, 0, 0, 0.5);\n    position: absolute;\n    bottom: 0; }\n\n.card .cardTitle[_v-b32fc110] {\n  background: #fff;\n  color: #333;\n  padding-left: .2rem;\n  height: .85rem;\n  line-height: .85rem;\n  font-weight: 700;\n  font-size: .36rem; }\n\n.card .page-list[_v-b32fc110] {\n  padding-bottom: .94rem; }\n\n.card ul[_v-b32fc110] {\n  width: 6rem;\n  padding: 0px .2rem; }\n  .card ul li[_v-b32fc110] {\n    width: 100%;\n    margin-bottom: .2rem;\n    border-bottom: dashed #ccc 1px; }\n    .card ul li .bigbox[_v-b32fc110] {\n      width: 6rem; }\n      .card ul li .bigbox span[_v-b32fc110] {\n        color: #8f8f8f;\n        display: inline-block;\n        padding: .1rem .05rem .1rem 0;\n        font-size: .24rem; }\n      .card ul li .bigbox img[_v-b32fc110] {\n        width: 6rem;\n        height: 3rem; }\n      .card ul li .bigbox .hits[_v-b32fc110] {\n        font-size: .18rem; }\n        .card ul li .bigbox .hits i[_v-b32fc110] {\n          font-size: .24rem; }\n    .card ul li .midbox[_v-b32fc110] {\n      width: 6rem; }\n      .card ul li .midbox img[_v-b32fc110] {\n        width: 1.94rem;\n        height: 1.23rem;\n        padding-top: .2rem; }\n      .card ul li .midbox span[_v-b32fc110] {\n        display: inline-block;\n        float: left; }\n      .card ul li .midbox .imgmid[_v-b32fc110] {\n        padding: 0.2rem .088rem 0 .088rem; }\n      .card ul li .midbox .source[_v-b32fc110] {\n        color: #8f8f8f;\n        display: inline-block;\n        padding: .1rem .05rem .1rem 0;\n        font-size: .24rem; }\n      .card ul li .midbox .hits[_v-b32fc110] {\n        color: #8f8f8f;\n        display: inline-block;\n        padding: .1rem .05rem .1rem 0;\n        font-size: .18rem; }\n    .card ul li .title[_v-b32fc110] {\n      font-size: .3rem; }\n    .card ul li .descBox[_v-b32fc110] {\n      width: 69%;\n      min-height: 1rem;\n      float: left; }\n      .card ul li .descBox .title[_v-b32fc110] {\n        min-height: 1rem;\n        font-size: .3rem; }\n      .card ul li .descBox .source[_v-b32fc110] {\n        font-size: .24rem;\n        color: #8f8f8f;\n        line-height: .4rem; }\n      .card ul li .descBox .hits[_v-b32fc110] {\n        float: right;\n        font-size: .18rem; }\n    .card ul li .img-small[_v-b32fc110] {\n      float: right;\n      width: 25%;\n      height: 1.2rem; }\n    .card ul li a[_v-b32fc110] {\n      display: inline-block;\n      width: 100%; }\n    .card ul li h2[_v-b32fc110] {\n      padding-bottom: .2rem;\n      display: inline-block;\n      font-size: .3rem;\n      width: 90%;\n      float: left; }\n    .card ul li .hits[_v-b32fc110] {\n      font-size: .2rem;\n      width: 10%;\n      float: right;\n      text-align: right;\n      color: #8f8f8f; }\n      .card ul li .hits i[_v-b32fc110] {\n        font-size: .24rem; }\n", ""]);
+	exports.push([module.id, ".my-swipe[_v-8a39caee] {\n  width: 6.4rem;\n  height: 2.8rem;\n  position: relative; }\n  .my-swipe img[_v-8a39caee] {\n    width: 6.4rem;\n    height: 2.8rem; }\n  .my-swipe span[_v-8a39caee] {\n    font-size: .28rem;\n    line-height: .52rem;\n    padding-left: .2rem;\n    color: #FFF;\n    width: 6.2rem;\n    height: .5rem;\n    background: rgba(0, 0, 0, 0.5);\n    position: absolute;\n    bottom: 0; }\n\n.card .cardTitle[_v-8a39caee] {\n  background: #fff;\n  color: #333;\n  padding-left: .2rem;\n  height: .85rem;\n  line-height: .85rem;\n  font-weight: 700;\n  font-size: .36rem; }\n\n.card .page-list[_v-8a39caee] {\n  padding-bottom: .94rem; }\n\n.card ul[_v-8a39caee] {\n  width: 6rem;\n  padding: 0px .2rem; }\n  .card ul li[_v-8a39caee] {\n    width: 100%;\n    margin-bottom: .2rem;\n    border-bottom: dashed #ccc 1px; }\n    .card ul li .bigbox[_v-8a39caee] {\n      width: 6rem; }\n      .card ul li .bigbox span[_v-8a39caee] {\n        color: #8f8f8f;\n        display: inline-block;\n        padding: .1rem .05rem .1rem 0;\n        font-size: .24rem; }\n      .card ul li .bigbox img[_v-8a39caee] {\n        width: 6rem;\n        height: 3rem; }\n      .card ul li .bigbox .hits[_v-8a39caee] {\n        font-size: .18rem; }\n        .card ul li .bigbox .hits i[_v-8a39caee] {\n          font-size: .24rem; }\n    .card ul li .midbox[_v-8a39caee] {\n      width: 6rem; }\n      .card ul li .midbox img[_v-8a39caee] {\n        width: 1.94rem;\n        height: 1.23rem;\n        padding-top: .2rem; }\n      .card ul li .midbox span[_v-8a39caee] {\n        display: inline-block;\n        float: left; }\n      .card ul li .midbox .imgmid[_v-8a39caee] {\n        padding: 0.2rem .088rem 0 .088rem; }\n      .card ul li .midbox .source[_v-8a39caee] {\n        color: #8f8f8f;\n        display: inline-block;\n        padding: .1rem .05rem .1rem 0;\n        font-size: .24rem; }\n      .card ul li .midbox .hits[_v-8a39caee] {\n        color: #8f8f8f;\n        display: inline-block;\n        padding: .1rem .05rem .1rem 0;\n        font-size: .18rem; }\n    .card ul li .title[_v-8a39caee] {\n      font-size: .3rem; }\n    .card ul li .descBox[_v-8a39caee] {\n      width: 69%;\n      min-height: 1rem;\n      float: left; }\n      .card ul li .descBox .title[_v-8a39caee] {\n        min-height: 1rem;\n        font-size: .3rem; }\n      .card ul li .descBox .source[_v-8a39caee] {\n        font-size: .24rem;\n        color: #8f8f8f;\n        line-height: .4rem; }\n      .card ul li .descBox .hits[_v-8a39caee] {\n        float: right;\n        font-size: .18rem; }\n    .card ul li .img-small[_v-8a39caee] {\n      float: right;\n      width: 25%;\n      height: 1.2rem; }\n    .card ul li a[_v-8a39caee] {\n      display: inline-block;\n      width: 100%; }\n    .card ul li h2[_v-8a39caee] {\n      padding-bottom: .2rem;\n      display: inline-block;\n      font-size: .3rem;\n      width: 90%;\n      float: left; }\n    .card ul li .hits[_v-8a39caee] {\n      font-size: .2rem;\n      width: 10%;\n      float: right;\n      text-align: right;\n      color: #8f8f8f; }\n      .card ul li .hits i[_v-8a39caee] {\n        font-size: .24rem; }\n", ""]);
 
 	// exports
 
@@ -7448,7 +7448,7 @@ webpackJsonp([1,3],Array(90).concat([
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-90ea90b6/homeShell.vue"
+	  var id = "_v-0af196f4/homeShell.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7472,8 +7472,8 @@ webpackJsonp([1,3],Array(90).concat([
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-90ea90b6&scoped=true!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./homeShell.vue", function() {
-				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-90ea90b6&scoped=true!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./homeShell.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-0af196f4&scoped=true!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./homeShell.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-0af196f4&scoped=true!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./homeShell.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -7491,7 +7491,7 @@ webpackJsonp([1,3],Array(90).concat([
 
 
 	// module
-	exports.push([module.id, ".page-container .page-items[_v-90ea90b6] {\n  background: #FFF; }\n", ""]);
+	exports.push([module.id, ".page-container .page-items[_v-0af196f4] {\n  background: #FFF; }\n", ""]);
 
 	// exports
 
@@ -7707,7 +7707,7 @@ webpackJsonp([1,3],Array(90).concat([
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-2003d6a7/noData.vue"
+	  var id = "_v-347ed1b8/noData.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7731,8 +7731,8 @@ webpackJsonp([1,3],Array(90).concat([
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-2003d6a7&scoped=true!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./noData.vue", function() {
-				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-2003d6a7&scoped=true!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./noData.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-347ed1b8&scoped=true!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./noData.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-347ed1b8&scoped=true!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./noData.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -7750,7 +7750,7 @@ webpackJsonp([1,3],Array(90).concat([
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\t.searchless[_v-2003d6a7]{\n\t\n       \tbackground: url(" + __webpack_require__(202) + ");\n\t\twidth: 4rem;\n\t\theight: 4rem;\n\t\tbackground-size:cover;\n\t\tmargin: 14% auto ;\n\t}\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\t.searchless[_v-347ed1b8]{\n\t\n       \tbackground: url(" + __webpack_require__(202) + ");\n\t\twidth: 4rem;\n\t\theight: 4rem;\n\t\tbackground-size:cover;\n\t\tmargin: 14% auto ;\n\t}\n", ""]);
 
 	// exports
 
@@ -7787,7 +7787,7 @@ webpackJsonp([1,3],Array(90).concat([
 /* 204 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"searchless\" _v-2003d6a7=\"\"></div>\n";
+	module.exports = "\n<div class=\"searchless\" _v-347ed1b8=\"\"></div>\n";
 
 /***/ },
 /* 205 */
@@ -7817,7 +7817,7 @@ webpackJsonp([1,3],Array(90).concat([
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-7214e175/searchArticleItem.vue"
+	  var id = "_v-5d4b01c4/searchArticleItem.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -7841,8 +7841,8 @@ webpackJsonp([1,3],Array(90).concat([
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-7214e175&scoped=true!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./searchArticleItem.vue", function() {
-				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-7214e175&scoped=true!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./searchArticleItem.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-5d4b01c4&scoped=true!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./searchArticleItem.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-5d4b01c4&scoped=true!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./searchArticleItem.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -7860,7 +7860,7 @@ webpackJsonp([1,3],Array(90).concat([
 
 
 	// module
-	exports.push([module.id, ".searItems .cardTitle[_v-7214e175] {\n  color: #333;\n  padding-left: .2rem;\n  height: .85rem;\n  line-height: .85rem;\n  font-weight: 700;\n  font-size: .36rem; }\n\n.searItems ul[_v-7214e175] {\n  width: 6rem;\n  padding: 0px .2rem; }\n  .searItems ul li[_v-7214e175] {\n    width: 100%;\n    padding: .14rem 0;\n    border-bottom: solid #fafafa 1px;\n    position: relative; }\n    .searItems ul li .collect-del-botton[_v-7214e175] {\n      position: absolute;\n      right: 0; }\n    .searItems ul li .bigbox[_v-7214e175] {\n      width: 6rem; }\n      .searItems ul li .bigbox .title[_v-7214e175] {\n        padding-bottom: .2rem; }\n      .searItems ul li .bigbox span[_v-7214e175] {\n        color: #8f8f8f;\n        display: inline-block;\n        padding: .1rem .05rem .1rem 0;\n        font-size: .24rem; }\n      .searItems ul li .bigbox img[_v-7214e175] {\n        width: 6rem;\n        height: 3rem; }\n      .searItems ul li .bigbox .hits[_v-7214e175] {\n        font-size: .18rem; }\n        .searItems ul li .bigbox .hits i[_v-7214e175] {\n          font-size: .24rem; }\n    .searItems ul li .midbox[_v-7214e175] {\n      width: 6rem; }\n      .searItems ul li .midbox img[_v-7214e175] {\n        width: 1.94rem;\n        height: 1.23rem;\n        padding-top: .2rem; }\n      .searItems ul li .midbox span[_v-7214e175] {\n        display: inline-block;\n        float: left; }\n      .searItems ul li .midbox .imgmid[_v-7214e175] {\n        padding: 0.2rem .088rem 0 .088rem; }\n      .searItems ul li .midbox .source[_v-7214e175] {\n        color: #8f8f8f;\n        display: inline-block;\n        padding: .1rem .05rem .1rem 0;\n        font-size: .24rem; }\n      .searItems ul li .midbox .hits[_v-7214e175] {\n        color: #8f8f8f;\n        display: inline-block;\n        padding: .1rem .05rem .1rem 0;\n        font-size: .18rem; }\n    .searItems ul li .title[_v-7214e175] {\n      font-size: .3rem; }\n    .searItems ul li .descBox[_v-7214e175] {\n      width: 69%;\n      min-height: 1rem;\n      float: left; }\n      .searItems ul li .descBox .title[_v-7214e175] {\n        min-height: 1rem;\n        font-size: .3rem; }\n      .searItems ul li .descBox .source[_v-7214e175] {\n        font-size: .24rem;\n        color: #8f8f8f;\n        line-height: .4rem; }\n      .searItems ul li .descBox .hits[_v-7214e175] {\n        float: right;\n        font-size: .18rem; }\n    .searItems ul li .img-small[_v-7214e175] {\n      float: right;\n      width: 25%;\n      height: 1.2rem; }\n    .searItems ul li a[_v-7214e175] {\n      display: inline-block;\n      width: 100%; }\n    .searItems ul li h2[_v-7214e175] {\n      padding-bottom: .1rem;\n      display: inline-block;\n      font-size: .3rem;\n      width: 100%;\n      float: left; }\n    .searItems ul li p[_v-7214e175] {\n      width: 100%;\n      display: inline-block; }\n      .searItems ul li p .copyfrom[_v-7214e175] {\n        font-size: .24rem;\n        color: #8f8f8f;\n        line-height: .36rem; }\n    .searItems ul li .hits[_v-7214e175] {\n      font-size: .2rem;\n      float: right;\n      text-align: right;\n      color: #8f8f8f; }\n      .searItems ul li .hits i[_v-7214e175] {\n        font-size: .24rem; }\n", ""]);
+	exports.push([module.id, ".searItems .cardTitle[_v-5d4b01c4] {\n  color: #333;\n  padding-left: .2rem;\n  height: .85rem;\n  line-height: .85rem;\n  font-weight: 700;\n  font-size: .36rem; }\n\n.searItems ul[_v-5d4b01c4] {\n  width: 6rem;\n  padding: 0px .2rem; }\n  .searItems ul li[_v-5d4b01c4] {\n    width: 100%;\n    padding: .14rem 0;\n    border-bottom: solid #fafafa 1px;\n    position: relative; }\n    .searItems ul li .collect-del-botton[_v-5d4b01c4] {\n      position: absolute;\n      right: 0; }\n    .searItems ul li .bigbox[_v-5d4b01c4] {\n      width: 6rem; }\n      .searItems ul li .bigbox .title[_v-5d4b01c4] {\n        padding-bottom: .2rem; }\n      .searItems ul li .bigbox span[_v-5d4b01c4] {\n        color: #8f8f8f;\n        display: inline-block;\n        padding: .1rem .05rem .1rem 0;\n        font-size: .24rem; }\n      .searItems ul li .bigbox img[_v-5d4b01c4] {\n        width: 6rem;\n        height: 3rem; }\n      .searItems ul li .bigbox .hits[_v-5d4b01c4] {\n        font-size: .18rem; }\n        .searItems ul li .bigbox .hits i[_v-5d4b01c4] {\n          font-size: .24rem; }\n    .searItems ul li .midbox[_v-5d4b01c4] {\n      width: 6rem; }\n      .searItems ul li .midbox img[_v-5d4b01c4] {\n        width: 1.94rem;\n        height: 1.23rem;\n        padding-top: .2rem; }\n      .searItems ul li .midbox span[_v-5d4b01c4] {\n        display: inline-block;\n        float: left; }\n      .searItems ul li .midbox .imgmid[_v-5d4b01c4] {\n        padding: 0.2rem .088rem 0 .088rem; }\n      .searItems ul li .midbox .source[_v-5d4b01c4] {\n        color: #8f8f8f;\n        display: inline-block;\n        padding: .1rem .05rem .1rem 0;\n        font-size: .24rem; }\n      .searItems ul li .midbox .hits[_v-5d4b01c4] {\n        color: #8f8f8f;\n        display: inline-block;\n        padding: .1rem .05rem .1rem 0;\n        font-size: .18rem; }\n    .searItems ul li .title[_v-5d4b01c4] {\n      font-size: .3rem; }\n    .searItems ul li .descBox[_v-5d4b01c4] {\n      width: 69%;\n      min-height: 1rem;\n      float: left; }\n      .searItems ul li .descBox .title[_v-5d4b01c4] {\n        min-height: 1rem;\n        font-size: .3rem; }\n      .searItems ul li .descBox .source[_v-5d4b01c4] {\n        font-size: .24rem;\n        color: #8f8f8f;\n        line-height: .4rem; }\n      .searItems ul li .descBox .hits[_v-5d4b01c4] {\n        float: right;\n        font-size: .18rem; }\n    .searItems ul li .img-small[_v-5d4b01c4] {\n      float: right;\n      width: 25%;\n      height: 1.2rem; }\n    .searItems ul li a[_v-5d4b01c4] {\n      display: inline-block;\n      width: 100%; }\n    .searItems ul li h2[_v-5d4b01c4] {\n      padding-bottom: .1rem;\n      display: inline-block;\n      font-size: .3rem;\n      width: 100%;\n      float: left; }\n    .searItems ul li p[_v-5d4b01c4] {\n      width: 100%;\n      display: inline-block; }\n      .searItems ul li p .copyfrom[_v-5d4b01c4] {\n        font-size: .24rem;\n        color: #8f8f8f;\n        line-height: .36rem; }\n    .searItems ul li .hits[_v-5d4b01c4] {\n      font-size: .2rem;\n      float: right;\n      text-align: right;\n      color: #8f8f8f; }\n      .searItems ul li .hits i[_v-5d4b01c4] {\n        font-size: .24rem; }\n", ""]);
 
 	// exports
 
@@ -8038,8 +8038,6 @@ webpackJsonp([1,3],Array(90).concat([
 	//         }
 	//     }
 	// </style>
-	//
-	// </style>
 	// <template>
 	//    <div class="searItems">
 	//         <ul>                
@@ -8129,7 +8127,7 @@ webpackJsonp([1,3],Array(90).concat([
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-e4f8b4a2/collectDelButton.vue"
+	  var id = "_v-201e8100/collectDelButton.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8153,8 +8151,8 @@ webpackJsonp([1,3],Array(90).concat([
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-e4f8b4a2&scoped=true!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./collectDelButton.vue", function() {
-				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-e4f8b4a2&scoped=true!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./collectDelButton.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-201e8100&scoped=true!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./collectDelButton.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-201e8100&scoped=true!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./collectDelButton.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -8172,7 +8170,7 @@ webpackJsonp([1,3],Array(90).concat([
 
 
 	// module
-	exports.push([module.id, "\n.del-button[_v-e4f8b4a2]{\n\tdisplay: inline-block;\n}\n", ""]);
+	exports.push([module.id, "\n.del-button[_v-201e8100]{\n\tdisplay: inline-block;\n}\n", ""]);
 
 	// exports
 
@@ -8302,7 +8300,539 @@ webpackJsonp([1,3],Array(90).concat([
 	});
 
 /***/ },
-/* 214 */,
+/* 214 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * vuex v2.0.0
+	 * (c) 2016 Evan You
+	 * @license MIT
+	 */
+	(function (global, factory) {
+	   true ? module.exports = factory() :
+	  typeof define === 'function' && define.amd ? define(factory) :
+	  (global.Vuex = factory());
+	}(this, (function () { 'use strict';
+
+	var devtoolHook =
+	  typeof window !== 'undefined' &&
+	  window.__VUE_DEVTOOLS_GLOBAL_HOOK__
+
+	function devtoolPlugin (store) {
+	  if (!devtoolHook) { return }
+
+	  store._devtoolHook = devtoolHook
+
+	  devtoolHook.emit('vuex:init', store)
+
+	  devtoolHook.on('vuex:travel-to-state', function (targetState) {
+	    store.replaceState(targetState)
+	  })
+
+	  store.subscribe(function (mutation, state) {
+	    devtoolHook.emit('vuex:mutation', mutation, state)
+	  })
+	}
+
+	function applyMixin (Vue) {
+	  var version = Number(Vue.version.split('.')[0])
+
+	  if (version >= 2) {
+	    var usesInit = Vue.config._lifecycleHooks.indexOf('init') > -1
+	    Vue.mixin(usesInit ? { init: vuexInit } : { beforeCreate: vuexInit })
+	  } else {
+	    // override init and inject vuex init procedure
+	    // for 1.x backwards compatibility.
+	    var _init = Vue.prototype._init
+	    Vue.prototype._init = function (options) {
+	      if ( options === void 0 ) options = {};
+
+	      options.init = options.init
+	        ? [vuexInit].concat(options.init)
+	        : vuexInit
+	      _init.call(this, options)
+	    }
+	  }
+
+	  /**
+	   * Vuex init hook, injected into each instances init hooks list.
+	   */
+
+	  function vuexInit () {
+	    var options = this.$options
+	    // store injection
+	    if (options.store) {
+	      this.$store = options.store
+	    } else if (options.parent && options.parent.$store) {
+	      this.$store = options.parent.$store
+	    }
+	  }
+	}
+
+	function mapState (states) {
+	  var res = {}
+	  normalizeMap(states).forEach(function (ref) {
+	    var key = ref.key;
+	    var val = ref.val;
+
+	    res[key] = function mappedState () {
+	      return typeof val === 'function'
+	        ? val.call(this, this.$store.state, this.$store.getters)
+	        : this.$store.state[val]
+	    }
+	  })
+	  return res
+	}
+
+	function mapMutations (mutations) {
+	  var res = {}
+	  normalizeMap(mutations).forEach(function (ref) {
+	    var key = ref.key;
+	    var val = ref.val;
+
+	    res[key] = function mappedMutation () {
+	      var args = [], len = arguments.length;
+	      while ( len-- ) args[ len ] = arguments[ len ];
+
+	      return this.$store.commit.apply(this.$store, [val].concat(args))
+	    }
+	  })
+	  return res
+	}
+
+	function mapGetters (getters) {
+	  var res = {}
+	  normalizeMap(getters).forEach(function (ref) {
+	    var key = ref.key;
+	    var val = ref.val;
+
+	    res[key] = function mappedGetter () {
+	      if (!(val in this.$store.getters)) {
+	        console.error(("[vuex] unknown getter: " + val))
+	      }
+	      return this.$store.getters[val]
+	    }
+	  })
+	  return res
+	}
+
+	function mapActions (actions) {
+	  var res = {}
+	  normalizeMap(actions).forEach(function (ref) {
+	    var key = ref.key;
+	    var val = ref.val;
+
+	    res[key] = function mappedAction () {
+	      var args = [], len = arguments.length;
+	      while ( len-- ) args[ len ] = arguments[ len ];
+
+	      return this.$store.dispatch.apply(this.$store, [val].concat(args))
+	    }
+	  })
+	  return res
+	}
+
+	function normalizeMap (map) {
+	  return Array.isArray(map)
+	    ? map.map(function (key) { return ({ key: key, val: key }); })
+	    : Object.keys(map).map(function (key) { return ({ key: key, val: map[key] }); })
+	}
+
+	function isObject (obj) {
+	  return obj !== null && typeof obj === 'object'
+	}
+
+	function isPromise (val) {
+	  return val && typeof val.then === 'function'
+	}
+
+	function assert (condition, msg) {
+	  if (!condition) { throw new Error(("[vuex] " + msg)) }
+	}
+
+	var Vue // bind on install
+
+	var Store = function Store (options) {
+	  var this$1 = this;
+	  if ( options === void 0 ) options = {};
+
+	  assert(Vue, "must call Vue.use(Vuex) before creating a store instance.")
+	  assert(typeof Promise !== 'undefined', "vuex requires a Promise polyfill in this browser.")
+
+	  var state = options.state; if ( state === void 0 ) state = {};
+	  var plugins = options.plugins; if ( plugins === void 0 ) plugins = [];
+	  var strict = options.strict; if ( strict === void 0 ) strict = false;
+
+	  // store internal state
+	  this._options = options
+	  this._committing = false
+	  this._actions = Object.create(null)
+	  this._mutations = Object.create(null)
+	  this._wrappedGetters = Object.create(null)
+	  this._runtimeModules = Object.create(null)
+	  this._subscribers = []
+	  this._watcherVM = new Vue()
+
+	    // bind commit and dispatch to self
+	  var store = this
+	  var ref = this;
+	  var dispatch = ref.dispatch;
+	  var commit = ref.commit;
+	  this.dispatch = function boundDispatch (type, payload) {
+	    return dispatch.call(store, type, payload)
+	    }
+	    this.commit = function boundCommit (type, payload, options) {
+	    return commit.call(store, type, payload, options)
+	  }
+
+	  // strict mode
+	  this.strict = strict
+
+	  // init root module.
+	  // this also recursively registers all sub-modules
+	  // and collects all module getters inside this._wrappedGetters
+	  installModule(this, state, [], options)
+
+	  // initialize the store vm, which is responsible for the reactivity
+	  // (also registers _wrappedGetters as computed properties)
+	  resetStoreVM(this, state)
+
+	  // apply plugins
+	  plugins.concat(devtoolPlugin).forEach(function (plugin) { return plugin(this$1); })
+	};
+
+	var prototypeAccessors = { state: {} };
+
+	prototypeAccessors.state.get = function () {
+	  return this._vm.state
+	};
+
+	prototypeAccessors.state.set = function (v) {
+	  assert(false, "Use store.replaceState() to explicit replace store state.")
+	};
+
+	Store.prototype.commit = function commit (type, payload, options) {
+	    var this$1 = this;
+
+	  // check object-style commit
+	  if (isObject(type) && type.type) {
+	    options = payload
+	    payload = type
+	    type = type.type
+	  }
+	  var mutation = { type: type, payload: payload }
+	  var entry = this._mutations[type]
+	  if (!entry) {
+	    console.error(("[vuex] unknown mutation type: " + type))
+	    return
+	  }
+	  this._withCommit(function () {
+	    entry.forEach(function commitIterator (handler) {
+	      handler(payload)
+	    })
+	  })
+	  if (!options || !options.silent) {
+	    this._subscribers.forEach(function (sub) { return sub(mutation, this$1.state); })
+	  }
+	};
+
+	Store.prototype.dispatch = function dispatch (type, payload) {
+	  // check object-style dispatch
+	  if (isObject(type) && type.type) {
+	    payload = type
+	    type = type.type
+	  }
+	  var entry = this._actions[type]
+	  if (!entry) {
+	    console.error(("[vuex] unknown action type: " + type))
+	    return
+	  }
+	  return entry.length > 1
+	    ? Promise.all(entry.map(function (handler) { return handler(payload); }))
+	    : entry[0](payload)
+	};
+
+	Store.prototype.subscribe = function subscribe (fn) {
+	  var subs = this._subscribers
+	  if (subs.indexOf(fn) < 0) {
+	    subs.push(fn)
+	  }
+	  return function () {
+	    var i = subs.indexOf(fn)
+	    if (i > -1) {
+	      subs.splice(i, 1)
+	    }
+	  }
+	};
+
+	Store.prototype.watch = function watch (getter, cb, options) {
+	    var this$1 = this;
+
+	  assert(typeof getter === 'function', "store.watch only accepts a function.")
+	  return this._watcherVM.$watch(function () { return getter(this$1.state); }, cb, options)
+	};
+
+	Store.prototype.replaceState = function replaceState (state) {
+	    var this$1 = this;
+
+	  this._withCommit(function () {
+	    this$1._vm.state = state
+	  })
+	};
+
+	Store.prototype.registerModule = function registerModule (path, module) {
+	  if (typeof path === 'string') { path = [path] }
+	  assert(Array.isArray(path), "module path must be a string or an Array.")
+	  this._runtimeModules[path.join('.')] = module
+	  installModule(this, this.state, path, module)
+	  // reset store to update getters...
+	  resetStoreVM(this, this.state)
+	};
+
+	Store.prototype.unregisterModule = function unregisterModule (path) {
+	    var this$1 = this;
+
+	  if (typeof path === 'string') { path = [path] }
+	  assert(Array.isArray(path), "module path must be a string or an Array.")
+	    delete this._runtimeModules[path.join('.')]
+	  this._withCommit(function () {
+	    var parentState = getNestedState(this$1.state, path.slice(0, -1))
+	    Vue.delete(parentState, path[path.length - 1])
+	  })
+	  resetStore(this)
+	};
+
+	Store.prototype.hotUpdate = function hotUpdate (newOptions) {
+	  updateModule(this._options, newOptions)
+	  resetStore(this)
+	};
+
+	Store.prototype._withCommit = function _withCommit (fn) {
+	  var committing = this._committing
+	  this._committing = true
+	  fn()
+	  this._committing = committing
+	};
+
+	Object.defineProperties( Store.prototype, prototypeAccessors );
+
+	function updateModule (targetModule, newModule) {
+	  if (newModule.actions) {
+	    targetModule.actions = newModule.actions
+	  }
+	  if (newModule.mutations) {
+	    targetModule.mutations = newModule.mutations
+	  }
+	  if (newModule.getters) {
+	    targetModule.getters = newModule.getters
+	  }
+	  if (newModule.modules) {
+	    for (var key in newModule.modules) {
+	      if (!(targetModule.modules && targetModule.modules[key])) {
+	        console.warn(
+	          "[vuex] trying to add a new module '" + key + "' on hot reloading, " +
+	          'manual reload is needed'
+	        )
+	        return
+	      }
+	      updateModule(targetModule.modules[key], newModule.modules[key])
+	    }
+	  }
+	}
+
+	function resetStore (store) {
+	  store._actions = Object.create(null)
+	  store._mutations = Object.create(null)
+	  store._wrappedGetters = Object.create(null)
+	  var state = store.state
+	  // init root module
+	  installModule(store, state, [], store._options, true)
+	  // init all runtime modules
+	  Object.keys(store._runtimeModules).forEach(function (key) {
+	    installModule(store, state, key.split('.'), store._runtimeModules[key], true)
+	  })
+	  // reset vm
+	  resetStoreVM(store, state)
+	}
+
+	function resetStoreVM (store, state) {
+	  var oldVm = store._vm
+
+	  // bind store public getters
+	  store.getters = {}
+	  var wrappedGetters = store._wrappedGetters
+	  var computed = {}
+	  Object.keys(wrappedGetters).forEach(function (key) {
+	    var fn = wrappedGetters[key]
+	    // use computed to leverage its lazy-caching mechanism
+	    computed[key] = function () { return fn(store); }
+	    Object.defineProperty(store.getters, key, {
+	      get: function () { return store._vm[key]; }
+	    })
+	  })
+
+	  // use a Vue instance to store the state tree
+	  // suppress warnings just in case the user has added
+	  // some funky global mixins
+	  var silent = Vue.config.silent
+	  Vue.config.silent = true
+	  store._vm = new Vue({
+	    data: { state: state },
+	    computed: computed
+	  })
+	  Vue.config.silent = silent
+
+	  // enable strict mode for new vm
+	  if (store.strict) {
+	    enableStrictMode(store)
+	  }
+
+	  if (oldVm) {
+	    // dispatch changes in all subscribed watchers
+	    // to force getter re-evaluation.
+	    store._withCommit(function () {
+	      oldVm.state = null
+	    })
+	    Vue.nextTick(function () { return oldVm.$destroy(); })
+	  }
+	}
+
+	function installModule (store, rootState, path, module, hot) {
+	  var isRoot = !path.length
+	  var state = module.state;
+	  var actions = module.actions;
+	  var mutations = module.mutations;
+	  var getters = module.getters;
+	  var modules = module.modules;
+
+	  // set state
+	  if (!isRoot && !hot) {
+	    var parentState = getNestedState(rootState, path.slice(0, -1))
+	    var moduleName = path[path.length - 1]
+	    store._withCommit(function () {
+	      Vue.set(parentState, moduleName, state || {})
+	    })
+	  }
+
+	  if (mutations) {
+	    Object.keys(mutations).forEach(function (key) {
+	      registerMutation(store, key, mutations[key], path)
+	    })
+	  }
+
+	  if (actions) {
+	    Object.keys(actions).forEach(function (key) {
+	      registerAction(store, key, actions[key], path)
+	    })
+	  }
+
+	  if (getters) {
+	    wrapGetters(store, getters, path)
+	  }
+
+	  if (modules) {
+	    Object.keys(modules).forEach(function (key) {
+	      installModule(store, rootState, path.concat(key), modules[key], hot)
+	    })
+	  }
+	}
+
+	function registerMutation (store, type, handler, path) {
+	  if ( path === void 0 ) path = [];
+
+	  var entry = store._mutations[type] || (store._mutations[type] = [])
+	  entry.push(function wrappedMutationHandler (payload) {
+	    handler(getNestedState(store.state, path), payload)
+	  })
+	}
+
+	function registerAction (store, type, handler, path) {
+	  if ( path === void 0 ) path = [];
+
+	  var entry = store._actions[type] || (store._actions[type] = [])
+	  var dispatch = store.dispatch;
+	  var commit = store.commit;
+	  entry.push(function wrappedActionHandler (payload, cb) {
+	    var res = handler({
+	      dispatch: dispatch,
+	      commit: commit,
+	      getters: store.getters,
+	      state: getNestedState(store.state, path),
+	      rootState: store.state
+	    }, payload, cb)
+	    if (!isPromise(res)) {
+	      res = Promise.resolve(res)
+	    }
+	    if (store._devtoolHook) {
+	      return res.catch(function (err) {
+	        store._devtoolHook.emit('vuex:error', err)
+	        throw err
+	      })
+	    } else {
+	      return res
+	    }
+	  })
+	}
+
+	function wrapGetters (store, moduleGetters, modulePath) {
+	  Object.keys(moduleGetters).forEach(function (getterKey) {
+	    var rawGetter = moduleGetters[getterKey]
+	    if (store._wrappedGetters[getterKey]) {
+	      console.error(("[vuex] duplicate getter key: " + getterKey))
+	      return
+	    }
+	    store._wrappedGetters[getterKey] = function wrappedGetter (store) {
+	      return rawGetter(
+	        getNestedState(store.state, modulePath), // local state
+	        store.getters, // getters
+	        store.state // root state
+	      )
+	    }
+	  })
+	}
+
+	function enableStrictMode (store) {
+	  store._vm.$watch('state', function () {
+	    assert(store._committing, "Do not mutate vuex store state outside mutation handlers.")
+	  }, { deep: true, sync: true })
+	}
+
+	function getNestedState (state, path) {
+	  return path.length
+	    ? path.reduce(function (state, key) { return state[key]; }, state)
+	    : state
+	}
+
+	function install (_Vue) {
+	  if (Vue) {
+	    console.error(
+	      '[vuex] already installed. Vue.use(Vuex) should be called only once.'
+	    )
+	    return
+	  }
+	  Vue = _Vue
+	  applyMixin(Vue)
+	}
+
+	// auto install in dist mode
+	if (typeof window !== 'undefined' && window.Vue) {
+	  install(window.Vue)
+	}
+
+	var index = {
+	  Store: Store,
+	  install: install,
+	  mapState: mapState,
+	  mapMutations: mapMutations,
+	  mapGetters: mapGetters,
+	  mapActions: mapActions
+	}
+
+	return index;
+
+	})));
+
+/***/ },
 /* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -8324,13 +8854,13 @@ webpackJsonp([1,3],Array(90).concat([
 /* 216 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n\n\n\n<div class=\"del-button\" _v-e4f8b4a2=\"\">\n\t<mt-button type=\"danger\" v-on:click=\"delCollect\" v-if=\"store.state.collectDelIsOpen\" _v-e4f8b4a2=\"\">删除</mt-button>\n</div>\n";
+	module.exports = "\n\n\n\n\n\n<div class=\"del-button\" _v-201e8100=\"\">\n\t<mt-button type=\"danger\" v-on:click=\"delCollect\" v-if=\"store.state.collectDelIsOpen\" _v-201e8100=\"\">删除</mt-button>\n</div>\n";
 
 /***/ },
 /* 217 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"searItems\" _v-7214e175=\"\">\n     <ul _v-7214e175=\"\">                \n       <li v-for=\"(item,index) in items\" _v-7214e175=\"\">\n           <collect-del-button v-if=\"collect\" :items=\"items\" :type=\"21\" :index=\"index\" class=\"collect-del-botton\" _v-7214e175=\"\"></collect-del-button>  \n           <template v-if=\"item.thumb\">\n           <router-link :to=\"{name:'newsDetail',query:{id:item.itemid}}\" _v-7214e175=\"\">\n              <template v-if=\"item.level !== '8' &amp;&amp; item.level !== '9'\">  \n                   <div class=\"descBox\" _v-7214e175=\"\">\n                       <div class=\"title\" _v-7214e175=\"\">{{item.title | dsubstr(20)}}</div>\n                       <div class=\"footnote\" _v-7214e175=\"\">\n                           <span class=\"source\" _v-7214e175=\"\">{{item.copyfrom ? item.copyfrom : \"当代医药市场网\" + item.level}}</span>\n                           <span class=\"hits\" _v-7214e175=\"\"><i class=\"iconfont\" _v-7214e175=\"\">󰁈</i>{{item.hits}}</span>\n                       </div>\n                   </div>\n                   <span class=\"img\" _v-7214e175=\"\">\n                       <img :src=\"item.thumb\" class=\"img-small\" _v-7214e175=\"\">\n                   </span>\n               </template>  \n               <template v-else=\"\">\n                   <template v-if=\"item.level == '8'\">                                                 \n                   <div class=\"midbox\" _v-7214e175=\"\">\n                       <div class=\"title\" _v-7214e175=\"\">{{item.title}}<div _v-7214e175=\"\">\n                       <span _v-7214e175=\"\"><img :src=\"item.thumb\" _v-7214e175=\"\"></span>\n                       <span _v-7214e175=\"\"><img class=\"imgmid\" :src=\"item.thumb1\" _v-7214e175=\"\"></span>\n                       <span _v-7214e175=\"\"><img :src=\"item.thumb2\" _v-7214e175=\"\"></span>\n                       <i class=\"source\" _v-7214e175=\"\">{{item.copyfrom}}</i>\n                       <i class=\"hits\" _v-7214e175=\"\"><i class=\"iconfont\" _v-7214e175=\"\">󰁈</i>{{item.hits}}</i>\n                    </div>                           \n                   </div></div></template>  \n                   <template v-if=\"item.level == '9'\">                            \n                        <div class=\"bigbox\" _v-7214e175=\"\">\n                           <div class=\"title\" _v-7214e175=\"\">\n                             {{item.title}}\n                           </div>\n                          <img :src=\"item.thumb\" _v-7214e175=\"\">\n                          <span _v-7214e175=\"\">{{item.copyfrom}}</span>\n                          <span class=\"hits\" _v-7214e175=\"\"><i class=\"iconfont\" _v-7214e175=\"\">󰁈</i>{{item.hits}}</span>\n                       </div>                  \n                   </template> \n               </template>\n           </router-link>\n           </template>\n           <template v-else=\"\">\n               <router-link :to=\"{name:'newsDetail',query:{id:item.itemid}}\" _v-7214e175=\"\">\n                   <h2 class=\"title\" _v-7214e175=\"\">{{item.title | dsubstr(16)}}</h2>\n                   <p _v-7214e175=\"\">\n                   <span class=\"copyfrom\" _v-7214e175=\"\">{{item.copyfrom}}</span>\n                   <span class=\"hits\" _v-7214e175=\"\">\n                       <i class=\"iconfont\" _v-7214e175=\"\">󰁈</i>{{item.hits}}\n                   </span>\n                   </p>\n               </router-link>\n           </template>\n       </li>\n     </ul>\n </div>\n\n";
+	module.exports = "\n<div class=\"searItems\" _v-5d4b01c4=\"\">\n     <ul _v-5d4b01c4=\"\">                \n       <li v-for=\"(item,index) in items\" _v-5d4b01c4=\"\">\n           <collect-del-button v-if=\"collect\" :items=\"items\" :type=\"21\" :index=\"index\" class=\"collect-del-botton\" _v-5d4b01c4=\"\"></collect-del-button>  \n           <template v-if=\"item.thumb\">\n           <router-link :to=\"{name:'newsDetail',query:{id:item.itemid}}\" _v-5d4b01c4=\"\">\n              <template v-if=\"item.level !== '8' &amp;&amp; item.level !== '9'\">  \n                   <div class=\"descBox\" _v-5d4b01c4=\"\">\n                       <div class=\"title\" _v-5d4b01c4=\"\">{{item.title | dsubstr(20)}}</div>\n                       <div class=\"footnote\" _v-5d4b01c4=\"\">\n                           <span class=\"source\" _v-5d4b01c4=\"\">{{item.copyfrom ? item.copyfrom : \"当代医药市场网\" + item.level}}</span>\n                           <span class=\"hits\" _v-5d4b01c4=\"\"><i class=\"iconfont\" _v-5d4b01c4=\"\">󰁈</i>{{item.hits}}</span>\n                       </div>\n                   </div>\n                   <span class=\"img\" _v-5d4b01c4=\"\">\n                       <img :src=\"item.thumb\" class=\"img-small\" _v-5d4b01c4=\"\">\n                   </span>\n               </template>  \n               <template v-else=\"\">\n                   <template v-if=\"item.level == '8'\">                                                 \n                   <div class=\"midbox\" _v-5d4b01c4=\"\">\n                       <div class=\"title\" _v-5d4b01c4=\"\">{{item.title}}<div _v-5d4b01c4=\"\">\n                       <span _v-5d4b01c4=\"\"><img :src=\"item.thumb\" _v-5d4b01c4=\"\"></span>\n                       <span _v-5d4b01c4=\"\"><img class=\"imgmid\" :src=\"item.thumb1\" _v-5d4b01c4=\"\"></span>\n                       <span _v-5d4b01c4=\"\"><img :src=\"item.thumb2\" _v-5d4b01c4=\"\"></span>\n                       <i class=\"source\" _v-5d4b01c4=\"\">{{item.copyfrom}}</i>\n                       <i class=\"hits\" _v-5d4b01c4=\"\"><i class=\"iconfont\" _v-5d4b01c4=\"\">󰁈</i>{{item.hits}}</i>\n                    </div>                           \n                   </div></div></template>  \n                   <template v-if=\"item.level == '9'\">                            \n                        <div class=\"bigbox\" _v-5d4b01c4=\"\">\n                           <div class=\"title\" _v-5d4b01c4=\"\">\n                             {{item.title}}\n                           </div>\n                          <img :src=\"item.thumb\" _v-5d4b01c4=\"\">\n                          <span _v-5d4b01c4=\"\">{{item.copyfrom}}</span>\n                          <span class=\"hits\" _v-5d4b01c4=\"\"><i class=\"iconfont\" _v-5d4b01c4=\"\">󰁈</i>{{item.hits}}</span>\n                       </div>                  \n                   </template> \n               </template>\n           </router-link>\n           </template>\n           <template v-else=\"\">\n               <router-link :to=\"{name:'newsDetail',query:{id:item.itemid}}\" _v-5d4b01c4=\"\">\n                   <h2 class=\"title\" _v-5d4b01c4=\"\">{{item.title | dsubstr(16)}}</h2>\n                   <p _v-5d4b01c4=\"\">\n                   <span class=\"copyfrom\" _v-5d4b01c4=\"\">{{item.copyfrom}}</span>\n                   <span class=\"hits\" _v-5d4b01c4=\"\">\n                       <i class=\"iconfont\" _v-5d4b01c4=\"\">󰁈</i>{{item.hits}}\n                   </span>\n                   </p>\n               </router-link>\n           </template>\n       </li>\n     </ul>\n </div>\n\n";
 
 /***/ },
 /* 218 */
@@ -8360,7 +8890,7 @@ webpackJsonp([1,3],Array(90).concat([
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-8b110ae8/searchInvestItem.vue"
+	  var id = "_v-1ce4945d/searchInvestItem.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -8384,8 +8914,8 @@ webpackJsonp([1,3],Array(90).concat([
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-8b110ae8&scoped=true!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./searchInvestItem.vue", function() {
-				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-8b110ae8&scoped=true!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./searchInvestItem.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-1ce4945d&scoped=true!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./searchInvestItem.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-1ce4945d&scoped=true!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./searchInvestItem.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -8403,7 +8933,7 @@ webpackJsonp([1,3],Array(90).concat([
 
 
 	// module
-	exports.push([module.id, ".item[_v-8b110ae8] {\n  margin: 0px .3rem;\n  padding: .2rem 0px;\n  width: 5.8rem;\n  border-bottom: 1px solid #fafafa;\n  position: relative; }\n  .item .collect-del-botton[_v-8b110ae8] {\n    position: absolute;\n    right: 0; }\n\n.item_left[_v-8b110ae8] {\n  width: 4rem;\n  float: left; }\n\n.item_tit[_v-8b110ae8] {\n  padding-right: .2rem;\n  padding-top: .1rem;\n  font-size: .3rem;\n  height: .8rem; }\n\n.item_img[_v-8b110ae8] {\n  width: 1.8rem;\n  height: 1.2rem; }\n\n.item_cat[_v-8b110ae8] {\n  border: 1px solid #bae3fa;\n  color: #bae3fa;\n  border-radius: .05rem;\n  font-size: .16rem;\n  padding: 0 .05rem;\n  height: .24rem;\n  line-height: .30rem;\n  display: inline-block;\n  margin-right: .14rem; }\n\n.item_hit[_v-8b110ae8] {\n  color: #8a8a8a;\n  font-size: .22rem;\n  height: .34rem;\n  line-height: .34rem;\n  margin-right: .26rem;\n  display: inline-block; }\n\n.item_date[_v-8b110ae8] {\n  height: .34rem;\n  line-height: .34rem;\n  color: #8a8a8a;\n  font-size: .22rem;\n  margin-right: .26rem;\n  display: inline-block; }\n", ""]);
+	exports.push([module.id, ".item[_v-1ce4945d] {\n  margin: 0px .3rem;\n  padding: .2rem 0px;\n  width: 5.8rem;\n  border-bottom: 1px solid #fafafa;\n  position: relative; }\n  .item .collect-del-botton[_v-1ce4945d] {\n    position: absolute;\n    right: 0; }\n\n.item_left[_v-1ce4945d] {\n  width: 4rem;\n  float: left; }\n\n.item_tit[_v-1ce4945d] {\n  padding-right: .2rem;\n  padding-top: .1rem;\n  font-size: .3rem;\n  height: .8rem; }\n\n.item_img[_v-1ce4945d] {\n  width: 1.8rem;\n  height: 1.2rem; }\n\n.item_cat[_v-1ce4945d] {\n  border: 1px solid #bae3fa;\n  color: #bae3fa;\n  border-radius: .05rem;\n  font-size: .16rem;\n  padding: 0 .05rem;\n  height: .24rem;\n  line-height: .30rem;\n  display: inline-block;\n  margin-right: .14rem; }\n\n.item_hit[_v-1ce4945d] {\n  color: #8a8a8a;\n  font-size: .22rem;\n  height: .34rem;\n  line-height: .34rem;\n  margin-right: .26rem;\n  display: inline-block; }\n\n.item_date[_v-1ce4945d] {\n  height: .34rem;\n  line-height: .34rem;\n  color: #8a8a8a;\n  font-size: .22rem;\n  margin-right: .26rem;\n  display: inline-block; }\n", ""]);
 
 	// exports
 
@@ -8545,25 +9075,25 @@ webpackJsonp([1,3],Array(90).concat([
 /* 222 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n<!-- content1-->\n<div id=\"items\" _v-8b110ae8=\"\">\n<div class=\"item\" v-for=\"(item,index) in items\" _v-8b110ae8=\"\">\n    <collect-del-button v-if=\"collect\" :items.sync=\"items\" :type=\"22\" :index=\"index\" class=\"collect-del-botton\" _v-8b110ae8=\"\"></collect-del-button>   \n    <router-link :to=\"{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}\" _v-8b110ae8=\"\">\n        <div class=\"item_left\" _v-8b110ae8=\"\">\n            <div class=\"item_tit\" _v-8b110ae8=\"\">\n                {{item.title | dSubstr(20) }}\n            </div>\n\n            <span class=\"item_hit\" _v-8b110ae8=\"\">{{item.hits}}点击</span>\n            <span class=\"item_date\" _v-8b110ae8=\"\">{{item.editdate}}</span>\n        </div>\n        <img v-lazy=\"item.sptp[0]\" class=\"item_img\" _v-8b110ae8=\"\">\n        <div class=\"clear\" _v-8b110ae8=\"\"></div>\n    </router-link>\n</div>\n</div>\n\n";
+	module.exports = "\n\n\n<!-- content1-->\n<div id=\"items\" _v-1ce4945d=\"\">\n<div class=\"item\" v-for=\"(item,index) in items\" _v-1ce4945d=\"\">\n    <collect-del-button v-if=\"collect\" :items.sync=\"items\" :type=\"22\" :index=\"index\" class=\"collect-del-botton\" _v-1ce4945d=\"\"></collect-del-button>   \n    <router-link :to=\"{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}\" _v-1ce4945d=\"\">\n        <div class=\"item_left\" _v-1ce4945d=\"\">\n            <div class=\"item_tit\" _v-1ce4945d=\"\">\n                {{item.title | dSubstr(20) }}\n            </div>\n\n            <span class=\"item_hit\" _v-1ce4945d=\"\">{{item.hits}}点击</span>\n            <span class=\"item_date\" _v-1ce4945d=\"\">{{item.editdate}}</span>\n        </div>\n        <img v-lazy=\"item.sptp[0]\" class=\"item_img\" _v-1ce4945d=\"\">\n        <div class=\"clear\" _v-1ce4945d=\"\"></div>\n    </router-link>\n</div>\n</div>\n\n";
 
 /***/ },
 /* 223 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n\n\n\n\n\n<div class=\"page-container\" _v-90ea90b6=\"\">\n    <load _v-90ea90b6=\"\"></load>\n\n    <div v-if=\"!loading\" class=\"page-items\" _v-90ea90b6=\"\">\n        <!--  -->\n        <mt-loadmore :top-method=\"loadTop\" :bottom-method=\"loadBottom\" :bottom-all-loaded=\"allLoaded\" bottom-pull-text=\"上拉加载\" ref=\"loadmore\" _v-90ea90b6=\"\">\n            \n\n            <invest-item :collect=\"collect\" v-if=\"type == 22\" :items=\"items\" _v-90ea90b6=\"\"></invest-item>\n\n            <article-item :collect=\"collect\" v-if=\"type == 21\" :items=\"items\" _v-90ea90b6=\"\"></article-item>\n         \n            \n            <div v-if=\"noData\" slot=\"bottom\" class=\"mint-loadmore-bottom\" _v-90ea90b6=\"\">\n                没有了\n            </div>\n        </mt-loadmore>\n    </div>\n  \n    <no-data v-if=\"issearchpage &amp;&amp; emptyresource &amp;&amp; page == 1\" _v-90ea90b6=\"\"></no-data>\n   \n    <div class=\"clear\" _v-90ea90b6=\"\"></div>\n</div>\n\n";
+	module.exports = "\n\n\n\n\n\n\n\n<div class=\"page-container\" _v-0af196f4=\"\">\n    <load _v-0af196f4=\"\"></load>\n\n    <div v-if=\"!loading\" class=\"page-items\" _v-0af196f4=\"\">\n        <!--  -->\n        <mt-loadmore :top-method=\"loadTop\" :bottom-method=\"loadBottom\" :bottom-all-loaded=\"allLoaded\" bottom-pull-text=\"上拉加载\" ref=\"loadmore\" _v-0af196f4=\"\">\n            \n\n            <invest-item :collect=\"collect\" v-if=\"type == 22\" :items=\"items\" _v-0af196f4=\"\"></invest-item>\n\n            <article-item :collect=\"collect\" v-if=\"type == 21\" :items=\"items\" _v-0af196f4=\"\"></article-item>\n         \n            \n            <div v-if=\"noData\" slot=\"bottom\" class=\"mint-loadmore-bottom\" _v-0af196f4=\"\">\n                没有了\n            </div>\n        </mt-loadmore>\n    </div>\n  \n    <no-data v-if=\"issearchpage &amp;&amp; emptyresource &amp;&amp; page == 1\" _v-0af196f4=\"\"></no-data>\n   \n    <div class=\"clear\" _v-0af196f4=\"\"></div>\n</div>\n\n";
 
 /***/ },
 /* 224 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div _v-b32fc110=\"\">\n    <div slot=\"content\" _v-b32fc110=\"\">\n        <swipe class=\"my-swipe\" :speed=\"1000\" :show-indicators=\"false\" _v-b32fc110=\"\">\n\n            <swipe-item v-for=\"item in carousel\" _v-b32fc110=\"\">\n                <a :src=\"item.url\" _v-b32fc110=\"\">\n                    <img :src=\"item.pic\" _v-b32fc110=\"\">\n                    <span _v-b32fc110=\"\">{{item.title}}</span>\n                </a>\n            </swipe-item>\n\n        </swipe>\n\n          <div class=\"card\" _v-b32fc110=\"\">\n              <h2 class=\"cardTitle\" _v-b32fc110=\"\">今日推荐</h2>\n              <home-shell class=\"page-list\" type=\"21\" :getparams=\"getparams\" _v-b32fc110=\"\"></home-shell>\n          </div>\n\n    </div>\n</div>\n";
+	module.exports = "\n<div _v-8a39caee=\"\">\n    <div slot=\"content\" _v-8a39caee=\"\">\n        <swipe class=\"my-swipe\" :speed=\"1000\" :show-indicators=\"false\" _v-8a39caee=\"\">\n\n            <swipe-item v-for=\"item in carousel\" _v-8a39caee=\"\">\n                <a :src=\"item.url\" _v-8a39caee=\"\">\n                    <img :src=\"item.pic\" _v-8a39caee=\"\">\n                    <span _v-8a39caee=\"\">{{item.title}}</span>\n                </a>\n            </swipe-item>\n\n        </swipe>\n\n          <div class=\"card\" _v-8a39caee=\"\">\n              <h2 class=\"cardTitle\" _v-8a39caee=\"\">今日推荐</h2>\n              <home-shell class=\"page-list\" type=\"21\" :getparams=\"getparams\" _v-8a39caee=\"\"></home-shell>\n          </div>\n\n    </div>\n</div>\n";
 
 /***/ },
 /* 225 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n<div class=\"content\" _v-df052d0a=\"\">\n<my-header _v-df052d0a=\"\"></my-header>\n\n    <component :is=\"currentView\" :catid=\"catid\" _v-df052d0a=\"\">\n        <!-- 组件在 vm.currentview 变化时改变 -->\n    </component>\n\n</div>\n";
+	module.exports = "\n\n\n<div class=\"content\" _v-7eedf4cc=\"\">\n<my-header _v-7eedf4cc=\"\"></my-header>\n\n    <component :is=\"currentView\" :catid=\"catid\" _v-7eedf4cc=\"\">\n        <!-- 组件在 vm.currentview 变化时改变 -->\n    </component>\n\n</div>\n";
 
 /***/ }
 ]));

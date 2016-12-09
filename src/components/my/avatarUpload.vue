@@ -38,36 +38,58 @@
 	<div class="portrait" >
 		<span>头像</span>
 		<div class="avatar-right">
-			<img :src="userinfo.avatar"/>
+			<img :src="avatar"/>
 			<em> <i class="iconfont">&#xe604;</i></em>
 		</div>
 		
-		<vue-core-image-upload v-bind:class="['pure-button','pure-button-primary','js-btn-crop']" v-bind:crop="true" :url="url" extensions="png,gif,jpeg,jpg" v-on:imageuploaded="imageuploaded"></vue-core-image-upload>
+		<vue-core-image-upload v-bind:class="['pure-button','pure-button-primary','js-btn-crop']" v-bind:crop="true" :url="url" :max-file-size="maxFileSize" extensions="png,gif,jpeg,jpg" v-on:imageuploaded="imageuploaded"></vue-core-image-upload>
 	</div>
 </template>
 <script>
 	
 	import imageUpload  from '../common/vue.core.image.upload.vue';
-	import serverapi from '../../serverapi';
+	import serverapi from '../../serverapi.js';
+	import bus from '../../bus.js';
+	import { Toast, Indicator } from 'mint-ui';
 	export default {
+		props:['src'],
 		data(){
 			return {
-				userinfo:{
-					avatar:null
-				},
+				maxFileSize:1024 * 1024,
+				 
+				avatar:this.src,
+				 
 				url: serverapi.avatarupload + "?token="+localStorage.token, 
 			}
 		},
 		mounted(){
 			this.loadData();
+			var _this = this;
+			bus.$on('errorHandle',function(res){
+				console.log(res);
+				_this.errorHandle(res);
+			});
+			bus.$on('imageuploading',function(res){
+				console.log(res);
+				 Indicator.open({
+					  text: '上传中...',
+					  spinnerType: 'fading-circle'
+				 });
+			});
+			bus.$on('imageuploaded',function(res){
+				 Indicator.close();
+				 _this.imageuploaded(res);
+			});
 		},
 		components: {
 			  'vue-core-image-upload' : imageUpload,
 		},
 		events: {
 		  imageuploaded(res) {
+		  	  cosole.log(res);
 			  if (res.errcode == 0) {
-			    this.src = 'http://img1.vued.vanthink.cn/vued751d13a9cb5376b89cb6719e86f591f3.png';
+			   
+			    //this.src = 'http://img1.vued.vanthink.cn/vued751d13a9cb5376b89cb6719e86f591f3.png';
 
 			  }
 			}
@@ -81,26 +103,38 @@
 					this.userinfo = res.body;
 				})
 			},
-
 		    imageuploaded(res) {
 		    	var timestamp = Date.parse(new Date());
-		    	this.userinfo.avatar = this.userinfo.avatar + "&time=" + timestamp;
+		    	//this.userinfo.avatar = this.userinfo.avatar + "&time=" + timestamp;
+				
+
+					console.log(res);				
+
 				if (res.errcode == 0) {
+					
+
 					if(res.data.src) {
-					  this.src = res.data.src;
+					  this.avatar = res.data.src;
 					  return;
 					}
-					this.name = res.data.name;
-					this.cropArgs = {
-					  toCropImgH: parseInt(res.data.post.toCropImgH),
-					  toCropImgW: parseInt(res.data.post.toCropImgW),
-					  toCropImgX: parseInt(res.data.post.toCropImgX),
-					  toCropImgY: parseInt(res.data.post.toCropImgY)
-					}
+					// this.name = res.data.name;
+					// this.cropArgs = {
+					//   toCropImgH: parseInt(res.data.post.toCropImgH),
+					//   toCropImgW: parseInt(res.data.post.toCropImgW),
+					//   toCropImgX: parseInt(res.data.post.toCropImgX),
+					//   toCropImgY: parseInt(res.data.post.toCropImgY)
+					// }
 				}
 		    },
-		    errorHandle: function(msg) {
-		      console.warn(msg);
+		    errorHandle(msg) {
+		      this.toast(msg)
+		    },
+		    toast(msg){
+		    	Toast({
+				  message: msg,
+				  position: 'bottom',
+				  duration: 2000
+				});
 		    }
   		}
 	}

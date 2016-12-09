@@ -1,8 +1,13 @@
 
-import Common from './components/common.vue';
+//import Common from './components/common.vue';
+const Common = resolve => require(['./components/common.vue'],resolve);
 
 //import Home from './components/home.vue';
 const Home = resolve => require(['./components/home.vue'],resolve);
+
+const product = resolve => require(['./components/product.vue'],resolve);
+
+const Test = resolve => require(['./components/test.vue'],resolve);
 
 //import Video from './components/video.vue';
 const Video = resolve => require(['./components/video.vue'],resolve);
@@ -79,16 +84,20 @@ export default {
 	routes: [
 		{	path:"/",component:Common,
 			children: [
-				{  name:"home", path: 'home', component: Home },
-			
+				{ name: 'home', path: '/home', component: Home },
+				{ name: 'product', path: '/product', component: product },
+				{ name: 'home', path: '/home/:type/:id', component: Home },
+				{ name: 'product', path: '/product/:type/:id', component: product },
+				{ path: '/video', component: Video },
 			],
 		},
 
 		{ path: '/',  redirect: '/home'},
-		{ path: '/video', component: Video },
-
+		
+		
 		{ name: 'my', path: '/my', component: My, beforeEnter: requireAuth},
-		{ name : 'infoedit',path : '/my/infoedit', component : infoEdit },
+
+		{ name: 'infoedit',path : '/my/infoedit', component : infoEdit, beforeEnter: requireAuth},
 		{ name: 'mySetting', path: '/my/mySetting', component: mySetting, beforeEnter: requireAuth},
 		{ name: 'collect', path: '/my/collect', component: collect, beforeEnter: requireAuth},
 		{ name: 'integral', path: '/my/integral', component: integral, beforeEnter: requireAuth},

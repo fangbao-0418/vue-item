@@ -96,8 +96,8 @@
 </template>
 <script>
 	import blackNav from '../blackNav';
-	import { Navbar, TabItem } from 'mint-ui';
-	import { TabContainer, TabContainerItem } from 'mint-ui';
+ 
+	import {  Navbar, TabItem, TabContainer, TabContainerItem } from 'mint-ui';
 	import homeShell from '../homeShell';
 	 
   

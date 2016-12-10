@@ -115,7 +115,7 @@
 
     // in ES6 modules
     import { Swipe, SwipeItem } from 'vue-swipe';
-
+   
     export default {
         computed:{
             type(){   
@@ -180,7 +180,7 @@
                 //return this.$router.params.type ? this.$router.params.type;
             },
             topath(){
-                return {name:"home",query:{id:this.topid,type:this.type}}    
+                return {path:"home#"+this.topid}    
             }
         },
         data(){
@@ -196,7 +196,7 @@
             this.loadData();
         },
         mounted(){
-        
+
         },
         methods:{
             loadData(){

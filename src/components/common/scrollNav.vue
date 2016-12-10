@@ -3,7 +3,9 @@
         <div id="nav-smartSetup">
             <div id="scroller">
                 <ul>
-                    <li v-for="(item,index) in option" v-on:click="selectType( item.sign , item.id )" :class="{'cur':isCur[index]}" >{{item.title}}</li>
+
+                    <li v-for="(item,index) in option" @click="select(index)" :class="{'cur':isCur[index]}" >{{item.title}}
+                    </li>
                  
                 </ul>
             </div>
@@ -21,109 +23,94 @@
 		data(){
 			return {
 				params:{},
+                index:0
 			}
 		},
-		computed: {
-            type(){
-                var type = this.$route.params.type ? this.$route.params.type : "recommend";
-                return type;
-            },
-            id(){
-            	var id = this.$route.params.id ? this.$route.params.id : null;
-                return id;
-            },
+		computed: {           
+            
             isCur:function(){
                 let i,cur;
                 cur = [];
                 for(i in this.option){
-                	//console.log(this.type + this.id);                                  
-                    if(this.type == this.option[i].sign && this.id == this.option[i].id ){
-                        //console.log(i);
-                        cur[i] = true;
-                    }else{
-                        cur[i] = false;
-                    }
+                	 cur[i] = false;
                 }
-               	if( !this.$route.params.id || !this.$route.params.type ){
-               		cur[0] = true;
-               	}	
-
+                cur[this.index] = true;
                 return cur;
             },
-            pathname(){
-            	console.log(this.$route);
-            	var path = this.$route.name ? this.$route.name : 'home';
-                return path;
+           
+        },
+        watch:{
+            index(val,oldval){
+                this.resetwidth(val);
             }
         },
         methods:{
-            selectType(type,catid){
-                this.type = type;
-                if(type == 'recommend'){
-                    this.params = {currentView : 'recommend' };
-                }else if(type == 'health'){                	
-                	this.params = {currentView : 'health' }; 
-                }else{                	
-                	this.params = {currentView : type, catid : catid };
-                }
-
-                console.log(this.pathname);
-
-                bus.$emit('navselected',this.params);    
-                if(catid){
-               		this.$router.push({name:this.pathname,params: {type:type,id:catid}})
-                }else {
-                	this.$router.push({path:"/" + this.pathname,query: {type:type}})
-                }
-             
-
-            },
-           
-           
             loaded(startX) {
                   var myScroll;
                     myScroll = new IScroll('#nav-smartSetup', {startX:startX,scrollX: true, scrollY: false, mouseWheel: true ,click: true});
             },
+            select(index){
+                this.index = index;
+                this.$router.push({path:"/home#" + this.option[index].topid});
+                bus.$emit('navIndexToHome',index);
+            },
+            resetwidth(index){
 
-            resetwidth(){
                 var w = 0;
                 var currPosition = 0;
+               
                 if($("#scroller ul li")[0]){
                     $("#scroller ul li").map(function(){
                         w += $(this)[0].clientWidth;
                     })
 
-                    for(var i=0; i<$("#scroller ul li").length; i++){
+                    for(var i=0; i < index; i++){
+                       
+                        currPosition += $("#scroller ul li").eq(i).width() ;
 
-                        if($("#scroller ul li").eq(i)[0].className == "cur"){
-                        break;
-                    }
-                    currPosition += $("#scroller ul li").eq(i).width() ;
+                        
+                     
                     }
                     $("#scroller").width(w);
                      //初始化位置
+                   
                     this.loaded(-currPosition);
                 }
               
+            },
+            getUrlIndex(){
+                var hash = this.$route.hash;
+                var index = parseInt( hash.replace("#","") );
+                var i;
+                var _this = this;
+                for(i in this.option){
+                    
+                    if(this.option[i].topid == index){
+                      _this.index = i;
+                      
+                    }
+                }
+
             }
         },
-        mounted(){
+        created(){
+            var _this = this;
+            bus.$on('navIndex',function(index){
+                _this.index = index;                
+            }),
+            _this.getUrlIndex();
+            _this.select(this.index);
             
-
+        },
+        mounted(){
 
             var _this = this;
             $(document).ready(function(){             
                 //iscroll click设为true 不然无法点击
-
-
-                _this.resetwidth();
+                _this.resetwidth(_this.index);
                 window.onresize = function(){
-                    _this.resetwidth();
+                    _this.resetwidth(_this.index);
                 }  
-               
-               
-              
-
                 //$("#scroller").css({"transition-duration": "1s",transform: "translate(-"+ 20 +"px, 0px) translateZ(0px)"});
             })
 

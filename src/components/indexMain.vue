@@ -112,7 +112,7 @@
 <template>
 
     <div class="recommen">
-        <div class="ad_content"  v-for="item in items.list">
+        <div class="ad_content"  v-for="item in items">
             <a :href="item.text_url" class="click_area">
                 <div v-html="item.code"></div>
                 <div class="content-info">

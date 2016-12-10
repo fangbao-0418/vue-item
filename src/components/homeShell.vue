@@ -11,8 +11,9 @@
 
         <div v-if="!loading" class="page-items">
             <!--  -->
-            <mt-loadmore :top-method="loadTop" :bottom-method="loadBottom" :bottom-all-loaded="allLoaded" bottom-pull-text="上拉加载"  ref="loadmore">
+            <mt-loadmore :bottom-method="loadBottom" :bottom-all-loaded="allLoaded" bottom-pull-text="上拉加载"  ref="loadmore">
                 
+                <index-main v-if="type == 'recommend'" :items="items"></index-main>
 
                 <invest-item :collect="collect" v-if="type == 22" :items="items"></invest-item>
 
@@ -40,6 +41,7 @@
     
     import noData from './noData';
     
+    import indexMain from './indexMain.vue';
     import searchArticleItem from './searchArticleItem';
     import searchInvestItem from './searchInvestItem';
     
@@ -72,6 +74,7 @@
         components:{
             'load':load,
             noData,
+            "index-main":indexMain,
             "article-item":searchArticleItem,
             "invest-item":searchInvestItem
         },
@@ -102,6 +105,8 @@
                 this.loadData(id);
             },
             loadData(id,refresh=false){
+                
+
                 if(refresh){
                     this.page = 0;
                     if(id) this.$refs.loadmore.onTopLoaded(id);
@@ -113,6 +118,10 @@
                 this.page += 1;
                
                 option.params.page = this.page;
+
+
+
+
                 this.$http.get(url,option).then(
 
                     (res)=>{

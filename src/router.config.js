@@ -84,9 +84,9 @@ export default {
 	routes: [
 		{	path:"/",component:Common,
 			children: [
-				{ name: 'home', path: '/home', component: Home },
-				{ name: 'product', path: '/product', component: product },
-				{ name: 'home', path: '/home/:type/:id', component: Home },
+				{ path: '/home', component: Home },
+				{ path: '/product', component: product },
+			
 				{ name: 'product', path: '/product/:type/:id', component: product },
 				{ path: '/video', component: Video },
 			],
@@ -104,7 +104,7 @@ export default {
 		
 		{ path : '/login' , component: login, beforeEnter: requireLogin},
 		{ path : '/register' , component: register},
-		{ path : '/search' , component : search},
+		{ name : 'search', path : '/search' , component : search},
 		{ path: '/investment', component: investment},
 		{ name : 'investmentShow', path: '/investment/show', component: investmentShow },
 		{ name : 'newsDetail', path: '/news/show', component: newsDetail },

@@ -86,8 +86,6 @@ export default {
 			children: [
 				{ path: '/home', component: Home },
 				{ path: '/product', component: product },
-			
-				{ name: 'product', path: '/product/:type/:id', component: product },
 				{ path: '/video', component: Video },
 			],
 		},

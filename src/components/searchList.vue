@@ -9,7 +9,7 @@
  
 	import blackNav from './blackNav';
 	import homeShell from './homeShell';
-	 
+	import serverapi from '../serverapi.js';
 	export default {		
 		data(){
 			return {
@@ -28,7 +28,7 @@
 			if(this.$route.query.type == "资讯"){
 				this.type = 21;			  
 			}else if(this.$route.query.type == "视频"){
-				this.type = 22;
+				this.type = 14;
 			}else{			 
 				this.type = 22;			 
 			}
@@ -46,12 +46,14 @@
 			  setGetParams(type=0){
                 
                 if(type == 21){
-                	var url = "http://www.ey99.com/api/mobile/article.php";
+                	var url = serverapi.article;
                 }
                 if(type == 22){
-                	var url = "http://www.ey99.com/api/mobile/investment.php";
+                	var url = serverapi.investment;
                 }              
-
+                if(type == 14){
+                	var url = serverapi.video;
+                }
                 var option = {params:{kw:this.$route.query.q}};
                 this.getParams = {url:url,option:option};
             }

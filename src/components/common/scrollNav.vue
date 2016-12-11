@@ -51,7 +51,7 @@
             },
             select(index){
                 this.index = index;
-                this.$router.push({path:"/home#" + this.option[index].topid});
+                this.$router.push({path:this.$route.path + "#" + this.option[index].topid});
                 bus.$emit('navIndexToHome',index);
             },
             resetwidth(index){

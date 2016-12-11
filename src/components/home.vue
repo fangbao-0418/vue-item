@@ -10,25 +10,25 @@
                 <home-shell v-if="active == 'tab-container1'" type="recommend" :getparams="params[0]"></home-shell>
               </mt-tab-container-item>
               <mt-tab-container-item id="tab-container2">                
-                <home-shell v-if="active == 'tab-container2'" :type="22" :getparams="params[1]"></home-shell>
+                <home-shell v-if="active == 'tab-container2'" :type="21" :getparams="params[1]"></home-shell>
               </mt-tab-container-item>
               <mt-tab-container-item id="tab-container3">
-                 <home-shell v-if="active == 'tab-container3'" :type="22" :getparams="params[2]"></home-shell>
+                 <home-shell v-if="active == 'tab-container3'" :type="21" :getparams="params[2]"></home-shell>
               </mt-tab-container-item>
                <mt-tab-container-item id="tab-container4">
-                 <home-shell v-if="active == 'tab-container4'" :type="22" :getparams="params[3]"></home-shell>
+                 <home-shell v-if="active == 'tab-container4'" :type="21" :getparams="params[3]"></home-shell>
               </mt-tab-container-item>
                <mt-tab-container-item id="tab-container5">
-                 <home-shell v-if="active == 'tab-container5'" :type="22" :getparams="params[4]"></home-shell>
+                 <home-shell v-if="active == 'tab-container5'" :type="21" :getparams="params[4]"></home-shell>
               </mt-tab-container-item>
                <mt-tab-container-item id="tab-container6">
-                 <home-shell v-if="active == 'tab-container6'" :type="22" :getparams="params[5]"></home-shell>
+                 <home-shell v-if="active == 'tab-container6'" :type="21" :getparams="params[5]"></home-shell>
               </mt-tab-container-item>
                <mt-tab-container-item id="tab-container7">
-                 <home-shell v-if="active == 'tab-container7'" :type="22" :getparams="params[6]"></home-shell>
+                 <home-shell v-if="active == 'tab-container7'" :type="21" :getparams="params[6]"></home-shell>
               </mt-tab-container-item>
                <mt-tab-container-item id="tab-container8">
-                 <home-shell v-if="active == 'tab-container8'" :type="22" :getparams="params[7]"></home-shell>
+                 <home-shell v-if="active == 'tab-container8'" :type="21" :getparams="params[7]"></home-shell>
               </mt-tab-container-item>
              
       </mt-tab-container>
@@ -41,6 +41,7 @@
     import bus from '../bus.js';
     import { TabContainer, TabContainerItem } from 'mint-ui';
     import homeShell from './homeShell';
+    import serverapi from '../serverapi.js';
     export default {
         data () {
             return {
@@ -50,72 +51,69 @@
                         topid:'',
                     },
                     {
-                        title:'药品',
-                        topid:4,
+                        title:'养生',
+                        topid:337,
                     },
                     {
-                        title:'保健食品',
-                        topid:5,
+                        title:'老年',
+                        topid:338,
                     },
                     {
-                        title:'营养食品',
-                        topid:6,
+                        title:'心理',
+                        topid:341,
                     },
                     {
-                        title:'原料药',
-                        topid:7,
+                        title:'母婴',
+                        topid:362,
                     },
                     {
-                        title:'中间体',
-                        topid:8,
+                        title:'用药',
+                        topid:383,
                     },
                     {
-                        title:'药用辅料',
-                        topid:9,
+                        title:'疾病',
+                        topid:390,
                     },
                     {
-                        title:'动植物提取物',
-                        topid:10,
+                        title:'饮食',
+                        topid:404,
                     }
                 ],
                 active:"tab-container1",
                 params:[
                     {
-                        url:"http://www.ey99.com/api/mobile/recommend.php",
+                        url:serverapi.recommend,
                         option:{params:{}}
                     },
                     {
-                        url:"http://www.ey99.com/api/mobile/investment.php",
-                        option:{params:{catid:4}}
+                        url:serverapi.article,
+                        option:{params:{catid:337}}
                     },
                     {
-                        url:"http://www.ey99.com/api/mobile/investment.php",
-                        option:{params:{catid:5}}
+                        url:serverapi.article,
+                        option:{params:{catid:338}}
                     },
                     {
-                        url:"http://www.ey99.com/api/mobile/investment.php",
-                        option:{params:{catid:6}}
+                        url:serverapi.article,
+                        option:{params:{catid:341}}
                     },
                     {
-                        url:"http://www.ey99.com/api/mobile/investment.php",
-                        option:{params:{catid:7}}
+                        url:serverapi.article,
+                        option:{params:{catid:362}}
                     },
                     {
-                        url:"http://www.ey99.com/api/mobile/investment.php",
-                        option:{params:{catid:8}}
+                        url:serverapi.article,
+                        option:{params:{catid:383}}
                     },
                     {
-                        url:"http://www.ey99.com/api/mobile/investment.php",
-                        option:{params:{catid:9}}
+                        url:serverapi.article,
+                        option:{params:{catid:390}}
                     },
                     {
-                        url:"http://www.ey99.com/api/mobile/investment.php",
-                        option:{params:{catid:10}}
+                        url:serverapi.article,
+                        option:{params:{catid:404}}
                     },
-                    {
-                        url:"http://www.ey99.com/api/mobile/investment.php",
-                        option:{params:{catid:11}}
-                    },
+                   
                 ],
                
             }

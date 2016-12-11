@@ -9,5 +9,8 @@ export default {
 	register: host + api_path + "register.php",
 	avatarupload: host + api_path + "avatarupload.php",
 	region: host + api_path + "region.php", //地区接口
-	video: host + api_path + "video.php" //视频接口
+	video: host + api_path + "video.php", //视频接口
+	article: host + api_path + "article.php",
+	investment: host + api_path + "investment.php",
+	recommend: host + api_path + 'recommend.php',
 }

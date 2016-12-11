@@ -2,103 +2,149 @@
 
 <template>
     <div class="content">
+     
     <my-header :option="option"></my-header>
-        
-
-        <investment v-if="currentView == 'investment'" :catid="catid"></investment>   
-        <recommend v-if="currentView == 'recommend'" :catid="catid"></recommend>   
-
+  
+      <mt-tab-container v-model="active" :swipeable="true">
+              <mt-tab-container-item id="tab-container1">
+                <home-shell v-if="active == 'tab-container1'" :type="22" :getparams="params[0]"></home-shell>
+              </mt-tab-container-item>
+              <mt-tab-container-item id="tab-container2">                
+                <home-shell v-if="active == 'tab-container2'" :type="22" :getparams="params[1]"></home-shell>
+              </mt-tab-container-item>
+              <mt-tab-container-item id="tab-container3">
+                 <home-shell v-if="active == 'tab-container3'" :type="22" :getparams="params[2]"></home-shell>
+              </mt-tab-container-item>
+               <mt-tab-container-item id="tab-container4">
+                 <home-shell v-if="active == 'tab-container4'" :type="22" :getparams="params[3]"></home-shell>
+              </mt-tab-container-item>
+               <mt-tab-container-item id="tab-container5">
+                 <home-shell v-if="active == 'tab-container5'" :type="22" :getparams="params[4]"></home-shell>
+              </mt-tab-container-item>
+               <mt-tab-container-item id="tab-container6">
+                 <home-shell v-if="active == 'tab-container6'" :type="22" :getparams="params[5]"></home-shell>
+              </mt-tab-container-item>
+               <mt-tab-container-item id="tab-container7">
+                 <home-shell v-if="active == 'tab-container7'" :type="22" :getparams="params[6]"></home-shell>
+              </mt-tab-container-item>
+               <mt-tab-container-item id="tab-container8">
+                 <home-shell v-if="active == 'tab-container8'" :type="22" :getparams="params[7]"></home-shell>
+              </mt-tab-container-item>
+             
+      </mt-tab-container>
+       
     </div>
 </template>
 
 <script>
     import myHeader from './header.vue';
-    import indexMain from './indexMain.vue';
-    import investment from './investment.vue';
-
-    import recommend from './recommend.vue';
-    import health from './health.vue';
-
     import bus from '../bus.js';
-
+    import { TabContainer, TabContainerItem } from 'mint-ui';
+    import homeShell from './homeShell';
+    import serverapi from '../serverapi.js';
     export default {
         data () {
             return {
-                  option:[
+                option:[
                     {
                         title:'全部',
-                        sign:'investment',
-                        id:null
+                        topid:'',
                     },
                     {
                         title:'药品',
-                        sign:'investment',
-                        id:4
+                        topid:4,
                     },
                     {
                         title:'保健食品',
-                        sign:'investment',
-                        id:5
+                        topid:5,
                     },
                     {
                         title:'营养食品',
-                        sign:'investment',
-                        id:6
+                        topid:6,
                     },
                     {
                         title:'原料药',
-                        sign:'investment',
-                        id:7
+                        topid:7,
                     },
                     {
                         title:'中间体',
-                        sign:'investment',
-                        id:8
+                        topid:8,
                     },
                     {
                         title:'药用辅料',
-                        sign:'investment',
-                        id:9
+                        topid:9,
                     },
                     {
                         title:'动植物提取物',
-                        sign:'investment',
-                        id:10
+                        topid:10,
                     }
-                ]
+                ],
+                active:"tab-container1",
+                params:[
+                    {
+                        url:serverapi.investment,
+                        option:{params:{}}
+                    },
+                    {
+                        url:serverapi.investment,
+                        option:{params:{catid:4}}
+                    },
+                    {
+                        url:serverapi.investment,
+                        option:{params:{catid:5}}
+                    },
+                    {
+                        url:serverapi.investment,
+                        option:{params:{catid:6}}
+                    },
+                    {
+                        url:serverapi.investment,
+                        option:{params:{catid:7}}
+                    },
+                    {
+                        url:serverapi.investment,
+                        option:{params:{catid:8}}
+                    },
+                    {
+                        url:serverapi.investment,
+                        option:{params:{catid:9}}
+                    },
+                    {
+                        url:serverapi.investment,
+                        option:{params:{catid:10}}
+                    },
+                    {
+                        url:serverapi.investment,
+                        option:{params:{catid:11}}
+                    },
+                ],
+               
             }
         },
-        computed:{
-            catid(){
-                var catid = this.$route.params.id ? this.$route.params.id : null;
-                return catid;
-            },
-            currentView(){
-                var type = this.$route.params.type ? this.$route.params.type : 'investment';
-                return type;
+        watch:{
+            active(val,oldval){
+                var id = val.replace("tab-container","");
+                id = parseInt(id) - 1;             
+                bus.$emit("navIndex",id);
             }
+        },
+        created(){
+            var _this = this;
+             bus.$on('navIndexToHome',function(index){                
+                _this.active = 'tab-container' + (parseInt(index) + 1);  
+            })             
+        },
+        mounted(){
         },
        
-        mounted(){
-           
-            var _this = this;
-            bus.$on('navselected',function(params){
-                console.log(params);
-                _this.catid = params.catid;
-                _this.currentView = params.currentView;
-
-            })
-        },
-     
         components: {
-            'my-header':myHeader,           
-            'investment':investment,
-          
+            'my-header':myHeader,
+            'home-shell':homeShell,
         }
     }
 </script>
 <style scoped>
     .content{
-        height:100%;
+        padding-bottom:.88rem;
     }
 </style>

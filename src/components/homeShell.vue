@@ -18,7 +18,8 @@
                 <invest-item :collect="collect" v-if="type == 22" :items="items"></invest-item>
 
                 <article-item :collect="collect" v-if="type == 21" :items="items"></article-item>
-             
+                
+                <video-list :collect="collect" v-if="type == 14" :items="items"></video-list>
                 
                 <div v-if="noData" slot="bottom" class="mint-loadmore-bottom">
                     没有了
@@ -44,8 +45,8 @@
     import indexMain from './indexMain.vue';
     import searchArticleItem from './searchArticleItem';
     import searchInvestItem from './searchInvestItem';
-    
-     import bus from '../bus.js';
+    import videoList from './videoList';
+    import bus from '../bus.js';
     export default {
         props:{  
             currentview:Object,
@@ -76,7 +77,8 @@
             noData,
             "index-main":indexMain,
             "article-item":searchArticleItem,
-            "invest-item":searchInvestItem
+            "invest-item":searchInvestItem,
+            videoList
         },
         updated(){   
  
@@ -88,7 +90,7 @@
             this.loadData();
         },
         mounted(){ 
-        
+            console.log(this.type);
         },
 
         methods:{
@@ -122,8 +124,7 @@
 
 
 
-                this.$http.get(url,option).then(
-
+                this.$http.get(url,option).then(                 
                     (res)=>{
                         console.log(res);
                         if(res.body.list.length){ 

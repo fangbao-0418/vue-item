@@ -22,23 +22,15 @@
  	import vueVideo from './common/video.vue';
  	import serverapi from '../serverapi';
 	export default {
+		props:['items'],
 		data () {
-		    return {
-     	 		items:[]
-			 
-
-		 	}
+		    return {}
 		},
 		mounted(){
-			this.loadData();
+
 		},
 		methods: {
-			loadData(){
-				var url = serverapi.video;
-				this.$http.get(url).then((res)=>{
-					this.items = res.body.list
-				})
-			}   
+		 
 		},
 		components: {
 		    'vplayer': vueVideo

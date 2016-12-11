@@ -180,7 +180,8 @@
                 //return this.$router.params.type ? this.$router.params.type;
             },
             topath(){
-                return {path:"home#"+this.topid}    
+                //return {path:this.$route.path + "#" + this.topid}    
+                return false;
             }
         },
         data(){

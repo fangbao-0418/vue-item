@@ -4,7 +4,7 @@
  <div class="white-box">
     <my-top></my-top>
     <div class="video-area">
-    <video-list></video-list>
+    <home-shell class="search-list" type="14" :getparams="params"></home-shell>
     </div>    
    
  </div>
@@ -12,20 +12,25 @@
 
 <script>
     import footer from './footer.vue';
-    import videoList from './videoList.vue';
+  
     import myTop from './common/top.vue';
     import homeShell from './homeShell.vue';   
-
+    import serverapi from '../serverapi.js';
     export default {
         computed:{
            
         },
         data () {
-            return {}  
+            return {
+                params:{
+                    url:serverapi.video,
+                    option:{params:{}}
+                }
+            }  
         },
         components: {  
             myTop,
-            'video-list':videoList,              
+            homeShell,         
             'my-footer':footer
         },
          methods: {           

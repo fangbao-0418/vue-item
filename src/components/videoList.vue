@@ -7,7 +7,8 @@
 			<div class="videoarea">
 				<vplayer :source="item.source" ref="vplayer"></vplayer>				
 			</div>
-			<span class="title">{{item.title}}</span>
+			<span class="title">{{item.title }}</span>
+			<collect-icon class="collect" moduleid="14" :id="item.itemid"></collect-icon>
 			<!-- <div class="note">
 				<span class="author">当代医药市场网</span>
 				<span class="hits"> <i class="iconfont">&#xf0048;</i> 188</span>
@@ -20,7 +21,7 @@
 </template>
 <script>
  	import vueVideo from './common/video.vue';
- 	import serverapi from '../serverapi';
+  	import collectIcon from './common/collectIcon.vue'; 	 
 	export default {
 		props:['items'],
 		data () {
@@ -33,8 +34,14 @@
 		 
 		},
 		components: {
-		    'vplayer': vueVideo
+		    'vplayer': vueVideo,
+		    collectIcon
 		},
+		filters:{
+          dsubstr(title,length){
+              return title.substr(0,length);
+          }
+      	},
  
   }
  
@@ -57,10 +64,16 @@
 			
 		}
 		.title{
-			width:100%;
-			padding:.12rem 0 .05rem;
+			width:80%;
+			padding:.24rem 0 0 0;
 			font-size:.3rem;
 			display: inline-block;
+		}
+		.collect{
+			padding: .16rem 2% 0 0;
+			text-align: right;
+			width:18%;
+			float:right;
 		}
 		.note{
 			padding-bottom:.1rem;

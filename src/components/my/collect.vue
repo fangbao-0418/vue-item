@@ -88,7 +88,7 @@
 
 			  </mt-tab-container-item>
 			  <mt-tab-container-item id="tab-container3">
-			     <home-shell :collect="true" v-if="active == 'tab-container3'" :type="21" :getparams="params2"></home-shell>
+			     <home-shell :collect="true" v-if="active == 'tab-container3'" :type="14" :getparams="params3"></home-shell>
 			  </mt-tab-container-item>
 			</mt-tab-container>
 		</div>
@@ -96,12 +96,10 @@
 </template>
 <script>
 	import blackNav from '../blackNav';
- 
 	import {  Navbar, TabItem, TabContainer, TabContainerItem } from 'mint-ui';
 	import homeShell from '../homeShell';
-	 
-  
-	import store from '../../store';
+	import store from '../../store.js';
+	import serverapi from '../../serverapi.js';
 	export default {
 		methods:{
 			del(){
@@ -117,16 +115,16 @@
 				active:"tab-container1",
 				rightTitle:"删除",
 				params1:{
-					url:"http://www.ey99.com/api/mobile/mycollect.php",
+					url:serverapi.mycollect,
 					option:{params:{token:localStorage.token,type:22}}
 				},
 				params2:{
-					url:"http://www.ey99.com/api/mobile/mycollect.php",
+					url:serverapi.mycollect,
 					option:{params:{token:localStorage.token,type:21}}
 				},
 				params3:{
-					url:"http://www.ey99.com/api/mobile/mycollect.php",
-					option:{params:{token:localStorage.token,type:22}}
+					url:serverapi.mycollect,
+					option:{params:{token:localStorage.token,type:14}}
 				}
 
 			}

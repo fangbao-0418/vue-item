@@ -12,5 +12,7 @@ export default {
 	video: host + api_path + "video.php", //视频接口
 	article: host + api_path + "article.php",
 	investment: host + api_path + "investment.php",
-	recommend: host + api_path + 'recommend.php',
+	recommend: host + api_path + 'recommend.php', //推荐接口
+	collect: host + api_path + 'collect.php',//收藏接口
+	mycollect: host + api_path + 'mycollect.php',//会员收藏列表接口
 }

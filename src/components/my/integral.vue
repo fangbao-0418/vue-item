@@ -112,6 +112,8 @@
 				var option = {params:{page:this.page},emulateJSON:true};
 				var _this = this;
 				this.$http.post(url,body,option).then((res)=>{
+
+					console.log(res);
 					if(res.body.list.length && this.page < 10){
 						if(_this.items != null){
 							for(var i = 0; i < res.body.list.length; i++){

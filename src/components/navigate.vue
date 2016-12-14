@@ -4,10 +4,7 @@
             <div class="goback">
                 <i @click="goBack"></i>
             </div>
-            <div class="collect">
-                <i v-if="!collected" @click="collect" class="iconfont">&#xe68a;</i>
-                <i v-else @click="collect" class="iconfont collected"> &#xe600;</i>               
-            </div>
+            <collect-icon class="collect" :moduleid="moduleid" :id="id" ></collect-icon>
             <div class="share">
                 <i @click="shared" class="iconfont">&#xe648;</i>
             </div>
@@ -17,13 +14,8 @@
 </template>
 <script>
     import share from './shared.vue';
+    import collectIcon from './common/collectIcon.vue';
 
-    import auth from '../auth.js';
-    
-    import { Toast } from 'mint-ui';
-    
-    
-    
     export default {
         props:{
             path:{
@@ -34,63 +26,23 @@
         },
         data(){
             return {
-                isOpen:false,  
-                collected:false              
+                isOpen:false,                         
             }
         },
-        created(){
-            this.iscollected();          
-        },
+      
         computed:{
            
         },
         components:{
             'app-share':share,
+            collectIcon
         },
         methods:{
-            iscollected(){
-                var _this = this;
-                 auth.getUserInfo().then((info)=>{
-                    if(info){                       
-                        var url = "http://www.ey99.com/api/mobile/collect.php";
-                        var option = {params:{moduleid:this.moduleid,itemid:this.id,userid:info.userid,type:"get"},emulateJSON:true};
-                        _this.$http.post(url,[],option).then((res)=>{                           
-                             _this.collected = res.body.res;
-                        })
-                    }else{
-                        _this.collected = false;
-                    }
-                },()=>{ _this.collected = false; });    
-            },           
+                   
             shared(){
                 this.isOpen = true;
             },
-            collect(){                             
-                var _this = this;
-                auth.getUserInfo().then((info)=>{                  
-                    if(info){
-                        var url = "http://www.ey99.com/api/mobile/collect.php";
-                        var option = {params:{type:"set",moduleid:this.moduleid,itemid:this.id,userid:info.userid},emulateJSON:true};
-                        _this.$http.post(url,[],option).then((res)=>{
-                            if(res.body.res){
-                                _this.collected = true;   
-                            }
-                        });
-                    }else{
-                        Toast({
-                          message: '请先登录',
-                          position: 'bottom',
-                          duration: 5000
-                        });
-                    }
-                },()=>{
-                     Toast({
-                          message: '请先登录',
-                          position: 'bottom',
-                          duration: 5000
-                        });
-                });
-            },
+          
             
             goBack(){
                 if(this.path){
@@ -103,7 +55,7 @@
         }
     }
 </script>
-<style>
+<style lang="sass" scoped>
     /*nav*/
     .navigate{
         position: fixed;
@@ -112,49 +64,49 @@
         width:6.4rem ;
         height:.8rem;
         background: #f5f5f3;
+        .column{
+            position: relative;
+            width:5.8rem ;
+            height:.8rem;
+            margin: 0 .3rem;          
+            .goback{
+                position: absolute;
+                left:0;
+                top:.19rem;
+                display: inline-block;
+                i{
+                    width:.22rem;
+                    height:.42rem;                  
+                    color:#000;                   
+                    background: url("../image/left-back.png");
+                    background-size: .22rem .42rem;
+                    display: inline-block;
+                }
+            } 
+            .collect{
+                position:absolute;
+                top:.16rem;
+                right:.8rem;             
+                display: inline-block;
+            }
+            .share {
+                display: inline-block;
+                position: absolute;
+                right:0;
+                top:.08rem;
+                i{      
+                    font-size:.5rem;
+                    color:#999;
+                }
+            }
+        }
     }
 
-    .column{
-        position: relative;
-        width:5.8rem ;
-        height:.26rem;
-        margin: 0 auto;
-        padding: .18rem 0;
-    }
+   
+ 
 
-    .column i{
-        font-size: .4rem;
-        line-height: .26rem;
-    }
+   
 
-
-    .goback i{
-        width:.22rem;
-        height:.42rem;
-        position: absolute;
-        left:0;
-        color:#000;
-        top:.19rem;
-        background: url("../image/left-back.png");
-        background-size: .22rem .42rem;
-        display: inline-block;
-    }
-
-    .share i{
-        position: absolute;
-        font-size:.5rem;
-        right:0;
-        top:.28rem;
-        color:#999;
-    }
-    .collect i{
-        position: absolute;
-        font-size:.4rem;
-        right:.8rem;
-        top:.28rem;
-        color:#999;
-    }
-    .collect .collected{
-        color:#FFB040;
-    }
+   
+   
 </style>

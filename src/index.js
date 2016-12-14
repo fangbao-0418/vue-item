@@ -19,6 +19,10 @@ require('./css/common.css');
 import MintUI from 'mint-ui';
 import 'mint-ui/lib/style.css';
 import './css/mint-ui.css';
+
+
+
+
 //Vue.use('./server.js');
 Vue.use(VueRouter);
 Vue.use(VueResource);   //加载Resource

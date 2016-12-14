@@ -1,6 +1,6 @@
 <template>
 	<div class="info-box" v-if="userinfo">
-		<my-nav class="info-head" theme="white" title="个人资料"></my-nav>
+		<my-nav :path="path" class="info-head" theme="white" title="个人资料"></my-nav>
 		
 		<div class="particulars" >
 			<avatar-upload :src="userinfo.avatar"></avatar-upload>
@@ -14,7 +14,7 @@
 					<i v-if="userinfo.gender == 1" class="gray">男士</i>
 					<i v-if="userinfo.gender == 2" class="gray">女士</i>
 				</li>
-				<li><span>单位名称:</span><input v-model="userinfo.company" type="text" placeholder="124"/></li>
+				<li><span>单位名称:</span><input v-model="userinfo.company" type="text" /></li>
 				
 				<li><span>所在地区:</span><i @click="selectregion" class="gray">{{userinfo.region}}</i>
 					<div v-if="regionIsClick" class="selectregion">
@@ -79,7 +79,7 @@
 				sexradio:[1,2],
 				show:false,
 				region:null,
-			
+				path:{path:"/my/mySetting"},
 				userinfo:null,
 				regionIsClick:false,
 				slots: [{
@@ -171,11 +171,11 @@
 					var postcodeReg =  /^[1-9]\d{5}$/;
 					var qqReg = /^[1-9][0-9]{4,}$/;
 					var emailReg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
-					if(this.userinfo.nickname<=4 || this.userinfo.nickname >30){
+					if(this.userinfo.nickname.length<=4 || this.userinfo.nickname.length >30){
 						this.toast("昵称不合法，昵称必须是4~30位字符");
-					}else if(this.userinfo.company<=4 || this.userinfo.company >60){
+					}else if(this.userinfo.company.length<=4 || this.userinfo.company.length >60){
 						this.toast("单位名称不合法，名称必须是4~60位字符");
-					}else if(this.userinfo.address<=4 || this.userinfo.company >120){
+					}else if(this.userinfo.address.length<=4 || this.userinfo.company.length >120){
 						this.toast("联系地址不合法，地址必须是4~120位字符");
 					}else if( !postcodeReg.exec(this.userinfo.postcode)  ){
 						this.toast("邮编格式不正确");
@@ -193,6 +193,7 @@
 						var body = {action:"infoedit",data:this.userinfo,token:localStorage.token};
 						var option = {emulateJSON:true};
 						this.$http.post(url,body,option).then((res)=>{
+							console.log(res);
 							Indicator.close();
 							this.$router.push({path:'/my/mySetting'});
 						})

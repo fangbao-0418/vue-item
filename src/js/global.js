@@ -21,3 +21,12 @@ var recalc = function () {
 window.addEventListener(resizeEvt, recalc, false);
 //DOMContentLoaded是firefox下特有的Event, 当所有DOM解析完以后会触发这个事件。
 document.addEventListener('DOMContentLoaded', recalc, false);
+
+
+//禁止滑动
+// document.ontouchstart=function(){
+// return false;
+// }
+
+
+ 

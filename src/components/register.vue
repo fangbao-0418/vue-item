@@ -86,12 +86,17 @@
       					var option = {emulateJSON:true};
       					this.$http.post(url,body,option).then((res)=>{
       						console.log(res)
-      						if(!res.body.validate){
+      						if(!res.body.codestatus){
 								this.toast("验证码错误");
       						}else if(this.password.length < 6){
 		      					this.toast("密码输入过短");
 		      				}else{
-		      					this.toast("暂停注册");
+		      					if(res.body.token){
+		      						localStorage.token = res.body.token;
+  									this.$router.push({path:'/my'});
+		      					}else{
+		      						this.toast("注册失败");
+		      					}
 		      				}
       				
       					},()=>{
@@ -106,7 +111,9 @@
       				var body = {mobile:this.mobile};
       				var option = {emulateJSON:true};
       				this.$http.post(url,body,option).then((res)=>{
-      					console.log(res);
+      					if(res.body.status == "error"){
+      						this.toast("短信发送失败");
+      					}
       				})
       			}
       			this.issend = true;

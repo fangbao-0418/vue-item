@@ -2,7 +2,7 @@
 </style>
 <template>
 	<div class="myset-area" >
-		<my-nav theme="white" title="设置"></my-nav>
+		<my-nav theme="white" :path="path" title="设置"></my-nav>
 		<div class="myset-main">
 				<ul>
 				<router-link :to="{path:'/my/infoedit'}" tag="li">
@@ -29,7 +29,8 @@
 	export default {
 		data(){
 			return {
-				status:false
+				status:false,
+				path:{path:"/my"}
 			}
 		},
 		components:{

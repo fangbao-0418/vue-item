@@ -27,7 +27,7 @@ webpackJsonp([1],{
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-693e3ad0/common.vue"
+	  var id = "_v-923430f2/common.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -52,8 +52,8 @@ webpackJsonp([1],{
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-693e3ad0&scoped=true!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./common.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-693e3ad0&scoped=true!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./common.vue");
+			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-923430f2&scoped=true!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./common.vue", function() {
+				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-923430f2&scoped=true!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./common.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -376,7 +376,7 @@ webpackJsonp([1],{
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "_v-4d19d370/footer.vue"
+	  var id = "_v-760fc992/footer.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -401,8 +401,8 @@ webpackJsonp([1],{
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-4d19d370&scoped=true!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./footer.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-4d19d370&scoped=true!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./footer.vue");
+			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-760fc992&scoped=true!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./footer.vue", function() {
+				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/style-rewriter.js?id=_v-760fc992&scoped=true!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.8.5.4@vue-loader/lib/selector.js?type=style&index=0!./footer.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -421,7 +421,7 @@ webpackJsonp([1],{
 
 
 	// module
-	exports.push([module.id, ".footer[_v-4d19d370] {\n  background-color: #f4f5f6;\n  width: 6.4rem;\n  position: fixed;\n  bottom: 0px;\n  padding: .08rem 0px; }\n  .footer li[_v-4d19d370] {\n    width: 25%; }\n  .footer .home[_v-4d19d370] {\n    float: left;\n    text-align: center;\n    cursor: pointer; }\n    .footer .home i[_v-4d19d370] {\n      background: url(" + __webpack_require__(81) + ");\n      width: .40rem;\n      height: .40rem;\n      display: inline-block;\n      background-size: .40rem .40rem; }\n    .footer .home .cur[_v-4d19d370] {\n      background: url(" + __webpack_require__(82) + ");\n      width: .40rem;\n      height: .40rem;\n      display: inline-block;\n      background-size: .40rem .40rem; }\n  .footer .product[_v-4d19d370] {\n    float: left;\n    text-align: center;\n    cursor: pointer; }\n    .footer .product i[_v-4d19d370] {\n      background: url(" + __webpack_require__(83) + ");\n      width: .40rem;\n      height: .40rem;\n      display: inline-block;\n      background-size: .40rem .40rem; }\n    .footer .product .cur[_v-4d19d370] {\n      background: url(" + __webpack_require__(84) + ");\n      width: .40rem;\n      height: .40rem;\n      display: inline-block;\n      background-size: .40rem .40rem; }\n  .footer .video[_v-4d19d370] {\n    float: left;\n    text-align: center;\n    cursor: pointer; }\n    .footer .video .cur[_v-4d19d370] {\n      background: url(" + __webpack_require__(85) + ") no-repeat;\n      width: .40rem;\n      height: .40rem;\n      display: inline-block;\n      background-size: .38rem .38rem;\n      background-position: center; }\n    .footer .video i[_v-4d19d370] {\n      background: url(" + __webpack_require__(86) + ") no-repeat;\n      width: .40rem;\n      height: .40rem;\n      display: inline-block;\n      background-position: center;\n      background-size: .38rem .38rem; }\n  .footer .my[_v-4d19d370] {\n    float: left;\n    text-align: center;\n    cursor: pointer; }\n    .footer .my i[_v-4d19d370] {\n      background: url(" + __webpack_require__(87) + ");\n      width: .40rem;\n      height: .40rem;\n      display: inline-block;\n      background-size: .40rem .40rem; }\n    .footer .my .cur[_v-4d19d370] {\n      background: url(" + __webpack_require__(88) + ");\n      width: .40rem;\n      height: .40rem;\n      display: inline-block;\n      background-size: .40rem .40rem; }\n  .footer span[_v-4d19d370] {\n    display: block;\n    font-size: .22rem;\n    color: #4c4c4c; }\n  .footer .on span[_v-4d19d370] {\n    display: block;\n    font-size: .22rem;\n    color: #ed1b23; }\n", ""]);
+	exports.push([module.id, ".footer[_v-760fc992] {\n  background-color: #f4f5f6;\n  width: 6.4rem;\n  position: fixed;\n  bottom: 0px;\n  padding: .08rem 0px; }\n  .footer li[_v-760fc992] {\n    width: 25%; }\n  .footer .home[_v-760fc992] {\n    float: left;\n    text-align: center;\n    cursor: pointer; }\n    .footer .home i[_v-760fc992] {\n      background: url(" + __webpack_require__(81) + ");\n      width: .40rem;\n      height: .40rem;\n      display: inline-block;\n      background-size: .40rem .40rem; }\n    .footer .home .cur[_v-760fc992] {\n      background: url(" + __webpack_require__(82) + ");\n      width: .40rem;\n      height: .40rem;\n      display: inline-block;\n      background-size: .40rem .40rem; }\n  .footer .product[_v-760fc992] {\n    float: left;\n    text-align: center;\n    cursor: pointer; }\n    .footer .product i[_v-760fc992] {\n      background: url(" + __webpack_require__(83) + ");\n      width: .40rem;\n      height: .40rem;\n      display: inline-block;\n      background-size: .40rem .40rem; }\n    .footer .product .cur[_v-760fc992] {\n      background: url(" + __webpack_require__(84) + ");\n      width: .40rem;\n      height: .40rem;\n      display: inline-block;\n      background-size: .40rem .40rem; }\n  .footer .video[_v-760fc992] {\n    float: left;\n    text-align: center;\n    cursor: pointer; }\n    .footer .video .cur[_v-760fc992] {\n      background: url(" + __webpack_require__(85) + ") no-repeat;\n      width: .40rem;\n      height: .40rem;\n      display: inline-block;\n      background-size: .38rem .38rem;\n      background-position: center; }\n    .footer .video i[_v-760fc992] {\n      background: url(" + __webpack_require__(86) + ") no-repeat;\n      width: .40rem;\n      height: .40rem;\n      display: inline-block;\n      background-position: center;\n      background-size: .38rem .38rem; }\n  .footer .my[_v-760fc992] {\n    float: left;\n    text-align: center;\n    cursor: pointer; }\n    .footer .my i[_v-760fc992] {\n      background: url(" + __webpack_require__(87) + ");\n      width: .40rem;\n      height: .40rem;\n      display: inline-block;\n      background-size: .40rem .40rem; }\n    .footer .my .cur[_v-760fc992] {\n      background: url(" + __webpack_require__(88) + ");\n      width: .40rem;\n      height: .40rem;\n      display: inline-block;\n      background-size: .40rem .40rem; }\n  .footer span[_v-760fc992] {\n    display: block;\n    font-size: .22rem;\n    color: #4c4c4c; }\n  .footer .on span[_v-760fc992] {\n    display: block;\n    font-size: .22rem;\n    color: #ed1b23; }\n", ""]);
 
 	// exports
 
@@ -673,14 +673,14 @@ webpackJsonp([1],{
 /***/ 90:
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n\n<ul class=\"footer\" _v-4d19d370=\"\">\n\n\n    <router-link :to=\"{path:'/home'}\" active-class=\"on\" class=\"home\" tag=\"li\" _v-4d19d370=\"\">\n\n            <router-link tag=\"i\" :to=\"{path:'/home'}\" active-class=\"cur\" _v-4d19d370=\"\">\n\n            </router-link>\n\n        <span _v-4d19d370=\"\">首页</span>\n    </router-link>\n\n    <router-link :to=\"{path:'/product'}\" active-class=\"on\" class=\"product\" tag=\"li\" _v-4d19d370=\"\">\n\n            <router-link tag=\"i\" :to=\"{path:'/product'}\" active-class=\"cur\" _v-4d19d370=\"\">\n\n            </router-link>\n\n        <span _v-4d19d370=\"\">产品</span>\n    </router-link>\n\n    <router-link :to=\"{path:'/video'}\" active-class=\"on\" class=\"video\" tag=\"li\" _v-4d19d370=\"\">\n\n            <router-link tag=\"i\" :to=\"{path:'/video'}\" active-class=\"cur\" _v-4d19d370=\"\">\n\n            </router-link>\n\n        <span _v-4d19d370=\"\">视频</span>\n    </router-link>\n\n    <router-link :to=\"{path:'/my'}\" active-class=\"on\" class=\"my\" tag=\"li\" _v-4d19d370=\"\">\n\n            <router-link tag=\"i\" :to=\"{path:'/my'}\" active-class=\"cur\" _v-4d19d370=\"\">\n\n            </router-link>\n\n        <span _v-4d19d370=\"\">我的</span>\n    </router-link>\n\n\n\n\n</ul>";
+	module.exports = "\n\n\n\n<ul class=\"footer\" _v-760fc992=\"\">\n\n\n    <router-link :to=\"{path:'/home'}\" active-class=\"on\" class=\"home\" tag=\"li\" _v-760fc992=\"\">\n\n            <router-link tag=\"i\" :to=\"{path:'/home'}\" active-class=\"cur\" _v-760fc992=\"\">\n\n            </router-link>\n\n        <span _v-760fc992=\"\">首页</span>\n    </router-link>\n\n    <router-link :to=\"{path:'/product'}\" active-class=\"on\" class=\"product\" tag=\"li\" _v-760fc992=\"\">\n\n            <router-link tag=\"i\" :to=\"{path:'/product'}\" active-class=\"cur\" _v-760fc992=\"\">\n\n            </router-link>\n\n        <span _v-760fc992=\"\">产品</span>\n    </router-link>\n\n    <router-link :to=\"{path:'/video'}\" active-class=\"on\" class=\"video\" tag=\"li\" _v-760fc992=\"\">\n\n            <router-link tag=\"i\" :to=\"{path:'/video'}\" active-class=\"cur\" _v-760fc992=\"\">\n\n            </router-link>\n\n        <span _v-760fc992=\"\">视频</span>\n    </router-link>\n\n    <router-link :to=\"{path:'/my'}\" active-class=\"on\" class=\"my\" tag=\"li\" _v-760fc992=\"\">\n\n            <router-link tag=\"i\" :to=\"{path:'/my'}\" active-class=\"cur\" _v-760fc992=\"\">\n\n            </router-link>\n\n        <span _v-760fc992=\"\">我的</span>\n    </router-link>\n\n\n\n\n</ul>";
 
 /***/ },
 
 /***/ 91:
 /***/ function(module, exports) {
 
-	module.exports = "\n\n\n\n<div style=\"height:100%\" _v-693e3ad0=\"\">\n    <router-view _v-693e3ad0=\"\"></router-view>\n    <my-footer _v-693e3ad0=\"\"></my-footer>\n</div>\n\n\n\n";
+	module.exports = "\n\n\n\n<div style=\"height:100%\" _v-923430f2=\"\">\n    <router-view _v-923430f2=\"\"></router-view>\n    <my-footer _v-923430f2=\"\"></my-footer>\n</div>\n\n\n\n";
 
 /***/ }
 

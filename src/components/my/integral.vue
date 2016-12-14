@@ -55,7 +55,7 @@
 </style>
 <template>
 	<div class="integral-area" >
-		<my-nav class="fixed-nav" theme="white" title="成长值明细"></my-nav>
+		<my-nav :path="path" class="fixed-nav" theme="white" title="成长值明细"></my-nav>
 		<div class="integral-main">
 			<mt-loadmore v-if="items != null" :bottom-method="loadBottom" bottom-pull-text="上拉加载" :bottom-all-loaded="allLoaded" ref="loadmore">
 				<ul>
@@ -84,6 +84,7 @@
 	export default {
 		data(){
 			return {
+				path:{path:"/my"},
 				items:null,
 				allLoaded:false,
 				page:0,

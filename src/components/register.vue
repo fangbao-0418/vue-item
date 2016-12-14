@@ -85,8 +85,10 @@
       					var body = {username:this.mobile,validate:this.validate,password:this.password};
       					var option = {emulateJSON:true};
       					this.$http.post(url,body,option).then((res)=>{
-      						console.log(res)
-      						if(!res.body.codestatus){
+      						console.log(res);
+      						if(res.body.isexist){
+      							this.toast("该手机号已被使用");
+      						}else if(!res.body.codestatus){
 								this.toast("验证码错误");
       						}else if(this.password.length < 6){
 		      					this.toast("密码输入过短");
@@ -107,27 +109,40 @@
       		},
       		sendvalidate(){
       			if(this.issend == false){
-      				var url = serverapi.validate;
-      				var body = {mobile:this.mobile};
-      				var option = {emulateJSON:true};
-      				this.$http.post(url,body,option).then((res)=>{
-      					if(res.body.status == "error"){
-      						this.toast("短信发送失败");
-      					}
-      				})
+      				var pattern = /^1[3|4|5|7|8][0-9]\d{8}$/;
+      				if(!pattern.exec(this.mobile)){
+      					this.toast("手机号码格式有误");
+      				}else{
+      					var url = serverapi.validate;
+	      				var body = {mobile:this.mobile};
+	      				var option = {emulateJSON:true};
+	      				this.$http.post(url,body,option).then((res)=>{
+	      					//console.log(res);
+	      					if(res.body.status == "error"){
+	      						this.toast(res.body.msg);
+	      					}
+	      					if(res.body.status == "ok"){
+	      						this.issend = true;
+				      			var time = 60;
+				      			var _this = this;
+				      			_this.validatetext = "重新获取(" + time + ")秒";
+				      			this.timer = setInterval(()=>{
+				      				time--;
+				      				_this.validatetext = "重新获取(" + time + ")秒";
+				      				if (time == 1){
+				      					_this.issend = false;
+				      					_this.validatetext = "重新获取"
+				      					clearInterval(_this.timer);
+				      				}
+				      			},1000)
+
+	      					}
+	      				})
+	      			
+      				}	
+
       			}
-      			this.issend = true;
-      			var time = 60;
-      			var _this = this;
-      			this.timer = setInterval(()=>{
-      				time--;
-      				_this.validatetext = "重新获取(" + time + ")秒";
-      				if (time == 1){
-      					_this.issend = false;
-      					_this.validatetext = "重新获取"
-      					clearInterval(_this.timer);
-      				}
-      			},1000)
+      			
       		},
       	
     	},

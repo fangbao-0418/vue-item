@@ -5,7 +5,10 @@ var gulp = require('gulp');
 var gutil = require("gulp-util");
 var del = require('del');
 var webpackconfig = require('./webpack.config.js');
+var webpackProductionConfig = require('./webpack.production.config.js');
+
 var webpack = require("webpack");
+
 var WebpackDevServer = require("webpack-dev-server");
 
 
@@ -21,6 +24,12 @@ gulp.task('clean',function(cb){
 });
 gulp.task("webpack", function(callback) {
     webpack(webpackconfig,callback);
+});
+gulp.task("product",function(cb){
+    webpack(webpackProductionConfig,cb);
+});
+gulp.task("build",['clean','product'],function(){
+    gutil.log("项目生产完成");
 });
 
 gulp.task("webpack-dev-server", function(callback) {
@@ -40,7 +49,7 @@ gulp.task("webpack-dev-server", function(callback) {
         //proxy: {
         //    '*': 'http://localhost:3000'
         //},
-    }).listen(8088, "192.168.10.123", function(err) {
+    }).listen(8088, "192.168.1.15", function(err) {
         if(err) throw new gutil.PluginError("webpack-dev-server", err);
         // Server listening
         gutil.log("[webpack-dev-server]", "http://192.168.1.15:8088/webpack-dev-server/index.html");

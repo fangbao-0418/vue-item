@@ -40,7 +40,7 @@
            
         },
         watch:{
-            index(val,oldval){
+            index(val,oldval){                
                 this.resetwidth(val);
             }
         },
@@ -55,27 +55,35 @@
                 bus.$emit('navIndexToHome',index);
             },
             resetwidth(index){
-
+                
                 var w = 0;
                 var currPosition = 0;
                
                 if($("#scroller ul li")[0]){
+
                     $("#scroller ul li").map(function(){
+                                           
                         w += $(this)[0].clientWidth;
+                        //console.log(w)
                     })
 
-                    for(var i=0; i < index; i++){
-                       
-                        currPosition += $("#scroller ul li").eq(i).width() ;
-
-                        
-                     
+                    for(var i=0; i < index; i++){                       
+                        currPosition += Math.round($("#scroller ul li").eq(i)[0].clientWidth);
                     }
                     $("#scroller").width(w);
                      //初始化位置
-                   
-                    this.loaded(-currPosition);
+                    
+                    if(w - currPosition <= document.documentElement.clientWidth){
+                    
+                        console.log($("#app").outerWidth());
+
+                       this.loaded(document.documentElement.clientWidth - 20 - w); 
+                    }else{
+                       this.loaded(-currPosition); 
+                    }
                 }
+
+                   
               
             },
             getUrlIndex(){

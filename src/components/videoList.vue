@@ -3,12 +3,14 @@
  
 
 
-		<div v-for="item in items" class="videoItem">
+		<div v-for="(item,index) in items" class="videoItem">
 			<div class="videoarea">
 				<vplayer :source="item.source" ref="vplayer"></vplayer>				
 			</div>
 			<span class="title">{{item.title }}</span>
-			<collect-icon class="collect" moduleid="14" :id="item.itemid"></collect-icon>
+			<collect-icon class="collect" moduleid="14" :id="item.itemid" ref=""></collect-icon>
+			 <collect-del-button v-if="collect" :items="items" :type="14" :index="index" class="collect-del-botton"></collect-del-button>   
+
 			<!-- <div class="note">
 				<span class="author">当代医药市场网</span>
 				<span class="hits"> <i class="iconfont">&#xf0048;</i> 188</span>
@@ -21,9 +23,10 @@
 </template>
 <script>
  	import vueVideo from './common/video.vue';
-  	import collectIcon from './common/collectIcon.vue'; 	 
+  	import collectIcon from './common/collectIcon.vue'; 	
+  	import collectDelButton from './collectDelButton'; 
 	export default {
-		props:['items'],
+		props:['items','collect'],
 		data () {
 		    return {}
 		},
@@ -35,7 +38,8 @@
 		},
 		components: {
 		    'vplayer': vueVideo,
-		    collectIcon
+		    collectIcon,
+		    collectDelButton
 		},
 		filters:{
           dsubstr(title,length){
@@ -53,6 +57,7 @@
 		padding:.2rem .3rem;
 		border-bottom:.2rem #efefef solid;
 		background: #FFF;
+		position:relative;
 		.videoarea{
 			position:relative;
 			width:5.8rem;
@@ -86,6 +91,11 @@
 				font-size:.2rem;
 				display: inline-block;
 			}
+		}
+		.collect-del-botton{
+			position:absolute;
+			top:.3rem;
+			right:.3rem;
 		}
 		
 	}

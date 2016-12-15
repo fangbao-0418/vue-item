@@ -171,14 +171,24 @@
 					var postcodeReg =  /^[1-9]\d{5}$/;
 					var qqReg = /^[1-9][0-9]{4,}$/;
 					var emailReg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
-					if(this.userinfo.nickname.length<=4 || this.userinfo.nickname.length >30){
+					if(this.getByteLen(this.userinfo.nickname) < 4 || this.getByteLen(this.userinfo.nickname) >30){
 						this.toast("昵称不合法，昵称必须是4~30位字符");
-					}else if(this.userinfo.company.length<=4 || this.userinfo.company.length >60){
+					}else if(this.getByteLen(this.userinfo.company) < 4 || this.getByteLen(this.userinfo.company) > 60){
 						this.toast("单位名称不合法，名称必须是4~60位字符");
-					}else if(this.userinfo.address.length<=4 || this.userinfo.company.length >120){
+					}else if(this.userinfo.region == "--"){
+						this.toast("所在地区不能为空");
+					}else if(this.getByteLen(this.userinfo.address) < 4 || this.getByteLen(this.userinfo.company) > 120){
 						this.toast("联系地址不合法，地址必须是4~120位字符");
 					}else if( !postcodeReg.exec(this.userinfo.postcode)  ){
 						this.toast("邮编格式不正确");
+					}else if(!this.userinfo.telephone){
+						this.toast("电话不能为空");
+					}else if(!this.userinfo.truename){
+						this.toast("联系人不能为空");
+					}else if(!this.userinfo.mobile){
+						this.toast("手机号码不能为空");
+					}else if(!this.userinfo.fax){
+						this.toast("传真不能为空");
 					}else if( !qqReg.exec(this.userinfo.qq)  ){
 						this.toast("QQ格式不正确");
 					}else if( !emailReg.exec(this.userinfo.email)  ){
@@ -241,7 +251,24 @@
 				picker.setSlotValues(1,this.region['0_' + index[0] ]);				
 				picker.setSlotValues(2,this.region['0_' + index[0] + '_' + index[1] ]);
 				this.userinfo.region = values[0] + '-' + values[1] + '-' + values[2]; 
-			}
+			},
+			getByteLen(val) {
+	            var len = 0;
+	            for (var i = 0; i < val.length; i++) {
+	               var length = val.charCodeAt(i);
+	               if(length>=0&&length<=128)
+	                {
+	                    len += 1;
+	                }
+	                else
+	                {
+	                    len += 2;
+	                }
+	            }
+	            return len;
+        	}
+
+
 		}
 	}
 

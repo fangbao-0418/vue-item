@@ -1,12 +1,13 @@
 <template>
 	<div class="my-main">
+		<load></load>
 		<!-- header -->
 	    <div class="header" >
 	       <div class="header-logo">
 	         <img :src="userinfo.avatar"/>
 	       </div>
 	       <div class="header-title">
-	        {{userinfo.username}}
+	        {{userinfo.nickname ? userinfo.nickname : userinfo.username}}
 	       </div>
 	    </div>
 	    <!--/header -->
@@ -17,23 +18,23 @@
 			<div class="nav">
 			  <router-link  class="left nav-box"  :to="{name:'collect'}" tag="div">
 			     <div class="nav-tu left-nav-tu">
-                   <img src="../imgs/nav1.gif"/>
+                   <img src="../imgs/collect.gif"/>
 			     </div>
 			     <div class="nav-ti left-nav-tu">
 			     	<span>收藏</span>
 			     </div>
 			  </router-link >
 			  <div class="mide nav-box" @click="setlight">
-			     <div class=nav-tu>
-			       <img src="../imgs/nav2.gif"/>
+			     <div class="nav-tu" >
+			       <img src="../imgs/pattern.gif"/>
 			   	 </div>
-			     <div class="nav-ti">
+			     <div class="nav-ti" >
                     <span>夜间</span>
 			     </div>
 			  </div>
 			  <router-link class="right nav-box"  :to="{name:'mySetting'}" tag="div">
-			     <div class="nav-tu">
-                      	<img src="../imgs/nav3.gif"/>
+			     <div class="nav-tu" >
+                    <img src="../assets/setting.png"/>
 			     </div>
 			     <div class="nav-ti" >
                      <span>设置</span>
@@ -77,6 +78,10 @@
 	import footer from './footer.vue';
 	import { Toast } from 'mint-ui';
 	import serverapi from '../serverapi';
+	import load from './loading.vue';
+	
+	import { Indicator } from 'mint-ui';
+
 	export default {
 		data(){
 			return {
@@ -86,7 +91,8 @@
 			}
 		},
 		components:{
-			'my-footer':footer
+			'my-footer':footer,
+			load
 		},
 		mounted(){
 
@@ -101,7 +107,7 @@
 				this.$http.post(url,body,option).then((res) => {
 					console.log(res);
 					this.userinfo = res.body;
-					
+					Indicator.close();
 				})
 			},
 			loginout(){

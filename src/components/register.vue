@@ -28,8 +28,7 @@
 </template>
 <script>
 	import blackNav from './blackNav.vue';
-	import { Switch } from 'mint-ui';
-	import { Toast } from 'mint-ui';
+	import { Switch, Toast } from 'mint-ui';	 
 	import auth from '../auth';
 	import serverapi from '../serverapi';
 	export default {
@@ -63,8 +62,7 @@
 			 
 		},
 		components:{
-			'my-nav':blackNav,
-			
+			'my-nav':blackNav,			
 		},
 		methods: {
 			toast(message){
@@ -74,7 +72,6 @@
 					  duration: 5000
 					});
 			},
-
       		submit() {
       			if(this.validateok){
       				var pattern = /^1[3|4|5|7|8][0-9]\d{8}$/;
@@ -117,7 +114,7 @@
 	      				var body = {mobile:this.mobile};
 	      				var option = {emulateJSON:true};
 	      				this.$http.post(url,body,option).then((res)=>{
-	      					//console.log(res);
+	      					console.log(res);
 	      					if(res.body.status == "error"){
 	      						this.toast(res.body.msg);
 	      					}

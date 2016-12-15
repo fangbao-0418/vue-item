@@ -352,9 +352,9 @@
                     this.ctrl.playing = false;
                 } else {
                     for(let i = 0; i < this.$parent.$children.length; i++){
-                       
-                        this.$parent.$children[i].$refs.video.pause();
-
+                        if(this.$parent.$children[i].$refs.video){
+                            this.$parent.$children[i].$refs.video.pause();
+                        }
                     }
                     this.$refs.video.play();
                     this.ctrl.playing = true;

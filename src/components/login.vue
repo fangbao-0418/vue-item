@@ -7,18 +7,21 @@
 
 		<div class="login-main">
 				<ul>
-					<li>
-	 <i class="iconfont">&#x3437;</i>
-				 <el-input class="from-input" placeholder="手机/当代账号" v-model="user"></el-input>
-					</li>
-					<li>
+				<li>
+	 				<i class="iconfont">&#x3437;</i>
+				 	<el-input class="from-input" placeholder="手机/当代账号" v-model="user"></el-input>
+				</li>
+				<li>
 		
-				 <i class="iconfont">&#xe678;</i>
-				 <el-input class="from-input pwd" :type="passwdtype" placeholder="登录密码" v-model="pwd"></el-input>	
-	  			<el-switch v-model="status" on-text="" off-text="" @change="passwdstatus"></el-switch>
-					</li>
+					<i class="iconfont">&#xe678;</i>
+				 	<el-input class="from-input pwd" :type="passwdtype" placeholder="登录密码" v-model="pwd"></el-input>	
+	  				<el-switch v-model="status" on-text="" off-text="" @change="passwdstatus"></el-switch>
+				</li>
 				<li>
 					<el-button type="primary" @click="login">登录</el-button>
+				</li>
+				<li>
+					<span class="forget" @click="backPassword">忘记密码?</span>
 				</li>	
 			</ul>	
 
@@ -49,6 +52,9 @@ export default {
   	'my-nav':blackNav,
   },
   methods:{
+  	backPassword(){
+  		this.$router.push({path:"/backPassword"});
+  	},
   	passwdstatus(){  		
   		this.passwdtype = this.passwdtype == "password" ? "text" : "password";  	
   	},
@@ -127,6 +133,12 @@ export default {
 				width:100%;
 				height:.8rem;
 				font-size:.3rem;
+			}
+			.forget{
+				display: inline-block;
+				width: 100%;
+				text-align: center;
+				font-size:.26rem;
 			}
 		}
 	}

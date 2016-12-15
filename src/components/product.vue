@@ -5,7 +5,7 @@
      
     <my-header :option="option"></my-header>
   
-      <mt-tab-container v-model="active" :swipeable="true">
+      <mt-tab-container v-model="active" :swipeable="false">
               <mt-tab-container-item id="tab-container1">
                 <home-shell v-if="active == 'tab-container1'" :type="22" :getparams="params[0]"></home-shell>
               </mt-tab-container-item>

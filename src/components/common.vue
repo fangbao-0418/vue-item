@@ -1,14 +1,10 @@
 
 
 <template>
-
-        <div style="height:100%">
+        <div>
             <router-view></router-view>
             <my-footer></my-footer>
         </div>
-
-
-
 </template>
 
 <script>

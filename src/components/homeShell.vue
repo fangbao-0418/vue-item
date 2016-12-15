@@ -37,9 +37,8 @@
   
     import load from './loading.vue';
 
-    import { Loadmore } from 'mint-ui';
-    import { Indicator } from 'mint-ui';
-    
+    import { Loadmore, Indicator } from 'mint-ui';
+  
     import noData from './noData';
     
     import indexMain from './indexMain.vue';

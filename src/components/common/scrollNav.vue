@@ -46,8 +46,11 @@
         },
         methods:{
             loaded(startX) {
-                  var myScroll;
-                    myScroll = new IScroll('#nav-smartSetup', {startX:startX,scrollX: true, scrollY: false, mouseWheel: true ,click: true});
+                var myScroll;
+                setTimeout(function(){
+                     myScroll = new IScroll('#nav-smartSetup', {startX:startX,scrollX: true, scrollY: false, click: true, useTransition: true}); 
+                 },100)
+                  
             },
             select(index){
                 this.index = index;
@@ -55,10 +58,13 @@
                 bus.$emit('navIndexToHome',index);
             },
             resetwidth(index){
-                
+                var startX;//初始位置
                 var w = 0;
+                var divisor = $("#nav-smartSetup")[0].clientWidth; //除数
+                //console.log($("#nav-smartSetup").outerWidth(false));
                 var currPosition = 0;
-               
+                
+                var currentLiWidth = $("#scroller ul li").eq(index)[0].clientWidth;// 当前li的宽度
                 if($("#scroller ul li")[0]){
 
                     $("#scroller ul li").map(function(){
@@ -71,16 +77,50 @@
                         currPosition += Math.round($("#scroller ul li").eq(i)[0].clientWidth);
                     }
                     $("#scroller").width(w);
-                     //初始化位置
                     
-                    if(w - currPosition <= document.documentElement.clientWidth){
+                    //初始化位置
                     
-                        console.log($("#app").outerWidth());
+                    // if(w - currPosition <= document.documentElement.clientWidth){
+                    
+                    //     console.log($("#app").outerWidth());
 
-                       this.loaded(document.documentElement.clientWidth - 20 - w); 
+                    //    this.loaded(document.documentElement.clientWidth - 20 - w); 
+                    // }else{
+                       
+                    // }
+                    var multiple = Math.floor(currPosition / divisor); //倍数
+                    var remainder = (currPosition % divisor).toFixed(2); //余数
+                    //console.log("currPosition->" + currPosition + " divisor->" + divisor + ":" + multiple);
+
+                    
+
+                    if(currPosition < divisor / 2){
+                        startX = 0
+                    }else if(currPosition >= ( w - divisor / 2)){
+                        startX = w - divisor;
                     }else{
-                       this.loaded(-currPosition); 
+                        if( remainder > (divisor/2) ){
+                            console.log({multiple : multiple, currPosition : currPosition, index : index, remainder : remainder, divisor : divisor });
+                            console.log(multiple * divisor)                   
+
+                            startX =  (multiple * divisor) + (remainder -  (divisor-currentLiWidth) / 2);    
+                        }else{
+                            //console.log({multiple : multiple, currPosition : currPosition, index : index, remainder : remainder, divisor : divisor });
+                            //console.log(multiple * divisor)   
+
+                            startX =  (multiple * divisor) - (0.5 * ( divisor - currentLiWidth) - remainder);
+
+                            //console.log(startX);    
+                        }
                     }
+
+
+                   
+                   
+                    
+
+                    //console.log( startX );
+                    this.loaded(-startX); 
                 }
 
                    
@@ -113,14 +153,14 @@
         mounted(){
 
             var _this = this;
-            $(document).ready(function(){             
+                  
                 //iscroll click设为true 不然无法点击
                 _this.resetwidth(_this.index);
                 window.onresize = function(){
                     _this.resetwidth(_this.index);
                 }  
                 //$("#scroller").css({"transition-duration": "1s",transform: "translate(-"+ 20 +"px, 0px) translateZ(0px)"});
-            })
+          
 
         },
 

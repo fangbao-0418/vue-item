@@ -32,7 +32,7 @@
                     <span>夜间</span>
 			     </div>
 			  </div>
-			  <router-link class="right nav-box"  :to="{name:'mySetting'}" tag="div">
+			  <router-link class="right nav-box"  :to="{name:'infoEdit'}" tag="div">
 			     <div class="nav-tu" >
                     <img src="../assets/setting.png"/>
 			     </div>

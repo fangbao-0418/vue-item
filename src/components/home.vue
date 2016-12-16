@@ -35,6 +35,8 @@
         },
         watch:{
             active(val,oldval){
+                console.log(val);    
+
                 var id = val.replace("tab-container","");
                 id = parseInt(id) - 1;             
                 bus.$emit("navIndex",id);
@@ -42,7 +44,8 @@
         },
         created(){
             var _this = this;
-             bus.$on('navIndexToHome',function(index){                
+             bus.$on('navIndexToHome',function(index){  
+                console.log(index);              
                 _this.active = 'tab-container' + (parseInt(index) + 1);  
             })             
         },

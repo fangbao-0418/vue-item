@@ -73,7 +73,7 @@
         collectDelButton
       },        
       mounted(){
-        console.log(this.items);
+        //console.log(this.items);
       },
       methods:{
        
@@ -100,7 +100,7 @@
             padding:0px .2rem;
             li{
                 width: 100%;
-                padding:.14rem 0;
+                padding:.2rem 0;
                
                 border-bottom:solid #fafafa 1px;
                 position:relative;

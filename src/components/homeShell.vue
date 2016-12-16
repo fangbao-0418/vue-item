@@ -89,20 +89,19 @@
             this.loadData();
         },
         mounted(){ 
-            console.log(this.type);
+           //console.log(this.type);
         },
 
         methods:{
             addTodo() {
-              
-                console.log(2222);
+               
              },
             loadTop(id) {
-                this.loadData(id,true);              
+                //this.loadData(id,true);              
             },
             loadBottom(id) { 
                 //console.log(this._uid); 
-                console.log(id);            
+                //console.log(id);            
                 this.loadData(id);
             },
             loadData(id,refresh=false){
@@ -125,7 +124,7 @@
 
                 this.$http.get(url,option).then(                 
                     (res)=>{
-                        console.log(res);
+                        //console.log(res);
                         if(res.body.list.length){ 
                             if(_this.page == 1){
                                 _this.items = res.body.list;

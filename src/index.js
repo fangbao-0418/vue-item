@@ -39,7 +39,9 @@ Vue.use(VueLazyload, {
     try: 3 // default 1
 })
 
-const router = new VueRouter(routerConfig)
+const router = new VueRouter(
+	routerConfig	
+)
 
 // 4. Create and mount root instance.
 // Make sure to inject the router.

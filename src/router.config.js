@@ -1,4 +1,6 @@
 
+const Parent = resolve => require(['./components/parent.vue'],resolve);
+
 //import Common from './components/common.vue';
 const Common = resolve => require(['./components/common.vue'],resolve);
 
@@ -80,35 +82,39 @@ function requireLogin (to, from, next) {
 
 export default {
 	//mode: 'history',
-	base: __dirname,
+	
 	routes: [
-		{	path:"/",component:Common,
-			children: [
-				{ path: "/home", component: Home },
-				{ path: "/product", component: product },
-				{ path: "/video", component: Video },
-			],
-		},
+		{
+		path : "/", component: Parent,
+		children : [
+			{
+				path:"/",component:Common,
+				children: [
+					{ path: "/home", component: Home },
+					{ path: "/product", component: product },
+					{ path: "/video", component: Video },
+					],
+			},
+			{ path: "/",  redirect: '/home'},			
+			
+			{ name: "my", path: "/my", component: My, beforeEnter: requireAuth},
 
-		{ path: "/",  redirect: '/home'},
-		
-		
-		{ name: "my", path: "/my", component: My, beforeEnter: requireAuth},
+			{ name: "infoEdit", path : "/my/infoEdit", component : infoEdit, beforeEnter: requireAuth},
+			{ name: "mySetting", path: "/my/mySetting", component: mySetting, beforeEnter: requireAuth},
+			{ name: "collect", path: "/my/collect", component: collect, beforeEnter: requireAuth},
+			{ name: "integral", path: "/my/integral", component: integral, beforeEnter: requireAuth},
+			
+			{ path : "/login" , component: login, beforeEnter: requireLogin},
+			{ path : "/register" , component: register},
+			{ path : "/backPassword", component : backPassword},
+			{ name : "search", path : "/search" , component : search},
+			{ path : "/investment", component: investment},
+			{ name : "investmentShow", path: "/investment/show", component: investmentShow },
+			{ name : "newsDetail", path: "/news/show", component: newsDetail },
+			{ name : "404", path: "/404", component: nopage},
+			{ path : "*", redirect: "home" }
 
-		{ name: "infoedit",path : "/my/infoedit", component : infoEdit, beforeEnter: requireAuth},
-		{ name: "mySetting", path: "/my/mySetting", component: mySetting, beforeEnter: requireAuth},
-		{ name: "collect", path: "/my/collect", component: collect, beforeEnter: requireAuth},
-		{ name: "integral", path: "/my/integral", component: integral, beforeEnter: requireAuth},
-		
-		{ path : "/login" , component: login, beforeEnter: requireLogin},
-		{ path : "/register" , component: register},
-		{ path : "/backPassword", component : backPassword},
-		{ name : "search", path : "/search" , component : search},
-		{ path : "/investment", component: investment},
-		{ name : "investmentShow", path: "/investment/show", component: investmentShow },
-		{ name : "newsDetail", path: "/news/show", component: newsDetail },
-		{ name : "404", path: "/404", component: nopage},
-		{ path : "*", redirect: "home" }
-
-	]
+			]
+	}]
+	
 }

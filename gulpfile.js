@@ -17,9 +17,10 @@ var WebpackDevServer = require("webpack-dev-server");
 //    console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
 //});
 
+//删除build 下的文件 和文件夹
 gulp.task('clean',function(cb){
     del([
-        'build/*.*'
+        'build/**/*'
     ],cb);
 });
 gulp.task("webpack", function(callback) {
@@ -59,6 +60,6 @@ gulp.task("webpack-dev-server", function(callback) {
     });
 });
 
-gulp.task('default',['webpack-dev-server'],function(){
+gulp.task('default',['clean','webpack','webpack-dev-server'],function(){
 
 });

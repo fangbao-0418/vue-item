@@ -53,8 +53,12 @@
                   
             },
             select(index){
+                console.log("push");
+                //alert(index);
                 this.index = index;
+                
                 this.$router.push({path:this.$route.path + "#" + this.option[index].topid});
+                
                 bus.$emit('navIndexToHome',index);
             },
             resetwidth(index){
@@ -134,11 +138,11 @@
                 for(i in this.option){
                     
                     if(this.option[i].topid == index){
-                      _this.index = i;
-                      
+                      _this.index = i;                      
                     }
                 }
 
+                _this.select(this.index,true);
             }
         },
         created(){
@@ -147,7 +151,7 @@
                 _this.index = index;                
             }),
             _this.getUrlIndex();
-            _this.select(this.index);
+            
             
         },
         mounted(){

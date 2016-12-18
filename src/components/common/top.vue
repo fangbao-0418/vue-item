@@ -13,7 +13,8 @@
 		methods:{
 			gosearch(){
                 this.$router.push({path:"/search"});
-            }
+            },
+
 		}
 	}
 </script>

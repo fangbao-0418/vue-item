@@ -81,7 +81,7 @@ function requireLogin (to, from, next) {
 // 稍后我们会讲解嵌套路由
 
 export default {
-	mode: 'history',
+	//mode: 'history',
 	
 	routes: [
 		{
@@ -112,7 +112,7 @@ export default {
 			{ name : "investmentShow", path: "/investment/show", component: investmentShow },
 			{ name : "newsDetail", path: "/news/show/", component: newsDetail },
 			{ name : "404", path: "/404", component: nopage},
-			//{ path : "*", redirect: "home" }
+			{ path : "*", redirect: "/404" }
 
 			]
 	}],

@@ -4,18 +4,9 @@
 	position:relative;	
 	font-size:.12rem;
 	background: #efefef;
+	min-height: 100%;
 }
-.app-shade{
-	position: fixed;
-	z-index:9999999999;
-	top:-100%;
-	pointer-events: none; 
-	left:0;	
-	bottom:0;
-	height:100%;
-	width:100%;
-	padding:200%;
-}
+
 /*清除浮动*/
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
 .clearfix{*+height:1%;}

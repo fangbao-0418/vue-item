@@ -1,6 +1,4 @@
-if(localStorage.currentlight == "black"){
-	$('.app-shade').css({"background-color":"rgba(0,0,0,0.5)"});	
-}
+
 function resetHeight(){	
 	$("#app").height(document.documentElement.clientHeight);
 	//$(".parent").height(document.documentElement.clientHeight);

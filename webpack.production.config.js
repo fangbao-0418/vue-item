@@ -22,18 +22,29 @@ var plugins = [
     }),
 
     //提公用js到common.js文件中
-    //new webpack.optimize.CommonsChunkPlugin('common.js'),
+    new webpack.optimize.CommonsChunkPlugin('/static/js/common.js'),
     
   
     new webpack.NoErrorsPlugin(),
  
     //将样式统一发布到style.css中
-    new ExtractTextPlugin("build.css"),
+    new ExtractTextPlugin('/static/css/style.css',{
+      allChunks: true,
+    }),
+
     //new openBrowserWebpackPlugin({ url: 'http://192.168.1.15:8088' }),
     new HtmlWebpackPlugin({
         template:"index.html",//原始模板
         filename:"index.html",//输出新文件
-        inject: true
+        
+         // 要把<script>标签插入到页面哪个标签里(body|true|head|false)
+        inject: 'body',
+        
+        // hash如果为true，将添加hash到所有包含的脚本和css文件，对于解除cache很有用
+        // minify用于压缩html文件，其中的removeComments:true用于移除html中的注释，collapseWhitespace:true用于删除空白符与换行符
+        removeComments:true,
+        collapseWhitespace:true,
+        hash:true
     }),
 
     //全局加载jq
@@ -43,7 +54,8 @@ var plugins = [
         "window.jQuery": "jquery"
     }),
 
-    
+    //给输出的文件头部添加注释信息。
+    new webpack.BannerPlugin('This file is created by fangbao')
 
     //new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
     // 使用 ProvidePlugin 加载使用率高的依赖库
@@ -63,7 +75,8 @@ module.exports = {
     output: {
         path: __dirname + buildPath,
         //filename: 'build.js',
-        filename: '[name].js'
+        filename: '/static/js/[name].js',
+        chunkFilename: '/static/js/[id].js'
     },
     // 服务器配置相关，自动刷新!
     devServer: {
@@ -106,7 +119,7 @@ module.exports = {
             // 图片转化，小于8K自动转化为base64的编码
             {
                 test: /\.(png|jpg|gif)$/,
-                loader: 'url-loader?limit=8192&name=images/[name].[ext]'
+                loader: 'url-loader?limit=8192&name=/static/images/[name].[ext]'
             },
             //html模板编译？
             {
@@ -118,7 +131,7 @@ module.exports = {
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
-                loader: "file-loader"
+                loader: "file-loader?limit=10000&name=/static/fonts/[name].[ext]"
             }]
     },
     // .vue的配置。需要单独出来配置
@@ -146,7 +159,10 @@ module.exports = {
 
     plugins: plugins,
     // 开启source-map，webpack有多种source-map，在官网文档可以查到
-    //devtool: 'eval-source-map'
+    
+    //   开启source-map，生产环境下推荐使用cheap-source-map或source-map，后者得到的.map文件体积比较大，但是能够完全还原以前的js代码
+    //   开发环境下推荐使用cheap-module-eval-source-map
+    //  devtool: 'source-map'
 };
 
 

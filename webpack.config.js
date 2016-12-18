@@ -21,39 +21,73 @@ var plugins = [
     //   }
     // }),
 
-    //提公用js到common.js文件中
-    //new webpack.optimize.CommonsChunkPlugin('common.js'),
+    /**
+      * 提公用js到common.js文件中
+      * 提取入口文件里面的公共模块
+      *  new webpack.optimize.CommonsChunkPlugin({
+      *      name: 'vendors',
+      *      filename: 'vendors.js',
+      *  }),    
+      */
+    new webpack.optimize.CommonsChunkPlugin("commons",'common.js'),
     
+    // 为组件分配ID，通过这个插件webpack可以分析和优先考虑使用最多的模块，并为它们分配最小的ID
+    new webpack.optimize.OccurenceOrderPlugin(),
+
+    // 模块热替换插件
+    new webpack.HotModuleReplacementPlugin(), 
   
-/*  
-    //new webpack.NoErrorsPlugin(),
-*/
-    //将样式统一发布到style.css中
-    new ExtractTextPlugin("build.css"),
+    // 允许错误不打断程序
+    new webpack.NoErrorsPlugin(),
+
+    
+    /**
+      * 提取css单文件的名字，路径和生产环境下的不同，要与修改后的publickPath相结合
+      * 将样式统一发布到style.css中
+      */
+    new ExtractTextPlugin("common.css"),
+    
+    //打开浏览器插件
     //new openBrowserWebpackPlugin({ url: 'http://192.168.1.15:8088' }),
+    
     new HtmlWebpackPlugin({
-        template:"index.html",//原始模板
+
+         // 源文件，路径相对于本文件所在的位置
+        template: "index.html",//原始模板
+
+        // 生成html文件的名字，路径和生产环境下的不同，要与修改后的publickPath相结合，否则开启服务器后页面空白
         filename:"index.html",//输出新文件
-        inject: true
+
+        // 需要引入entry里面的哪几个入口，如果entry里有公共模块，记住一定要引入
+        //chunks: ['vendors','index'],
+
+        // 要把<script>标签插入到页面哪个标签里(body|true|head|false)
+        inject: true,
+        title:'',
+        // hash如果为true，将添加hash到所有包含的脚本和css文件，对于解除cache很有用
+        // minify用于压缩html文件，其中的removeComments:true用于移除html中的注释，collapseWhitespace:true用于删除空白符与换行符
     }),
 
-    //全局加载jq
+    /**
+      * 全局加载jq
+      * 使用 ProvidePlugin 加载使用率高的依赖库
+      */
     new webpack.ProvidePlugin({
         $: "jquery",
         jQuery: "jquery",
         "window.jQuery": "jquery"
     }),
-
+  
     
-
-    //new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
-    // 使用 ProvidePlugin 加载使用率高的依赖库
-/*    new webpack.ProvidePlugin({
-        $: 'webpack-zepto'
-    })*/
+ 
 ];
 //编译输入路径
-var entry = {index:'./src/index.js'};
+var entry = {
+    // path.resolve([from ...], to) 将to参数解析为绝对路径
+    index:'./src/index.js',
+    // 需要被提取为公共模块的群组
+    vendors:['vue','vue-router','jquery'],
+};
 //编译输出路径
 var buildPath = "/build/";
 
@@ -62,9 +96,23 @@ module.exports = {
     debug: false,
     entry: entry,
     output: {
+        
+        // 输出文件，路径相对于本文件所在的位置
         path: __dirname + buildPath,
+        
+        // 基于文件的md5生成Hash名称的script来防止缓存
         //filename: 'build.js',
-        filename: '[name].js'
+        filename: '[name].[hash].js',
+        
+        // 设置publicPath这个属性会出现很多问题：
+        // 1.可以看成输出文件的另一种路径，差别路径是相对于生成的html文件；
+        // 2.也可以看成网站运行时的访问路径；
+        // 3.该属性的好处在于当你配置了图片CDN的地址，本地开发时引用本地的图片资源，上线打包时就将资源全部指向CDN了，如果没有确定的发布地址不建议配置该属性，特别是在打包图片时，路径很容易出现混乱，如果没有设置，则默认从站点根目录加载
+        // publicPath: '../static/js/',
+
+        // 非主入口的文件名，即未被列在entry中，却又需要被打包出来的文件命名配置
+       //chunkFilename: '/[id].[chunkhash].js'
+
     },
     // 服务器配置相关，自动刷新!
     devServer: {
@@ -123,9 +171,11 @@ module.exports = {
             }]
     },
     // .vue的配置。需要单独出来配置
+    // vue里的css也要单独提取出来
     vue: {
         loaders: {
-            css: ExtractTextPlugin.extract('vue-style-loader', 'css-loader', 'sass-loader'),
+
+            css: ExtractTextPlugin.extract('css'),
             sass: ExtractTextPlugin.extract('vue-style-loader', 'css-loader!sass-loader')
         }
     },
@@ -146,8 +196,10 @@ module.exports = {
 
 
     plugins: plugins,
-    // 开启source-map，webpack有多种source-map，在官网文档可以查到
-    //devtool: 'eval-source-map'
+    
+    //   开启source-map，生产环境下推荐使用cheap-source-map或source-map，后者得到的.map文件体积比较大，但是能够完全还原以前的js代码
+    //   开发环境下推荐使用cheap-module-eval-source-map
+    devtool: 'cheap-module-eval-source-map'
 };
 
 

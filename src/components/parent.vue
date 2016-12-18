@@ -4,6 +4,7 @@
 	    	<router-view class="child-view"></router-view>
 	    </transition> -->
 	    <router-view class="child-view"></router-view>
+	    <div class="app-shade"></div>
 	</div>
 </template>
 <script>
@@ -12,6 +13,15 @@
 		    return {
 		      transitionName: 'slide-left'
 		    }
+		  },
+		  mounted(){
+		  	if(localStorage.currentlight == "black"){
+				//alert(2);
+				 
+					$('#app .parent .app-shade').css({"background-color":"rgba(0,0,0,0.5)"});
+				 
+			}
+
 		  },
 		  // dynamically set transition based on route change
 		  watch: {
@@ -31,7 +41,17 @@
 	.child-view{
 		width:100%;
 	}
-	
+	.app-shade{
+		position: fixed;
+		z-index:9999999999;
+		top:-100%;
+		pointer-events: none; 
+		left:0;	
+		bottom:0;
+		height:100%;
+		width:100%;
+		padding:200%;
+	}
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s ease;

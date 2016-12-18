@@ -4,7 +4,7 @@
 		<my-nav theme="white" :path="path" title="设置"></my-nav>
 		<div class="myset-main">
 				<ul>
-				<router-link to="{name:'infoEdit'}" tag="li">
+				<router-link :to="{name:'infoEdit'}" tag="li">
 					<span>个人资料修改</span>
 					<i class="iconfont">&#xe604;</i>
 				</router-link>

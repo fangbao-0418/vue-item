@@ -63,10 +63,9 @@
 <style lang="sass" scoped>
     .footer{
         background-color: #f4f5f6;
-        width:6.4rem;
-        position: fixed;
-        bottom: 0px;
+        width:6.4rem;        
         padding:.08rem 0px;
+        justify-content: flex-end;
          li {
                 width:25%;
         }
@@ -76,14 +75,14 @@
             text-align: center;
             cursor: pointer;
             i{
-                background: url("../image/home_icon.png");
+                background: url("../image/home_iconx56.png");
                 width:.40rem;
                 height: .40rem;
                 display: inline-block;
                 background-size: .40rem .40rem;
             }
             .cur{
-                background: url("../image/home_icon_on.png");
+                background: url("../image/home_icon_onx56.png");
                 width:.40rem;
                 height: .40rem;
                 display: inline-block;
@@ -97,14 +96,14 @@
             text-align: center;
             cursor: pointer;
              i{
-                background: url("../image/product_icon.png");
+                background: url("../image/product_iconx56.png");
                 width:.40rem;
                 height: .40rem;
                 display: inline-block;
                 background-size: .40rem .40rem;
             }
             .cur{
-                background: url("../image/product_icon_on.png");
+                background: url("../image/product_icon_onx56.png");
                 width:.40rem;
                 height: .40rem;
                 display: inline-block;
@@ -118,7 +117,7 @@
             text-align: center;
             cursor: pointer;
             .cur{
-                background: url("../image/video_icon_on.png") no-repeat;
+                background: url("../image/video_icon_onx56.png") no-repeat;
                 width:.40rem;
                 height: .40rem;
                 display: inline-block;
@@ -126,7 +125,7 @@
                 background-position: center;
             }
             i{
-                background: url("../image/video_icon.png") no-repeat;
+                background: url("../image/video_iconx56.png") no-repeat;
                 width:.40rem;
                 height: .40rem;
                 display: inline-block;
@@ -140,14 +139,14 @@
             text-align: center;
             cursor: pointer;
             i{
-                background: url("../image/my_icon.png");
+                background: url("../image/my_iconx56.png");
                 width:.40rem;
                 height: .40rem;
                 display: inline-block;
                 background-size: .40rem .40rem;
             }
             .cur{
-                background: url("../image/my_icon_on.png");
+                background: url("../image/my_icon_onx56.png");
                 width:.40rem;
                 height: .40rem;
                 display: inline-block;

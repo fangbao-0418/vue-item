@@ -72,6 +72,7 @@
                             _this.item = res.data;
                             _this.loading = false;
                             _this.hits(_this.item.itemid);
+                            this.setSEO();
                         }
                         Indicator.close();
                 },
@@ -84,6 +85,31 @@
                 var url = "http://www.ey99.com/api/mobile/hits.php";
                 var option = { params : {moduleid:21 ,itemid} };
                 this.$http.get(url,option)
+            },
+            setSEO(){
+                document.title = this.item.title;               
+                
+               
+                if( $("meta[name='keywords']")[0] == undefined && $("meta[name='description']")[0] == undefined ){
+                    
+                    var keywords = document.createElement("meta");
+                    keywords.setAttribute("name","keywords");
+                    keywords.setAttribute("content",this.item.keyword);
+
+                    var description = document.createElement("meta");
+                    description.setAttribute("name","description");
+                    description.setAttribute("content",this.item.introduce.substr(0,200));
+
+                    var head = document.getElementsByTagName("title");
+
+                    $(head[0]).after(description);
+                    $(head[0]).after(keywords);
+
+                }else{
+                    $("meta[name='keywords']")[0].content = this.item.keyword;
+                    $("meta[name='description']")[0].content = this.item.introduce.substr(0,200)
+                }
+
             }
         },
         components:{

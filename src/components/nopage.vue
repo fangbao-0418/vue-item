@@ -1,12 +1,13 @@
 <template>
-	<div class="searchless"></div>
+	<div>
+		<div class="searchless"></div>
+	</div>
 </template>
 <script>
 </script>
 
 <style scoped>
-	.searchless{
-	
+	.searchless{	
        	background: url("../imgs/404.gif") no-repeat;
 		width: 5rem;
 		height: 3.4rem;

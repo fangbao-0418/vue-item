@@ -50,3 +50,12 @@ const router = new VueRouter(
 var app = new Vue({
     router
 }).$mount('#app')
+
+
+// var renderer = require('vue-server-renderer').createRenderer()
+// // 步骤 3: 将 Vue实例 渲染成 HTML
+// renderer.renderToString(app, function (error, html) {
+//   if (error) throw error
+//   console.log(html)
+//   // => <p server-rendered="true">hello world</p>
+// })

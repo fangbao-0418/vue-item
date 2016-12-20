@@ -16,4 +16,5 @@ export default {
 	collect: host + api_path + "collect.php",//收藏接口
 	mycollect: host + api_path + "mycollect.php",//会员收藏列表接口
 	backpassword: host + api_path + "backpassword.php",//找回密码接口
+	feedback: host + api_path + "feedback.php",//意见反馈接口
 }

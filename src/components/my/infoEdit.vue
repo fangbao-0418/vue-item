@@ -171,27 +171,19 @@
 					var postcodeReg =  /^[1-9]\d{5}$/;
 					var qqReg = /^[1-9][0-9]{4,}$/;
 					var emailReg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
-					if(this.getByteLen(this.userinfo.nickname) < 4 || this.getByteLen(this.userinfo.nickname) >30){
+					if( this.userinfo.nickname != "" && (this.getByteLen(this.userinfo.nickname) < 4 || this.getByteLen(this.userinfo.nickname) >30)){
 						this.toast("昵称不合法，昵称必须是4~30位字符");
-					}else if(this.getByteLen(this.userinfo.company) < 4 || this.getByteLen(this.userinfo.company) > 60){
+					}else if(this.userinfo.company != "" && (this.getByteLen(this.userinfo.company) < 4 || this.getByteLen(this.userinfo.company) > 60)){
 						this.toast("单位名称不合法，名称必须是4~60位字符");
-					}else if(this.userinfo.region == "--"){
-						this.toast("所在地区不能为空");
-					}else if(this.getByteLen(this.userinfo.address) < 4 || this.getByteLen(this.userinfo.company) > 120){
+					}else if(this.userinfo.address != "" && (this.getByteLen(this.userinfo.address) < 4 || this.getByteLen(this.userinfo.company) > 120)){
 						this.toast("联系地址不合法，地址必须是4~120位字符");
-					}else if( !postcodeReg.exec(this.userinfo.postcode)  ){
+					}else if( this.userinfo.postcode != "" && (!postcodeReg.exec(this.userinfo.postcode))  ){
 						this.toast("邮编格式不正确");
-					}else if(!this.userinfo.telephone){
+					}else if( this.userinfo.telephone != "" && !this.userinfo.telephone){
 						this.toast("电话不能为空");
-					}else if(!this.userinfo.truename){
-						this.toast("联系人不能为空");
-					}else if(!this.userinfo.mobile){
-						this.toast("手机号码不能为空");
-					}else if(!this.userinfo.fax){
-						this.toast("传真不能为空");
-					}else if( !qqReg.exec(this.userinfo.qq)  ){
+					}else if( this.userinfo.qq != "" && !qqReg.exec(this.userinfo.qq)  ){
 						this.toast("QQ格式不正确");
-					}else if( !emailReg.exec(this.userinfo.email)  ){
+					}else if( this.userinfo.email != "" && !emailReg.exec(this.userinfo.email)  ){
 						this.toast("邮箱格式不正确");
 					}else{
 						Indicator.open({

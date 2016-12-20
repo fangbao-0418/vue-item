@@ -1,6 +1,6 @@
 <template>
 	<div class="parent">		
-	<!-- 	<transition :name="transitionName">
+		<!-- <transition :name="transitionName">
 	    	<router-view class="child-view"></router-view>
 	    </transition> -->
 	    <router-view class="child-view"></router-view>
@@ -37,9 +37,15 @@
 </script>
 <style lang="sass" scoped>
 .parent{
-	width:100%;
+	overflow:hidden;
+	width:6.4rem;
+	height:100%;
+	background:#efefef;	
 	.child-view{
-		width:100%;
+		display: flex;
+		flex-direction: column;
+		height:100%;
+		width:6.4rem;
 	}
 	.app-shade{
 		position: fixed;
@@ -49,28 +55,31 @@
 		left:0;	
 		bottom:0;
 		height:100%;
-		width:100%;
+		width:6.4rem;
 		padding:200%;
 	}
 }
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s ease;
+  transition: opacity .50s ease;
 }
 .fade-enter, .fade-leave-active {
   opacity: 0
 }
 .child-view {
+	width:6.4rem;
   position: absolute;
-  transition: all .5s cubic-bezier(.55,0,.1,1);
+  transition: all .50s cubic-bezier(.17,.67,.67,.94);
 }
 .slide-left-enter, .slide-right-leave-active {
+	width:6.4rem;
   opacity: 0;
-  -webkit-transform: translate(3.2rem, 0);
-  transform: translate(3.2rem, 0);
+  -webkit-transform: translate(6.4rem, 0);
+  transform: translate(6.4rem, 0);
 }
 .slide-left-leave-active, .slide-right-enter {
+	width:6.4rem;
   opacity: 0;
-  -webkit-transform: translate(-3.2rem, 0);
-  transform: translate(-3.2rem, 0);
+  -webkit-transform: translate(-6.4rem, 0);
+  transform: translate(-6.4rem, 0);
 }
 </style>

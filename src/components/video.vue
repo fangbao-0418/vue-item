@@ -41,7 +41,8 @@
 <style scoped>
 .white-box{
     width: 6.4rem;
-    padding-bottom:.8rem;
+    flex: 1;
+    overflow-y: auto;  
    
     margin: 0 auto;
     padding-bottom:;

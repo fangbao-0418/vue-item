@@ -207,13 +207,14 @@
                 var url = "http://www.ey99.com/api/mobile/investment.php";
                 this.$http.get(url,option).then(
                         (res)=>{                      
-                        if(res.data.title){
+                        if(res.data.title){   
                             Indicator.close();
-                        res.data.hits = parseInt( res.data.hits ) + 1;
-                        _this.item = res.data;
-                        _this.loading = false;
-                        _this.topid = res.data.topid;
-                        _this.hits(res.data.itemid);
+                            res.data.hits = parseInt( res.data.hits ) + 1;
+                            _this.item = res.data;
+                            _this.loading = false;
+                            _this.topid = res.data.topid;
+                            _this.hits(res.data.itemid);
+                            this.setSEO();
                     }
                 },
                         (err)=>{
@@ -225,6 +226,31 @@
                 var url = "http://www.ey99.com/api/mobile/hits.php";
                 var option = { params : {moduleid:22 ,itemid} };
                 this.$http.get(url,option)
+            },
+            setSEO(){
+               
+                document.title = this.item.title;               
+             
+                if( $("meta[name='keywords']")[0] == undefined && $("meta[name='description']")[0] == undefined ){
+                    
+                    var keywords = document.createElement("meta");
+                    keywords.setAttribute("name","keywords");
+                    keywords.setAttribute("content",this.item.keyword);
+
+                    var description = document.createElement("meta");
+                    description.setAttribute("name","description");
+                    description.setAttribute("content",this.item.bcsm.substr(0,200));
+
+                    var head = document.getElementsByTagName("title");
+
+                    $(head[0]).after(description);
+                    $(head[0]).after(keywords);
+
+                }else{
+                    $("meta[name='keywords']")[0].content = this.item.keyword;
+                    $("meta[name='description']")[0].content = this.item.bcsm.substr(0,200)
+                }
+               
             }
         },
         components:{

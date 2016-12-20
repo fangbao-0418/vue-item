@@ -51,7 +51,9 @@ const integral = resolve => require(['./components/my/integral.vue'],resolve);
 
 //import nopage from './components/nopage';
 const nopage = resolve => require(['./components/nopage.vue'],resolve);
- 
+
+const Feedback = resolve => require(['./components/feedback.vue'],resolve); 
+
 import auth from './auth.js';
 function requireAuth (to, from, next) {  	
 	auth.getUserInfo().then((data)=>{
@@ -81,7 +83,7 @@ function requireLogin (to, from, next) {
 // 稍后我们会讲解嵌套路由
 
 export default {
-	//mode: 'history',
+	mode: 'history',
 	
 	routes: [
 		{
@@ -112,7 +114,10 @@ export default {
 			{ name : "investmentShow", path: "/investment/show", component: investmentShow },
 			{ name : "newsDetail", path: "/news/show/", component: newsDetail },
 			{ name : "404", path: "/404", component: nopage},
-			{ path : "*", redirect: "/404" }
+			{ name : "feedback", path: "/feedback", component: Feedback},
+			{ path : "*", redirect: "/404" },
+			
+
 
 			]
 	}],

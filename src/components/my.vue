@@ -1,66 +1,72 @@
 <template>
 	<div class="my-main">
-		<load></load>
-		<!-- header -->
-	    <div class="header" >
-	       <div class="header-logo">
-	         <img :src="userinfo.avatar"/>
-	       </div>
-	       <div class="header-title">
-	        {{userinfo.nickname ? userinfo.nickname : userinfo.username}}
-	       </div>
-	    </div>
-	    <!--/header -->
-	    <!-- content -->
-	    <div class="content">
-	    <!-- nav -->
-	      <div class="nav-ifo">
-			<div class="nav">
-			  <router-link  class="left nav-box"  :to="{name:'collect'}" tag="div">
-			     <div class="nav-tu left-nav-tu">
-                   <img src="../imgs/collect.gif"/>
-			     </div>
-			     <div class="nav-ti left-nav-tu">
-			     	<span>收藏</span>
-			     </div>
-			  </router-link >
-			  <div class="mide nav-box" @click="setlight">
-			     <div class="nav-tu" >
-			       <img src="../imgs/pattern.gif"/>
-			   	 </div>
-			     <div class="nav-ti" >
-                    <span>夜间</span>
-			     </div>
-			  </div>
-			  <router-link class="right nav-box"  :to="{name:'mySetting'}" tag="div">
-			     <div class="nav-tu" >
-                    <img src="../assets/setting.png"/>
-			     </div>
-			     <div class="nav-ti" >
-                     <span>设置</span>
-			     </div>
-			  </router-link>
-			</div>
-	      </div>		
-	     <!-- /nav -->
-	     <!-- detal-->
-	     <div class="detal">
-            <router-link class="jf detal-box" :to="{name:'integral'}" tag="div">
-                <span>成长值明细</span>
-                <div class="jt">
-                   <i class="iconfont">&#xe604;</i>
-                </div>
-            </router-link>
-	        <div class="vip detal-box" @click="error">
-                <span>升级VIP</span>
-	        </div>
-	        <div class="zh detal-box"  @click="loginout">
-                <span class="zh">退出账户</span>
-	        </div>
-	     </div>
-	     <!-- /detal -->
-        </div>
+		<div class="my-content">
+			<load></load>
+			<!-- header -->
+		    <div class="header" >
+		       <div class="header-logo">
+		         <img :src="userinfo.avatar"/>
+		       </div>
+		       <div class="header-title">
+		        {{userinfo.nickname ? userinfo.nickname : userinfo.username}}
+		       </div>
+		    </div>
+		    <!--/header -->
+		    <!-- content -->
+		    <div class="content">
+		    <!-- nav -->
+		      <div class="nav-ifo">
+				<div class="nav">
+				  <router-link  class="left nav-box"  :to="{name:'collect'}" tag="div">
+				     <div class="nav-tu left-nav-tu">
+	                   <img src="../imgs/collect.gif"/>
+				     </div>
+				     <div class="nav-ti left-nav-tu">
+				     	<span>收藏</span>
+				     </div>
+				  </router-link >
+				  <div class="mide nav-box" @click="setlight">
+				     <div class="nav-tu" >
+				       <img src="../imgs/pattern.gif"/>
+				   	 </div>
+				     <div class="nav-ti" >
+	                    <span>夜间</span>
+				     </div>
+				  </div>
+				  <router-link class="right nav-box"  :to="{name:'mySetting'}" tag="div">
+				     <div class="nav-tu" >
+	                    <img src="../assets/setting.png"/>
+				     </div>
+				     <div class="nav-ti" >
+	                     <span>设置</span>
+				     </div>
+				  </router-link>
+				</div>
+		      </div>		
+		     <!-- /nav -->
+		     <!-- detal-->
+		     <div class="detal">
+	            <router-link class="jf detal-box" :to="{name:'integral'}" tag="div">
+	                <span>成长值明细</span>
+	                <div class="jt">
+	                   <i class="iconfont">&#xe604;</i>
+	                </div>
+	            </router-link>
+		       <!--  <div class="vip detal-box" @click="error">
+	                <span>升级VIP</span>
+		        </div> -->
+		     
+		        <router-link class="vip detal-box" :to="{name:'feedback'}"  @click="error" tag="div">
+	                <span>意见反馈</span>
+		        </router-link>
 
+		        <div class="zh detal-box"  @click="loginout">
+	                <span class="zh">退出账户</span>
+		        </div>
+		     </div>
+		     <!-- /detal -->
+	        </div>
+	    </div>
 
 	    <my-footer></my-footer>
 
@@ -137,8 +143,11 @@
 
 <style lang="sass" scoped>
 @import "../css/common.scss";					  //全局css样式
-.my-main{
-	padding-bottom:1rem;
+.my-main{	
+	.my-content{
+		flex: 1;
+    	overflow-y: auto;      
+	}
 }
 .header{
 	background: url("../imgs/header.jpg");
@@ -261,7 +270,6 @@
 /*detal*/
 .detal{
 	width:5.8rem ;
-	height: 2.58rem;
 	padding-top:.3rem;
 	margin: 0 auto;
 }

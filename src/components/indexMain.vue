@@ -13,33 +13,55 @@
         .ad_code_one{
             width:100%;
             min-height: 1.5rem;
-            padding: .08rem 0px .16rem 0px;
-           
+            padding: .08rem 0px .16rem 0px;           
             border-bottom:1px solid #fafafa;
+            .content1-left{
+                width: 4rem;
+                min-height: 1.5rem;
+                float: left;
+                .content1-left-t{
+                    h2{
+                        padding-right:.2rem;
+                        font-size: .3rem;
+                    }
+                    .info{
+                        height:.6rem;
+                        line-height: .6rem;
+                        span{
+                            color: #8a8a8a;;
+                            font-size:.24rem
+                        }
+                    }
+                }
+            }
         }
         .ad_code_two{
             padding-top:.16rem;
             width:100%;
             padding-bottom:.8rem;
             border-bottom:1px solid #fafafa;
+            .content-title{
+                h2{
+                    padding-right:.2rem;
+                    font-size: .3rem;
+                }
+            }
         }
         .ad_code_three{
             width:100%;
             padding-top:.1rem;
             padding-bottom:.8rem;
             border-bottom:1px solid #fafafa;
+            .content-title{
+                h2{
+                    padding-right:.2rem;
+                    font-size: .3rem;
+                }
+            }
         }
-        .content1-left{
-            width: 4rem;
-            min-height: 1.5rem;
-            float: left;
-        }
+       
 
-        .content-title h2{
-            padding-right:.2rem;
-            font-size: .3rem;
-        }
-
+        
         .content-info{
             position: absolute;
             bottom:.3rem;

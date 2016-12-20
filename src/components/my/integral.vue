@@ -11,6 +11,7 @@
 			width: 90%;
 			padding:0px 5%;
 			margin-top:.8rem;
+			background: #fff;
 			ul{
 				li{
 					padding:.2rem 0px;

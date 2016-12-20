@@ -68,6 +68,7 @@
 </script>
 <style scoped>
     .content{
-        padding-bottom:.88rem;
+        flex: 1;
+        overflow-y: auto;        
     }
 </style>

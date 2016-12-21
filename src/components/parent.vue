@@ -36,6 +36,7 @@
 	}
 </script>
 <style lang="sass" scoped>
+@import '../css/mint-ui.css';
 .parent{
 	overflow:hidden;
 	width:6.4rem;

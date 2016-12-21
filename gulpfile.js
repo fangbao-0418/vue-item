@@ -19,8 +19,11 @@ var WebpackDevServer = require("webpack-dev-server");
 
 //删除build 下的文件 和文件夹
 gulp.task('clean',function(cb){
+    //！取反不删除文件
     del([
-        'build/**/*'
+        'build/**/*',
+        '!build/images',
+        '!build/images/*'
     ],cb);
 });
 gulp.task("webpack", function(callback) {

@@ -29,7 +29,7 @@ var plugins = [
     //new webpack.NoErrorsPlugin(),
 */
     //将样式统一发布到style.css中
-    new ExtractTextPlugin('/static/css/style.css'),
+    new ExtractTextPlugin('style.css'),
     //new openBrowserWebpackPlugin({ url: 'http://192.168.1.15:8088' }),
     new HtmlWebpackPlugin({
         template:"index.html",//原始模板

@@ -55,7 +55,7 @@
 		props:['src'],
 		data(){
 			return {
-				maxFileSize:1024 * 1024,
+				maxFileSize: 3 * 1024 * 1024,
 				 
 				avatar:this.src,
 				 

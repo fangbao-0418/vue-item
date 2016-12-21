@@ -50,6 +50,7 @@
  
     <script>
 
+        import sha1 from '../js/sha1.js';
 
         export default {
             props:{
@@ -67,13 +68,25 @@
             mounted(){     
 
                
-
+                var _this = this;
                 $(document).ready(function(){
-                     var oHead = document.getElementsByTagName('HEAD').item(0); 
-        var oScript= document.createElement("script"); 
-        oScript.type = "text/javascript"; 
-        oScript.src="http://v3.jiathis.com/code/jia.js"; 
-        oHead.appendChild(oScript); 
+                    var oHead = document.getElementsByTagName('HEAD').item(0); 
+                    var oScript= document.createElement("script"); 
+                    oScript.type = "text/javascript"; 
+                    oScript.src="http://v3.jiathis.com/code/jia.js"; 
+                    oHead.appendChild(oScript); 
+
+
+                    var oHead = document.getElementsByTagName('HEAD').item(0); 
+                    var oScript= document.createElement("script"); 
+                    oScript.type = "text/javascript"; 
+                    oScript.src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"; 
+                    oHead.appendChild(oScript);                     
+
+                    
+                    _this.wxapi();
+                  
+
 
 //                     VueScript2.load('http://v3.jiathis.com/code/jia.js').then(function () {
 //   $('#msg').text('Hello from VueScript2!')
@@ -87,6 +100,42 @@
                 }
             },
             methods:{
+                wxapi(){
+                    var appId = "wx453d0d79f235d54a";
+                    var timestamp = Math.ceil(Date.parse(new Date()) / 1000);
+                    var url = window.location.href;
+                    var nonceStr = this.randomString();
+                    var jsapi_ticket = "bxLdikRXVbTPdHSM05e5u9PpExo1F0nnrbdkBe0wtPzXhVPxbGMrVq6ARLQK3hBA458FDeWmo3R3htAZ5SSonw";
+
+                    var str = url + "jsapi_ticket="+jsapi_ticket+"&noncestr="+nonceStr+"&timestamp="+timestamp+"&url="+url;
+                    
+                    //str = "jsapi_ticket=bxLdikRXVbTPdHSM05e5u9PpExo1F0nnrbdkBe0wtPzXhVPxbGMrVq6ARLQK3hBA458FDeWmo3R3htAZ5SSonw&noncestr=dfsfr&timestamp=1411222222&url=m.ey99.com";
+
+                    var signature = sha1.hex_sha1(str);
+                     
+                     
+
+                    wx.config({
+                        debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                        appId: appId, // 必填，公众号的唯一标识
+                        timestamp: timestamp, // 必填，生成签名的时间戳
+                        nonceStr: nonceStr, // 必填，生成签名的随机串
+                        signature: signature,// 必填，签名，见附录1
+                        jsApiList: ["onMenuShareQQ"] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                    });
+
+                    wx.ready(function(){})
+                },
+                randomString(len) {
+                　　len = len || 32;
+                　　var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';    /****默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/
+                　　var maxPos = $chars.length;
+                　　var pwd = '';
+                　　for (var i = 0; i < len; i++) {
+                　　　　pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+                　　}
+                　　return pwd;
+                },
                 shutdown(){
 
                     this.$parent.isOpen = false;

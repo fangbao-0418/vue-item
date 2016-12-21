@@ -21,7 +21,7 @@
 
                         <swipe class="my-swipe" :speed="0" :auto="0" :show-indicators="false" >
 
-                            <swipe-item v-for="pic in item.sptp" class="slide1"> <img :src="pic"/></swipe-item>
+                            <swipe-item v-for="pic in item.sptp" class="slide1"> <img :src="pic" onerror="this.className='nopic';this.src='/images/no_product_img.png'" /></swipe-item>
 
                         </swipe>
                     </div>
@@ -287,10 +287,15 @@
 .product_banner {
     width: 5.8rem;
     height: 2.9rem;
+    margin-top:.28rem;
     img{
-        width: 5.8rem;
-        margin-top:.28rem;
+        width: 5.8rem;        
         height: 2.9rem;
+    }
+    .nopic{
+        width: 5rem;
+        display: inherit;
+        margin: auto;
     }
 
 }

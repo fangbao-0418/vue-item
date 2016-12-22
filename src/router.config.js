@@ -85,7 +85,7 @@ function requireLogin (to, from, next) {
 // 稍后我们会讲解嵌套路由
 
 export default {
-	//mode: 'history',
+	mode: 'history',
 	
 	routes: [
 		{

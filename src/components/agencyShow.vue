@@ -58,7 +58,7 @@
                     </div>
 
                     <div class="tel">
-                        <a :href="'tel:' + item.mobile"><i class="iconfont">&#xe608;</i></a>
+                       <!--  <a :href="'tel:' + item.mobile"><i class="iconfont">&#xe608;</i></a> -->
                     </div>
                 </div>
             </div>

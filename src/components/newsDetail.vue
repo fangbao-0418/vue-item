@@ -1,5 +1,5 @@
 <template>
-    <div style="height:100%">
+    <div>
 
     	<!-- nav -->
         <app-nav moduleid=21 :id="id" ></app-nav>

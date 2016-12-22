@@ -14,7 +14,11 @@ export default {
                     },
                     {
                     	title:'视频',
-                    	topid:'',
+                    	topid:410,
+                    },
+                    {
+                        title:'代理',
+                        topid:288,
                     },
                     {
                         title:'药品',
@@ -166,6 +170,11 @@ export default {
                     {
                         url:serverapi.video,
                         type:14,
+                        option:{params:{}}
+                    },
+                    {
+                        url:serverapi.agency,
+                        type:23,
                         option:{params:{}}
                     },
                     {

@@ -21,8 +21,7 @@
 <script>
 
 	import { Toast } from 'mint-ui';
-	
-
+	import serverapi from '../serverapi.js';	
 	export default {
 		props:['isshow','moduleid','itemid'],
 		data(){
@@ -98,7 +97,7 @@
 				}
 			},
 			sendContent(str){				 
-				var url = "http://www.ey99.com/api/mobile/report.php";
+				var url = serverapi.report;
 				var option = {params:{moduleid:this.moduleid,itemid:this.itemid,content:str},emulateJSON:true};
 				this.$http.post(url,[],option)
 				this.$parent.isshow = false;

@@ -29,6 +29,8 @@
 				this.type = 21;			  
 			}else if(this.$route.query.type == "视频"){
 				this.type = 14;
+			}else if(this.$route.query.type == "代理"){
+				this.type = 23;
 			}else{			 
 				this.type = 22;			 
 			}
@@ -50,7 +52,12 @@
                 }
                 if(type == 22){
                 	var url = serverapi.investment;
-                }              
+                }   
+
+                if(type == 23){
+                	var url = serverapi.agency;
+                }   
+
                 if(type == 14){
                 	var url = serverapi.video;
                 }

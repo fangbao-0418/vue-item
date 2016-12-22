@@ -51,6 +51,7 @@
     <script>
 
         import sha1 from '../js/sha1.js';
+       
 
         export default {
             props:{
@@ -75,23 +76,6 @@
                     oScript.type = "text/javascript"; 
                     oScript.src="http://v3.jiathis.com/code/jia.js"; 
                     oHead.appendChild(oScript); 
-
-
-                    var oHead = document.getElementsByTagName('HEAD').item(0); 
-                    var oScript= document.createElement("script"); 
-                    oScript.type = "text/javascript"; 
-                    oScript.src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"; 
-                    oHead.appendChild(oScript);                     
-
-                    
-                    _this.wxapi();
-                  
-
-
-//                     VueScript2.load('http://v3.jiathis.com/code/jia.js').then(function () {
-//   $('#msg').text('Hello from VueScript2!')
-// })
-
                 })
             },
             data(){

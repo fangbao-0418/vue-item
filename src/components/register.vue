@@ -12,7 +12,7 @@
 				<li>
 					<span>验证码</span>
 					<input class="validate" v-model="validate" maxlength="6"/>
-					<el-button type="primary" @click="sendvalidate" :disabled="disabled">{{validatetext}}</el-button>
+					<el-button class="gray-button" type="primary" @click="sendvalidate" :disabled="disabled">{{validatetext}}</el-button>
 				</li>
 				<li>
 					<span>密码</span>
@@ -22,7 +22,7 @@
 				</li>
 			</ul>
 
-			<el-button @click.native="submit" :disabled="!validateok" type="primary">注册</el-button>
+			<el-button class="gray-button" @click.native="submit" :disabled="!validateok" type="primary">注册</el-button>
 		</div>
 	</div>
 </template>
@@ -161,7 +161,10 @@
 	}
 	.pt-perspective{
 		width:100%;
-		
+		.gray-button{
+			color:#FCFCFC;
+			background-color:#9B9B9B;
+		}	
 		.reg-main{
 			margin-top:.4rem;				
 			ul {
@@ -179,6 +182,7 @@
 						font-size:.3rem;
 						float:left;
 					}
+					
 					.mint-switch{
 						position:absolute;
 						right:0;

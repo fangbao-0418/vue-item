@@ -7,9 +7,12 @@ export default {
 	auth: host + api_path + "auth.php",
 	validate: host + api_path + "sendvalidate.php",
 	register: host + api_path + "register.php",
-	avatarupload: host + api_path + "avatarupload.php",
+	hits: host + api_path + "hits.php",//浏览数接口
+	report: host + api_path + "report.php",//举报接口
+	avatarupload: host + api_path + "avatarupload.php",//头像上传接口
 	region: host + api_path + "region.php", //地区接口
 	video: host + api_path + "video.php", //视频接口
+	agency: host + api_path + "agency.php",
 	article: host + api_path + "article.php",
 	investment: host + api_path + "investment.php",
 	recommend: host + api_path + "recommend.php", //推荐接口

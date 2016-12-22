@@ -47,7 +47,9 @@ const collect = resolve => require(['./components/my/collect.vue'],resolve);
 //import integral from './components/my/integral';//积分成长值
 const integral = resolve => require(['./components/my/integral.vue'],resolve);
 
+const agency = resolve => require(['./components/agency.vue'],resolve);
 
+const agencyShow = resolve => require(['./components/agencyShow.vue'],resolve);
 
 //import nopage from './components/nopage';
 const nopage = resolve => require(['./components/nopage.vue'],resolve);
@@ -106,6 +108,8 @@ export default {
 			{ name: "collect", path: "/my/collect", component: collect, beforeEnter: requireAuth},
 			{ name: "integral", path: "/my/integral", component: integral, beforeEnter: requireAuth},
 			
+			{ name : "agency", path : "/agency" , component : agency},
+			{ path : "/agency/show" , component : agencyShow},
 			{ path : "/login" , component: login, beforeEnter: requireLogin},
 			{ path : "/register" , component: register},
 			{ path : "/backPassword", component : backPassword},
@@ -115,7 +119,7 @@ export default {
 			{ name : "newsDetail", path: "/news/show/", component: newsDetail },
 			{ name : "404", path: "/404", component: nopage},
 			{ name : "feedback", path: "/feedback", component: Feedback},
-			{ path : "*", redirect: "/404" },
+			//{ path : "*", redirect: "/404" },
 			
 
 

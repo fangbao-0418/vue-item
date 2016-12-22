@@ -18,6 +18,7 @@
 			<ul>
 				<li @click="checktype('招商')">招商</li>
 				<li @click="checktype('资讯')">资讯</li>
+				<li @click="checktype('代理')">代理</li>
 				<li @click="checktype('视频')" class="no-border">视频</li>
 			</ul>
 		</div>

@@ -21,6 +21,8 @@
                 
                 <video-list :collect="collect" v-if="type == 14" :items="items"></video-list>
                 
+                <agency-item :collect="collect" v-if="type == 23" :items="items"></agency-item>
+
                 <div v-if="noData" slot="bottom" class="mint-loadmore-bottom">
                     没有了
                 </div>
@@ -45,6 +47,7 @@
     import searchArticleItem from './searchArticleItem';
     import searchInvestItem from './searchInvestItem';
     import videoList from './videoList';
+    import agencyItem from './agencyItem';
     import bus from '../bus.js';
     export default {
         props:{  
@@ -77,6 +80,7 @@
             "index-main":indexMain,
             "article-item":searchArticleItem,
             "invest-item":searchInvestItem,
+            agencyItem,
             videoList
         },
         updated(){   
@@ -124,7 +128,7 @@
 
                 this.$http.get(url,option).then(                 
                     (res)=>{
-                        //console.log(res);
+                        console.log(res);
                         if(res.body.list.length){ 
                             if(_this.page == 1){
                                 _this.items = res.body.list;
@@ -156,6 +160,7 @@
                         
                         Indicator.close();
                         
+                       
                        
                 },
                         (err)=>{

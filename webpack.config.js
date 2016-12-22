@@ -22,7 +22,7 @@ var plugins = [
     // }),
 
     //提公用js到common.js文件中
-    new webpack.optimize.CommonsChunkPlugin('/static/js/common.js'),
+    new webpack.optimize.CommonsChunkPlugin('common.js'),
     
   
 /*  
@@ -65,7 +65,7 @@ module.exports = {
     output: {
         path: __dirname + buildPath,
         //filename: 'build.js',
-        filename: '/static/js/[name].js',
+        filename: 'build.js',
         
         //配置chunkFilename 就无法热更新 ？？？
         //chunkFilename: '/static/js/[id].[hash].js'

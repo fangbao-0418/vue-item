@@ -6,12 +6,14 @@
 			z-index:999;
 			border-bottom: #fafafa solid 1px;
 		}
-		background: #fff;
+
 		.integral-main{
 			width: 90%;
 			padding:0px 5%;
 			margin-top:.8rem;
 			background: #fff;
+			height:100%;
+			overflow-y: auto;
 			ul{
 				li{
 					padding:.2rem 0px;

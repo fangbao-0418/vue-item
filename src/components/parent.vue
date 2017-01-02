@@ -1,9 +1,9 @@
 <template>
 	<div class="parent">		
-		<!-- <transition :name="transitionName">
+		<transition :name="transitionName">
 	    	<router-view class="child-view"></router-view>
-	    </transition> -->
-	    <router-view class="child-view"></router-view>
+	    </transition>
+	  
 	    <div class="app-shade"></div>
 	</div>
 </template>
@@ -16,10 +16,7 @@
 		  },
 		  mounted(){
 		  	if(localStorage.currentlight == "black"){
-				//alert(2);
-				 
-					$('#app .parent .app-shade').css({"background-color":"rgba(0,0,0,0.5)"});
-				 
+				$('#app .parent .app-shade').css({"background-color":"rgba(0,0,0,0.5)"});
 			}
 
 		  },

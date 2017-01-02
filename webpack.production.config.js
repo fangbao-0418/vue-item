@@ -22,13 +22,13 @@ var plugins = [
     }),
 
     //提公用js到common.js文件中
-    new webpack.optimize.CommonsChunkPlugin('/static/js/common.js'),
+    new webpack.optimize.CommonsChunkPlugin('/static/js/common.[hash].js'),
     
   
     new webpack.NoErrorsPlugin(),
  
     //将样式统一发布到style.css中
-    new ExtractTextPlugin('/static/css/style.css',{
+    new ExtractTextPlugin('/static/css/style.[hash].css',{
       allChunks: true,
     }),
 
@@ -75,8 +75,8 @@ module.exports = {
     output: {
         path: __dirname + buildPath,
         //filename: 'build.js',
-        filename: '/static/js/[name].js',
-        chunkFilename: '/static/js/[id].js'
+        filename: '/static/js/[name].[hash].js',
+        chunkFilename: '/static/js/[id].[hash].js'
     },
     // 服务器配置相关，自动刷新!
     devServer: {

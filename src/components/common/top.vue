@@ -20,8 +20,6 @@
 </script>
 <style lang="sass" scoped>
  	.top{
-        position: fixed;
-        top:0px;
         width:6.4rem;
         height:.84rem;
         background: #ed1b23;

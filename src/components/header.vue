@@ -32,6 +32,7 @@
 <style lang="sass" scoped>
     .box{
         height:1.44rem;
+        z-index: 999999;
     }
    
    

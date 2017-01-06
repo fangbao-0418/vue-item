@@ -5,7 +5,7 @@
      
     <my-header :option="option"></my-header>
   
-        <mt-tab-container v-model="active" :swipeable="false">
+        <mt-tab-container v-model="active" :swipeable="true">
               <mt-tab-container-item v-for="(item,index) in params" :id="'tab-container' + (index + 1)">
                 <home-shell v-if="isactived(index)" :type="item.type" :getparams="item"></home-shell>
               </mt-tab-container-item>  
@@ -61,9 +61,15 @@
         }
     }
 </script>
-<style scoped>
+<style lang="sass" scoped>
     .content{
         flex: 1;
         overflow-y: auto;  
+        display: flex;
+        flex-direction: column;  
+        .mint-tab-container{
+            flex: 1;
+            overflow-y: auto;
+        }   
     }
 </style>

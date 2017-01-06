@@ -175,8 +175,7 @@
         width:5.8rem;
         height:.6rem;
         padding:0px .3rem;
-        position:fixed;
-        top:.84rem;
+      
         background-color:#f5f5f3;
         z-index: 999999;
     }

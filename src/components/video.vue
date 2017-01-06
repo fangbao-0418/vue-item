@@ -38,19 +38,22 @@
       
     }
 </script>
-<style scoped>
+<style lang="sass" scoped>
 .white-box{
     width: 6.4rem;
     flex: 1;
-    overflow-y: auto;  
-   
+    display: flex;
+    flex-direction: column;  
     margin: 0 auto;
-    padding-bottom:;
+
+    overflow: hidden;
+    .slider-item{
+        width:100%;
+    }
+    .video-area{
+       flex:1;
+       overflow-y: auto;
+    }
 }
-.slider-item{
-    width:100%;
-}
-.video-area{
-    padding-top:.84rem;
-}
+
 </style>

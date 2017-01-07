@@ -4,7 +4,7 @@
             <div class="goback">
                 <i @click="goBack"></i>
             </div>
-            <collect-icon class="collect" :moduleid="moduleid" :id="id" ></collect-icon>
+            <collect-icon v-if="needCollect" class="collect" :moduleid="moduleid" :id="id" ></collect-icon>
             <div class="share">
                 <i @click="shared" class="iconfont">&#xe648;</i>
             </div>
@@ -18,6 +18,9 @@
 
     export default {
         props:{
+            needCollect:{
+                default:true
+            },
             path:{
                 default:null
             },

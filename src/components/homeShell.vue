@@ -109,7 +109,6 @@
                 this.loadData(id);
             },
             loadData(id,refresh=false){
-                
 
                 if(refresh){
                     this.page = 0;
@@ -122,8 +121,6 @@
                 this.page += 1;
                
                 option.params.page = this.page;
-
-
 
 
                 this.$http.get(url,option).then(                 

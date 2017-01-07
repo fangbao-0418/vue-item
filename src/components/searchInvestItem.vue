@@ -3,21 +3,21 @@
 <template>
     <!-- content1-->
     <div id="items">
-    <div class="item" v-for="(item,index) in items">
-        <collect-del-button v-if="collect" :items.sync="items" :type="22" :index="index" class="collect-del-botton"></collect-del-button>   
-        <router-link  :to="{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}" >
-            <div class="item_left">
-                <div class="item_tit">
-                    {{item.title | dSubstr(20) }}
-                </div>
+        <div v-if="items" class="item" v-for="(item,index) in items">
+            <collect-del-button v-if="collect" :items.sync="items" :type="22" :index="index" class="collect-del-botton"></collect-del-button>   
+            <router-link  :to="{ name: 'investmentShow', query:{id:item.itemid}, params: { item : item }}" >
+                <div class="item_left">
+                    <div class="item_tit">
+                        {{item.title | dSubstr(20) }}
+                    </div>
 
-                <span class="item_hit">{{item.hits}}点击</span>
-                <span class="item_date">{{item.editdate}}</span>
-            </div>
-            <img  v-lazy="item.sptp[0]" class="item_img" />
-            <div class="clear"></div>
-        </router-link>
-    </div>
+                    <span class="item_hit">{{item.hits}}点击</span>
+                    <span class="item_date">{{item.editdate}}</span>
+                </div>
+                <img  v-lazy="item.sptp[0]" class="item_img" />
+                <div class="clear"></div>
+            </router-link>
+        </div>
     </div>
 
 </template>
@@ -50,7 +50,7 @@
         },
         
         mounted(){
-            
+           console.log(this.items); 
         },
         methods:{
            

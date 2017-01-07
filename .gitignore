@@ -1,4 +1,4 @@
-/node_modules 
-/.idea
-/build
+node_modules 
+build
 gulpfile.js
+psd

@@ -58,7 +58,7 @@
 	}
 }
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .50s ease;
+  transition: opacity .20s ease;
 }
 .fade-enter, .fade-leave-active {
   opacity: 0
@@ -66,7 +66,7 @@
 .child-view {
 	width:6.4rem;
   position: absolute;
-  transition: all .50s cubic-bezier(.17,.67,.67,.94);
+  transition: all .20s cubic-bezier(.36,.36,.72,.73);
 }
 .slide-left-enter, .slide-right-leave-active {
 	width:6.4rem;

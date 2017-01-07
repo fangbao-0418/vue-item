@@ -2,7 +2,7 @@
     <div class="agency-box">
 
     	<!-- nav -->
-        <app-nav moduleid=23 :id="id" ></app-nav>
+        <app-nav :need-collect="false" moduleid=23 :id="id" ></app-nav>
 
         <load v-if="loading"></load>
         <!-- content -->

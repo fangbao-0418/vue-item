@@ -114,9 +114,8 @@
 					
 
 					if(res.data.src) {
-						alert(res.data.src);
-						this.avatar = res.data.src;
-						return;
+					  this.avatar = res.data.src;
+					  return;
 					}
 					// this.name = res.data.name;
 					// this.cropArgs = {
